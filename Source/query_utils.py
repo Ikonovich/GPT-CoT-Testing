@@ -1,17 +1,31 @@
 import json
 import re
+import time
 from json import JSONDecodeError
 from os import path
 
 import openai
 
 from config import MAX_TOKENS, RESULTS_FOLDER, DATASET_FOLDER, datasets, \
-    completion, chat, extract_prompt, suppression_prompt, cot_prompt, MAX_SAMPLES, stepwise_datasets
+    completion, chat, extract_prompt, suppression_prompt, cot_prompt, MAX_SAMPLES, stepwise_datasets, WAIT_TIME
 from data_utils import load_dataset
 
 # Answer cleaning pattern
 pattern = re.compile(r"[^\s0-9.-]")
 
+# Stores the time of the last query
+last_query_time = 0
+
+# Timer function that pauses operation until the time since last query exceeds config.WAIT_TIME
+def timer():
+    global last_query_time
+
+    cur_time = time.time()
+    diff = cur_time - last_query_time
+    if diff < WAIT_TIME:
+        time.sleep(WAIT_TIME - diff)
+
+    last_query_time = time.time()
 
 def query(model: str, prompt: str) -> str:
 
@@ -48,6 +62,8 @@ def build_prompt(question: str, modality: str) -> str:
         case "zero_shot_cot":
             output = f"Q: {question} \nA: {cot_prompt}"
         case "zero_shot":
+            output = f"Q: {question} \nA: The answer is "
+        case "zero_shot_no_extract":
             output = f"Q: {question} \nA: The answer is "
         case "suppressed_cot":
             output = f"Q: {question} {suppression_prompt} \nA:"
@@ -136,24 +152,23 @@ def run_test(model: str, modality: str, dataset: str, save: bool = True, cont: b
         end_index = min(MAX_SAMPLES, len(data))
 
     for i in range(start_index, end_index):
+        # Run the timer to keep from querying too quickly
+        timer()
+
         x, y = data[i]
         # Build the prompt out of our question
         prompt = build_prompt(question=x, modality=modality)
         # Get the initial response from the model
         response = query(model=model, prompt=prompt)
 
-        # If replicating  DOI 10.48550/arXiv.2205.11916, zero shot has no answer extraction prompt.
-        # if modality == "zero_shot" and model == "text-davinci-002":
-        #     extraction_response = response
-        # else:
-        #     # Resubmit the result with the answer extraction prompt appended
-        #     extraction = prompt + " " + response + "\n" + extract_prompt
-        #     extraction_response = query(model, extraction)
-
-        # Resubmit the result with the answer extraction prompt appended
-        extraction = prompt + " " + response + "\n" + extract_prompt
-        extraction_response = query(model, extraction)
-
+        #If replicating  DOI 10.48550/arXiv.2205.11916, zero shot has no answer extraction prompt.
+        if modality == "zero_shot_no_extract":
+            extraction_response = response
+        else:
+            # Run the timer to keep from querying too quickly, then resubmit the response for answer extraction
+            timer()
+            extraction = prompt + " " + response + "\n" + extract_prompt
+            extraction_response = query(model, extraction)
         answer = clean_numeric_answer(extraction_response)
 
         total += 1
@@ -164,7 +179,7 @@ def run_test(model: str, modality: str, dataset: str, save: bool = True, cont: b
             correct += 1
         accuracy = correct / total * 100
 
-        result = {"Q": prompt, "R": response, "E": extraction_response, "A": answer, "GT": y}
+        result = {"Q": prompt, "R": response, "Extract-Response": extraction_response, "A": answer, "GT": y}
 
         print(f"Question: {prompt}\nResponse: {response}\nAnswer: {answer}\nGT: {y}")
 
@@ -178,5 +193,6 @@ def run_test(model: str, modality: str, dataset: str, save: bool = True, cont: b
             with open(output_path, 'a+') as output_file:
                 processed = json.dumps(result) + '\n'
                 output_file.write(processed)
+
 
     print("Test " + model + "-" + modality + "-" + dataset + " completed.")
