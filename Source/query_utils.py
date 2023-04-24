@@ -7,7 +7,8 @@ from os import path
 import openai
 
 from config import MAX_TOKENS, RESULTS_FOLDER, DATASET_FOLDER, datasets, \
-    completion, chat, extract_prompt, suppression_prompt, cot_prompt, MAX_SAMPLES, stepwise_datasets, WAIT_TIME
+    completion, chat, extract_prompt, suppression_prompt, cot_prompt, MAX_SAMPLES, WAIT_TIME, \
+    answer_first_prompt, explanation_first_prompt, USE_SIMPLE_PROMPT
 from data_utils import load_dataset
 
 # Answer cleaning pattern
@@ -15,6 +16,7 @@ pattern = re.compile(r"[^\s0-9.-]")
 
 # Stores the time of the last query
 last_query_time = 0
+
 
 # Timer function that pauses operation until the time since last query exceeds config.WAIT_TIME
 def timer():
@@ -26,6 +28,7 @@ def timer():
         time.sleep(WAIT_TIME - diff)
 
     last_query_time = time.time()
+
 
 def query(model: str, prompt: str) -> str:
 
@@ -57,23 +60,37 @@ def query(model: str, prompt: str) -> str:
 
 def build_prompt(question: str, modality: str) -> str:
     # Constructs the question query based on the test type and the prompt settings in config.
+    # If simple is false, appends Q to the start of each question and A at certain points in the question
+
+    if USE_SIMPLE_PROMPT:
+        Q = ""
+        A = ""
+    else:
+        Q = "Q: "
+        A = "A: "
 
     match modality:
         case "zero_shot_cot":
-            output = f"Q: {question} \nA: {cot_prompt}"
+            output = f"{Q}{question} \n{A}{cot_prompt}"
         case "zero_shot":
-            output = f"Q: {question} \nA: The answer is "
+            output = f"{Q}{question}"
+        case "the_answer_is":
+            output = f"{Q}{question}. \n{A}The answer is "
         case "zero_shot_no_extract":
-            output = f"Q: {question} \nA: The answer is "
+            output = f"{Q}{question} \n{A}The answer (arabic numerals) is "
         case "suppressed_cot":
-            output = f"Q: {question} {suppression_prompt} \nA:"
-        case other:
+            output = f"{Q}{question} \n{A}{suppression_prompt} "
+        case "explanation_first":
+            output = f"{Q}{question} \n{A}{explanation_first_prompt} "
+        case "answer_first":
+            output = f"{Q}{question} \n{A}{answer_first_prompt} "
+        case _:
             raise ValueError("The provided test type has not been defined.")
 
     return output
 
 
-def clean_numeric_answer(answer: str) -> float | None:
+def clean_numeric_answer(answer: str) -> float | str:
     # Citation: This method and some of this code is taken from
     # DOI 10.48550/arXiv.2205.11916
     # Remove commas and find all numerical answers
@@ -105,15 +122,15 @@ def run_test(model: str, modality: str, dataset: str, save: bool = True, cont: b
     # last_index
 
     # Set the dataset folder, because we don't split individual step runs into separate folders
-    if dataset in stepwise_datasets:
+    if 'step' in dataset:
         dataset_sub = "stepwise"
     else:
         dataset_sub = dataset
 
     # Results file: Stores last index ran, total count, correct counts, and accuracy.
-    metadata_file = model + "-" + modality + "-" + dataset + "-Metadata.jsonl"
+    metadata_file = "SimplePrompt-" + model + "-" + modality + "-" + dataset + "-Metadata.jsonl"
     metadata_path = path.join(RESULTS_FOLDER, model, modality, dataset_sub, metadata_file)
-    output_file = model + "-" + modality + "-" + dataset + ".jsonl"
+    output_file = "SimplePrompt-" + model + "-" + modality + "-" + dataset + ".jsonl"
     output_path = path.join(RESULTS_FOLDER, model, modality, dataset_sub, output_file)
     dataset_path = path.join(DATASET_FOLDER, datasets[dataset])
 
@@ -123,7 +140,6 @@ def run_test(model: str, modality: str, dataset: str, save: bool = True, cont: b
     start_index = 0
     total = 0
     correct = 0
-    accuracy = 0.0
 
     if cont and path.exists(metadata_path):
         try:
@@ -134,8 +150,6 @@ def run_test(model: str, modality: str, dataset: str, save: bool = True, cont: b
                 start_index = vals["Last Sample Index"] + 1
                 total = vals["Total"]
                 correct = vals["Correct"]
-                if total != 0:
-                    accuracy = correct / total * 100
 
         except JSONDecodeError as e:
             print(f"There was an error decoding the first line of {metadata_path} into json at index {e.pos}")

@@ -1,21 +1,21 @@
 import time
 
-import openai
-
-from config import selected_datasets, selected_modalities, selected_models, ERROR_WAIT_TIME
+from config import selected_models, selected_modalities, selected_datasets, ERROR_WAIT_TIME
 from query_utils import run_test
-
+from visualizer import create_graphs
 
 if __name__ == '__main__':
+    # create_graphs()
 
-    # If true, saves query output to a file with the format Model-TestType-.jsonl
-    # in the folder Model/Test
-    save = True
+    # # If true, saves query output to a file with the format Model-TestType-.jsonl
+    # # in the folder Model/Test
+    # save = True
 
-    # Tracks how many models we've ran through. Once we've ran through them all, the
+    # Tracks how many models we've run through. Once we've run through them all, the
     # operation won't continue after a failed response.
+
     model_index = 0
-    # Outer loop ensures operations will repeat on a failed response.
+    # # Outer loop ensures operations will repeat on a failed response.
     while model_index < len(selected_models):
         try:
             model = selected_models[model_index]
@@ -30,14 +30,3 @@ if __name__ == '__main__':
             print(e)
             # Wait and try again
             time.sleep(ERROR_WAIT_TIME)
-
-
-
-
-
-
-
-
-
-
-
