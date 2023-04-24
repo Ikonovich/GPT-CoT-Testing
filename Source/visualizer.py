@@ -142,7 +142,7 @@ def create_graphs():
 
                 file_name = f"Stepwise-{modality}-{prompt}-{model}".replace(".", "")
                 save_path = os.path.join(config.RESULTS_FOLDER, model, file_name)
-                create_bar_chart(graph_title=f"{format_name(name=model, is_model=True)},{dataset}, {format_name(modality)},"
+                create_bar_chart(graph_title=f"{format_name(name=model, is_model=True)}, Stepwise, {format_name(modality)},"
                                              f" {prompt} Prompt",
                                  x_title="Number of Steps", y_title="Accuracy", data=heights,
                                  column_labels=[i for i in range(1, 10)], save_path=save_path)

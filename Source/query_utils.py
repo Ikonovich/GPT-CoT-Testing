@@ -195,7 +195,7 @@ def run_test(model: str, modality: str, dataset: str, save: bool = True, cont: b
 
         result = {"Q": prompt, "R": response, "Extract-Response": extraction_response, "A": answer, "GT": y}
 
-        print(f"Question: {prompt}\nResponse: {response}\nAnswer: {answer}\nGT: {y}")
+        #print(f"Question: {prompt}\nResponse: {response}\nAnswer: {answer}\nGT: {y}")
 
         if save:
             # Save the run results
