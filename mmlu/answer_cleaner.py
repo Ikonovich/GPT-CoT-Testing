@@ -73,13 +73,13 @@ def process_dataset(file_path, original_data):
     return results
 
 #data = load_data_from_file("./generated/gpt35-turbo/zero-shot-answer-first.json")
-original_data = load_data_from_file("./formatted/mmlu_formatted/high_school_mathematics_combined.json")
+original_data = load_data_from_file("./formatted/mmlu_formatted/college_mathematics_combined.json")
 
 
 results = []
 
 # Folder containing your json datasets
-folder_path = './generated/gpt4/hs_responses/'
+folder_path = './generated/gpt4/college_responses/'
 
 # Collect all json files
 json_files = [f for f in os.listdir(folder_path) if f.endswith('.json')]
