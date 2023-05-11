@@ -24,4 +24,11 @@ stepwise = ["Stepwise/1-Step-Int-Formulae.jsonl",
             "Stepwise/6-Step-Int-Formulae.jsonl",
             "Stepwise/7-Step-Int-Formulae.jsonl",
             "Stepwise/8-Step-Int-Formulae.jsonl",
-            "Stepwise/9-Step-Int-Formulae.jsonl"]
+            "Stepwise/9-Step-Int-Formulae.jsonl",
+            "Stepwise/10-Step-Int-Formulae.jsonl",
+            "Stepwise/11-Step-Int-Formulae.jsonl",
+            "Stepwise/12-Step-Int-Formulae.jsonl",
+            "Stepwise/13-Step-Int-Formulae.jsonl",
+            "Stepwise/14-Step-Int-Formulae.jsonl",
+            "Stepwise/15-Step-Int-Formulae.jsonl"
+            ]
