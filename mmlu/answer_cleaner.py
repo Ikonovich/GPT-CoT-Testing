@@ -52,7 +52,7 @@ def process_dataset(file_path, original_data):
         ground_truth = original_data[question]["correct_answer"]
         options = "A: " + original_data[question]["choices"]["A"] + "\n" + "A: " + original_data[question]["choices"]["B"] + "\n" + "A: " + original_data[question]["choices"]["C"] + "\n" + "A: " + original_data[question]["choices"]["D"] + "\n"
 
-        question_string = "Only provide one letter answer. The following statement contains the full answer for an unknown multiple-choice math problem. We do not care about the problem itself. Somewhere in the string provided, is the final answer choice, ranging from [A, B, C, D]. We want to know the answer choice only. Given this string, write the final answer choice presented there. Do not provide any other explanations or descriptions. If no answer letter provided, answer with \"N/A\". Full answer:\n " 
+        question_string = "Only provide one letter answer. The following statement contains the full answer for an unknown multiple-choice math problem. Somewhere in the string provided, is the final answer choice, ranging from [A, B, C, D]. We want to know the answer choice only. Given this string, write the final answer choice presented there. Do not provide any other explanations or descriptions. If no answer letter provided, answer with \"N/A\". Full answer:\n " 
         question_string += answer
         question_string += "\nPossible choices:\n"
         question_string += options
