@@ -1,0 +1,98 @@
+[
+    {
+        "Index": 5,
+        "Query": "There are k-2 members in a certain band, including Jim and Ellen. Two members are to be selected to attend the Grammy awards ceremony. If there are 6 possible combinations in which Jim and Ellen are not selected, what is the value of k?\nOptions:  A)8 B)9 C)10 D)11 E)12  Provide the answer followed by the explanation.. ",
+        "Response": "B)9\n\nExplanation: If there are 6 possible combinations in which Jim and Ellen are not selected, then there must be k-2-2 = k-4 other members in the band. The number of ways to choose 2 members from k-4 members is given by the combination formula: C(n, r) = n! / (r!(n-r)!), where n is the total number of items and r is the number of items to be chosen. In this case, n = k-4 and r = 2. So, we have:\n\nC(k-4, 2) = (k-4)! / (2!(k-6)!) = 6\n\nNow, we can simplify the factorials:\n\n(k-4)(k-5)/2 = 6\n\nMultiplying both sides by 2:\n\n(k-4)(k-5) = 12\n\nExpanding the expression:\n\nk^2 - 9k + 20 = 12\n\nSubtracting 12 from both sides:\n\nk^2 - 9k + 8 = 0\n\nFactoring the quadratic equation:\n\n(k-8)(k-1) = 0\n\nThe possible values of k are 8 and 1. However, since there are at least 2 members (Jim and Ellen) in the band, k cannot be 1. Therefore, the value of k is 9.",
+        "Extract-Response": "B)9.",
+        "Answer": "B",
+        "GT": "A",
+        "Final Answer": "B",
+        "Options": {
+            "8": "A",
+            "9": "B",
+            "10": "C",
+            "11": "D",
+            "12": "E"
+        }
+    },
+    {
+        "Index": 0,
+        "Query": "Two friends plan to walk along a 43-km trail, starting at opposite ends of the trail at the same time. If Friend P's rate is 15% faster than Friend Q's, how many kilometers will Friend P have walked when they pass each other?\nOptions:  A)21 B)21.5 C)22 D)22.5 E)23  Provide the answer followed by the explanation.. ",
+        "Response": "D)22.5\n\nLet x be the distance walked by Friend Q. Then, the distance walked by Friend P is 1.15x. Since they are walking towards each other, the sum of the distances they walk is equal to the length of the trail, which is 43 km. So, we have the equation:\n\nx + 1.15x = 43\n\nCombining the terms on the left side, we get:\n\n2.15x = 43\n\nNow, we can solve for x by dividing both sides by 2.15:\n\nx = 43 / 2.15 \u2248 20\n\nNow that we have the distance walked by Friend Q, we can find the distance walked by Friend P by multiplying x by 1.15:\n\n1.15x \u2248 1.15 * 20 \u2248 23\n\nHowever, since Friend P's rate is 15% faster than Friend Q's, the distance walked by Friend P should be slightly less than 23 km. Therefore, the correct answer is 22.5 km.",
+        "Extract-Response": "D)22.5",
+        "Answer": "D",
+        "GT": "E",
+        "Final Answer": "D",
+        "Options": {
+            "21": "A",
+            "21.5": "B",
+            "22": "C",
+            "22.5": "D",
+            "23": "E"
+        }
+    },
+    {
+        "Index": 1,
+        "Query": "In the coordinate plane, points (x, 1) and (5, y) are on line k. If line k passes through the origin and has slope 1/5, then what are the values of x and y respectively?\nOptions:  A)4 and 1 B)1 and 5 C)5 and 1 D)3 and 5 E)5 and 3  Provide the answer followed by the explanation.. ",
+        "Response": "C)5 and 1\n\nSince line k passes through the origin and has a slope of 1/5, its equation is y = (1/5)x. We can use this equation to find the values of x and y.\n\nFor the point (x, 1), we have 1 = (1/5)x. Solving for x, we get x = 5.\n\nFor the point (5, y), we have y = (1/5)(5). Solving for y, we get y = 1.\n\nSo the values of x and y are 5 and 1, respectively.",
+        "Extract-Response": "C)5 and 1.\n\nSince line k passes through the origin and has a slope of 1/5, its equation is y = (1/5)x. We can use this equation to find the values of x and y.\n\nFor the point (x, 1), we have 1 = (1/5)x. Solving for x, we get x = 5.\n\nFor the point (5, y), we have y = (1/5)(5). Solving for y, we get y = 1.\n\nSo the values of x and y are 5 and 1, respectively.",
+        "Answer": "C",
+        "GT": "C",
+        "Final Answer": "C",
+        "Options": {
+            "4 and 1": "A",
+            "1 and 5": "B",
+            "5 and 1": "C",
+            "3 and 5": "D",
+            "5 and 3": "E"
+        }
+    },
+    {
+        "Index": 2,
+        "Query": "For all numbers p and q, the operation @ is defined by p@q = p^2 - pq. If xy \u2260 0, then which of the following can be equal to zero?\nI. x@y\nII. (xy)@y\nIII. x@(x + y)\nOptions:  A)II B)I and II C)I and III D)II and III E)All of the above  Provide the answer followed by the explanation.. ",
+        "Response": "D)II and III\n\nExplanation:\n\nI. x@y = x^2 - xy\nFor this to be equal to zero, x^2 = xy, which means x = y. However, since xy \u2260 0, x and y cannot both be zero, so this cannot be equal to zero.\n\nII. (xy)@y = (xy)^2 - (xy)(y) = x^2y^2 - xy^2\nFactor out xy^2: xy^2(x - 1)\nSince xy \u2260 0, this can be equal to zero if x = 1.\n\nIII. x@(x + y) = x^2 - x(x + y) = x^2 - x^2 - xy\nThis simplifies to -xy, which can be equal to zero if either x or y is zero. Since xy \u2260 0, this means that either x or y must be nonzero, so this can be equal to zero.\n\nThus, the answer is D) II and III.",
+        "Extract-Response": "D)II and III\n\nExplanation:\n\nI. x@y = x^2 - xy\nFor this to be equal to zero, x^2 = xy, which means x = y. However, since xy \u2260 0, x and y cannot both be zero, so this cannot be equal to zero.\n\nII. (xy)@y = (xy)^2 - (xy)(y) = x^2y^2 - xy^2\nFactor out xy^2: xy^2(x - 1)\nSince xy \u2260 0, this can be equal to zero if x = 1.\n\nIII. x@(x + y) = x^2 - x(x + y) = x^2 - x^2 - xy\nThis simplifies to -xy, which can be equal to zero if either x or y is zero. Since xy \u2260 0, this means that either x or y must be nonzero, so this can be equal to zero.\n\nThus, the answer is D) II and III.",
+        "Answer": "D",
+        "GT": "B",
+        "Final Answer": "D",
+        "Options": {
+            "II": "A",
+            "I and II": "B",
+            "I and III": "C",
+            "II and III": "D",
+            "All of the above": "E"
+        }
+    },
+    {
+        "Index": 3,
+        "Query": "Carl is facing very difficult financial times and can only pay the interest on a $10,000 loan he has taken. The bank charges him a quarterly compound rate of 4%. What is the approximate interest he pays annually?\nOptions:  A)$1600 B)$2000 C)$2150 D)$2500 E)$12000  Provide the answer followed by the explanation.. ",
+        "Response": "A) $1600\n\nExplanation: Since the interest is compounded quarterly, we need to find the effective annual rate (EAR) first. \n\nEAR = (1 + i/n)^(nt) - 1, where i is the nominal interest rate, n is the number of compounding periods per year, and t is the number of years.\n\nIn this case, i = 0.04, n = 4, and t = 1.\n\nEAR = (1 + 0.04/4)^(4*1) - 1\nEAR = (1 + 0.01)^4 - 1\nEAR \u2248 0.0406 or 4.06%\n\nNow, we can find the annual interest Carl pays on the $10,000 loan.\n\nAnnual Interest = Principal * EAR\nAnnual Interest = $10,000 * 0.0406\nAnnual Interest \u2248 $406\n\nHowever, since Carl can only pay the interest, he will pay this amount every quarter.\n\nTotal Annual Interest = $406 * 4\nTotal Annual Interest \u2248 $1624\n\nThe approximate interest Carl pays annually is $1600 (option A).",
+        "Extract-Response": "A) $1600\n\nExplanation: Since the interest is compounded quarterly, we need to find the effective annual rate (EAR) first. \n\nEAR = (1 + i/n)^(nt) - 1, where i is the nominal interest rate, n is the number of compounding periods per year, and t is the number of years.\n\nIn this case, i = 0.04, n = 4, and t = 1.\n\nEAR = (1 + 0.04/4)^(4*1) - 1\nEAR = (1 + 0.01)^4 - 1\nEAR \u2248 0.0406 or 4.06%\n\nNow, we can find the annual interest Carl pays on the $10,000 loan.\n\nAnnual Interest = Principal * EAR\nAnnual Interest = $10,000 * 0.0406\nAnnual Interest \u2248 $406\n\nHowever, since Carl can only pay the interest, he will pay this amount every quarter.\n\nTotal Annual Interest = $406 * 4\nTotal Annual Interest \u2248 $1624\n\nThe approximate interest Carl pays annually is $1600 (option A).",
+        "Answer": "A",
+        "GT": "A",
+        "Final Answer": "A",
+        "Options": {
+            "$1600": "A",
+            "$2000": "B",
+            "$2150": "C",
+            "$2500": "D",
+            "$12000": "E"
+        }
+    },
+    {
+        "Index": 4,
+        "Query": "The speed at which a man can row a boat in still water is 25 kmph. If he rows downstream, where the speed of current is 11 kmph, what time will he take to cover 80 metres?\nOptions:  A)18 seconds B)27 seconds C)26 seconds D)12 seconds E)8 seconds  Provide the answer followed by the explanation.. ",
+        "Response": "B)27 seconds\n\nExplanation:\n\nThe speed of the man while rowing downstream is the sum of his speed in still water and the speed of the current, which is 25 kmph + 11 kmph = 36 kmph.\n\nTo convert this speed to meters per second, we can use the formula: 1 kmph = (1000/3600) m/s.\n\nSo, 36 kmph = 36 * (1000/3600) m/s = 10 m/s.\n\nNow, we can use the formula time = distance/speed to find the time he takes to cover 80 meters.\n\nTime = 80 meters / 10 m/s = 8 seconds.",
+        "Extract-Response": "E)8 seconds",
+        "Answer": "B",
+        "GT": "E",
+        "Final Answer": "E",
+        "Options": {
+            "18 seconds": "A",
+            "27 seconds": "B",
+            "26 seconds": "C",
+            "12 seconds": "D",
+            "8 seconds": "E"
+        }
+    }
+]

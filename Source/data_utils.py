@@ -1,239 +1,310 @@
-import copy
 import json
+import math
 import os
 
-import config
-from Datasets.JsonlDataset import JsonlDataset
+import pandas as pd
+from regex import regex
+
+from config import RESULTS_FOLDER, z_val, METADATA_FOLDER
+
+from file_utils import get_filepaths, read_json, write_json
 
 
-def format_name(name: str, is_model: bool = False) -> str:
-    # Formats a name to fit the format
-    # Item1 Item2 Item3, etc
-    # Basically, capitalizes the first letter of each word and removes spaces.
-    # If it's a model, capitalizes "GPT" separately if found.
-    if "-" in name:
-        name = name.split("-")
-    elif "_" in name:
-        name = name.split("_")
-    else:
-        name = name.split()
+def search_metadata(model: str = None, modalities: list[str] = None, datasets: list[str] = None):
+    metapath = os.path.join(METADATA_FOLDER, "Test Results.csv")
+    frame = pd.DataFrame.from_csv(metapath)
 
-    new_name = list()
-    for word in name:
-        if is_model and word == "gpt":
-            new_word = word[:3].upper() + word[3:]
-        else:
-            new_word = word[:1].upper() + word[1:]
-        new_name.append(new_word)
+    if model is not None:
+        frame = frame[frame.Model == model]
 
-    new_name = " ".join(new_name)
-    return new_name
+    if modalities is not None:
+        frame = frame[frame.Modality.isin(modalities)]
+
+    if datasets is not None:
+        frame = frame[frame.Dataset.isin(datasets)]
+    return frame
 
 
-def collate_results(model: str) -> tuple[dict, dict]:
-    # Collates all results for a specific model
-    # Sorts into a dictionary by dataset
-    start = os.path.join(config.RESULTS_FOLDER, model)
-    contains = ["Metadata"]
-    paths = get_filepaths(start, contains)
+def generate_metadata(root: str = None):
+    if root is None:
+        root = RESULTS_FOLDER
 
-    metadata = list()
-    for path in paths:
-        with open(path) as file:
-            entry = json.load(file)
-            metadata.append((path, entry))
+    data_paths = get_filepaths(root=root, contains=["json"])
 
-    # Store results by dataset
-    simple_prompt = dict()
-    initial_prompt = dict()
-
-    initial_prompt["multiarith"] = dict()
-    initial_prompt["gsm8k"] = dict()
-    initial_prompt["stepwise"] = dict()
-
-    simple_prompt["multiarith"] = dict()
-    simple_prompt["gsm8k"] = dict()
-    simple_prompt["stepwise"] = dict()
-
-    # Create list for stepwise data
-    for modality in config.modalities:
-        initial_prompt["stepwise"][modality] = [None for i in range(0, 9)]
-        simple_prompt["stepwise"][modality] = [None for i in range(0, 9)]
-
-    for entry in metadata:
-        path = entry[0]
-        modality = entry[1]["Modality"]
-        dataset = get_dataset(path)
-        if "SimplePrompt" in path:
-            if "step" in dataset:
-                index = int(dataset[:1]) - 1
-                step_data = entry[1]
-                step_data["Step Count"] = index + 1
-                simple_prompt["stepwise"][modality][index] = step_data
-            else:
-                simple_prompt[dataset][modality] = entry[1]
-        else:
-            if "step" in dataset:
-                index = int(dataset[:1]) - 1
-                step_data = entry[1]
-                step_data["Step Count"] = index + 1
-                initial_prompt["stepwise"][modality][index] = step_data
-            else:
-                initial_prompt[dataset][modality] = entry[1]
-
-    return initial_prompt, simple_prompt
-
-
-def get_cross_modality_results(data: dict[str, dict]) -> tuple[list[str], list[float]]:
-    # Used to generate cross-modality results for different datasets
-    # Data should contain a dictionary of keys corresponding to modality names, with values
-    # being dictionaries containing an "Accuracy" key consisting of float values.
-    labels = list()
-    accuracies = list()
-
-    for modality in data:
-        mod_name = format_name(name=modality)
-        labels.append(modality)
-        accuracies.append(data[modality]["Accuracy"])
-
-    return labels, accuracies
-
-
-def get_dataset(path: str) -> str:
-    # Returns the dataset a file path contains information about
-    for key in config.datasets:
-        if key in path:
-            return key
-
-
-def get_filepaths(start_path: str, contains: list[str]) -> list:
-    # Recursively walks from the start directory and returns a list of all file paths
-    # containing every string in contains.
     results = list()
-    for path in os.listdir(start_path):
-        full_path = os.path.join(start_path, path)
-        if os.path.isdir(full_path):
-            results.extend(get_filepaths(full_path, contains))
-        elif check_path(path=full_path, contains=contains):
-            results.append(full_path)
+    for i in range(len(data_paths)):
+        test_path = data_paths[i]
+        metadata = path_to_metadata(test_path=test_path)
+        stats = test_quantification(test_path=test_path)
+        metadata.update(stats)
+        results.append(metadata)
 
-    return results
-
-
-def check_path(path: str, contains: list[str]) -> bool:
-    for substr in contains:
-        if substr not in path:
-            return False
-    return True
+    # Update the metadata file
+    frame = pd.DataFrame.from_records(data=results)
+    metapath = os.path.join(METADATA_FOLDER, "Test Results.csv")
+    frame.to_csv(metapath)
 
 
-def sort_by_term_count(dataset: JsonlDataset, discrim_key, base_path: str):
-    # Takes a jsonldataset and sorts it by how many times
-    # mathematical operators (+, -, *. /" are in << >> annotated sections in the answer.
+def path_to_metadata(test_path: str) -> dict[str, str]:
+    # Generates metadata files from provided test results and test path.
 
-    # Store discriminators
-    discriminators = {"%", "+", "-", "*", "/"}
+    steps = None
+    metadata = dict()
+    # get prompt style
+    if "simple" in test_path:
+        simple_prompt = "True"
+    else:
+        simple_prompt = False
 
-    data = dataset.data
+    # Get the model
+    if "gpt-4-32k" in test_path:
+        model = "gpt-4-32k"
+    elif "gpt-4" in test_path:
+        model = "gpt-4"
+    elif "gpt-3.5" in test_path:
+        model = "gpt-3.5"
+    elif "davinci-002" in test_path:
+        model = "text-davinci-002"
+    else:
+        raise ValueError
 
-    # Store items by term count by term: sample
-    by_num_terms = dict()
+    # Get the extraction type
+    if "in-brackets" in test_path:
+        extraction_type = "in-brackets"
+    elif "two-stage" in test_path:
+        extraction_type = "two-stage"
+    else:
+        raise ValueError
+
+    # Get the modality
+    if "zero_shot_cot" in test_path:
+        modality = "zero_shot_cot"
+    elif "answer_first" in test_path:
+        modality = "answer_first"
+    elif "explanation_first" in test_path:
+        modality = "explanation_first"
+    elif "suppressed" in test_path:
+        modality = "suppressed_cot"
+    elif "zero_shot" in test_path:
+        modality = "zero_shot"
+    else:
+        raise ValueError
+
+    # Get the dataset
+    if "aqua" in test_path:
+        dataset = "aqua"
+    elif "gsm8k" in test_path:
+        dataset = "gsm8k"
+    elif "multiarith" in test_path:
+        dataset = "multiarith"
+    elif "mmlu" in test_path:
+        dataset = "mmlu"
+    elif "coin_flip" in test_path:
+        dataset = "coin_flip"
+    elif "step" in test_path:
+        dataset = "stepwise"
+        steps = regex.findall(r"\d{1,2}step", test_path)[0]
+        steps = regex.findall(r"\d{1,2}", steps)[0]
+        steps = int(steps)
+        metadata["Steps"] = steps
+    else:
+        raise ValueError
+
+    metadata.update({"Dataset": dataset,
+                     "Modality": modality,
+                     "Model": model,
+                     "Extraction Type": extraction_type,
+                     "Simple Prompt": simple_prompt,
+                     "Test Path": test_path})
+
+    return metadata
+
+
+def count_cot(data: list[dict], dataset: str) -> tuple[int, int, int, int, int, int]:
+    total = 0
+    total_accurate = 0
+    cot_total = 0
+    cot_accurate = 0
+    non_cot_total = 0
+    non_cot_accurate = 0
 
     for entry in data:
-        entry["Operators"] = ""
-        count = 0
-        field = entry[discrim_key]
+        total += 1
+        is_accurate = 0
+        response = entry["Response"].lower()
+        answer = entry["Answer"]
+        gt = entry["GT"]
 
-        # Get the indices of the annotated areas
-        # + 2 to skip over the first < or ( and because the first index after should never be an operator
-        indices = [i + 2 for i in range(len(field)) if field.startswith("<<", i)]
-        indices += [i + 2 for i in range(len(field)) if field.startswith("(", i)]
+        # Get the accuracy value
+        try:
+            if dataset == "aqua" or dataset == "coin_flip" or dataset == "mmlu":
+                if answer.lower() == gt.lower():
+                    is_accurate = 1
+                    total_accurate += 1
+            elif float(answer) == float(gt):
+                is_accurate = 1
+                total_accurate += 1
+        except ValueError:
+            is_accurate = 0
 
-        for index in indices:
-            count = 0
-            # Go letter by letter until we hit a > bracket.
-            i = index
-            char = field[i]
-            while char != ">" and char != ")" and i < len(field):
-                char = field[i]
-                if char in discriminators:
-                    count += 1
-                    entry["Operators"] += char
-                i += 1
+        # Track CoT presence
+        if "step" in dataset:
+            # For stepwise datasets, we define CoT to be the length of the original question + 20 chars.
+            question = entry["Query"][0: entry["Query"].index("=")]
+            cutoff = len(question) + 20
 
-        # Add the sample to the appropriate term count dataset
-        count = len(entry["Operators"])
-        if count in by_num_terms:
-            by_num_terms[count].append(entry)
+            if len(response) > cutoff:
+                cot_total += 1
+                cot_accurate += is_accurate
+            else:
+                non_cot_total += 1
+                non_cot_accurate += is_accurate
+
+        elif dataset == "coin_flip":
+            cutoff = 60
+            if len(response) > cutoff and "no one" not in response and "none of" not in response \
+                    and "unknown" not in response:
+                cot_total += 1
+                cot_accurate += is_accurate
+            else:
+                non_cot_total += 1
+                non_cot_accurate += is_accurate
         else:
-            by_num_terms[count] = list()
-            by_num_terms[count].append(entry)
+            cutoff = 60
+            if len(response) > cutoff:
+                is_cot = True
+                cot_total += 1
+                cot_accurate += is_accurate
+            else:
+                non_cot_total += 1
+                non_cot_accurate += is_accurate
 
-    # Finally, save the datasets
-    for num in by_num_terms:
-        filepath = base_path + "-" + str(num) + "-Terms.jsonl"
-        write_json(filepath=filepath, data=by_num_terms[num], append=False)
-
-
-def process_gsm8k(read_path: str = "Datasets/GSM8K/test.jsonl", save_path: str = "Datasets/GSM8K/GSM8K-Processed.jsonl"):
-
-    output = list()
-    with open(read_path) as file:
-        lines = file.readlines()
-
-    for line in lines:
-        j_str = json.loads(line)
-        question = j_str["question"]
-        answer = j_str["answer"]
-        gt = answer[answer.index("####") + 4:].strip()
-
-        output.append({"Question": question, "Answer": answer, "Ground Truth": gt})
-
-    write_json(filepath=save_path, data=output)
+    return total, total_accurate, cot_accurate, cot_total, non_cot_accurate, non_cot_total
 
 
-def process_multiarith(read_path: str = "Datasets/MultiArith/MultiArith.json",
-                       save_path: str = "Datasets/MultiArith/MultiArith-Processed.jsonl"):
-    output = list()
-    with open(read_path) as file:
-        entries = json.load(file)
+def test_quantification(test_path: str = None):
+    # Quantifies results for all tests.
 
-    for entry in entries:
-        index = entry["iIndex"]
-        question = entry["sQuestion"]
-        answer = entry["lSolutions"][0]
+    data = read_json(test_path)
 
-        output.append({"Index": index, "Question": question, "Ground Truth": answer})
+    # Initialize metadata
+    metadata = path_to_metadata(test_path=test_path)
+    # Calculate total accuracy, % of answers containing Chain-of-Thought reasoning,
+    # the accuracy of CoT answers, and the accuracy of Non-CoT answers,
+    # along with over all counts of each item type.
+    total, total_accurate, cot_accurate, cot_total, non_cot_accurate, non_cot_total = count_cot(
+        data=data, dataset=metadata["Dataset"])
 
-    write_json(filepath=save_path, data=output)
-
-
-def write_json(filepath: str, data: list[dict] | dict, append: bool = False):
-    # Writes json list data to the filepath. If append is true, will attempt to write it to
-    # an existing file, and will create a new one otherwise.
-    if append:
-        write_mode = "a"
+    if cot_total == 0:
+        cot_accuracy = 0
     else:
-        write_mode = "w"
-    with open(filepath, write_mode) as save_file:
-        if type(data) is list:
-            for line in data:
-                processed = json.dumps(line) + '\n'
-                save_file.write(processed)
+        cot_accuracy = (cot_accurate / cot_total)
+
+    if non_cot_total == 0:
+        non_cot_accuracy = 0
+    else:
+        non_cot_accuracy = (non_cot_accurate / non_cot_total)
+
+    cot_percent = (cot_total / total)
+
+    total_accuracy = (total_accurate / total)
+    ci_radius = (z_val * math.sqrt((total_accuracy * (1 - total_accuracy)) / total))
+
+    return {"Total": total,
+            "Total Accurate": total_accurate,
+            "Accuracy": total_accuracy,
+            "Percent of Answers Containing CoT": cot_percent,
+            "CoT Accuracy": cot_accuracy,
+            "Non-CoT Accuracy": non_cot_accuracy,
+            "ci_radius": ci_radius,
+            "ci_upper": total_accuracy + ci_radius,
+            "ci_lower": total_accuracy - ci_radius}
+
+
+def process_mmlu():
+    gpt35_path = r"C:\Users\evanh\Documents\GPT-CoT-Testing\mmlu\generated\gpt35-turbo\2phase"
+    gpt4_path = r"C:\Users\evanh\Documents\GPT-CoT-Testing\mmlu\generated\gpt4\2phase"
+
+    for path in os.listdir(gpt4_path):
+
+        if "college" in path:
+            discriminator = "college"
+        elif "combined" in path:
+            discriminator = "combined"
         else:
-            processed = json.dumps(data, indent=4)
-            save_file.write(processed)
+            discriminator = "high-school"
 
+        if "zero-shot-cot" in path:
+            modality = "zero_shot_cot"
+        elif "answer-first" in path:
+            modality = "answer_first"
+        elif "explanation-first" in path:
+            modality = "explanation_first"
+        elif "supressed" in path:
+            modality = "suppressed_cot"
+        else:
+            modality = "zero_shot"
 
-def load_dataset(path: str) -> JsonlDataset:
-    data = list()
-    filepath = path
-    with open(filepath) as file:
-        lines = file.readlines()
+        results = list()
+        filepath = os.path.join(gpt4_path, path)
+        with open(filepath, encoding='utf-8') as file:
+            data = file.read()
+            data = json.loads(data)
 
-    for line in lines:
-        j_dict = json.loads(line)
-        data.append(j_dict)
+        for item in data:
+            options = item["O"]
+            options = dict((v, k) for k, v in options.items())
 
-    dataset = JsonlDataset(data=data)
-    return dataset
+            new_item = {"Query": item["Q"],
+                        "Response": item["R"],
+                        "Extract-Response": item["A"],
+                        "Options": options,
+                        "GT": item["GT"]}
+
+            results.append(new_item)
+
+        file_name = f"Simple-two-stage-gpt-4-{modality}-mmlu-{discriminator}.json"
+        write_json(data=results, filepath=os.path.join(RESULTS_FOLDER, "gpt-4", modality,
+                                                       "mmlu", file_name))
+
+    for path in os.listdir(gpt35_path):
+
+        if "college" in path:
+            discriminator = "college"
+        elif "combined" in path:
+            discriminator = "combined"
+        else:
+            discriminator = "high-school"
+
+        if "zero-shot-cot" in path:
+            modality = "zero_shot_cot"
+        elif "answer-first" in path:
+            modality = "answer_first"
+        elif "explanation-first" in path:
+            modality = "explanation_first"
+        elif "supressed" in path:
+            modality = "suppressed_cot"
+        else:
+            modality = "zero_shot"
+
+        results = list()
+        filepath = os.path.join(gpt35_path, path)
+        with open(filepath, encoding='utf-8') as file:
+            data = file.read()
+            data = json.loads(data)
+
+        for item in data:
+            options = item["O"]
+            options = dict((v, k) for k, v in options.items())
+
+            new_item = {"Query": item["Q"],
+                        "Response": item["R"],
+                        "Extract-Response": item["A"],
+                        "Options": options,
+                        "GT": item["GT"]}
+
+            results.append(new_item)
+        file_name = f"Simple-two-stage-gpt-35-{modality}-mmlu-{discriminator}.json"
+
+        write_json(data=results, filepath=os.path.join(RESULTS_FOLDER, "gpt-3.5-turbo",
+                                                       modality, "mmlu", file_name))

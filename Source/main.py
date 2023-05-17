@@ -1,23 +1,34 @@
 import argparse
 import time
 
-from config import datasets, ERROR_WAIT_TIME, chat, completion, modalities
+from openai.error import OpenAIError
+
+from create_graphs import create_graphs
+from data_utils import generate_metadata, process_mmlu
+from answer_extraction import extract_answers
+from config import DATASETS, ERROR_WAIT_TIME, chat, completion, modalities
 from query_utils import run_test
-from visualizer import create_graphs
 
 
 def main():
-    # # If true, saves query output to a file with the format Model-TestType-.jsonl
-    # # in the folder Model/Test
-    save = True
-
     args = parse_args()
+
+    mode = args.mode
+    if mode == "extract":
+        extract_answers()
+    elif mode == "metadata":
+        generate_metadata()
+    elif mode == "graph":
+        create_graphs()
+    elif mode == "test":
+        test(args)
+
+
+def test(args):
+
     selected_models = args.models
     selected_modalities = args.modalities
     selected_datasets = args.datasets
-    num_samples = args.num_samples
-    extraction_type = args.extraction_type
-    use_simple_prompt = args.use_simple_prompt
     # Tracks how many models we've run through. Once we've run through them all, the
     # operation won't continue after a failed response.
     model_index = 0
@@ -32,15 +43,24 @@ def main():
                     run_test(model=model, modality=modality, dataset=entry, args=args)
             # Increment and carry on to the next model
             model_index += 1
-        except Exception as e:
-            print(e)
+        except OpenAIError as e:
+            print(f"An OpenAI API error has occurred: \n{e}\nAttempting to retry after {ERROR_WAIT_TIME} seconds.")
             # Wait and try again
             time.sleep(ERROR_WAIT_TIME)
 
 
 def parse_args():
-
     parser = argparse.ArgumentParser(description='Platform for running series of tests on series of OpenAI models.')
+
+    # Takes a run mode. Default is to perform tests.
+    # Extract: runs data_utils.extract_answers to extract final answers from all test queries
+    # Metadata: Generates metadate files for all tests in config.RESULTS_FOLDER, saving them in config.METADATA_FOLDER.
+    # This includes calculating accuracy and quantifying CoT reasoning.
+    # Graph: Runs create_graphs.create_graphs to create all graphs defined there.
+    parser.add_argument(
+        "--mode", type=str, choices=["test", "metadata", "graph", "extract"], default="test",
+        help="Choose whether to run tests, extract answers, collate metadata, or graph results."
+    )
 
     # Takes a list of open AI models to iteratively run through the provided modalities and datasets.
     parser.add_argument(
@@ -53,17 +73,18 @@ def parse_args():
 
     # Takes a list of datasets to be run through each model with each modality.
     parser.add_argument(
-        "--datasets", type=str, nargs='+', choices=datasets, help="Datasets to be tested on."
+        "--datasets", type=str, nargs='+', choices=DATASETS, help="Datasets to be tested on."
     )
 
     # Takes a list of datasets to be run through each model with each modality.
     parser.add_argument(
-        "--num_samples", type=int, help="Defines the number of samples to be ran for each dataset."
+        "--num_samples", type=int, help="Defines the max number of samples to be ran for each dataset."
     )
 
     parser.add_argument(
-        "--use_simple_prompt", type=bool, default=True, help="If true, uses a simplified prompt format (Does not append Q: to the "
-                                               "beginning of each question or A: after each question.)"
+        "--use_simple_prompt", type=bool, default=True,
+        help="If true, uses a simplified prompt format (Does not append Q: to the "
+             "beginning of each question or A: after each question.)"
     )
 
     parser.add_argument(
@@ -75,7 +96,8 @@ def parse_args():
     )
 
     parser.add_argument(
-        "--save", type=bool, default=True, help="If true, saves the results to a file."
+        "--save", type=bool, default=True, help="If true, saves the test results to a file and the associated metadata"
+                                                " to a metadata file."
     )
 
     parser.add_argument(
@@ -92,12 +114,11 @@ def parse_args():
         "--max_tokens", type=int, default=1000, help="Sets the maximum number of tokens that a model can use."
     )
 
-
     args = parser.parse_args()
     return args
 
 
 if __name__ == '__main__':
-    # create_graphs()
+    # process_mmlu()
     main()
 

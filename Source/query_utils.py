@@ -1,6 +1,4 @@
-import json
 import os
-import re
 import time
 from json import JSONDecodeError
 from os import path
@@ -8,11 +6,11 @@ from os import path
 import openai
 from regex import regex
 
-from config import RESULTS_FOLDER, DATASET_FOLDER, datasets, \
+from answer_extraction import clean_answer
+from config import RESULTS_FOLDER, DATASET_FOLDER, DATASETS, \
     completion, chat, two_stage_extract_prompt, suppression_prompt, cot_prompt, \
     answer_first_prompt, explanation_first_prompt, in_bracket_prompt
-from data_utils import load_dataset
-
+from file_utils import load_dataset, generate_metadata_path, write_json, read_json
 
 # Stores the time of the last query
 last_query_time = 0
@@ -31,7 +29,6 @@ def timer(wait_time: float):
 
 
 def query(model: str, prompt: str, max_tokens: int) -> str:
-
     if model in completion:
         response = openai.Completion.create(
             engine=model,
@@ -93,68 +90,6 @@ def build_prompt(question: str, modality: str, use_simple_prompt: bool, bracket_
     return output
 
 
-def clean_answer(answer: str, dataset: str, extraction_type: str, options: dict = None) -> float | str:
-    # Remove commas
-    pred = answer.replace(",", "")
-    # Answer cleaning patterns
-    if extraction_type == "in-brackets":
-        match = [s for s in regex.findall("\{(?:[^{}]|(?R))*}", pred)]
-        if len(match) > 0:
-            pred = match[-1]
-        else:
-            print("Bracket-based extraction failed.")
-
-    # Citation: This basic method and some of this code is taken from
-    # DOI 10.48550/arXiv.2205.11916
-    if dataset in ['aqua', 'mmlu']:
-        ans = regex.findall(r'[ABCDE]', pred)
-        if len(ans) == 0:
-            ans = [options[option] for option in options if option in pred]
-            if len(ans) > 0:
-                pred = ans[0]
-        else:
-            pred = ans[-1]
-
-    elif dataset in ['multiarith', 'gsm8k'] or "step" in dataset:
-        pred = [s for s in re.findall(r'-?\d+\.?\d*', pred)]
-    elif dataset in ["coin_flip"]:
-        pred = pred.lower()
-        pred = re.sub("\"|\'|\n|\.|\s|\:|\,"," ", pred)
-        pred = pred.split(" ")
-        pred = [i for i in pred if i in ("yes", "no")]
-        if len(pred) == 0:  # Find the last occurrence of yes or no in the response
-            new_ans = answer.lower()
-            yes_index = new_ans.rfind("yes")
-            no_index = new_ans.rfind("no")
-            if yes_index > no_index:
-                pred = ["yes"]
-            else:
-                pred = ["no"]
-    else:
-        raise ValueError("The given dataset has not been defined.")
-
-    # Get the last matching word of the response, unless we're doing answer_first
-    if len(pred) == 0:
-        return ""
-    else:
-        pred = pred[-1]
-
-    # Remove trailing periods
-    if pred[-1] == ".":
-        pred = pred[:-1]
-
-    # If the answer should be numerical, try to return it as a float, otherwise return an empty string.
-    if dataset in ['multiarith', 'gsm8k'] or "step" in dataset:
-        try:
-            final = float(pred)
-            return final
-        except Exception as e:
-            return ""
-    else:
-        # If the answer should be a string, go ahead and return it.
-        return pred
-
-
 def run_test(model: str, modality: str, dataset: str, args):
     # Runs a test on a given model, test modality, and dataset.
     # If num samples is 0, runs the whole dataset, otherwise stops at index num_samples
@@ -182,8 +117,10 @@ def run_test(model: str, modality: str, dataset: str, args):
 
     # Set the dataset folder, because we don't split individual step runs into separate folders
     if 'step' in dataset:
+        stepcount = regex.findall(r'-?\d+\.?\d*', dataset)[0]
         dataset_sub = "stepwise"
     else:
+        stepcount = None
         dataset_sub = dataset
 
     save_directory = path.join(RESULTS_FOLDER, model, modality, dataset_sub)
@@ -193,11 +130,13 @@ def run_test(model: str, modality: str, dataset: str, args):
         print(f"New directory {save_directory} created.")
 
     # Results file: Stores last index ran, total count, correct counts, and accuracy.
-    metadata_file = prompt + "-" + extraction_type + "-" + model + "-" + modality + "-" + dataset + "-Metadata.jsonl"
-    metadata_path = path.join(save_directory, metadata_file)
-    output_file = prompt + "-" + extraction_type + "-" + model + "-" + modality + "-" + dataset + ".jsonl"
+    output_file = prompt + "-" + extraction_type + "-" + model + "-" + modality + "-" + dataset + ".json"
     output_path = path.join(save_directory, output_file)
-    dataset_path = path.join(DATASET_FOLDER, datasets[dataset])
+
+    dataset_path = path.join(DATASET_FOLDER, DATASETS[dataset])
+
+    metadata_path = generate_metadata_path(model=model, extraction_type=extraction_type, modality=modality,
+                                           dataset=dataset, steps=stepcount)
 
     # Store the start index, total number of questions asked so far, the number answered correctly,
     # a rolling accuracy, and the query / response / answer / ground truth.
@@ -208,13 +147,10 @@ def run_test(model: str, modality: str, dataset: str, args):
 
     if cont and path.exists(metadata_path):
         try:
-            with open(metadata_path, "r") as saved:
-                line = saved.readline()
-                vals = json.loads(line)
-
-                start_index = vals["Last Sample Index"] + 1
-                total = vals["Total"]
-                correct = vals["Correct"]
+            metadata = read_json(filepath=metadata_path)
+            start_index = metadata["Last Sample Index"] + 1
+            total = metadata["Total"]
+            correct = metadata["Correct"]
 
         except JSONDecodeError as e:
             print(f"There was an error decoding the first line of {metadata_path} into json at index {e.pos}")
@@ -235,7 +171,7 @@ def run_test(model: str, modality: str, dataset: str, args):
         # Run the timer to keep from querying too quickly
         timer(wait_time)
 
-        x, y, original = data[i]
+        x, y, test_entry = data[i]
         # Build the prompt out of our question
         prompt = build_prompt(question=x, modality=modality, use_simple_prompt=use_simple_prompt,
                               bracket_extract=bracket_extract)
@@ -243,23 +179,39 @@ def run_test(model: str, modality: str, dataset: str, args):
         response = query(model=model, prompt=prompt, max_tokens=max_tokens)
 
         if dataset == "aqua" or dataset == "mmlu":
-            options = original["Options"]
+            options = test_entry["Options"]
         else:
             options = None
 
         #  If replicating  DOI 10.48550/arXiv.2205.11916, zero shot has no answer extraction prompt.
-        if extraction_type == "none" or extraction_type == "in-brackets":
+        if extraction_type == "in-brackets":
             extraction_response = "None"
-            answer = clean_answer(dataset=dataset, answer=response, extraction_type=extraction_type, options=options)
+            end_pred, front_pred = clean_answer(response=response, dataset=dataset, extraction_type=extraction_type,
+                                                options=options)
         elif extraction_type == "two-stage":
             # Run the timer to keep from querying too quickly, then resubmit the response for answer extraction
             timer(wait_time)
-            extraction = prompt + " " + response + "\n" + two_stage_extract_prompt
-            extraction_response = query(model, extraction, max_tokens=max_tokens)
-            answer = clean_answer(dataset=dataset, answer=extraction_response, extraction_type=extraction_type,
-                                  options=options)
+            extraction_prompt = prompt + " " + response + "\n" + two_stage_extract_prompt
+            extraction_response = query(model, extraction_prompt, max_tokens=max_tokens)
+            if modality == "answer_first":
+                _, front_pred = clean_answer(response=response, dataset=dataset,
+                                             extraction_type=extraction_type,
+                                             options=options)
+                end_pred, _ = clean_answer(response=extraction_response, dataset=dataset,
+                                           extraction_type=extraction_type,
+                                           options=options)
+            else:
+                end_pred, front_pred = clean_answer(response=response, dataset=dataset, extraction_type=extraction_type,
+                                                    options=options)
         else:
             raise ValueError("The provided extraction type is not valid.")
+
+        if modality == "answer_first":
+            answer = front_pred
+            final_answer = end_pred
+        else:
+            answer = end_pred
+            final_answer = end_pred
 
         total += 1
         if type(y) is str:
@@ -270,22 +222,25 @@ def run_test(model: str, modality: str, dataset: str, args):
             correct += 1
         accuracy = correct / total * 100
 
-        result = {"Q": prompt, "R": response, "Extract-Response": extraction_response, "A": answer, "GT": y}
-
-        # print(f"Question: {prompt}\nResponse: {response}\nAnswer: {answer}\nGT: {y}")
+        result = {"Index": i, "Query": prompt, "Response": response, "Extract-Response": extraction_response,
+                  "Answer": answer, "GT": y}
+        if modality == "answer_first":
+            result["Final Answer"] = final_answer
+        if dataset in ["aqua", "mmlu"]:
+            result["Options"] = options
 
         if save:
             # Save the run results
-            with open(metadata_path, 'w') as metadata_file:
-                processed = json.dumps({"Total": total, "Correct": correct,
-                                        "Accuracy": accuracy, "Last Sample Index": i, "Extraction Type":
-                                            extraction_type, "Modality": modality, "Model": model,
-                                        "Dataset": dataset, "Simple Prompt": use_simple_prompt, })
-                metadata_file.write(processed)
-            with open(output_path, 'a+') as output_file:
-                processed = json.dumps(result) + '\n'
-                output_file.write(processed)
+            meta_data = {"Total": total, "Correct": correct,
+                         "Accuracy": accuracy, "Last Sample Index": i, "Extraction Type":
+                             extraction_type, "Modality": modality, "Model": model,
+                         "Dataset": dataset, "Simple Prompt": use_simple_prompt}
+            write_json(filepath=metadata_path, data=meta_data)
+            if path.exists(output_path):
+                test_results = read_json(filepath=output_path)
+            else:
+                test_results = list()
+            test_results.append(result)
+            write_json(filepath=output_path, data=test_results)
 
     print("Test " + model + "-" + modality + "-" + dataset + " completed.")
-
-

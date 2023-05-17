@@ -14,5 +14,6 @@ class JsonlDataset(Dataset):
     def __getitem__(self, item):
         x = self.data[item]["Question"]
         y = self.data[item]["Ground Truth"]
-        return x, y
+        original = self.data[item]
+        return x, y, original
 
