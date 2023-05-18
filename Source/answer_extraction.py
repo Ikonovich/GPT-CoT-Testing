@@ -108,6 +108,9 @@ def clean_answer(response: str, dataset: str, extraction_type: str, options: dic
             # Then, runs them through answer extraction.
             # Then concatenates the results.
             results = _extract(data=brackets, dataset=dataset, options=options)
+            if len(results) == 0:
+                print('Bracket-based extraction failed. Falling back on full-response extraction.')
+                results = _extract(data=response, dataset=dataset, options=options)
         else:
             print('Bracket-based extraction failed. Falling back on full-response extraction.')
             results = _extract(data=response, dataset=dataset, options=options)
