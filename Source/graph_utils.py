@@ -24,6 +24,8 @@ modality_to_dash_map = {"zero_shot": (0, (1, 0)), "zero_shot_cot": (0, (1, 3)), 
 def generate_singular_plot(ax, data: DataFrame, x: str, y: str, coordinate: int | tuple[int, int] | None,
                            title: str | None, xtick_labels: list[str] | None, y_label: str = None,
                            palette: list[str] = None):
+    print(data.to_string())
+
     if coordinate is None:
         sns.barplot(x=x, y=y, palette=palette, ax=ax, data=data)
 
@@ -69,7 +71,6 @@ def graph_dataset_comparison(title: str, data: DataFrame,
 
     chart_labels = ["MultiArith", "GSM8k", "Aqua-RAT", "Coin Flip", "MMLU"]
     palette = [modality_to_color_map[i] for i in modalities]
-    x_labels = [modality_to_label_map[i] for i in modalities]
 
     fig, ax = plt.subplots(plot_size[0], plot_size[1], figsize=figsize, layout="constrained", sharey=True)
     plt.tick_params(labelright=True)
@@ -176,7 +177,7 @@ def graph_stepwise_comparison(data: DataFrame, title: str, modalities: list[str]
         color = modality_to_color_map[modality]
 
         df_modality = data[data['Modality'] == modality]
-        ax = sns.lineplot(x='Step', y='Accuracy', data=df_modality,
+        ax = sns.lineplot(x='Steps', y='Accuracy', data=df_modality,
                           color=color,
                           label=modality_to_label_map[modality])
 
@@ -184,9 +185,10 @@ def graph_stepwise_comparison(data: DataFrame, title: str, modalities: list[str]
         ax.legend().get_lines()[i].set_linestyle(modality_to_dash_map[modality])
 
         # Add the confidence intervals
-        plt.fill_between(df_modality['Step'], df_modality["ci_lower"], df_modality["ci_upper"], color=color,
+        plt.fill_between(df_modality['Steps'], df_modality["ci_lower"], df_modality["ci_upper"], color=color,
                          alpha=.1)
 
+    plt.title(label=title)
     plt.xlabel("Number of Steps Per Problem")
     plt.savefig(os.path.join(GRAPHS_FOLDER, output_path + ".svg"), format='svg', dpi=1200)
     plt.close("all")

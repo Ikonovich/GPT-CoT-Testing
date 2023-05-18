@@ -5,12 +5,12 @@ import os
 import pandas as pd
 from regex import regex
 
-from config import RESULTS_FOLDER, z_val, METADATA_FOLDER, modality_index_map, dataset_index_map
+from config import RESULTS_FOLDER, z_val, METADATA_FOLDER, modality_index_map, dataset_index_map, model_index_map
 
 from file_utils import get_filepaths, read_json, write_json
 
 
-def search_metadata(model: str = None,
+def search_metadata(models: list[str] = None,
                     modalities: list[str] = None,
                     datasets: list[str] = None,
                     extraction_types: list[str] = None):
@@ -20,8 +20,8 @@ def search_metadata(model: str = None,
     metapath = os.path.join(METADATA_FOLDER, "Test Results.csv")
     frame = pd.read_csv(metapath)
 
-    if model is not None:
-        frame = frame[frame.Model == model]
+    if models is not None:
+        frame = frame[frame.Model.isin(models)]
 
     if modalities is not None:
         frame = frame[frame.Modality.isin(modalities)]
@@ -72,7 +72,7 @@ def path_to_metadata(test_path: str) -> dict[str, str]:
     elif "gpt-4" in test_path:
         model = "gpt-4"
     elif "gpt-3.5" in test_path:
-        model = "gpt-3.5"
+        model = "gpt-3.5-turbo"
     elif "davinci-002" in test_path:
         model = "text-davinci-002"
     else:
@@ -125,6 +125,7 @@ def path_to_metadata(test_path: str) -> dict[str, str]:
                      "Modality": modality,
                      "Modality Index": modality_index_map[modality],
                      "Model": model,
+                     "Model Index": model_index_map[model],
                      "Extraction Type": extraction_type,
                      "Simple Prompt": simple_prompt,
                      "Test Path": test_path})
@@ -210,21 +211,21 @@ def test_quantification(test_path: str = None):
     if cot_total == 0:
         cot_accuracy = 0
     else:
-        cot_accuracy = (cot_accurate / cot_total)
+        cot_accuracy = (cot_accurate / cot_total) * 100
 
     if non_cot_total == 0:
         non_cot_accuracy = 0
     else:
-        non_cot_accuracy = (non_cot_accurate / non_cot_total)
+        non_cot_accuracy = (non_cot_accurate / non_cot_total) * 100
 
-    cot_percent = (cot_total / total)
+    cot_percent = (cot_total / total) * 100
 
     total_accuracy = (total_accurate / total)
-    ci_radius = (z_val * math.sqrt((total_accuracy * (1 - total_accuracy)) / total))
-
+    ci_radius = (z_val * math.sqrt((total_accuracy * (1 - total_accuracy)) / total)) * 100
+    total_accuracy = total_accuracy * 100
     return {"Total": total,
             "Total Accurate": total_accurate,
-            "Accuracy": total_accuracy,
+            "Total Accuracy": total_accuracy,
             "Percent of Answers Containing CoT": cot_percent,
             "CoT Accuracy": cot_accuracy,
             "Non-CoT Accuracy": non_cot_accuracy,

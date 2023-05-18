@@ -16,7 +16,7 @@ RESULTS_FOLDER = r"Results\Primary Test Results"
 METADATA_FOLDER = r"Results\Metadata"
 # Store the base folder for generated graphs
 
-GRAPHS_FOLDER = RESULTS_FOLDER + r'\Graphs'
+GRAPHS_FOLDER = r'Results\Graphs'
 
 # Store all available test modalities
 modalities = ["zero_shot", "zero_shot_cot", "suppressed_cot", "explanation_first",

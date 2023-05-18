@@ -1,5 +1,6 @@
 import argparse
 import ast
+import json
 import time
 
 from openai.error import OpenAIError
@@ -8,6 +9,7 @@ from create_graphs import create_graphs
 from data_utils import generate_metadata, process_mmlu
 from answer_extraction import extract_answers
 from config import DATASETS, ERROR_WAIT_TIME, chat, completion, modalities
+from file_utils import get_filepaths, write_json
 from query_utils import run_test
 
 
@@ -121,4 +123,29 @@ def parse_args():
 
 if __name__ == '__main__':
     # process_mmlu()
+
+    # root = r"G:\My Drive\GPT Testing\Source\Results\Primary Test Results\gpt-3.5-turbo\suppressed_cot\coin_flip"
+    #
+    # paths = get_filepaths(root)
+    #
+    # for path in paths:
+    #     results = list()
+    #     with open(path, 'r') as json_file:
+    #         json_list = list(json_file)
+    #
+    #     i = 0
+    #     for json_str in json_list:
+    #         result = json.loads(json_str)
+    #
+    #         new_item = dict()
+    #         new_item["Index"] = i
+    #         new_item["Query"] = result["Q"]
+    #         new_item["Response"] = result["R"]
+    #         new_item["Extract-Response"] = result["Extract-Response"]
+    #         new_item["GT"] = result["GT"]
+    #         results.append(new_item)
+    #         i += 1
+    #     save_path = path[:-1]
+    #
+    #     write_json(filepath=save_path, data=results)
     main()

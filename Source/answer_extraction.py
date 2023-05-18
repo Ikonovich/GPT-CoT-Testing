@@ -8,7 +8,7 @@ from file_utils import get_filepaths, read_json, write_json
 def extract_answers(root: str | None = None):
     # Extracts answers from all test data
     if root is None:
-        root = r"G:\My Drive\GPT Testing\Source\Results\Primary Test Results\gpt-3.5-turbo\answer_first\aqua"
+        root = RESULTS_FOLDER
 
     data_paths = get_filepaths(root=root, contains=["json"], excludes=["Metadata"])
 
@@ -95,6 +95,13 @@ def clean_answer(response: str, dataset: str, extraction_type: str, options: dic
         brackets = [s for s in regex.findall(r'\{(?:[^{}]|(?R))*}', response)]
 
         if len(brackets) > 0:
+            # Remove the brackets
+            cleaned = list()
+            for item in brackets:
+                item = item.replace("{", "")
+                item = item.replace("}", "")
+                cleaned.append(item)
+            brackets = cleaned
             # Extract two predictions from the brackets.
             # Takes the first and last items extracted from the brackets.
             # These items are allowed to be the same.

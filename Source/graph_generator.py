@@ -2,8 +2,8 @@ import pandas as pd
 from matplotlib import pyplot as plt
 import seaborn as sns
 
-from data_utils import nonstep_quantification, stepwise_quantification, model_index_map, \
-    mmlu_quantification
+from config import model_index_map
+from data_utils import search_metadata
 from graph_utils import graph_generic, graph_cot_data, generate_singular_plot, graph_stepwise_comparison, \
     modality_to_label_map, modality_to_color_map, graph_dataset_comparison
 
@@ -45,8 +45,10 @@ def answer_first_vs_suppressed():
     x_labels = ["Zero Shot", "Suppressed CoT", "Answer First"]
     chart_labels = ["MultiArith", "GSM8k", "Aqua-RAT", "Coin Flip", "MMLU"]
 
-    # Graph GPT-4 Ans First results
-    gpt_4_results = nonstep_quantification(model="gpt-4", modalities=["zero_shot", "suppressed_cot", "answer_first"])
+    # Graph GPT-4 Answer First results
+    gpt_4_results = search_metadata(models="gpt-4",
+                                    modalities=["zero_shot", "suppressed_cot", "answer_first"],
+                                    datasets=["stepwise"])
     data = pd.melt(gpt_4_results, id_vars=["Model", "Modality", "Dataset Index", "Modality Index", "Dataset"],
                    value_vars=["Total Accuracy"], value_name="Accuracy")
     graph_generic(title="GPT-4 Performance, Answer First vs Suppressed CoT, All Datasets",
@@ -72,8 +74,8 @@ def answer_first_vs_suppressed():
                    output_path=r"AnswerFirstAnalysis\gpt4-ans-first-cot-quant")
 
     # Graph GPT-3.5 Ans First results
-    gpt_35_results = nonstep_quantification(model="gpt-3.5-turbo", modalities=["zero_shot", "suppressed_cot",
-                                                                               "answer_first"])
+    gpt_35_results = search_metadata(models="gpt-3.5-turbo", modalities=["zero_shot", "suppressed_cot",
+                                                                        "answer_first"])
     data = pd.melt(gpt_35_results, id_vars=["Model", "Modality", "Dataset Index", "Modality Index", "Dataset"],
                    value_vars=["Total Accuracy"], value_name="Accuracy")
     graph_generic(title="GPT-3.5 Performance, Answer First vs Suppressed CoT, All Datasets",
@@ -100,8 +102,9 @@ def answer_first_vs_suppressed():
 
     # Graph GPT-4 Answer First Stepwise results
 
-    gpt_4_results = stepwise_quantification(model="gpt-4",
-                                            modalities=["zero_shot", "suppressed_cot", "answer_first"])
+    gpt_4_results = search_metadata(models="gpt-4",
+                                    modalities=["zero_shot", "suppressed_cot", "answer_first"],
+                                    datasets=["stepwise"])
     data = pd.melt(gpt_4_results, id_vars=["Model", "Modality", "Modality Index", "Dataset", "ci_upper", "ci_lower"],
                    value_vars=["Total Accuracy"], value_name="Accuracy").sort_values("Dataset")
 
@@ -128,8 +131,9 @@ def answer_first_vs_suppressed():
 
     # Graph GPT-3.5 Answer First Stepwise results
 
-    gpt_35_results = stepwise_quantification(model="gpt-3.5-turbo",
-                                             modalities=["zero_shot", "suppressed_cot", "answer_first"])
+    gpt_35_results = search_metadata(models="gpt-3.5-turbo",
+                                     modalities=["zero_shot", "suppressed_cot", "answer_first"],
+                                     datasets=["stepwise"])
     data = pd.melt(gpt_35_results, id_vars=["Model", "Modality", "Modality Index", "Dataset", "ci_upper", "ci_lower"],
                    value_vars=["Total Accuracy"], value_name="Accuracy").sort_values("Dataset")
 
@@ -160,8 +164,8 @@ def explanation_first_vs_cot():
     chart_labels = ["MultiArith", "GSM8k", "Aqua-RAT", "Coin Flip", "MMLU"]
 
     # Graph GPT-4 Exp First results
-    gpt_4_results = nonstep_quantification(model="gpt-4",
-                                           modalities=["zero_shot", "zero_shot_cot", "explanation_first"])
+    gpt_4_results = search_metadata(models="gpt-4",
+                                    modalities=["zero_shot", "zero_shot_cot", "explanation_first"])
     data = pd.melt(gpt_4_results, id_vars=["Model", "Modality", "Dataset Index", "Modality Index", "Dataset"],
                    value_vars=["Total Accuracy"], value_name="Accuracy")
     graph_generic(title="GPT-4 Performance, Explanation First vs Zero Shot CoT, All Datasets",
@@ -187,8 +191,8 @@ def explanation_first_vs_cot():
                    output_path=r"ExplanationFirstAnalysis\gpt4-exp-first-cot-quant")
 
     # Graph GPT-3.5 Exp First results
-    gpt_35_results = nonstep_quantification(model="gpt-3.5-turbo",
-                                            modalities=["zero_shot", "zero_shot_cot", "explanation_first"])
+    gpt_35_results = search_metadata(models="gpt-3.5-turbo",
+                                     modalities=["zero_shot", "zero_shot_cot", "explanation_first"])
     data = pd.melt(gpt_35_results, id_vars=["Model", "Modality", "Dataset Index", "Modality Index", "Dataset"],
                    value_vars=["Total Accuracy"], value_name="Accuracy")
     graph_generic(title="GPT-3.5 Performance, Explanation First vs Suppressed CoT, All Datasets",
@@ -214,8 +218,9 @@ def explanation_first_vs_cot():
                    output_path=r"ExplanationFirstAnalysis\gpt35-exp-first-cot-quant")
 
     # Graph GPT-4 Explanation First Stepwise results
-    gpt_4_results = stepwise_quantification(model="gpt-4",
-                                            modalities=["zero_shot", "zero_shot_cot", "explanation_first"])
+    gpt_4_results = search_metadata(models="gpt-4",
+                                    modalities=["zero_shot", "zero_shot_cot", "explanation_first"],
+                                    datasets=["stepwise"])
     data = pd.melt(gpt_4_results, id_vars=["Model", "Modality", "Modality Index", "Dataset", "ci_upper", "ci_lower"],
                    value_vars=["Total Accuracy"], value_name="Accuracy").sort_values("Dataset")
 
@@ -227,14 +232,14 @@ def explanation_first_vs_cot():
 
     # CoT Quantification
     data = pd.melt(gpt_4_results,
-                   id_vars=["Step", "Modality", "Modality Index", "Model", "Model Index", "ci_upper", "ci_lower"],
+                   id_vars=["Steps", "Modality", "Modality Index", "Model", "Model Index", "ci_upper", "ci_lower"],
                    value_vars=["Total Accuracy", "Answers Containing CoT", "CoT Accuracy", "Non-CoT Accuracy"],
                    var_name="Metric",
                    value_name="Percentage")
 
     graph_cot_data(title="GPT-4 Performance, Explanation First vs Suppressed CoT, Stepwise Dataset",
                    data=data,
-                   x="Step",
+                   x="Steps",
                    figsize=(15, 5),
                    plot_size=(1, 3),
                    chart_labels=x_labels,
@@ -242,8 +247,9 @@ def explanation_first_vs_cot():
                    output_path=r"ExplanationFirstAnalysis\gpt4-step-exp-first-cot-quant")
 
     # Graph GPT-3.5 Explanation First Stepwise results
-    gpt_35_results = stepwise_quantification(model="gpt-3.5-turbo",
-                                             modalities=["zero_shot", "zero_shot_cot", "explanation_first"])
+    gpt_35_results = search_metadata(models="gpt-3.5-turbo",
+                                     modalities=["zero_shot", "zero_shot_cot", "explanation_first"],
+                                     datasets=["stepwise"])
     data = pd.melt(gpt_35_results, id_vars=["Model", "Modality", "Modality Index", "Dataset", "ci_upper", "ci_lower"],
                    value_vars=["Total Accuracy"], value_name="Accuracy").sort_values("Dataset")
 
@@ -269,95 +275,19 @@ def explanation_first_vs_cot():
                    output_path=r"ExplanationFirstAnalysis\gpt35-step-exp-first-cot-quant")
 
 
-def coin_flip_supp_results():
-    # Graph GPT-4 Coin CoT results
-    modalities = ["zero_shot", "zero_shot_cot", "suppressed_cot"]
-
-    gpt_4_results = nonstep_quantification(model="gpt-4", modalities=modalities,
-                                           datasets=["coin_flip"])
-
-    gpt_35_results = nonstep_quantification(model="gpt-3.5-turbo",
-                                            modalities=["zero_shot", "zero_shot_cot", "suppressed_cot"],
-                                            datasets=["coin_flip"])
-    data = pd.concat([gpt_35_results, gpt_4_results])
-    compare = pd.melt(data, id_vars=["Model", "Modality", "Model Index", "Modality Index"],
-                      value_vars=["Total Accuracy"], value_name="Accuracy").sort_values("Modality Index")
-    graph_generic(title="Coin Flip Model Comparison",
-                  data=compare, groupby="Model Index", sort_by="Modality Index",
-                  output_path="coin-flip-supp-results", chart_labels=["GPT 3.5", "GPT-4"],
-                  x_labels=[modality_to_label_map[i] for i in modalities],
-                  palette=[modality_to_color_map[i] for i in modalities],
-                  figsize=(10, 5), plot_size=(1, 2))
-
-    # CoT Quant results
-    data = pd.melt(data, id_vars=["Model", "Modality", "Dataset Index", "Modality Index", "Dataset"],
-                   value_vars=["Total Accuracy", "Answers Containing CoT", "CoT Accuracy", "Non-CoT Accuracy"],
-                   var_name="Metric",
-                   value_name="Percentage")
-
-    graph_cot_data(title="Coin Flip CoT Quantification, GPT-4 and GPT-3.5",
-                   data=data,
-                   figsize=(10, 5),
-                   plot_size=(1, 3),
-                   hue="Metric",
-                   x="Dataset",
-                   output_path="coin-flip-supp-cot-quant")
-
-
-def coin_flip_full_results():
-    # Graph GPT-4 Coin CoT results
-    modalities = ["zero_shot", "zero_shot_cot", "suppressed_cot", "explanation_first", "answer_first"]
-
-    gpt_4_results = nonstep_quantification(model="gpt-4",
-                                           modalities=modalities,
-                                           datasets=["coin_flip"])
-    gpt_35_results = nonstep_quantification(model="gpt-3.5-turbo",
-                                            modalities=modalities,
-                                            datasets=["coin_flip"])
-    gpt_3_results = nonstep_quantification(model="text-davinci-002",
-                                           modalities=modalities,
-                                           datasets=["coin_flip"])
-
-    data = pd.concat([gpt_3_results, gpt_35_results, gpt_4_results])
-    compare = pd.melt(data, id_vars=["Model", "Modality", "Model Index", "Modality Index"],
-                      value_vars=["Total Accuracy"], value_name="Accuracy").sort_values("Modality Index")
-
-    graph_generic(title="Coin Flip Model Comparison",
-                  data=compare, groupby="Model Index", sort_by="Modality Index",
-                  output_path=r"DatasetAnalysis\coin-flip-full-results",
-                  chart_labels=["text-davinci-002", "GPT-3.5", "GPT-4"],
-                  x_labels=[modality_to_label_map[i] for i in modalities],
-                  palette=[modality_to_color_map[i] for i in modalities],
-                  figsize=(15, 5), plot_size=(1, 3))
-
-    # CoT Quant results
-    data = pd.melt(data, id_vars=["Model", "Modality", "Dataset Index", "Modality Index", "Dataset"],
-                   value_vars=["Total Accuracy", "Answers Containing CoT", "CoT Accuracy", "Non-CoT Accuracy"],
-                   var_name="Metric",
-                   value_name="Percentage")
-
-    graph_cot_data(title="Coin Flip CoT Quantification, All Models, All Modalities",
-                   data=data,
-                   figsize=(15, 5),
-                   plot_size=(2, 3),
-                   hue="Metric",
-                   x="Dataset",
-                   output_path="coin-flip-full-cot-quant")
-
-
 def multiarith_full_results():
     # Graph GPT-4 Coin CoT results
     modalities = ["zero_shot", "zero_shot_cot", "suppressed_cot", "explanation_first", "answer_first"]
 
-    gpt_4_results = nonstep_quantification(model="gpt-4", modalities=modalities,
-                                           datasets=["multiarith"])
+    gpt_4_results = search_metadata(models=["gpt-4"], modalities=modalities,
+                                    datasets=["multiarith"])
 
-    gpt_35_results = nonstep_quantification(model="gpt-3.5-turbo",
-                                            modalities=modalities,
-                                            datasets=["multiarith"])
-    gpt_3_results = nonstep_quantification(model="text-davinci-002",
-                                           modalities=modalities,
-                                           datasets=["multiarith"])
+    gpt_35_results = search_metadata(models=["gpt-3.5-turbo"],
+                                     modalities=modalities,
+                                     datasets=["multiarith"])
+    gpt_3_results = search_metadata(models=["text-davinci-002"],
+                                    modalities=modalities,
+                                    datasets=["multiarith"])
     data = pd.concat([gpt_3_results, gpt_35_results, gpt_4_results])
 
     compare = pd.melt(data, id_vars=["Model", "Modality", "Model Index", "Modality Index"],
@@ -388,15 +318,15 @@ def multiarith_full_results():
 def gsm8k_full_results():
     # Graph GPT-4 Coin CoT results
     modalities = ["zero_shot", "zero_shot_cot", "suppressed_cot", "explanation_first", "answer_first"]
-    gpt_4_results = nonstep_quantification(model="gpt-4",
-                                           modalities=modalities,
-                                           datasets=["gsm8k"])
-    gpt_35_results = nonstep_quantification(model="gpt-3.5-turbo",
-                                            modalities=modalities,
-                                            datasets=["gsm8k"])
-    gpt_3_results = nonstep_quantification(model="text-davinci-002",
-                                           modalities=modalities,
-                                           datasets=["gsm8k"])
+    gpt_4_results = search_metadata(models="gpt-4",
+                                    modalities=modalities,
+                                    datasets=["gsm8k"])
+    gpt_35_results = search_metadata(models="gpt-3.5-turbo",
+                                     modalities=modalities,
+                                     datasets=["gsm8k"])
+    gpt_3_results = search_metadata(models="text-davinci-002",
+                                    modalities=modalities,
+                                    datasets=["gsm8k"])
 
     data = pd.concat([gpt_3_results, gpt_35_results, gpt_4_results])
     compare = pd.melt(data, id_vars=["Model", "Modality", "Model Index", "Modality Index"],
@@ -429,15 +359,15 @@ def aqua_full_results():
     # Graph GPT-4 Coin CoT results
     modalities = ["zero_shot", "zero_shot_cot", "suppressed_cot", "explanation_first", "answer_first"]
 
-    gpt_4_results = nonstep_quantification(model="gpt-4",
-                                           modalities=modalities,
-                                           datasets=["aqua"])
-    gpt_35_results = nonstep_quantification(model="gpt-3.5-turbo",
-                                            modalities=modalities,
-                                            datasets=["aqua"])
-    gpt_3_results = nonstep_quantification(model="text-davinci-002",
-                                           modalities=modalities,
-                                           datasets=["aqua"])
+    gpt_4_results = search_metadata(models="gpt-4",
+                                    modalities=modalities,
+                                    datasets=["aqua"])
+    gpt_35_results = search_metadata(models="gpt-3.5-turbo",
+                                     modalities=modalities,
+                                     datasets=["aqua"])
+    gpt_3_results = search_metadata(models="text-davinci-002",
+                                    modalities=modalities,
+                                    datasets=["aqua"])
 
     data = pd.concat([gpt_3_results, gpt_35_results, gpt_4_results])
 
@@ -471,12 +401,12 @@ def mmlu_full_results():
     # Graph GPT-4 Coin CoT results
     modalities = ["zero_shot", "zero_shot_cot", "suppressed_cot", "explanation_first", "answer_first"]
 
-    gpt_4_results = nonstep_quantification(model="gpt-4",
-                                           modalities=modalities,
-                                           datasets=["mmlu"])
-    gpt_35_results = nonstep_quantification(model="gpt-3.5-turbo",
-                                            modalities=modalities,
-                                            datasets=["mmlu"])
+    gpt_4_results = search_metadata(models="gpt-4",
+                                    modalities=modalities,
+                                    datasets=["mmlu"])
+    gpt_35_results = search_metadata(models="gpt-3.5-turbo",
+                                     modalities=modalities,
+                                     datasets=["mmlu"])
 
     data = pd.concat([gpt_35_results, gpt_4_results])
     compare = pd.melt(data, id_vars=["Model", "Modality", "Model Index", "Modality Index"],
@@ -507,7 +437,7 @@ def G4_all():
     modalities = ["zero_shot", "zero_shot_cot", "suppressed_cot", "explanation_first", "answer_first"]
 
     # Graph GPT-4 All dataset results
-    gpt_4_results = nonstep_quantification(model="gpt-4", modalities=modalities)
+    gpt_4_results = search_metadata(models="gpt-4", modalities=modalities)
 
     data = pd.melt(gpt_4_results, id_vars=["Model", "Modality", "Dataset Index", "Modality Index", "Dataset"],
                    value_vars=["Total Accuracy"], value_name="Accuracy")
@@ -542,8 +472,8 @@ def G4_all_suppression():
     # Graph GPT-4 all non-step dataset suppression results
     modalities = ["zero_shot", "zero_shot_cot", "suppressed_cot"]
 
-    gpt_4_results = nonstep_quantification(model="gpt-4",
-                                           modalities=modalities)
+    gpt_4_results = search_metadata(models="gpt-4",
+                                    modalities=modalities)
     data = pd.melt(gpt_4_results,
                    id_vars=["Model", "Modality", "Dataset Index", "Modality Index", "Dataset"],
                    value_vars=["Total Accuracy"],
@@ -575,7 +505,8 @@ def G4_stepwise_suppression():
     # Graph GPT-4 Stepwise Suppression results
     modalities = ["zero_shot", "suppressed_cot"]
 
-    gpt_4_results = stepwise_quantification(model="gpt-4", modalities=modalities)
+    gpt_4_results = search_metadata(models="gpt-4", modalities=modalities,
+                                    datasets=["stepwise"])
     gpt_4_results = gpt_4_results.loc[gpt_4_results['Step'] <= 23]
 
     data = pd.melt(gpt_4_results,
@@ -606,7 +537,8 @@ def G4_stepwise_suppression():
 def G4_stepwise_full():
     # Graph GPT-4 FULL Stepwise results
     modalities = ["zero_shot", "zero_shot_cot", "suppressed_cot", "explanation_first", "answer_first"]
-    gpt_4_results = stepwise_quantification(model="gpt-4", modalities=modalities)
+    gpt_4_results = search_metadata(models="gpt-4", modalities=modalities,
+                                    datasets=["stepwise"])
 
     gpt_4_results = gpt_4_results.loc[gpt_4_results['Step'] <= 9]
 
@@ -639,8 +571,8 @@ def G35_all():
     modalities = ["zero_shot", "zero_shot_cot", "suppressed_cot", "explanation_first", "answer_first"]
 
     # Graph GPT-3.5 All dataset results
-    gpt_35_results = nonstep_quantification(model="gpt-3.5-turbo",
-                                            modalities=modalities)
+    gpt_35_results = search_metadata(models="gpt-3.5-turbo",
+                                     modalities=modalities)
     data = pd.melt(gpt_35_results, id_vars=["Model", "Modality", "Dataset Index", "Modality Index", "Dataset"],
                    value_vars=["Total Accuracy"], value_name="Accuracy").sort_values("Modality Index")
 
@@ -669,8 +601,8 @@ def G35_all():
 def G35_all_suppression():
     modalities = ["zero_shot", "zero_shot_cot", "suppressed_cot"]
 
-    gpt_35_results = nonstep_quantification(model="gpt-3.5-turbo",
-                                            modalities=modalities)
+    gpt_35_results = search_metadata(models="gpt-3.5-turbo",
+                                     modalities=modalities)
     data = pd.melt(gpt_35_results, id_vars=["Model", "Modality", "Dataset Index", "Modality Index", "Dataset"],
                    value_vars=["Total Accuracy"], value_name="Accuracy").sort_values("Modality Index")
     graph_dataset_comparison(title="GPT-3.5 Performance, Zero Shot vs CoT Suppression, All Datasets",
@@ -697,7 +629,8 @@ def G35_all_suppression():
 def G35_stepwise_suppression():
     modalities = ["zero_shot", "zero_shot_cot", "suppressed_cot"]
     # Graph GPT-35 Stepwise Suppression results
-    gpt_35_results = stepwise_quantification(model="gpt-3.5-turbo", modalities=modalities)
+    gpt_35_results = search_metadata(models="gpt-3.5-turbo", modalities=modalities,
+                                     datasets=["stepwise"])
     data = pd.melt(gpt_35_results, id_vars=["Model", "Modality", "Modality Index", "Dataset", "ci_upper", "ci_lower"],
                    value_vars=["Total Accuracy"], value_name="Accuracy")
 
@@ -723,8 +656,9 @@ def G35_stepwise_full():
     modalities = ["zero_shot", "zero_shot_cot", "suppressed_cot",
                   "explanation_first", "answer_first"]
 
-    gpt_35_results = stepwise_quantification(model="gpt-3.5-turbo",
-                                             modalities=modalities)
+    gpt_35_results = search_metadata(models="gpt-3.5-turbo",
+                                     modalities=modalities,
+                                     datasets=["stepwise"])
     data = pd.melt(gpt_35_results, id_vars=["Model", "Modality", "Modality Index", "Dataset", "ci_upper", "ci_lower"],
                    value_vars=["Total Accuracy"], value_name="Accuracy")
     graph_stepwise_comparison(
@@ -750,8 +684,8 @@ def G3_all():
     modalities = ["zero_shot", "zero_shot_cot", "suppressed_cot", "explanation_first", "answer_first"]
 
     # Graph GPT-3 All dataset results
-    gpt_3_results = nonstep_quantification(model="text-davinci-002",
-                                           modalities=modalities)
+    gpt_3_results = search_metadata(models="text-davinci-002",
+                                    modalities=modalities)
 
     data = pd.melt(gpt_3_results, id_vars=["Model", "Modality", "Dataset Index", "Modality Index", "Dataset"],
                    value_vars=["Total Accuracy"], value_name="Accuracy").sort_values("Dataset Index")
@@ -781,8 +715,9 @@ def G3_stepwise_full():
     # Graph GPT-3 (text-davinci-002) FULL Stepwise results
     modalities = ["zero_shot", "zero_shot_cot", "suppressed_cot", "explanation_first", "answer_first"]
 
-    gpt_3_results = stepwise_quantification(model="text-davinci-002",
-                                            modalities=modalities)
+    gpt_3_results = search_metadata(models="text-davinci-002",
+                                    modalities=modalities,
+                                    datasets=["stepwise"])
     data = pd.melt(gpt_3_results, id_vars=["Model", "Modality", "Modality Index", "Dataset"],
                    value_vars=["Total Accuracy"], value_name="Accuracy").sort_values("Dataset")
 
@@ -980,9 +915,10 @@ def MMLU_full():
     modalities = ["zero_shot", "zero_shot_cot", "suppressed_cot", "explanation_first", "answer_first"]
     xtick_labels = ["College", "Combined", "High-School"]
 
-    gpt_4_results = mmlu_quantification(model="gpt-4",
-                                        modalities=["zero_shot", "zero_shot_cot", "suppressed_cot",
-                                                    "explanation_first", "answer_first"])
+    gpt_4_results = search_metadata(models="gpt-4",
+                                    modalities=["zero_shot", "zero_shot_cot", "suppressed_cot",
+                                                "explanation_first", "answer_first"],
+                                    datasets=["mmlu"])
     data = pd.melt(frame=gpt_4_results,
                    id_vars=["Model", "Modality", "Modality Index", "Dataset", "Discriminator"],
                    value_vars=["Total Accuracy"],
@@ -1012,9 +948,10 @@ def MMLU_full():
                    plot_size=(2, 3),
                    output_path=f"mmlu/gpt4-mmlu-cot-quant")
 
-    gpt_35_results = mmlu_quantification(model="gpt-3.5-turbo",
-                                         modalities=["zero_shot", "zero_shot_cot", "suppressed_cot",
-                                                     "explanation_first", "answer_first"])
+    gpt_35_results = search_metadata(models="gpt-3.5-turbo",
+                                     modalities=["zero_shot", "zero_shot_cot", "suppressed_cot",
+                                                 "explanation_first", "answer_first"],
+                                     datasets=["mmlu"])
     data = pd.melt(frame=gpt_35_results,
                    id_vars=["Model", "Modality", "Modality Index", "Dataset", "Discriminator"],
                    value_vars=["Total Accuracy"],
@@ -1050,10 +987,9 @@ def G35_two_stage():
     chart_labels = ["MultiArith", "GSM8k", "Aqua-RAT", "Coin Flip", "MMLU"]
 
     # Graph GPT-3.5 All dataset results
-    gpt_35_results = nonstep_quantification(model="gpt-3.5-turbo",
-                                            root=r"G:\My Drive\GPT Testing\Source\Results\Two-Stage",
-                                            modalities=["zero_shot", "zero_shot_cot", "suppressed_cot",
-                                                        "explanation_first", "answer_first"])
+    gpt_35_results = search_metadata(models="gpt-3.5-turbo",
+                                     modalities=["zero_shot", "zero_shot_cot", "suppressed_cot",
+                                                 "explanation_first", "answer_first"])
 
     data = pd.melt(frame=gpt_35_results,
                    id_vars=["Model", "Modality", "Dataset Index", "Modality Index", "Dataset"],
