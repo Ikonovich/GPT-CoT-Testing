@@ -63,6 +63,6 @@ z_val = 1.96
 modality_index_map = {"zero_shot": 0, "zero_shot_cot": 1, "suppressed_cot": 2,
                       "explanation_first": 3, "answer_first": 4}
 # Maps non-stepwise datasets to indices
-dataset_index_map = {"multiarith": 0, "gsm8k": 1, "aqua": 2, "coin_flip": 3, "mmlu": 4}
+dataset_index_map = {"multiarith": 0, "gsm8k": 1, "aqua": 2, "coin_flip": 3, "mmlu": 4, "stepwise": 5}
 # Maps models to indices
-model_index_map = {"text-davinci-002": 0, "gpt-3.5-turbo": 1, "gpt-4": 2}
+model_index_map = {"text-davinci-002": 0, "gpt-3.5-turbo": 1, "gpt-4": 2, "gpt--32k": 3}

@@ -5,14 +5,20 @@ import os
 import pandas as pd
 from regex import regex
 
-from config import RESULTS_FOLDER, z_val, METADATA_FOLDER
+from config import RESULTS_FOLDER, z_val, METADATA_FOLDER, modality_index_map, dataset_index_map
 
 from file_utils import get_filepaths, read_json, write_json
 
 
-def search_metadata(model: str = None, modalities: list[str] = None, datasets: list[str] = None):
+def search_metadata(model: str = None,
+                    modalities: list[str] = None,
+                    datasets: list[str] = None,
+                    extraction_types: list[str] = None):
+
+    if datasets is None:
+        datasets = ["multiarith", "gsm8k", "aqua", "mmlu", "coin_flip"]
     metapath = os.path.join(METADATA_FOLDER, "Test Results.csv")
-    frame = pd.DataFrame.from_csv(metapath)
+    frame = pd.read_csv(metapath)
 
     if model is not None:
         frame = frame[frame.Model == model]
@@ -22,6 +28,10 @@ def search_metadata(model: str = None, modalities: list[str] = None, datasets: l
 
     if datasets is not None:
         frame = frame[frame.Dataset.isin(datasets)]
+
+    if extraction_types is not None:
+        frame = frame[frame.Extraction_Type.isin(extraction_types)]
+
     return frame
 
 
@@ -111,7 +121,9 @@ def path_to_metadata(test_path: str) -> dict[str, str]:
         raise ValueError
 
     metadata.update({"Dataset": dataset,
+                     "Dataset Index": dataset_index_map[dataset],
                      "Modality": modality,
+                     "Modality Index": modality_index_map[modality],
                      "Model": model,
                      "Extraction Type": extraction_type,
                      "Simple Prompt": simple_prompt,
@@ -251,16 +263,18 @@ def process_mmlu():
             data = file.read()
             data = json.loads(data)
 
+        i = 0
         for item in data:
             options = item["O"]
             options = dict((v, k) for k, v in options.items())
 
-            new_item = {"Query": item["Q"],
+            new_item = {"Index": i,
+                        "Query": item["Q"],
                         "Response": item["R"],
                         "Extract-Response": item["A"],
                         "Options": options,
                         "GT": item["GT"]}
-
+            i += 1
             results.append(new_item)
 
         file_name = f"Simple-two-stage-gpt-4-{modality}-mmlu-{discriminator}.json"

@@ -1,4 +1,5 @@
 import argparse
+import ast
 import time
 
 from openai.error import OpenAIError
@@ -25,7 +26,6 @@ def main():
 
 
 def test(args):
-
     selected_models = args.models
     selected_modalities = args.modalities
     selected_datasets = args.datasets
@@ -82,7 +82,7 @@ def parse_args():
     )
 
     parser.add_argument(
-        "--use_simple_prompt", type=bool, default=True,
+        "--use_simple_prompt", type=ast.literal_eval, default=True,
         help="If true, uses a simplified prompt format (Does not append Q: to the "
              "beginning of each question or A: after each question.)"
     )
@@ -96,14 +96,15 @@ def parse_args():
     )
 
     parser.add_argument(
-        "--save", type=bool, default=True, help="If true, saves the test results to a file and the associated metadata"
-                                                " to a metadata file."
+        "--save", type=ast.literal_eval, default=True,
+        help="If true, saves the test results to a file and the associated metadata"
     )
 
     parser.add_argument(
-        "--continuation", type=bool, default=True, help="If true, will look for a file matching the parameters "
-                                                        + "provided. If this file exists, will append all new results "
-                                                        + "to the file located. Only applies if save==True."
+        "--continuation", type=ast.literal_eval, default=True,
+        help="If true, will look for a file matching the parameters "
+             + "provided. If this file exists, will append all new results "
+             + "to the file located. Only applies if save==True."
     )
 
     parser.add_argument(
@@ -121,4 +122,3 @@ def parse_args():
 if __name__ == '__main__':
     # process_mmlu()
     main()
-

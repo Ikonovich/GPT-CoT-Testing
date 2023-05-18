@@ -117,17 +117,11 @@ def run_test(model: str, modality: str, dataset: str, args):
 
     # Set the dataset folder, because we don't split individual step runs into separate folders
     if 'step' in dataset:
-        stepcount = regex.findall(r'-?\d+\.?\d*', dataset)[0]
         dataset_sub = "stepwise"
     else:
-        stepcount = None
         dataset_sub = dataset
 
     save_directory = path.join(RESULTS_FOLDER, model, modality, dataset_sub)
-    # Make the directory if necessary
-    if not path.exists(save_directory):
-        os.makedirs(save_directory)
-        print(f"New directory {save_directory} created.")
 
     # Results file: Stores last index ran, total count, correct counts, and accuracy.
     output_file = prompt + "-" + extraction_type + "-" + model + "-" + modality + "-" + dataset + ".json"
@@ -135,33 +129,22 @@ def run_test(model: str, modality: str, dataset: str, args):
 
     dataset_path = path.join(DATASET_FOLDER, DATASETS[dataset])
 
-    metadata_path = generate_metadata_path(model=model, extraction_type=extraction_type, modality=modality,
-                                           dataset=dataset, steps=stepcount)
-
-    # Store the start index, total number of questions asked so far, the number answered correctly,
-    # a rolling accuracy, and the query / response / answer / ground truth.
-    # If cont is true, this information will be loaded from the file Model-Modality-Dataset.jsonl.
     start_index = 0
-    total = 0
-    correct = 0
-
-    if cont and path.exists(metadata_path):
+    if cont and path.exists(output_path):
         try:
-            metadata = read_json(filepath=metadata_path)
-            start_index = metadata["Last Sample Index"] + 1
-            total = metadata["Total"]
-            correct = metadata["Correct"]
+            previous = read_json(filepath=output_path)
+            start_index = previous[-1]["Index"] + 1
 
         except JSONDecodeError as e:
-            print(f"There was an error decoding the first line of {metadata_path} into json at index {e.pos}")
+            print(f"There was an error decoding the prior test results at {output_path} into json at index {e.pos}")
         except KeyError as e:
-            print(f"Expected key {e.args[0]} was not found in the first line of {metadata_path} when "
+            print(f"Expected key {e.args[0]} was not found in the last index of {output_path} when "
                   f"decoded into json.")
 
     # Load the dataset
     data = load_dataset(dataset_path)
     # Set the end index
-    # This lets us continue from where we left off if the model is overloaded
+    # This lets us continue from where we left off if the model is overloaded or the test has to restart.
     if num_samples == 0:
         end_index = len(data)
     else:
@@ -213,15 +196,6 @@ def run_test(model: str, modality: str, dataset: str, args):
             answer = end_pred
             final_answer = end_pred
 
-        total += 1
-        if type(y) is str:
-            y = y.replace(",", "")
-        if type(answer) == str and answer == y:
-            correct += 1
-        if type(answer) == float and answer == float(y):
-            correct += 1
-        accuracy = correct / total * 100
-
         result = {"Index": i, "Query": prompt, "Response": response, "Extract-Response": extraction_response,
                   "Answer": answer, "GT": y}
         if modality == "answer_first":
@@ -230,12 +204,6 @@ def run_test(model: str, modality: str, dataset: str, args):
             result["Options"] = options
 
         if save:
-            # Save the run results
-            meta_data = {"Total": total, "Correct": correct,
-                         "Accuracy": accuracy, "Last Sample Index": i, "Extraction Type":
-                             extraction_type, "Modality": modality, "Model": model,
-                         "Dataset": dataset, "Simple Prompt": use_simple_prompt}
-            write_json(filepath=metadata_path, data=meta_data)
             if path.exists(output_path):
                 test_results = read_json(filepath=output_path)
             else:

@@ -8,7 +8,7 @@ from file_utils import get_filepaths, read_json, write_json
 def extract_answers(root: str | None = None):
     # Extracts answers from all test data
     if root is None:
-        root = RESULTS_FOLDER
+        root = r"G:\My Drive\GPT Testing\Source\Results\Primary Test Results\gpt-3.5-turbo\answer_first\aqua"
 
     data_paths = get_filepaths(root=root, contains=["json"], excludes=["Metadata"])
 
@@ -25,7 +25,13 @@ def extract_answers(root: str | None = None):
         extraction_type = metadata["Extraction Type"]
 
         # Iterate over every test and run answer extraction.
+        i = 0
         for test in data:
+            if dataset != "mmlu":
+                # Validate the index
+                index = test["Index"]
+                if index != i:
+                    print("Pause")
 
             # Get options if needed to match responses to letters
             if dataset in ["aqua", "mmlu"]:
@@ -45,7 +51,7 @@ def extract_answers(root: str | None = None):
                                              extraction_type=extraction_type,
                                              options=options)
 
-                end_pred, _ = clean_answer(response=final_response, dataset=dataset,
+                _, end_pred = clean_answer(response=final_response, dataset=dataset,
                                            extraction_type=extraction_type,
                                            options=options)
 
@@ -62,6 +68,9 @@ def extract_answers(root: str | None = None):
             if modality == "answer_first":
                 answer = front_pred
                 final_answer = end_pred
+            elif extraction_type == "two-stage":
+                answer = front_pred
+                final_answer = front_pred
             else:
                 answer = end_pred
                 final_answer = end_pred
@@ -69,7 +78,7 @@ def extract_answers(root: str | None = None):
             test["Answer"] = answer
             test["Final Answer"] = final_answer
             results.append(test)
-
+            i += 1
         write_json(filepath=data_path, data=results)
 
 
