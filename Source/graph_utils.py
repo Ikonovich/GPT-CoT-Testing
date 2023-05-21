@@ -8,7 +8,9 @@ from pandas import DataFrame
 
 from config import GRAPHS_FOLDER
 
-colors = sns.color_palette('colorblind')[:5]
+colors = sns.color_palette('colorblind')
+# Swap in light blue for easier readability
+colors[3] = colors[9]
 # modality_to_color_map = {"zero_shot": "blue", "zero_shot_cot": "red", "suppressed_cot": "black",
 #                        "explanation_first": "orange", "answer_first": "green"}
 modality_to_color_map = {"zero_shot": colors[0], "zero_shot_cot": colors[1], "suppressed_cot": colors[2],
@@ -17,17 +19,17 @@ modality_to_color_map = {"zero_shot": colors[0], "zero_shot_cot": colors[1], "su
 modality_to_label_map = {"zero_shot": "Zero Shot", "zero_shot_cot": "Zero Shot CoT", "suppressed_cot": "Suppressed CoT",
                          "explanation_first": "Explanation First", "answer_first": "Answer First"}
 
-modality_to_dash_map = {"zero_shot": (0, (1, 0)), "zero_shot_cot": (0, (1, 3)), "suppressed_cot": (0, (5, 5)),
-                        "explanation_first": (0, (1, 5, 5, 5)), "answer_first": (0, (5, 10))}
+modality_to_dash_map = {"zero_shot": (0, (1, 0)), "zero_shot_cot": (0, (5, 5)), "suppressed_cot": (0, (1, 3)),
+                        "explanation_first": (0, (1, 3, 3, 3)), "answer_first": (0, (5, 10))}
 
 
 def generate_singular_plot(ax, data: DataFrame, x: str, y: str, coordinate: int | tuple[int, int] | None,
                            title: str | None, xtick_labels: list[str] | None, y_label: str = None,
                            palette: list[str] = None):
-    print(data.to_string())
+    errorbar = ('ci', 95)
 
     if coordinate is None:
-        sns.barplot(x=x, y=y, palette=palette, ax=ax, data=data)
+        sns.barplot(x=x, y=y, palette=palette, ax=ax, data=data, errorbar=errorbar)
 
         patches = ax.patches
         for patch in patches:
@@ -38,11 +40,14 @@ def generate_singular_plot(ax, data: DataFrame, x: str, y: str, coordinate: int 
 
         ax.set(title=title, xlabel=None, ylabel=y_label)
         ax.set_ylim(0, 110)
-        ax.set_xticks(np.arange(len(xtick_labels)))
-        ax.set_xticklabels(xtick_labels, rotation=45)
+        if xtick_labels is None:
+            ax.set_xticklabels([])
+        else:
+            ax.set_xticks(np.arange(len(xtick_labels)))
+            ax.set_xticklabels(xtick_labels, rotation=45)
 
     else:
-        sns.barplot(x=x, y=y, palette=palette, ax=ax[coordinate], data=data)
+        sns.barplot(x=x, y=y, palette=palette, ax=ax[coordinate], data=data, errorbar=errorbar)
         patches = ax[coordinate].patches
 
         for patch in patches:
@@ -58,7 +63,7 @@ def generate_singular_plot(ax, data: DataFrame, x: str, y: str, coordinate: int 
             ax[coordinate].set_xticklabels([])
         else:
             ax[coordinate].set_xticks(np.arange(len(xtick_labels)))
-            ax[coordinate].set_xticklabels(xtick_labels)
+            ax[coordinate].set_xticklabels(xtick_labels, rotation=45)
 
 
 def graph_dataset_comparison(title: str, data: DataFrame,
@@ -67,14 +72,16 @@ def graph_dataset_comparison(title: str, data: DataFrame,
                              figsize: tuple[int, int] = (15, 7),
                              plot_size: tuple[int, int] | None = (2, 2),
                              sort_by: str | None = None,
-                             add_legend: bool = False):
+                             add_legend: bool = False,
+                             ylabel="Accuracy",
+                             y="Accuracy"):
 
     chart_labels = ["MultiArith", "GSM8k", "Aqua-RAT", "Coin Flip", "MMLU"]
     palette = [modality_to_color_map[i] for i in modalities]
 
     fig, ax = plt.subplots(plot_size[0], plot_size[1], figsize=figsize, layout="constrained", sharey=True)
     plt.tick_params(labelright=True)
-    plt.ylabel("Accuracy")
+    plt.ylabel(ylabel)
     fig.suptitle(title)
 
     # sns.set_theme()
@@ -96,7 +103,7 @@ def graph_dataset_comparison(title: str, data: DataFrame,
         else:
             coord = (1, i - plot_size[1])
 
-        generate_singular_plot(ax=ax, x="Modality", y="Accuracy", coordinate=coord,
+        generate_singular_plot(ax=ax, x="Modality", y=y, coordinate=coord,
                                data=datum, xtick_labels=None, title=chart_labels[i],
                                y_label=None, palette=palette)
         i += 1
@@ -121,16 +128,18 @@ def graph_dataset_comparison(title: str, data: DataFrame,
     plt.close("all")
 
 
-def graph_generic(title: str, data: DataFrame, groupby: str, output_path: str,
+def graph_generic(title: str, data: DataFrame, group_by: str, output_path: str,
                   chart_labels: list[str],
+                  modalities: list[str],
                   figsize: tuple[int, int] = (15, 7),
                   plot_size: tuple[int, int] | None = (2, 2),
                   y_label="Accuracy",
-                  x_labels: list[str] | None = None,
                   x: str = "Modality",
                   y: str = "Accuracy",
                   sort_by=None,
-                  palette=None):
+                  legend_loc: str = "best"):
+
+    palette = [modality_to_color_map[i] for i in modalities]
     fig, ax = plt.subplots(plot_size[0], plot_size[1], figsize=figsize, layout="constrained")
     fig.suptitle(title)
 
@@ -138,7 +147,7 @@ def graph_generic(title: str, data: DataFrame, groupby: str, output_path: str,
     sns.set_style("whitegrid")
 
     i = 0
-    frame = data.groupby(groupby)
+    frame = data.groupby(group_by)
     for item in frame:
         datum = item[1]
         if sort_by is not None:
@@ -154,7 +163,7 @@ def graph_generic(title: str, data: DataFrame, groupby: str, output_path: str,
             coord = (1, i - plot_size[1])
 
         generate_singular_plot(ax=ax, x=x, y=y, coordinate=coord,
-                               data=datum, xtick_labels=x_labels, title=chart_labels[i],
+                               data=datum, xtick_labels=None, title=chart_labels[i],
                                y_label=y_label, palette=palette)
         i += 1
 
@@ -166,27 +175,36 @@ def graph_generic(title: str, data: DataFrame, groupby: str, output_path: str,
         fig.delaxes(ax[coord])
         i += 1
 
+    handles = list()
+    for modality in modalities:
+        patch = mpatches.Patch(label=modality_to_label_map[modality], color=modality_to_color_map[modality])
+        handles.append(patch)
+
+    plt.legend(handles=handles, bbox_to_anchor=(1.05, 1.0), loc=legend_loc)
+
     plt.savefig(os.path.join(GRAPHS_FOLDER, output_path + ".svg"), format='svg', dpi=1200)
     plt.close("all")
 
 
-def graph_stepwise_comparison(data: DataFrame, title: str, modalities: list[str], output_path: str):
+def graph_stepwise_comparison(data: DataFrame, title: str, modalities: list[str], output_path: str,
+                              ci: bool = True, y: str = "Accuracy"):
     # Create a lineplot for each modality
     for i in range(len(modalities)):
         modality = modalities[i]
         color = modality_to_color_map[modality]
 
         df_modality = data[data['Modality'] == modality]
-        ax = sns.lineplot(x='Steps', y='Accuracy', data=df_modality,
+        ax = sns.lineplot(x='Steps', y=y, data=df_modality,
                           color=color,
                           label=modality_to_label_map[modality])
 
         ax.lines[i].set_linestyle(modality_to_dash_map[modality])
         ax.legend().get_lines()[i].set_linestyle(modality_to_dash_map[modality])
 
-        # Add the confidence intervals
-        plt.fill_between(df_modality['Steps'], df_modality["ci_lower"], df_modality["ci_upper"], color=color,
-                         alpha=.1)
+        if ci:
+            # Add the confidence intervals
+            plt.fill_between(df_modality['Steps'], df_modality["ci_lower"], df_modality["ci_upper"], color=color,
+                             alpha=.1)
 
     plt.title(label=title)
     plt.xlabel("Number of Steps Per Problem")
@@ -195,32 +213,30 @@ def graph_stepwise_comparison(data: DataFrame, title: str, modalities: list[str]
 
 
 def graph_cot_data(title: str, data: DataFrame, figsize: tuple[int, int], plot_size: tuple[int, int] | None,
-                   output_path: str, x: str, hue: str | None = "Metric", groupby: str = "Modality Index",
+                   output_path: str, x: str, hue: str | None = "Metric", group_by: str = "Modality Index",
                    xtick_labels: list[str] | None = None,
                    chart_labels: list[str] | None = None):
-    modalities = ["Zero Shot", "Zero Shot CoT", "Suppressed CoT", "Explanation First", "Answer First"]
     datasets = ["MultiArith", "GSM8k", "Aqua-RAT", "Coin Flip", "MMLU"]
-    if chart_labels is None:
-        if groupby == "Modality Index":
-            chart_labels = modalities
-        else:
-            chart_labels = datasets
-    if xtick_labels is None:
-        if groupby == "Modality Index":
-            xtick_labels = datasets
-        else:
-            xtick_labels = modalities
 
     # Store the first coord for setting the legend
     first_coord = None
 
     # Set the palette
-    palette = ['blue', 'orange', 'black', 'gray']
+    secondary_colors = sns.color_palette()
+    secondary_colors[3] = secondary_colors[9]
+
+    palette = list()
+    for i in range(len(xtick_labels)):
+        if i % 2 == 0:
+            palette.append(colors[int(i / 2)])
+        else:
+            palette.append(secondary_colors[i])
 
     fig, ax = plt.subplots(plot_size[0], plot_size[1], figsize=figsize, layout="constrained")
     fig.suptitle(title)
+    plt.xlabel(xlabel=None)
 
-    frame = data.groupby(groupby)
+    frame = data.groupby(group_by)
     sns.set_style("whitegrid")
 
     i = 0
@@ -244,7 +260,7 @@ def graph_cot_data(title: str, data: DataFrame, figsize: tuple[int, int], plot_s
             y="Percentage",
             hue=hue,
             palette=palette,
-            hue_order=['Answers Containing CoT', 'CoT Accuracy', 'Non-CoT Accuracy', 'Total Accuracy'],
+            hue_order=['Percent of Answers Containing CoT', 'Total Accuracy'],
             ax=ax[coord]
         )
         ax[coord].get_legend().remove()

@@ -1,15 +1,13 @@
 import argparse
 import ast
-import json
 import time
 
 from openai.error import OpenAIError
 
 from create_graphs import create_graphs
-from data_utils import generate_metadata, process_mmlu
+from data_utils import generate_metadata
 from answer_extraction import extract_answers
 from config import DATASETS, ERROR_WAIT_TIME, chat, completion, modalities
-from file_utils import get_filepaths, write_json
 from query_utils import run_test
 
 
@@ -90,7 +88,7 @@ def parse_args():
     )
 
     parser.add_argument(
-        "--extraction_type", type=str, choices=["two-stage", "in-brackets", "none"],
+        "--extraction_type", type=str, choices=["two-stage", "in-brackets", "none", "two-stage-style-two"],
         help="Select the answer extraction method to use. Two-stage sends an extra query appended with "
              + "\"The answer is\". In-brackets appends \"Place the final answer in squiggly brackets.\" to the "
              + "question. None does neither of these and only attempts to extract the answer directly - this is not "

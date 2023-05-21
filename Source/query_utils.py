@@ -1,16 +1,12 @@
-import os
 import time
 from json import JSONDecodeError
 from os import path
 
 import openai
-from regex import regex
-
-from answer_extraction import clean_answer
 from config import RESULTS_FOLDER, DATASET_FOLDER, DATASETS, \
     completion, chat, two_stage_extract_prompt, suppression_prompt, cot_prompt, \
     answer_first_prompt, explanation_first_prompt, in_bracket_prompt
-from file_utils import load_dataset, generate_metadata_path, write_json, read_json
+from file_utils import load_dataset, write_json, read_json
 
 # Stores the time of the last query
 last_query_time = 0
@@ -161,48 +157,31 @@ def run_test(model: str, modality: str, dataset: str, args):
         # Get the initial response from the model
         response = query(model=model, prompt=prompt, max_tokens=max_tokens)
 
-        if dataset == "aqua" or dataset == "mmlu":
+        if dataset == "aqua" or "mmlu" in dataset:
             options = test_entry["Options"]
         else:
             options = None
 
-        #  If replicating  DOI 10.48550/arXiv.2205.11916, zero shot has no answer extraction prompt.
+
+        # Validate the extraction type and perform two-stage extraction, if necessary.
         if extraction_type == "in-brackets":
             extraction_response = "None"
-            end_pred, front_pred = clean_answer(response=response, dataset=dataset, extraction_type=extraction_type,
-                                                options=options)
         elif extraction_type == "two-stage":
             # Run the timer to keep from querying too quickly, then resubmit the response for answer extraction
             timer(wait_time)
             extraction_prompt = prompt + " " + response + "\n" + two_stage_extract_prompt
             extraction_response = query(model, extraction_prompt, max_tokens=max_tokens)
-            if modality == "answer_first":
-                _, front_pred = clean_answer(response=response, dataset=dataset,
-                                             extraction_type=extraction_type,
-                                             options=options)
-                end_pred, _ = clean_answer(response=extraction_response, dataset=dataset,
-                                           extraction_type=extraction_type,
-                                           options=options)
-            else:
-                end_pred, front_pred = clean_answer(response=response, dataset=dataset, extraction_type=extraction_type,
-                                                    options=options)
+        elif extraction_type == "two-stage-style-two":
+            extraction_prompt = two_stage_style_two_generation(answer=response, options=options)
+            extraction_response = query(model, extraction_prompt, max_tokens=max_tokens)
         else:
             raise ValueError("The provided extraction type is not valid.")
 
-        if modality == "answer_first":
-            answer = front_pred
-            final_answer = end_pred
-        else:
-            answer = end_pred
-            final_answer = end_pred
+        result = {"Index": test_entry["Index"], "Query": prompt, "Response": response, "Extract-Response": extraction_response,
+                  "GT": y}
 
-        result = {"Index": i, "Query": prompt, "Response": response, "Extract-Response": extraction_response,
-                  "Answer": answer, "GT": y}
-        if modality == "answer_first":
-            result["Final Answer"] = final_answer
-        if dataset in ["aqua", "mmlu"]:
+        if dataset == "aqua" or "mmlu" in dataset:
             result["Options"] = options
-
         if save:
             if path.exists(output_path):
                 test_results = read_json(filepath=output_path)
@@ -212,3 +191,20 @@ def run_test(model: str, modality: str, dataset: str, args):
             write_json(filepath=output_path, data=test_results)
 
     print("Test " + model + "-" + modality + "-" + dataset + " completed.")
+
+
+# Used to format the second two-stage-second-style prompt.
+def two_stage_style_two_generation(answer: str, options: dict) -> str:
+    prompt = "Only provide one letter answer. The following statement contains the full answer for " \
+             "an unknown multiple-choice math problem. Somewhere in the string provided, " \
+             "is the final answer choice, ranging from [A, B, C, D]. We want to know the answer " \
+             "choice only. Given this string, write the final answer choice presented there. " \
+             "Do not provide any other explanations or descriptions. If no answer letter provided, " \
+             "answer with \"N/A\". Full answer:\n"
+    prompt += answer
+    prompt += "\nPossible choices:\n"
+    for key in options:
+        prompt += f"{key}: {options[key]}"
+    prompt += "\nDo not explain your answer. Only provide the answer choice in squiggly brackets in the following format {answer}: "
+
+    return prompt

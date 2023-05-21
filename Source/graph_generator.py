@@ -52,7 +52,7 @@ def answer_first_vs_suppressed():
     data = pd.melt(gpt_4_results, id_vars=["Model", "Modality", "Dataset Index", "Modality Index", "Dataset"],
                    value_vars=["Total Accuracy"], value_name="Accuracy")
     graph_generic(title="GPT-4 Performance, Answer First vs Suppressed CoT, All Datasets",
-                  data=data, groupby="Dataset Index",
+                  data=data, group_by="Dataset Index",
                   output_path=r"AnswerFirstAnalysis\GPT4-ans-first-results",
                   chart_labels=chart_labels, x_labels=x_labels, figsize=(15, 10),
                   plot_size=(2, 3), sort_by="Modality Index")
@@ -69,7 +69,7 @@ def answer_first_vs_suppressed():
                    plot_size=(2, 3),
                    hue="Metric",
                    x="Modality",
-                   groupby="Dataset Index",
+                   group_by="Dataset Index",
                    xtick_labels=x_labels,
                    output_path=r"AnswerFirstAnalysis\gpt4-ans-first-cot-quant")
 
@@ -79,7 +79,7 @@ def answer_first_vs_suppressed():
     data = pd.melt(gpt_35_results, id_vars=["Model", "Modality", "Dataset Index", "Modality Index", "Dataset"],
                    value_vars=["Total Accuracy"], value_name="Accuracy")
     graph_generic(title="GPT-3.5 Performance, Answer First vs Suppressed CoT, All Datasets",
-                  data=data, groupby="Dataset Index",
+                  data=data, group_by="Dataset Index",
                   output_path=r"AnswerFirstAnalysis\GPT35-ans-first-results",
                   chart_labels=chart_labels, x_labels=x_labels, figsize=(15, 10),
                   plot_size=(2, 3), sort_by="Modality Index")
@@ -96,7 +96,7 @@ def answer_first_vs_suppressed():
                    plot_size=(2, 3),
                    hue="Metric",
                    x="Modality",
-                   groupby="Dataset Index",
+                   group_by="Dataset Index",
                    xtick_labels=x_labels,
                    output_path=r"AnswerFirstAnalysis\gpt35-ans-first-cot-quant")
 
@@ -110,7 +110,7 @@ def answer_first_vs_suppressed():
 
     graph_generic(
         title="GPT-4 Performance, Answer First vs Suppressed CoT, Stepwise Dataset",
-        data=data, x="Dataset", groupby="Modality Index",
+        data=data, x="Dataset", group_by="Modality Index",
         output_path=r"AnswerFirstAnalysis\gpt4-step-ans-first", figsize=(15, 5),
         chart_labels=x_labels, x_labels=[str(i) + " Step" for i in range(1, 10)], plot_size=(1, 3))
 
@@ -139,7 +139,7 @@ def answer_first_vs_suppressed():
 
     graph_generic(
         title="GPT-3.5 Performance, Answer First vs Suppressed CoT, Stepwise Dataset",
-        data=data, x="Dataset", groupby="Modality Index",
+        data=data, x="Dataset", group_by="Modality Index",
         output_path=r"AnswerFirstAnalysis\gpt35-step-ans-first", figsize=(15, 5),
         chart_labels=x_labels, x_labels=[str(i) + " Step" for i in range(1, 10)], plot_size=(1, 3))
 
@@ -169,7 +169,7 @@ def explanation_first_vs_cot():
     data = pd.melt(gpt_4_results, id_vars=["Model", "Modality", "Dataset Index", "Modality Index", "Dataset"],
                    value_vars=["Total Accuracy"], value_name="Accuracy")
     graph_generic(title="GPT-4 Performance, Explanation First vs Zero Shot CoT, All Datasets",
-                  data=data, groupby="Dataset Index",
+                  data=data, group_by="Dataset Index",
                   output_path=r"ExplanationFirstAnalysis\GPT4-exp-first-results",
                   chart_labels=chart_labels, x_labels=x_labels, figsize=(15, 10),
                   plot_size=(2, 3), sort_by="Modality Index")
@@ -186,7 +186,7 @@ def explanation_first_vs_cot():
                    plot_size=(2, 3),
                    hue="Metric",
                    x="Modality",
-                   groupby="Dataset Index",
+                   group_by="Dataset Index",
                    xtick_labels=x_labels,
                    output_path=r"ExplanationFirstAnalysis\gpt4-exp-first-cot-quant")
 
@@ -196,7 +196,7 @@ def explanation_first_vs_cot():
     data = pd.melt(gpt_35_results, id_vars=["Model", "Modality", "Dataset Index", "Modality Index", "Dataset"],
                    value_vars=["Total Accuracy"], value_name="Accuracy")
     graph_generic(title="GPT-3.5 Performance, Explanation First vs Suppressed CoT, All Datasets",
-                  data=data, groupby="Dataset Index",
+                  data=data, group_by="Dataset Index",
                   output_path=r"ExplanationFirstAnalysis\GPT35-exp-first-results",
                   chart_labels=chart_labels, x_labels=x_labels, figsize=(15, 10),
                   plot_size=(2, 3), sort_by="Modality Index")
@@ -213,7 +213,7 @@ def explanation_first_vs_cot():
                    plot_size=(2, 3),
                    hue="Metric",
                    x="Modality",
-                   groupby="Dataset Index",
+                   group_by="Dataset Index",
                    xtick_labels=x_labels,
                    output_path=r"ExplanationFirstAnalysis\gpt35-exp-first-cot-quant")
 
@@ -226,7 +226,7 @@ def explanation_first_vs_cot():
 
     graph_generic(
         title="GPT-4 Performance, Explanation First vs Suppressed CoT, Stepwise Dataset",
-        data=data, x="Dataset", groupby="Modality Index",
+        data=data, x="Dataset", group_by="Modality Index",
         output_path=r"ExplanationFirstAnalysis\gpt4-step-exp-first", figsize=(15, 5),
         chart_labels=x_labels, x_labels=[str(i) + " Step" for i in range(1, 10)], plot_size=(1, 3))
 
@@ -255,7 +255,7 @@ def explanation_first_vs_cot():
 
     graph_generic(
         title="GPT-3.5 Performance, Explanation First vs Suppressed CoT, Stepwise Dataset",
-        data=data, x="Dataset", groupby="Modality Index",
+        data=data, x="Dataset", group_by="Modality Index",
         output_path=r"ExplanationFirstAnalysis\gpt35-step-exp-first", figsize=(15, 5),
         chart_labels=x_labels, x_labels=[str(i) + " Step" for i in range(1, 10)], plot_size=(1, 3))
 
@@ -293,7 +293,7 @@ def multiarith_full_results():
     compare = pd.melt(data, id_vars=["Model", "Modality", "Model Index", "Modality Index"],
                       value_vars=["Total Accuracy"], value_name="Accuracy").sort_values("Modality Index")
     graph_generic(title="MultiArith Model Comparison",
-                  data=compare, groupby="Model Index", sort_by="Modality Index",
+                  data=compare, group_by="Model Index", sort_by="Modality Index",
                   output_path=r"DatasetAnalysis\multiarith-full-results",
                   chart_labels=["text-davinci-002", "GPT-3.5", "GPT-4"],
                   x_labels=[modality_to_label_map[i] for i in modalities],
@@ -333,7 +333,7 @@ def gsm8k_full_results():
                       value_vars=["Total Accuracy"], value_name="Accuracy").sort_values("Modality Index")
 
     graph_generic(title="GSM8k Model Comparison",
-                  data=compare, groupby="Model Index", sort_by="Modality Index",
+                  data=compare, group_by="Model Index", sort_by="Modality Index",
                   output_path=r"DatasetAnalysis\gsm8k-full-results",
                   chart_labels=["text-davinci-002", "GPT-3.5", "GPT-4"],
                   x_labels=[modality_to_label_map[i] for i in modalities],
@@ -375,7 +375,7 @@ def aqua_full_results():
                       value_vars=["Total Accuracy"], value_name="Accuracy").sort_values("Modality Index")
 
     graph_generic(title="AQuA Model Comparison",
-                  data=compare, groupby="Model Index", sort_by="Modality Index",
+                  data=compare, group_by="Model Index", sort_by="Modality Index",
                   output_path=r"DatasetAnalysis\aqua-full-results",
                   chart_labels=["text-davinci-002", "GPT-3.5", "GPT-4"],
                   x_labels=[modality_to_label_map[i] for i in modalities],
@@ -412,7 +412,7 @@ def mmlu_full_results():
     compare = pd.melt(data, id_vars=["Model", "Modality", "Model Index", "Modality Index"],
                       value_vars=["Total Accuracy"], value_name="Accuracy").sort_values("Modality Index")
     graph_generic(title="MMLU Model Comparison",
-                  data=compare, groupby="Model Index", sort_by="Modality Index",
+                  data=compare, group_by="Model Index", sort_by="Modality Index",
                   output_path=r"DatasetAnalysis\mmlu-full-results", chart_labels=["GPT-3.5", "GPT-4"],
                   x_labels=[modality_to_label_map[i] for i in modalities],
                   palette=[modality_to_color_map[i] for i in modalities],
@@ -464,7 +464,7 @@ def G4_all():
                    plot_size=(2, 3),
                    hue="Metric",
                    x="Modality",
-                   groupby="Dataset Index",
+                   group_by="Dataset Index",
                    output_path="GPT4/gpt4-full-cot-quant")
 
 
@@ -495,7 +495,7 @@ def G4_all_suppression():
     graph_cot_data(title="GPT-4 CoT Quantification, All Datasets",
                    data=data,
                    x="Modality",
-                   groupby="Dataset Index",
+                   group_by="Dataset Index",
                    figsize=(15, 5),
                    plot_size=(2, 3),
                    output_path="GPT4/gpt4-supp-cot-quant")
@@ -592,7 +592,7 @@ def G35_all():
     graph_cot_data(title="GPT-3.5 CoT Quantification, All Modalities, All Datasets",
                    data=data,
                    x="Modality",
-                   groupby="Dataset Index",
+                   group_by="Dataset Index",
                    figsize=(15, 10),
                    plot_size=(2, 3),
                    output_path="gpt35-full-cot-quant")
@@ -620,7 +620,7 @@ def G35_all_suppression():
     graph_cot_data(title="GPT-3.5 CoT Quantification, All Datasets",
                    data=data,
                    x="Modality",
-                   groupby="Dataset Index",
+                   group_by="Dataset Index",
                    figsize=(15, 5),
                    plot_size=(2, 3),
                    output_path="gpt35-supp-cot-quant")
@@ -707,7 +707,7 @@ def G3_all():
                    plot_size=(2, 3),
                    hue="Metric",
                    x="Modality",
-                   groupby="Dataset Index",
+                   group_by="Dataset Index",
                    output_path="davinci-full-cot-quant")
 
 
@@ -801,7 +801,7 @@ def prompt_comparison():
     data = pd.melt(orig, id_vars=["Model", "Model Index", "Extraction", "Extraction Index", "Dataset"],
                    value_vars=["Total Accuracy"], value_name="Accuracy").sort_values("Dataset")
     graph_generic(title="Comparison of Answer Extraction Techniques By Model, GSM8k",
-                  data=data, groupby="Model Index", output_path="gsm8k-extraction-comparison",
+                  data=data, group_by="Model Index", output_path="gsm8k-extraction-comparison",
                   chart_labels=["text-davinci-002", "GPT 3.5", "GPT-4"],
                   x_labels=["Initial", "Simplified", "In-Brackets"], figsize=(5, 3),
                   x="Extraction Index", plot_size=(1, 2), y="Accuracy")
@@ -872,7 +872,7 @@ def prompt_comparison():
     data = pd.melt(orig, id_vars=["Model", "Model Index", "Extraction", "Extraction Index", "Dataset"],
                    value_vars=["Total Accuracy"], value_name="Accuracy").sort_values("Dataset")
     graph_generic(title="Comparison of Answer Extraction Techniques By Model, MultiArith",
-                  data=data, groupby="Model Index", output_path="multiarith-extraction-comparison",
+                  data=data, group_by="Model Index", output_path="multiarith-extraction-comparison",
                   chart_labels=["text-davinci-002", "GPT 3.5", "GPT-4"],
                   x_labels=["Initial", "Simplified", "In-Brackets"], figsize=(5, 3),
                   x="Extraction Index", plot_size=(1, 2), y="Accuracy")
@@ -925,7 +925,7 @@ def MMLU_full():
                    value_name="Accuracy").sort_values("Discriminator")
     graph_generic(title=f"GPT-4 Performance on MMLU Dataset",
                   data=data, x="Discriminator",
-                  groupby="Modality Index",
+                  group_by="Modality Index",
                   output_path=f"mmlu/gpt4-mmlu-full-step",
                   figsize=(15, 10),
                   chart_labels=[modality_to_label_map[i] for i in modalities],
@@ -958,7 +958,7 @@ def MMLU_full():
                    value_name="Accuracy").sort_values("Discriminator")
     graph_generic(title=f"GPT-3.5 Performance on MMLU Dataset",
                   data=data, x="Discriminator",
-                  groupby="Modality Index",
+                  group_by="Modality Index",
                   output_path=f"mmlu/gpt35-mmlu-full-step",
                   figsize=(15, 10),
                   chart_labels=[modality_to_label_map[modality] for modality in modalities],
@@ -998,7 +998,7 @@ def G35_two_stage():
 
     graph_generic(title="GPT-3.5 Performance, All Datasets, Two-Stage Extraction",
                   data=data,
-                  groupby="Dataset Index",
+                  group_by="Dataset Index",
                   output_path=r"Two-Stage\GPT35-full-results-Two-Stage",
                   chart_labels=chart_labels,
                   x_labels=x_labels,
@@ -1016,7 +1016,7 @@ def G35_two_stage():
     graph_cot_data(title="GPT-3.5 CoT Quantification, All Modalities, All Datasets",
                    data=data,
                    x="Modality",
-                   groupby="Dataset Index",
+                   group_by="Dataset Index",
                    figsize=(15, 10),
                    plot_size=(2, 3),
                    output_path=r"Two-Stage\gpt35-full-cot-quant-two-stage")

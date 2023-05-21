@@ -1,131 +1,164 @@
-import os
-
 import pandas as pd
 
-from config import GRAPHS_FOLDER
+from config import model_index_map
 from data_utils import search_metadata
-from graph_utils import graph_generic, graph_cot_data, graph_stepwise_comparison, graph_dataset_comparison, \
-    modality_to_label_map, modality_to_color_map
+from graph_utils import graph_generic, graph_stepwise_comparison, graph_dataset_comparison, \
+    modality_to_label_map
 
+dataset_to_label_map = {"multiarith": "MultiArith", "gsm8k": "GSM8k", "aqua": "Aqua-RAT", "coin_flip": "Coin Flip",
+                        "mmlu": "MMLU"}
 model_to_label_map = {"gpt-3.5-turbo": "GPT-3.5 Turbo", "gpt-4": "GPT-4", "text-davinci-002": "GPT-3",
                       "gpt-4-32k": "GPT-4-32k"}
-model_to_index_map = {"text-davinci-002": 0, "gpt-3.5-turbo": 1, "gpt-4": 2, "gpt-4-32k": 3}
 
 
 def create_graphs():
-    coin_flip_full_results()
-    coin_flip_supp_results()
+    single_dataset_results(dataset="multiarith")
+    single_dataset_results(dataset="aqua")
+    single_dataset_results(dataset="mmlu",
+                           models=["gpt-3.5-turbo", "gpt-4"])
+    single_dataset_results(dataset="gsm8k")
+    single_dataset_results(dataset="coin_flip",
+                           models=["gpt-3.5-turbo", "gpt-4"],
+                           modalities=["zero_shot", "zero_shot_cot", "suppressed_cot"],
+                           save_discriminator="Supp-Two-Model")
 
-    non_stepwise_full(model="gpt-4")
-    non_stepwise_full(model="gpt-3.5-turbo")
-    non_stepwise_full(model="text-davinci-002", num_plots=4)
+    graph_non_stepwise(model="gpt-4")
+    graph_non_stepwise(model="gpt-3.5-turbo")
+    graph_non_stepwise(model="text-davinci-002", num_plots=4)
 
-    stepwise(model="gpt-4")
-    stepwise(model="gpt-3.5-turbo")
-    stepwise(model="text-davinci-002")
-
-    stepwise_long(model="gpt-4")
+    graph_stepwise(model="gpt-4", max_steps=23)
+    graph_stepwise(model="gpt-3.5-turbo", max_steps=23)
+    graph_stepwise(model="text-davinci-002", max_steps=23)
 
 
-def non_stepwise_full(model: str, num_plots: int = 5):
+def single_dataset_results(dataset: str, models: list[str] = None, modalities: list[str] = None,
+                           save_discriminator: str = "Full"):
+    if modalities is None:
+        modalities = ["zero_shot", "zero_shot_cot", "suppressed_cot", "explanation_first", "answer_first"]
+    if models is None:
+        models = ["text-davinci-002", "gpt-3.5-turbo", "gpt-4"]
+
+    length = (len(models))
+
+    data = search_metadata(models=models,
+                           modalities=modalities,
+                           datasets=[dataset])
+
+    compare = pd.melt(data,
+                      id_vars=["Model", "Modality", "Model Index", "Modality Index", "Dataset"],
+                      value_vars=["Total Accuracy"],
+                      value_name="Accuracy").sort_values("Modality Index")
+
+    graph_generic(title=f"{dataset_to_label_map[dataset]} Accuracy by Model",
+                  data=compare,
+                  group_by="Model Index",
+                  sort_by="Modality Index",
+                  chart_labels=[model_to_label_map[model] for model in models],
+                  modalities=modalities,
+                  figsize=(len(modalities) * length, 4), plot_size=(1, length),
+                  output_path=f"DatasetAnalysis/{dataset}-{save_discriminator}-Results")
+
+    # CoT Quant results
+    compare = pd.melt(data,
+                      id_vars=["Model", "Modality", "Model Index", "Modality Index", "Dataset"],
+                      value_vars=["Percent of Answers Containing CoT"],
+                      value_name="Percentage").sort_values("Modality Index")
+
+    graph_generic(title=F"{dataset_to_label_map[dataset]} CoT Occurrence by Model",
+                  data=compare,
+                  y="Percentage",
+                  y_label="Percent of Answers Containing CoT",
+                  group_by="Model Index",
+                  sort_by="Modality Index",
+                  chart_labels=[model_to_label_map[model] for model in models],
+                  modalities=modalities,
+                  figsize=(len(modalities) * length, 4), plot_size=(1, length),
+                  output_path=f"DatasetAnalysis/{dataset}-{save_discriminator}-CoT-Quant")
+
+
+def graph_non_stepwise(model: str, num_plots: int = 5):
     modalities = ["zero_shot", "zero_shot_cot", "suppressed_cot", "explanation_first", "answer_first"]
     label = model_to_label_map[model]
+    length = (len(modalities))
     # Graph GPT-4 All dataset results
     results = search_metadata(models=[model], modalities=modalities)
 
-    data = pd.melt(results, id_vars=["Model", "Modality", "Dataset Index", "Modality Index", "Dataset"],
-                   value_vars=["Total Accuracy"], value_name="Accuracy")
+    data = pd.melt(results,
+                   id_vars=["Model", "Modality", "Dataset Index", "Modality Index", "Dataset"],
+                   value_vars=["Total Accuracy"],
+                   value_name="Accuracy")
 
     graph_dataset_comparison(title=f"{label} Performance, All Modalities, All Datasets",
                              data=data,
                              modalities=modalities,
-                             figsize=(10, 3),
+                             figsize=(2 * num_plots, 4),
                              plot_size=(1, num_plots),
                              sort_by="Modality Index",
                              add_legend=True,
                              output_path=f"{model}/{model}-Full-Results")
 
     # CoT Quant results
-    data = pd.melt(results, id_vars=["Model", "Modality", "Dataset Index", "Modality Index", "Dataset"],
-                   value_vars=["Total Accuracy", "Percent of Answers Containing CoT", "CoT Accuracy",
-                               "Non-CoT Accuracy"],
+    data = pd.melt(results,
+                   id_vars=["Model", "Modality", "Dataset Index", "Modality Index", "Dataset"],
+                   value_vars=["Percent of Answers Containing CoT"],
                    var_name="Metric",
                    value_name="Percentage").sort_values("Modality Index")
+    #
+    # graph_cot_data(title=f"{label} CoT Quantification, All Modalities, All Datasets",
+    #                data=data,
+    #                figsize=(2 * num_plots, 4),
+    #                plot_size=(1, num_plots),
+    #                hue="Metric",
+    #                x="Modality",
+    #                xtick_labels=[modality_to_label_map[modality] for modality in modalities],
+    #                chart_labels=["MultiArith", "GSM8k", "Aqua-RAT", "Coin Flip", "MMLU"],
+    #                group_by="Dataset Index",
+    #                output_path=f"{model}/{model}-CoT-Quant")
 
-    graph_cot_data(title="GPT-4 CoT Quantification, All Modalities, All Datasets",
-                   data=data,
-                   figsize=(10, 10),
-                   plot_size=(2, 3),
-                   hue="Metric",
-                   x="Modality",
-                   groupby="Dataset Index",
-                   output_path=f"{model}/{model}-CoT-Quant")
+    graph_dataset_comparison(title=f"{label} CoT Quantification, All Modalities, All Datasets",
+                             data=data,
+                             y="Percentage",
+                             ylabel="Percent of Answers Containing CoT",
+                             modalities=modalities,
+                             figsize=(2 * num_plots, 4),
+                             plot_size=(1, num_plots),
+                             sort_by="Modality Index",
+                             add_legend=True,
+                             output_path=f"{model}/{model}-Full-CoT-Quant")
 
 
-def stepwise(model: str):
+def graph_stepwise(model: str, max_steps: int = 9):
     label = model_to_label_map[model]
     modalities = ["zero_shot", "zero_shot_cot", "suppressed_cot", "explanation_first", "answer_first"]
 
-    results = search_metadata(models=[model], modalities=modalities, datasets=["stepwise"])
-    results = results.loc[results['Steps'] <= 9]
+    results = search_metadata(models=[model],
+                              modalities=modalities,
+                              datasets=["stepwise"])
+    results = results.loc[results['Steps'] <= max_steps]
 
-    data = pd.melt(results,
+    data = pd.melt(frame=results,
                    id_vars=["Model", "Modality", "Modality Index", "Dataset", "Steps", "ci_upper", "ci_lower"],
-                   value_vars=["Total Accuracy"], value_name="Accuracy").sort_values(by=["Steps", "Modality Index"])
+                   value_vars=["Total Accuracy"],
+                   value_name="Accuracy").sort_values(by=["Steps", "Modality Index"])
 
-    graph_stepwise_comparison(
-        title=f"{label} Performance on Stepwise Dataset",
-        data=data, modalities=modalities,
-        output_path=f"{model}/{model}-9-step-Results")
+    graph_stepwise_comparison(title=f"{label} Performance on Stepwise Dataset",
+                              data=data,
+                              modalities=modalities,
+                              output_path=f"{model}/{model}-{max_steps}-Step-Results")
 
     # CoT Quantification
-    data = pd.melt(results,
+    data = pd.melt(frame=results,
                    id_vars=["Steps", "Modality", "Modality Index", "Model", "Model Index", "ci_upper", "ci_lower"],
-                   value_vars=["Total Accuracy", "Percent of Answers Containing CoT", "CoT Accuracy",
-                               "Non-CoT Accuracy"],
+                   value_vars=["Percent of Answers Containing CoT"],
                    var_name="Metric",
-                   value_name="Percentage")
+                   value_name="Percentage").sort_values(by=["Steps", "Modality Index"])
 
-    # graph_cot_data(title="GPT-4 CoT Quantification, Stepwise Dataset",
-    #                data=data,
-    #                x="Step",
-    #                xtick_labels=[str(i) + " Step" for i in range(1, 21)],
-    #                figsize=(15, 5),
-    #                plot_size=(1, 3),
-    #                output_path="GPT4/Stepwise/gpt4-step-supp-cot-quant")
-
-
-def stepwise_long(model: str):
-    label = model_to_label_map[model]
-    modalities = ["zero_shot", "zero_shot_cot", "suppressed_cot", "explanation_first", "answer_first"]
-
-    results = search_metadata(models=[model], datasets=["stepwise"], modalities=modalities)
-    results = results.loc[results['Steps'] <= 23]
-
-    data = pd.melt(results,
-                   id_vars=["Model", "Modality", "Modality Index", "Dataset", "Steps", "ci_upper", "ci_lower"],
-                   value_vars=["Total Accuracy"], value_name="Accuracy").sort_values(by=["Steps", "Modality Index"])
-
-    graph_stepwise_comparison(
-        title=f"{label} Performance on Stepwise Dataset",
-        data=data, modalities=modalities,
-        output_path=f"{model}/{model}-23-Step-Results")
-
-    # CoT Quantification
-    data = pd.melt(results,
-                   id_vars=["Steps", "Modality", "Modality Index", "Model", "Model Index", "ci_upper", "ci_lower"],
-                   value_vars=["Total Accuracy", "Percent of Answers Containing CoT", "CoT Accuracy",
-                               "Non-CoT Accuracy"],
-                   var_name="Metric",
-                   value_name="Percentage")
-
-    # graph_cot_data(title="GPT-4 CoT Quantification, Stepwise Dataset",
-    #                data=data,
-    #                x="Step",
-    #                xtick_labels=[str(i) + " Step" for i in range(1, 21)],
-    #                figsize=(15, 5),
-    #                plot_size=(1, 3),
-    #                output_path="gpt4-step-supp-cot-quant")
+    graph_stepwise_comparison(title=f"{label} CoT Quantification, Stepwise Dataset",
+                              data=data,
+                              modalities=modalities,
+                              y="Percentage",
+                              ci=False,
+                              output_path=f"{model}/{model}-{max_steps}-Step-CoT-Quant")
 
 
 def prompt_comparison():
@@ -133,7 +166,7 @@ def prompt_comparison():
 
     frames.append(pd.DataFrame({
         "Model": "text-davinci-002",
-        "Model Index": model_to_index_map["text-davinci-002"],
+        "Model Index": model_index_map["text-davinci-002"],
         "Extraction": "Initial",
         "Extraction Index": 1,
         "Dataset": "gsm8k",
@@ -142,7 +175,7 @@ def prompt_comparison():
 
     frames.append(pd.DataFrame({
         "Model": "text-davinci-002",
-        "Model Index": model_to_index_map["text-davinci-002"],
+        "Model Index": model_index_map["text-davinci-002"],
         "Extraction": "Simplified",
         "Extraction Index": 2,
         "Dataset": "gsm8k",
@@ -151,7 +184,7 @@ def prompt_comparison():
 
     frames.append(pd.DataFrame({
         "Model": "text-davinci-002",
-        "Model Index": model_to_index_map["text-davinci-002"],
+        "Model Index": model_index_map["text-davinci-002"],
         "Extraction": "Simplified In-Brackets",
         "Extraction Index": 3,
         "Dataset": "gsm8k",
@@ -160,7 +193,7 @@ def prompt_comparison():
 
     frames.append(pd.DataFrame({
         "Model": "gpt-3.5-turbo",
-        "Model Index": model_to_index_map["gpt-3.5-turbo"],
+        "Model Index": model_index_map["gpt-3.5-turbo"],
         "Extraction": "Initial",
         "Extraction Index": 1,
         "Dataset": "gsm8k",
@@ -169,7 +202,7 @@ def prompt_comparison():
 
     frames.append(pd.DataFrame({
         "Model": "gpt-3.5-turbo",
-        "Model Index": model_to_index_map["gpt-3.5-turbo"],
+        "Model Index": model_index_map["gpt-3.5-turbo"],
         "Extraction": "Simplified",
         "Extraction Index": 2,
         "Dataset": "gsm8k",
@@ -178,7 +211,7 @@ def prompt_comparison():
 
     frames.append(pd.DataFrame({
         "Model": "gpt-3.5-turbo",
-        "Model Index": model_to_index_map["gpt-3.5-turbo"],
+        "Model Index": model_index_map["gpt-3.5-turbo"],
         "Extraction": "Simplified In-Brackets",
         "Extraction Index": 3,
         "Dataset": "gsm8k",
@@ -186,20 +219,27 @@ def prompt_comparison():
     }))
 
     orig = pd.concat(frames)
-    data = pd.melt(orig, id_vars=["Model", "Model Index", "Extraction", "Extraction Index", "Dataset"],
-                   value_vars=["Total Accuracy"], value_name="Accuracy").sort_values("Dataset")
+    data = pd.melt(orig,
+                   id_vars=["Model", "Model Index", "Extraction", "Extraction Index", "Dataset"],
+                   value_vars=["Total Accuracy"],
+                   value_name="Accuracy").sort_values("Dataset")
 
     graph_generic(title="Comparison of Answer Extraction Techniques By Model, GSM8k",
-                  data=data, groupby="Model Index", output_path="gsm8k-extraction-comparison",
+                  x="Extraction Index",
+                  y="Accuracy",
+                  data=data,
+                  group_by="Model Index",
+                  output_path=r"gsm8k-extraction-comparison",
                   chart_labels=["text-davinci-002", "GPT 3.5", "GPT-4"],
-                  x_labels=["Initial", "Simplified", "In-Brackets"], figsize=(5, 3),
-                  x="Extraction Index", plot_size=(1, 2), y="Accuracy")
+                  x_labels=["Initial", "Simplified", "In-Brackets"],
+                  figsize=(5, 3),
+                  plot_size=(1, 2))
 
     frames = list()
 
     frames.append(pd.DataFrame({
         "Model": "text-davinci-002",
-        "Model Index": model_to_index_map["text-davinci-002"],
+        "Model Index": model_index_map["text-davinci-002"],
         "Modality": "zero_shot",
         "Extraction": "Initial",
         "Extraction Index": 1,
@@ -209,7 +249,7 @@ def prompt_comparison():
 
     frames.append(pd.DataFrame({
         "Model": "text-davinci-002",
-        "Model Index": model_to_index_map["text-davinci-002"],
+        "Model Index": model_index_map["text-davinci-002"],
         "Modality": "zero_shot",
         "Extraction": "Simplified",
         "Extraction Index": 2,
@@ -219,7 +259,7 @@ def prompt_comparison():
 
     frames.append(pd.DataFrame({
         "Model": "text-davinci-002",
-        "Model Index": model_to_index_map["text-davinci-002"],
+        "Model Index": model_index_map["text-davinci-002"],
         "Modality": "zero_shot",
         "Extraction": "Simplified In-Brackets",
         "Extraction Index": 3,
@@ -229,7 +269,7 @@ def prompt_comparison():
 
     frames.append(pd.DataFrame({
         "Model": "gpt-3.5-turbo",
-        "Model Index": model_to_index_map["gpt-3.5-turbo"],
+        "Model Index": model_index_map["gpt-3.5-turbo"],
         "Modality": "zero_shot",
         "Extraction": "Initial",
         "Extraction Index": 1,
@@ -239,7 +279,7 @@ def prompt_comparison():
 
     frames.append(pd.DataFrame({
         "Model": "gpt-3.5-turbo",
-        "Model Index": model_to_index_map["gpt-3.5-turbo"],
+        "Model Index": model_index_map["gpt-3.5-turbo"],
         "Modality": "zero_shot",
         "Extraction": "Simplified",
         "Extraction Index": 2,
@@ -249,7 +289,7 @@ def prompt_comparison():
 
     frames.append(pd.DataFrame({
         "Model": "gpt-3.5-turbo",
-        "Model Index": model_to_index_map["gpt-3.5-turbo"],
+        "Model Index": model_index_map["gpt-3.5-turbo"],
         "Extraction Index": 3,
         "Modality": "zero_shot",
         "Extraction": "Simplified In-Brackets",
@@ -258,81 +298,17 @@ def prompt_comparison():
     }))
 
     orig = pd.concat(frames)
-    data = pd.melt(orig, id_vars=["Model", "Model Index", "Extraction", "Extraction Index", "Dataset"],
-                   value_vars=["Total Accuracy"], value_name="Accuracy").sort_values("Dataset")
+    data = pd.melt(orig,
+                   id_vars=["Model", "Model Index", "Extraction", "Extraction Index", "Dataset"],
+                   value_vars=["Total Accuracy"],
+                   value_name="Accuracy").sort_values("Dataset")
 
     graph_generic(title="Comparison of Answer Extraction Techniques By Model, MultiArith",
-                  data=data, groupby="Model Index",
+                  data=data,
+                  group_by="Model Index",
                   output_path="multiarith-extraction-comparison",
                   chart_labels=["text-davinci-002", "GPT 3.5", "GPT-4"],
                   x_labels=["Initial", "Simplified", "In-Brackets"],
                   figsize=(5, 3),
                   x="Extraction Index",
                   plot_size=(1, 2), y="Accuracy")
-
-
-def coin_flip_full_results():
-    # Graph GPT-4 Coin CoT results
-    modalities = ["zero_shot", "zero_shot_cot", "suppressed_cot", "explanation_first", "answer_first"]
-
-    data = search_metadata(modalities=modalities,
-                           datasets=["coin_flip"])
-
-    compare = pd.melt(data, id_vars=["Model", "Modality", "Model Index", "Modality Index", "Dataset"],
-                      value_vars=["Total Accuracy"], value_name="Accuracy").sort_values("Modality Index")
-
-    graph_generic(title="Coin Flip Model Comparison",
-                  data=compare, groupby="Model Index", sort_by="Modality Index",
-                  output_path=r"DatasetAnalysis\coin-flip-full-results",
-                  chart_labels=["text-davinci-002", "GPT-3.5", "GPT-4"],
-                  x_labels=[modality_to_label_map[i] for i in modalities],
-                  palette=[modality_to_color_map[i] for i in modalities],
-                  figsize=(15, 5), plot_size=(1, 3))
-
-    # CoT Quant results
-    data = pd.melt(data, id_vars=["Model", "Modality", "Dataset Index", "Modality Index", "Dataset"],
-                   value_vars=["Total Accuracy", "Percent of Answers Containing CoT", "CoT Accuracy",
-                               "Non-CoT Accuracy"],
-                   var_name="Metric",
-                   value_name="Percentage")
-
-    graph_cot_data(title="Coin Flip CoT Quantification, All Models, All Modalities",
-                   data=data,
-                   figsize=(15, 5),
-                   plot_size=(2, 3),
-                   hue="Metric",
-                   x="Dataset",
-                   output_path="coin-flip-full-cot-quant")
-
-
-def coin_flip_supp_results():
-    # Graph GPT-4 Coin CoT results
-    modalities = ["zero_shot", "zero_shot_cot", "suppressed_cot"]
-
-    data = search_metadata(models=["gpt-3.5-turbo", "gpt-4"],
-                           modalities=modalities,
-                           datasets=["coin_flip"])
-
-    compare = pd.melt(data, id_vars=["Model", "Modality", "Model Index", "Modality Index", "Dataset"],
-                      value_vars=["Total Accuracy"], value_name="Accuracy").sort_values("Modality Index")
-    graph_generic(title="Coin Flip Model Comparison",
-                  data=compare, groupby="Model Index", sort_by="Modality Index",
-                  output_path="coin-flip-supp-results", chart_labels=["GPT 3.5", "GPT-4"],
-                  x_labels=[modality_to_label_map[i] for i in modalities],
-                  palette=[modality_to_color_map[i] for i in modalities],
-                  figsize=(10, 5), plot_size=(1, 2))
-
-    # CoT Quant results
-    data = pd.melt(data, id_vars=["Model", "Modality", "Dataset Index", "Modality Index", "Dataset"],
-                   value_vars=["Total Accuracy", "Percent of Answers Containing CoT", "CoT Accuracy",
-                               "Non-CoT Accuracy"],
-                   var_name="Metric",
-                   value_name="Percentage")
-
-    graph_cot_data(title="Coin Flip CoT Quantification, GPT-4 and GPT-3.5",
-                   data=data,
-                   figsize=(10, 5),
-                   plot_size=(1, 3),
-                   hue="Metric",
-                   x="Dataset",
-                   output_path="coin-flip-supp-cot-quant")

@@ -2,7 +2,7 @@ import json
 import os
 import pathlib
 
-from Datasets.JsonlDataset import JsonlDataset
+from Datasets.JsonDataset import JsonDataset
 from config import METADATA_FOLDER
 
 
@@ -100,15 +100,10 @@ def read_json(filepath: str) -> dict | list[dict]:
     return results
 
 
-def load_dataset(path: str) -> JsonlDataset:
-    data = list()
+def load_dataset(path: str) -> JsonDataset:
     filepath = path
     with open(filepath) as file:
-        lines = file.readlines()
+        data = json.load(file)
 
-    for line in lines:
-        j_dict = json.loads(line)
-        data.append(j_dict)
-
-    dataset = JsonlDataset(data=data)
+    dataset = JsonDataset(data=data)
     return dataset
