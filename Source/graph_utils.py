@@ -200,6 +200,8 @@ def graph_stepwise_comparison(data: DataFrame, title: str, modalities: list[str]
 
         ax.lines[i].set_linestyle(modality_to_dash_map[modality])
         ax.legend().get_lines()[i].set_linestyle(modality_to_dash_map[modality])
+        ax.set_xticks(np.arange(data["Steps"].max()))
+        ax.set_xticklabels([i for i in range(int(data["Steps"].max()))])
 
         if ci:
             # Add the confidence intervals
@@ -216,7 +218,6 @@ def graph_cot_data(title: str, data: DataFrame, figsize: tuple[int, int], plot_s
                    output_path: str, x: str, hue: str | None = "Metric", group_by: str = "Modality Index",
                    xtick_labels: list[str] | None = None,
                    chart_labels: list[str] | None = None):
-    datasets = ["MultiArith", "GSM8k", "Aqua-RAT", "Coin Flip", "MMLU"]
 
     # Store the first coord for setting the legend
     first_coord = None

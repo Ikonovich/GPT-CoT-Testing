@@ -13,12 +13,17 @@ from file_utils import get_filepaths, read_json, write_json
 def search_metadata(models: list[str] = None,
                     modalities: list[str] = None,
                     datasets: list[str] = None,
-                    extraction_types: list[str] = None):
-
+                    extraction_types: list[str] = None,
+                    include_secondary=False):
     if datasets is None:
-        datasets = ["multiarith", "gsm8k", "aqua", "mmlu", "coin_flip"]
+        datasets = ["multiarith", "gsm8k", "aqua", "mmlu-combined", "coin_flip"]
     metapath = os.path.join(METADATA_FOLDER, "Test Results.csv")
     frame = pd.read_csv(metapath)
+
+    if include_secondary:
+        metapath = os.path.join(METADATA_FOLDER, "Secondary Test Results.csv")
+        second_frame = pd.read_csv(metapath)
+        frame = pd.concat([frame, second_frame])
 
     if models is not None:
         frame = frame[frame.Model.isin(models)]
@@ -27,17 +32,19 @@ def search_metadata(models: list[str] = None,
         frame = frame[frame.Modality.isin(modalities)]
 
     if datasets is not None:
-        frame = frame[frame.Dataset.isin(datasets)]
+        frame = frame[frame["Dataset"].isin(datasets)]
 
     if extraction_types is not None:
-        frame = frame[frame.Extraction_Type.isin(extraction_types)]
+        frame = frame[frame['Extraction Type'].isin(extraction_types)]
 
     return frame
 
 
-def generate_metadata(root: str = None):
+def generate_metadata(root: str = None, filename: str = None):
     if root is None:
         root = RESULTS_FOLDER
+    if filename is None:
+        filename = "Test Results.csv"
 
     data_paths = get_filepaths(root=root, contains=["json"])
 
@@ -51,20 +58,21 @@ def generate_metadata(root: str = None):
 
     # Update the metadata file
     frame = pd.DataFrame.from_records(data=results)
-    metapath = os.path.join(METADATA_FOLDER, "Test Results.csv")
+    metapath = os.path.join(METADATA_FOLDER, filename)
     frame.to_csv(metapath)
 
 
 def path_to_metadata(test_path: str) -> dict[str, str]:
     # Generates metadata files from provided test results and test path.
 
-    steps = None
     metadata = dict()
     # get prompt style
-    if "simple" in test_path:
-        simple_prompt = "True"
-    else:
+    if "Simple" in test_path:
+        simple_prompt = True
+    elif "Initial" in test_path:
         simple_prompt = False
+    else:
+        raise ValueError
 
     # Get the model
     if "gpt-4-32k" in test_path:
@@ -81,6 +89,8 @@ def path_to_metadata(test_path: str) -> dict[str, str]:
     # Get the extraction type
     if "in-brackets" in test_path:
         extraction_type = "in-brackets"
+    elif "two-stage-style-two" in test_path:
+        extraction_type = "two-stage-style-two"
     elif "two-stage" in test_path:
         extraction_type = "two-stage"
     else:
@@ -97,6 +107,9 @@ def path_to_metadata(test_path: str) -> dict[str, str]:
         modality = "suppressed_cot"
     elif "zero_shot" in test_path:
         modality = "zero_shot"
+    # Only used in very early comparison tests
+    elif "the_answer_is" in test_path:
+        modality = "the_answer_is"
     else:
         raise ValueError
 
@@ -107,8 +120,12 @@ def path_to_metadata(test_path: str) -> dict[str, str]:
         dataset = "gsm8k"
     elif "multiarith" in test_path:
         dataset = "multiarith"
-    elif "mmlu" in test_path:
-        dataset = "mmlu"
+    elif "mmlu-high-school" in test_path:
+        dataset = "mmlu-high-school"
+    elif "mmlu-college" in test_path:
+        dataset = "mmlu-college"
+    elif "mmlu-combined" in test_path:
+        dataset = "mmlu-combined"
     elif "coin_flip" in test_path:
         dataset = "coin_flip"
     elif "step" in test_path:
@@ -150,7 +167,7 @@ def count_cot(data: list[dict], dataset: str) -> tuple[int, int, int, int, int, 
 
         # Get the accuracy value
         try:
-            if dataset == "aqua" or dataset == "coin_flip" or dataset == "mmlu":
+            if dataset == "aqua" or dataset == "coin_flip" or "mmlu" in dataset:
                 if answer.lower() == gt.lower():
                     is_accurate = 1
                     total_accurate += 1
@@ -209,12 +226,12 @@ def test_quantification(test_path: str = None):
         data=data, dataset=metadata["Dataset"])
 
     if cot_total == 0:
-        cot_accuracy = 0
+        cot_accuracy = "N/A"
     else:
         cot_accuracy = (cot_accurate / cot_total) * 100
 
     if non_cot_total == 0:
-        non_cot_accuracy = 0
+        non_cot_accuracy = "N/A"
     else:
         non_cot_accuracy = (non_cot_accurate / non_cot_total) * 100
 

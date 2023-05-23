@@ -5,7 +5,7 @@ from os import path
 import openai
 from config import RESULTS_FOLDER, DATASET_FOLDER, DATASETS, \
     completion, chat, two_stage_extract_prompt, suppression_prompt, cot_prompt, \
-    answer_first_prompt, explanation_first_prompt, in_bracket_prompt
+    answer_first_prompt, explanation_first_prompt, in_bracket_prompt, WAIT_TIME
 from file_utils import load_dataset, write_json, read_json
 
 # Stores the time of the last query
@@ -13,18 +13,21 @@ last_query_time = 0
 
 
 # Timer function that pauses operation until the time since last query exceeds config.WAIT_TIME
-def timer(wait_time: float):
+def timer():
     global last_query_time
 
     cur_time = time.time()
     diff = cur_time - last_query_time
-    if diff < wait_time:
-        time.sleep(wait_time - diff)
+    if diff < WAIT_TIME:
+        time.sleep(WAIT_TIME - diff)
 
     last_query_time = time.time()
 
 
 def query(model: str, prompt: str, max_tokens: int) -> str:
+    # Run the timer to keep from querying too quickly
+    timer()
+
     if model in completion:
         response = openai.Completion.create(
             engine=model,
@@ -111,7 +114,7 @@ def run_test(model: str, modality: str, dataset: str, args):
     else:
         prompt = "Initial"
 
-    # Set the dataset folder, because we don't split individual step runs into separate folders
+    # Set the results folder, because we don't split individual step runs into separate folders
     if 'step' in dataset:
         dataset_sub = "stepwise"
     else:
@@ -125,6 +128,8 @@ def run_test(model: str, modality: str, dataset: str, args):
 
     dataset_path = path.join(DATASET_FOLDER, DATASETS[dataset])
 
+    # Set the start index
+    # This lets us continue from where we left off if the model is overloaded or the test has to restart.
     start_index = 0
     if cont and path.exists(output_path):
         try:
@@ -140,16 +145,12 @@ def run_test(model: str, modality: str, dataset: str, args):
     # Load the dataset
     data = load_dataset(dataset_path)
     # Set the end index
-    # This lets us continue from where we left off if the model is overloaded or the test has to restart.
     if num_samples == 0:
         end_index = len(data)
     else:
         end_index = min(num_samples, len(data))
 
     for i in range(start_index, end_index):
-        # Run the timer to keep from querying too quickly
-        timer(wait_time)
-
         x, y, test_entry = data[i]
         # Build the prompt out of our question
         prompt = build_prompt(question=x, modality=modality, use_simple_prompt=use_simple_prompt,
@@ -162,13 +163,11 @@ def run_test(model: str, modality: str, dataset: str, args):
         else:
             options = None
 
-
         # Validate the extraction type and perform two-stage extraction, if necessary.
         if extraction_type == "in-brackets":
             extraction_response = "None"
         elif extraction_type == "two-stage":
-            # Run the timer to keep from querying too quickly, then resubmit the response for answer extraction
-            timer(wait_time)
+            # Resubmit the response for answer extraction
             extraction_prompt = prompt + " " + response + "\n" + two_stage_extract_prompt
             extraction_response = query(model, extraction_prompt, max_tokens=max_tokens)
         elif extraction_type == "two-stage-style-two":
@@ -177,7 +176,8 @@ def run_test(model: str, modality: str, dataset: str, args):
         else:
             raise ValueError("The provided extraction type is not valid.")
 
-        result = {"Index": test_entry["Index"], "Query": prompt, "Response": response, "Extract-Response": extraction_response,
+        result = {"Index": test_entry["Index"], "Query": prompt, "Response": response,
+                  "Extract-Response": extraction_response,
                   "GT": y}
 
         if dataset == "aqua" or "mmlu" in dataset:

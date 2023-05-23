@@ -1,34 +1,46 @@
-import pandas as pd
+import os
 
-from config import model_index_map
+import pandas as pd
+import seaborn as sns
+from matplotlib import pyplot as plt
+
+from config import model_index_map, GRAPHS_FOLDER
 from data_utils import search_metadata
-from graph_utils import graph_generic, graph_stepwise_comparison, graph_dataset_comparison, \
-    modality_to_label_map
+from graph_utils import graph_generic, graph_stepwise_comparison, graph_dataset_comparison, generate_singular_plot, \
+    modality_to_color_map
 
 dataset_to_label_map = {"multiarith": "MultiArith", "gsm8k": "GSM8k", "aqua": "Aqua-RAT", "coin_flip": "Coin Flip",
-                        "mmlu": "MMLU"}
+                        "mmlu-combined": "MMLU"}
 model_to_label_map = {"gpt-3.5-turbo": "GPT-3.5 Turbo", "gpt-4": "GPT-4", "text-davinci-002": "GPT-3",
                       "gpt-4-32k": "GPT-4-32k"}
 
 
 def create_graphs():
-    single_dataset_results(dataset="multiarith")
-    single_dataset_results(dataset="aqua")
-    single_dataset_results(dataset="mmlu",
-                           models=["gpt-3.5-turbo", "gpt-4"])
-    single_dataset_results(dataset="gsm8k")
-    single_dataset_results(dataset="coin_flip",
-                           models=["gpt-3.5-turbo", "gpt-4"],
-                           modalities=["zero_shot", "zero_shot_cot", "suppressed_cot"],
-                           save_discriminator="Supp-Two-Model")
+    extraction_comparison()
 
-    graph_non_stepwise(model="gpt-4")
-    graph_non_stepwise(model="gpt-3.5-turbo")
-    graph_non_stepwise(model="text-davinci-002", num_plots=4)
-
-    graph_stepwise(model="gpt-4", max_steps=23)
-    graph_stepwise(model="gpt-3.5-turbo", max_steps=23)
-    graph_stepwise(model="text-davinci-002", max_steps=23)
+    # single_dataset_results(dataset="multiarith")
+    # single_dataset_results(dataset="aqua")
+    # single_dataset_results(dataset="mmlu-combined",
+    #                        models=["gpt-3.5-turbo", "gpt-4"],
+    #                        save_discriminator="Two-Model")
+    # single_dataset_results(dataset="gsm8k")
+    # single_dataset_results(dataset="coin_flip",
+    #                        models=["gpt-3.5-turbo", "gpt-4"],
+    #                        modalities=["zero_shot", "zero_shot_cot", "suppressed_cot"],
+    #                        save_discriminator="Supp-Two-Model")
+    #
+    # single_dataset_results(dataset="coin_flip")
+    # single_dataset_results(dataset="mmlu-combined")
+    #
+    # graph_non_stepwise(model="gpt-4")
+    # graph_non_stepwise(model="gpt-3.5-turbo")
+    # graph_non_stepwise(model="text-davinci-002")
+    #
+    # graph_stepwise(model="gpt-4", max_steps=23)
+    # graph_stepwise(model="gpt-3.5-turbo", max_steps=23)
+    # graph_stepwise(model="text-davinci-002", max_steps=9)
+    # graph_stepwise(model="gpt-4", max_steps=9)
+    # graph_stepwise(model="gpt-3.5-turbo", max_steps=9)
 
 
 def single_dataset_results(dataset: str, models: list[str] = None, modalities: list[str] = None,
@@ -91,7 +103,7 @@ def graph_non_stepwise(model: str, num_plots: int = 5):
     graph_dataset_comparison(title=f"{label} Performance, All Modalities, All Datasets",
                              data=data,
                              modalities=modalities,
-                             figsize=(2 * num_plots, 4),
+                             figsize=(2 * num_plots, 3),
                              plot_size=(1, num_plots),
                              sort_by="Modality Index",
                              add_legend=True,
@@ -161,154 +173,229 @@ def graph_stepwise(model: str, max_steps: int = 9):
                               output_path=f"{model}/{model}-{max_steps}-Step-CoT-Quant")
 
 
-def prompt_comparison():
+def extraction_comparison():
     frames = list()
 
+    # -- Aqua zero shot frames
     frames.append(pd.DataFrame({
-        "Model": "text-davinci-002",
-        "Model Index": model_index_map["text-davinci-002"],
-        "Extraction": "Initial",
+        "Model": "gpt-4",
+        "Model Index": model_index_map["gpt-4"],
+        "Extraction": "In-Brackets",
+        "Extraction Index": 2,
+        "Dataset": "aqua",
+        "Dataset Index": 2,
+        "Total Accuracy": [60.167],
+        "Modality": "zero_shot"
+    }))
+
+    frames.append(pd.DataFrame({
+        "Model": "gpt-4",
+        "Model Index": model_index_map["gpt-4"],
+        "Extraction": "Two-Stage",
+        "Extraction Index": 1,
+        "Dataset": "aqua",
+        "Dataset Index": 2,
+        "Total Accuracy": [62.0],
+        "Modality": "zero_shot"
+    }))
+
+    frames.append(pd.DataFrame({
+        "Model": "gpt-3.5-turbo",
+        "Model Index": model_index_map["gpt-3.5-turbo"],
+        "Extraction": "In-Brackets",
+        "Extraction Index": 2,
+        "Dataset": "aqua",
+        "Dataset Index": 2,
+        "Total Accuracy": [53.5461],
+        "Modality": "zero_shot"
+    }))
+
+    frames.append(pd.DataFrame({
+        "Model": "gpt-3.5-turbo",
+        "Model Index": model_index_map["gpt-3.5-turbo"],
+        "Extraction": "two-stage",
+        "Extraction Index": 1,
+        "Dataset": "aqua",
+        "Dataset Index": 2,
+        "Total Accuracy": [52.5],
+        "Modality": "zero_shot"
+    }))
+
+
+    # -- GSM8k zero shot frames
+    frames.append(pd.DataFrame({
+        "Model": "gpt-4",
+        "Model Index": model_index_map["gpt-4"],
+        "Extraction": "two-stage",
         "Extraction Index": 1,
         "Dataset": "gsm8k",
-        "Total Accuracy": [15.0]
+        "Dataset Index": 0,
+        "Total Accuracy": [92.0],
+        "Modality": "zero_shot"
     }))
 
     frames.append(pd.DataFrame({
-        "Model": "text-davinci-002",
-        "Model Index": model_index_map["text-davinci-002"],
-        "Extraction": "Simplified",
+        "Model": "gpt-4",
+        "Model Index": model_index_map["gpt-4"],
+        "Extraction": "in-brackets",
         "Extraction Index": 2,
         "Dataset": "gsm8k",
-        "Total Accuracy": [12.17]
-    }))
-
-    frames.append(pd.DataFrame({
-        "Model": "text-davinci-002",
-        "Model Index": model_index_map["text-davinci-002"],
-        "Extraction": "Simplified In-Brackets",
-        "Extraction Index": 3,
-        "Dataset": "gsm8k",
-        "Total Accuracy": [11.0]
+        "Dataset Index": 0,
+        "Total Accuracy": [93.1667],
+        "Modality": "zero_shot"
     }))
 
     frames.append(pd.DataFrame({
         "Model": "gpt-3.5-turbo",
         "Model Index": model_index_map["gpt-3.5-turbo"],
-        "Extraction": "Initial",
+        "Extraction": "in-brackets",
+        "Extraction Index": 2,
+        "Dataset": "gsm8k",
+        "Dataset Index": 0,
+        "Total Accuracy": [78.8333],
+        "Modality": "zero_shot"
+    }))
+
+    frames.append(pd.DataFrame({
+        "Model": "gpt-3.5-turbo",
+        "Model Index": model_index_map["gpt-3.5-turbo"],
+        "Extraction": "two-stage",
         "Extraction Index": 1,
         "Dataset": "gsm8k",
-        "Total Accuracy": [76.3]
+        "Dataset Index": 0,
+        "Total Accuracy": [80.16667],
+        "Modality": "zero_shot"
+    }))
+
+    # -- mmlu zero shot frames
+    frames.append(pd.DataFrame({
+        "Model": "gpt-4",
+        "Model Index": model_index_map["gpt-4"],
+        "Extraction": "two-stage",
+        "Extraction Index": 1,
+        "Dataset": "mmlu-combined",
+        "Dataset Index": 3,
+        "Total Accuracy": [57.866],
+        "Modality": "zero_shot"
     }))
 
     frames.append(pd.DataFrame({
-        "Model": "gpt-3.5-turbo",
-        "Model Index": model_index_map["gpt-3.5-turbo"],
-        "Extraction": "Simplified",
+        "Model": "gpt-4",
+        "Model Index": model_index_map["gpt-4"],
+        "Extraction": "in-brackets",
         "Extraction Index": 2,
-        "Dataset": "gsm8k",
-        "Total Accuracy": [81.16]
+        "Dataset": "mmlu-combined",
+        "Dataset Index": 3,
+        "Total Accuracy": [57.6],
+        "Modality": "zero_shot"
     }))
 
     frames.append(pd.DataFrame({
         "Model": "gpt-3.5-turbo",
         "Model Index": model_index_map["gpt-3.5-turbo"],
-        "Extraction": "Simplified In-Brackets",
-        "Extraction Index": 3,
-        "Dataset": "gsm8k",
-        "Total Accuracy": [78.5]
+        "Extraction": "in-brackets",
+        "Extraction Index": 2,
+        "Dataset": "mmlu-combined",
+        "Dataset Index": 3,
+        "Total Accuracy": [8.9783],
+        "Modality": "zero_shot"
+    }))
+
+    frames.append(pd.DataFrame({
+        "Model": "gpt-3.5-turbo",
+        "Model Index": model_index_map["gpt-3.5-turbo"],
+        "Extraction": "two-stage",
+        "Extraction Index": 1,
+        "Dataset": "mmlu-combined",
+        "Dataset Index": 3,
+        "Total Accuracy": [52.0],
+        "Modality": "zero_shot"
+    }))
+
+    # -- coin flip zero shot frames
+    frames.append(pd.DataFrame({
+        "Model": "gpt-4",
+        "Model Index": model_index_map["gpt-4"],
+        "Extraction": "two-stage",
+        "Extraction Index": 1,
+        "Dataset": "coin_flip",
+        "Dataset Index": 1,
+        "Total Accuracy": [55.4],
+        "Modality": "zero_shot"
+    }))
+
+    frames.append(pd.DataFrame({
+        "Model": "gpt-4",
+        "Model Index": model_index_map["gpt-4"],
+        "Extraction": "in-brackets",
+        "Extraction Index": 2,
+        "Dataset": "coin_flip",
+        "Dataset Index": 1,
+        "Total Accuracy": [55.6],
+        "Modality": "zero_shot"
+    }))
+
+    frames.append(pd.DataFrame({
+        "Model": "gpt-3.5-turbo",
+        "Model Index": model_index_map["gpt-3.5-turbo"],
+        "Extraction": "in-brackets",
+        "Extraction Index": 2,
+        "Dataset": "coin_flip",
+        "Dataset Index": 1,
+        "Total Accuracy": [39.6],
+        "Modality": "zero_shot"
+    }))
+
+    frames.append(pd.DataFrame({
+        "Model": "gpt-3.5-turbo",
+        "Model Index": model_index_map["gpt-3.5-turbo"],
+        "Extraction": "two-stage",
+        "Extraction Index": 1,
+        "Dataset": "coin_flip",
+        "Dataset Index": 1,
+        "Total Accuracy": [46.6],
+        "Modality": "zero_shot"
     }))
 
     orig = pd.concat(frames)
-    data = pd.melt(orig,
-                   id_vars=["Model", "Model Index", "Extraction", "Extraction Index", "Dataset"],
+
+    modalities = ["zero_shot"]
+
+    # gpt4_data = data[(data["Model"] == "gpt-4")]
+
+    datasets = ["gsm8k", "coin_flip", "aqua", "mmlu-combined"]
+    data = search_metadata(models=["gpt-4"],
+                           modalities=["zero_shot"],
+                           datasets=datasets,
+                           extraction_types=["two-stage", "in-brackets", "two-stage-style-two"],
+                           include_secondary=True)
+
+    # data = pd.melt(data,
+    #                id_vars=["Dataset Index", "Extraction Type", "Dataset"],
+    #                value_vars=["Total Accuracy"],
+    #                value_name="Accuracy").sort_values("Model")
+    data = pd.melt(data,
+                   id_vars=["Model", "Modality", "Dataset Index", "Extraction Type", "Dataset"],
                    value_vars=["Total Accuracy"],
-                   value_name="Accuracy").sort_values("Dataset")
+                   value_name="Accuracy")
 
-    graph_generic(title="Comparison of Answer Extraction Techniques By Model, GSM8k",
-                  x="Extraction Index",
-                  y="Accuracy",
-                  data=data,
-                  group_by="Model Index",
-                  output_path=r"gsm8k-extraction-comparison",
-                  chart_labels=["text-davinci-002", "GPT 3.5", "GPT-4"],
-                  x_labels=["Initial", "Simplified", "In-Brackets"],
-                  figsize=(5, 3),
-                  plot_size=(1, 2))
+    palette = [modality_to_color_map[i] for i in modalities]
+    fig, ax = plt.subplots(1, 4, figsize=(4, 4), layout="constrained")
+    fig.suptitle("Extraction Comparison, GPT-4")
 
-    frames = list()
 
-    frames.append(pd.DataFrame({
-        "Model": "text-davinci-002",
-        "Model Index": model_index_map["text-davinci-002"],
-        "Modality": "zero_shot",
-        "Extraction": "Initial",
-        "Extraction Index": 1,
-        "Dataset": "multiarith",
-        "Total Accuracy": [26.0]
-    }))
+    # sns.set_theme()
+    sns.set_style("whitegrid")
 
-    frames.append(pd.DataFrame({
-        "Model": "text-davinci-002",
-        "Model Index": model_index_map["text-davinci-002"],
-        "Modality": "zero_shot",
-        "Extraction": "Simplified",
-        "Extraction Index": 2,
-        "Dataset": "multiarith",
-        "Total Accuracy": [21.2]
-    }))
+    chart_labels = ["GSM8k", "Coin Flip", "AQuA-RAT", "MMLU"]
+    i = 0
+    frame = data.groupby("Dataset Index")
+    for item in frame:
+        generate_singular_plot(ax=ax, x="Extraction Type", y="Accuracy", coordinate=i,
+                               data=item[1], xtick_labels=None, title=chart_labels[i],
+                               palette=palette)
 
-    frames.append(pd.DataFrame({
-        "Model": "text-davinci-002",
-        "Model Index": model_index_map["text-davinci-002"],
-        "Modality": "zero_shot",
-        "Extraction": "Simplified In-Brackets",
-        "Extraction Index": 3,
-        "Dataset": "multiarith",
-        "Total Accuracy": [15.5]
-    }))
+        i += 1
+    plt.savefig(os.path.join(GRAPHS_FOLDER, "gpt-4-Extraction Comparison.svg"), format='svg', dpi=1200)
+    plt.close("all")
 
-    frames.append(pd.DataFrame({
-        "Model": "gpt-3.5-turbo",
-        "Model Index": model_index_map["gpt-3.5-turbo"],
-        "Modality": "zero_shot",
-        "Extraction": "Initial",
-        "Extraction Index": 1,
-        "Dataset": "multiarith",
-        "Total Accuracy": [90.16]
-    }))
-
-    frames.append(pd.DataFrame({
-        "Model": "gpt-3.5-turbo",
-        "Model Index": model_index_map["gpt-3.5-turbo"],
-        "Modality": "zero_shot",
-        "Extraction": "Simplified",
-        "Extraction Index": 2,
-        "Dataset": "multiarith",
-        "Total Accuracy": [95.3]
-    }))
-
-    frames.append(pd.DataFrame({
-        "Model": "gpt-3.5-turbo",
-        "Model Index": model_index_map["gpt-3.5-turbo"],
-        "Extraction Index": 3,
-        "Modality": "zero_shot",
-        "Extraction": "Simplified In-Brackets",
-        "Dataset": "multiarith",
-        "Total Accuracy": [91.5]
-    }))
-
-    orig = pd.concat(frames)
-    data = pd.melt(orig,
-                   id_vars=["Model", "Model Index", "Extraction", "Extraction Index", "Dataset"],
-                   value_vars=["Total Accuracy"],
-                   value_name="Accuracy").sort_values("Dataset")
-
-    graph_generic(title="Comparison of Answer Extraction Techniques By Model, MultiArith",
-                  data=data,
-                  group_by="Model Index",
-                  output_path="multiarith-extraction-comparison",
-                  chart_labels=["text-davinci-002", "GPT 3.5", "GPT-4"],
-                  x_labels=["Initial", "Simplified", "In-Brackets"],
-                  figsize=(5, 3),
-                  x="Extraction Index",
-                  plot_size=(1, 2), y="Accuracy")

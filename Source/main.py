@@ -7,8 +7,9 @@ from openai.error import OpenAIError
 from create_graphs import create_graphs
 from data_utils import generate_metadata
 from answer_extraction import extract_answers
-from config import DATASETS, ERROR_WAIT_TIME, chat, completion, modalities
+from config import DATASETS, ERROR_WAIT_TIME, chat, completion, modalities, RESULTS_FOLDER
 from query_utils import run_test
+from scratchpad import iterate
 
 
 def main():
@@ -16,21 +17,23 @@ def main():
 
     mode = args.mode
     if mode == "extract":
-        extract_answers()
+        extract_answers(root=RESULTS_FOLDER)
     elif mode == "metadata":
-        generate_metadata()
+        generate_metadata(root=RESULTS_FOLDER, filename="Test Results.csv")
     elif mode == "graph":
         create_graphs()
     elif mode == "test":
         test(args)
-
+    elif mode == "scratchpad":
+        test(args)
 
 def test(args):
+    WAIT_TIME = args.wait_time
     selected_models = args.models
     selected_modalities = args.modalities
     selected_datasets = args.datasets
     # Tracks how many models we've run through. Once we've run through them all, the
-    # operation won't continue after a failed response.
+    # operation will stop.
     model_index = 0
     # # Outer loop ensures operations will repeat on a failed response.
     while model_index < len(selected_models):
@@ -40,7 +43,10 @@ def test(args):
             for modality in selected_modalities:
                 # Run a loop over all datasets listed in config.selected_datasets with the provided config parameters
                 for entry in selected_datasets:
-                    run_test(model=model, modality=modality, dataset=entry, args=args)
+                    if args.mode == "scratchpad":
+                        iterate(model=model, modality=modality, dataset=entry, args=args)
+                    else:
+                        run_test(model=model, modality=modality, dataset=entry, args=args)
             # Increment and carry on to the next model
             model_index += 1
         except OpenAIError as e:
@@ -58,8 +64,9 @@ def parse_args():
     # This includes calculating accuracy and quantifying CoT reasoning.
     # Graph: Runs create_graphs.create_graphs to create all graphs defined there.
     parser.add_argument(
-        "--mode", type=str, choices=["test", "metadata", "graph", "extract"], default="test",
-        help="Choose whether to run tests, extract answers, collate metadata, or graph results."
+        "--mode", type=str, choices=["test", "metadata", "graph", "extract", "scratchpad"], default="test",
+        help="Choose whether to run tests, extract answers, collate metadata, graph results, "
+             "or run scratchpad test mode."
     )
 
     # Takes a list of open AI models to iteratively run through the provided modalities and datasets.
@@ -120,30 +127,4 @@ def parse_args():
 
 
 if __name__ == '__main__':
-    # process_mmlu()
-
-    # root = r"G:\My Drive\GPT Testing\Source\Results\Primary Test Results\gpt-3.5-turbo\suppressed_cot\coin_flip"
-    #
-    # paths = get_filepaths(root)
-    #
-    # for path in paths:
-    #     results = list()
-    #     with open(path, 'r') as json_file:
-    #         json_list = list(json_file)
-    #
-    #     i = 0
-    #     for json_str in json_list:
-    #         result = json.loads(json_str)
-    #
-    #         new_item = dict()
-    #         new_item["Index"] = i
-    #         new_item["Query"] = result["Q"]
-    #         new_item["Response"] = result["R"]
-    #         new_item["Extract-Response"] = result["Extract-Response"]
-    #         new_item["GT"] = result["GT"]
-    #         results.append(new_item)
-    #         i += 1
-    #     save_path = path[:-1]
-    #
-    #     write_json(filepath=save_path, data=results)
     main()

@@ -2,6 +2,9 @@
 This module contains various configurations that aren't individual to each test.
 """
 
+# Stores the minimum wait time between queries, in seconds
+WAIT_TIME = 0
+
 # Sets the number of steps available in the stepwise dataset
 STEPWISE_MAX_SIZE = 55
 
@@ -25,8 +28,8 @@ modalities = ["zero_shot", "zero_shot_cot", "suppressed_cot", "explanation_first
 # Datasets. Stored as a list of json-formatted dictionaries with "Question" and "Ground Truth" keys.
 DATASETS = {"multiarith": "MultiArith/MultiArith-Processed.json", "gsm8k": "GSM8K/GSM8K-Processed.json",
             "aqua": "AQUA/Aqua-Processed.json", "coin_flip": "Coin Flip/coin_flip-processed.json",
-            "mmlu_high_school": "MMLU/Processed/mmlu_high_school.json",
-            "mmlu_college": "MMLU/Processed/mmlu_college.json"}
+            "mmlu-high-school": "MMLU/Processed/mmlu_high_school.json",
+            "mmlu-college": "MMLU/Processed/mmlu_college.json"}
 
 # Add all possible stepwise datasets to the mapping
 for i in range(0, STEPWISE_MAX_SIZE):
@@ -62,8 +65,9 @@ z_val = 1.96
 
 # Maps testing modalities to indices
 modality_index_map = {"zero_shot": 0, "zero_shot_cot": 1, "suppressed_cot": 2,
-                      "explanation_first": 3, "answer_first": 4}
+                      "explanation_first": 3, "answer_first": 4, "the_answer_is": 5}
 # Maps non-stepwise datasets to indices
-dataset_index_map = {"multiarith": 0, "gsm8k": 1, "aqua": 2, "coin_flip": 3, "mmlu": 4, "stepwise": 5}
+dataset_index_map = {"multiarith": 0, "gsm8k": 1, "aqua": 2, "coin_flip": 3, "mmlu-combined": 4, "stepwise": 5,
+                     "mmlu-high-school": 6, "mmlu-college": 7}
 # Maps models to indices
 model_index_map = {"text-davinci-002": 0, "gpt-3.5-turbo": 1, "gpt-4": 2, "gpt-4-32k": 3}

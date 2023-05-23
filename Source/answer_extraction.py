@@ -27,23 +27,17 @@ def extract_answers(root: str | None = None):
         # Iterate over every test and run answer extraction.
         i = 0
         for test in data:
-            if dataset != "mmlu":
-                # Validate the index
-                index = test["Index"]
-                if index != i:
-                    print("Pause")
-
             # Get options if needed to match responses to letters
-            if dataset in ["aqua", "mmlu"]:
+            if dataset == "aqua" or "mmlu" in dataset:
                 options = test["Options"]
             else:
                 options = None
 
-            # Special extraxtion for Answer-First modality with two-stage answer extraction.
+            # Special extraction for Answer-First modality with two-stage answer extraction.
             #
             # We extract the first answer from the initial response and the final answer
             # from the extraction response, to allow distinguishing the model changing answers.
-            if modality == "answer_first" and extraction_type == "two-stage":
+            if modality == "answer_first" and "two-stage" in extraction_type:
                 response = test["Response"]
                 final_response = test["Extract-Response"]
 
@@ -56,7 +50,7 @@ def extract_answers(root: str | None = None):
                                            options=options)
 
             else:
-                if extraction_type == "two-stage":
+                if "two-stage" in extraction_type:
                     response = test["Extract-Response"]
                 else:
                     response = test["Response"]
@@ -68,7 +62,7 @@ def extract_answers(root: str | None = None):
             if modality == "answer_first":
                 answer = front_pred
                 final_answer = end_pred
-            elif extraction_type == "two-stage":
+            elif "two-stage" in extraction_type:
                 answer = front_pred
                 final_answer = front_pred
             else:
@@ -91,7 +85,7 @@ def clean_answer(response: str, dataset: str, extraction_type: str, options: dic
     # attempt to extract the answer.
     # If the modality is answer_first, attempt to extract it from the first and last match.
     # Else, extract it from the last match.
-    if extraction_type == 'in-brackets' or dataset == 'mmlu':
+    if extraction_type == 'in-brackets' or extraction_type == "two-stage-style-two":
         brackets = [s for s in regex.findall(r'\{(?:[^{}]|(?R))*}', response)]
 
         if len(brackets) > 0:
@@ -150,7 +144,7 @@ def _extract(data: list[str] | str, dataset: str, options: dict = None) -> list:
         # Advances in Neural Information Processing Systems, pages 22199--22213
         # DOI 10.48550/arXiv.2205.11916
 
-        if dataset in ['aqua', 'mmlu']:
+        if dataset == "aqua" or "mmlu" in dataset:
             # Look for a response of "N/A"
             pred = regex.findall(r"N/A", sample, regex.IGNORECASE)
             if len(pred) == 0:
