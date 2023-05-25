@@ -1,45 +1,32 @@
 from json import JSONDecodeError
 from os import path
 
-import openai
-from torch.utils.data import dataset
-
-from config import DATASET_FOLDER, DATASETS, chat, RESULTS_FOLDER
+from config import DATASET_FOLDER, DATASETS, RESULTS_FOLDER
 from file_utils import load_dataset, read_json, write_json
-from query_utils import build_prompt, timer
+from query_utils import build_prompt, multi_message_query
+from step_generation import step_generation_test
 
 roles = {
-    "Internal": {"role": "system", "content": "You are engaging in internal reasoning. "
-                                              "None of your output from this cycle will be shown to the user. "
-                                              "All of your output for this cycle will be available in the next "
-                                              "cycle to allow you to produce relevant output for the user."},
-    "External": {"role": "system", "content": "Use the provided reasoning to answer the user's latest message. "
-                                              "Follow any instructions provided by the user."}
+    "Reasoning": {"role": "system", "content": "You are engaging in internal reasoning. "
+                                               "None of your output from this cycle will be shown to the user. "
+                                               "All of your output for this cycle will be available in the next "
+                                               "cycle to allow you to produce relevant output for the user."},
+    "Answering": {"role": "system", "content": "Use the provided reasoning to answer the user's latest message. "
+                                               "Follow any instructions provided by the user."},
+    "Step-Making": {"role": "system", "content": "You will be provided with a simple mathematical formula. Solve it "
+                                                 "step by step. Do not use any words in your steps. An example of the desired "
+                                                 "formatting is as follows:"
+                                                 "2 * 4 = 8"
+                                                 "2: 3 + 8 = {11} "},
+    "Step-Extracting": {"role": "system", "content": "Use the provided reasoning to provide only "
+                                                     "the steps utilized to solve the problem."},
 }
 
 
-def multi_message_query(model: str, messages: list[dict[str, str]], max_tokens: int):
-    # Run the timer to keep from querying too quickly
-    timer()
-
-    if model not in chat:
-        raise ValueError("The provided model is not a Chat-equipped model.")
-
-    response = openai.ChatCompletion.create(
-        model=model,
-        messages=messages,
-        max_tokens=max_tokens,
-        temperature=0,
-        stop=None
-    )
-
-    return response["choices"][0]["message"]
-
-
-def iterate(model: str, modality: str, dataset: str, args):
+def multi_query_test(model_one: str, model_two: str, modality: str, dataset: str, args):
     num_samples = args.num_samples
-    wait_time = args.wait_time
     max_tokens = args.max_tokens
+    mode = args.mode
 
     # Set the results folder, because we don't split individual step runs into separate folders
     if 'step' in dataset:
@@ -47,9 +34,9 @@ def iterate(model: str, modality: str, dataset: str, args):
     else:
         dataset_sub = dataset
 
-    save_directory = path.join(RESULTS_FOLDER, "ScratchPad", model, modality, dataset_sub)
+    save_directory = path.join(RESULTS_FOLDER, mode, model_one, modality, dataset_sub)
     # Results file: Stores last index ran, total count, correct counts, and accuracy.
-    output_file = "SP" "-" + model + "-" + modality + "-" + dataset + ".json"
+    output_file = mode + "-" + model_one + "-" + model_two + "-" + modality + "-" + dataset + ".json"
     output_path = path.join(save_directory, output_file)
 
     # Set the start index
@@ -78,19 +65,23 @@ def iterate(model: str, modality: str, dataset: str, args):
     for i in range(start_index, end_index):
         datum = data[i]
         if args.mode == "scratchpad":
-            result = scratchpad_test(datum=datum, model=model, modality=modality, max_tokens=max_tokens)
-
+            result = scratchpad_test(datum=datum, model_one=model_one, model_two=model_two, modality=modality,
+                                     max_tokens=max_tokens)
+        elif args.mode == "step-generation":
+            result = step_generation_test(datum=datum, model_one=model_one, model_two=model_two, modality=modality,
+                                          max_tokens=max_tokens)
         else:
             raise ValueError("The provided mode is not valid here.")
 
         if path.exists(output_path):
             test_results = read_json(filepath=output_path)
         else:
-            test_results = {"Model": model,
+            test_results = {"Internal Model": model_one,
+                            "External Model": model_two,
                             "Modality": modality,
                             "Dataset": dataset,
-                            "Interal Role": roles["Internal"],
-                            "External Role": roles["External"],
+                            "Interal Role": roles["Reasoning"],
+                            "External Role": roles["Answering"],
                             "Trials": list()
                             }
 
@@ -101,31 +92,32 @@ def iterate(model: str, modality: str, dataset: str, args):
         write_json(filepath=output_path, data=test_results)
 
 
-def scratchpad_test(datum: dict, model: str, modality: str, max_tokens: int):
-
+def scratchpad_test(datum: dict, model_one: str, model_two: str, modality: str, max_tokens: int):
     x, y, test_entry = datum
 
     prompt = build_prompt(question=x, modality=modality, use_simple_prompt=True,
                           bracket_extract=True)
 
     messages = [
-        roles["Internal"],
+        roles["Reasoning"],
         {"role": "user", "content": prompt}
     ]
 
-    internal_message = multi_message_query(model=model, messages=messages, max_tokens=max_tokens)
+    internal_message = multi_message_query(model=model_one, messages=messages, max_tokens=max_tokens)
     reasoning = internal_message["content"]
     print(f"Internal reasoning: {reasoning}")
     messages = [
-        roles["External"],
+        roles["Answering"],
         {"role": "user", "content": prompt},
         internal_message
     ]
 
-    external_message = multi_message_query(model="gpt-4", messages=messages, max_tokens=max_tokens)
+    external_message = multi_message_query(model=model_two, messages=messages, max_tokens=max_tokens)
     response = external_message["content"]
 
     result = {"Index": test_entry["Index"], "Query": prompt, "Reasoning": reasoning, "Response": response,
               "GT": y}
 
     return result
+
+

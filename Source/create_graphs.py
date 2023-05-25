@@ -18,29 +18,29 @@ model_to_label_map = {"gpt-3.5-turbo": "GPT-3.5 Turbo", "gpt-4": "GPT-4", "text-
 def create_graphs():
     extraction_comparison()
 
-    # single_dataset_results(dataset="multiarith")
-    # single_dataset_results(dataset="aqua")
-    # single_dataset_results(dataset="mmlu-combined",
-    #                        models=["gpt-3.5-turbo", "gpt-4"],
-    #                        save_discriminator="Two-Model")
-    # single_dataset_results(dataset="gsm8k")
-    # single_dataset_results(dataset="coin_flip",
-    #                        models=["gpt-3.5-turbo", "gpt-4"],
-    #                        modalities=["zero_shot", "zero_shot_cot", "suppressed_cot"],
-    #                        save_discriminator="Supp-Two-Model")
-    #
-    # single_dataset_results(dataset="coin_flip")
-    # single_dataset_results(dataset="mmlu-combined")
-    #
-    # graph_non_stepwise(model="gpt-4")
-    # graph_non_stepwise(model="gpt-3.5-turbo")
-    # graph_non_stepwise(model="text-davinci-002")
-    #
-    # graph_stepwise(model="gpt-4", max_steps=23)
-    # graph_stepwise(model="gpt-3.5-turbo", max_steps=23)
-    # graph_stepwise(model="text-davinci-002", max_steps=9)
-    # graph_stepwise(model="gpt-4", max_steps=9)
-    # graph_stepwise(model="gpt-3.5-turbo", max_steps=9)
+    single_dataset_results(dataset="multiarith")
+    single_dataset_results(dataset="aqua")
+    single_dataset_results(dataset="mmlu-combined",
+                           models=["gpt-3.5-turbo", "gpt-4"],
+                           save_discriminator="Two-Model")
+    single_dataset_results(dataset="gsm8k")
+    single_dataset_results(dataset="coin_flip",
+                           models=["gpt-3.5-turbo", "gpt-4"],
+                           modalities=["zero_shot", "zero_shot_cot", "suppressed_cot"],
+                           save_discriminator="Supp-Two-Model")
+
+    single_dataset_results(dataset="coin_flip")
+    single_dataset_results(dataset="mmlu-combined")
+
+    graph_non_stepwise(model="gpt-4")
+    graph_non_stepwise(model="gpt-3.5-turbo")
+    graph_non_stepwise(model="text-davinci-002")
+
+    graph_stepwise(model="gpt-4", max_steps=23)
+    graph_stepwise(model="gpt-3.5-turbo", max_steps=23)
+    graph_stepwise(model="text-davinci-002", max_steps=9)
+    graph_stepwise(model="gpt-4", max_steps=9)
+    graph_stepwise(model="gpt-3.5-turbo", max_steps=9)
 
 
 def single_dataset_results(dataset: str, models: list[str] = None, modalities: list[str] = None,

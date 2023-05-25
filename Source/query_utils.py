@@ -3,6 +3,8 @@ from json import JSONDecodeError
 from os import path
 
 import openai
+from regex import regex
+
 from config import RESULTS_FOLDER, DATASET_FOLDER, DATASETS, \
     completion, chat, two_stage_extract_prompt, suppression_prompt, cot_prompt, \
     answer_first_prompt, explanation_first_prompt, in_bracket_prompt, WAIT_TIME
@@ -186,8 +188,21 @@ def run_test(model: str, modality: str, dataset: str, args):
             if path.exists(output_path):
                 test_results = read_json(filepath=output_path)
             else:
-                test_results = list()
-            test_results.append(result)
+                # Generate new test metadata
+                test_results = {"Mode": "test",
+                                "Model": model,
+                                "Modality": modality,
+                                "Dataset": dataset_sub,
+                                }
+                if "step" in dataset:
+                    test_results["Steps"] = steps = int(regex.findall(r"\d{1,2}", dataset)[0])
+
+                test_results.update({"Extraction Type": extraction_type,
+                                     "Simple Prompt": use_simple_prompt,
+                                     "Trials": list()
+                                     })
+
+            test_results["Trials"].append(result)
             write_json(filepath=output_path, data=test_results)
 
     print("Test " + model + "-" + modality + "-" + dataset + " completed.")
@@ -208,3 +223,21 @@ def two_stage_style_two_generation(answer: str, options: dict) -> str:
     prompt += "\nDo not explain your answer. Only provide the answer choice in squiggly brackets in the following format {answer}: "
 
     return prompt
+
+
+def multi_message_query(model: str, messages: list[dict[str, str]], max_tokens: int):
+    # Run the timer to keep from querying too quickly
+    timer()
+
+    if model not in chat:
+        raise ValueError("The provided model is not a Chat-equipped model.")
+
+    response = openai.ChatCompletion.create(
+        model=model,
+        messages=messages,
+        max_tokens=max_tokens,
+        temperature=0,
+        stop=None
+    )
+
+    return response["choices"][0]["message"]

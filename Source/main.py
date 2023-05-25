@@ -4,12 +4,13 @@ import time
 
 from openai.error import OpenAIError
 
+import config
 from create_graphs import create_graphs
 from data_utils import generate_metadata
 from answer_extraction import extract_answers
 from config import DATASETS, ERROR_WAIT_TIME, chat, completion, modalities, RESULTS_FOLDER
 from query_utils import run_test
-from scratchpad import iterate
+from scratchpad import multi_query_test
 
 
 def main():
@@ -22,13 +23,12 @@ def main():
         generate_metadata(root=RESULTS_FOLDER, filename="Test Results.csv")
     elif mode == "graph":
         create_graphs()
-    elif mode == "test":
-        test(args)
-    elif mode == "scratchpad":
-        test(args)
+    elif mode == "test" or mode == "scratchpad" or mode == "step-generation":
+        test(args=args)
+
 
 def test(args):
-    WAIT_TIME = args.wait_time
+    config.WAIT_TIME = args.wait_time
     selected_models = args.models
     selected_modalities = args.modalities
     selected_datasets = args.datasets
@@ -38,17 +38,23 @@ def test(args):
     # # Outer loop ensures operations will repeat on a failed response.
     while model_index < len(selected_models):
         try:
-            model = selected_models[model_index]
             # Runs a loop over all test modalities stored in config.selected_modalities
             for modality in selected_modalities:
                 # Run a loop over all datasets listed in config.selected_datasets with the provided config parameters
                 for entry in selected_datasets:
-                    if args.mode == "scratchpad":
-                        iterate(model=model, modality=modality, dataset=entry, args=args)
-                    else:
+                    if args.mode == "test":
+                        model = selected_models[model_index]
                         run_test(model=model, modality=modality, dataset=entry, args=args)
-            # Increment and carry on to the next model
-            model_index += 1
+                    elif args.mode == "scratchpad" or args.mode == "step-generation":
+                        model_one = selected_models[model_index]
+                        model_two = selected_models[model_index + 1]
+                        multi_query_test(model_one=model_one, model_two=model_two, modality=modality, dataset=entry,
+                                         args=args)
+            # Increment and carry on to the next model or models:
+            if args.mode == "scratchpad" or args.mode == "step-generation":
+                model_index += 2
+            else:
+                model_index += 1
         except OpenAIError as e:
             print(f"An OpenAI API error has occurred: \n{e}\nAttempting to retry after {ERROR_WAIT_TIME} seconds.")
             # Wait and try again
@@ -64,7 +70,9 @@ def parse_args():
     # This includes calculating accuracy and quantifying CoT reasoning.
     # Graph: Runs create_graphs.create_graphs to create all graphs defined there.
     parser.add_argument(
-        "--mode", type=str, choices=["test", "metadata", "graph", "extract", "scratchpad"], default="test",
+        "--mode", type=str,
+        choices=["test", "metadata", "graph", "extract", "scratchpad"],
+        default="test",
         help="Choose whether to run tests, extract answers, collate metadata, graph results, "
              "or run scratchpad test mode."
     )

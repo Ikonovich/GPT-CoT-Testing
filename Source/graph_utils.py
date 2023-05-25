@@ -200,7 +200,8 @@ def graph_stepwise_comparison(data: DataFrame, title: str, modalities: list[str]
 
         ax.lines[i].set_linestyle(modality_to_dash_map[modality])
         ax.legend().get_lines()[i].set_linestyle(modality_to_dash_map[modality])
-        ax.set_xticks(np.arange(data["Steps"].max()))
+
+        ax.set_xticks(np.arange(0, data["Steps"].max()))
         ax.set_xticklabels([i for i in range(int(data["Steps"].max()))])
 
         if ci:
@@ -208,6 +209,7 @@ def graph_stepwise_comparison(data: DataFrame, title: str, modalities: list[str]
             plt.fill_between(df_modality['Steps'], df_modality["ci_lower"], df_modality["ci_upper"], color=color,
                              alpha=.1)
 
+    plt.xlim([1, int(data["Steps"].max())])
     plt.title(label=title)
     plt.xlabel("Number of Steps Per Problem")
     plt.savefig(os.path.join(GRAPHS_FOLDER, output_path + ".svg"), format='svg', dpi=1200)
