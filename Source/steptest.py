@@ -4,7 +4,7 @@ import os
 import time
 
 # Load your OpenAI API key
-openai.api_key = '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'
+openai.api_key = 'key'
 
 directory_path = './Results\Primary Test Results\gpt-3.5-turbo\zero_shot_cot\stepwise/'
 
