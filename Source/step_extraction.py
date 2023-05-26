@@ -1,7 +1,6 @@
 import json
 import re
 import os
-import time
 import random
 
 directory_path = './Datasets/Stepwise_Extracted/'
@@ -29,28 +28,53 @@ for file in files:
             # Use a regular expression to find all substrings within squiggly brackets
             steps_in_item = re.findall(r'\{([^}]*)\}', response_str)
 
+            # Remove the "Answer =" step
+            steps_in_item = [step for step in steps_in_item if "Answer" not in step]
+
             # Randomize inconsequential and consequential numbers for each step
             steps_inconsequential = []
             steps_consequential = []
 
-            for step in steps_in_item[:-1]:
+            for index, step in enumerate(steps_in_item):
                 # Find all numbers in the step
                 numbers = re.findall(r'\b\d+\b', step)
 
                 if numbers:
-                    # Select a random number from the step
-                    inconsequential_number = random.choice(numbers)
-
-                    # Replace the selected number with a random number
-                    step_inconsequential = step.replace(inconsequential_number, str(random.randint(1, 10)), 1)
-                    steps_inconsequential.append(step_inconsequential)
-
-                    # Replace the result (right-hand side) of the step with a random number
-                    step_consequential = re.sub(r'=(.*)', '= ' + str(random.randint(1, 10)), step)
+                    # For consequential steps, remove the right-hand side of the equation
+                    # in the step before the final one and randomize values only on the final step
+                    if index == len(steps_in_item) - 1:
+                        # Remove the right-hand side of the equation
+                        step = re.sub(r'=(.*)', '=', step)
+                        # Randomize the left hand side of the equation
+                        lhs_numbers = re.findall(r'^(.*?)=', step)
+                        if lhs_numbers:
+                            lhs_randomized = re.sub(r'\b\d+\b', str(random.randint(1, 10)), lhs_numbers[0], 1)
+                            step_consequential = lhs_randomized + "="
+                        else:
+                            step_consequential = step
+                    else:
+                        step_consequential = step
                     steps_consequential.append(step_consequential)
 
+                    # For inconsequential steps, remove the right-hand side of the equation
+                    # in the step before the final one and randomize one number on any step
+                    # For inconsequential steps, remove the right-hand side of the equation only in the final step
+                    # and randomize one number on any step
+                    if index != len(steps_in_item) - 1:
+                        lhs_numbers = re.findall(r'^(.*?)=', step)
+                        if lhs_numbers:
+                            lhs_randomized = re.sub(r'\b\d+\b', str(random.randint(1, 10)), lhs_numbers[0], 1)
+                            step_inconsequential = lhs_randomized + "=" + re.findall(r'=(.*)', step)[0]
+                        else:
+                            step_inconsequential = step
+                    else:
+                        # Remove the right-hand side of the equation in the final step
+                        step_inconsequential = re.sub(r'=(.*)', '=', step)
+
+                    steps_inconsequential.append(step_inconsequential)
+
             # Create dictionaries to add to the datasets
-            item_dataset = {"response": response_str, "steps": steps_in_item[:-1], "answer": answer, "gt": gt}
+            item_dataset = {"response": response_str, "steps": steps_in_item, "answer": answer, "gt": gt}
             item_dataset_inconsequential = {"response": response_str, "steps": steps_inconsequential, "answer": answer, "gt": gt}
             item_dataset_consequential = {"response": response_str, "steps": steps_consequential, "answer": answer, "gt": gt}
 
