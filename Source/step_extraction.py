@@ -22,6 +22,7 @@ for file in files:
         for item in data:
             # Get the response string
             response_str = item['response']['response']
+            query_str = item['response']['query']
             gt = item['response']['gt']
             answer = item['response']['answer']
 
@@ -74,9 +75,9 @@ for file in files:
                     steps_inconsequential.append(step_inconsequential)
 
             # Create dictionaries to add to the datasets
-            item_dataset = {"response": response_str, "steps": steps_in_item, "answer": answer, "gt": gt}
-            item_dataset_inconsequential = {"response": response_str, "steps": steps_inconsequential, "answer": answer, "gt": gt}
-            item_dataset_consequential = {"response": response_str, "steps": steps_consequential, "answer": answer, "gt": gt}
+            item_dataset = {"query":query_str, "response": response_str, "steps": steps_in_item, "answer": answer, "gt": gt}
+            item_dataset_inconsequential = {"query":query_str, "response": response_str, "steps": steps_inconsequential, "answer": answer, "gt": gt}
+            item_dataset_consequential = {"query":query_str, "response": response_str, "steps": steps_consequential, "answer": answer, "gt": gt}
 
             # Add these dictionaries to the datasets
             datasets.append(item_dataset)
