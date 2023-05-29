@@ -1,6 +1,7 @@
 """
 This module contains various configurations that aren't individual to each test.
 """
+import os
 
 # Stores the minimum wait time between queries, in seconds
 WAIT_TIME = 0
@@ -15,30 +16,37 @@ ERROR_WAIT_TIME = 60
 DATASET_FOLDER = "Datasets"
 
 # Store the base folder for test results
-RESULTS_FOLDER = r"Results\Primary Test Results"
-METADATA_FOLDER = r"Results\Metadata"
+RESULTS_FOLDER = os.path.join("Results", "Primary Test Results")
+METADATA_FOLDER = os.path.join("Results", "Metadata")
 # Store the base folder for generated graphs
 
-GRAPHS_FOLDER = r'Results\Graphs'
+GRAPHS_FOLDER = os.path.join("Results", "Graphs")
 
 # Store all available test modalities
-modalities = ["zero_shot", "zero_shot_cot", "suppressed_cot", "explanation_first",
+MODALITIES = ["zero_shot", "zero_shot_cot", "suppressed_cot", "explanation_first",
               "answer_first", "the_answer_is"]
 
 # Datasets. Stored as a list of json-formatted dictionaries with "Question" and "Ground Truth" keys.
-DATASETS = {"multiarith": "MultiArith/MultiArith-Processed.json", "gsm8k": "GSM8K/GSM8K-Processed.json",
-            "aqua": "AQUA/Aqua-Processed.json", "coin_flip": "Coin Flip/coin_flip-processed.json",
-            "mmlu-high-school": "MMLU/Processed/mmlu_high_school.json",
-            "mmlu-college": "MMLU/Processed/mmlu_college.json"}
+DATASETS = {"multiarith": os.path.join("MultiArith", "MultiArith-Processed.json"),
+            "gsm8k": os.path.join("GSM8K", "GSM8K-Processed.json"),
+            "aqua": os.path.join("AQUA", "Aqua-Processed.json"),
+            "coin_flip": os.path.join("Coin Flip", "coin_flip-processed.json"),
+            "mmlu-high-school": os.path.join("MMLU", "Processed", "mmlu_high_school.json"),
+            "mmlu-college": os.path.join("MMLU", "Processed", "mmlu_college.json")}
 
 # Add all possible stepwise datasets to the mapping
 for i in range(0, STEPWISE_MAX_SIZE):
-    DATASETS[f"{i + 1}step"] = f"Stepwise/{i + 1}-Step-Int-Formulae.json"
+    DATASETS[f"{i + 1}step"] = os.path.join("Stepwise", f"{i + 1}-Step-Int-Formulae.json")
 
 # Models. Models in chat will use the OpenAI ChatCompletion endpoint.
-# Models in completion will use the Completion endpoint.
-chat = ["gpt-4", "gpt-4-32k", "gpt-3.5-turbo"]
-completion = ["text-davinci-002"]
+# Models in completion will use the Completion endpoint
+# Local models will use a huggingface API.
+CHAT = ["gpt-4", "gpt-4-32k", "gpt-3.5-turbo"]
+COMPLETION = ["text-davinci-002"]
+# Stores models that have to use transformers.AutoTokenizer and AutoModelForCausalLM
+LOCAL_AUTO = {"alpaca": "chavinlo/alpaca-native"}
+# Stores models that have to use transformers.LlamaTokenizer and LlamaForCausalLM
+LOCAL_LLAMA = {"goat": "tiedong/Goat"}
 
 # ---- PROMPTS ----
 
@@ -70,4 +78,4 @@ modality_index_map = {"zero_shot": 0, "zero_shot_cot": 1, "suppressed_cot": 2,
 dataset_index_map = {"multiarith": 0, "gsm8k": 1, "aqua": 2, "coin_flip": 3, "mmlu-combined": 4, "stepwise": 5,
                      "mmlu-high-school": 6, "mmlu-college": 7}
 # Maps models to indices
-model_index_map = {"text-davinci-002": 0, "gpt-3.5-turbo": 1, "gpt-4": 2, "gpt-4-32k": 3}
+model_index_map = {"text-davinci-002": 0, "gpt-3.5-turbo": 1, "gpt-4": 2, "gpt-4-32k": 3, "goat": 4}

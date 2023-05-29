@@ -1,8 +1,7 @@
 from regex import regex
 
 from config import RESULTS_FOLDER
-from data_utils import path_to_metadata
-from file_utils import get_filepaths, read_json, write_json
+from utils.file_utils import get_filepaths, read_json, write_json
 
 
 def extract_answers(root: str | None = None):
@@ -14,19 +13,19 @@ def extract_answers(root: str | None = None):
 
     # Iterate over every set of test result json files found under the root folder
     for i in range(len(data_paths)):
-        # First, get the path's metadata
+        # Get the data
         results = list()
         data_path = data_paths[i]
         data = read_json(data_path)
 
-        metadata = path_to_metadata(data_path)
-        modality = metadata["Modality"]
-        dataset = metadata["Dataset"]
-        extraction_type = metadata["Extraction Type"]
+        modality = data["Modality"]
+        dataset = data["Dataset"]
+        extraction_type = data["Extraction Type"]
 
+        trials = data["Trials"]
         # Iterate over every test and run answer extraction.
         i = 0
-        for test in data:
+        for test in trials:
             # Get options if needed to match responses to letters
             if dataset == "aqua" or "mmlu" in dataset:
                 options = test["Options"]
@@ -73,7 +72,8 @@ def extract_answers(root: str | None = None):
             test["Final Answer"] = final_answer
             results.append(test)
             i += 1
-        write_json(filepath=data_path, data=results)
+        data["Trials"] = results
+        write_json(filepath=data_path, data=data)
 
 
 def clean_answer(response: str, dataset: str, extraction_type: str, options: dict = None):

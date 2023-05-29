@@ -5,8 +5,8 @@ import seaborn as sns
 from matplotlib import pyplot as plt
 
 from config import model_index_map, GRAPHS_FOLDER
-from data_utils import search_metadata
-from graph_utils import graph_generic, graph_stepwise_comparison, graph_dataset_comparison, generate_singular_plot, \
+from utils.data_utils import search_metadata
+from utils.graph_utils import graph_generic, graph_stepwise_comparison, graph_dataset_comparison, generate_singular_plot, \
     modality_to_color_map
 
 dataset_to_label_map = {"multiarith": "MultiArith", "gsm8k": "GSM8k", "aqua": "Aqua-RAT", "coin_flip": "Coin Flip",
@@ -91,7 +91,6 @@ def single_dataset_results(dataset: str, models: list[str] = None, modalities: l
 def graph_non_stepwise(model: str, num_plots: int = 5):
     modalities = ["zero_shot", "zero_shot_cot", "suppressed_cot", "explanation_first", "answer_first"]
     label = model_to_label_map[model]
-    length = (len(modalities))
     # Graph GPT-4 All dataset results
     results = search_metadata(models=[model], modalities=modalities)
 
@@ -220,7 +219,6 @@ def extraction_comparison():
         "Total Accuracy": [52.5],
         "Modality": "zero_shot"
     }))
-
 
     # -- GSM8k zero shot frames
     frames.append(pd.DataFrame({
@@ -357,8 +355,6 @@ def extraction_comparison():
         "Modality": "zero_shot"
     }))
 
-    orig = pd.concat(frames)
-
     modalities = ["zero_shot"]
 
     # gpt4_data = data[(data["Model"] == "gpt-4")]
@@ -383,8 +379,6 @@ def extraction_comparison():
     fig, ax = plt.subplots(1, 4, figsize=(4, 4), layout="constrained")
     fig.suptitle("Extraction Comparison, GPT-4")
 
-
-    # sns.set_theme()
     sns.set_style("whitegrid")
 
     chart_labels = ["GSM8k", "Coin Flip", "AQuA-RAT", "MMLU"]
@@ -398,4 +392,3 @@ def extraction_comparison():
         i += 1
     plt.savefig(os.path.join(GRAPHS_FOLDER, "gpt-4-Extraction Comparison.svg"), format='svg', dpi=1200)
     plt.close("all")
-

@@ -3,15 +3,33 @@ from json import JSONDecodeError
 from os import path
 
 import openai
+import torch
+import transformers
 from regex import regex
 
-from config import RESULTS_FOLDER, DATASET_FOLDER, DATASETS, \
-    completion, chat, two_stage_extract_prompt, suppression_prompt, cot_prompt, \
-    answer_first_prompt, explanation_first_prompt, in_bracket_prompt, WAIT_TIME
-from file_utils import load_dataset, write_json, read_json
+from transformers import (
+    LlamaTokenizer,
+    LlamaForCausalLM,
+    AutoTokenizer,
+    AutoModelForCausalLM,
+    GenerationConfig
+)
+from peft import (
+    LoraConfig,
+    get_peft_model,
+    get_peft_model_state_dict,
+    prepare_model_for_int8_training,
+    set_peft_model_state_dict, PeftModel,
+)
+from config import *
+from utils.file_utils import load_dataset, write_json, read_json
 
 # Stores the time of the last query
 last_query_time = 0
+
+# Stores tuples of (local model, tokenizer),
+# by the same key values as in config.LOCAL.
+local_models = dict()
 
 
 # Timer function that pauses operation until the time since last query exceeds config.WAIT_TIME
@@ -27,12 +45,61 @@ def timer():
 
 
 def query(model: str, prompt: str, max_tokens: int) -> str:
+    if model in COMPLETION or model in CHAT:
+        return openai_query(
+            model_name=model,
+            prompt=prompt,
+            max_tokens=max_tokens)
+    else:
+        return local_query(
+            model_name=model,
+            prompt=prompt,
+            max_tokens=max_tokens)
+
+
+def local_query(model_name: str, prompt: str, max_tokens: int) -> str:
+    if model_name not in local_models:
+        load_local_model(model_name=model_name)
+
+    generation_config = GenerationConfig(
+        temperature=0.1,
+        top_p=0.75,
+        top_k=40,
+        num_beams=4,
+        max_new_tokens=512,
+        stream_output=True,
+        return_dict_in_generate=True,
+        output_scores = True,
+    )
+    with torch.inference_mode():
+        model, tokenizer = local_models[model_name]
+
+        input_ids = tokenizer(
+            prompt,
+            return_tensors="pt").input_ids
+        # Replace the starting zero with BOS token and convert to torch-cuda
+        input_ids[0][0] = 1
+        input_ids = input_ids.to("cuda")
+        # Generate the response and decode
+        generated = model.generate(
+            input_ids=input_ids,
+            generation_config=generation_config,
+            return_dict_in_generate=True,
+            output_scores=True,
+            stopping_criteria=transformers.StoppingCriteriaList())
+        response = generated.sequences[0]
+        response = tokenizer.decode(response, skip_special_tokens=True).strip()
+        response = response.split(prompt)[1].strip().replace("/", "\u00F7").replace("*", "\u00D7")
+    return response
+
+
+def openai_query(model_name: str, prompt: str, max_tokens: int) -> str:
     # Run the timer to keep from querying too quickly
     timer()
 
-    if model in completion:
+    if model_name in COMPLETION:
         response = openai.Completion.create(
-            engine=model,
+            engine=model_name,
             prompt=prompt,
             max_tokens=max_tokens,
             temperature=0,
@@ -41,9 +108,9 @@ def query(model: str, prompt: str, max_tokens: int) -> str:
 
         return response["choices"][0]["text"]
 
-    elif model in chat:
+    elif model_name in CHAT:
         response = openai.ChatCompletion.create(
-            model=model,
+            model=model_name,
             messages=[{"role": "user", "content": prompt}],
             max_tokens=max_tokens,
             temperature=0,
@@ -54,6 +121,40 @@ def query(model: str, prompt: str, max_tokens: int) -> str:
 
     else:
         raise ValueError("The provided model has not been defined.")
+
+
+def load_local_model(model_name: str):
+    if model_name == "goat":
+        tokenizer = LlamaTokenizer.from_pretrained('decapoda-research/llama-7b-hf')
+        model = LlamaForCausalLM.from_pretrained(
+            'decapoda-research/llama-7b-hf',
+            torch_dtype=torch.float16,
+            device_map="auto")
+        model = PeftModel.from_pretrained(
+            model,
+            "tiedong/goat-lora-7b",
+            torch_dtype=torch.float16,
+            device_map={'': 0}
+        )
+        local_models[model_name] = (model, tokenizer)
+
+    elif model_name in LOCAL_AUTO:
+        model_path = LOCAL_AUTO[model_name]
+        tokenizer = AutoTokenizer.from_pretrained(model_path)
+        model = AutoModelForCausalLM.from_pretrained(
+            model_path,
+            device_map="auto", )
+        local_models[model_name] = (model, tokenizer)
+    elif model_name in LOCAL_LLAMA:
+        model_path = LOCAL_LLAMA[model_name]
+        tokenizer = LlamaTokenizer.from_pretrained(model_path)
+        model = LlamaForCausalLM.from_pretrained(
+            model_path,
+            torch_dtype=torch.float16,
+            device_map="auto")
+        local_models[model_name] = (model, tokenizer)
+    else:
+        raise ValueError("An invalid model has been provided to local_query.")
 
 
 def build_prompt(question: str, modality: str, use_simple_prompt: bool, bracket_extract: bool) -> str:
@@ -103,7 +204,6 @@ def run_test(model: str, modality: str, dataset: str, args):
     use_simple_prompt = args.use_simple_prompt
     extraction_type = args.extraction_type
     num_samples = args.num_samples
-    wait_time = args.wait_time
     max_tokens = args.max_tokens
 
     if extraction_type == "in-brackets":
@@ -152,13 +252,22 @@ def run_test(model: str, modality: str, dataset: str, args):
     else:
         end_index = min(num_samples, len(data))
 
-    for i in range(start_index, end_index):
-        x, y, test_entry = data[i]
+    for j in range(start_index, end_index):
+        x, y, test_entry = data[j]
         # Build the prompt out of our question
-        prompt = build_prompt(question=x, modality=modality, use_simple_prompt=use_simple_prompt,
-                              bracket_extract=bracket_extract)
+        prompt = build_prompt(
+            question=x,
+            modality=modality,
+            use_simple_prompt=use_simple_prompt,
+            bracket_extract=bracket_extract)
+        if model == "goat":
+            prompt = prompt.replace(" =", "?")
+            prompt = "What is " + prompt + "Answer: "
         # Get the initial response from the model
-        response = query(model=model, prompt=prompt, max_tokens=max_tokens)
+        response = query(
+            model=model,
+            prompt=prompt,
+            max_tokens=max_tokens)
 
         if dataset == "aqua" or "mmlu" in dataset:
             options = test_entry["Options"]
@@ -171,10 +280,18 @@ def run_test(model: str, modality: str, dataset: str, args):
         elif extraction_type == "two-stage":
             # Resubmit the response for answer extraction
             extraction_prompt = prompt + " " + response + "\n" + two_stage_extract_prompt
-            extraction_response = query(model, extraction_prompt, max_tokens=max_tokens)
+            extraction_response = query(
+                model=model,
+                prompt=extraction_prompt,
+                max_tokens=max_tokens)
         elif extraction_type == "two-stage-style-two":
-            extraction_prompt = two_stage_style_two_generation(answer=response, options=options)
-            extraction_response = query(model, extraction_prompt, max_tokens=max_tokens)
+            extraction_prompt = two_stage_style_two_generation(
+                answer=response,
+                options=options)
+            extraction_response = query(
+                model=model,
+                prompt=extraction_prompt,
+                max_tokens=max_tokens)
         else:
             raise ValueError("The provided extraction type is not valid.")
 
@@ -191,20 +308,28 @@ def run_test(model: str, modality: str, dataset: str, args):
                 # Generate new test metadata
                 test_results = {"Mode": "test",
                                 "Model": model,
+                                "Model Index": model_index_map[model],
                                 "Modality": modality,
+                                "Modality Index": modality_index_map[modality],
                                 "Dataset": dataset_sub,
+                                "Dataset Index": dataset_index_map[dataset_sub],
                                 }
                 if "step" in dataset:
-                    test_results["Steps"] = steps = int(regex.findall(r"\d{1,2}", dataset)[0])
+                    test_results["Steps"] = int(regex.findall(r"\d{1,2}", dataset)[0])
 
                 test_results.update({"Extraction Type": extraction_type,
                                      "Simple Prompt": use_simple_prompt,
+                                     "Test Path": output_path,
                                      "Trials": list()
                                      })
 
             test_results["Trials"].append(result)
             write_json(filepath=output_path, data=test_results)
-
+            print(f"Model: {model} "
+                  f"\nPrompt: {prompt} "
+                  f"\nResponse: {response} "
+                  f"\nExtraction Response: {extraction_response},"
+                  f"\nGT: {y}")
     print("Test " + model + "-" + modality + "-" + dataset + " completed.")
 
 
@@ -220,7 +345,8 @@ def two_stage_style_two_generation(answer: str, options: dict) -> str:
     prompt += "\nPossible choices:\n"
     for key in options:
         prompt += f"{key}: {options[key]}"
-    prompt += "\nDo not explain your answer. Only provide the answer choice in squiggly brackets in the following format {answer}: "
+    prompt += "\nDo not explain your answer. Only provide the answer choice in squiggly brackets in the following " \
+              "format {answer}: "
 
     return prompt
 
@@ -229,7 +355,7 @@ def multi_message_query(model: str, messages: list[dict[str, str]], max_tokens: 
     # Run the timer to keep from querying too quickly
     timer()
 
-    if model not in chat:
+    if model not in CHAT:
         raise ValueError("The provided model is not a Chat-equipped model.")
 
     response = openai.ChatCompletion.create(

@@ -1,4 +1,3 @@
-import json
 import math
 import os
 
@@ -7,21 +6,30 @@ from regex import regex
 
 from config import RESULTS_FOLDER, z_val, METADATA_FOLDER, modality_index_map, dataset_index_map, model_index_map
 
-from file_utils import get_filepaths, read_json, write_json
+from utils.file_utils import get_filepaths, read_json, write_json
 
 
-def search_metadata(models: list[str] = None,
+def search_metadata(mode: str = "test",
+                    models: list[str] = None,
                     modalities: list[str] = None,
                     datasets: list[str] = None,
                     extraction_types: list[str] = None,
                     include_secondary=False):
     if datasets is None:
         datasets = ["multiarith", "gsm8k", "aqua", "mmlu-combined", "coin_flip"]
-    metapath = os.path.join(METADATA_FOLDER, "Test Results.csv")
+
+    if mode == "test":
+        filename = "Test Results.csv"
+    elif mode == "scratchpad":
+        filename = "Scratchpad Results.csv"
+    else:
+        raise ValueError("Provided mode is invalid.")
+
+    metapath = os.path.join(METADATA_FOLDER, filename)
     frame = pd.read_csv(metapath)
 
     if include_secondary:
-        metapath = os.path.join(METADATA_FOLDER, "Secondary Test Results.csv")
+        metapath = os.path.join(METADATA_FOLDER, "Secondary" + filename)
         second_frame = pd.read_csv(metapath)
         frame = pd.concat([frame, second_frame])
 
@@ -40,25 +48,56 @@ def search_metadata(models: list[str] = None,
     return frame
 
 
-def generate_metadata(root: str = None, filename: str = None):
+def generate_metadata(root: str = None, test_file: str = None, scratchpad_file: str = None):
     if root is None:
         root = RESULTS_FOLDER
-    if filename is None:
-        filename = "Test Results.csv"
+    if test_file is None:
+        test_file = "Test Results.csv"
+    if scratchpad_file is None:
+        scratchpad_file = "Scratchpad Results.csv"
+    test_paths = get_filepaths(root=root, contains=["json"], excludes=["scratchpad"])
+    scratch_paths = get_filepaths(root=root, contains=["json", "scratchpad"])
 
-    data_paths = get_filepaths(root=root, contains=["json"])
-
-    results = list()
-    for i in range(len(data_paths)):
-        test_path = data_paths[i]
-        metadata = path_to_metadata(test_path=test_path)
+    test_results = list()
+    for i in range(len(test_paths)):
+        test_path = test_paths[i]
+        data = read_json(test_path)
         stats = test_quantification(test_path=test_path)
-        metadata.update(stats)
-        results.append(metadata)
 
-    # Update the metadata file
-    frame = pd.DataFrame.from_records(data=results)
-    metapath = os.path.join(METADATA_FOLDER, filename)
+        # Update the metadata and keep it at the top of the file
+        trials = data["Trials"]
+        del data["Trials"]
+        data.update(stats)
+        data["Trials"] = trials
+
+        # Write the new metadata to the original file
+        write_json(filepath=test_path, data=data)
+
+        # Remove the trials and save it to the metadata results
+        del data["Trials"]
+        test_results.append(data)
+
+    scratch_results = list()
+    for i in range(len(scratch_paths)):
+        scratch_path = scratch_paths[i]
+        data = read_json(scratch_path)
+        stats = test_quantification(test_path=scratch_path)
+        data.update(stats)
+
+        # Write the new metadata to the original file
+        write_json(filepath=scratch_path, data=data)
+
+        # Remove the trials and save it to the metadata results
+        del data["Trials"]
+        scratch_results.append(data)
+
+    # Update the metadata files
+    frame = pd.DataFrame.from_records(data=test_results)
+    metapath = os.path.join(METADATA_FOLDER, test_file)
+    frame.to_csv(metapath)
+
+    frame = pd.DataFrame.from_records(data=scratch_results)
+    metapath = os.path.join(METADATA_FOLDER, scratchpad_file)
     frame.to_csv(metapath)
 
 
@@ -66,6 +105,13 @@ def path_to_metadata(test_path: str) -> dict[str, str]:
     # Generates metadata files from provided test results and test path.
 
     metadata = dict()
+
+    # Get testing mode
+    if "scratchpad" in test_path:
+        mode = "scratchpad"
+    else:
+        mode = "test"
+
     # get prompt style
     if "Simple" in test_path:
         simple_prompt = True
@@ -137,7 +183,8 @@ def path_to_metadata(test_path: str) -> dict[str, str]:
     else:
         raise ValueError
 
-    metadata.update({"Dataset": dataset,
+    metadata.update({"Mode": mode,
+                     "Dataset": dataset,
                      "Dataset Index": dataset_index_map[dataset],
                      "Modality": modality,
                      "Modality Index": modality_index_map[modality],
@@ -150,7 +197,8 @@ def path_to_metadata(test_path: str) -> dict[str, str]:
     return metadata
 
 
-def count_cot(data: list[dict], dataset: str) -> tuple[int, int, int, int, int, int]:
+def count_cot(data: list[dict], dataset: str, mode: str = "test") -> tuple[int, int, int, int, int, int]:
+    mode = mode.lower()
     total = 0
     total_accurate = 0
     cot_total = 0
@@ -161,7 +209,12 @@ def count_cot(data: list[dict], dataset: str) -> tuple[int, int, int, int, int, 
     for entry in data:
         total += 1
         is_accurate = 0
-        response = entry["Response"].lower()
+        if mode == "test":
+            response = entry["Response"].lower()
+        elif mode == "scratchpad":
+            response = entry["Reasoning"].lower()
+        else:
+            raise ValueError("Provided mode is invalid.")
         answer = entry["Answer"]
         gt = entry["GT"]
 
@@ -216,14 +269,11 @@ def test_quantification(test_path: str = None):
     # Quantifies results for all tests.
 
     data = read_json(test_path)
-
-    # Initialize metadata
-    metadata = path_to_metadata(test_path=test_path)
     # Calculate total accuracy, % of answers containing Chain-of-Thought reasoning,
     # the accuracy of CoT answers, and the accuracy of Non-CoT answers,
     # along with over all counts of each item type.
     total, total_accurate, cot_accurate, cot_total, non_cot_accurate, non_cot_total = count_cot(
-        data=data, dataset=metadata["Dataset"])
+        data=data["Trials"], dataset=data["Dataset"], mode=data["Mode"])
 
     if cot_total == 0:
         cot_accuracy = "N/A"
@@ -249,94 +299,3 @@ def test_quantification(test_path: str = None):
             "ci_radius": ci_radius,
             "ci_upper": total_accuracy + ci_radius,
             "ci_lower": total_accuracy - ci_radius}
-
-
-def process_mmlu():
-    gpt35_path = r"C:\Users\evanh\Documents\GPT-CoT-Testing\mmlu\generated\gpt35-turbo\2phase"
-    gpt4_path = r"C:\Users\evanh\Documents\GPT-CoT-Testing\mmlu\generated\gpt4\2phase"
-
-    for path in os.listdir(gpt4_path):
-
-        if "college" in path:
-            discriminator = "college"
-        elif "combined" in path:
-            discriminator = "combined"
-        else:
-            discriminator = "high-school"
-
-        if "zero-shot-cot" in path:
-            modality = "zero_shot_cot"
-        elif "answer-first" in path:
-            modality = "answer_first"
-        elif "explanation-first" in path:
-            modality = "explanation_first"
-        elif "supressed" in path:
-            modality = "suppressed_cot"
-        else:
-            modality = "zero_shot"
-
-        results = list()
-        filepath = os.path.join(gpt4_path, path)
-        with open(filepath, encoding='utf-8') as file:
-            data = file.read()
-            data = json.loads(data)
-
-        i = 0
-        for item in data:
-            options = item["O"]
-            options = dict((v, k) for k, v in options.items())
-
-            new_item = {"Index": i,
-                        "Query": item["Q"],
-                        "Response": item["R"],
-                        "Extract-Response": item["A"],
-                        "Options": options,
-                        "GT": item["GT"]}
-            i += 1
-            results.append(new_item)
-
-        file_name = f"Simple-two-stage-gpt-4-{modality}-mmlu-{discriminator}.json"
-        write_json(data=results, filepath=os.path.join(RESULTS_FOLDER, "gpt-4", modality,
-                                                       "mmlu", file_name))
-
-    for path in os.listdir(gpt35_path):
-
-        if "college" in path:
-            discriminator = "college"
-        elif "combined" in path:
-            discriminator = "combined"
-        else:
-            discriminator = "high-school"
-
-        if "zero-shot-cot" in path:
-            modality = "zero_shot_cot"
-        elif "answer-first" in path:
-            modality = "answer_first"
-        elif "explanation-first" in path:
-            modality = "explanation_first"
-        elif "supressed" in path:
-            modality = "suppressed_cot"
-        else:
-            modality = "zero_shot"
-
-        results = list()
-        filepath = os.path.join(gpt35_path, path)
-        with open(filepath, encoding='utf-8') as file:
-            data = file.read()
-            data = json.loads(data)
-
-        for item in data:
-            options = item["O"]
-            options = dict((v, k) for k, v in options.items())
-
-            new_item = {"Query": item["Q"],
-                        "Response": item["R"],
-                        "Extract-Response": item["A"],
-                        "Options": options,
-                        "GT": item["GT"]}
-
-            results.append(new_item)
-        file_name = f"Simple-two-stage-gpt-35-{modality}-mmlu-{discriminator}.json"
-
-        write_json(data=results, filepath=os.path.join(RESULTS_FOLDER, "gpt-3.5-turbo",
-                                                       modality, "mmlu", file_name))

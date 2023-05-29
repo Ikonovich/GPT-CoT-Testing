@@ -1,10 +1,9 @@
 from json import JSONDecodeError
 from os import path
 
-from config import DATASET_FOLDER, DATASETS, RESULTS_FOLDER
-from file_utils import load_dataset, read_json, write_json
-from query_utils import build_prompt, multi_message_query
-from step_generation import step_generation_test
+from config import DATASET_FOLDER, DATASETS, RESULTS_FOLDER, model_index_map, modality_index_map, dataset_index_map
+from utils.file_utils import load_dataset, read_json, write_json
+from utils.query_utils import build_prompt, multi_message_query
 
 roles = {
     "Reasoning": {"role": "system", "content": "You are engaging in internal reasoning. "
@@ -14,9 +13,9 @@ roles = {
     "Answering": {"role": "system", "content": "Use the provided reasoning to answer the user's latest message. "
                                                "Follow any instructions provided by the user."},
     "Step-Making": {"role": "system", "content": "You will be provided with a simple mathematical formula. Solve it "
-                                                 "step by step. Do not use any words in your steps. An example of the desired "
-                                                 "formatting is as follows:"
-                                                 "2 * 4 = 8"
+                                                 "step by step. Do not use any words in your steps. An example of the "
+                                                 "desired formatting is as follows:"
+                                                 "1: 2 * 4 = 8 \n"
                                                  "2: 3 + 8 = {11} "},
     "Step-Extracting": {"role": "system", "content": "Use the provided reasoning to provide only "
                                                      "the steps utilized to solve the problem."},
@@ -67,9 +66,6 @@ def multi_query_test(model_one: str, model_two: str, modality: str, dataset: str
         if args.mode == "scratchpad":
             result = scratchpad_test(datum=datum, model_one=model_one, model_two=model_two, modality=modality,
                                      max_tokens=max_tokens)
-        elif args.mode == "step-generation":
-            result = step_generation_test(datum=datum, model_one=model_one, model_two=model_two, modality=modality,
-                                          max_tokens=max_tokens)
         else:
             raise ValueError("The provided mode is not valid here.")
 
@@ -77,10 +73,15 @@ def multi_query_test(model_one: str, model_two: str, modality: str, dataset: str
             test_results = read_json(filepath=output_path)
         else:
             test_results = {"Internal Model": model_one,
+                            "Internal Model Index": model_index_map[model_one],
                             "External Model": model_two,
+                            "External Model Index": model_index_map[model_two],
                             "Modality": modality,
+                            "Modality Index": modality_index_map[modality],
                             "Dataset": dataset,
-                            "Interal Role": roles["Reasoning"],
+                            "Dataset Index": dataset_index_map[dataset],
+                            "Extraction Type": "in-brackets",
+                            "Internal Role": roles["Reasoning"],
                             "External Role": roles["Answering"],
                             "Trials": list()
                             }
@@ -119,5 +120,3 @@ def scratchpad_test(datum: dict, model_one: str, model_two: str, modality: str, 
               "GT": y}
 
     return result
-
-

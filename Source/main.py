@@ -6,10 +6,10 @@ from openai.error import OpenAIError
 
 import config
 from create_graphs import create_graphs
-from data_utils import generate_metadata
+from utils.data_utils import generate_metadata
 from answer_extraction import extract_answers
-from config import DATASETS, ERROR_WAIT_TIME, chat, completion, modalities, RESULTS_FOLDER
-from query_utils import run_test
+from config import *
+from utils.query_utils import run_test
 from scratchpad import multi_query_test
 
 
@@ -20,7 +20,7 @@ def main():
     if mode == "extract":
         extract_answers(root=RESULTS_FOLDER)
     elif mode == "metadata":
-        generate_metadata(root=RESULTS_FOLDER, filename="Test Results.csv")
+        generate_metadata(root=RESULTS_FOLDER, test_file="Test Results.csv", scratchpad_file="Scratchpad Results.csv")
     elif mode == "graph":
         create_graphs()
     elif mode == "test" or mode == "scratchpad" or mode == "step-generation":
@@ -73,17 +73,18 @@ def parse_args():
         "--mode", type=str,
         choices=["test", "metadata", "graph", "extract", "scratchpad"],
         default="test",
-        help="Choose whether to run tests, extract answers, collate metadata, graph results, "
-             "or run scratchpad test mode."
+        help="Choose whether to run standard single-query tests, extract answers, collate metadata, graph results, "
+             "or to run scratchpad test mode."
     )
 
     # Takes a list of open AI models to iteratively run through the provided modalities and datasets.
     parser.add_argument(
-        "--models", type=str, nargs='+', choices=chat + completion, help="Models to test."
+        "--models", type=str, nargs='+', choices=CHAT + COMPLETION + [key for key in LOCAL_AUTO]
+        + [key for key in LOCAL_LLAMA], help="Models to test."
     )
 
     parser.add_argument(
-        "--modalities", type=str, nargs='+', choices=modalities, help="Test modalities to run."
+        "--modalities", type=str, nargs='+', choices=MODALITIES, help="Test modalities to run."
     )
 
     # Takes a list of datasets to be run through each model with each modality.
