@@ -20,10 +20,10 @@ def main():
     if mode == "extract":
         extract_answers(root=RESULTS_FOLDER)
     elif mode == "metadata":
-        generate_metadata(root=RESULTS_FOLDER, test_file="Test Results.csv", scratchpad_file="Scratchpad Results.csv")
+        generate_metadata(root=RESULTS_FOLDER, test_file="Test_Results.csv", scratchpad_file="Scratchpad Results.csv")
     elif mode == "graph":
         create_graphs()
-    elif mode == "test" or mode == "scratchpad" or mode == "step-generation":
+    elif mode == "test" or mode == "scratchpad" or mode == "step-generation" or mode == "modified-cot-test":
         test(args=args)
 
 
@@ -42,14 +42,15 @@ def test(args):
             for modality in selected_modalities:
                 # Run a loop over all datasets listed in config.selected_datasets with the provided config parameters
                 for entry in selected_datasets:
-                    if args.mode == "test":
+                    if args.mode == "test" or args.mode == "modified_cot":
                         model = selected_models[model_index]
                         run_test(model=model, modality=modality, dataset=entry, args=args)
-                    elif args.mode == "scratchpad" or args.mode == "step-generation":
+                    elif args.mode == "scratchpad":
                         model_one = selected_models[model_index]
                         model_two = selected_models[model_index + 1]
                         multi_query_test(model_one=model_one, model_two=model_two, modality=modality, dataset=entry,
                                          args=args)
+
             # Increment and carry on to the next model or models:
             if args.mode == "scratchpad" or args.mode == "step-generation":
                 model_index += 2
@@ -71,10 +72,10 @@ def parse_args():
     # Graph: Runs create_graphs.create_graphs to create all graphs defined there.
     parser.add_argument(
         "--mode", type=str,
-        choices=["test", "metadata", "graph", "extract", "scratchpad"],
+        choices=["test", "metadata", "graph", "extract", "scratchpad", "modified_cot"],
         default="test",
         help="Choose whether to run standard single-query tests, extract answers, collate metadata, graph results, "
-             "or to run scratchpad test mode."
+             "modified chain-of-thought tests, or to run scratchpad test mode."
     )
 
     # Takes a list of open AI models to iteratively run through the provided modalities and datasets.
@@ -89,7 +90,8 @@ def parse_args():
 
     # Takes a list of datasets to be run through each model with each modality.
     parser.add_argument(
-        "--datasets", type=str, nargs='+', choices=DATASETS, help="Datasets to be tested on."
+        "--datasets", type=str, nargs='+', choices=DATASETS,
+        help="Datasets to be tested on."
     )
 
     # Takes a list of datasets to be run through each model with each modality.

@@ -14,13 +14,8 @@ from transformers import (
     AutoModelForCausalLM,
     GenerationConfig
 )
-from peft import (
-    LoraConfig,
-    get_peft_model,
-    get_peft_model_state_dict,
-    prepare_model_for_int8_training,
-    set_peft_model_state_dict, PeftModel,
-)
+from peft import PeftModel
+
 from config import *
 from utils.file_utils import load_dataset, write_json, read_json
 
@@ -33,13 +28,15 @@ local_models = dict()
 
 
 # Timer function that pauses operation until the time since last query exceeds config.WAIT_TIME
-def timer():
+def timer(delay: float | int = None):
     global last_query_time
 
+    if delay is None:
+        delay = WAIT_TIME
     cur_time = time.time()
     diff = cur_time - last_query_time
-    if diff < WAIT_TIME:
-        time.sleep(WAIT_TIME - diff)
+    if diff < delay:
+        time.sleep(delay - diff)
 
     last_query_time = time.time()
 
@@ -69,7 +66,7 @@ def local_query(model_name: str, prompt: str, max_tokens: int) -> str:
         max_new_tokens=512,
         stream_output=True,
         return_dict_in_generate=True,
-        output_scores = True,
+        output_scores=True,
     )
     with torch.inference_mode():
         model, tokenizer = local_models[model_name]
@@ -124,6 +121,8 @@ def openai_query(model_name: str, prompt: str, max_tokens: int) -> str:
 
 
 def load_local_model(model_name: str):
+    torch.cuda.set_device(GPU_ID)
+
     if model_name == "goat":
         tokenizer = LlamaTokenizer.from_pretrained('decapoda-research/llama-7b-hf')
         model = LlamaForCausalLM.from_pretrained(
@@ -205,6 +204,7 @@ def run_test(model: str, modality: str, dataset: str, args):
     extraction_type = args.extraction_type
     num_samples = args.num_samples
     max_tokens = args.max_tokens
+    mode = args.mode
 
     if extraction_type == "in-brackets":
         bracket_extract = True
@@ -222,10 +222,17 @@ def run_test(model: str, modality: str, dataset: str, args):
     else:
         dataset_sub = dataset
 
-    save_directory = path.join(RESULTS_FOLDER, model, modality, dataset_sub)
+
 
     # Results file: Stores last index ran, total count, correct counts, and accuracy.
-    output_file = prompt + "-" + extraction_type + "-" + model + "-" + modality + "-" + dataset + ".json"
+    if args.mode == "test":
+        output_file = prompt + "-" + extraction_type + "-" + model + "-" + modality + "-" + dataset + ".json"
+        save_directory = path.join(RESULTS_FOLDER, model, modality, dataset_sub)
+    elif args.mode == "modified_cot":
+        output_file = dataset + "-" + mode + "-" + model
+        save_directory = path.join(RESULTS_FOLDER, mode, model, modality, dataset_sub)
+    else:
+        raise ValueError("A disallowed mode has been supplied to query_utils.run_test.")
     output_path = path.join(save_directory, output_file)
 
     dataset_path = path.join(DATASET_FOLDER, DATASETS[dataset])
@@ -236,7 +243,7 @@ def run_test(model: str, modality: str, dataset: str, args):
     if cont and path.exists(output_path):
         try:
             previous = read_json(filepath=output_path)
-            start_index = previous[-1]["Index"] + 1
+            start_index = previous["Trials"][-1]["Index"] + 1
 
         except JSONDecodeError as e:
             print(f"There was an error decoding the prior test results at {output_path} into json at index {e.pos}")
@@ -264,10 +271,19 @@ def run_test(model: str, modality: str, dataset: str, args):
             prompt = prompt.replace(" =", "?")
             prompt = "What is " + prompt + "Answer: "
         # Get the initial response from the model
-        response = query(
-            model=model,
-            prompt=prompt,
-            max_tokens=max_tokens)
+
+        if mode == "test":
+            response = query(
+                model=model,
+                prompt=prompt,
+                max_tokens=max_tokens)
+        else:
+            cot = "\n".join(test_entry["New Steps"])
+            messages = [{"role": "user", "content": prompt},
+                        {"role": "assistant", "content": cot}]
+            response = multi_message_query(model=model,
+                                           messages=messages,
+                                           max_tokens=max_tokens)
 
         if dataset == "aqua" or "mmlu" in dataset:
             options = test_entry["Options"]
@@ -306,7 +322,7 @@ def run_test(model: str, modality: str, dataset: str, args):
                 test_results = read_json(filepath=output_path)
             else:
                 # Generate new test metadata
-                test_results = {"Mode": "test",
+                test_results = {"Mode": args.mode,
                                 "Model": model,
                                 "Model Index": model_index_map[model],
                                 "Modality": modality,
@@ -325,7 +341,7 @@ def run_test(model: str, modality: str, dataset: str, args):
 
             test_results["Trials"].append(result)
             write_json(filepath=output_path, data=test_results)
-            print(f"Model: {model} "
+            print(f"Model: {model} Dataset: {dataset} Index: {i}"
                   f"\nPrompt: {prompt} "
                   f"\nResponse: {response} "
                   f"\nExtraction Response: {extraction_response},"
