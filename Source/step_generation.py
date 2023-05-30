@@ -17,6 +17,7 @@ def generate_steps():
     files = [path for path in files if "1step" not in path]
 
     for file in files:
+        print("Starting step generation for path: " + file)
         output_path = f"Datasets/Stepwise_Extracted/Unmodified/responses_{file}"
         # Prepare a list to store the responses and set the starting index
         responses = []
@@ -98,7 +99,7 @@ def modify_steps():
 
             # Cut off the query after the first equal sign
             stop_index = query.index("=")
-            query = query[:stop_index]
+            query = query[:stop_index + 1]
             results.append({
                 "Index": index,
                 "Question": query,
@@ -137,7 +138,7 @@ def modify_steps():
         write_json(filepath=f"Datasets\\Stepwise_Extracted\\Modified-Double-Val-Final\\{i}-step.json", data=results)
 
 
-def modify(steps: list[str], step_index: int, num_modifications: int) -> list[str]:
+def modify(steps: list[str], step_index: int, num_modifications: int, remove_last: bool=True) -> list[str]:
 
     if num_modifications > 2 or num_modifications < 1:
         raise ValueError("Number of values to be modified must be either 1 or 2.")
@@ -176,14 +177,13 @@ def modify(steps: list[str], step_index: int, num_modifications: int) -> list[st
             new_steps.append(new_step)
         steps = new_steps
 
-    # If the list of steps is longer than 1, remove the final step. Otherwise, remove the final answer
+    # If the list of steps is longer than 1 and remove last is true, remove the final step. Otherwise, remove the final answer
     # to the final step.
-    if len(steps) > 1:
+    if remove_last and len(steps) > 1:
         steps = steps[:-1]
     else:
-        stop_index = steps[0].index("=")
-        steps[0] = steps[0][:stop_index + 1]
-    return steps
+        stop_index = steps[-1].index("=")
+        steps[-1] = steps[-1][:stop_index + 1]
 
 
 def extract_steps():
@@ -271,5 +271,4 @@ def map_indices():
 if __name__ == "__main__":
     generate_steps()
     # extract_steps()
-    # modify_steps()
-    # map_indices()
+    #modify_steps()

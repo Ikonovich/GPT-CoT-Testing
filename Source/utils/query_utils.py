@@ -86,7 +86,7 @@ def local_query(model_name: str, prompt: str, max_tokens: int) -> str:
             stopping_criteria=transformers.StoppingCriteriaList())
         response = generated.sequences[0]
         response = tokenizer.decode(response, skip_special_tokens=True).strip()
-        response = response.split(prompt)[1].strip().replace("/", "\u00F7").replace("*", "\u00D7")
+        response = response.split(prompt)[1].strip()
     return response
 
 
@@ -222,14 +222,12 @@ def run_test(model: str, modality: str, dataset: str, args):
     else:
         dataset_sub = dataset
 
-
-
     # Results file: Stores last index ran, total count, correct counts, and accuracy.
     if args.mode == "test":
         output_file = prompt + "-" + extraction_type + "-" + model + "-" + modality + "-" + dataset + ".json"
         save_directory = path.join(RESULTS_FOLDER, model, modality, dataset_sub)
     elif args.mode == "modified_cot":
-        output_file = dataset + "-" + mode + "-" + model
+        output_file = dataset + "-" + mode + "-" + model + ".json"
         save_directory = path.join(RESULTS_FOLDER, mode, model, modality, dataset_sub)
     else:
         raise ValueError("A disallowed mode has been supplied to query_utils.run_test.")
@@ -279,11 +277,16 @@ def run_test(model: str, modality: str, dataset: str, args):
                 max_tokens=max_tokens)
         else:
             cot = "\n".join(test_entry["New Steps"])
-            messages = [{"role": "user", "content": prompt},
-                        {"role": "assistant", "content": cot}]
-            response = multi_message_query(model=model,
-                                           messages=messages,
-                                           max_tokens=max_tokens)
+            # If the model is local, concatenate the question and steps.
+            if model == 'goat':
+                response = local_query(model_name=model, prompt = prompt + " \n" + cot, max_tokens=max_tokens)
+            # Otherwise, send the steps as GPT assistant message and the query as a user message.
+            else:
+                messages = [{"role": "user", "content": prompt},
+                            {"role": "assistant", "content": cot}]
+                response = multi_message_query(model=model,
+                                               messages=messages,
+                                               max_tokens=max_tokens)
 
         if dataset == "aqua" or "mmlu" in dataset:
             options = test_entry["Options"]
@@ -341,11 +344,12 @@ def run_test(model: str, modality: str, dataset: str, args):
 
             test_results["Trials"].append(result)
             write_json(filepath=output_path, data=test_results)
-            print(f"Model: {model} Dataset: {dataset} Index: {i}"
-                  f"\nPrompt: {prompt} "
-                  f"\nResponse: {response} "
-                  f"\nExtraction Response: {extraction_response},"
-                  f"\nGT: {y}")
+            trial_index = test_entry["Index"]
+            # print(f"Model: {model} Dataset: {dataset} Index: {trial_index} Iteration: {j}"
+            #       f"\nPrompt: {prompt} "
+            #       f"\nResponse: {response} "
+            #       f"\nExtraction Response: {extraction_response},"
+            #       f"\nGT: {y}")
     print("Test " + model + "-" + modality + "-" + dataset + " completed.")
 
 
@@ -382,4 +386,4 @@ def multi_message_query(model: str, messages: list[dict[str, str]], max_tokens: 
         stop=None
     )
 
-    return response["choices"][0]["message"]
+    return response["choices"][0]["message"]["content"]

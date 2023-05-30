@@ -47,7 +47,9 @@ for i in range(0, STEPWISE_MAX_SIZE):
     DATASETS[f"Modified-Single-Val-Final-{i + 1}-step"] = os.path.join("Stepwise_Extracted",
                                                                                     "Modified-Single-Val-Final",
                                                                                     f"{i + 1}-step.json")
-
+    DATASETS[f"Modified-Double-Val-Final-{i + 1}-step"] = os.path.join("Stepwise_Extracted",
+                                                                                    "Modified-Double-Val-Final",
+                                                                                    f"{i + 1}-step.json")
 
 # Models. Models in chat will use the OpenAI ChatCompletion endpoint.
 # Models in completion will use the Completion endpoint

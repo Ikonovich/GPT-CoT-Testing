@@ -23,7 +23,7 @@ def main():
         generate_metadata(root=RESULTS_FOLDER, test_file="Test_Results.csv", scratchpad_file="Scratchpad Results.csv")
     elif mode == "graph":
         create_graphs()
-    elif mode == "test" or mode == "scratchpad" or mode == "step-generation" or mode == "modified-cot-test":
+    elif mode == "test" or mode == "scratchpad" or mode == "modified_cot":
         test(args=args)
 
 
@@ -52,7 +52,7 @@ def test(args):
                                          args=args)
 
             # Increment and carry on to the next model or models:
-            if args.mode == "scratchpad" or args.mode == "step-generation":
+            if args.mode == "scratchpad":
                 model_index += 2
             else:
                 model_index += 1
