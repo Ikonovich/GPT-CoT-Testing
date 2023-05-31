@@ -3,6 +3,9 @@ This module contains various configurations that aren't individual to each test.
 """
 import os
 
+# Stores the ID of the GPU to utilize
+GPU_ID = 4
+
 # Stores the minimum wait time between queries, in seconds
 WAIT_TIME = 0
 
@@ -16,7 +19,7 @@ ERROR_WAIT_TIME = 60
 DATASET_FOLDER = "Datasets"
 
 # Store the base folder for test results
-RESULTS_FOLDER = os.path.join("Results", "Primary Test Results")
+RESULTS_FOLDER = os.path.join("Results", "Primary_Test_Results")
 METADATA_FOLDER = os.path.join("Results", "Metadata")
 # Store the base folder for generated graphs
 
@@ -35,8 +38,18 @@ DATASETS = {"multiarith": os.path.join("MultiArith", "MultiArith-Processed.json"
             "mmlu-college": os.path.join("MMLU", "Processed", "mmlu_college.json")}
 
 # Add all possible stepwise datasets to the mapping
+# Some of these may not actually exist in the data
 for i in range(0, STEPWISE_MAX_SIZE):
     DATASETS[f"{i + 1}step"] = os.path.join("Stepwise", f"{i + 1}-Step-Int-Formulae.json")
+
+# Create a mapping of modified CoT datasets
+for i in range(0, STEPWISE_MAX_SIZE):
+    DATASETS[f"Modified-Single-Val-Final-{i + 1}-step"] = os.path.join("Stepwise_Extracted",
+                                                                                    "Modified-Single-Val-Final",
+                                                                                    f"{i + 1}-step.json")
+    DATASETS[f"Modified-Double-Val-Final-{i + 1}-step"] = os.path.join("Stepwise_Extracted",
+                                                                                    "Modified-Double-Val-Final",
+                                                                                    f"{i + 1}-step.json")
 
 # Models. Models in chat will use the OpenAI ChatCompletion endpoint.
 # Models in completion will use the Completion endpoint
