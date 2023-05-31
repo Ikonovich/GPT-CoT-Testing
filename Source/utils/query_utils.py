@@ -217,7 +217,7 @@ def run_test(model: str, modality: str, dataset: str, args):
         prompt = "Initial"
 
     # Set the results folder, because we don't split individual step runs into separate folders
-    if "Modified" in dataset:
+    if "Mod" in dataset:
         stop_val = regex.findall(r"\d{1,2}", dataset)[0]
         stop_index = dataset.index(stop_val)
         dataset_sub = dataset[:stop_index - 1]
@@ -245,7 +245,7 @@ def run_test(model: str, modality: str, dataset: str, args):
     if cont and path.exists(output_path):
         try:
             previous = read_json(filepath=output_path)
-            start_index = previous["Trials"][-1]["Index"] + 1
+            start_index = len(previous["Trials"])
 
         except JSONDecodeError as e:
             print(f"There was an error decoding the prior test results at {output_path} into json at index {e.pos}")
@@ -337,7 +337,6 @@ def run_test(model: str, modality: str, dataset: str, args):
                                 "Modality": modality,
                                 "Modality Index": modality_index_map[modality],
                                 "Dataset": dataset_sub,
-                                "Dataset Index": dataset_index_map[dataset_sub],
                                 }
                 if "step" in dataset:
                     test_results["Steps"] = int(regex.findall(r"\d{1,2}", dataset)[0])

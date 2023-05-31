@@ -11,7 +11,6 @@ from utils.query_utils import multi_message_query, timer
 
 
 def generate_steps():
-
     for i in range(1, 10):
         tests_35_path = f"Results/Primary_Test_Results/gpt-3.5-turbo/zero_shot_cot/stepwise/Simple-in-brackets-gpt-3.5-turbo-zero_shot_cot-{i}step.json"
         tests_4_path = f"Results/Primary_Test_Results/gpt-4/zero_shot_cot/stepwise/Simple-in-brackets-gpt-4-zero_shot_cot-{i}step.json"
@@ -62,7 +61,7 @@ def generate_steps():
 
         # Get the index to start on
         # Send the queries to the GPT-3 model and store the responses
-        delay = 10 # Time to wait after a failure
+        delay = 10  # Time to wait after a failure
         for j in range(start_index, len(filtered_data)):
             item = filtered_data[j]
             index = item["Index"]
@@ -72,11 +71,11 @@ def generate_steps():
                 try:
                     messages = [
                         {"role": "system", "content": (
-                                    "You are a math problem-solving machine. You take in simple arithmetic problems, "
-                                    "and output each step required to solve this arithmetic problem in order of "
-                                    "operations. Show each mathematical step one by one, and place each step in "
-                                    "squiggly brackets. Do not provide any additional explanations. For example, if "
-                                    "the problem is 3 + 2 * 4 + 5, the output should be: " + s)},
+                                "You are a math problem-solving machine. You take in simple arithmetic problems, "
+                                "and output each step required to solve this arithmetic problem in order of "
+                                "operations. Show each mathematical step one by one, and place each step in "
+                                "squiggly brackets. Do not provide any additional explanations. For example, if "
+                                "the problem is 3 + 2 * 4 + 5, the output should be: " + s)},
                         {"role": "user", "content": str(query)}
                     ]
                     response = multi_message_query(model="gpt-3.5-turbo", messages=messages, max_tokens=2000)
@@ -129,7 +128,8 @@ def modify_and_remove_final_step():
 
     # Double val modification with final step removal
     for i in range(1, 10):
-        path = os.path.join("Datasets", "Stepwise_Extracted", "Unmodified", f"responses_Simple-in-brackets-gpt-3.5-turbo-zero_shot_cot-{i}step.json")
+        path = os.path.join("Datasets", "Stepwise_Extracted", "Unmodified",
+                            f"responses_Simple-in-brackets-gpt-3.5-turbo-zero_shot_cot-{i}step.json")
         data = read_json(path)
         results = list()
 
@@ -155,96 +155,62 @@ def modify_and_remove_final_step():
         write_json(filepath=f"Datasets\\Stepwise_Extracted\\Modified-Off-by-One-Val-Final\\{i}-step.json", data=results)
 
 
-def modify_and_remove_off_by_one():
-    # Modify one and both numbers in each of the final steps, then remove the final step
-    # (if more than 1 step) or the final answer to the step (if only 1 step)
+def modify_steps(mode: str, mod_count: int, remove_last: bool, off_by_one: bool, folder_name: str):
     for i in range(1, 10):
-        path = os.path.join("Datasets", "Stepwise_Extracted", "Unmodified",
-                            f"responses_Simple-in-brackets-gpt-3.5-turbo-zero_shot_cot-{i}step.json")
+        path = os.path.join("Datasets", "Stepwise_Extracted", "Unmodified", f"steps_unmodified_{i}step.json")
         data = read_json(path)
         results = list()
 
-        for entry in data:
-            index = entry["Index"]
-            query = entry['Query']
-            steps = entry['Steps']
-            answer = entry['Answer']
-            gt = entry['GT']
+        for j in range(250):
+            entry = data[j]
 
-            new_steps = modify(steps, -1, 1, off_by_one=True)
+            if mode == "Last":  # Modify the last step
+                step_index = -1
+            elif mode == "First":  # Modify the first step
+                step_index = 0
+            elif mode == "Middle":  # Modify the middle step
+                step_index = int(len(entry["Steps"]) / 2)
+            else:
+                raise ValueError("Provided mode is undefined.")
 
-            # Cut off the query after the first equal sign
-            stop_index = query.index("=")
-            query = query[:stop_index + 1]
-            results.append({
-                "Index": index,
-                "Question": query,
-                "GT": gt,
-                "New Steps": new_steps,
-                "Original Steps": steps,
-                "Steps Length": steps
-            })
+            results.append(generate_step(entry=entry,
+                                         step_index=step_index,
+                                         mod_count=mod_count,
+                                         remove_last=remove_last,
+                                         off_by_one=off_by_one))
 
-        write_json(filepath=f"Datasets\\Stepwise_Extracted\\Modified-Single-Val-Final\\{i}-step.json", data=results)
-
-    # Double val modification with final step removal
-    for i in range(1, 10):
-        path = os.path.join("Datasets", "Stepwise_Extracted", "Unmodified", f"responses_Simple-in-brackets-gpt-3.5-turbo-zero_shot_cot-{i}step.json")
-        data = read_json(path)
-        results = list()
-
-        for entry in data:
-            index = entry["Index"]
-            query = entry['Query']
-            steps = entry['Steps']
-            gt = entry["GT"]
-            new_steps = modify(steps, -1, 2, off_by_one=True)
-
-            # Cut off the query after the first equal sign
-            stop_index = query.index("=")
-            query = query[:stop_index + 1]
-            results.append({
-                "Index": index,
-                "Question": query,
-                "GT": gt,
-                "New Steps": new_steps,
-                "Original Steps": steps,
-                "Steps Length": steps
-            })
-
-        write_json(filepath=f"Datasets\\Stepwise_Extracted\\Modified-Off-by-One-Double-Val-Final\\{i}-step.json", data=results)
+        write_json(filepath=f"Datasets\\Stepwise_Extracted\\{folder_name}\\{i}-step.json",
+                   data=results)
 
 
-def modify_and_keep_final_step():
-    for i in range(1, 10):
-        path = os.path.join("Datasets", "Stepwise_Extracted", "Unmodified",
-                            f"responses_Simple-in-brackets-gpt-3.5-turbo-zero_shot_cot-{i}step.json")
-        data = read_json(path)
-        results = list()
+def generate_step(entry: dict[str], step_index: int, mod_count: int, remove_last: bool, off_by_one: bool):
+    index = entry["Index"]
+    query = entry['Query']
+    steps = entry['Steps']
+    gt = entry["GT"]
+    new_steps = modify(steps=steps,
+                       step_index=step_index,
+                       num_modifications=mod_count,
+                       off_by_one=off_by_one)
 
-        for entry in data:
-            index = entry["Index"]
-            query = entry['Query']
-            steps = entry['Steps']
-            gt = entry["GT"]
-            new_steps = modify(steps, -1, 2, remove_last=False)
+    # If the list of steps is longer than 1 and remove last is true, remove the final step. Otherwise, remove the
+    # final answer to the final step.
+    if remove_last and len(new_steps) > 1:
+        new_steps = new_steps[:-1]
+    else:
+        stop_index = new_steps[-1].index("=")
+        new_steps[-1] = new_steps[-1][:stop_index + 1]
 
-            # Cut off the query after the first equal sign
-            stop_index = query.index("=")
-            query = query[:stop_index + 1]
-            results.append({
-                "Index": index,
-                "Question": query,
-                "GT": gt,
-                "New Steps": new_steps,
-                "Original Steps": steps,
-                "Steps Length": steps
-            })
-
-        write_json(filepath=f"Datasets\\Stepwise_Extracted\\Modified-Final-Step-Double\\{i}-step.json", data=results)
+    return {
+        "Index": index,
+        "Question": query,
+        "GT": gt,
+        "New Steps": new_steps,
+        "Original Steps": steps
+    }
 
 
-def modify(steps: list[str], step_index: int, num_modifications: int, remove_last: bool = True, off_by_one: bool = False) -> list[str]:
+def modify(steps: list[str], step_index: int, num_modifications: int, off_by_one: bool = False) -> list[str]:
     # Modifies the provided index at the provided step.
     # If off_by_one is true, randomly selects -1 or 1 and adds that to the selected value.
     # Otherwise, sets a limit between the 2 * the original number and zero and selects a random value,
@@ -255,6 +221,10 @@ def modify(steps: list[str], step_index: int, num_modifications: int, remove_las
     step = steps[step_index]
     vals = [s for s in regex.findall(r'-?\d+\.?\d*', step)]
     vals = [int(x) for x in vals]
+
+    # Get the offset here - If this is a double modification and off-by-one, we don't want the offsets to cancel out, so
+    # we go ahead and set an offset.
+    offset = random.choice([-1, 1])
 
     for i in range(num_modifications):
         # If there's only one modification to be made, randomize its location.
@@ -267,7 +237,6 @@ def modify(steps: list[str], step_index: int, num_modifications: int, remove_las
         # If the number is zero, choose a number between 0 and 9 inclusive.
         # Exclude the original number.
         if off_by_one:
-            offset = random.choice([-1, 1])
             new_num = num + offset
         else:
             if num == 0:
@@ -284,19 +253,11 @@ def modify(steps: list[str], step_index: int, num_modifications: int, remove_las
                     new_num = new_val
 
         new_steps = list()
-        pattern = f"\\b({num})\\b"
+        pattern = f"(?<!\\S){num}(?!\\S)"
         for entry in steps:
             new_step = regex.sub(pattern=pattern, repl=f"{str(new_num)}", string=entry)
             new_steps.append(new_step)
         steps = new_steps
-
-    # If the list of steps is longer than 1 and remove last is true, remove the final step. Otherwise, remove the
-    # final answer to the final step.
-    if remove_last and len(steps) > 1:
-        steps = steps[:-1]
-    else:
-        stop_index = steps[-1].index("=")
-        steps[-1] = steps[-1][:stop_index + 1]
 
     return steps
 
@@ -331,8 +292,86 @@ def extract_steps():
         write_json(filepath=path, data=results)
 
 
+def create_modified_steps():
+    # -- BASELINE ###
+    modify_steps(mode="Last",
+                 mod_count=1,
+                 off_by_one=True,
+                 remove_last=False,
+                 folder_name="Last-Step-Single-Mod-Off-By-One-Keep-Last")
+
+    modify_steps(mode="Middle",
+                 mod_count=1,
+                 off_by_one=True,
+                 remove_last=False,
+                 folder_name="Middle-Step-Single-Mod-Off-By-One-Keep-Last")
+
+    modify_steps(mode="First",
+                 mod_count=1,
+                 off_by_one=True,
+                 remove_last=False,
+                 folder_name="First-Step-Single-Mod-Off-By-One-Keep-Last")
+
+    # -- BASELINE + LARGE RANGE
+    modify_steps(mode="Last",
+                 mod_count=1,
+                 off_by_one=False,
+                 remove_last=False,
+                 folder_name="Last-Step-Single-Mod-High-Range-Keep-Last")
+
+    modify_steps(mode="Middle",
+                 mod_count=1,
+                 off_by_one=False,
+                 remove_last=False,
+                 folder_name="Middle-Step-Single-Mod-High-Range-Keep-Last")
+
+    modify_steps(mode="First",
+                 mod_count=1,
+                 off_by_one=False,
+                 remove_last=False,
+                 folder_name="First-Step-Single-Mod-High-Range-Keep-Last")
+
+    # --- BASELINE + DOUBLE MOD + REMOVE LAST STEP
+    modify_steps(mode="Last",
+                 mod_count=2,
+                 off_by_one=True,
+                 remove_last=True,
+                 folder_name="Last-Step-Double-Mod-Off-By-One-Remove-Last")
+
+    modify_steps(mode="Middle",
+                 mod_count=2,
+                 off_by_one=True,
+                 remove_last=True,
+                 folder_name="Middle-Step-Double-Mod-Off-By-One-Remove-Last")
+
+    modify_steps(mode="First",
+                 mod_count=2,
+                 off_by_one=True,
+                 remove_last=False,
+                 folder_name="First-Step-Double-Mod-Off-By-One-Remove-Last")
+
+    # -- BASELINE + DOUBLE MOD
+    modify_steps(mode="Last",
+                 mod_count=2,
+                 off_by_one=True,
+                 remove_last=False,
+                 folder_name="Last-Step-Double-Mod-Off-By-One-Keep-Last")
+
+    modify_steps(mode="Middle",
+                 mod_count=2,
+                 off_by_one=True,
+                 remove_last=False,
+                 folder_name="Middle-Step-Double-Mod-Off-By-One-Keep-Last")
+
+    modify_steps(mode="First",
+                 mod_count=2,
+                 off_by_one=True,
+                 remove_last=False,
+                 folder_name="First-Step-Double-Mod-Off-By-One-Keep-Last")
+
+
 if __name__ == "__main__":
-    # filter_questions()
+    create_modified_steps()
     # generate_steps()
-    extract_steps()
-    # modify_and_keep_final_step()
+    # extract_steps()
+
