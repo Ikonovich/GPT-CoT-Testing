@@ -209,13 +209,13 @@ def count_cot(data: list[dict], dataset: str, mode: str = "test") -> tuple[int, 
     for entry in data:
         total += 1
         is_accurate = 0
-        if mode == "test":
+        if mode == "test" or mode == "modified_cot":
             response = entry["Response"].lower()
         elif mode == "scratchpad":
             response = entry["Reasoning"].lower()
         else:
             raise ValueError("Provided mode is invalid.")
-        answer = entry["Answer"]
+        answer = entry["Final Answer"]
         gt = entry["GT"]
 
         # Get the accuracy value

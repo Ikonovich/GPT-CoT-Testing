@@ -217,7 +217,11 @@ def run_test(model: str, modality: str, dataset: str, args):
         prompt = "Initial"
 
     # Set the results folder, because we don't split individual step runs into separate folders
-    if 'step' in dataset:
+    if "Modified" in dataset:
+        stop_val = regex.findall(r"\d{1,2}", dataset)[0]
+        stop_index = dataset.index(stop_val)
+        dataset_sub = dataset[:stop_index - 1]
+    elif 'step' in dataset:
         dataset_sub = "stepwise"
     else:
         dataset_sub = dataset
@@ -279,7 +283,7 @@ def run_test(model: str, modality: str, dataset: str, args):
             cot = "\n".join(test_entry["New Steps"])
             # If the model is local, concatenate the question and steps.
             if model == 'goat':
-                response = local_query(model_name=model, prompt = prompt + " \n" + cot, max_tokens=max_tokens)
+                response = local_query(model_name=model, prompt=prompt + " \n" + cot, max_tokens=max_tokens)
             # Otherwise, send the steps as GPT assistant message and the query as a user message.
             else:
                 messages = [{"role": "user", "content": prompt},
@@ -317,6 +321,8 @@ def run_test(model: str, modality: str, dataset: str, args):
         result = {"Index": test_entry["Index"], "Query": prompt, "Response": response,
                   "Extract-Response": extraction_response,
                   "GT": y}
+        if mode == "modified_cot":
+            result["Injected CoT"] = cot
 
         if dataset == "aqua" or "mmlu" in dataset:
             result["Options"] = options

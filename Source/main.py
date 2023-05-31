@@ -20,7 +20,8 @@ def main():
     if mode == "extract":
         extract_answers(root=RESULTS_FOLDER)
     elif mode == "metadata":
-        generate_metadata(root=RESULTS_FOLDER, test_file="Test_Results.csv", scratchpad_file="Scratchpad Results.csv")
+        generate_metadata(root=RESULTS_FOLDER, test_file="Test_Results.csv",
+                          scratchpad_file="Scratchpad_Results.csv")
     elif mode == "graph":
         create_graphs()
     elif mode == "test" or mode == "scratchpad" or mode == "modified_cot":
