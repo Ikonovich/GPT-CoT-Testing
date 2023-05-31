@@ -26,8 +26,10 @@ for filename in second_dataset_files:
 
             # If the "response" exists in the first dataset...
             if response in data1_dict:
-                # Add the "query" field to the corresponding entry in the first dataset
+                # Add t he "query" field to the corresponding entry in the first dataset
                 data1_dict[response]['query'] = entry['response']['query']
+                # Add the length of the "steps" list to the corresponding entry in the first dataset
+                data1_dict[response]['steps_length'] = len(data1_dict[response]['steps'])
 
 # Convert the updated first dataset back to a list
 updated_data1 = list(data1_dict.values())

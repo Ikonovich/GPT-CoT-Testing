@@ -19,7 +19,11 @@ for file in files:
             data = json.load(f)
 
         # Iterate over each item in the data
+        iterator = 0
         for item in data:
+            iterator +=1
+            if(iterator > 100):
+                break
             # Get the response string
             response_str = item['response']['response']
             query_str = item['response']['query']
