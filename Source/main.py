@@ -15,7 +15,7 @@ from scratchpad import multi_query_test
 
 def main():
     args = parse_args()
-
+    config.GPU_ID = args.gpu
     mode = args.mode
     if mode == "extract":
         extract_answers(root=RESULTS_FOLDER)
@@ -127,6 +127,10 @@ def parse_args():
 
     parser.add_argument(
         "--max_tokens", type=int, default=1000, help="Sets the maximum number of tokens that a model can use."
+    )
+
+    parser.add_argument(
+        "--gpu", type=int, default=0, help="Sets the GPU that locally ran models will utilize."
     )
 
     args = parser.parse_args()

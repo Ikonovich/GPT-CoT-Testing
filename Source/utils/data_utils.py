@@ -197,8 +197,7 @@ def path_to_metadata(test_path: str) -> dict[str, str]:
     return metadata
 
 
-def count_cot(data: list[dict], dataset: str, mode: str = "test") -> tuple[int, int, int, int, int, int]:
-    mode = mode.lower()
+def count_cot(data: list[dict], dataset: str) -> tuple[int, int, int, int, int, int]:
     total = 0
     total_accurate = 0
     cot_total = 0
@@ -209,12 +208,7 @@ def count_cot(data: list[dict], dataset: str, mode: str = "test") -> tuple[int, 
     for entry in data:
         total += 1
         is_accurate = 0
-        if mode == "test" or mode == "modified_cot":
-            response = entry["Response"].lower()
-        elif mode == "scratchpad":
-            response = entry["Reasoning"].lower()
-        else:
-            raise ValueError("Provided mode is invalid.")
+        response = entry["Response"].lower()
         answer = entry["Final Answer"]
         gt = entry["GT"]
 
@@ -273,7 +267,7 @@ def test_quantification(test_path: str = None):
     # the accuracy of CoT answers, and the accuracy of Non-CoT answers,
     # along with over all counts of each item type.
     total, total_accurate, cot_accurate, cot_total, non_cot_accurate, non_cot_total = count_cot(
-        data=data["Trials"], dataset=data["Dataset"], mode=data["Mode"])
+        data=data["Trials"], dataset=data["Dataset"])
 
     if cot_total == 0:
         cot_accuracy = "N/A"
