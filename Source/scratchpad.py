@@ -73,14 +73,14 @@ def multi_query_test(model_one: str, model_two: str, modality: str, dataset: str
         if path.exists(output_path):
             test_results = read_json(filepath=output_path)
         else:
-            test_results = {"Internal Model": model_one,
+            test_results = {"Mode": "scratchpad",
+                            "Internal Model": model_one,
                             "Internal Model Index": model_index_map[model_one],
                             "External Model": model_two,
                             "External Model Index": model_index_map[model_two],
                             "Modality": modality,
                             "Modality Index": modality_index_map[modality],
                             "Dataset": dataset,
-                            "Dataset Index": dataset_index_map[dataset],
                             "Extraction Type": "in-brackets",
                             "Internal Role": roles["Reasoning"],
                             "External Role": roles["Answering"],
@@ -108,8 +108,8 @@ def scratchpad_test(datum: dict, model_one: str, model_two: str, modality: str, 
         cot = "\n".join(test_entry["New Steps"])
         messages = [
             roles["Reasoning"],
+            {"role": "user", "content": prompt},
             {"role": "assistant", "content": cot},
-            {"role": "user", "content": prompt}
         ]
         results["Injected CoT"] = cot
     else:
@@ -119,16 +119,25 @@ def scratchpad_test(datum: dict, model_one: str, model_two: str, modality: str, 
         ]
 
     internal_message = multi_message_query(model=model_one, messages=messages, max_tokens=max_tokens)
-    reasoning = internal_message["content"]
+    reasoning = internal_message
     print(f"Internal reasoning: {reasoning}")
-    messages = [
-        roles["Answering"],
-        {"role": "user", "content": prompt},
-        internal_message
-    ]
+    if dataset in MODIFIED_COT_DATASETS:
+        # Inject the modified CoT into the test context
+        messages = [
+            roles["Answering"],
+            {"role": "user", "content": prompt},
+            {"role": "assistant", "content": cot},
+            {"role": "assistant", "content": internal_message}
+        ]
+    else:
+        messages = [
+            roles["Answering"],
+            {"role": "user", "content": prompt},
+            internal_message
+        ]
 
     external_message = multi_message_query(model=model_two, messages=messages, max_tokens=max_tokens)
-    response = external_message["content"]
+    response = external_message
 
     results.update({"Reasoning": reasoning, "Response": response,
                     "GT": y})

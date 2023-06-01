@@ -286,7 +286,7 @@ def run_test(model: str, modality: str, dataset: str, args):
             cot = "\n".join(test_entry["New Steps"])
             results["Injected CoT"] = cot
             # If the model is local, concatenate the question and steps.
-            if model == 'goat':
+            if model == 'goat' or model in COMPLETION:
                 response = local_query(
                     model_name=model,
                     prompt=prompt + " \n" + cot,
@@ -313,6 +313,7 @@ def run_test(model: str, modality: str, dataset: str, args):
             extraction_response = "None"
         else:
             extraction_response = extraction_query(
+                model=model,
                 prompt=prompt,
                 response=response,
                 options=options,
@@ -350,9 +351,8 @@ def run_test(model: str, modality: str, dataset: str, args):
     print("Test " + model + "-" + modality + "-" + dataset + " completed.")
 
 
-def extraction_query(prompt: str, response: str, options: dict[str, str] | None, args) -> str:
+def extraction_query(model: str, prompt: str, response: str, options: dict[str, str] | None, args) -> str:
     extraction_type = args.extraction_type
-    model = args.model
     max_tokens = args.max_tokens
 
     if extraction_type == "two-stage":
