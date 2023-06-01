@@ -73,10 +73,10 @@ def parse_args():
     # Graph: Runs create_graphs.create_graphs to create all graphs defined there.
     parser.add_argument(
         "--mode", type=str,
-        choices=["test", "metadata", "graph", "extract", "scratchpad", "modified_cot"],
+        choices=["test", "metadata", "graph", "extract", "scratchpad"],
         default="test",
         help="Choose whether to run standard single-query tests, extract answers, collate metadata, graph results, "
-             "modified chain-of-thought tests, or to run scratchpad test mode."
+             "or to run scratchpad test mode."
     )
 
     # Takes a list of open AI models to iteratively run through the provided modalities and datasets.
@@ -112,11 +112,6 @@ def parse_args():
              + "\"The answer is\". In-brackets appends \"Place the final answer in squiggly brackets.\" to the "
              + "question. None does neither of these and only attempts to extract the answer directly - this is not "
              + "recommended for most cases."
-    )
-
-    parser.add_argument(
-        "--save", type=ast.literal_eval, default=True,
-        help="If true, saves the test results to a file and the associated metadata"
     )
 
     parser.add_argument(

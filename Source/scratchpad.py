@@ -1,7 +1,8 @@
 from json import JSONDecodeError
 from os import path
 
-from config import DATASET_FOLDER, DATASETS, RESULTS_FOLDER, model_index_map, modality_index_map, dataset_index_map
+from config import DATASET_FOLDER, DATASETS, RESULTS_FOLDER, model_index_map, modality_index_map, dataset_index_map, \
+    MODIFIED_COT_DATASETS
 from utils.file_utils import load_dataset, read_json, write_json
 from utils.query_utils import build_prompt, multi_message_query
 
@@ -65,7 +66,7 @@ def multi_query_test(model_one: str, model_two: str, modality: str, dataset: str
         datum = data[i]
         if args.mode == "scratchpad":
             result = scratchpad_test(datum=datum, model_one=model_one, model_two=model_two, modality=modality,
-                                     max_tokens=max_tokens)
+                                     max_tokens=max_tokens, dataset=dataset)
         else:
             raise ValueError("The provided mode is not valid here.")
 
@@ -93,16 +94,29 @@ def multi_query_test(model_one: str, model_two: str, modality: str, dataset: str
         write_json(filepath=output_path, data=test_results)
 
 
-def scratchpad_test(datum: dict, model_one: str, model_two: str, modality: str, max_tokens: int):
+def scratchpad_test(datum: dict, model_one: str, model_two: str, modality: str, dataset: str, max_tokens: int):
     x, y, test_entry = datum
-
+    results = dict()
+    results["Index"] = test_entry["Index"]
     prompt = build_prompt(question=x, modality=modality, use_simple_prompt=True,
                           bracket_extract=True)
+    results["Query"] = prompt
 
-    messages = [
-        roles["Reasoning"],
-        {"role": "user", "content": prompt}
-    ]
+    # Run the internal reasoning step.
+    if dataset in MODIFIED_COT_DATASETS:
+        # Inject the modified CoT into the test context
+        cot = "\n".join(test_entry["New Steps"])
+        messages = [
+            roles["Reasoning"],
+            {"role": "assistant", "content": cot},
+            {"role": "user", "content": prompt}
+        ]
+        results["Injected CoT"] = cot
+    else:
+        messages = [
+            roles["Reasoning"],
+            {"role": "user", "content": prompt}
+        ]
 
     internal_message = multi_message_query(model=model_one, messages=messages, max_tokens=max_tokens)
     reasoning = internal_message["content"]
@@ -116,7 +130,7 @@ def scratchpad_test(datum: dict, model_one: str, model_two: str, modality: str, 
     external_message = multi_message_query(model=model_two, messages=messages, max_tokens=max_tokens)
     response = external_message["content"]
 
-    result = {"Index": test_entry["Index"], "Query": prompt, "Reasoning": reasoning, "Response": response,
-              "GT": y}
+    results.update({"Reasoning": reasoning, "Response": response,
+                    "GT": y})
 
-    return result
+    return results

@@ -42,64 +42,66 @@ DATASETS = {"multiarith": os.path.join("MultiArith", "MultiArith-Processed.json"
 for i in range(0, STEPWISE_MAX_SIZE):
     DATASETS[f"{i + 1}step"] = os.path.join("Stepwise", f"{i + 1}-Step-Int-Formulae.json")
 
-# Create a mapping of modified CoT datasets
+# Create a mapping of modified CoT datasets. We also append these to our regular datasets.
+MODIFIED_COT_DATASETS = dict()
 for i in range(0, STEPWISE_MAX_SIZE):
     # BASELINE:
     # Offset a single val in the modified step by one, remove the final answer but keep the last step.
 
-    DATASETS[f"First-Step-Single-Mod-Off-By-One-Keep-Last-{i + 1}-step"] = os.path.join("Stepwise_Extracted",
+    MODIFIED_COT_DATASETS[f"First-Step-Single-Mod-Off-By-One-Keep-Last-{i + 1}-step"] = os.path.join("Stepwise_Extracted",
                                                                                         "First-Step-Single-Mod-Off-By-One-Keep-Last",
                                                                                         f"{i + 1}-step.json")
 
-    DATASETS[f"Middle-Step-Single-Mod-Off-By-One-Keep-Last-{i + 1}-step"] = os.path.join("Stepwise_Extracted",
+    MODIFIED_COT_DATASETS[f"Middle-Step-Single-Mod-Off-By-One-Keep-Last-{i + 1}-step"] = os.path.join("Stepwise_Extracted",
                                                                                          "Middle-Step-Single-Mod-Off-By-One-Keep-Last",
                                                                                          f"{i + 1}-step.json")
 
-    DATASETS[f"Last-Step-Single-Mod-Off-By-One-Keep-Last-{i + 1}-step"] = os.path.join("Stepwise_Extracted",
+    MODIFIED_COT_DATASETS[f"Last-Step-Single-Mod-Off-By-One-Keep-Last-{i + 1}-step"] = os.path.join("Stepwise_Extracted",
                                                                                        "Last-Step-Single-Mod-Off-By-One-Keep-Last",
                                                                                        f"{i + 1}-step.json")
 
     # DOUBLE RANGE
     # Change a single val in the modified step to between 0 and 2 * the initial val,
     # remove the final answer but keep the last step.
-    DATASETS[f"First-Step-Single-Mod-High-Range-Keep-Last-{i + 1}-step"] = os.path.join("Stepwise_Extracted",
+    MODIFIED_COT_DATASETS[f"First-Step-Single-Mod-High-Range-Keep-Last-{i + 1}-step"] = os.path.join("Stepwise_Extracted",
                                                                                         "First-Step-Single-Mod-High-Range-Keep-Last",
                                                                                         f"{i + 1}-step.json")
 
-    DATASETS[f"Middle-Step-Single-Mod-High-Range-Keep-Last-{i + 1}-step"] = os.path.join("Stepwise_Extracted",
+    MODIFIED_COT_DATASETS[f"Middle-Step-Single-Mod-High-Range-Keep-Last-{i + 1}-step"] = os.path.join("Stepwise_Extracted",
                                                                                          "Middle-Step-Single-Mod-High-Range-Keep-Last",
                                                                                          f"{i + 1}-step.json")
 
-    DATASETS[f"Last-Step-Single-Mod-High-Range-Keep-Last-{i + 1}-step"] = os.path.join("Stepwise_Extracted",
+    MODIFIED_COT_DATASETS[f"Last-Step-Single-Mod-High-Range-Keep-Last-{i + 1}-step"] = os.path.join("Stepwise_Extracted",
                                                                                        "Last-Step-Single-Mod-High-Range-Keep-Last",
                                                                                        f"{i + 1}-step.json")
 
     # DOUBLE MODIFICATION, KEEP LAST STEP
     # Offset two values in the chosen step by one, keep the last step
-    DATASETS[f"First-Step-Double-Mod-Off-By-One-Keep-Last-{i + 1}-step"] = os.path.join("Stepwise_Extracted",
+    MODIFIED_COT_DATASETS[f"First-Step-Double-Mod-Off-By-One-Keep-Last-{i + 1}-step"] = os.path.join("Stepwise_Extracted",
                                                                                         "First-Step-Double-Mod-Off-By-One-Keep-Last",
                                                                                         f"{i + 1}-step.json")
-    DATASETS[f"Middle-Step-Double-Mod-Off-By-One-Keep-Last-{i + 1}-step"] = os.path.join("Stepwise_Extracted",
+    MODIFIED_COT_DATASETS[f"Middle-Step-Double-Mod-Off-By-One-Keep-Last-{i + 1}-step"] = os.path.join("Stepwise_Extracted",
                                                                                          "Middle-Step-Double-Mod-Off-By-One-Keep-Last",
                                                                                          f"{i + 1}-step.json")
 
-    DATASETS[f"Last-Step-Double-Mod-Off-By-One-Keep-Last-{i + 1}-step"] = os.path.join("Stepwise_Extracted",
+    MODIFIED_COT_DATASETS[f"Last-Step-Double-Mod-Off-By-One-Keep-Last-{i + 1}-step"] = os.path.join("Stepwise_Extracted",
                                                                                        "Last-Step-Double-Mod-Off-By-One-Keep-Last",
                                                                                        f"{i + 1}-step.json")
 
     # DOUBLE MODIFICATION, REMOVE LAST STEP
     # Offset two values in the chosen step by one, remove the final step
-    DATASETS[f"First-Step-Double-Mod-Off-By-One-Remove-Last-{i + 1}-step"] = os.path.join("Stepwise_Extracted",
+    MODIFIED_COT_DATASETS[f"First-Step-Double-Mod-Off-By-One-Remove-Last-{i + 1}-step"] = os.path.join("Stepwise_Extracted",
                                                                                           "First-Step-Double-Mod-Off-By-One-Remove-Last",
                                                                                           f"{i + 1}-step.json")
 
-    DATASETS[f"Middle-Step-Double-Mod-Off-By-One-Remove-Last-{i + 1}-step"] = os.path.join("Stepwise_Extracted",
+    MODIFIED_COT_DATASETS[f"Middle-Step-Double-Mod-Off-By-One-Remove-Last-{i + 1}-step"] = os.path.join("Stepwise_Extracted",
                                                                                            "Middle-Step-Double-Mod-Off-By-One-Remove-Last",
                                                                                            f"{i + 1}-step.json")
-    DATASETS[f"Last-Step-Double-Mod-Off-By-One-Remove-Last-{i + 1}-step"] = os.path.join("Stepwise_Extracted",
+    MODIFIED_COT_DATASETS[f"Last-Step-Double-Mod-Off-By-One-Remove-Last-{i + 1}-step"] = os.path.join("Stepwise_Extracted",
                                                                                          "Last-Step-Double-Mod-Off-By-One-Remove-Last",
                                                                                          f"{i + 1}-step.json")
 
+DATASETS.update(MODIFIED_COT_DATASETS)
 # Models. Models in chat will use the OpenAI ChatCompletion endpoint.
 # Models in completion will use the Completion endpoint
 # Local models will use a huggingface API.

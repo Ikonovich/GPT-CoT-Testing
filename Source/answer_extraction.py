@@ -158,7 +158,7 @@ def _extract(data: list[str] | str, dataset: str, options: dict = None) -> list:
                         if key in substr:
                             pred.append(options[key])
 
-        elif dataset in ['multiarith', 'gsm8k'] or 'step' in dataset:
+        elif dataset in ['multiarith', 'gsm8k'] or 'step' in dataset or "Step" in dataset:
             # Remove commas and find an arbitrary length integers or float
             pred = sample.replace(',', '')
             pred = [s for s in regex.findall(r'-?\d+\.?\d*', pred)]

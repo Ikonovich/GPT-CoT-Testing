@@ -198,7 +198,6 @@ def run_test(model: str, modality: str, dataset: str, args):
     # If cont is true, will attempt to load the first line from the file
     # with the name Model-Modality-Dataset-Results.jsonl and begin iterating from the value stored there at
     # last_index
-    save = args.save
     cont = args.continuation
     use_simple_prompt = args.use_simple_prompt
     extraction_type = args.extraction_type
@@ -217,7 +216,7 @@ def run_test(model: str, modality: str, dataset: str, args):
         prompt = "Initial"
 
     # Set the results folder, because we don't split individual step runs into separate folders
-    if "Mod" in dataset:
+    if dataset in MODIFIED_COT_DATASETS:
         stop_val = regex.findall(r"\d{1,2}", dataset)[0]
         stop_index = dataset.index(stop_val)
         dataset_sub = dataset[:stop_index - 1]
@@ -227,16 +226,14 @@ def run_test(model: str, modality: str, dataset: str, args):
         dataset_sub = dataset
 
     # Results file: Stores last index ran, total count, correct counts, and accuracy.
-    if args.mode == "test":
-        output_file = prompt + "-" + extraction_type + "-" + model + "-" + modality + "-" + dataset + ".json"
-        save_directory = path.join(RESULTS_FOLDER, model, modality, dataset_sub)
-    elif args.mode == "modified_cot":
+    if dataset in MODIFIED_COT_DATASETS:
         output_file = dataset + "-" + mode + "-" + model + ".json"
         save_directory = path.join(RESULTS_FOLDER, mode, model, modality, dataset_sub)
     else:
-        raise ValueError("A disallowed mode has been supplied to query_utils.run_test.")
-    output_path = path.join(save_directory, output_file)
+        output_file = prompt + "-" + extraction_type + "-" + model + "-" + modality + "-" + dataset + ".json"
+        save_directory = path.join(RESULTS_FOLDER, model, modality, dataset_sub)
 
+    output_path = path.join(save_directory, output_file)
     dataset_path = path.join(DATASET_FOLDER, DATASETS[dataset])
 
     # Set the start index
@@ -262,100 +259,122 @@ def run_test(model: str, modality: str, dataset: str, args):
         end_index = min(num_samples, len(data))
 
     for j in range(start_index, end_index):
+        # Get the question, ground truth, and full dataset entry
         x, y, test_entry = data[j]
+        # Initialize the results, which will be updated as we go
+        results = {"Index": test_entry["Index"], "GT": y}
         # Build the prompt out of our question
         prompt = build_prompt(
             question=x,
             modality=modality,
             use_simple_prompt=use_simple_prompt,
             bracket_extract=bracket_extract)
-        if model == "goat":
-            prompt = prompt.replace(" =", "?")
-            prompt = "What is " + prompt + "Answer: "
+        results["Query"] = prompt
+        # if model == "goat":
+        #     prompt = prompt.replace(" =", "?")
+        #     prompt = "What is " + prompt + "Answer: "
         # Get the initial response from the model
 
-        if mode == "test":
+        if dataset not in MODIFIED_COT_DATASETS:
+            # Run a normal test prompt
             response = query(
                 model=model,
                 prompt=prompt,
                 max_tokens=max_tokens)
         else:
+            # Inject the modified CoT into the test context
             cot = "\n".join(test_entry["New Steps"])
+            results["Injected CoT"] = cot
             # If the model is local, concatenate the question and steps.
             if model == 'goat':
-                response = local_query(model_name=model, prompt=prompt + " \n" + cot, max_tokens=max_tokens)
+                response = local_query(
+                    model_name=model,
+                    prompt=prompt + " \n" + cot,
+                    max_tokens=max_tokens)
             # Otherwise, send the steps as GPT assistant message and the query as a user message.
             else:
                 messages = [{"role": "user", "content": prompt},
                             {"role": "assistant", "content": cot}]
-                response = multi_message_query(model=model,
-                                               messages=messages,
-                                               max_tokens=max_tokens)
+                response = multi_message_query(
+                    model=model,
+                    messages=messages,
+                    max_tokens=max_tokens)
+
+        results["Response"] = response
 
         if dataset == "aqua" or "mmlu" in dataset:
             options = test_entry["Options"]
+            results["Options"] = options
         else:
             options = None
 
         # Validate the extraction type and perform two-stage extraction, if necessary.
         if extraction_type == "in-brackets":
             extraction_response = "None"
-        elif extraction_type == "two-stage":
-            # Resubmit the response for answer extraction
-            extraction_prompt = prompt + " " + response + "\n" + two_stage_extract_prompt
-            extraction_response = query(
-                model=model,
-                prompt=extraction_prompt,
-                max_tokens=max_tokens)
-        elif extraction_type == "two-stage-style-two":
-            extraction_prompt = two_stage_style_two_generation(
-                answer=response,
-                options=options)
-            extraction_response = query(
-                model=model,
-                prompt=extraction_prompt,
-                max_tokens=max_tokens)
         else:
-            raise ValueError("The provided extraction type is not valid.")
+            extraction_response = extraction_query(
+                prompt=prompt,
+                response=response,
+                options=options,
+                args=args)
+        results["Extract-Response"] = extraction_response
 
-        result = {"Index": test_entry["Index"], "Query": prompt, "Response": response,
-                  "Extract-Response": extraction_response,
-                  "GT": y}
-        if mode == "modified_cot":
-            result["Injected CoT"] = cot
+        if path.exists(output_path):
+            test_results = read_json(filepath=output_path)
+        else:
+            # Generate new test metadata
+            test_results = {"Mode": args.mode,
+                            "Model": model,
+                            "Model Index": model_index_map[model],
+                            "Modality": modality,
+                            "Modality Index": modality_index_map[modality],
+                            "Dataset": dataset_sub,
+                            }
+            if "step" in dataset:
+                test_results["Steps"] = int(regex.findall(r"\d{1,2}", dataset)[0])
 
-        if dataset == "aqua" or "mmlu" in dataset:
-            result["Options"] = options
-        if save:
-            if path.exists(output_path):
-                test_results = read_json(filepath=output_path)
-            else:
-                # Generate new test metadata
-                test_results = {"Mode": args.mode,
-                                "Model": model,
-                                "Model Index": model_index_map[model],
-                                "Modality": modality,
-                                "Modality Index": modality_index_map[modality],
-                                "Dataset": dataset_sub,
-                                }
-                if "step" in dataset:
-                    test_results["Steps"] = int(regex.findall(r"\d{1,2}", dataset)[0])
+        test_results.update({"Extraction Type": extraction_type,
+                             "Simple Prompt": use_simple_prompt,
+                             "Test Path": output_path,
+                             "Trials": list()
+                             })
 
-                test_results.update({"Extraction Type": extraction_type,
-                                     "Simple Prompt": use_simple_prompt,
-                                     "Test Path": output_path,
-                                     "Trials": list()
-                                     })
-
-            test_results["Trials"].append(result)
-            write_json(filepath=output_path, data=test_results)
-            trial_index = test_entry["Index"]
-            # print(f"Model: {model} Dataset: {dataset} Index: {trial_index} Iteration: {j}"
-            #       f"\nPrompt: {prompt} "
-            #       f"\nResponse: {response} "
-            #       f"\nExtraction Response: {extraction_response},"
-            #       f"\nGT: {y}")
+        test_results["Trials"].append(results)
+        write_json(filepath=output_path, data=test_results)
+        trial_index = test_entry["Index"]
+        # print(f"Model: {model} Dataset: {dataset} Index: {trial_index} Iteration: {j}"
+        #       f"\nPrompt: {prompt} "
+        #       f"\nResponse: {response} "
+        #       f"\nExtraction Response: {extraction_response},"
+        #       f"\nGT: {y}")
     print("Test " + model + "-" + modality + "-" + dataset + " completed.")
+
+
+def extraction_query(prompt: str, response: str, options: dict[str, str] | None, args) -> str:
+    extraction_type = args.extraction_type
+    model = args.model
+    max_tokens = args.max_tokens
+
+    if extraction_type == "two-stage":
+        # Resubmit the response for answer extraction
+        extraction_prompt = prompt + " " + response + "\n" + two_stage_extract_prompt
+        extraction_response = query(
+            model=model,
+            prompt=extraction_prompt,
+            max_tokens=max_tokens)
+
+    elif extraction_type == "two-stage-style-two":
+        extraction_prompt = two_stage_style_two_generation(
+            answer=response,
+            options=options)
+        extraction_response = query(
+            model=model,
+            prompt=extraction_prompt,
+            max_tokens=max_tokens)
+    else:
+        raise ValueError("The provided extraction type is not valid.")
+
+    return extraction_response
 
 
 # Used to format the second two-stage-second-style prompt.
