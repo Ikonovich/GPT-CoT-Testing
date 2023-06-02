@@ -1,0 +1,953 @@
+{
+    "Mode": "modified_cot",
+    "Model": "gpt-4",
+    "Model Index": 2,
+    "Modality": "zero_shot_cot",
+    "Modality Index": 1,
+    "Dataset": "First-Step-Double-Mod-Off-By-One-Keep-Last",
+    "Steps": 7,
+    "Extraction Type": "in-brackets",
+    "Simple Prompt": true,
+    "Test Path": "Results\\Primary_Test_Results\\modified_cot\\gpt-4\\zero_shot_cot\\First-Step-Double-Mod-Off-By-One-Keep-Last\\First-Step-Double-Mod-Off-By-One-Keep-Last-7-step-modified_cot-gpt-4.json",
+    "Total": 93,
+    "Total Accurate": 54,
+    "Total Accuracy": 58.06451612903226,
+    "Percent of Answers Containing CoT": 2.1505376344086025,
+    "CoT Accuracy": 50.0,
+    "Non-CoT Accuracy": 58.24175824175825,
+    "ci_radius": 10.029073911410084,
+    "ci_upper": 68.09359004044235,
+    "ci_lower": 48.035442217622176,
+    "Trials": [
+        {
+            "Index": 0,
+            "Query": "2 - 1 * 6 * 4 + 1 * 4 + 4 - 5 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "-23\n\nSo, the final answer is {-23}.",
+            "Extract-Response": "None",
+            "GT": -19,
+            "Injected CoT": "0 * 5 = 5\n5 * 4 = 24\n2 - 24 = -22\n0 * 4 = 4\n-22 + 4 = -18\n4 + 4 = 8\n-18 - 5 =",
+            "Answer": -23.0,
+            "Final Answer": -23.0
+        },
+        {
+            "Index": 3,
+            "Query": "2 * 6 + 4 + 8 - 4 + 2 - 7 - 6 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "10\n\nSo, the final answer is {10}.",
+            "Extract-Response": "None",
+            "GT": 9,
+            "Injected CoT": "1 * 5 = 12\n12 + 4 = 16\n16 + 8 = 24\n24 - 4 = 20\n20 + 1 = 22\n22 - 7 = 15\n15 - 5 =",
+            "Answer": 10.0,
+            "Final Answer": 10.0
+        },
+        {
+            "Index": 4,
+            "Query": "4 * 6 * 3 + 2 - 2 + 1 - 6 + 3 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "70\n\nSo, the final answer is {70}.",
+            "Extract-Response": "None",
+            "GT": 70,
+            "Injected CoT": "5 * 7 = 24\n24 * 3 = 72\n72 + 2 = 74\n74 - 2 = 72\n72 + 1 = 73\n73 - 7 = 67\n67 + 3 =",
+            "Answer": 70.0,
+            "Final Answer": 70.0
+        },
+        {
+            "Index": 5,
+            "Query": "2 + 3 * 8 + 9 + 6 * 4 * 8 + 1 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "1572\n\nSo, the final answer is {1572}.",
+            "Extract-Response": "None",
+            "GT": 228,
+            "Injected CoT": "2 * 7 = 24\n2 + 24 = 26\n4 * 7 = 32\n32 * 6 = 192\n192 * 7 = 1536\n9 + 1 = 10\n26 + 10 = 36\n36 + 1536 =",
+            "Answer": 1572.0,
+            "Final Answer": 1572.0
+        },
+        {
+            "Index": 6,
+            "Query": "9 - 6 - 4 - 5 - 3 - 8 * 1 * 9 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "-153\n\nSo, {-153} is the final answer.",
+            "Extract-Response": "None",
+            "GT": -81,
+            "Injected CoT": "7 * 0 = 7\n9 - 6 = 3\n3 - 4 = -1\n-1 - 5 = -6\n-6 - 3 = -9\n-9 - 7 = -17\n-17 * 9 =",
+            "Answer": -153.0,
+            "Final Answer": -153.0
+        },
+        {
+            "Index": 7,
+            "Query": "4 - 9 + 2 * 3 + 4 - 5 - 8 + 9 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "1\n\nSo, the final answer is {1}.",
+            "Extract-Response": "None",
+            "GT": 1,
+            "Injected CoT": "4 * 4 = 6\n4 - 9 = -5\n-5 + 6 = 1\n1 + 4 = 5\n5 - 5 = 0\n0 - 8 = -8\n-8 + 9 =",
+            "Answer": 1.0,
+            "Final Answer": 1.0
+        },
+        {
+            "Index": 8,
+            "Query": "8 * 1 + 6 - 3 - 2 + 1 - 9 - 5 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "-3\n\nSo, the final answer is {-3}.",
+            "Extract-Response": "None",
+            "GT": -4,
+            "Injected CoT": "9 * 2 = 9\n9 + 6 = 14\n14 - 3 = 11\n11 - 2 = 9\n9 + 2 = 10\n10 - 9 = 2\n2 - 5 =",
+            "Answer": -3.0,
+            "Final Answer": -3.0
+        },
+        {
+            "Index": 10,
+            "Query": "2 - 8 - 5 - 5 + 3 + 4 - 6 * 9 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "-63\n\nSo, the final answer is {-63}.",
+            "Extract-Response": "None",
+            "GT": -63,
+            "Injected CoT": "-5 * 10 = -54\n2 - 8 = -5\n-5 - 5 = -11\n-11 - 5 = -16\n-16 + 3 = -13\n-13 + 4 = -9\n-9 + (-54) =",
+            "Answer": -63.0,
+            "Final Answer": -63.0
+        },
+        {
+            "Index": 11,
+            "Query": "5 * 1 - 4 - 5 - 6 - 1 + 3 - 3 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "-11",
+            "Extract-Response": "None",
+            "GT": -11,
+            "Injected CoT": "6 * 2 = 6\n6 - 4 = 2\n2 - 6 = -4\n-4 - 6 = -10\n-10 - 2 = -11\n-11 + 3 = -8\n-8 - 3 =",
+            "Answer": -11.0,
+            "Final Answer": -11.0
+        },
+        {
+            "Index": 12,
+            "Query": "9 * 2 - 7 - 1 + 2 - 5 * 6 * 5 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "{-138}",
+            "Extract-Response": "None",
+            "GT": -138,
+            "Injected CoT": "10 * 3 = 18\n18 - 7 = 11\n11 - 1 = 10\n10 + 3 = 12\n5 * 6 = 30\n30 * 5 = 150\n12 - 150 =",
+            "Answer": -138.0,
+            "Final Answer": -138.0
+        },
+        {
+            "Index": 13,
+            "Query": "4 * 3 + 5 * 5 * 6 + 4 + 5 * 2 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "{176}",
+            "Extract-Response": "None",
+            "GT": 176,
+            "Injected CoT": "2 * 2 = 12\n5 * 5 = 25\n25 * 6 = 150\n5 * 2 = 10\n12 + 150 = 162\n162 + 2 = 166\n166 + 10 =",
+            "Answer": 176.0,
+            "Final Answer": 176.0
+        },
+        {
+            "Index": 14,
+            "Query": "2 - 1 + 5 - 8 - 9 - 6 * 4 + 2 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "-33\n\nSo, the final answer is {-33}.",
+            "Extract-Response": "None",
+            "GT": -33,
+            "Injected CoT": "7 * 5 = 24\n-1 + 5 = 5\n2 - 5 = -2\n-2 - 9 = -11\n-11 - 24 = -35\n-35 + 2 =",
+            "Answer": -33.0,
+            "Final Answer": -33.0
+        },
+        {
+            "Index": 16,
+            "Query": "7 * 2 + 8 - 5 + 2 + 8 - 6 * 1 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "21\n\nSo, the final answer is {21}.",
+            "Extract-Response": "None",
+            "GT": 21,
+            "Injected CoT": "8 * 3 = 14\n14 + 8 = 22\n22 - 5 = 17\n17 + 3 = 19\n19 + 8 = 27\n6 * 1 = 6\n27 - 6 =",
+            "Answer": 21.0,
+            "Final Answer": 21.0
+        },
+        {
+            "Index": 17,
+            "Query": "5 * 7 + 4 - 2 + 3 + 2 - 5 - 1 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "36\n\nSo, the final answer is {36}.",
+            "Extract-Response": "None",
+            "GT": 36,
+            "Injected CoT": "6 * 8 = 35\n35 + 4 = 39\n39 - 2 = 37\n37 + 3 = 40\n40 + 2 = 42\n42 - 6 = 37\n37 - 1 =",
+            "Answer": 36.0,
+            "Final Answer": 36.0
+        },
+        {
+            "Index": 21,
+            "Query": "9 - 4 + 7 - 6 + 2 * 9 * 1 + 9 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "35\n\nSo, the final answer is {35}.",
+            "Extract-Response": "None",
+            "GT": 33,
+            "Injected CoT": "3 * 10 = 18\n10 - 4 = 5\n7 - 6 = 1\n5 + 1 = 6\n6 + 18 = 24\n24 + 1 = 25\n25 + 10 =",
+            "Answer": 35.0,
+            "Final Answer": 35.0
+        },
+        {
+            "Index": 22,
+            "Query": "2 + 5 + 2 + 6 - 1 + 6 - 8 + 2 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "13\n\nSo, the final answer is {13}.",
+            "Extract-Response": "None",
+            "GT": 14,
+            "Injected CoT": "1 + 4 = 7\n7 + 1 = 9\n9 + 6 = 15\n15 - 1 = 14\n14 + 6 = 20\n20 - 8 = 12\n12 + 1 =",
+            "Answer": 13.0,
+            "Final Answer": 13.0
+        },
+        {
+            "Index": 23,
+            "Query": "4 * 3 - 3 * 3 + 6 - 4 + 2 * 4 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "13\n\nSo, the final answer is {13}.",
+            "Extract-Response": "None",
+            "GT": 13,
+            "Injected CoT": "2 * 2 = 12\n2 * 2 = 9\n12 - 9 = 2\n2 * 2 = 8\n6 - 2 = 2\n2 + 8 = 11\n11 + 2 =",
+            "Answer": 13.0,
+            "Final Answer": 13.0
+        },
+        {
+            "Index": 24,
+            "Query": "5 * 1 + 4 * 9 - 7 - 2 * 5 * 2 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "14\n\nSo, the final answer is {14}.",
+            "Extract-Response": "None",
+            "GT": 14,
+            "Injected CoT": "6 * 2 = 6\n4 * 9 = 36\n2 * 6 = 10\n10 * 2 = 20\n6 + 36 = 41\n41 - 7 = 34\n34 - 20 =",
+            "Answer": 14.0,
+            "Final Answer": 14.0
+        },
+        {
+            "Index": 25,
+            "Query": "2 * 6 + 9 + 3 * 5 - 5 - 2 + 1 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "9\n\nSo, the final answer is {9}.",
+            "Extract-Response": "None",
+            "GT": 30,
+            "Injected CoT": "3 * 7 = 12\n3 * 5 = 15\n12 + 9 = 21\n15 - 5 = 10\n10 - 3 = 8\n8 + 1 =",
+            "Answer": 9.0,
+            "Final Answer": 9.0
+        },
+        {
+            "Index": 26,
+            "Query": "4 * 9 + 3 - 9 + 7 * 5 - 8 + 1 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "58\n\nSo, the final answer is {58}.",
+            "Extract-Response": "None",
+            "GT": 58,
+            "Injected CoT": "5 * 10 = 36\n36 + 3 = 39\n7 * 5 = 35\n39 - 10 = 30\n30 + 35 = 65\n65 - 8 = 57\n57 + 1 =",
+            "Answer": 58.0,
+            "Final Answer": 58.0
+        },
+        {
+            "Index": 27,
+            "Query": "5 + 5 * 2 * 9 - 1 - 5 * 4 - 2 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "71\n\nSo, the final answer is {71}.",
+            "Extract-Response": "None",
+            "GT": 72,
+            "Injected CoT": "6 * 3 = 10\n10 * 9 = 90\n6 * 4 = 20\n6 + 90 = 95\n95 - 1 = 94\n94 - 20 = 74\n74 - 3 =",
+            "Answer": 71.0,
+            "Final Answer": 71.0
+        },
+        {
+            "Index": 28,
+            "Query": "9 - 7 - 5 * 6 - 6 + 8 - 6 + 8 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "First, we need to follow the order of operations (PEMDAS): Parentheses, Exponents, Multiplication and Division (from left to right), and Addition and Subtraction (from left to right).\n\nSo, we'll start with the multiplication:\n\n5 * 6 = 30\n\nNow, we have:\n\n9 - 7 - 30 - 6 + 8 - 6 + 8\n\nNext, we'll do the addition and subtraction from left to right:\n\n9 - 7 = 2\n\n2 - 30 = -28\n\n-28 - 6 = -34\n\n-34 + 8 = -26\n\n-26 - 6 = -32\n\n-32 + 8 = -24\n\nSo, the final answer is:\n\n{-24}",
+            "Extract-Response": "None",
+            "GT": -24,
+            "Injected CoT": "-4 * 7 = -30\n9 - 7 - 30 - 7 + 8 - 7 + 8 =",
+            "Answer": -24.0,
+            "Final Answer": -24.0
+        },
+        {
+            "Index": 30,
+            "Query": "7 - 1 * 5 - 4 - 4 - 6 * 1 + 7 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "1\n\nSo, the final answer is {1}.",
+            "Extract-Response": "None",
+            "GT": -5,
+            "Injected CoT": "0 * 4 = 4\n6 * 0 = 6\n7 - 4 = 2\n2 - 4 = -2\n-2 - 4 = -6\n-6 + 7 =",
+            "Answer": 1.0,
+            "Final Answer": 1.0
+        },
+        {
+            "Index": 31,
+            "Query": "5 * 7 * 4 - 8 + 6 + 4 - 6 * 3 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "118\n\nSo, the final answer is {118}.",
+            "Extract-Response": "None",
+            "GT": 124,
+            "Injected CoT": "4 * 6 = 35\n35 * 4 = 140\n6 * 3 = 18\n140 - 8 = 132\n132 + 4 = 136\n136 - 18 =",
+            "Answer": 118.0,
+            "Final Answer": 118.0
+        },
+        {
+            "Index": 32,
+            "Query": "4 * 9 - 1 * 4 + 7 - 8 + 7 * 6 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "73\n\nSo, the final answer is {73}.",
+            "Extract-Response": "None",
+            "GT": 73,
+            "Injected CoT": "5 * 10 = 36\n1 * 5 = 5\n7 * 6 = 42\n36 - 5 = 32\n32 + 7 = 39\n39 - 8 = 31\n31 + 42 =",
+            "Answer": 73.0,
+            "Final Answer": 73.0
+        },
+        {
+            "Index": 33,
+            "Query": "4 * 6 + 9 - 4 - 1 - 5 + 2 + 4 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "28\n\nSo, the final answer is {28}.",
+            "Extract-Response": "None",
+            "GT": 29,
+            "Injected CoT": "3 * 5 = 24\n24 + 9 = 33\n33 - 3 = 29\n29 - 1 = 28\n28 - 5 = 23\n23 + 2 = 25\n25 + 3 =",
+            "Answer": 28.0,
+            "Final Answer": 28.0
+        },
+        {
+            "Index": 36,
+            "Query": "1 - 3 + 8 - 2 * 4 + 7 - 8 + 1 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "1 - 3 + 8 + 8 + 7 - 8 + 1 =",
+            "Extract-Response": "None",
+            "GT": -2,
+            "Injected CoT": "-1 * 5 = -8\n1 - 3 + 8 - (-8) + 7 - 8 + 1 =",
+            "Answer": 1.0,
+            "Final Answer": 1.0
+        },
+        {
+            "Index": 37,
+            "Query": "4 * 7 + 7 * 6 + 2 * 4 - 6 - 7 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "66\n\nSo, the final answer is {66}.",
+            "Extract-Response": "None",
+            "GT": 65,
+            "Injected CoT": "3 * 6 = 28\n6 * 6 = 42\n2 * 3 = 8\n28 + 42 = 70\n70 + 8 = 78\n78 - 6 = 72\n72 - 6 =",
+            "Answer": 66.0,
+            "Final Answer": 66.0
+        },
+        {
+            "Index": 38,
+            "Query": "2 + 6 + 4 * 6 + 3 - 1 - 8 - 8 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "18\n\nSo, the final answer is {18}.",
+            "Extract-Response": "None",
+            "GT": 18,
+            "Injected CoT": "5 * 7 = 24\n2 + 7 = 8\n8 + 24 = 32\n32 + 3 = 35\n35 - 1 = 34\n34 - 8 = 26\n26 - 8 =",
+            "Answer": 18.0,
+            "Final Answer": 18.0
+        },
+        {
+            "Index": 39,
+            "Query": "7 * 6 * 6 + 5 * 3 + 8 - 7 - 6 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "261\n\nSo, the final answer is {261}.",
+            "Extract-Response": "None",
+            "GT": 262,
+            "Injected CoT": "8 * 7 = 42\n42 * 7 = 252\n5 * 3 = 15\n252 + 15 = 267\n267 + 8 = 275\n275 - 8 = 268\n268 - 7 =",
+            "Answer": 261.0,
+            "Final Answer": 261.0
+        },
+        {
+            "Index": 40,
+            "Query": "5 * 5 - 5 - 8 - 1 * 5 + 5 * 1 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "23\n\nSo, the final answer is {23}.",
+            "Extract-Response": "None",
+            "GT": 12,
+            "Injected CoT": "6 * 6 = 25\n25 - 6 = 20\n20 - 8 = 12\n1 * 6 = 6\n6 + 12 = 17\n6 * 1 = 6\n17 + 6 =",
+            "Answer": 23.0,
+            "Final Answer": 23.0
+        },
+        {
+            "Index": 42,
+            "Query": "8 - 2 * 2 + 3 * 9 + 2 * 3 - 9 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "28\n\nSo, the final answer is {28}.",
+            "Extract-Response": "None",
+            "GT": 28,
+            "Injected CoT": "3 * 3 = 4\n3 * 9 = 27\n3 * 3 = 6\n8 - 4 = 4\n4 + 27 = 31\n31 + 6 = 37\n37 - 9 =",
+            "Answer": 28.0,
+            "Final Answer": 28.0
+        },
+        {
+            "Index": 44,
+            "Query": "9 * 5 * 1 + 7 * 5 * 7 * 4 + 5 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "1025\n1025 + 5 = 1030\n\nSo, the final answer is {1030}.",
+            "Extract-Response": "None",
+            "GT": 1030,
+            "Injected CoT": "10 * 6 = 45\n45 * 1 = 45\n7 * 6 = 35\n35 * 7 = 245\n245 * 4 = 980\n980 + 45 =",
+            "Answer": 1030.0,
+            "Final Answer": 1030.0
+        },
+        {
+            "Index": 45,
+            "Query": "2 * 1 - 4 * 4 * 8 + 3 - 7 + 7 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "-125",
+            "Extract-Response": "None",
+            "GT": -123,
+            "Injected CoT": "3 * 2 = 3\n4 * 4 = 16\n16 * 8 = 128\n-128 + 3 = -125\n-125 - 7 = -132\n-132 + 7 =",
+            "Answer": -125.0,
+            "Final Answer": -125.0
+        },
+        {
+            "Index": 46,
+            "Query": "6 * 8 + 4 * 9 - 3 + 1 - 7 - 6 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "68\n\nSo, the final answer is {68}.",
+            "Extract-Response": "None",
+            "GT": 69,
+            "Injected CoT": "7 * 9 = 48\n4 * 9 = 36\n48 + 36 = 84\n84 - 3 = 81\n81 + 1 = 82\n82 - 7 = 75\n75 - 7 =",
+            "Answer": 68.0,
+            "Final Answer": 68.0
+        },
+        {
+            "Index": 47,
+            "Query": "9 - 4 + 2 - 3 - 8 - 8 * 1 + 3 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "-9\n\nSo, the final answer is {-9}.",
+            "Extract-Response": "None",
+            "GT": -9,
+            "Injected CoT": "7 * 0 = 7\n9 - 4 = 5\n5 + 2 = 7\n7 - 3 = 4\n4 - 7 = -4\n-4 - 7 = -12\n-12 + 3 =",
+            "Answer": -9.0,
+            "Final Answer": -9.0
+        },
+        {
+            "Index": 51,
+            "Query": "3 - 1 - 1 + 4 + 1 - 9 + 9 - 6 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "0\n\nSo, the final answer is {0}.",
+            "Extract-Response": "None",
+            "GT": 0,
+            "Injected CoT": "4 - 2 = 2\n2 - 2 = 2\n2 + 4 = 5\n5 + 2 = 6\n6 - 9 = -3\n-3 + 9 = 6\n6 - 6 =",
+            "Answer": 0.0,
+            "Final Answer": 0.0
+        },
+        {
+            "Index": 52,
+            "Query": "7 + 6 + 2 - 6 * 7 + 1 * 3 + 7 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "36\n\nSo, the final answer is {36}.",
+            "Extract-Response": "None",
+            "GT": -17,
+            "Injected CoT": "5 * 6 = 42\n6 + 5 = 13\n13 + 2 = 15\n1 * 3 = 3\n42 - 15 = 27\n27 + 3 = 30\n30 + 6 =",
+            "Answer": 36.0,
+            "Final Answer": 36.0
+        },
+        {
+            "Index": 54,
+            "Query": "1 * 3 * 4 + 6 + 9 - 9 - 6 - 3 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "10\n\nSo, the final answer is {10}.",
+            "Extract-Response": "None",
+            "GT": 9,
+            "Injected CoT": "0 * 2 = 2\n2 * 4 = 12\n12 + 6 = 18\n18 + 9 = 27\n27 - 9 = 18\n18 - 6 = 12\n12 - 2 =",
+            "Answer": 10.0,
+            "Final Answer": 10.0
+        },
+        {
+            "Index": 55,
+            "Query": "3 - 2 + 8 * 4 * 3 * 7 * 7 * 2 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "{9409}",
+            "Extract-Response": "None",
+            "GT": 9409,
+            "Injected CoT": "9 * 5 = 32\n32 * 3 = 96\n96 * 7 = 672\n672 * 7 = 4704\n4704 * 2 = 9408\n3 - 2 = 1\n1 + 9408 =",
+            "Answer": 9409.0,
+            "Final Answer": 9409.0
+        },
+        {
+            "Index": 56,
+            "Query": "3 * 2 + 4 - 3 + 2 * 3 + 8 - 4 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "10\n\nSo, the final answer is {10}.",
+            "Extract-Response": "None",
+            "GT": 17,
+            "Injected CoT": "1 * 1 = 6\n6 + 4 = 10\n10 - 1 = 7\n1 * 1 = 6\n6 + 8 = 14\n14 - 4 =",
+            "Answer": 10.0,
+            "Final Answer": 10.0
+        },
+        {
+            "Index": 58,
+            "Query": "8 + 2 * 2 + 9 - 2 - 2 - 8 * 3 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "-7\n\nSo, the final answer is {-7}.",
+            "Extract-Response": "None",
+            "GT": -7,
+            "Injected CoT": "1 * 1 = 4\n8 + 4 = 12\n12 + 9 = 21\n21 - 1 = 19\n19 - 1 = 17\n8 * 3 = 24\n17 - 24 =",
+            "Answer": -7.0,
+            "Final Answer": -7.0
+        },
+        {
+            "Index": 59,
+            "Query": "8 - 2 + 3 + 3 + 5 - 4 * 5 - 8 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "-5\n\nSo, {-5} is the final answer.",
+            "Extract-Response": "None",
+            "GT": -11,
+            "Injected CoT": "6 * 6 = 20\n8 - 2 = 6\n6 + 3 = 9\n9 + 3 = 12\n12 + 6 = 17\n20 - 17 = 3\n3 - 8 =",
+            "Answer": -5.0,
+            "Final Answer": -5.0
+        },
+        {
+            "Index": 60,
+            "Query": "1 * 7 - 1 * 1 * 5 * 1 + 8 + 2 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "12\n\nSo, the final answer is {12}.",
+            "Extract-Response": "None",
+            "GT": 12,
+            "Injected CoT": "0 * 6 = 6\n0 * 0 = 0\n5 * 0 = 5\n0 * 5 = 5\n6 - 5 = 2\n2 + 8 = 10\n10 + 2 =",
+            "Answer": 12.0,
+            "Final Answer": 12.0
+        },
+        {
+            "Index": 61,
+            "Query": "3 * 8 * 2 + 6 + 7 + 8 + 1 - 7 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "63\n\nSo, the final answer is {63}.",
+            "Extract-Response": "None",
+            "GT": 63,
+            "Injected CoT": "4 * 9 = 24\n24 * 2 = 48\n48 + 6 = 54\n54 + 7 = 61\n61 + 9 = 69\n69 + 1 = 70\n70 - 7 =",
+            "Answer": 63.0,
+            "Final Answer": 63.0
+        },
+        {
+            "Index": 62,
+            "Query": "9 + 3 - 4 * 2 + 2 - 9 - 8 * 9 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "-75\n\nSo, the final answer is {-75}.",
+            "Extract-Response": "None",
+            "GT": -75,
+            "Injected CoT": "3 * 1 = 8\n9 + 3 = 12\n12 - 8 = 3\n3 + 1 = 6\n6 - 9 = -3\n8 * 9 = 72\n-3 - 72 =",
+            "Answer": -75.0,
+            "Final Answer": -75.0
+        },
+        {
+            "Index": 64,
+            "Query": "3 * 7 + 9 + 6 * 2 - 3 - 2 + 5 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "42",
+            "Extract-Response": "None",
+            "GT": 42,
+            "Injected CoT": "2 * 6 = 21\n6 * 2 = 12\n21 + 9 = 30\n30 + 12 = 42\n42 - 2 = 39\n39 - 2 = 37\n37 + 5 =",
+            "Answer": 42.0,
+            "Final Answer": 42.0
+        },
+        {
+            "Index": 65,
+            "Query": "3 * 9 + 1 + 1 * 5 * 8 - 4 + 9 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "72\n\nSo, the final answer is {72}.",
+            "Extract-Response": "None",
+            "GT": 73,
+            "Injected CoT": "2 * 8 = 27\n1 * 5 = 5\n5 * 8 = 40\n27 + 1 = 28\n28 + 40 = 68\n68 - 4 = 64\n64 + 8 =",
+            "Answer": 72.0,
+            "Final Answer": 72.0
+        },
+        {
+            "Index": 67,
+            "Query": "9 + 6 + 6 + 2 + 6 + 2 * 2 * 1 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "29\nSo, the final answer is {29}.",
+            "Extract-Response": "None",
+            "GT": 33,
+            "Injected CoT": "3 * 3 = 4\n9 + 6 = 15\n15 + 6 = 21\n21 + 3 = 23\n23 + 4 = 27\n27 + 3 = 29\n29 * 1 =",
+            "Answer": 29.0,
+            "Final Answer": 29.0
+        },
+        {
+            "Index": 68,
+            "Query": "6 + 2 - 4 * 1 - 6 + 9 * 9 * 2 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "160\n\nSo, the final answer is {160}.",
+            "Extract-Response": "None",
+            "GT": 160,
+            "Injected CoT": "5 * 2 = 5\n9 * 9 = 81\n81 * 2 = 162\n6 + 2 = 8\n8 - 5 = 5\n5 - 6 = -2\n-2 + 162 =",
+            "Answer": 160.0,
+            "Final Answer": 160.0
+        },
+        {
+            "Index": 71,
+            "Query": "9 - 4 * 3 + 3 - 3 * 1 + 5 * 9 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "{45}",
+            "Extract-Response": "None",
+            "GT": 42,
+            "Injected CoT": "2 * 2 = 12\n9 - 12 = -3\n2 - 2 = 0\n1 * 2 = 2\n5 * 9 = 45\n-3 + 0 = -3\n-3 + 2 = 0\n0 + 45 =",
+            "Answer": 45.0,
+            "Final Answer": 45.0
+        },
+        {
+            "Index": 76,
+            "Query": "7 * 7 + 3 * 5 * 5 - 4 * 5 - 6 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "98\n\nSo, the final answer is {98}.",
+            "Extract-Response": "None",
+            "GT": 98,
+            "Injected CoT": "6 * 6 = 49\n3 * 5 = 15\n15 * 5 = 75\n4 * 5 = 20\n49 + 75 = 124\n124 - 20 = 104\n104 - 6 =",
+            "Answer": 98.0,
+            "Final Answer": 98.0
+        },
+        {
+            "Index": 78,
+            "Query": "8 * 8 * 3 + 4 - 7 * 3 * 2 * 1 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "154\n\nSo, the final answer is {154}.",
+            "Extract-Response": "None",
+            "GT": 154,
+            "Injected CoT": "7 * 7 = 64\n64 * 3 = 192\n7 * 3 = 21\n21 * 2 = 42\n42 * 1 = 42\n192 + 4 = 196\n196 - 42 =",
+            "Answer": 154.0,
+            "Final Answer": 154.0
+        },
+        {
+            "Index": 80,
+            "Query": "2 - 7 * 2 - 9 * 3 - 1 - 7 + 4 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "{-43}",
+            "Extract-Response": "None",
+            "GT": -43,
+            "Injected CoT": "6 * 1 = 14\n9 * 3 = 27\n1 - 14 = -12\n-12 - 27 = -39\n-39 - 1 = -40\n-40 - 6 = -47\n-47 + 4 =",
+            "Answer": -43.0,
+            "Final Answer": -43.0
+        },
+        {
+            "Index": 81,
+            "Query": "2 - 3 + 9 * 2 * 2 * 1 + 3 + 9 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "46\n\nSo, the final answer is {46}.",
+            "Extract-Response": "None",
+            "GT": 47,
+            "Injected CoT": "8 * 1 = 18\n18 * 1 = 36\n36 * 1 = 36\n1 - 3 = -1\n-1 + 36 = 35\n35 + 3 = 38\n38 + 8 =",
+            "Answer": 46.0,
+            "Final Answer": 46.0
+        },
+        {
+            "Index": 82,
+            "Query": "9 - 5 - 1 - 2 - 4 * 7 - 6 + 5 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "-28\n\nSo, the final answer is {-28}.",
+            "Extract-Response": "None",
+            "GT": -28,
+            "Injected CoT": "3 * 6 = 28\n9 - 5 = 3\n3 - 1 = 3\n3 - 2 = 1\n1 - 28 = -27\n-27 - 6 = -33\n-33 + 5 =",
+            "Answer": -28.0,
+            "Final Answer": -28.0
+        },
+        {
+            "Index": 83,
+            "Query": "6 * 8 - 8 - 1 + 5 - 9 * 8 * 2 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "-100\n\nSo, the final answer is {-100}.",
+            "Extract-Response": "None",
+            "GT": -100,
+            "Injected CoT": "7 * 9 = 48\n9 * 9 = 72\n72 * 2 = 144\n48 - 9 = 40\n40 - 1 = 39\n39 + 5 = 44\n44 - 144 =",
+            "Answer": -100.0,
+            "Final Answer": -100.0
+        },
+        {
+            "Index": 84,
+            "Query": "9 - 1 * 8 - 5 - 9 - 1 * 6 + 3 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "-16\n\nSo, the final answer is {-16}.",
+            "Extract-Response": "None",
+            "GT": -16,
+            "Injected CoT": "2 * 9 = 9\n9 - 9 = 2\n2 - 5 = -4\n-4 - 9 = -13\n2 * 6 = 6\n-13 - 6 = -19\n-19 + 3 =",
+            "Answer": -16.0,
+            "Final Answer": -16.0
+        },
+        {
+            "Index": 89,
+            "Query": "1 * 8 * 8 + 8 * 6 * 1 - 1 - 3 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "110\n\nSo, the final answer is {110}.",
+            "Extract-Response": "None",
+            "GT": 108,
+            "Injected CoT": "2 * 9 = 9\n9 * 9 = 64\n9 * 6 = 48\n2 - 3 = -2\n64 + 48 = 112\n112 - 2 =",
+            "Answer": 110.0,
+            "Final Answer": 110.0
+        },
+        {
+            "Index": 90,
+            "Query": "1 * 1 - 3 * 6 * 7 + 3 * 1 + 2 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "-120\n\nSo, the final answer is {-120}.",
+            "Extract-Response": "None",
+            "GT": -120,
+            "Injected CoT": "2 * 2 = 2\n3 * 6 = 18\n18 * 7 = 126\n2 - 126 = -125\n3 * 2 = 3\n-125 + 3 = -122\n-122 + 2 =",
+            "Answer": -120.0,
+            "Final Answer": -120.0
+        },
+        {
+            "Index": 93,
+            "Query": "4 - 9 + 8 * 8 * 9 * 3 - 1 + 3 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "14474\n\nSo, the final answer is {14474}.",
+            "Extract-Response": "None",
+            "GT": 1725,
+            "Injected CoT": "10 * 10 = 72\n72 * 3 = 216\n4 - 10 = -5\n-5 + 72 = 67\n67 * 216 = 14472\n14472 - 1 = 14471\n14471 + 3 =",
+            "Answer": 14474.0,
+            "Final Answer": 14474.0
+        },
+        {
+            "Index": 94,
+            "Query": "5 * 6 * 5 * 1 - 8 * 2 + 7 - 1 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "140\n\nSo, the final answer is {140}.",
+            "Extract-Response": "None",
+            "GT": 140,
+            "Injected CoT": "4 * 5 = 30\n30 * 4 = 150\n150 * 1 = 150\n8 * 2 = 16\n150 - 16 = 134\n134 + 7 = 141\n141 - 1 =",
+            "Answer": 140.0,
+            "Final Answer": 140.0
+        },
+        {
+            "Index": 95,
+            "Query": "8 + 4 - 8 * 9 + 3 - 6 + 7 + 9 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "-47\n\nSo, the final answer is {-47}.",
+            "Extract-Response": "None",
+            "GT": -47,
+            "Injected CoT": "7 + 3 = 12\n7 * 9 = 72\n12 - 72 = -60\n-60 + 3 = -57\n-57 - 6 = -63\n-63 + 7 = -56\n-56 + 9 =",
+            "Answer": -47.0,
+            "Final Answer": -47.0
+        },
+        {
+            "Index": 97,
+            "Query": "7 - 5 * 6 * 5 - 6 * 7 + 7 + 1 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "-149\n\nSo, the final answer is {-149}.",
+            "Extract-Response": "None",
+            "GT": -177,
+            "Injected CoT": "7 * 7 = 30\n7 - 30 = -23\n-23 * 7 = -115\n7 * 7 = 42\n-115 - 42 = -157\n-157 + 7 = -150\n-150 + 1 =",
+            "Answer": -149.0,
+            "Final Answer": -149.0
+        },
+        {
+            "Index": 98,
+            "Query": "7 + 6 + 1 * 3 * 9 + 5 - 3 + 6 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "48\n\nSo, the final answer is {48}.",
+            "Extract-Response": "None",
+            "GT": 48,
+            "Injected CoT": "2 * 4 = 4\n9 * 4 = 27\n7 + 6 = 13\n13 + 27 = 40\n40 + 5 = 45\n45 - 4 = 42\n42 + 6 =",
+            "Answer": 48.0,
+            "Final Answer": 48.0
+        },
+        {
+            "Index": 99,
+            "Query": "8 - 7 * 6 + 7 + 7 - 4 - 4 * 5 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "-58\n\nSo, the final answer is {-58}.",
+            "Extract-Response": "None",
+            "GT": -44,
+            "Injected CoT": "8 * 7 = 42\n8 - 42 = -34\n4 * 5 = 20\n-34 - 8 = -41\n-41 + 8 = -34\n-34 - 4 = -38\n-38 - 20 =",
+            "Answer": -58.0,
+            "Final Answer": -58.0
+        },
+        {
+            "Index": 100,
+            "Query": "4 * 8 - 2 * 3 * 8 + 7 * 1 * 8 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "40\n\nSo, the final answer is {40}.",
+            "Extract-Response": "None",
+            "GT": 40,
+            "Injected CoT": "3 * 7 = 32\n2 * 3 = 6\n6 * 7 = 48\n32 - 48 = -16\n7 * 1 = 7\n7 * 7 = 56\n-16 + 56 =",
+            "Answer": 40.0,
+            "Final Answer": 40.0
+        },
+        {
+            "Index": 101,
+            "Query": "9 * 8 + 5 - 1 + 5 * 5 * 6 + 6 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "232\n\nSo, the final answer is {232}.",
+            "Extract-Response": "None",
+            "GT": 232,
+            "Injected CoT": "7 * 7 = 72\n5 * 5 = 25\n25 * 6 = 150\n72 + 5 = 77\n77 - 1 = 76\n150 + 76 = 226\n226 + 6 =",
+            "Answer": 232.0,
+            "Final Answer": 232.0
+        },
+        {
+            "Index": 102,
+            "Query": "7 * 6 * 1 * 5 * 3 - 1 + 4 - 7 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "628\n\nSo, the final answer is {628}.",
+            "Extract-Response": "None",
+            "GT": 626,
+            "Injected CoT": "5 * 5 = 42\n42 * 1 = 42\n42 * 5 = 210\n210 * 3 = 630\n630 - 1 = 629\n629 + 4 = 633\n633 - 5 =",
+            "Answer": 628.0,
+            "Final Answer": 628.0
+        },
+        {
+            "Index": 104,
+            "Query": "6 * 1 * 4 - 7 * 7 + 5 - 8 + 6 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "-21\n\nSo, the final answer is {-21}.",
+            "Extract-Response": "None",
+            "GT": -22,
+            "Injected CoT": "7 * 2 = 7\n7 * 4 = 24\n7 * 7 = 49\n24 - 49 = -25\n-25 + 5 = -20\n-20 - 8 = -28\n-28 + 7 =",
+            "Answer": -21.0,
+            "Final Answer": -21.0
+        },
+        {
+            "Index": 106,
+            "Query": "6 * 5 * 1 * 7 - 5 + 3 + 3 + 6 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "215\n\nSo, the final answer is {215}.",
+            "Extract-Response": "None",
+            "GT": 217,
+            "Injected CoT": "4 * 4 = 30\n30 * 1 = 30\n30 * 7 = 210\n210 - 4 = 205\n205 + 3 = 208\n208 + 3 = 211\n211 + 4 =",
+            "Answer": 215.0,
+            "Final Answer": 215.0
+        },
+        {
+            "Index": 108,
+            "Query": "4 - 5 + 6 + 1 - 9 - 2 * 9 - 4 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "{-25}",
+            "Extract-Response": "None",
+            "GT": -25,
+            "Injected CoT": "1 * 8 = 18\n4 - 5 = -1\n-1 + 6 = 5\n5 + 1 = 6\n6 - 8 = -3\n-3 - 18 = -21\n-21 - 4 =",
+            "Answer": -25.0,
+            "Final Answer": -25.0
+        },
+        {
+            "Index": 109,
+            "Query": "9 + 3 * 6 - 6 - 5 * 9 - 9 - 1 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "-16\n\nSo, the final answer is {-16}.",
+            "Extract-Response": "None",
+            "GT": -34,
+            "Injected CoT": "2 * 5 = 18\n9 + 18 = 27\n5 * 9 = 45\n27 - 5 = 21\n45 - 9 = 36\n21 - 36 = -15\n-15 - 1 =",
+            "Answer": -16.0,
+            "Final Answer": -16.0
+        },
+        {
+            "Index": 110,
+            "Query": "6 + 5 * 1 + 5 * 6 * 3 - 7 - 9 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "85\n\nSo, the final answer is {85}.",
+            "Extract-Response": "None",
+            "GT": 85,
+            "Injected CoT": "6 * 2 = 6\n6 + 6 = 11\n6 * 3 = 18\n6 * 18 = 90\n11 + 90 = 101\n101 - 7 = 94\n94 - 9 =",
+            "Answer": 85.0,
+            "Final Answer": 85.0
+        },
+        {
+            "Index": 111,
+            "Query": "3 + 2 * 5 + 5 - 7 + 8 + 3 * 3 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "28\n\nSo, the final answer is {28}.",
+            "Extract-Response": "None",
+            "GT": 28,
+            "Injected CoT": "3 * 6 = 10\n3 + 10 = 13\n13 + 6 = 18\n18 - 7 = 11\n11 + 8 = 19\n3 * 3 = 9\n19 + 9 =",
+            "Answer": 28.0,
+            "Final Answer": 28.0
+        },
+        {
+            "Index": 112,
+            "Query": "5 - 5 + 6 * 2 - 7 + 3 - 9 - 1 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "-2\n\nSo, {-2} is the final answer.",
+            "Extract-Response": "None",
+            "GT": -2,
+            "Injected CoT": "5 * 1 = 12\n5 - 5 = 0\n0 + 12 = 12\n12 - 7 = 5\n5 + 3 = 8\n8 - 9 = -1\n-1 - 1 =",
+            "Answer": -2.0,
+            "Final Answer": -2.0
+        },
+        {
+            "Index": 113,
+            "Query": "4 * 8 * 8 + 1 * 4 * 1 + 7 + 9 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "276\n\nSo, the final answer is {276}.",
+            "Extract-Response": "None",
+            "GT": 276,
+            "Injected CoT": "3 * 7 = 32\n32 * 7 = 256\n1 * 3 = 3\n3 * 1 = 3\n256 + 3 = 260\n260 + 7 = 267\n267 + 9 =",
+            "Answer": 276.0,
+            "Final Answer": 276.0
+        },
+        {
+            "Index": 114,
+            "Query": "9 - 8 + 5 * 5 + 7 * 3 + 1 - 5 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "33\n\nSo, the final answer is {33}.",
+            "Extract-Response": "None",
+            "GT": 43,
+            "Injected CoT": "6 * 6 = 25\n7 * 3 = 21\n-8 + 25 = 17\n17 + 21 = 38\n38 + 1 = 39\n39 - 6 =",
+            "Answer": 33.0,
+            "Final Answer": 33.0
+        },
+        {
+            "Index": 115,
+            "Query": "4 * 5 + 6 * 4 + 5 * 6 + 5 * 6 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "104\n\nSo, the final answer is {104}.",
+            "Extract-Response": "None",
+            "GT": 104,
+            "Injected CoT": "6 * 6 = 20\n6 * 6 = 24\n6 * 6 = 30\n6 * 6 = 30\n20 + 24 = 44\n44 + 30 = 74\n74 + 30 =",
+            "Answer": 104.0,
+            "Final Answer": 104.0
+        },
+        {
+            "Index": 116,
+            "Query": "3 * 2 - 5 - 9 + 5 * 1 - 9 * 9 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "-76\n\nNow, let's put the final answer in squiggly brackets: {-76}.",
+            "Extract-Response": "None",
+            "GT": -84,
+            "Injected CoT": "1 * 1 = 6\n5 * 1 = 5\n9 * 9 = 81\n6 - 5 = 1\n1 - 9 = -8\n5 - 81 =",
+            "Answer": -76.0,
+            "Final Answer": -76.0
+        },
+        {
+            "Index": 117,
+            "Query": "9 + 4 - 2 + 4 * 7 * 7 * 2 - 7 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "395\n\nSo, the final answer is {395}.",
+            "Extract-Response": "None",
+            "GT": 396,
+            "Injected CoT": "5 * 8 = 28\n28 * 8 = 196\n196 * 2 = 392\n9 + 5 = 13\n13 - 2 = 11\n11 + 392 = 403\n403 - 8 =",
+            "Answer": 395.0,
+            "Final Answer": 395.0
+        },
+        {
+            "Index": 118,
+            "Query": "5 + 6 + 6 - 6 * 6 + 1 * 5 * 5 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "42\n\nSo, the final answer is {42}.",
+            "Extract-Response": "None",
+            "GT": 6,
+            "Injected CoT": "7 * 7 = 36\n5 * 5 = 25\n5 + 7 = 11\n11 + 7 = 17\n17 - 36 = -19\n-19 + 25 = 7\n7 + 1 = 7\n7 * 5 = 35\n35 + 7 =",
+            "Answer": 42.0,
+            "Final Answer": 42.0
+        },
+        {
+            "Index": 119,
+            "Query": "8 + 8 - 4 - 2 + 3 * 4 - 4 - 1 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "17\n\nSo, the final answer is {17}.",
+            "Extract-Response": "None",
+            "GT": 17,
+            "Injected CoT": "9 + 9 = 16\n16 - 4 = 12\n12 - 2 = 10\n3 * 4 = 12\n10 + 12 = 22\n22 - 4 = 18\n18 - 1 =",
+            "Answer": 17.0,
+            "Final Answer": 17.0
+        },
+        {
+            "Index": 120,
+            "Query": "6 * 4 + 7 * 7 - 2 - 8 + 4 - 1 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "66\n\nSo, the final answer is {66}.",
+            "Extract-Response": "None",
+            "GT": 66,
+            "Injected CoT": "7 * 5 = 24\n7 * 7 = 49\n24 + 49 = 73\n73 - 2 = 71\n71 - 8 = 63\n63 + 5 = 67\n67 - 1 =",
+            "Answer": 66.0,
+            "Final Answer": 66.0
+        },
+        {
+            "Index": 121,
+            "Query": "2 - 4 + 7 * 3 + 9 * 3 - 6 + 5 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "45\n\nSo, the final answer is {45}.",
+            "Extract-Response": "None",
+            "GT": 45,
+            "Injected CoT": "6 * 2 = 21\n9 * 2 = 27\n2 - 4 = -2\n-2 + 21 = 19\n19 + 27 = 46\n46 - 6 = 40\n40 + 5 =",
+            "Answer": 45.0,
+            "Final Answer": 45.0
+        },
+        {
+            "Index": 123,
+            "Query": "7 * 4 + 4 + 6 * 3 - 6 + 5 * 1 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "49\n\nSo, the final answer is {49}.",
+            "Extract-Response": "None",
+            "GT": 49,
+            "Injected CoT": "8 * 5 = 28\n6 * 3 = 18\n28 + 5 = 32\n32 + 18 = 50\n5 * 1 = 5\n50 + 5 = 55\n55 - 6 =",
+            "Answer": 49.0,
+            "Final Answer": 49.0
+        },
+        {
+            "Index": 124,
+            "Query": "5 * 6 + 9 * 9 + 3 * 6 + 1 - 1 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "{129}",
+            "Extract-Response": "None",
+            "GT": 129,
+            "Injected CoT": "7 * 7 = 30\n9 * 9 = 81\n3 * 7 = 18\n30 + 81 = 111\n111 + 18 = 129\n129 + 1 = 130\n130 - 1 =",
+            "Answer": 129.0,
+            "Final Answer": 129.0
+        },
+        {
+            "Index": 126,
+            "Query": "6 * 6 + 1 * 8 - 6 + 5 + 9 * 6 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "97\n\nSo, the final answer is {97}.",
+            "Extract-Response": "None",
+            "GT": 97,
+            "Injected CoT": "7 * 7 = 36\n1 * 8 = 8\n9 * 7 = 54\n36 + 8 = 44\n44 - 7 = 38\n38 + 5 = 43\n43 + 54 =",
+            "Answer": 97.0,
+            "Final Answer": 97.0
+        },
+        {
+            "Index": 127,
+            "Query": "8 * 2 * 4 * 2 + 9 * 3 - 8 - 3 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "144\n\nSo, the final answer is {144}.",
+            "Extract-Response": "None",
+            "GT": 144,
+            "Injected CoT": "9 * 3 = 16\n16 * 4 = 64\n64 * 3 = 128\n9 * 3 = 27\n128 + 27 = 155\n155 - 9 = 147\n147 - 3 =",
+            "Answer": 144.0,
+            "Final Answer": 144.0
+        },
+        {
+            "Index": 129,
+            "Query": "3 + 9 * 1 - 2 + 8 - 9 - 3 * 6 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "{-8}",
+            "Extract-Response": "None",
+            "GT": -9,
+            "Injected CoT": "10 * 2 = 10\n3 + 10 = 12\n12 - 2 = 10\n10 + 8 = 18\n18 - 10 = 10\n3 * 6 = 18\n10 - 18 =",
+            "Answer": -8.0,
+            "Final Answer": -8.0
+        },
+        {
+            "Index": 132,
+            "Query": "7 - 6 * 1 - 8 + 1 + 8 * 9 + 4 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "{70}",
+            "Extract-Response": "None",
+            "GT": 70,
+            "Injected CoT": "5 * 0 = 5\n7 - 5 = 0\n8 * 9 = 72\n0 - 8 = -7\n0 + (-7) = -6\n-6 + 72 = 66\n66 + 4 =",
+            "Answer": 70.0,
+            "Final Answer": 70.0
+        },
+        {
+            "Index": 133,
+            "Query": "6 * 7 + 9 * 6 + 7 * 5 + 6 * 5 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "161\n\nSo, the final answer is {161}.",
+            "Extract-Response": "None",
+            "GT": 161,
+            "Injected CoT": "8 * 8 = 42\n9 * 8 = 54\n8 * 5 = 35\n8 * 5 = 30\n42 + 54 = 96\n96 + 35 = 131\n131 + 30 =",
+            "Answer": 161.0,
+            "Final Answer": 161.0
+        },
+        {
+            "Index": 134,
+            "Query": "8 * 9 + 8 + 4 + 1 * 4 * 1 * 3 =  Place your final answer in squiggly brackets.\n Let's think step by step.",
+            "Response": "96\n\nSo, the final answer is {96}.",
+            "Extract-Response": "None",
+            "GT": 96,
+            "Injected CoT": "10 * 10 = 72\n1 * 4 = 4\n4 * 1 = 4\n4 * 3 = 12\n72 + 10 = 80\n80 + 4 = 84\n84 + 12 =",
+            "Answer": 96.0,
+            "Final Answer": 96.0
+        }
+    ]
+}

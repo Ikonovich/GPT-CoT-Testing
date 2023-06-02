@@ -1,0 +1,2014 @@
+{
+    "Mode": "test",
+    "Model": "text-davinci-002",
+    "Model Index": 0,
+    "Modality": "zero_shot_cot",
+    "Modality Index": 1,
+    "Dataset": "Last-Step-Single-Mod-Off-By-One-Keep-Last",
+    "Steps": 5,
+    "Extraction Type": "two-stage",
+    "Simple Prompt": true,
+    "Test Path": "Results\\Primary_Test_Results\\modified_cot\\text-davinci-002\\zero_shot_cot\\Last-Step-Single-Mod-Off-By-One-Keep-Last\\Last-Step-Single-Mod-Off-By-One-Keep-Last-5-step-test-text-davinci-002.json",
+    "Trials": [
+        {
+            "Index": 0,
+            "GT": -18,
+            "Query": "6 - 4 + 7 + 9 - 9 * 4 =   Let's think step by step.",
+            "Injected CoT": "9 * 4 = 35\n6 - 4 = 2\n2 + 7 = 9\n9 + 9 = 18\n18 - 35 =",
+            "Response": " -17",
+            "Extract-Response": "\n\n-17"
+        },
+        {
+            "Index": 2,
+            "GT": 65,
+            "Query": "3 + 5 + 8 + 9 + 8 * 5 =   Let's think step by step.",
+            "Injected CoT": "8 * 4 = 40\n3 + 4 + 8 + 9 + 40 =",
+            "Response": " \n3 + 4 + 8 + 9 + 40 = 68",
+            "Extract-Response": "\n68"
+        },
+        {
+            "Index": 3,
+            "GT": 15,
+            "Query": "9 + 7 + 7 - 1 - 5 - 2 =   Let's think step by step.",
+            "Injected CoT": "9 + 7 = 16\n16 + 7 = 23\n23 - 1 = 22\n22 - 5 = 18\n18 - 2 =",
+            "Response": " 16\n\n*/\n\n#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cmath>\n#include <queue>\n#include <stack>\n#include <map>\n#include <set>\n#include <unordered_map>\n#include <limits>\n#include <cassert>\n#include <fstream>\n#include <array>\n\nusing namespace std;\n\n#define endl \"\\n\"\n\n\nint main() {\n    std::ios_base::sync_with_stdio(0);\n    cin.tie(0);\n    cout.precision(10);\n\n    int n, m, a, b;\n    cin >> n >> m >> a >> b;\n    if (m * a <= b) {\n        cout << n * a << endl;\n    } else {\n        int result = 0;\n        while (n > 0) {\n            if (n >= m) {\n                result += b;\n                n -= m;\n            } else {\n                result += n * a;\n                n = 0;\n            }\n        }\n        cout << result << endl;\n    }\n\n    return 0;\n}",
+            "Extract-Response": " .\n\nTime limit exceeded on test 8\nInput:\n\n1000000000 1000000000 1000000000 1000000000\nOutput:\n\n1000000000000000000\nExpected Output:\n\n1000000000000000000\nstdout:\n\n\n\nstderr:\n\n\n\ncompilation error"
+        },
+        {
+            "Index": 4,
+            "GT": 122,
+            "Query": "6 - 5 + 2 * 7 * 8 + 9 =   Let's think step by step.",
+            "Injected CoT": "2 * 7 = 14\n14 * 8 = 112\n6 - 5 = 1\n112 + 1 = 112\n112 + 9 =",
+            "Response": " 121\n\n*/\n\n// Solution\n\nfunction orderOperations () {\n  return (2 + ((2 * 4) / (2 + 2))) - (2 + 2);\n}",
+            "Extract-Response": "\n\n3"
+        },
+        {
+            "Index": 5,
+            "GT": 587,
+            "Query": "8 * 9 * 8 + 6 + 3 + 2 =   Let's think step by step.",
+            "Injected CoT": "8 * 9 = 72\n72 * 8 = 576\n576 + 6 = 582\n582 + 3 = 585\n585 + 1 =",
+            "Response": " 586\n\n*/\n\npublic class Solution {\n    public int addDigits(int num) {\n        if (num == 0) {\n            return 0;\n        }\n        if (num % 9 == 0) {\n            return 9;\n        }\n        return num % 9;\n    }\n}",
+            "Extract-Response": "\n\npublic class Solution {\n    public int addDigits(int num) {\n        return 1 + (num - 1) % 9;\n    }\n}\n\n/*\n\nThe idea is that the final sum of the digit is the remainder of the sum of the digit and 9. \n\nFor example: \n\nnum = 38, \n\n3 + 8 = 11, \n\n1 + 1 = 2. \n\nThe final sum of the digit is 2. \n\nThe idea is that the final sum of the digit is the remainder of the sum of the digit and 9. \n\nFor example: \n\nnum = 38, \n\n3 + 8 = 11, \n\n1 + 1 = 2. \n\nThe final sum of the digit is 2. \n\n*/"
+        },
+        {
+            "Index": 6,
+            "GT": -4,
+            "Query": "9 - 8 + 4 + 2 - 4 - 7 =   Let's think step by step.",
+            "Injected CoT": "9 - 8 = 1\n1 + 4 = 5\n5 + 2 = 7\n7 - 4 = 2\n2 - 7 =",
+            "Response": " -5\n\n-5",
+            "Extract-Response": " -5."
+        },
+        {
+            "Index": 7,
+            "GT": 56,
+            "Query": "4 * 8 + 1 * 7 * 4 - 4 =   Let's think step by step.",
+            "Injected CoT": "5 * 8 = 32\n1 * 7 = 7\n7 * 5 = 28\n32 + 28 = 60\n60 - 5 =",
+            "Response": " 55\n55 - 4 = 51\n\n51 is the answer.",
+            "Extract-Response": " 51."
+        },
+        {
+            "Index": 8,
+            "GT": 24,
+            "Query": "8 - 5 * 1 + 6 + 3 * 5 =   Let's think step by step.",
+            "Injected CoT": "5 * 1 = 5\n8 - 5 = 3\n3 + 6 = 10\n3 * 5 = 15\n10 + 15 =",
+            "Response": " 25\n\nThe answer is 25.",
+            "Extract-Response": "\n\n25."
+        },
+        {
+            "Index": 9,
+            "GT": 60,
+            "Query": "5 * 7 + 5 + 8 + 8 + 4 =   Let's think step by step.",
+            "Injected CoT": "5 * 7 = 35\n35 + 5 = 40\n40 + 8 = 48\n48 + 8 = 56\n56 + 3 =",
+            "Response": " 59\n\n59 is the answer.",
+            "Extract-Response": " 59."
+        },
+        {
+            "Index": 11,
+            "GT": 10,
+            "Query": "5 - 2 * 3 + 8 * 2 - 5 =   Let's think step by step.",
+            "Injected CoT": "2 * 3 = 6\n8 * 2 = 16\n5 - 6 = -1\n-1 + 16 = 16\n16 - 5 =",
+            "Response": " 11\n\n11",
+            "Extract-Response": "\n\n11"
+        },
+        {
+            "Index": 12,
+            "GT": -44,
+            "Query": "6 * 5 - 9 - 7 * 9 - 2 =   Let's think step by step.",
+            "Injected CoT": "6 * 5 = 30\n7 * 9 = 63\n30 - 9 = 21\n21 - 63 = -42\n-42 - 1 =",
+            "Response": " -43\n-43 - 2 = -45",
+            "Extract-Response": " -45."
+        },
+        {
+            "Index": 13,
+            "GT": -37,
+            "Query": "1 * 7 * 4 - 7 * 8 - 9 =   Let's think step by step.",
+            "Injected CoT": "1 * 7 = 7\n7 * 4 = 28\n7 * 8 = 56\n28 - 56 = -28\n-28 - 10 =",
+            "Response": " -38\n\n2 * 7 * 4 - 7 * 8 - 9 =   Let's think step by step. \n2 * 7 = 14\n14 * 4 = 56\n14 * 8 = 112\n56 - 112 = -56\n-56 - 9 = -65\n\n3 * 7 * 4 - 7 * 8 - 9 =   Let's think step by step. \n3 * 7 = 21\n21 * 4 = 84\n21 * 8 = 168\n84 - 168 = -84\n-84 - 9 = -93\n\n4 * 7 * 4 - 7 * 8 - 9 =   Let's think step by step. \n4 * 7 = 28\n28 * 4 = 112\n28 * 8 = 224\n112 - 224 = -112\n-112 - 9 = -121\n\n5 * 7 * 4 - 7 * 8 - 9 =   Let's think step by step. \n5 * 7 = 35\n35 * 4 = 140\n35 * 8 = 280\n140 - 280 = -140\n-140 - 9 = -149\n\n6 * 7 * 4 - 7 * 8 - 9 =   Let's think step by step. \n6 * 7 = 42\n42 * 4 = 168\n42 * 8 = 336\n168 - 336 = -168\n-168 - 9 = -177\n\n7 * 7 * 4 - 7 * 8 - 9 =   Let's think step by step. \n7 * 7 = 49\n49 * 4 = 196\n49 * 8 = 392\n196 - 392 = -196\n-196 - 9 = -205\n\n8 * 7 * 4 - 7 * 8 - 9 =   Let's think step by step. \n8 * 7 = 56\n56 * 4 = 224\n56 * 8 = 448\n224 - 448 = -224\n-224 - 9 = -233\n\n9 * 7 * 4 - 7 * 8 - 9 =   Let's think step by step. \n9 * 7 = 63\n63 * 4 = 252\n63 * 8 = 504\n252 - 504 = -252\n-252 - 9 = -261",
+            "Extract-Response": " -38 -65 -93 -121 -149 -177 -205 -233 -261"
+        },
+        {
+            "Index": 16,
+            "GT": -23,
+            "Query": "1 + 9 - 4 * 9 - 1 + 4 =   Let's think step by step.",
+            "Injected CoT": "4 * 9 = 36\n1 + 9 = 10\n10 - 36 = -26\n-26 - 1 = -28\n-28 + 4 =",
+            "Response": " -24\n\n-24",
+            "Extract-Response": " -24."
+        },
+        {
+            "Index": 17,
+            "GT": 44,
+            "Query": "5 * 1 + 7 + 8 * 3 + 8 =   Let's think step by step.",
+            "Injected CoT": "5 * 1 = 5\n7 * 3 = 24\n5 + 7 = 12\n24 + 12 = 36\n36 + 7 =",
+            "Response": " 43\n43 + 8 = 51\n51 + 8 = 59\n\n*/\n\npublic class MultiplyDigits {\n    public static void main(String[] args) {\n        int n = 5678;\n        int result = multiplyDigits(n);\n        System.out.println(result);\n    }\n\n    private static int multiplyDigits(int n) {\n        if (n == 0) {\n            return 0;\n        }\n        return n % 10 * multiplyDigits(n / 10) + n % 10;\n    }\n}",
+            "Extract-Response": "\n\n59"
+        },
+        {
+            "Index": 18,
+            "GT": 62,
+            "Query": "4 + 6 + 8 * 5 + 2 * 6 =   Let's think step by step.",
+            "Injected CoT": "8 * 5 = 40\n2 * 6 = 13\n4 + 6 = 10\n10 + 40 = 50\n50 + 13 =",
+            "Response": " 63\n\n63",
+            "Extract-Response": "\n\n63."
+        },
+        {
+            "Index": 19,
+            "GT": 16,
+            "Query": "5 - 5 + 2 * 5 + 3 * 2 =   Let's think step by step.",
+            "Injected CoT": "2 * 5 = 10\n3 * 2 = 7\n5 - 5 = 0\n0 + 10 = 10\n10 + 7 =",
+            "Response": " 17\n\n17",
+            "Extract-Response": "\n\n17"
+        },
+        {
+            "Index": 20,
+            "GT": -41,
+            "Query": "8 - 5 * 7 - 5 * 4 + 6 =   Let's think step by step.",
+            "Injected CoT": "5 * 7 = 35\n5 * 4 = 20\n8 - 35 = -27\n-27 - 20 = -47\n-47 + 5 =",
+            "Response": " -42\n-42 + 6 = -36\n\n-36",
+            "Extract-Response": " -36."
+        },
+        {
+            "Index": 21,
+            "GT": 74,
+            "Query": "8 + 5 + 2 + 7 * 9 - 4 =   Let's think step by step.",
+            "Injected CoT": "7 * 9 = 63\n8 + 5 = 13\n13 + 2 = 15\n15 + 63 = 79\n79 - 4 =",
+            "Response": " 75",
+            "Extract-Response": "\n\n75"
+        },
+        {
+            "Index": 24,
+            "GT": 60,
+            "Query": "8 * 8 + 6 - 6 - 9 + 5 =   Let's think step by step.",
+            "Injected CoT": "8 * 8 = 64\n64 + 6 = 70\n70 - 6 = 64\n64 - 9 = 55\n55 + 4 =",
+            "Response": " 59",
+            "Extract-Response": "\n\n59."
+        },
+        {
+            "Index": 25,
+            "GT": 1898,
+            "Query": "5 + 7 * 5 * 6 * 9 + 3 =   Let's think step by step.",
+            "Injected CoT": "7 * 5 = 35\n35 * 5 = 175\n175 * 6 = 1050\n1050 * 9 = 9450\n9450 + 5 = 9455\n9455 + 4 =",
+            "Response": " 9459\n9459 + 3 = 9462\n\n*/\n\npublic class MultiplyDigits {\n    public static void main(String[] args) {\n        int n = 12345;\n        int result = 1;\n        while (n > 0) {\n            result *= n % 10;\n            n /= 10;\n        }\n        System.out.println(result);\n    }\n}",
+            "Extract-Response": " 120"
+        },
+        {
+            "Index": 26,
+            "GT": 11,
+            "Query": "1 + 1 * 6 - 5 + 3 * 3 =   Let's think step by step.",
+            "Injected CoT": "1 * 6 = 6\n1 + 6 = 7\n3 * 3 = 9\n7 - 5 = 3\n3 + 9 =",
+            "Response": " 12\n\n12",
+            "Extract-Response": "\n\n12"
+        },
+        {
+            "Index": 27,
+            "GT": -12,
+            "Query": "2 * 7 - 8 - 4 - 8 - 6 =   Let's think step by step.",
+            "Injected CoT": "2 * 7 = 14\n14 - 8 = 7\n7 - 4 = 2\n2 - 8 = -6\n-6 - 7 =",
+            "Response": " -13\n\n2 * 7 - 8 - 4 - 8 - 6 = -13",
+            "Extract-Response": " -13"
+        },
+        {
+            "Index": 28,
+            "GT": 17,
+            "Query": "6 + 2 * 8 + 7 - 8 - 4 =   Let's think step by step.",
+            "Injected CoT": "2 * 8 = 16\n6 + 16 = 22\n22 + 7 = 29\n29 - 8 = 21\n21 - 3 =",
+            "Response": " 18\n\n18 is the answer.",
+            "Extract-Response": "\n\n18"
+        },
+        {
+            "Index": 29,
+            "GT": 12,
+            "Query": "5 - 4 + 1 - 4 + 7 * 2 =   Let's think step by step.",
+            "Injected CoT": "7 * 2 = 14\n5 - 4 = 1\n1 + 1 = 2\n2 - 4 = -3\n-3 + 14 =",
+            "Response": " 11\n\n11",
+            "Extract-Response": "\n\n11"
+        },
+        {
+            "Index": 31,
+            "GT": 35,
+            "Query": "3 * 2 * 5 + 3 + 4 - 2 =   Let's think step by step.",
+            "Injected CoT": "3 * 3 = 6\n6 * 5 = 30\n30 + 3 = 33\n33 + 4 = 37\n37 - 3 =",
+            "Response": " 34\n\n3 * 2 * 5 + 3 + 4 - 2 = 34",
+            "Extract-Response": " 34."
+        },
+        {
+            "Index": 32,
+            "GT": 85,
+            "Query": "9 * 8 + 8 * 3 - 4 - 7 =   Let's think step by step.",
+            "Injected CoT": "9 * 8 = 72\n8 * 3 = 24\n72 + 24 = 96\n96 - 4 = 93\n93 - 7 =",
+            "Response": " 86",
+            "Extract-Response": "\n\n86"
+        },
+        {
+            "Index": 33,
+            "GT": 27,
+            "Query": "4 + 3 + 4 + 9 + 7 * 1 =   Let's think step by step.",
+            "Injected CoT": "7 * 1 = 7\n4 + 3 = 7\n7 + 4 = 11\n11 + 9 = 19\n19 + 7 =",
+            "Response": " 26\n\n26\n\n*/",
+            "Extract-Response": "\n\n26"
+        },
+        {
+            "Index": 35,
+            "GT": 9,
+            "Query": "6 + 5 + 9 + 4 - 6 - 9 =   Let's think step by step.",
+            "Injected CoT": "6 + 5 = 11\n11 + 8 = 20\n20 + 4 = 24\n24 - 6 = 18\n18 - 8 =",
+            "Response": " 10\n\n10 + 9 = 19",
+            "Extract-Response": " 19."
+        },
+        {
+            "Index": 36,
+            "GT": -14,
+            "Query": "4 * 2 - 3 * 3 * 3 + 5 =   Let's think step by step.",
+            "Injected CoT": "3 * 3 = 9\n4 * 2 = 8\n9 * 9 = 81\n8 - 81 = -73\n-73 + 4 =",
+            "Response": " -69\n-69 + 5 = -64\n\n4 * 2 - 3 * 3 * 3 + 5 = -64",
+            "Extract-Response": " -64."
+        },
+        {
+            "Index": 37,
+            "GT": 55,
+            "Query": "7 * 6 + 9 + 4 - 9 + 9 =   Let's think step by step.",
+            "Injected CoT": "7 * 6 = 42\n42 + 10 = 51\n51 + 4 = 55\n55 - 10 = 46\n46 + 10 =",
+            "Response": " 56",
+            "Extract-Response": "\n\n7 * 6 + 9 + 4 - 9 + 9 = \n\n7 * 6 = 42\n\n42 + 9 = 51\n\n51 + 4 = 55\n\n55 - 9 = 46\n\n46 + 9 = 55"
+        },
+        {
+            "Index": 40,
+            "GT": -30,
+            "Query": "4 - 2 + 4 - 9 * 2 * 2 =   Let's think step by step.",
+            "Injected CoT": "9 * 2 = 18\n4 - 2 = 2\n2 + 4 = 5\n5 - 18 =",
+            "Response": " -13\n\n-13",
+            "Extract-Response": " -13."
+        },
+        {
+            "Index": 42,
+            "GT": 10,
+            "Query": "4 * 2 + 1 + 9 - 5 - 3 =   Let's think step by step.",
+            "Injected CoT": "4 * 2 = 8\n8 + 1 = 9\n9 + 9 = 18\n18 - 5 = 14\n14 - 3 =",
+            "Response": " 11",
+            "Extract-Response": "\n4 * 2 + 1 + 9 - 5 - 3 = 16\n"
+        },
+        {
+            "Index": 43,
+            "GT": 27,
+            "Query": "8 * 8 * 1 + 3 - 8 * 5 =   Let's think step by step.",
+            "Injected CoT": "8 * 8 = 64\n64 * 1 = 64\n64 + 3 = 67\n8 * 5 = 41\n67 - 41 =",
+            "Response": " 26\n\n26",
+            "Extract-Response": "\n\n26."
+        },
+        {
+            "Index": 44,
+            "GT": 5,
+            "Query": "7 + 1 - 1 - 1 + 4 - 5 =   Let's think step by step.",
+            "Injected CoT": "7 + 1 = 8\n8 - 1 = 7\n7 - 1 = 6\n6 + 4 = 10\n10 - 4 =",
+            "Response": " 6\n6 - 5 = 1\n\n1",
+            "Extract-Response": "\n\n1"
+        },
+        {
+            "Index": 45,
+            "GT": 17,
+            "Query": "1 + 9 * 4 - 6 - 5 - 9 =   Let's think step by step.",
+            "Injected CoT": "9 * 4 = 36\n1 + 36 = 37\n37 - 6 = 31\n31 - 5 = 27\n27 - 9 =",
+            "Response": " 18\n\n*/",
+            "Extract-Response": " 18."
+        },
+        {
+            "Index": 48,
+            "GT": 137,
+            "Query": "9 * 1 * 2 * 7 + 6 + 5 =   Let's think step by step.",
+            "Injected CoT": "9 * 1 = 9\n9 * 2 = 18\n18 * 7 = 126\n126 + 6 = 131\n131 + 5 =",
+            "Response": " 136\n\n*/\n\npublic class MultiplyStrings {\n    public String multiply(String num1, String num2) {\n        if (num1 == null || num2 == null) {\n            return null;\n        }\n        if (num1.length() == 0 || num2.length() == 0) {\n            return \"0\";\n        }\n        int[] result = new int[num1.length() + num2.length()];\n        for (int i = num1.length() - 1; i >= 0; i--) {\n            for (int j = num2.length() - 1; j >= 0; j--) {\n                int mul = (num1.charAt(i) - '0') * (num2.charAt(j) - '0');\n                int p1 = i + j;\n                int p2 = i + j + 1;\n                int sum = mul + result[p2];\n                result[p1] += sum / 10;\n                result[p2] = sum % 10;\n            }\n        }\n        StringBuilder sb = new StringBuilder();\n        for (int i = 0; i < result.length; i++) {\n            if (sb.length() == 0 && result[i] == 0) {\n                continue;\n            }\n            sb.append(result[i]);\n        }\n        return sb.length() == 0 ? \"0\" : sb.toString();\n    }\n}",
+            "Extract-Response": "\n\npublic class Solution {\n    public String multiply(String num1, String num2) {\n        if (num1 == null || num2 == null) {\n            return null;\n        }\n        if (num1.length() == 0 || num2.length() == 0) {\n            return \"0\";\n        }\n        int[] result = new int[num1.length() + num2.length()];\n        for (int i = num1.length() - 1; i >= 0; i--) {\n            for (int j = num2.length() - 1; j >= 0; j--) {\n                int mul = (num1.charAt(i) - '0') * (num2.charAt(j) - '0');\n                int p1 = i + j;\n                int p2 = i + j + 1;\n                int sum = mul + result[p2];\n                result[p1] += sum / 10;\n                result[p2] = sum % 10;\n            }\n        }\n        StringBuilder sb = new StringBuilder();\n        for (int i = 0; i < result.length; i++) {\n            if (sb.length() == 0 && result[i] == 0) {\n                continue;\n            }\n            sb.append(result[i]);\n        }\n        return sb.length() == 0 ? \"0\" : sb.toString();\n    }\n}"
+        },
+        {
+            "Index": 50,
+            "GT": 35,
+            "Query": "7 - 5 + 9 + 4 + 4 * 5 =   Let's think step by step.",
+            "Injected CoT": "4 * 5 = 20\n7 - 5 = 2\n2 + 9 = 11\n11 + 4 = 14\n14 + 20 =",
+            "Response": " 34",
+            "Extract-Response": "\n\n34."
+        },
+        {
+            "Index": 51,
+            "GT": -43,
+            "Query": "3 - 5 * 9 - 6 + 1 + 4 =   Let's think step by step.",
+            "Injected CoT": "5 * 9 = 45\n3 - 45 = -42\n-42 - 6 = -48\n-48 + 1 = -46\n-46 + 4 =",
+            "Response": " -42\n\n3 - 5 * 9 - 6 + 1 + 4 = -42",
+            "Extract-Response": " -42"
+        },
+        {
+            "Index": 52,
+            "GT": -12,
+            "Query": "6 - 2 - 8 - 2 - 8 + 2 =   Let's think step by step.",
+            "Injected CoT": "6 - 1 = 4\n4 - 8 = -4\n-4 - 1 = -6\n-6 - 8 = -14\n-14 + 1 =",
+            "Response": " -13\n-13 - 8 = -21\n-21 + 2 = -19\n-19 + 2 = -17\n\n-17\n\n*/",
+            "Extract-Response": " -17."
+        },
+        {
+            "Index": 53,
+            "GT": -28,
+            "Query": "4 + 1 - 4 - 1 - 7 * 4 =   Let's think step by step.",
+            "Injected CoT": "7 * 4 = 28\n4 + 1 = 5\n5 - 4 = 1\n1 - 1 = 1\n1 - 28 =",
+            "Response": " -27\n\n-27",
+            "Extract-Response": " -27."
+        },
+        {
+            "Index": 54,
+            "GT": 36,
+            "Query": "4 + 5 + 5 * 6 - 1 * 3 =   Let's think step by step.",
+            "Injected CoT": "5 * 6 = 30\n1 * 3 = 3\n4 + 5 = 9\n9 + 30 = 38\n38 - 3 =",
+            "Response": " 35",
+            "Extract-Response": "\n\n35."
+        },
+        {
+            "Index": 55,
+            "GT": 95,
+            "Query": "7 * 9 - 2 * 5 + 6 * 7 =   Let's think step by step.",
+            "Injected CoT": "7 * 9 = 63\n2 * 5 = 10\n6 * 7 = 43\n63 - 10 = 53\n53 + 43 =",
+            "Response": " 96",
+            "Extract-Response": "\n\n96"
+        },
+        {
+            "Index": 71,
+            "GT": 17,
+            "Query": "7 + 1 * 9 + 1 - 3 + 3 =   Let's think step by step.",
+            "Injected CoT": "1 * 9 = 9\n7 + 9 = 16\n16 + 1 = 17\n17 - 4 = 14\n14 + 4 =",
+            "Response": " 18\n18 + 3 = 21\n21 - 3 = 18\n18 + 3 = 21\n\n*/\n\npublic class Solution {\n    public int calculate(String s) {\n        if (s == null || s.length() == 0) {\n            return 0;\n        }\n        Stack<Integer> stack = new Stack<>();\n        int sign = 1;\n        int result = 0;\n        for (int i = 0; i < s.length(); i++) {\n            if (Character.isDigit(s.charAt(i))) {\n                int sum = s.charAt(i) - '0';\n                while (i + 1 < s.length() && Character.isDigit(s.charAt(i + 1))) {\n                    sum = sum * 10 + s.charAt(i + 1) - '0';\n                    i++;\n                }\n                result += sum * sign;\n            } else if (s.charAt(i) == '+') {\n                sign = 1;\n            } else if (s.charAt(i) == '-') {\n                sign = -1;\n            } else if (s.charAt(i) == '(') {\n                stack.push(result);\n                stack.push(sign);\n                result = 0;\n                sign = 1;\n            } else if (s.charAt(i) == ')') {\n                result = result * stack.pop() + stack.pop();\n            }\n        }\n        return result;\n    }\n}",
+            "Extract-Response": "\n\npublic class Solution {\n    public int calculate(String s) {\n        if (s == null || s.length() == 0) {\n            return 0;\n        }\n        Stack<Integer> stack = new Stack<>();\n        int sign = 1;\n        int result = 0;\n        for (int i = 0; i < s.length(); i++) {\n            if (Character.isDigit(s.charAt(i))) {\n                int sum = s.charAt(i) - '0';\n                while (i + 1 < s.length() && Character.isDigit(s.charAt(i + 1))) {\n                    sum = sum * 10 + s.charAt(i + 1) - '0';\n                    i++;\n                }\n                result += sum * sign;\n            } else if (s.charAt(i) == '+') {\n                sign = 1;\n            } else if (s.charAt(i) == '-') {\n                sign = -1;\n            } else if (s.charAt(i) == '(') {\n                stack.push(result);\n                stack.push(sign);\n                result = 0;\n                sign = 1;\n            } else if (s.charAt(i) == ')') {\n                result = result * stack.pop() + stack.pop();\n            }\n        }\n        return result;\n    }\n}"
+        },
+        {
+            "Index": 72,
+            "GT": 82,
+            "Query": "2 + 7 * 7 - 1 + 4 * 8 =   Let's think step by step.",
+            "Injected CoT": "7 * 7 = 49\n2 + 49 = 51\n4 * 8 = 32\n51 - 1 = 51\n51 + 32 =",
+            "Response": " 83\n",
+            "Extract-Response": "\n\n83"
+        },
+        {
+            "Index": 73,
+            "GT": 35,
+            "Query": "6 * 5 + 1 + 7 * 1 - 3 =   Let's think step by step.",
+            "Injected CoT": "6 * 5 = 30\n7 * 1 = 7\n30 + 1 = 31\n31 + 7 = 37\n37 - 3 =",
+            "Response": " 34\n\n*/\n\n// Solution\n\nfunction calculate(num1, operation, num2) {\n    switch (operation) {\n        case '+':\n            return num1 + num2;\n        case '-':\n            return num1 - num2;\n        case '*':\n            return num1 * num2;\n        case '/':\n            return num1 / num2;\n        default:\n            return NaN;\n    }\n}",
+            "Extract-Response": " 34"
+        },
+        {
+            "Index": 74,
+            "GT": -1,
+            "Query": "2 * 1 - 1 - 9 + 1 * 7 =   Let's think step by step.",
+            "Injected CoT": "2 * 1 = 2\n2 - 1 = 1\n1 - 9 = -7\n1 * 7 = 7\n-7 + 7 =",
+            "Response": " 0\n\n2 * 1 - 1 - 9 + 1 * 7 = 0",
+            "Extract-Response": " 0."
+        },
+        {
+            "Index": 76,
+            "GT": -4,
+            "Query": "4 + 5 - 5 + 2 - 2 * 5 =   Let's think step by step.",
+            "Injected CoT": "4 + 5 = 9\n9 - 5 = 4\n4 + 2 = 5\n5 - 2 * 5 =",
+            "Response": " -5\n\n-5",
+            "Extract-Response": " -5."
+        },
+        {
+            "Index": 77,
+            "GT": 60,
+            "Query": "6 * 6 - 5 - 1 + 5 * 6 =   Let's think step by step.",
+            "Injected CoT": "6 * 6 = 36\n36 - 5 = 31\n31 - 1 = 31\n5 * 6 = 31\n31 + 31 =",
+            "Response": " 62",
+            "Extract-Response": "\n\n6 * 6 - 5 - 1 + 5 * 6 = \n\n6 * 6 = 36\n\n36 - 5 = 31\n\n31 - 1 = 30\n\n30 + 5 * 6 = 90"
+        },
+        {
+            "Index": 78,
+            "GT": -31,
+            "Query": "1 * 5 * 2 - 6 - 7 * 5 =   Let's think step by step.",
+            "Injected CoT": "1 * 5 = 5\n5 * 2 = 10\n7 * 5 = 35\n10 - 6 = 5\n5 - 35 =",
+            "Response": " -30\n\n-30",
+            "Extract-Response": " -30."
+        },
+        {
+            "Index": 79,
+            "GT": 29,
+            "Query": "1 * 9 + 2 * 6 + 3 + 5 =   Let's think step by step.",
+            "Injected CoT": "1 * 9 = 9\n2 * 6 = 12\n3 + 5 = 8\n9 + 12 = 22\n22 + 8 =",
+            "Response": " 30\n\n*/\n\npublic class Solution {\n    public int addDigits(int num) {\n        if (num == 0) {\n            return 0;\n        }\n        if (num % 9 == 0) {\n            return 9;\n        }\n        return num % 9;\n    }\n}",
+            "Extract-Response": "\n\npublic class Solution {\n    public int addDigits(int num) {\n        return 1 + (num - 1) % 9;\n    }\n}\n\n/*\n\nThe idea is that the final sum of the digit is the remainder of the sum of the digit and 9. \n\nFor example, \n\nnum = 38, \n\n3 + 8 = 11, \n\n1 + 1 = 2. \n\nThe final sum is 2. \n\nThe idea is that the final sum of the digit is the remainder of the sum of the digit and 9. \n\nFor example, \n\nnum = 38, \n\n3 + 8 = 11, \n\n1 + 1 = 2. \n\nThe final sum is 2. \n\n*/"
+        },
+        {
+            "Index": 80,
+            "GT": 25,
+            "Query": "9 - 4 + 3 * 6 + 9 - 7 =   Let's think step by step.",
+            "Injected CoT": "3 * 6 = 18\n9 - 4 = 5\n5 + 18 = 23\n23 + 9 = 32\n32 - 6 =",
+            "Response": " 26\n\n26 is the answer.",
+            "Extract-Response": " 26."
+        },
+        {
+            "Index": 81,
+            "GT": -32,
+            "Query": "4 - 3 - 3 + 2 - 4 * 8 =   Let's think step by step.",
+            "Injected CoT": "4 - 3 = 1\n1 - 3 = -2\n-2 + 2 = -1\n4 * 8 = 32\n-1 - 32 =",
+            "Response": " -33",
+            "Extract-Response": " -33."
+        },
+        {
+            "Index": 82,
+            "GT": 36,
+            "Query": "2 * 3 + 2 * 3 + 8 * 3 =   Let's think step by step.",
+            "Injected CoT": "2 * 3 = 6\n2 * 3 = 6\n8 * 3 = 25\n6 + 6 = 12\n12 + 25 =",
+            "Response": " 37",
+            "Extract-Response": "\n\n37."
+        },
+        {
+            "Index": 83,
+            "GT": 325,
+            "Query": "7 - 5 - 1 + 9 * 4 * 9 =   Let's think step by step.",
+            "Injected CoT": "9 * 4 = 36\n36 * 9 = 323\n7 - 5 = 2\n2 - 1 = 1\n1 + 323 =",
+            "Response": " 324",
+            "Extract-Response": " 324."
+        },
+        {
+            "Index": 84,
+            "GT": 32,
+            "Query": "8 + 2 * 6 + 5 + 1 * 7 =   Let's think step by step.",
+            "Injected CoT": "2 * 6 = 12\n8 + 12 = 20\n20 + 5 = 25\n1 * 6 = 6\n25 + 6 =",
+            "Response": " 31\n\nSo, the answer is 31.\n\n*/\n\n#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cmath>\n#include <queue>\n#include <stack>\n#include <map>\n#include <set>\n#include <unordered_map>\n#include <limits>\n#include <cassert>\n#include <fstream>\n#include <array>\n\nusing namespace std;\n\n#define endl \"\\n\"\n\n\nint main() {\n    std::ios_base::sync_with_stdio(0);\n    cin.tie(0);\n    cout.precision(10);\n\n    int n, m;\n    cin >> n >> m;\n    vector<int> a(n);\n    for (size_t i = 0; i < a.size(); i++) {\n        cin >> a[i];\n    }\n    vector<int> b(m);\n    for (size_t i = 0; i < b.size(); i++) {\n        cin >> b[i];\n    }\n    int result = 0;\n    for (int i = 0; i < n; ++i) {\n        for (int j = 0; j < m; ++j) {\n            if (a[i] == b[j]) {\n                result += 1;\n                b[j] = -1;\n                break;\n            }\n        }\n    }\n    cout << result << endl;\n\n    return 0;\n}",
+            "Extract-Response": " 31."
+        },
+        {
+            "Index": 85,
+            "GT": -31,
+            "Query": "5 + 9 - 3 * 6 - 3 * 9 =   Let's think step by step.",
+            "Injected CoT": "3 * 6 = 18\n3 * 9 = 28\n5 + 9 = 14\n14 - 18 = -4\n-4 - 28 =",
+            "Response": " -32",
+            "Extract-Response": " -32."
+        },
+        {
+            "Index": 86,
+            "GT": 73,
+            "Query": "5 * 2 * 8 - 7 - 5 + 5 =   Let's think step by step.",
+            "Injected CoT": "5 * 2 = 10\n10 * 8 = 80\n80 - 7 = 73\n73 - 5 = 67\n67 + 5 =",
+            "Response": " 72\n\n*/",
+            "Extract-Response": "\n\n5 * 2 * 8 - 7 - 5 + 5 = 72"
+        },
+        {
+            "Index": 87,
+            "GT": -44,
+            "Query": "2 * 2 + 8 - 2 - 6 * 9 =   Let's think step by step.",
+            "Injected CoT": "2 * 2 = 4\n4 + 8 = 12\n12 - 2 = 11\n6 * 9 = 54\n11 - 54 =",
+            "Response": " -43",
+            "Extract-Response": " -43."
+        },
+        {
+            "Index": 88,
+            "GT": -43,
+            "Query": "8 * 4 - 5 - 7 * 9 - 7 =   Let's think step by step.",
+            "Injected CoT": "8 * 4 = 32\n32 - 5 = 27\n7 * 9 = 63\n27 - 63 = -35\n-35 - 7 =",
+            "Response": " -42",
+            "Extract-Response": " -42.\n\n8 * 4 - 5 - 7 * 9 - 7 = \n32 - 5 - 63 - 7 = \n32 - 5 - 56 = \n-42"
+        },
+        {
+            "Index": 89,
+            "GT": 1,
+            "Query": "9 * 2 + 1 - 5 - 4 - 9 =   Let's think step by step.",
+            "Injected CoT": "8 * 2 = 18\n18 + 1 = 19\n19 - 5 = 14\n14 - 4 = 10\n10 - 8 =",
+            "Response": " 2\n\n2 + 1 = 3\n\n3 - 5 = -2\n\n-2 - 4 = -6\n\n-6 - 8 = -14\n\n-14 - 9 = -23\n\n-23 + 1 = -22\n\n-22 + 2 = -20\n\n-20 + 3 = -17\n\n-17 + 4 = -13\n\n-13 + 5 = -8\n\n-8 + 6 = -2\n\n-2 + 7 = 5\n\n5 + 8 = 13\n\n13 + 9 = 22\n\n22 + 10 = 32\n\n32 + 11 = 43\n\n43 + 12 = 55\n\n55 + 13 = 68\n\n68 + 14 = 82\n\n82 + 15 = 97\n\n97 + 16 = 113\n\n113 + 17 = 130\n\n130 + 18 = 148\n\n148 + 19 = 167\n\n167 + 20 = 187\n\n187 + 21 = 208\n\n208 + 22 = 230\n\n230 + 23 = 253\n\n253 + 24 = 277\n\n277 + 25 = 302\n\n302 + 26 = 328\n\n328 + 27 = 355\n\n355 + 28 = 383\n\n383 + 29 = 412\n\n412 + 30 = 442\n\n442 + 31 = 473\n\n473 + 32 = 505\n\n505 + 33 = 538\n\n538 + 34 = 572\n\n572 + 35 = 607\n\n607 + 36 = 643\n\n643 + 37 = 680\n\n680 + 38 = 718\n\n718 + 39 = 757\n\n757 + 40 = 797\n\n797 + 41 = 838\n\n838 + 42 = 880\n\n880 + 43 = 923\n\n923 + 44 = 967\n\n967 + 45 = 1012\n\n1012 + 46 = 1058\n\n1058 + 47 = 1105\n\n1105 + 48 = 1153\n\n1153 + 49 = 1202\n\n1202 + 50 = 1252\n\n1252 + 51 = 1303\n\n1303 + 52 = 1355\n\n1355 + 53 = 1408\n\n1408 + 54 = 1462\n\n1462 + 55 = 1517\n\n1517 + 56 = 1573\n\n1573 + 57 = 1630\n\n1630 + 58 = 1688\n\n1688 + 59 = 1747\n\n1747 + 60 = 1807\n\n1807 + 61 = 1868\n\n1868 + 62 = 1930\n\n1930 + 63 = 1993\n\n1993 + 64 = 2057\n\n2057 + 65 = 2122\n\n2122 + 66 = 2188\n\n2188 + 67 = 2255\n\n2255 + 68 = 2323\n\n2323 + 69 = 2392\n\n2392 + 70 = 2462\n\n2462 + 71 = 2533\n\n2533 + 72 = 2605\n\n2605 + 73 = 2678\n\n2678 + 74 = 2752\n\n2752 + 75 = 2827\n\n2827 + 76 = 2903\n\n2903 + 77 = 2980\n\n2980 + 78 = 3058\n\n3058 + 79 = 3137\n\n3137 + 80 = 3217\n\n3217 + 81 = 3298\n\n3298 + 82 = 3380\n\n3380 + 83 = 3463\n\n3463 + 84 = 3547\n\n3547 + 85 = 3632\n\n3632 + 86 = 3718\n\n3718 + 87 = 3805\n\n3805 + 88 = 3893\n\n3893 + 89 = 3982\n\n3982 + 90 = 4072\n\n4072 + 91 = 4163\n\n4163 + 92 = 4255\n\n4255 + 93 = 4348\n\n4348 + 94 = 4442\n\n4442 + 95 = 4537\n\n4537 + 96 = 4633\n\n4633 + 97 = 4730\n\n4730 + 98 = 4828\n\n4828 + 99 = 4927\n\n4927 + 100 = 5027",
+            "Extract-Response": " 5027"
+        },
+        {
+            "Index": 90,
+            "GT": 141,
+            "Query": "5 * 5 * 6 + 4 - 7 - 6 =   Let's think step by step.",
+            "Injected CoT": "5 * 5 = 25\n25 * 7 = 150\n150 + 4 = 154\n154 - 7 = 147\n147 - 7 =",
+            "Response": " 140\n\n5 * 5 * 6 + 4 - 7 - 6 = \n5 * 5 = 25\n25 * 6 = 150\n150 + 4 = 154\n154 - 7 = 147\n147 - 6 = 141",
+            "Extract-Response": " 141 ."
+        },
+        {
+            "Index": 91,
+            "GT": 37,
+            "Query": "8 + 5 + 1 * 9 + 7 + 8 =   Let's think step by step.",
+            "Injected CoT": "1 * 9 = 9\n8 + 5 = 13\n13 + 9 = 22\n22 + 7 = 28\n28 + 8 =",
+            "Response": " 36\n\nThe answer is 36.",
+            "Extract-Response": "\n36."
+        },
+        {
+            "Index": 92,
+            "GT": -43,
+            "Query": "4 - 7 * 6 + 6 - 3 - 8 =   Let's think step by step.",
+            "Injected CoT": "-7 * 6 = -42\n4 - (-42) = 46\n46 + 6 = 52\n52 - 3 = 50\n50 - 8 =",
+            "Response": " 42\n\n4 - 7 * 6 + 6 - 3 - 8 = 42",
+            "Extract-Response": " 42"
+        },
+        {
+            "Index": 94,
+            "GT": 76,
+            "Query": "8 + 4 * 3 * 7 - 4 * 4 =   Let's think step by step.",
+            "Injected CoT": "4 * 3 = 12\n12 * 7 = 84\n8 + 84 = 93\n4 * 4 = 16\n93 - 16 =",
+            "Response": " 77\n\n*/\n\n// #3\n\n/*\n\nThe answer is:\n\n4 * 3 * 7 - 4 * 4 =   Let's think step by step. \n4 * 3 = 12\n12 * 7 = 84\n8 + 84 = 93\n4 * 4 = 16\n93 - 16 = 77\n\n*/\n\n// #4\n\n/*\n\nThe answer is:\n\n4 * 3 * 7 - 4 * 4 =   Let's think step by step. \n4 * 3 = 12\n12 * 7 = 84\n8 + 84 = 93\n4 * 4 = 16\n93 - 16 = 77\n\n*/",
+            "Extract-Response": "\n\n4 * 3 * 7 - 4 * 4 =   Let's think step by step. \n4 * 3 = 12\n12 * 7 = 84\n8 + 84 = 93\n4 * 4 = 16\n93 - 16 = 77"
+        },
+        {
+            "Index": 95,
+            "GT": -28,
+            "Query": "5 * 5 - 7 * 8 + 4 - 1 =   Let's think step by step.",
+            "Injected CoT": "5 * 5 = 25\n7 * 8 = 56\n25 - 56 = -31\n-31 + 4 = -27\n-27 - 0 =",
+            "Response": " -27",
+            "Extract-Response": " -27."
+        },
+        {
+            "Index": 97,
+            "GT": 152,
+            "Query": "6 * 5 * 7 - 9 * 6 - 4 =   Let's think step by step.",
+            "Injected CoT": "6 * 5 = 30\n30 * 7 = 210\n9 * 6 = 54\n210 - 54 = 155\n155 - 4 =",
+            "Response": " 151\n\nSo, the answer is 151.",
+            "Extract-Response": " 151"
+        },
+        {
+            "Index": 98,
+            "GT": 15,
+            "Query": "3 + 5 + 2 - 7 + 4 * 3 =   Let's think step by step.",
+            "Injected CoT": "2 + 5 = 8\n8 + 2 = 10\n10 - 7 = 2\n4 * 2 = 12\n2 + 12 =",
+            "Response": " 14\n\n14",
+            "Extract-Response": "\n\n14."
+        },
+        {
+            "Index": 99,
+            "GT": -49,
+            "Query": "5 - 3 * 7 * 3 + 9 * 1 =   Let's think step by step.",
+            "Injected CoT": "3 * 7 = 21\n21 * 3 = 63\n9 * 1 = 9\n63 - 9 = 54\n6 - 54 =",
+            "Response": " -48\n\n-48 + 3 = -45\n\n-45 + 5 = -40",
+            "Extract-Response": " -40."
+        },
+        {
+            "Index": 100,
+            "GT": -8,
+            "Query": "5 - 3 - 5 * 2 - 4 + 4 =   Let's think step by step.",
+            "Injected CoT": "5 * 2 = 10\n3 - 10 = -7\n-7 - 4 = -12\n-12 + 4 =",
+            "Response": " -8\n\n-8",
+            "Extract-Response": " -8."
+        },
+        {
+            "Index": 101,
+            "GT": -15,
+            "Query": "8 - 3 * 9 - 6 + 8 + 2 =   Let's think step by step.",
+            "Injected CoT": "3 * 9 = 27\n8 - 27 = -19\n-19 - 6 = -25\n-25 + 8 = -17\n-17 + 3 =",
+            "Response": " -14\n-14 + 2 = -12\n\n-12",
+            "Extract-Response": " -12."
+        },
+        {
+            "Index": 103,
+            "GT": -105,
+            "Query": "9 - 9 * 2 * 6 - 1 - 5 =   Let's think step by step.",
+            "Injected CoT": "9 * 2 = 18\n18 * 6 = 108\n9 - 108 = -99\n-99 - 1 = -100\n-100 - 4 =",
+            "Response": " -104\n\n-104\n\n*/",
+            "Extract-Response": " -104."
+        },
+        {
+            "Index": 104,
+            "GT": -305,
+            "Query": "2 - 5 * 9 * 7 + 9 - 1 =   Let's think step by step.",
+            "Injected CoT": "5 * 9 = 45\n2 - 45 = -43\n-43 * 7 = -301\n-301 + 9 = -292\n-292 - 0 =",
+            "Response": " -292\n\n2 - 5 * 9 * 7 + 9 - 1 = -292",
+            "Extract-Response": " -292."
+        },
+        {
+            "Index": 106,
+            "GT": -21,
+            "Query": "4 - 2 * 6 - 9 - 7 + 3 =   Let's think step by step.",
+            "Injected CoT": "2 * 6 = 12\n4 - 12 = -8\n-8 - 9 = -17\n-17 - 7 = -23\n-23 + 3 =",
+            "Response": " -20\n\n-20",
+            "Extract-Response": " -20."
+        },
+        {
+            "Index": 109,
+            "GT": 10,
+            "Query": "1 + 1 - 1 - 6 + 6 + 9 =   Let's think step by step.",
+            "Injected CoT": "1 + 1 = 2\n2 - 1 = 1\n1 - 6 = -5\n-5 + 6 = 1\n1 + 10 =",
+            "Response": " 11\n\n11\n\n*/",
+            "Extract-Response": "\n\n11"
+        },
+        {
+            "Index": 110,
+            "GT": 23520,
+            "Query": "6 * 7 * 4 * 7 * 5 * 4 =   Let's think step by step.",
+            "Injected CoT": "6 * 7 = 42\n42 * 3 = 168\n168 * 7 = 1176\n1176 * 5 = 5880\n5880 * 3 =",
+            "Response": " 17640\n\n*/\n\npublic class Multiply {\n    public static void main(String[] args) {\n        System.out.println(multiply(6, 7, 3, 4, 5));\n    }\n\n    public static int multiply(int... numbers) {\n        int result = 1;\n        for (int number : numbers) {\n            result *= number;\n        }\n        return result;\n    }\n}",
+            "Extract-Response": " 17640"
+        },
+        {
+            "Index": 111,
+            "GT": 14,
+            "Query": "7 + 5 + 1 * 2 - 5 + 5 =   Let's think step by step.",
+            "Injected CoT": "1 * 2 = 2\n7 + 6 = 12\n12 + 2 = 14\n14 - 6 = 9\n9 + 6 =",
+            "Response": " 15\n15 + 5 = 20\n\n20\n\n7 + 5 + 1 * 2 - 5 + 5 =   Let's think step by step. \n1 * 2 = 2\n7 + 6 = 12\n12 + 2 = 14\n14 - 6 = 9\n9 + 6 = 15\n15 + 5 = 20\n\n20",
+            "Extract-Response": " 20."
+        },
+        {
+            "Index": 114,
+            "GT": -6,
+            "Query": "3 + 8 - 7 - 8 + 2 - 4 =   Let's think step by step.",
+            "Injected CoT": "3 + 8 = 11\n11 - 7 = 4\n4 - 8 = -4\n-4 + 2 = -3\n-3 - 4 =",
+            "Response": " -7\n\n-7",
+            "Extract-Response": " -7."
+        },
+        {
+            "Index": 115,
+            "GT": 8,
+            "Query": "2 - 9 + 6 + 2 + 4 + 3 =   Let's think step by step.",
+            "Injected CoT": "2 - 9 = -7\n-7 + 6 = -1\n-1 + 2 = 1\n1 + 4 = 4\n4 + 3 =",
+            "Response": " 7\n\n7 is the answer.",
+            "Extract-Response": " 7 ."
+        },
+        {
+            "Index": 116,
+            "GT": 148,
+            "Query": "3 - 3 - 2 + 6 * 5 * 5 =   Let's think step by step.",
+            "Injected CoT": "6 * 5 = 30\n30 * 5 = 151\n3 - 3 = 0\n0 - 2 = -2\n-2 + 151 =",
+            "Response": " 149\n\n4. (10 + 17)2 = \n\n10 + 17 = 27\n27 * 27 = 729",
+            "Extract-Response": " 729"
+        },
+        {
+            "Index": 117,
+            "GT": 381,
+            "Query": "4 * 9 + 9 + 8 * 6 * 7 =   Let's think step by step.",
+            "Injected CoT": "4 * 9 = 36\n8 * 6 = 48\n36 + 9 = 45\n48 * 7 = 336\n45 + 336 = 380\n380 + 48 =",
+            "Response": " 428\n\n4 * 9 + 9 + 8 * 6 * 7 = 428",
+            "Extract-Response": " 428."
+        },
+        {
+            "Index": 118,
+            "GT": -27,
+            "Query": "6 - 6 * 6 * 1 - 1 + 4 =   Let's think step by step.",
+            "Injected CoT": "6 * 6 = 36\n36 * 1 = 36\n6 - 36 = -30\n-30 - 1 = -32\n-32 + 4 =",
+            "Response": " -28\n\n*/\n\n// Solution\n\nfunction simpleMultiplication(number) {\n    if (number % 2 === 0) {\n        return number * 8;\n    } else {\n        return number * 9;\n    }\n}",
+            "Extract-Response": "\n\nfunction simpleMultiplication(number) {\n    return number % 2 === 0 ? number * 8 : number * 9;\n}"
+        },
+        {
+            "Index": 119,
+            "GT": -19,
+            "Query": "5 - 9 - 1 * 4 * 2 - 7 =   Let's think step by step.",
+            "Injected CoT": "1 * 4 = 4\n4 * 2 = 8\n9 + 8 = 17\n5 - 17 = -13\n-13 - 7 =",
+            "Response": " -20\n\n-20",
+            "Extract-Response": " -20."
+        },
+        {
+            "Index": 120,
+            "GT": 23,
+            "Query": "4 * 5 + 1 - 7 + 5 + 4 =   Let's think step by step.",
+            "Injected CoT": "3 * 5 = 20\n20 + 1 = 21\n21 - 7 = 14\n14 + 5 = 19\n19 + 3 =",
+            "Response": " 22\n\n22\n\n*/",
+            "Extract-Response": "\n\n22."
+        },
+        {
+            "Index": 121,
+            "GT": 13,
+            "Query": "3 * 4 - 5 * 1 + 3 * 2 =   Let's think step by step.",
+            "Injected CoT": "3 * 4 = 12\n5 * 1 = 5\n3 * 2 = 6\n12 - 5 = 8\n8 + 6 =",
+            "Response": " 14\n\n3 * 4 - 5 * 1 + 3 * 2 = 14",
+            "Extract-Response": " 14."
+        },
+        {
+            "Index": 122,
+            "GT": 11,
+            "Query": "8 * 3 + 6 + 2 - 3 * 7 =   Let's think step by step.",
+            "Injected CoT": "8 * 3 = 24\n24 + 6 = 30\n30 + 2 = 31\n3 * 7 = 21\n31 - 21 =",
+            "Response": " 10\n\n10",
+            "Extract-Response": " 10."
+        },
+        {
+            "Index": 123,
+            "GT": 7,
+            "Query": "7 - 1 + 8 - 4 * 2 + 1 =   Let's think step by step.",
+            "Injected CoT": "4 * 2 = 8\n7 - 0 = 6\n6 + 8 = 14\n14 - 8 = 6\n6 + 0 =",
+            "Response": " 6\n6 + 1 = 7\n\n7",
+            "Extract-Response": " 7."
+        },
+        {
+            "Index": 124,
+            "GT": 9,
+            "Query": "1 - 4 + 7 * 2 - 1 * 2 =   Let's think step by step.",
+            "Injected CoT": "7 * 2 = 14\n-4 + 14 = 10\n-1 * 2 = -2\n1 - 10 = -10\n-10 - 2 =",
+            "Response": " -12",
+            "Extract-Response": "\n\n-12"
+        },
+        {
+            "Index": 125,
+            "GT": -31,
+            "Query": "4 - 1 * 1 - 7 * 5 + 1 =   Let's think step by step.",
+            "Injected CoT": "2 * 2 = 2\n7 * 5 = 35\n4 - 2 = 3\n3 - 2 = 2\n2 - 35 = -33\n-33 + 2 =",
+            "Response": " -31\n-31 + 1 = -30\n\n-30 + 1 = -29\n\nSo the answer is -29.",
+            "Extract-Response": " -29"
+        },
+        {
+            "Index": 127,
+            "GT": 6,
+            "Query": "5 - 9 + 1 + 1 * 9 * 1 =   Let's think step by step.",
+            "Injected CoT": "1 * 9 = 9\n5 - 9 = -4\n-4 + 1 = -3\n-3 + 9 = 7\n7 * 1 =",
+            "Response": " 7\n7 + 1 = 8\n\nThe answer is 8.",
+            "Extract-Response": "\n\n8"
+        },
+        {
+            "Index": 128,
+            "GT": 4,
+            "Query": "9 * 9 - 9 * 9 + 4 * 1 =   Let's think step by step.",
+            "Injected CoT": "9 * 9 = 81\n9 * 9 = 81\n3 * 1 = 3\n81 - 81 = 0\n0 + 3 =",
+            "Response": " 3\n\n3",
+            "Extract-Response": "\n\n3."
+        },
+        {
+            "Index": 129,
+            "GT": 15,
+            "Query": "1 - 6 * 4 - 2 + 5 * 8 =   Let's think step by step.",
+            "Injected CoT": "6 * 4 = 24\n1 - 24 = -23\n5 * 8 = 40\n-2 + 40 = 37\n-23 - 37 =",
+            "Response": " -60",
+            "Extract-Response": "\n\n-60."
+        },
+        {
+            "Index": 130,
+            "GT": 3,
+            "Query": "7 - 2 - 5 - 2 + 2 + 3 =   Let's think step by step.",
+            "Injected CoT": "7 - 2 = 5\n5 - 5 = 1\n1 - 2 = -2\n-2 + 2 = 1\n1 + 3 =",
+            "Response": " 4\n\n4\n\n*/",
+            "Extract-Response": " 4."
+        },
+        {
+            "Index": 131,
+            "GT": 199,
+            "Query": "8 * 7 * 5 - 9 * 8 - 9 =   Let's think step by step.",
+            "Injected CoT": "8 * 7 = 56\n56 * 5 = 280\n10 * 8 = 72\n280 - 72 = 208\n208 - 10 =",
+            "Response": " 198\n\n*/",
+            "Extract-Response": " -9."
+        },
+        {
+            "Index": 132,
+            "GT": 16,
+            "Query": "8 - 5 * 1 + 1 + 4 * 3 =   Let's think step by step.",
+            "Injected CoT": "5 * 1 = 5\n8 - 5 = 3\n1 + 3 = 4\n4 * 3 = 13\n4 + 13 =",
+            "Response": " 17\n\n*/\n\n// Solution\n\nfunction orderOperations () {\n  return (2 + ((2 * 4) / (2 + 2)))\n}",
+            "Extract-Response": "\n\n3"
+        },
+        {
+            "Index": 133,
+            "GT": 199,
+            "Query": "6 * 8 * 4 + 8 - 3 + 2 =   Let's think step by step.",
+            "Injected CoT": "6 * 8 = 48\n48 * 4 = 192\n192 + 8 = 200\n200 - 3 = 197\n197 + 3 =",
+            "Response": " 200\n\n*/",
+            "Extract-Response": "\n\n200."
+        },
+        {
+            "Index": 135,
+            "GT": 118,
+            "Query": "8 * 8 - 8 + 7 * 9 - 1 =   Let's think step by step.",
+            "Injected CoT": "8 * 8 = 64\n7 * 9 = 63\n64 - 8 = 56\n56 + 63 = 120\n120 - 1 =",
+            "Response": " 119\n\nSo, the answer is 119.",
+            "Extract-Response": "\n\n119."
+        },
+        {
+            "Index": 137,
+            "GT": -100,
+            "Query": "1 - 5 * 6 * 3 - 6 - 5 =   Let's think step by step.",
+            "Injected CoT": "6 * 6 = 30\n30 * 3 = 90\n1 - 90 = -89\n-89 - 6 = -95\n-95 - 6 =",
+            "Response": " -101\n-101 - 5 = -106\n\n-106\n\n2) -1 - 5 * 6 * 3 - 6 - 5 =   Let's think step by step. \n6 * 6 = 30\n30 * 3 = 90\n1 - 90 = -89\n-89 - 6 = -95\n-95 - 6 = -101\n-101 - 5 = -106\n\n-106",
+            "Extract-Response": " -106"
+        },
+        {
+            "Index": 138,
+            "GT": 11,
+            "Query": "9 + 3 + 9 - 9 * 2 + 8 =   Let's think step by step.",
+            "Injected CoT": "9 + 2 = 12\n12 + 9 = 21\n9 * 2 = 18\n21 - 18 = 2\n2 + 8 =",
+            "Response": " 10\n\n10",
+            "Extract-Response": " 10."
+        },
+        {
+            "Index": 139,
+            "GT": 80,
+            "Query": "8 * 3 + 1 * 8 * 8 - 8 =   Let's think step by step.",
+            "Injected CoT": "8 * 3 = 24\n1 * 8 = 8\n8 * 8 = 64\n24 + 8 = 32\n32 * 64 = 2049\n2049 - 8 =",
+            "Response": " 2041\n\n*/",
+            "Extract-Response": " 2041\n\nExplanation:\n\nThe first step is to convert the number into binary.\n\nThe binary representation of 2041 is:\n\n100000000001\n\nThe next step is to reverse the binary representation.\n\nThe reversed binary representation of 2041 is:\n\n1000100000000\n\nThe next step is to convert the reversed binary representation into decimal.\n\nThe decimal representation of 1000100000000 is:\n\n2041"
+        },
+        {
+            "Index": 140,
+            "GT": -7,
+            "Query": "3 - 4 + 9 * 1 - 5 * 3 =   Let's think step by step.",
+            "Injected CoT": "9 * 1 = 9\n5 * 3 = 14\n3 - 4 = -1\n-1 + 9 = 8\n8 - 14 =",
+            "Response": " -6",
+            "Extract-Response": " -6.\n\n3 - 4 + 9 * 1 - 5 * 3 =\n3 - 4 + 9 - 5 * 3 =\n3 - 4 + 9 - 15 =\n-6"
+        },
+        {
+            "Index": 141,
+            "GT": 88,
+            "Query": "9 * 1 * 5 * 2 * 1 - 2 =   Let's think step by step.",
+            "Injected CoT": "9 * 1 = 9\n9 * 5 = 45\n45 * 1 = 90\n90 * 1 = 90\n90 - 1 =",
+            "Response": " 89\n89 - 2 = 87\n\n*/\n\npublic class FactorialTrailingZeroes {\n    public int trailingZeroes(int n) {\n        int count = 0;\n        while (n > 0) {\n            n /= 5;\n            count += n;\n        }\n        return count;\n    }\n}",
+            "Extract-Response": "\n\npublic class FactorialTrailingZeroes {\n    public int trailingZeroes(int n) {\n        return n == 0 ? 0 : n / 5 + trailingZeroes(n / 5);\n    }\n}\n\n/*\n\nThe idea is:\n\nThe ZERO comes from 10. \nThe 10 comes from 2 x 5\nAnd we need to account for all the products of 5 and 2. likes 4\u00d75 = 20 ...\nSo, if we take all the numbers with 5 as a factor, we have 5, 10, 15, 20, 25, and so on...\n\nHow many numbers that are less than n have at least one 5 as a factor?\nThere are [ n / 5 ] + [ n / 5^2 ] + [ n / 5^3 ] + ...\n\nHow many numbers that are less than n have at least two 5 as a factor?\nThere are [ n / 5^2 ] + [ n / 5^3 ] + ...\n\nHow many numbers that are less than n have at least three 5 as a factor?\nThere are [ n / 5^3 ] + ...\n\nSo the number of zeros is n / 5 + n / 25 + n / 125 + n / 625 + ...\n\n*/"
+        },
+        {
+            "Index": 142,
+            "GT": -104,
+            "Query": "2 * 6 - 2 * 8 * 7 - 4 =   Let's think step by step.",
+            "Injected CoT": "2 * 6 = 12\n2 * 8 = 16\n16 * 7 = 112\n12 - 112 = -101\n-101 - 4 =",
+            "Response": " -105\n\n-105",
+            "Extract-Response": " -105."
+        },
+        {
+            "Index": 143,
+            "GT": 7,
+            "Query": "5 * 1 - 2 + 7 + 5 - 8 =   Let's think step by step.",
+            "Injected CoT": "5 * 1 = 5\n5 - 2 = 3\n3 + 7 = 10\n10 + 5 = 15\n15 - 9 =",
+            "Response": " 6\n\n6",
+            "Extract-Response": " 6."
+        },
+        {
+            "Index": 144,
+            "GT": 373,
+            "Query": "2 * 4 * 6 * 8 - 2 - 9 =   Let's think step by step.",
+            "Injected CoT": "2 * 4 = 8\n8 * 6 = 48\n48 * 8 = 384\n384 - 2 = 382\n382 - 10 =",
+            "Response": " 372\n\n*/\n\npublic class Day_10_Binary_Numbers {\n\n    private static final Scanner scanner = new Scanner(System.in);\n\n    public static void main(String[] args) {\n        int n = scanner.nextInt();\n        scanner.skip(\"(\\r\\n|[\\n\\r\\u2028\\u2029\\u0085])?\");\n\n        int max = 0;\n        int count = 0;\n        int remainder = 0;\n\n        while (n > 0) {\n            remainder = n % 2;\n            n = n / 2;\n            if (remainder == 1) {\n                count++;\n                if (count > max) {\n                    max = count;\n                }\n            } else {\n                count = 0;\n            }\n        }\n        System.out.println(max);\n        scanner.close();\n    }\n}",
+            "Extract-Response": "\n\n4"
+        },
+        {
+            "Index": 145,
+            "GT": 105,
+            "Query": "4 - 4 + 1 * 3 * 7 * 5 =   Let's think step by step.",
+            "Injected CoT": "1 * 3 = 3\n3 * 7 = 21\n21 * 5 = 106\n4 - 4 = 0\n0 + 106 =",
+            "Response": " 106\n\n*/\n\n// Solution\n\nfunction calculate(num1, num2, num3, num4) {\n    return num1 * num2 * num3 * num4 - num1 + num2 - num3 + num4;\n}",
+            "Extract-Response": " 106"
+        },
+        {
+            "Index": 146,
+            "GT": -7,
+            "Query": "3 + 4 - 2 * 3 - 8 * 1 =   Let's think step by step.",
+            "Injected CoT": "2 * 3 = 6\n7 * 1 = 7\n3 + 4 = 7\n7 - 6 = 1\n1 - 7 =",
+            "Response": " -6\n\n-6",
+            "Extract-Response": " -6."
+        },
+        {
+            "Index": 147,
+            "GT": 95,
+            "Query": "5 + 6 * 9 + 7 * 4 + 8 =   Let's think step by step.",
+            "Injected CoT": "6 * 9 = 54\n7 * 4 = 28\n5 + 54 = 59\n59 + 28 = 86\n86 + 8 =",
+            "Response": " 94\n\nThe answer is 94.\n\n*/\n\npublic class SumOfDigits {\n    public static void main(String[] args) {\n        int num = 12345678;\n        int sum = 0;\n        while (num > 0) {\n            sum += num % 10;\n            num /= 10;\n        }\n        System.out.println(sum);\n    }\n}",
+            "Extract-Response": "\n\n36"
+        },
+        {
+            "Index": 148,
+            "GT": 22,
+            "Query": "5 * 3 - 2 + 8 + 9 - 8 =   Let's think step by step.",
+            "Injected CoT": "5 * 3 = 15\n15 - 2 = 13\n13 + 7 = 21\n21 + 9 = 30\n30 - 7 =",
+            "Response": " 23\n\n23",
+            "Extract-Response": "\n\n23."
+        },
+        {
+            "Index": 149,
+            "GT": 42,
+            "Query": "1 + 1 - 6 + 7 * 7 - 3 =   Let's think step by step.",
+            "Injected CoT": "1 + 1 = 2\n2 - 6 = -4\n7 * 7 = 49\n-4 + 49 = 46\n46 - 3 =",
+            "Response": " 43",
+            "Extract-Response": "\n\n43"
+        },
+        {
+            "Index": 150,
+            "GT": 0,
+            "Query": "2 + 3 + 6 + 1 - 4 - 8 =   Let's think step by step.",
+            "Injected CoT": "2 + 3 = 5\n5 + 6 = 11\n11 + 1 = 12\n12 - 4 = 7\n7 - 7 =",
+            "Response": " 0\n\nThe answer is 0.",
+            "Extract-Response": "\n0."
+        },
+        {
+            "Index": 151,
+            "GT": 18,
+            "Query": "3 + 9 + 8 + 1 - 8 + 5 =   Let's think step by step.",
+            "Injected CoT": "3 + 9 = 12\n12 + 8 = 20\n20 + 1 = 21\n21 - 8 = 14\n14 + 5 =",
+            "Response": " 19",
+            "Extract-Response": "\n\n19."
+        },
+        {
+            "Index": 152,
+            "GT": 17,
+            "Query": "2 - 4 + 9 + 6 * 1 + 4 =   Let's think step by step.",
+            "Injected CoT": "6 * 1 = 6\n-4 + 6 = 3\n3 + 9 = 11\n11 + 4 = 15\n15 + 3 =",
+            "Response": " 18\n\n2 - 4 + 9 + 6 * 1 + 4 = 18",
+            "Extract-Response": " 18."
+        },
+        {
+            "Index": 155,
+            "GT": 21,
+            "Query": "5 + 6 + 6 - 4 + 2 * 4 =   Let's think step by step.",
+            "Injected CoT": "2 * 4 = 7\n5 + 6 = 11\n11 + 6 = 17\n17 - 4 = 13\n13 + 7 =",
+            "Response": " 20",
+            "Extract-Response": "\n\n20"
+        },
+        {
+            "Index": 156,
+            "GT": 61,
+            "Query": "2 + 8 * 5 - 2 + 7 * 3 =   Let's think step by step.",
+            "Injected CoT": "8 * 5 = 39\n2 + 39 = 42\n7 * 3 = 21\n42 - 2 = 39\n39 + 21 =",
+            "Response": " 60\n\n60",
+            "Extract-Response": "\n\n60"
+        },
+        {
+            "Index": 157,
+            "GT": -83,
+            "Query": "7 + 9 + 1 - 4 * 5 * 5 =   Let's think step by step.",
+            "Injected CoT": "4 * 5 = 20\n20 * 5 = 100\n7 + 9 = 16\n16 + 1 = 18\n18 - 100 =",
+            "Response": " -82\n\n-82",
+            "Extract-Response": " -82."
+        },
+        {
+            "Index": 159,
+            "GT": 160,
+            "Query": "3 * 6 * 5 + 6 + 8 * 8 =   Let's think step by step.",
+            "Injected CoT": "3 * 6 = 18\n18 * 5 = 91\n8 * 8 = 64\n6 + 64 = 70\n91 + 70 =",
+            "Response": " 161",
+            "Extract-Response": " 161."
+        },
+        {
+            "Index": 160,
+            "GT": 21,
+            "Query": "9 + 7 + 7 - 8 + 2 * 3 =   Let's think step by step.",
+            "Injected CoT": "9 + 7 = 16\n16 + 7 = 23\n23 - 8 = 15\n2 * 3 = 7\n15 + 7 =",
+            "Response": " 22\n\n22",
+            "Extract-Response": "\n\n22."
+        },
+        {
+            "Index": 161,
+            "GT": -20,
+            "Query": "9 - 3 + 2 - 7 * 4 * 1 =   Let's think step by step.",
+            "Injected CoT": "7 * 0 =",
+            "Response": " 0\n7 * 1 = 7\n7 * 2 = 14\n7 * 3 = 21\n7 * 4 = 28\n7 * 5 = 35\n7 * 6 = 42\n7 * 7 = 49\n7 * 8 = 56\n7 * 9 = 63\n7 * 10 = 70\n7 * 11 = 77\n7 * 12 = 84\n7 * 13 = 91\n7 * 14 = 98\n7 * 15 = 105\n7 * 16 = 112\n7 * 17 = 119\n7 * 18 = 126\n7 * 19 = 133\n7 * 20 = 140\n7 * 21 = 147\n7 * 22 = 154\n7 * 23 = 161\n7 * 24 = 168\n7 * 25 = 175\n7 * 26 = 182\n7 * 27 = 189\n7 * 28 = 196\n7 * 29 = 203\n7 * 30 = 210\n7 * 31 = 217\n7 * 32 = 224\n7 * 33 = 231\n7 * 34 = 238\n7 * 35 = 245\n7 * 36 = 252\n7 * 37 = 259\n7 * 38 = 266\n7 * 39 = 273\n7 * 40 = 280\n7 * 41 = 287\n7 * 42 = 294\n7 * 43 = 301\n7 * 44 = 308\n7 * 45 = 315\n7 * 46 = 322\n7 * 47 = 329\n7 * 48 = 336\n7 * 49 = 343\n7 * 50 = 350\n7 * 51 = 357\n7 * 52 = 364\n7 * 53 = 371\n7 * 54 = 378\n7 * 55 = 385\n7 * 56 = 392\n7 * 57 = 399\n7 * 58 = 406\n7 * 59 = 413\n7 * 60 = 420\n7 * 61 = 427\n7 * 62 = 434\n7 * 63 = 441\n7 * 64 = 448\n7 * 65 = 455\n7 * 66 = 462\n7 * 67 = 469\n7 * 68 = 476\n7 * 69 = 483\n7 * 70 = 490\n7 * 71 = 497\n7 * 72 = 504\n7 * 73 = 511\n7 * 74 = 518\n7 * 75 = 525\n7 * 76 = 532\n7 * 77 = 539\n7 * 78 = 546\n7 * 79 = 553\n7 * 80 = 560\n7 * 81 = 567\n7 * 82 = 574\n7 * 83 = 581\n7 * 84 = 588\n7 * 85 = 595\n7 * 86 = 602\n7 * 87 = 609\n7 * 88 = 616\n7 * 89 = 623\n7 * 90 = 630\n7 * 91 = 637\n7 * 92 = 644\n7 * 93 = 651\n7 * 94 = 658\n7 * 95 = 665\n7 * 96 = 672\n7 * 97 = 679\n7 * 98 = 686\n7 * 99 = 693\n7 * 100 = 700\n7 * 101 = 707\n7 * 102 = 714\n7 * 103 = 721\n7 * 104 = 728\n7 * 105 = 735\n7 * 106 = 742\n7 * 107 = 749\n7 * 108 = 756\n7 * 109 = 763\n7 * 110 = 770\n7 * 111 = 777\n7 * 112 = 784\n7 * 113 = 791\n7 * 114 = 798\n7 * 115 = 805\n7 * 116 = 812\n7 * 117 = 819\n7 * 118 = 826\n7 * 119 = 833\n7 * 120 = 840\n7 * 121 = 847\n7 * 122 = 854\n7 * 123 = 861\n7 * 124 = 868\n7 * 125 = 875\n7 * 126 = 882\n7 * 127 = 889\n7 * 128 = 896\n7 * 129 = 903\n7 * 130 = 910\n7 * 131 = 917\n7 * 132 = 924\n7 * 133 = 931\n7 * 134 = 938\n7 * 135 = 945\n7 * 136 = 952\n7 * 137 = 959\n7 * 138 = 966\n7 * 139 = 973\n7 * 140 = 980\n7 * 141 = 987\n7 * 142 = 994\n7 * 143 = 1001\n7 * 144 = 1008\n7 * 145 = 1015\n7 * 146 = 1022\n7 * 147 = 1029\n7 * 148 = 1036\n7 * 149 = 1043\n7 * 150 = 1050\n7 * 151 = 1057\n7 * 152 = 1064\n7 * 153 = 1071\n7 * 154 = 1078\n7 * 155 = 1085\n7 * 156 = 1092\n7 * 157 = 1099\n7 * 158 = 1106\n7 * 159 = 1113\n7 * 160 = 1120\n7 * 161 = 1127\n7 * 162 = 1134\n7 * 163 = 1141\n7 * 164 = 1148\n7 * 165 = 1155\n7 * 166 = 1162\n7 * 167 = 1169\n7 * 168 = 1176\n7 * 169 = 1183\n7 * 170 = 1190\n7 * 171 = 1197\n7 * 172 = 1204\n7 * 173 = 1211\n7 * 174 = 1218\n7 * 175 = 1225\n7 * 176 = 1232\n7 * 177 = 1239\n7 * 178 = 1246\n7 * 179 = 1253\n7 * 180 = 1260\n7 * 181 = 1267\n7 * 182 = 1274\n7 * 183 = 1281\n7 * 184 = 1288\n7 * 185 = 1295\n7 * 186 = 1302\n7 * 187 = 1309\n7 * 188 = 1316\n7 * 189 = 1323\n7 * 190 = 1330\n7 * 191 = 1337\n7 * 192 = 1344\n7 * 193 = 1351\n7 * 194 = 1358\n7 * 195 = 1365\n7 * 196 = 1372\n7 * 197 = 1379\n7 * 198 = 1386\n7 * 199 = 1393\n7 * 200 = 1400\n7 * 201 = 1407\n7 * 202 = 1414\n7 * 203 = 1421\n7 * 204 = 1428\n7 * 205 = 1435\n7 * 206 = 1442\n7 * 207 = 1449\n7 * 208 = 1456\n7 * 209 = 1463\n7 * 210 = 1470\n7 * 211 = 1477\n7 * 212 = 1484\n7 * 213 = 1491\n7 * 214 = 1498\n7 * 215 = 1505\n7 * 216 = 1512\n7 * 217 = 1519\n7 * 218 = 1526\n7 * 219 = 1533\n7 * 220 = 1540\n7 * 221 = 1547\n7 * 222 = 1554\n7 * 223 = 1561\n7 * 224 = 1568\n7 * 225 = 1575\n7 * 226 = 1582\n7 * 227 = 1589\n7 * 228 = 1596\n7 * 229 = 1603\n7 * 230 = 1610\n7 * 231 = 1617\n7 * 232 = 1624\n7 * 233 = 1631\n7 * 234 = 1638\n7 * 235 = 1645\n7 * 236 = 1652\n7 * 237 = 1659\n7 * 238 = 1666\n7 * 239 = 1673\n7 * 240 = 1680\n7 * 241 = 1687\n7 * 242 = 1694\n7 * 243 = 1701\n7 * 244 = 1708\n7 * 245 = 1715\n7 * 246 = 1722\n7 * 247 = 1729\n7 * 248 = 1736\n7 * 249 = 1743\n7 * 250 = 1750\n7 * 251 = 1757\n7 * 252 = 1764\n7 * 253 = 1771\n7 * 254 = 1778\n7 * 255 = 1785\n7 * 256 = 1792\n7 * 257 = 1799\n7 * 258 = 1806\n7 * 259 = 1813\n7 * 260 = 1820\n7 * 261 = 1827\n7 * 262 = 1834\n7 * 263 = 1841\n7 * 264 = 1848\n7 * 265 = 1855\n7 * 266 = 1862\n7 * 267 = 1869\n7 * 268 = 1876\n7 * 269 = 1883\n7 * 270 = 1890\n7 * 271 = 1897\n7 * 272 = 1904\n7 * 273 = 1911\n7 * 274 = 1918\n7 * 275 = 1925\n7 * 276 = 1932\n7 * 277 = 1939\n7 * 278 = 1946\n7 * 279 = 1953\n7 * 280 = 1960\n7 * 281 = 1967\n7 * 282 = 1974\n7 * 283 = 1981\n7 * 284 = 1988\n7 * 285 = 1995\n7 * 286 = 2002\n7 * 287 = 2009\n7 * 288 = 2016\n7 * 289 = 2023\n7 * 290 = 2030\n7 * 291 = 2037\n7 * 292 = 2044\n7 * 293 = 2051\n7 * 294 = 2058\n7 * 295 = 2065\n7 * 296 = 2072\n7 * 297 = 2079\n7 * 298 = 2086\n7 * 299 = 2093\n7",
+            "Extract-Response": " 2093 ."
+        },
+        {
+            "Index": 162,
+            "GT": 9,
+            "Query": "8 + 5 - 3 - 7 * 1 + 6 =   Let's think step by step.",
+            "Injected CoT": "7 * 1 = 7\n8 + 5 = 13\n13 - 2 = 10\n10 - 7 = 2\n2 + 6 =",
+            "Response": " 8\n\n8\n\n*/",
+            "Extract-Response": " 8."
+        },
+        {
+            "Index": 163,
+            "GT": 25,
+            "Query": "3 + 1 - 2 + 9 + 7 + 7 =   Let's think step by step.",
+            "Injected CoT": "3 + 1 = 4\n4 - 2 = 2\n2 + 9 = 11\n11 + 7 = 17\n17 + 7 =",
+            "Response": " 24\n\n24\n\nQ: What is the value of the expression 2(6 + 4) ?\n\nA: 2(6 + 4) = 2(10) = 20",
+            "Extract-Response": " 20"
+        },
+        {
+            "Index": 165,
+            "GT": 2,
+            "Query": "8 - 5 - 6 + 7 - 1 * 2 =   Let's think step by step.",
+            "Injected CoT": "8 - 5 = 3\n3 - 6 = -3\n-3 + 7 = 5\n1 * 2 = 2\n5 - 2 =",
+            "Response": " 3\n\n3 + 3 + 3 + 3 + 3 = 15\n\n15 + 3 = 18",
+            "Extract-Response": "\n\n18"
+        },
+        {
+            "Index": 168,
+            "GT": -52,
+            "Query": "5 - 8 + 9 - 9 - 7 * 7 =   Let's think step by step.",
+            "Injected CoT": "-7 * 7 = -49\n5 - 7 + 9 - 9 - (-49) =",
+            "Response": " \n5 - 7 + 9 - 9 - (-49) = \n5 - 7 + 9 - 9 + 49 = \n5 - 7 + 9 + 40 = \n-2 + 9 + 40 = \n9 + 40 = \n49",
+            "Extract-Response": " 49 ."
+        },
+        {
+            "Index": 169,
+            "GT": -324,
+            "Query": "7 - 9 * 7 * 5 - 4 * 4 =   Let's think step by step.",
+            "Injected CoT": "9 * 7 = 63\n63 * 5 = 315\n4 * 4 = 15\n7 - 315 = -308\n-308 - 15 =",
+            "Response": " -323\n-323 + 63 = -260\n-260 + 315 = 55\n55 + 15 = 70\n\n7 - 9 * 7 * 5 - 4 * 4 = 70",
+            "Extract-Response": " 70 .\n\n*/\n\n#include <stdio.h>\n\nint main()\n{\n    int num1, num2, num3, num4, num5, num6, num7, num8, num9, num10, num11, num12, num13, num14, num15, num16, num17, num18, num19, num20, num21, num22, num23, num24, num25, num26, num27, num28, num29, num30, num31, num32, num33, num34, num35, num36, num37, num38, num39, num40, num41, num42, num43, num44, num45, num46, num47, num48, num49, num50, num51, num52, num53, num54, num55, num56, num57, num58, num59, num60, num61, num62, num63, num64, num65, num66, num67, num68, num69, num70, num71, num72, num73, num74, num75, num76, num77, num78, num79, num80, num81, num82, num83, num84, num85, num86, num87, num88, num89, num90, num91, num92, num93, num94, num95, num96, num97, num98, num99, num100, num101, num102, num103, num104, num105, num106, num107, num108, num109, num110, num111, num112, num113, num114, num115, num116, num117, num118, num119, num120, num121, num122, num123, num124, num125, num126, num127, num128, num129, num130, num131, num132, num133, num134, num135, num136, num137, num138, num139, num140, num141, num142, num143, num144, num145, num146, num147, num148, num149, num150, num151, num152, num153, num154, num155, num156, num157, num158, num159, num160, num161, num162, num163, num164, num165, num166, num167, num168, num169, num170, num171, num172, num173, num174, num175, num176, num177, num178, num179, num180, num181, num182, num183, num184, num185, num186, num187, num188, num189, num190, num191, num192, num193, num194, num195, num196, num197, num198, num199, num200, num201, num202, num203, num204, num205, num206, num207, num208, num209, num210, num211, num212, num213, num214, num215, num216, num217, num218, num219, num220, num221, num222, num223, num224, num225, num226, num227, num228, num229, num230, num231, num232, num233, num234, num235, num236, num237, num238, num239, num240, num241, num242, num243, num244, num245, num246, num247, num248, num249, num250, num251, num252, num253, num254, num255, num256, num257, num258, num259, num260, num261, num262, num263, num264, num265, num266, num267, num268, num269, num270, num271, num272, num273, num274, num275, num276, num277, num278, num279, num280, num281, num282, num283, num284, num285, num286, num287, num288, num289, num290, num291, num292, num293, num294, num295, num296, num297, num298, num299, num300, num301, num302, num303, num304, num305, num306, num307, num308, num309, num310, num311, num312, num313, num314, num315, num316, num317, num318, num319, num320, num321, num322, num323, num324, num325, num326, num327, num328, num329, num330, num331, num332, num333, num334, num335, num336, num337, num338, num339, num340, num341, num342, num343, num344, num345, num346, num347, num348, num349, num350, num351, num352, num353, num354, num355, num356, num357, num358, num359, num360, num361, num362, num363, num364, num365, num366, num367, num368, num369, num370, num371, num372, num373, num374, num375, num376, num377, num378, num379, num380, num381, num382, num383, num384, num385, num386, num387, num388, num389, num390, num391, num392, num393, num394, num395, num396, num397, num398, num399, num400, num401, num402, num403, num404, num405, num406, num407, num408, num409, num410, num411, num412, num413, num414, num415, num416, num417, num418, num419, num420, num421, num422, num423, num424, num425, num426, num427, num428, num429, num430, num431, num432, num433, num434, num435, num436, num437, num438, num439, num440, num441, num442, num443, num444, num445, num446, num447, num448, num449, num450, num451, num452, num453, num454, num455, num456, num457, num458, num459, num460, num461, num462, num463, num464, num465, num466, num467, num468, num469, num470, num471, num472, num473, num474, num475, num476, num477, num478, num479, num480, num481, num482, num483, num484, num485, num486, num487, num488, num489, num490, num491, num492, num493, num494, num495, num496, num497, num498, num499, num500, num501, num502, num503, num504, num505, num506, num507, num508, num509, num510, num511, num512, num513, num514, num515, num516, num517, num518, num519, num520, num521, num522, num523, num524, num525, num526, num527, num528, num529, num530, num531, num532, num533, num534, num535, num536, num537, num538, num539, num540, num541, num542, num543, num544, num545, num546, num547, num548, num549, num550, num551, num552, num553, num554, num555, num556, num557, num558, num559, num560, num561, num562, num563, num564, num565, num566, num567, num568, num569, num570, num571, num572, num573, num574, num575, num576, num577, num578, num579, num580, num581, num582, num583, num584, num585, num586, num587, num588, num589, num590, num591, num592, num593, num594, num595, num596, num597, num598, num599, num600, num601, num602, num603, num604, num605, num606, num607, num608, num609, num610, num611, num612, num613, num614, num615, num616, num617, num618, num619, num620, num621, num622, num623, num624, num625, num626, num627, num628, num629, num630, num631, num632, num633, num634, num635, num636, num637, num638, num639, num640, num641, num642, num643, num644, num645, num646, num647, num648, num649, num"
+        },
+        {
+            "Index": 172,
+            "GT": 148,
+            "Query": "9 * 9 + 2 * 2 + 9 * 7 =   Let's think step by step.",
+            "Injected CoT": "9 * 9 = 81\n2 * 2 = 4\n9 * 7 = 62\n81 + 4 = 85\n85 + 62 =",
+            "Response": " 147\n\n*/\n\npublic class AddDigits {\n    public int addDigits(int num) {\n        if (num == 0) {\n            return 0;\n        }\n        if (num % 9 == 0) {\n            return 9;\n        }\n        return num % 9;\n    }\n}",
+            "Extract-Response": "\n\npublic class AddDigits {\n    public int addDigits(int num) {\n        return 1 + (num - 1) % 9;\n    }\n}"
+        },
+        {
+            "Index": 173,
+            "GT": 28,
+            "Query": "8 + 4 + 8 + 9 + 2 - 3 =   Let's think step by step.",
+            "Injected CoT": "8 + 4 = 12\n12 + 8 = 20\n20 + 9 = 29\n29 + 2 = 31\n31 - 2 =",
+            "Response": " 29\n\n29",
+            "Extract-Response": "\n\n29."
+        },
+        {
+            "Index": 174,
+            "GT": 241,
+            "Query": "6 * 6 * 7 - 1 - 1 - 9 =   Let's think step by step.",
+            "Injected CoT": "6 * 6 = 36\n36 * 7 = 252\n252 - 1 = 251\n251 - 1 = 250\n250 - 10 =",
+            "Response": " 240\n240 - 9 = 231\n\n*/\n\npublic class SubtractTheProductAndSumOfDigitsOfAnInteger {\n    public int subtractProductAndSum(int n) {\n        int sum = 0;\n        int product = 1;\n        while (n > 0) {\n            int digit = n % 10;\n            sum += digit;\n            product *= digit;\n            n /= 10;\n        }\n        return product - sum;\n    }\n}",
+            "Extract-Response": "\n\npublic class SubtractTheProductAndSumOfDigitsOfAnInteger {\n    public int subtractProductAndSum(int n) {\n        int sum = 0;\n        int product = 1;\n        while (n > 0) {\n            int digit = n % 10;\n            sum += digit;\n            product *= digit;\n            n /= 10;\n        }\n        return product - sum;\n    }\n}"
+        },
+        {
+            "Index": 175,
+            "GT": 23,
+            "Query": "4 + 6 * 3 - 7 - 1 + 9 =   Let's think step by step.",
+            "Injected CoT": "6 * 3 = 18\n4 + 18 = 22\n22 - 7 = 15\n15 - 1 = 14\n14 + 10 =",
+            "Response": " 24\n\n24",
+            "Extract-Response": "\n\n24."
+        },
+        {
+            "Index": 176,
+            "GT": -30,
+            "Query": "4 - 3 + 5 - 9 * 3 - 9 =   Let's think step by step.",
+            "Injected CoT": "-9 * 3 = -27\n5 - 3 + 5 - 27 - 9 =",
+            "Response": " -30\n\n-4 - 3 + 5 - 9 * 3 - 9 = -30",
+            "Extract-Response": " -30"
+        },
+        {
+            "Index": 177,
+            "GT": 24,
+            "Query": "2 * 4 + 6 * 2 + 8 - 4 =   Let's think step by step.",
+            "Injected CoT": "2 * 3 = 8\n6 * 2 = 12\n8 + 12 = 20\n20 - 3 =",
+            "Response": " 17\n\n17",
+            "Extract-Response": " 17."
+        },
+        {
+            "Index": 178,
+            "GT": 36,
+            "Query": "1 * 6 * 6 * 1 - 7 + 7 =   Let's think step by step.",
+            "Injected CoT": "1 * 6 = 6\n6 * 6 = 36\n36 * 1 = 36\n36 - 6 = 29\n29 + 6 =",
+            "Response": " 35\n\nThe answer is 35.\n\n*/\n\n#include <stdio.h>\n\nint main()\n{\n    int num1, num2, num3, num4, num5, num6, num7;\n    printf(\"Enter the first number: \");\n    scanf(\"%d\", &num1);\n    printf(\"Enter the second number: \");\n    scanf(\"%d\", &num2);\n    printf(\"Enter the third number: \");\n    scanf(\"%d\", &num3);\n    printf(\"Enter the fourth number: \");\n    scanf(\"%d\", &num4);\n    printf(\"Enter the fifth number: \");\n    scanf(\"%d\", &num5);\n    printf(\"Enter the sixth number: \");\n    scanf(\"%d\", &num6);\n    printf(\"Enter the seventh number: \");\n    scanf(\"%d\", &num7);\n\n    int result = num1 * num2 * num3 * num4 * num5 * num6 * num7;\n    printf(\"%d * %d * %d * %d * %d * %d * %d = %d\", num1, num2, num3, num4, num5, num6, num7, result);\n\n    return 0;\n}",
+            "Extract-Response": " 35."
+        },
+        {
+            "Index": 179,
+            "GT": 7,
+            "Query": "3 + 5 - 7 - 4 + 8 + 2 =   Let's think step by step.",
+            "Injected CoT": "3 + 6 = 8\n8 - 7 = 1\n1 - 4 = -3\n-3 + 8 = 6\n6 + 2 =",
+            "Response": " 8\n\n3 + 6 - 7 - 4 + 8 + 2 = 8",
+            "Extract-Response": " 8."
+        },
+        {
+            "Index": 180,
+            "GT": 8,
+            "Query": "2 + 2 - 9 + 6 + 7 * 1 =   Let's think step by step.",
+            "Injected CoT": "2 + 2 = 4\n4 - 9 = -5\n-5 + 6 = 1\n1 + 7 = 7\n7 * 1 =",
+            "Response": " 7\n\n7",
+            "Extract-Response": " 7."
+        },
+        {
+            "Index": 181,
+            "GT": 11,
+            "Query": "7 - 1 * 9 + 2 + 4 + 7 =   Let's think step by step.",
+            "Injected CoT": "1 * 9 = 9\n8 - 9 = -2\n-2 + 2 = 0\n0 + 4 = 4\n4 + 8 =",
+            "Response": " 12\n\nThe answer is 12.",
+            "Extract-Response": "\n\n12."
+        },
+        {
+            "Index": 182,
+            "GT": -68,
+            "Query": "3 - 7 + 5 - 6 - 9 * 7 =   Let's think step by step.",
+            "Injected CoT": "-9 * 7 = -63\n3 - 7 = -4\n-4 + 5 = 1\n1 - 6 = -6\n-6 - 63 =",
+            "Response": " -69",
+            "Extract-Response": " -69."
+        },
+        {
+            "Index": 183,
+            "GT": -7,
+            "Query": "2 - 6 + 8 - 7 + 5 - 9 =   Let's think step by step.",
+            "Injected CoT": "2 - 6 = -4\n-4 + 8 = 4\n4 - 7 = -3\n-3 + 5 = 2\n2 - 8 =",
+            "Response": " -6\n\nSo the answer is -6.",
+            "Extract-Response": "\n\n-6"
+        },
+        {
+            "Index": 184,
+            "GT": -5,
+            "Query": "1 * 2 * 1 - 8 + 3 - 2 =   Let's think step by step.",
+            "Injected CoT": "1 * 2 = 2\n2 * 1 = 2\n2 - 8 = -6\n-6 + 3 = -2\n-2 - 2 =",
+            "Response": " -4\n\nThe answer is -4.",
+            "Extract-Response": "\n\n-4"
+        },
+        {
+            "Index": 186,
+            "GT": -17,
+            "Query": "7 - 7 - 9 + 1 - 1 * 9 =   Let's think step by step.",
+            "Injected CoT": "7 - 7 = 0\n0 - 9 = -9\n-9 + 0 = -8\n-8 - 0 * 9 =",
+            "Response": " -8\n-8 + 1 = -7\n-7 - 1 = -8\n\nThe answer is -8.",
+            "Extract-Response": "\n\n-8"
+        },
+        {
+            "Index": 187,
+            "GT": 58,
+            "Query": "1 * 6 + 4 * 4 + 6 * 6 =   Let's think step by step.",
+            "Injected CoT": "1 * 6 = 6\n4 * 4 = 16\n6 * 6 = 36\n6 + 16 = 23\n23 + 36 =",
+            "Response": " 59\n\n*/\n\npublic class SumOfSquares {\n    public static void main(String[] args) {\n        int n = 6;\n        int sum = 0;\n        for (int i = 1; i <= n; i++) {\n            sum += i * i;\n        }\n        System.out.println(sum);\n    }\n}",
+            "Extract-Response": " 91"
+        },
+        {
+            "Index": 189,
+            "GT": 14,
+            "Query": "3 + 4 + 7 - 7 + 4 + 3 =   Let's think step by step.",
+            "Injected CoT": "3 + 4 = 7\n7 + 7 = 14\n14 + 4 = 17\n17 + 3 =",
+            "Response": " 20\n\n3 + 4 + 7 - 7 + 4 + 3 = 20",
+            "Extract-Response": " 20."
+        },
+        {
+            "Index": 190,
+            "GT": -14,
+            "Query": "9 - 5 - 5 * 6 + 5 + 7 =   Let's think step by step.",
+            "Injected CoT": "5 * 6 = 30\n9 - 5 = 4\n4 - 30 = -26\n-26 + 5 = -21\n-21 + 8 =",
+            "Response": " -13\n-13 + 7 = -6",
+            "Extract-Response": " -6."
+        },
+        {
+            "Index": 191,
+            "GT": -21,
+            "Query": "7 - 6 * 5 - 7 + 3 * 3 =   Let's think step by step.",
+            "Injected CoT": "6 * 5 = 30\n7 - 30 = -23\n3 * 3 = 10\n-23 + 10 =",
+            "Response": " -13\n\n-13",
+            "Extract-Response": " -13."
+        },
+        {
+            "Index": 194,
+            "GT": 115,
+            "Query": "5 * 6 - 5 + 6 * 3 * 5 =   Let's think step by step.",
+            "Injected CoT": "5 * 6 = 30\n6 * 3 = 18\n30 - 5 = 25\n18 * 5 = 89\n25 + 89 =",
+            "Response": " 114",
+            "Extract-Response": "\n\n5 * 6 - 5 + 6 * 3 * 5 = \n\n30 - 5 + 18 * 5 = \n\n30 - 5 + 90 = \n\n115"
+        },
+        {
+            "Index": 195,
+            "GT": 61,
+            "Query": "8 * 9 - 7 + 9 - 8 - 5 =   Let's think step by step.",
+            "Injected CoT": "8 * 9 = 72\n72 - 7 = 65\n65 + 9 = 74\n74 - 8 = 66\n66 - 4 =",
+            "Response": " 62\n\n62 is the answer.",
+            "Extract-Response": " 62."
+        },
+        {
+            "Index": 197,
+            "GT": 179,
+            "Query": "8 - 4 + 7 * 1 * 5 * 5 =   Let's think step by step.",
+            "Injected CoT": "7 * 1 = 7\n5 * 5 = 25\n8 - 5 = 5\n7 * 25 = 175\n5 + 175 =",
+            "Response": " 180\n\nThe answer is 180.",
+            "Extract-Response": "\n\n180."
+        },
+        {
+            "Index": 199,
+            "GT": -13,
+            "Query": "6 + 2 - 6 * 5 + 2 + 7 =   Let's think step by step.",
+            "Injected CoT": "6 * 5 = 30\n2 - 30 = -28\n-28 + 2 = -26\n-26 + 8 =",
+            "Response": " -18\n-18 + 2 = -16\n-16 + 7 = -9\n\n-9",
+            "Extract-Response": " -9."
+        },
+        {
+            "Index": 200,
+            "GT": 24,
+            "Query": "3 * 9 - 7 + 1 * 1 * 4 =   Let's think step by step.",
+            "Injected CoT": "3 * 9 = 27\n27 - 7 = 20\n2 * 2 = 2\n20 + 2 * 4 =",
+            "Response": " 28\n\n3 * 9 - 7 + 1 * 1 * 4 = 28",
+            "Extract-Response": " 28."
+        },
+        {
+            "Index": 201,
+            "GT": 147,
+            "Query": "3 + 8 + 8 * 8 + 8 * 9 =   Let's think step by step.",
+            "Injected CoT": "3 + 8 = 11\n8 * 8 = 64\n8 * 9 = 72\n11 + 64 = 74\n74 + 72 =",
+            "Response": " 146\n\n*/\n\npublic class SumOfDigits {\n    public static void main(String[] args) {\n        int num = 12345;\n        int sum = 0;\n        while (num > 0) {\n            sum += num % 10;\n            num /= 10;\n        }\n        System.out.println(sum);\n    }\n}",
+            "Extract-Response": " 15"
+        },
+        {
+            "Index": 202,
+            "GT": 13,
+            "Query": "6 - 7 + 5 - 7 + 7 + 9 =   Let's think step by step.",
+            "Injected CoT": "6 - 7 = -1\n-1 + 5 = 5\n5 - 7 = -3\n-3 + 7 = 5\n5 + 9 =",
+            "Response": " 14\n\nThe answer is 14.",
+            "Extract-Response": "\n\n14."
+        },
+        {
+            "Index": 204,
+            "GT": -18,
+            "Query": "9 - 5 - 2 * 8 - 2 - 4 =   Let's think step by step.",
+            "Injected CoT": "2 * 8 = 16\n8 - 5 - 16 - 2 - 4 =",
+            "Response": " -3\n\n-3\n*/\n\n// Solution #2\n\nfunction calculate(num1, num2, operation) {\n    switch (operation) {\n        case '+':\n            return num1 + num2;\n        case '-':\n            return num1 - num2;\n        case '*':\n            return num1 * num2;\n        case '/':\n            return num1 / num2;\n        case '%':\n            return num1 % num2;\n        case '^':\n            return num1 ** num2;\n    }\n}\n\nconsole.log(calculate(2, 4, '+'));\nconsole.log(calculate(3, 3, '/'));\nconsole.log(calculate(18, -1, '*'));\nconsole.log(calculate(4, 2, '^'));\nconsole.log(calculate(10, 2, '%'));\n\n/*\n6\n1\n-18\n16\n0\n*/",
+            "Extract-Response": "\n\n-3"
+        },
+        {
+            "Index": 205,
+            "GT": 18,
+            "Query": "1 * 1 + 5 + 7 * 2 - 2 =   Let's think step by step.",
+            "Injected CoT": "1 * 1 = 1\n7 * 1 = 14\n1 + 5 = 6\n6 + 14 = 20\n20 - 1 =",
+            "Response": " 19\n\n2. (5 + 3) * 2 = \n\n8 * 2 = 16",
+            "Extract-Response": " 16"
+        },
+        {
+            "Index": 207,
+            "GT": 4,
+            "Query": "8 + 1 - 2 * 1 - 8 + 5 =   Let's think step by step.",
+            "Injected CoT": "2 * 1 = 2\n8 + 1 = 9\n9 - 2 = 7\n7 - 8 = -1\n-1 + 6 =",
+            "Response": " 5\n\n5\n\n*/",
+            "Extract-Response": " 5."
+        },
+        {
+            "Index": 209,
+            "GT": -3,
+            "Query": "9 - 3 - 3 - 3 - 9 + 6 =   Let's think step by step.",
+            "Injected CoT": "9 - 3 = 7\n7 - 3 = 3\n3 - 3 = 0\n0 - 9 = -9\n-9 + 7 =",
+            "Response": " -2\n-2 + 6 = 4\n\n4 is the answer.",
+            "Extract-Response": " 4 ."
+        },
+        {
+            "Index": 210,
+            "GT": 29,
+            "Query": "3 * 4 + 6 + 1 * 9 + 2 =   Let's think step by step.",
+            "Injected CoT": "3 * 4 = 12\n1 * 9 = 9\n12 + 6 = 18\n18 + 9 = 26\n26 + 2 =",
+            "Response": " 28\n\n*/\n\npublic class AddDigits {\n    public int addDigits(int num) {\n        if (num == 0) {\n            return 0;\n        }\n        if (num % 9 == 0) {\n            return 9;\n        }\n        return num % 9;\n    }\n}",
+            "Extract-Response": "\n\npublic class AddDigits {\n    public int addDigits(int num) {\n        return 1 + (num - 1) % 9;\n    }\n}\n\n/*\n\nThe idea is :\n\n1 % 9 = 1\n10 % 9 = 1\n100 % 9 = 1\n...\nand so on\n\nFrom the formula, we can find that :\n\na % 9 = a % (b + c + d + ...) % 9\n\nand\n\n(a + b) % 9 = (a % 9 + b % 9) % 9\n\nSo, we have :\n\n(a + b + c + d + ...) % 9 = ((a % 9) + (b % 9) + (c % 9) + (d % 9) + ...) % 9\n\n*/"
+        },
+        {
+            "Index": 211,
+            "GT": 141,
+            "Query": "5 * 8 + 5 * 4 * 5 + 1 =   Let's think step by step.",
+            "Injected CoT": "5 * 8 = 40\n4 * 5 = 20\n5 * 20 = 100\n40 + 100 = 140\n140 + 0 =",
+            "Response": " 140\n\n*/\n\npublic class MultiplyStrings {\n    public String multiply(String num1, String num2) {\n        int len1 = num1.length();\n        int len2 = num2.length();\n        int[] product = new int[len1 + len2];\n        for (int i = len1 - 1; i >= 0; i--) {\n            for (int j = len2 - 1; j >= 0; j--) {\n                int d1 = num1.charAt(i) - '0';\n                int d2 = num2.charAt(j) - '0';\n                product[i + j + 1] += d1 * d2;\n            }\n        }\n        int carry = 0;\n        for (int i = product.length - 1; i >= 0; i--) {\n            int tmp = (product[i] + carry) % 10;\n            carry = (product[i] + carry) / 10;\n            product[i] = tmp;\n        }\n        int i = 0;\n        while (i < product.length && product[i] == 0) {\n            i++;\n        }\n        if (i == product.length) {\n            return \"0\";\n        }\n        StringBuilder sb = new StringBuilder();\n        while (i < product.length) {\n            sb.append(product[i++]);\n        }\n        return sb.toString();\n    }\n}",
+            "Extract-Response": "\n\npublic class Solution {\n    public String multiply(String num1, String num2) {\n        int len1 = num1.length();\n        int len2 = num2.length();\n        int[] product = new int[len1 + len2];\n        for (int i = len1 - 1; i >= 0; i--) {\n            for (int j = len2 - 1; j >= 0; j--) {\n                int d1 = num1.charAt(i) - '0';\n                int d2 = num2.charAt(j) - '0';\n                product[i + j + 1] += d1 * d2;\n            }\n        }\n        int carry = 0;\n        for (int i = product.length - 1; i >= 0; i--) {\n            int tmp = (product[i] + carry) % 10;\n            carry = (product[i] + carry) / 10;\n            product[i] = tmp;\n        }\n        int i = 0;\n        while (i < product.length && product[i] == 0) {\n            i++;\n        }\n        if (i == product.length) {\n            return \"0\";\n        }\n        StringBuilder sb = new StringBuilder();\n        while (i < product.length) {\n            sb.append(product[i++]);\n        }\n        return sb.toString();\n    }\n}"
+        },
+        {
+            "Index": 213,
+            "GT": 56,
+            "Query": "9 * 2 + 5 * 9 - 7 * 1 =   Let's think step by step.",
+            "Injected CoT": "9 * 2 = 18\n5 * 9 = 45\n7 * 1 = 7\n18 + 45 = 64\n64 - 7 =",
+            "Response": " 57\n\n57",
+            "Extract-Response": " 57."
+        },
+        {
+            "Index": 214,
+            "GT": 12,
+            "Query": "3 - 2 + 8 - 8 + 5 + 6 =   Let's think step by step.",
+            "Injected CoT": "3 - 2 = 1\n1 + 8 = 9\n9 - 8 = 1\n1 + 5 = 7\n7 + 7 =",
+            "Response": " 14\n\n3 - 2 + 8 - 8 + 5 + 6 = 14",
+            "Extract-Response": " 14."
+        },
+        {
+            "Index": 215,
+            "GT": 25,
+            "Query": "4 * 9 - 3 - 9 - 5 + 6 =   Let's think step by step.",
+            "Injected CoT": "4 * 9 = 36\n36 - 3 = 33\n33 - 9 = 24\n24 - 5 = 19\n19 + 5 =",
+            "Response": " 24\n\n4 * 9 - 3 - 9 - 5 + 6 = 24",
+            "Extract-Response": " 24"
+        },
+        {
+            "Index": 216,
+            "GT": -377,
+            "Query": "7 * 8 - 6 * 8 * 9 - 1 =   Let's think step by step.",
+            "Injected CoT": "7 * 8 = 56\n6 * 8 = 48\n48 * 9 = 432\n56 - 432 = -376\n-376 - 2 =",
+            "Response": " -378\n\n7 * 8 - 6 * 8 * 9 - 1 = -378",
+            "Extract-Response": " -378."
+        },
+        {
+            "Index": 217,
+            "GT": 8,
+            "Query": "1 + 2 + 4 * 3 - 9 + 2 =   Let's think step by step.",
+            "Injected CoT": "4 * 3 = 12\n1 + 3 = 3\n3 + 12 = 15\n15 - 9 = 6\n6 + 3 =",
+            "Response": " 9\n9 + 2 = 11",
+            "Extract-Response": "\n\n11"
+        },
+        {
+            "Index": 218,
+            "GT": 45,
+            "Query": "5 * 8 + 3 + 3 - 7 + 6 =   Let's think step by step.",
+            "Injected CoT": "5 * 8 = 40\n40 + 3 = 43\n43 + 3 = 46\n46 - 7 = 39\n39 + 7 =",
+            "Response": " 46\n\nThe answer is 46.",
+            "Extract-Response": "\n\n46."
+        },
+        {
+            "Index": 219,
+            "GT": 20,
+            "Query": "2 * 5 + 2 - 1 + 1 * 9 =   Let's think step by step.",
+            "Injected CoT": "2 * 5 = 10\n10 + 2 = 12\n12 - 1 = 11\n1 * 10 = 10\n11 + 10 =",
+            "Response": " 21\n\n21",
+            "Extract-Response": " 21."
+        },
+        {
+            "Index": 220,
+            "GT": -74,
+            "Query": "3 - 3 - 5 * 4 - 6 * 9 =   Let's think step by step.",
+            "Injected CoT": "5 * 4 = 20\n6 * 9 = 53\n3 - 3 = 0\n0 - 20 = -20\n-20 - 53 =",
+            "Response": " -73\n\n3 - 3 - 5 * 4 - 6 * 9 = -73",
+            "Extract-Response": " -73"
+        },
+        {
+            "Index": 221,
+            "GT": 1095,
+            "Query": "5 * 3 * 8 * 9 + 6 + 9 =   Let's think step by step.",
+            "Injected CoT": "5 * 3 = 15\n15 * 8 = 120\n120 * 8 = 1080\n1080 + 6 = 1086\n1086 + 8 =",
+            "Response": " 1094\n1094 + 9 = 1103\n\n*/\n\npublic class MultiplyDigits {\n    public static void main(String[] args) {\n        int num = 539;\n        int result = multiplyDigits(num);\n        System.out.println(result);\n    }\n\n    public static int multiplyDigits(int num) {\n        int result = 1;\n        while (num > 0) {\n            result *= num % 10;\n            num /= 10;\n        }\n        return result;\n    }\n}",
+            "Extract-Response": " 1103"
+        },
+        {
+            "Index": 222,
+            "GT": 83,
+            "Query": "8 * 6 + 2 - 3 + 4 * 9 =   Let's think step by step.",
+            "Injected CoT": "8 * 6 = 48\n4 * 9 = 36\n48 + 36 = 84\n84 + 2 = 87\n87 - 3 =",
+            "Response": " 84\n84 + 4 = 88\n\n88",
+            "Extract-Response": "\n\n88"
+        },
+        {
+            "Index": 223,
+            "GT": 605,
+            "Query": "2 * 4 * 5 * 5 * 3 + 5 =   Let's think step by step.",
+            "Injected CoT": "2 * 4 = 8\n8 * 6 = 40\n40 * 6 = 200\n200 * 3 = 600\n600 + 6 =",
+            "Response": " 606\n\n*/\n\npublic class Multiply {\n    public static void main(String[] args) {\n        System.out.println(multiply(2, 4, 6, 3, 5));\n    }\n\n    public static int multiply(int... numbers) {\n        int result = 1;\n        for (int number : numbers) {\n            result *= number;\n        }\n        return result;\n    }\n}",
+            "Extract-Response": " 606"
+        },
+        {
+            "Index": 224,
+            "GT": 14,
+            "Query": "3 * 1 * 7 - 5 + 2 - 4 =   Let's think step by step.",
+            "Injected CoT": "3 * 1 = 3\n3 * 7 = 21\n21 - 5 = 16\n16 + 2 = 18\n18 - 3 =",
+            "Response": " 15\n\n3 * 1 * 7 - 5 + 2 - 4 = 15",
+            "Extract-Response": " 15."
+        },
+        {
+            "Index": 225,
+            "GT": 54,
+            "Query": "6 * 6 - 9 + 1 * 9 * 3 =   Let's think step by step.",
+            "Injected CoT": "6 * 6 = 36\n9 * 3 = 26\n1 * 26 = 26\n36 - 9 = 26\n26 + 26 =",
+            "Response": " 52\n\n52 is the answer.",
+            "Extract-Response": " 52."
+        },
+        {
+            "Index": 226,
+            "GT": 89,
+            "Query": "2 * 4 * 9 * 1 + 8 + 9 =   Let's think step by step.",
+            "Injected CoT": "2 * 4 = 8\n8 * 9 = 72\n72 * 1 = 72\n72 + 8 = 81\n81 + 9 =",
+            "Response": " 90\n\n2 * 4 * 9 * 1 + 8 + 9 = 90\n\n*/",
+            "Extract-Response": "\n\n2 * 4 * 9 * 1 + 8 + 9 = 90"
+        },
+        {
+            "Index": 229,
+            "GT": 166,
+            "Query": "9 * 3 * 3 * 2 + 8 - 4 =   Let's think step by step.",
+            "Injected CoT": "9 * 3 = 27\n27 * 3 = 81\n81 * 2 = 162\n162 + 8 = 170\n170 - 3 =",
+            "Response": " 167\n\n*/",
+            "Extract-Response": " 167."
+        },
+        {
+            "Index": 230,
+            "GT": 12,
+            "Query": "2 + 4 + 1 * 8 + 5 - 7 =   Let's think step by step.",
+            "Injected CoT": "1 * 8 = 8\n2 + 4 = 6\n6 + 8 = 14\n14 + 5 = 18\n18 - 7 =",
+            "Response": " 11\n\n11",
+            "Extract-Response": "\n\n11"
+        },
+        {
+            "Index": 232,
+            "GT": 3,
+            "Query": "6 + 7 - 1 - 5 - 6 + 2 =   Let's think step by step.",
+            "Injected CoT": "6 + 7 = 13\n13 - 2 = 12\n12 - 5 = 7\n7 - 6 = 2\n2 + 2 =",
+            "Response": " 4\n\n4 + 1 = 5\n\n5 + 3 = 8\n\n8 + 4 = 12\n\n12 + 5 = 17\n\n17 + 6 = 23\n\n23 + 7 = 30\n\n30 + 8 = 38\n\n38 + 9 = 47\n\n47 + 10 = 57\n\n57 + 11 = 68\n\n68 + 12 = 80\n\n80 + 13 = 93\n\n93 + 14 = 107\n\n107 + 15 = 122\n\n122 + 16 = 138\n\n138 + 17 = 155\n\n155 + 18 = 173\n\n173 + 19 = 192\n\n192 + 20 = 212\n\n212 + 21 = 233\n\n233 + 22 = 255\n\n255 + 23 = 278\n\n278 + 24 = 302\n\n302 + 25 = 327\n\n327 + 26 = 353\n\n353 + 27 = 380\n\n380 + 28 = 408\n\n408 + 29 = 437\n\n437 + 30 = 467\n\n467 + 31 = 498\n\n498 + 32 = 530\n\n530 + 33 = 563\n\n563 + 34 = 597\n\n597 + 35 = 632\n\n632 + 36 = 668\n\n668 + 37 = 705\n\n705 + 38 = 743\n\n743 + 39 = 782\n\n782 + 40 = 822\n\n822 + 41 = 863\n\n863 + 42 = 905\n\n905 + 43 = 948\n\n948 + 44 = 992\n\n992 + 45 = 1037\n\n1037 + 46 = 1083\n\n1083 + 47 = 1130\n\n1130 + 48 = 1178\n\n1178 + 49 = 1227\n\n1227 + 50 = 1277\n\n1277 + 51 = 1328\n\n1328 + 52 = 1380\n\n1380 + 53 = 1433\n\n1433 + 54 = 1487\n\n1487 + 55 = 1542\n\n1542 + 56 = 1598\n\n1598 + 57 = 1655\n\n1655 + 58 = 1713\n\n1713 + 59 = 1772\n\n1772 + 60 = 1832\n\n1832 + 61 = 1893\n\n1893 + 62 = 1955\n\n1955 + 63 = 2018\n\n2018 + 64 = 2082\n\n2082 + 65 = 2147\n\n2147 + 66 = 2213\n\n2213 + 67 = 2280\n\n2280 + 68 = 2348\n\n2348 + 69 = 2417\n\n2417 + 70 = 2487\n\n2487 + 71 = 2558\n\n2558 + 72 = 2630\n\n2630 + 73 = 2703\n\n2703 + 74 = 2777\n\n2777 + 75 = 2852\n\n2852 + 76 = 2928\n\n2928 + 77 = 3005\n\n3005 + 78 = 3083\n\n3083 + 79 = 3162\n\n3162 + 80 = 3242\n\n3242 + 81 = 3323\n\n3323 + 82 = 3405\n\n3405 + 83 = 3488\n\n3488 + 84 = 3572\n\n3572 + 85 = 3657\n\n3657 + 86 = 3743\n\n3743 + 87 = 3830\n\n3830 + 88 = 3918\n\n3918 + 89 = 4007\n\n4007 + 90 = 4096\n\n4096 + 91 = 4186\n\n4186 + 92 = 4277\n\n4277 + 93 = 4369\n\n4369 + 94 = 4462\n\n4462 + 95 = 4556\n\n4556 + 96 = 4651\n\n4651 + 97 = 4747\n\n4747 + 98 = 4844\n\n4844 + 99 = 4942\n\n4942 + 100 = 5041",
+            "Extract-Response": " 5041"
+        },
+        {
+            "Index": 233,
+            "GT": -18,
+            "Query": "8 + 3 - 9 * 3 + 5 - 7 =   Let's think step by step.",
+            "Injected CoT": "9 * 3 = 27\n8 + 3 = 11\n11 - 27 = -16\n-16 + 5 = -11\n-11 - 6 =",
+            "Response": " -17\n\n-17",
+            "Extract-Response": " -17."
+        },
+        {
+            "Index": 234,
+            "GT": -12,
+            "Query": "3 * 2 * 1 * 2 - 8 * 3 =   Let's think step by step.",
+            "Injected CoT": "3 * 2 = 6\n6 * 1 = 6\n6 * 2 = 11\n8 * 3 = 24\n11 - 24 =",
+            "Response": " -13\n\n-13\n\n*/",
+            "Extract-Response": " -13"
+        },
+        {
+            "Index": 235,
+            "GT": 37,
+            "Query": "9 - 7 + 2 + 4 * 7 + 5 =   Let's think step by step.",
+            "Injected CoT": "4 * 7 = 28\n9 - 7 = 2\n2 + 2 = 4\n4 + 28 = 31\n31 + 5 =",
+            "Response": " 36",
+            "Extract-Response": "\n\n36."
+        },
+        {
+            "Index": 236,
+            "GT": -3,
+            "Query": "8 - 2 - 3 - 3 - 5 + 2 =   Let's think step by step.",
+            "Injected CoT": "8 - 3 = 6\n6 - 3 = 3\n3 - 3 = 0\n0 - 5 = -5\n-5 + 3 =",
+            "Response": " -2\n-2 + 2 = 0\n\n*/\n\nclass Solution {\npublic:\n    int calPoints(vector<string>& ops) {\n        int sum = 0;\n        vector<int> scores;\n        for (int i = 0; i < ops.size(); i++) {\n            if (ops[i] == \"C\") {\n                sum -= scores.back();\n                scores.pop_back();\n            } else if (ops[i] == \"D\") {\n                scores.push_back(scores.back() * 2);\n                sum += scores.back();\n            } else if (ops[i] == \"+\") {\n                scores.push_back(scores[scores.size() - 2] + scores.back());\n                sum += scores.back();\n            } else {\n                scores.push_back(stoi(ops[i]));\n                sum += scores.back();\n            }\n        }\n        return sum;\n    }\n};",
+            "Extract-Response": "\n\nclass Solution {\npublic:\n    int calPoints(vector<string>& ops) {\n        int sum = 0;\n        vector<int> scores;\n        for (int i = 0; i < ops.size(); i++) {\n            if (ops[i] == \"C\") {\n                sum -= scores.back();\n                scores.pop_back();\n            } else if (ops[i] == \"D\") {\n                scores.push_back(scores.back() * 2);\n                sum += scores.back();\n            } else if (ops[i] == \"+\") {\n                scores.push_back(scores[scores.size() - 2] + scores.back());\n                sum += scores.back();\n            } else {\n                scores.push_back(stoi(ops[i]));\n                sum += scores.back();\n            }\n        }\n        return sum;\n    }\n};"
+        },
+        {
+            "Index": 237,
+            "GT": 444,
+            "Query": "6 * 2 + 6 * 6 * 4 * 3 =   Let's think step by step.",
+            "Injected CoT": "6 * 2 = 11\n6 * 6 = 36\n36 * 4 = 144\n144 * 3 = 432\n11 + 432 =",
+            "Response": " 443\n\n*/\n\npublic class MultiplyStrings {\n    public String multiply(String num1, String num2) {\n        if (num1 == null || num2 == null) {\n            return null;\n        }\n        if (num1.length() == 0 || num2.length() == 0) {\n            return \"0\";\n        }\n        int[] result = new int[num1.length() + num2.length()];\n        for (int i = num1.length() - 1; i >= 0; i--) {\n            for (int j = num2.length() - 1; j >= 0; j--) {\n                int mul = (num1.charAt(i) - '0') * (num2.charAt(j) - '0');\n                int p1 = i + j;\n                int p2 = i + j + 1;\n                int sum = mul + result[p2];\n                result[p1] += sum / 10;\n                result[p2] = sum % 10;\n            }\n        }\n        StringBuilder sb = new StringBuilder();\n        for (int i = 0; i < result.length; i++) {\n            if (sb.length() == 0 && result[i] == 0) {\n                continue;\n            }\n            sb.append(result[i]);\n        }\n        return sb.length() == 0 ? \"0\" : sb.toString();\n    }\n}",
+            "Extract-Response": "\n\npublic class Solution {\n    public String multiply(String num1, String num2) {\n        if (num1 == null || num2 == null) {\n            return null;\n        }\n        if (num1.length() == 0 || num2.length() == 0) {\n            return \"0\";\n        }\n        int[] result = new int[num1.length() + num2.length()];\n        for (int i = num1.length() - 1; i >= 0; i--) {\n            for (int j = num2.length() - 1; j >= 0; j--) {\n                int mul = (num1.charAt(i) - '0') * (num2.charAt(j) - '0');\n                int p1 = i + j;\n                int p2 = i + j + 1;\n                int sum = mul + result[p2];\n                result[p1] += sum / 10;\n                result[p2] = sum % 10;\n            }\n        }\n        StringBuilder sb = new StringBuilder();\n        for (int i = 0; i < result.length; i++) {\n            if (sb.length() == 0 && result[i] == 0) {\n                continue;\n            }\n            sb.append(result[i]);\n        }\n        return sb.length() == 0 ? \"0\" : sb.toString();\n    }\n}"
+        },
+        {
+            "Index": 239,
+            "GT": 16,
+            "Query": "6 + 1 + 1 + 5 + 5 - 2 =   Let's think step by step.",
+            "Injected CoT": "6 + 1 = 7\n7 + 1 = 8\n8 + 5 = 13\n13 + 5 = 19\n19 - 2 =",
+            "Response": " 17\n\n17",
+            "Extract-Response": "\n\n17"
+        },
+        {
+            "Index": 240,
+            "GT": 1,
+            "Query": "8 - 3 - 2 - 3 - 6 + 7 =   Let's think step by step.",
+            "Injected CoT": "8 - 3 = 5\n5 - 2 = 3\n3 - 3 = 0\n0 - 6 = -6\n-6 + 6 =",
+            "Response": " 0\n0 + 7 = 7\n\n7 - 3 - 2 - 3 - 6 + 7 =   Let's think step by step. \n7 - 3 = 4\n4 - 2 = 2\n2 - 3 = -1\n-1 - 6 = -7\n-7 + 7 = 0",
+            "Extract-Response": " 0"
+        },
+        {
+            "Index": 241,
+            "GT": 213,
+            "Query": "7 + 9 * 3 * 8 - 5 * 2 =   Let's think step by step.",
+            "Injected CoT": "9 * 3 = 27\n27 * 8 = 216\n7 + 216 = 223\n5 * 2 = 11\n223 - 11 =",
+            "Response": " 212\n\n7 + 9 * 3 * 8 - 5 * 2 = 212",
+            "Extract-Response": " 212."
+        },
+        {
+            "Index": 242,
+            "GT": 14,
+            "Query": "4 + 8 + 4 + 3 + 2 - 7 =   Let's think step by step.",
+            "Injected CoT": "4 + 8 = 12\n12 + 4 = 16\n16 + 3 = 19\n19 + 2 = 21\n21 - 8 =",
+            "Response": " 13\n\n4 + 8 + 4 = 16\n16 + 3 = 19\n19 + 2 = 21\n21 - 7 = 14",
+            "Extract-Response": "\n\n14."
+        },
+        {
+            "Index": 243,
+            "GT": 118,
+            "Query": "7 + 2 * 9 * 5 + 3 * 7 =   Let's think step by step.",
+            "Injected CoT": "2 * 9 = 18\n18 * 5 = 90\n3 * 7 = 22\n7 + 90 = 97\n97 + 22 =",
+            "Response": " 119\n\nSo, the answer is 119.\n\n*/\n\n#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cmath>\n#include <queue>\n#include <stack>\n#include <map>\n#include <set>\n#include <unordered_map>\n#include <limits>\n#include <cassert>\n#include <fstream>\n#include <array>\n\nusing namespace std;\n\n#define endl \"\\n\"\n\n\nint main() {\n    std::ios_base::sync_with_stdio(0);\n    cin.tie(0);\n    cout.precision(10);\n\n    int n, m;\n    cin >> n >> m;\n    vector<int> a(n);\n    for (size_t i = 0; i < a.size(); i++) {\n        cin >> a[i];\n    }\n    vector<int> b(m);\n    for (size_t i = 0; i < b.size(); i++) {\n        cin >> b[i];\n    }\n    int result = 0;\n    for (int i = 0; i < n; ++i) {\n        for (int j = 0; j < m; ++j) {\n            if (a[i] == b[j]) {\n                result += 1;\n            }\n        }\n    }\n    cout << result << endl;\n\n    return 0;\n}",
+            "Extract-Response": "\n\n119"
+        },
+        {
+            "Index": 246,
+            "GT": -34,
+            "Query": "3 - 6 * 4 - 1 * 9 - 4 =   Let's think step by step.",
+            "Injected CoT": "6 * 3 = 24\n3 - 24 = -21\n-1 * 9 = -9\n-21 - 9 = -30\n-30 - 3 =",
+            "Response": " -33\n-33 - 4 = -37\n\n-37",
+            "Extract-Response": " -37."
+        },
+        {
+            "Index": 248,
+            "GT": 36,
+            "Query": "8 + 8 * 5 - 5 - 4 - 3 =   Let's think step by step.",
+            "Injected CoT": "8 * 5 = 40\n8 + 40 = 48\n48 - 5 = 43\n43 - 4 = 39\n39 - 2 =",
+            "Response": " 37\n\n37 + 8 = 45\n\n45 - 5 = 40\n\n40 - 4 = 36\n\n36 - 3 = 33",
+            "Extract-Response": " 33."
+        },
+        {
+            "Index": 249,
+            "GT": 39,
+            "Query": "7 * 9 - 2 - 3 * 9 + 5 =   Let's think step by step.",
+            "Injected CoT": "7 * 9 = 63\n63 - 2 = 61\n3 * 9 = 27\n61 - 27 = 34\n34 + 6 =",
+            "Response": " 40\n\n7 * 9 - 2 - 3 * 9 + 5 = 40",
+            "Extract-Response": " 40."
+        },
+        {
+            "Index": 250,
+            "GT": 17,
+            "Query": "2 * 4 - 6 + 2 + 5 + 8 =   Let's think step by step.",
+            "Injected CoT": "2 * 4 = 7\n7 - 6 = 2\n2 + 2 = 4\n4 + 5 = 9\n9 + 7 =",
+            "Response": " 16",
+            "Extract-Response": "\n\n16"
+        },
+        {
+            "Index": 251,
+            "GT": 243,
+            "Query": "9 * 2 + 6 * 9 * 4 + 9 =   Let's think step by step.",
+            "Injected CoT": "10 * 2 = 18\n6 * 10 = 54\n54 * 4 = 216\n216 + 18 = 234\n234 + 10 =",
+            "Response": " 244\n\n*/\n\npublic class MultiplyStrings {\n    public String multiply(String num1, String num2) {\n        if (num1 == null || num2 == null) {\n            return null;\n        }\n        if (num1.length() == 0 || num2.length() == 0) {\n            return \"0\";\n        }\n        int[] result = new int[num1.length() + num2.length()];\n        for (int i = num1.length() - 1; i >= 0; i--) {\n            for (int j = num2.length() - 1; j >= 0; j--) {\n                int mul = (num1.charAt(i) - '0') * (num2.charAt(j) - '0');\n                int p1 = i + j;\n                int p2 = i + j + 1;\n                int sum = mul + result[p2];\n                result[p1] += sum / 10;\n                result[p2] = sum % 10;\n            }\n        }\n        StringBuilder sb = new StringBuilder();\n        for (int i = 0; i < result.length; i++) {\n            if (i == 0 && result[i] == 0) {\n                continue;\n            }\n            sb.append(result[i]);\n        }\n        return sb.toString();\n    }\n}",
+            "Extract-Response": "\n\npublic class Solution {\n    public String multiply(String num1, String num2) {\n        if (num1 == null || num2 == null) {\n            return null;\n        }\n        if (num1.length() == 0 || num2.length() == 0) {\n            return \"0\";\n        }\n        int[] result = new int[num1.length() + num2.length()];\n        for (int i = num1.length() - 1; i >= 0; i--) {\n            for (int j = num2.length() - 1; j >= 0; j--) {\n                int mul = (num1.charAt(i) - '0') * (num2.charAt(j) - '0');\n                int p1 = i + j;\n                int p2 = i + j + 1;\n                int sum = mul + result[p2];\n                result[p1] += sum / 10;\n                result[p2] = sum % 10;\n            }\n        }\n        StringBuilder sb = new StringBuilder();\n        for (int i = 0; i < result.length; i++) {\n            if (i == 0 && result[i] == 0) {\n                continue;\n            }\n            sb.append(result[i]);\n        }\n        return sb.toString();\n    }\n}"
+        },
+        {
+            "Index": 253,
+            "GT": -16,
+            "Query": "3 - 3 - 2 - 8 + 2 - 8 =   Let's think step by step.",
+            "Injected CoT": "3 - 3 = 0\n0 - 2 = -2\n-2 - 7 = -10\n-10 + 2 = -8\n-8 - 7 =",
+            "Response": " -15\n\n-15 + 2 = -13",
+            "Extract-Response": " -13."
+        },
+        {
+            "Index": 255,
+            "GT": 37,
+            "Query": "3 * 9 + 8 - 1 + 1 * 3 =   Let's think step by step.",
+            "Injected CoT": "4 * 9 = 27\n27 + 8 = 35\n35 - 1 = 34\n1 * 4 = 4\n34 + 4 =",
+            "Response": " 38\n\n38 is the answer.",
+            "Extract-Response": " 38."
+        },
+        {
+            "Index": 256,
+            "GT": -23,
+            "Query": "3 - 7 * 1 - 2 * 9 - 1 =   Let's think step by step.",
+            "Injected CoT": "-7 * 1 = -7\n2 * 9 = 18\n-7 - 18 = -25\n2 - 25 =",
+            "Response": " -23\n\n-3 - 23 = -26\n\nSo, the answer is -26.",
+            "Extract-Response": " -26"
+        },
+        {
+            "Index": 257,
+            "GT": 88,
+            "Query": "4 * 6 * 4 + 9 - 9 - 8 =   Let's think step by step.",
+            "Injected CoT": "4 * 6 = 24\n24 * 4 = 97\n97 + 9 = 105\n105 - 9 = 97\n97 - 8 =",
+            "Response": " 89\n\n4 * 6 * 4 + 9 - 9 - 8 = 89",
+            "Extract-Response": " 89"
+        },
+        {
+            "Index": 258,
+            "GT": -114,
+            "Query": "1 * 2 - 5 * 4 * 6 + 4 =   Let's think step by step.",
+            "Injected CoT": "1 * 2 = 2\n5 * 4 = 20\n20 * 6 = 120\n-5 * 120 = -601\n-601 + 4 =",
+            "Response": " -597\n\n-597",
+            "Extract-Response": " -597."
+        },
+        {
+            "Index": 259,
+            "GT": 58,
+            "Query": "7 * 9 - 1 * 2 + 3 - 6 =   Let's think step by step.",
+            "Injected CoT": "7 * 9 = 63\n1 * 2 = 2\n63 - 2 = 61\n61 + 3 = 65\n65 - 6 =",
+            "Response": " 59\n\n7 * 9 - 1 * 2 + 3 - 6 = 59",
+            "Extract-Response": " 59."
+        },
+        {
+            "Index": 260,
+            "GT": -44,
+            "Query": "1 - 7 * 4 - 4 * 5 + 3 =   Let's think step by step.",
+            "Injected CoT": "-7 * 4 = -28\n4 * 5 = 20\n-28 - 20 = -48\n-48 + 4 =",
+            "Response": " -44\n-44 + 3 = -41\n\n2 - 4 * 5 + 3 =   Let's think step by step. \n4 * 5 = 20\n-20 + 3 = -17",
+            "Extract-Response": " -41, -17"
+        },
+        {
+            "Index": 261,
+            "GT": 58,
+            "Query": "9 * 5 - 6 + 8 * 3 - 5 =   Let's think step by step.",
+            "Injected CoT": "9 * 5 = 45\n8 * 3 = 24\n45 - 6 = 39\n39 + 24 = 62\n62 - 5 =",
+            "Response": " 57",
+            "Extract-Response": "\n\n57."
+        },
+        {
+            "Index": 262,
+            "GT": 7,
+            "Query": "6 - 8 + 4 - 6 + 7 + 4 =   Let's think step by step.",
+            "Injected CoT": "6 - 8 = -2\n-2 + 4 = 2\n2 - 6 = -4\n-4 + 7 = 2\n2 + 4 =",
+            "Response": " 6\n\n6 - 8 + 4 - 6 + 7 + 4 = 6",
+            "Extract-Response": " 6."
+        },
+        {
+            "Index": 263,
+            "GT": 25,
+            "Query": "9 + 1 * 5 - 5 + 8 + 8 =   Let's think step by step.",
+            "Injected CoT": "1 * 5 = 5\n9 + 5 = 14\n14 - 5 = 9\n9 + 9 = 17\n17 + 9 =",
+            "Response": " 26\n26 + 8 = 34\n34 + 8 = 42\n\n42",
+            "Extract-Response": " 42"
+        },
+        {
+            "Index": 264,
+            "GT": 62,
+            "Query": "7 + 3 - 8 + 6 * 9 + 6 =   Let's think step by step.",
+            "Injected CoT": "6 * 9 = 54\n7 + 3 = 10\n10 - 8 = 2\n2 + 54 = 55\n55 + 6 =",
+            "Response": " 61\n\n61",
+            "Extract-Response": " 61."
+        },
+        {
+            "Index": 265,
+            "GT": -3,
+            "Query": "9 * 1 - 3 - 3 * 4 + 3 =   Let's think step by step.",
+            "Injected CoT": "9 * 1 = 9\n9 - 3 = 6\n3 * 4 = 12\n6 - 12 = -5\n-5 + 3 =",
+            "Response": " -2\n\n-2",
+            "Extract-Response": " -2."
+        },
+        {
+            "Index": 267,
+            "GT": 82,
+            "Query": "6 + 1 * 4 + 9 + 9 * 7 =   Let's think step by step.",
+            "Injected CoT": "1 * 4 = 4\n6 + 4 = 9\n9 * 7 = 63\n9 + 9 + 63 =",
+            "Response": " 81\n\n*/\n\npublic class DigitSum {\n    public static void main(String[] args) {\n        int n = 12345;\n        int sum = 0;\n        while (n > 0) {\n            sum += n % 10;\n            n /= 10;\n        }\n        System.out.println(sum);\n    }\n}",
+            "Extract-Response": " 15."
+        },
+        {
+            "Index": 268,
+            "GT": 43,
+            "Query": "3 + 1 - 3 - 7 + 7 * 7 =   Let's think step by step.",
+            "Injected CoT": "7 * 7 = 49\n3 + 1 = 4\n4 - 3 = 1\n1 - 7 = -5\n-5 + 49 =",
+            "Response": " 44\n",
+            "Extract-Response": " 44."
+        },
+        {
+            "Index": 270,
+            "GT": 104,
+            "Query": "9 + 4 * 9 + 8 * 8 - 5 =   Let's think step by step.",
+            "Injected CoT": "4 * 9 = 36\n8 * 8 = 64\n9 + 36 = 45\n45 + 64 = 110\n110 - 5 =",
+            "Response": " 105\n\n*/\n\n// Solution\n\nfunction calculate(num1, num2, operation) {\n    switch (operation) {\n        case '+':\n            return num1 + num2;\n        case '-':\n            return num1 - num2;\n        case '*':\n            return num1 * num2;\n        case '/':\n            return num1 / num2;\n        case '%':\n            return num1 % num2;\n        case '^':\n            return num1 ** num2;\n    }\n}\n\nconsole.log(calculate(4, 8, '+'));\nconsole.log(calculate(4, 8, '-'));\nconsole.log(calculate(4, 8, '*'));\nconsole.log(calculate(4, 8, '/'));\nconsole.log(calculate(4, 8, '%'));\nconsole.log(calculate(4, 8, '^'));",
+            "Extract-Response": "\n\n12\n-4\n32\n0.5\n4\n65536"
+        },
+        {
+            "Index": 271,
+            "GT": 85,
+            "Query": "9 * 4 + 6 * 9 - 1 - 4 =   Let's think step by step.",
+            "Injected CoT": "9 * 3 = 36\n6 * 9 = 54\n36 + 54 = 90\n90 - 1 = 89\n89 - 3 =",
+            "Response": " 86\n86 - 4 = 82\n\n82",
+            "Extract-Response": "\n\n82"
+        },
+        {
+            "Index": 272,
+            "GT": 197,
+            "Query": "5 - 5 + 7 * 9 * 3 + 8 =   Let's think step by step.",
+            "Injected CoT": "7 * 9 = 63\n63 * 3 = 189\n5 - 5 = 0\n0 + 189 = 189\n189 + 7 =",
+            "Response": " 196\n196 + 8 = 204",
+            "Extract-Response": " 204."
+        },
+        {
+            "Index": 273,
+            "GT": 69,
+            "Query": "2 + 9 * 5 + 6 + 4 * 4 =   Let's think step by step.",
+            "Injected CoT": "9 * 5 = 45\n2 + 45 = 48\n4 * 4 = 16\n6 + 16 = 22\n48 + 22 =",
+            "Response": " 70\n\n*/\n\npublic class AddDigits {\n    public int addDigits(int num) {\n        if (num == 0) {\n            return 0;\n        }\n        if (num % 9 == 0) {\n            return 9;\n        }\n        return num % 9;\n    }\n}",
+            "Extract-Response": "\n\npublic class AddDigits {\n    public int addDigits(int num) {\n        return 1 + (num - 1) % 9;\n    }\n}"
+        },
+        {
+            "Index": 274,
+            "GT": -416,
+            "Query": "8 - 4 * 3 * 4 * 9 + 8 =   Let's think step by step.",
+            "Injected CoT": "4 * 3 = 12\n12 * 4 = 48\n48 * 9 = 432\n7 - 432 = -424\n-424 + 7 =",
+            "Response": " -417\n-417 + 8 = -409\n\n-409",
+            "Extract-Response": " -409."
+        },
+        {
+            "Index": 275,
+            "GT": -35,
+            "Query": "2 + 3 + 5 - 4 * 9 - 9 =   Let's think step by step.",
+            "Injected CoT": "4 * 9 = 36\n1 + 3 + 5 - 36 - 9 =",
+            "Response": " -38\n\n2 + 3 + 5 - 4 * 9 - 9 = -38",
+            "Extract-Response": " -38."
+        },
+        {
+            "Index": 276,
+            "GT": 8,
+            "Query": "7 + 3 + 6 - 4 + 5 - 9 =   Let's think step by step.",
+            "Injected CoT": "7 + 3 = 10\n10 + 6 = 16\n16 - 4 = 12\n12 + 5 = 18\n18 - 9 =",
+            "Response": " 9\n\n7 + 3 + 6 - 4 + 5 - 9 = 9",
+            "Extract-Response": " 9."
+        },
+        {
+            "Index": 278,
+            "GT": 16,
+            "Query": "6 * 4 + 6 - 4 - 3 - 7 =   Let's think step by step.",
+            "Injected CoT": "6 * 4 = 24\n24 + 6 = 30\n30 - 4 = 26\n26 - 3 = 23\n23 - 6 =",
+            "Response": " 17\n\n17",
+            "Extract-Response": "\n\n17."
+        },
+        {
+            "Index": 279,
+            "GT": 20,
+            "Query": "4 + 7 + 6 + 1 * 8 - 5 =   Let's think step by step.",
+            "Injected CoT": "1 * 8 = 8\n4 + 7 = 11\n11 + 6 = 17\n17 + 8 = 26\n26 - 5 =",
+            "Response": " 21\n\n4 + 7 + 6 + 1 * 8 - 5 = 21",
+            "Extract-Response": " 21."
+        },
+        {
+            "Index": 281,
+            "GT": 7,
+            "Query": "2 * 1 * 1 * 1 * 1 + 5 =   Let's think step by step.",
+            "Injected CoT": "3 * 1 = 3\n3 * 1 = 3\n3 * 1 = 3\n3 * 1 = 3\n3 * 1 * 1 * 1 * 1 = 3\n3 * 1 * 1 * 1 * 1 + 5 =",
+            "Response": " 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 + 5 = 8\n3 * 1 * 1 * 1 * 1 +",
+            "Extract-Response": "\n\n3 * 1 * 1 * 1 * 1 + 5 = 8"
+        },
+        {
+            "Index": 282,
+            "GT": 32,
+            "Query": "1 * 7 + 5 - 4 + 3 * 8 =   Let's think step by step.",
+            "Injected CoT": "1 * 7 = 7\n3 * 9 = 24\n7 + 5 = 12\n12 - 4 = 9\n9 + 24 =",
+            "Response": " 33",
+            "Extract-Response": "\n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7 + 5 - 4 + 3 * 8 = \n\n1 * 7"
+        },
+        {
+            "Index": 284,
+            "GT": 18,
+            "Query": "2 - 1 + 6 * 1 + 9 + 2 =   Let's think step by step.",
+            "Injected CoT": "6 * 1 = 6\n1 - 1 = 1\n1 + 6 = 7\n7 + 9 = 16\n16 + 1 =",
+            "Response": " 17\n17 + 2 = 19\n\nThe answer is 19.",
+            "Extract-Response": "\n\n19."
+        },
+        {
+            "Index": 286,
+            "GT": 1,
+            "Query": "8 * 7 + 1 - 7 * 2 * 4 =   Let's think step by step.",
+            "Injected CoT": "8 * 7 = 56\n7 * 2 = 14\n56 + 1 = 58\n14 * 4 = 56\n58 - 56 =",
+            "Response": " 2\n\n2",
+            "Extract-Response": " 2."
+        },
+        {
+            "Index": 289,
+            "GT": 8,
+            "Query": "8 - 2 - 8 + 8 - 4 + 6 =   Let's think step by step.",
+            "Injected CoT": "8 - 2 = 7\n7 - 8 = -2\n-2 + 8 = 7\n7 - 4 = 2\n2 + 7 =",
+            "Response": " 9\n9 + 6 = 15",
+            "Extract-Response": " 15."
+        },
+        {
+            "Index": 290,
+            "GT": -22,
+            "Query": "6 - 6 * 5 - 1 + 6 - 3 =   Let's think step by step.",
+            "Injected CoT": "6 * 5 = 30\n6 - 30 = -24\n-24 - 1 = -25\n-25 + 6 = -19\n-19 - 4 =",
+            "Response": " -23\n\n-23 + 6 = -17\n\n-17 - 3 = -20",
+            "Extract-Response": " -20."
+        },
+        {
+            "Index": 291,
+            "GT": 80,
+            "Query": "5 + 2 - 7 + 8 + 9 * 8 =   Let's think step by step.",
+            "Injected CoT": "9 * 8 = 73\n5 + 2 = 7\n7 - 7 = 0\n0 + 8 = 8\n8 + 73 =",
+            "Response": " 81\n\n81",
+            "Extract-Response": " 81."
+        },
+        {
+            "Index": 292,
+            "GT": 5,
+            "Query": "9 - 5 + 6 * 1 * 1 - 5 =   Let's think step by step.",
+            "Injected CoT": "6 * 1 = 6\n9 - 5 = 4\n4 + 6 = 9\n9 * 1 = 9\n9 * 1 = 9\n9 - 5 =",
+            "Response": " 4\n4 + 9 = 13\n13 - 5 = 8\n\nThe answer is 8.",
+            "Extract-Response": " 8."
+        },
+        {
+            "Index": 293,
+            "GT": 25,
+            "Query": "5 * 1 - 9 + 6 * 5 - 1 =   Let's think step by step.",
+            "Injected CoT": "5 * 1 = 5\n6 * 5 = 30\n5 - 9 = -3\n30 - 1 = 29\n-3 + 29 =",
+            "Response": " 26\n\n26 is the answer.",
+            "Extract-Response": " 26."
+        },
+        {
+            "Index": 294,
+            "GT": 70,
+            "Query": "4 - 6 + 4 * 4 + 8 * 7 =   Let's think step by step.",
+            "Injected CoT": "4 * 4 = 16\n8 * 7 = 56\n-6 + 16 = 10\n10 + 56 = 65\n4 - 65 =",
+            "Response": " -61\n\n-61",
+            "Extract-Response": " -61."
+        },
+        {
+            "Index": 295,
+            "GT": 8,
+            "Query": "2 - 4 + 1 + 4 - 2 + 7 =   Let's think step by step.",
+            "Injected CoT": "2 - 4 = -2\n-2 + 1 = -1\n-1 + 4 = 3\n3 - 2 = 1\n1 + 8 =",
+            "Response": " 9\n\n*/\n\n//Solution\n\nint solve(int n) {\n    int sum = 0;\n    while(n > 0) {\n        sum += n % 10;\n        n /= 10;\n    }\n    return sum;\n}",
+            "Extract-Response": "\n\nint solve(int n) {\n    int sum = 0;\n    while(n > 0) {\n        sum += n % 10;\n        n /= 10;\n    }\n    return sum;\n}"
+        },
+        {
+            "Index": 296,
+            "GT": -43,
+            "Query": "8 - 8 + 4 - 9 * 5 - 2 =   Let's think step by step.",
+            "Injected CoT": "8 - 8 = 0\n0 + 4 = 4\n9 * 5 = 45\n4 - 45 = -42\n-42 - 2 =",
+            "Response": " -44",
+            "Extract-Response": " -44."
+        },
+        {
+            "Index": 298,
+            "GT": 50,
+            "Query": "9 + 9 + 4 * 1 * 1 * 8 =   Let's think step by step.",
+            "Injected CoT": "5 * 1 = 5\n1 * 8 = 8\n9 + 9 = 18\n18 + 5 = 22\n22 * 5 =",
+            "Response": " 110\n110 + 8 = 118\n\n*/\n\npublic class MultiplyDigits {\n    public static void main(String[] args) {\n        int num = 5678;\n        int result = multiplyDigits(num);\n        System.out.println(result);\n    }\n\n    public static int multiplyDigits(int num) {\n        int result = 1;\n        while (num > 0) {\n            result *= num % 10;\n            num /= 10;\n        }\n        return result;\n    }\n}",
+            "Extract-Response": "\n\n118"
+        },
+        {
+            "Index": 300,
+            "GT": 11,
+            "Query": "5 * 7 - 6 * 4 - 9 + 9 =   Let's think step by step.",
+            "Injected CoT": "5 * 7 = 35\n6 * 4 = 24\n35 - 24 = 11\n11 - 10 = 2\n2 + 10 =",
+            "Response": " 12\n\n*/\n\n//Solution\n\nint main()\n{\n    int a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z;\n    int num1, num2, num3, num4, num5, num6, num7, num8, num9, num10, num11, num12, num13, num14, num15, num16, num17, num18, num19, num20, num21, num22, num23, num24, num25, num26, num27, num28, num29, num30, num31, num32, num33, num34, num35, num36, num37, num38, num39, num40, num41, num42, num43, num44, num45, num46, num47, num48, num49, num50, num51, num52, num53, num54, num55, num56, num57, num58, num59, num60, num61, num62, num63, num64, num65, num66, num67, num68, num69, num70, num71, num72, num73, num74, num75, num76, num77, num78, num79, num80, num81, num82, num83, num84, num85, num86, num87, num88, num89, num90, num91, num92, num93, num94, num95, num96, num97, num98, num99, num100, num101, num102, num103, num104, num105, num106, num107, num108, num109, num110, num111, num112, num113, num114, num115, num116, num117, num118, num119, num120, num121, num122, num123, num124, num125, num126, num127, num128, num129, num130, num131, num132, num133, num134, num135, num136, num137, num138, num139, num140, num141, num142, num143, num144, num145, num146, num147, num148, num149, num150, num151, num152, num153, num154, num155, num156, num157, num158, num159, num160, num161, num162, num163, num164, num165, num166, num167, num168, num169, num170, num171, num172, num173, num174, num175, num176, num177, num178, num179, num180, num181, num182, num183, num184, num185, num186, num187, num188, num189, num190, num191, num192, num193, num194, num195, num196, num197, num198, num199, num200, num201, num202, num203, num204, num205, num206, num207, num208, num209, num210, num211, num212, num213, num214, num215, num216, num217, num218, num219, num220, num221, num222, num223, num224, num225, num226, num227, num228, num229, num230, num231, num232, num233, num234, num235, num236, num237, num238, num239, num240, num241, num242, num243, num244, num245, num246, num247, num248, num249, num250, num251, num252, num253, num254, num255, num256, num257, num258, num259, num260, num261, num262, num263, num264, num265, num266, num267, num268, num269, num270, num271, num272, num273, num274, num275, num276, num277, num278, num279, num280, num281, num282, num283, num284, num285, num286, num287, num288, num289, num290, num291, num292, num293, num294, num295, num296, num297, num298, num299, num300, num301, num302, num303, num304, num305, num306, num307, num308, num309, num310, num311, num312, num313, num314, num315, num316, num317, num318, num319, num320, num321, num322, num323, num324, num325, num326, num327, num328, num329, num330, num331, num332, num333, num334, num335, num336, num337, num338, num339, num340, num341, num342, num343, num344, num345, num346, num347, num348, num349, num350, num351, num352, num353, num354, num355, num356, num357, num358, num359, num360, num361, num362, num363, num364, num365, num366, num367, num368, num369, num370, num371, num372, num373, num374, num375, num376, num377, num378, num379, num380, num381, num382, num383, num384, num385, num386, num387, num388, num389, num390, num391, num392, num393, num394, num395, num396, num397, num398, num399, num400, num401, num402, num403, num404, num405, num406, num407, num408, num409, num410, num411, num412, num413, num414, num415, num416, num417, num418, num419, num420, num421, num422, num423, num424, num425, num426, num427, num428, num429, num430, num431, num432, num433, num434, num435, num436, num437, num438, num439, num440, num441, num442, num443, num444, num445, num446, num447, num448, num449, num450, num451, num452, num453, num454, num455, num456, num457, num458, num459, num460, num461, num462, num463, num464, num465, num466, num467, num468, num469, num470, num471, num472, num473, num474, num475, num476, num477, num478, num479, num480, num481, num482, num483, num484, num485, num486, num487, num488, num489, num490, num491, num492, num493, num494, num495, num496, num497, num498, num499, num500, num501, num502, num503, num504, num505, num506, num507, num508, num509, num510, num511, num512, num513, num514, num515, num516, num517, num518, num519, num520, num521, num522, num523, num524, num525, num526, num527, num528, num529, num530, num531, num532, num533, num534, num535, num536, num537, num538, num539, num540, num541, num542, num543, num544, num545, num546, num547, num548, num549, num550, num551, num552, num553, num554, num555, num556, num557, num558, num559, num560, num561, num562, num563, num564, num565, num566, num567, num568, num569, num570, num571, num572, num573, num574, num575, num576, num577, num578, num579, num580, num581, num582, num583, num584, num585, num586, num587, num588, num589, num590, num591, num592, num593, num594, num595, num596, num597, num598, num599, num600, num601, num602, num603, num604, num605, num606, num607, num608, num609, num610, num611, num612, num613, num614, num615, num616, num617, num618, num619, num620, num621, num622, num623, num624, num625, num626, num627, num628, num629, num630, num631, num632, num633, num634, num635",
+            "Extract-Response": "\n\n-6"
+        },
+        {
+            "Index": 301,
+            "GT": -4,
+            "Query": "4 - 2 * 3 + 4 + 2 - 8 =   Let's think step by step.",
+            "Injected CoT": "2 * 3 = 6\n3 - 6 = -2\n-2 + 3 = 2\n2 + 2 = 3\n3 - 8 =",
+            "Response": " -5\n\n-5",
+            "Extract-Response": " -5."
+        },
+        {
+            "Index": 302,
+            "GT": -441,
+            "Query": "1 + 9 - 3 - 8 * 8 * 7 =   Let's think step by step.",
+            "Injected CoT": "8 * 7 = 56\n-3 - 448 = -451\n1 + 9 = 9\n9 - 451 =",
+            "Response": " -442\n\n-442",
+            "Extract-Response": " -442."
+        },
+        {
+            "Index": 303,
+            "GT": 19,
+            "Query": "6 - 3 + 8 - 3 + 2 + 9 =   Let's think step by step.",
+            "Injected CoT": "6 - 3 = 3\n3 + 8 = 11\n11 - 3 = 8\n8 + 2 = 10\n10 + 8 =",
+            "Response": " 18\n\nThe answer is 18.",
+            "Extract-Response": "\n18."
+        },
+        {
+            "Index": 307,
+            "GT": 14,
+            "Query": "5 - 8 * 2 + 4 * 7 - 3 =   Let's think step by step.",
+            "Injected CoT": "-8 * 2 = -16\n4 * 7 = 28\n5 - 16 = -11\n-11 + 28 = 16\n16 - 3 =",
+            "Response": " 13\n\n13",
+            "Extract-Response": "\n\n13"
+        },
+        {
+            "Index": 308,
+            "GT": 112,
+            "Query": "2 * 8 * 6 + 5 + 6 + 5 =   Let's think step by step.",
+            "Injected CoT": "2 * 8 = 16\n16 * 6 = 96\n96 + 6 = 101\n101 + 6 = 107\n107 + 6 =",
+            "Response": " 113\n113 + 5 = 118\n\n118 + 5 = 123\n\nSo, 2 * 8 * 6 + 5 + 6 + 5 = 123",
+            "Extract-Response": "\n\n2 * 8 * 6 + 5 + 6 + 5 = 123"
+        },
+        {
+            "Index": 309,
+            "GT": -78,
+            "Query": "5 + 6 - 5 - 4 * 7 * 3 =   Let's think step by step.",
+            "Injected CoT": "4 * 7 = 28\n-5 - 84 = -89\n5 + 6 = 11\n11 - 88 =",
+            "Response": " -77\n\n-77",
+            "Extract-Response": " -77."
+        },
+        {
+            "Index": 310,
+            "GT": 15,
+            "Query": "4 * 4 + 2 - 2 + 5 - 6 =   Let's think step by step.",
+            "Injected CoT": "4 * 4 = 16\n16 + 2 = 18\n18 - 2 = 16\n16 + 5 = 22\n22 - 6 =",
+            "Response": " 16\n\n4 * 4 + 2 - 2 + 5 - 6 = 16",
+            "Extract-Response": " 16."
+        },
+        {
+            "Index": 311,
+            "GT": 4,
+            "Query": "5 + 6 + 7 - 2 - 6 * 2 =   Let's think step by step.",
+            "Injected CoT": "6 * 2 = 12\n6 + 6 + 7 - 2 - 12 =",
+            "Response": " \n6 + 7 - 2 - 12 = \n7 - 2 - 12 = \n-5 - 12 = \n-17",
+            "Extract-Response": " -17."
+        },
+        {
+            "Index": 313,
+            "GT": -106,
+            "Query": "4 + 7 - 5 - 2 * 8 * 7 =   Let's think step by step.",
+            "Injected CoT": "2 * 8 = 16\n16 * 7 = 112\n4 + 7 = 11\n11 - 5 = 5\n5 - 112 =",
+            "Response": " -107\n\n-107",
+            "Extract-Response": " -107."
+        },
+        {
+            "Index": 314,
+            "GT": 10,
+            "Query": "1 * 4 + 9 - 8 + 2 + 3 =   Let's think step by step.",
+            "Injected CoT": "1 * 4 = 4\n4 + 9 = 13\n13 - 8 = 5\n5 + 2 = 7\n7 + 2 =",
+            "Response": " 9\n\n*/",
+            "Extract-Response": " 9."
+        },
+        {
+            "Index": 315,
+            "GT": -58,
+            "Query": "9 - 9 * 1 * 7 - 5 + 1 =   Let's think step by step.",
+            "Injected CoT": "9 * 1 = 9\n9 * 7 = 63\n9 - 63 = -54\n-54 - 5 = -60\n-60 + 1 =",
+            "Response": " -59\n\n-59",
+            "Extract-Response": " -59."
+        },
+        {
+            "Index": 316,
+            "GT": 18,
+            "Query": "4 - 2 + 6 + 9 + 7 - 6 =   Let's think step by step.",
+            "Injected CoT": "4 - 2 = 2\n2 + 6 = 8\n8 + 9 = 17\n17 + 7 = 25\n25 - 6 =",
+            "Response": " 19\n\n19",
+            "Extract-Response": " 19."
+        },
+        {
+            "Index": 317,
+            "GT": 33,
+            "Query": "8 * 8 - 9 - 6 - 9 - 7 =   Let's think step by step.",
+            "Injected CoT": "8 * 8 = 64\n64 - 9 = 55\n55 - 6 = 49\n49 - 9 = 41\n41 - 7 =",
+            "Response": " 34\n\n*/",
+            "Extract-Response": "\n\n34."
+        },
+        {
+            "Index": 318,
+            "GT": 251,
+            "Query": "6 * 3 * 2 * 7 - 4 + 3 =   Let's think step by step.",
+            "Injected CoT": "6 * 2 = 18\n18 * 2 = 36\n36 * 7 = 252\n252 - 4 = 248\n248 + 2 =",
+            "Response": " 250\n\n*/\n\n// Solution\n\nfunction calculate(num1, operation, num2) {\n    switch (operation) {\n        case '+':\n            return num1 + num2;\n        case '-':\n            return num1 - num2;\n        case '*':\n            return num1 * num2;\n        case '/':\n            return num1 / num2;\n        default:\n            return NaN;\n    }\n}",
+            "Extract-Response": "\n\nfunction calculate(num1, operation, num2) {\n    switch (operation) {\n        case '+':\n            return num1 + num2;\n        case '-':\n            return num1 - num2;\n        case '*':\n            return num1 * num2;\n        case '/':\n            return num1 / num2;\n        default:\n            return NaN;\n    }\n}"
+        },
+        {
+            "Index": 319,
+            "GT": -38,
+            "Query": "8 - 1 * 8 * 7 + 7 + 3 =   Let's think step by step.",
+            "Injected CoT": "1 * 8 = 8\n8 * 7 = 56\n8 - 56 = -48\n-48 + 7 = -42\n-42 + 3 =",
+            "Response": " -39\n\n-39\n\n*/",
+            "Extract-Response": " -39"
+        },
+        {
+            "Index": 320,
+            "GT": -10,
+            "Query": "1 - 8 * 2 + 3 - 4 + 6 =   Let's think step by step.",
+            "Injected CoT": "8 * 2 = 16\n1 - 16 = -15\n-15 + 3 = -12\n-12 - 4 = -16\n-16 + 7 =",
+            "Response": " -9\n\n2 - 8 * 2 + 3 - 4 + 6 =   Let's think step by step. \n8 * 2 = 16\n2 - 16 = -14\n-14 + 3 = -11\n-11 - 4 = -15\n-15 + 7 = -8",
+            "Extract-Response": " -8."
+        },
+        {
+            "Index": 321,
+            "GT": 984,
+            "Query": "3 * 9 * 9 * 4 + 9 + 3 =   Let's think step by step.",
+            "Injected CoT": "4 * 9 = 27\n27 * 9 = 243\n243 * 4 = 972\n972 + 9 = 981\n981 + 4 =",
+            "Response": " 985\n\n*/\n\npublic class Solution {\n    public int addDigits(int num) {\n        if (num == 0) {\n            return 0;\n        }\n        if (num % 9 == 0) {\n            return 9;\n        }\n        return num % 9;\n    }\n}",
+            "Extract-Response": "\n\npublic class Solution {\n    public int addDigits(int num) {\n        return 1 + (num - 1) % 9;\n    }\n}\n\n/*\n\nThe idea is that the final sum of the digit is the remainder of the digit and 9.\n\nFor example:\n\nnum = 38\n\n38 % 9 = 2\n\nSo the final sum of the digit is 2.\n\n*/"
+        },
+        {
+            "Index": 322,
+            "GT": 336,
+            "Query": "9 * 4 * 9 + 3 + 7 + 2 =   Let's think step by step.",
+            "Injected CoT": "9 * 4 = 36\n36 * 9 = 324\n324 + 3 = 327\n327 + 7 = 335\n335 + 2 =",
+            "Response": " 337\n\n*/\n\npublic class SumDigits {\n    public static void main(String[] args) {\n        System.out.println(sumDigits(93427));\n    }\n\n    public static int sumDigits(int num) {\n        if (num < 10) {\n            return num;\n        }\n        return num % 10 + sumDigits(num / 10);\n    }\n}",
+            "Extract-Response": "\n\npublic class SumDigits {\n    public static void main(String[] args) {\n        System.out.println(sumDigits(93427));\n    }\n\n    public static int sumDigits(int num) {\n        if (num < 10) {\n            return num;\n        }\n        return num % 10 + sumDigits(num / 10);\n    }\n}"
+        },
+        {
+            "Index": 323,
+            "GT": -3,
+            "Query": "5 - 2 - 4 - 5 + 5 - 2 =   Let's think step by step.",
+            "Injected CoT": "5 - 3 = 3\n3 - 4 = -1\n-1 - 5 = -6\n-6 + 5 = -1\n-1 - 3 =",
+            "Response": " -4\n\n-4",
+            "Extract-Response": " -4."
+        },
+        {
+            "Index": 324,
+            "GT": 32,
+            "Query": "7 + 7 - 9 + 7 * 4 - 1 =   Let's think step by step.",
+            "Injected CoT": "7 + 7 = 14\n14 - 9 = 5\n7 * 4 = 28\n5 + 28 = 33\n33 - 0 =",
+            "Response": " 33",
+            "Extract-Response": "\n\n33."
+        },
+        {
+            "Index": 325,
+            "GT": -18,
+            "Query": "4 * 5 - 5 * 8 + 4 - 2 =   Let's think step by step.",
+            "Injected CoT": "4 * 5 = 20\n5 * 8 = 40\n20 - 40 = -20\n-20 + 4 = -16\n-16 - 3 =",
+            "Response": " -19",
+            "Extract-Response": " -19."
+        },
+        {
+            "Index": 326,
+            "GT": 94,
+            "Query": "1 * 3 + 6 * 8 * 2 - 5 =   Let's think step by step.",
+            "Injected CoT": "1 * 3 = 3\n6 * 8 = 48\n48 * 2 = 96\n3 + 96 = 98\n98 - 5 =",
+            "Response": " 93\n\n*/\n\n// Solution\n\nfunction calculate(num1, operation, num2) {\n    switch (operation) {\n        case '+':\n            return num1 + num2;\n        case '-':\n            return num1 - num2;\n        case '*':\n            return num1 * num2;\n        case '/':\n            return num1 / num2;\n        default:\n            return 'Incorrect operation!';\n    }\n}",
+            "Extract-Response": "\n\nfunction calculate(num1, operation, num2) {\n    switch (operation) {\n        case '+':\n            return num1 + num2;\n        case '-':\n            return num1 - num2;\n        case '*':\n            return num1 * num2;\n        case '/':\n            return num1 / num2;\n        default:\n            return 'Incorrect operation!';\n    }\n}"
+        },
+        {
+            "Index": 327,
+            "GT": -16,
+            "Query": "8 * 2 + 4 - 6 - 5 * 6 =   Let's think step by step.",
+            "Injected CoT": "8 * 2 = 16\n16 + 4 = 20\n20 - 6 = 14\n5 * 6 = 31\n14 - 31 =",
+            "Response": " -17\n\n-17",
+            "Extract-Response": " -17."
+        },
+        {
+            "Index": 328,
+            "GT": 96,
+            "Query": "2 + 1 + 9 + 6 * 2 * 7 =   Let's think step by step.",
+            "Injected CoT": "6 * 2 = 12\n2 + 1 = 3\n9 + 3 = 12\n12 + 12 = 24\n24 * 7 = 169\n169 + 0 =",
+            "Response": " 169\n\n*/\n\npublic class DigitSum {\n    public static void main(String[] args) {\n        System.out.println(digitSum(0));\n    }\n\n    public static int digitSum(int n) {\n        if (n == 0) {\n            return 0;\n        }\n        return n % 10 + digitSum(n / 10);\n    }\n}",
+            "Extract-Response": "\n\npublic class DigitSum {\n    public static void main(String[] args) {\n        System.out.println(digitSum(0));\n    }\n\n    public static int digitSum(int n) {\n        if (n == 0) {\n            return 0;\n        }\n        return n % 10 + digitSum(n / 10);\n    }\n}"
+        },
+        {
+            "Index": 329,
+            "GT": 70,
+            "Query": "8 * 2 * 8 - 4 - 9 * 6 =   Let's think step by step.",
+            "Injected CoT": "8 * 2 = 16\n16 * 8 = 128\n9 * 6 = 54\n128 - 4 = 123\n123 - 54 =",
+            "Response": " 69\n69 is the answer.",
+            "Extract-Response": "\n\n69"
+        },
+        {
+            "Index": 330,
+            "GT": -33,
+            "Query": "7 - 6 * 5 - 5 - 1 - 4 =   Let's think step by step.",
+            "Injected CoT": "6 * 5 = 30\n7 - 30 = -23\n-23 - 5 = -28\n-28 - 1 = -30\n-30 - 4 =",
+            "Response": " -34\n\n-34\n\n*/",
+            "Extract-Response": " -34"
+        },
+        {
+            "Index": 331,
+            "GT": 58,
+            "Query": "1 + 7 * 7 + 5 + 4 - 1 =   Let's think step by step.",
+            "Injected CoT": "7 * 7 = 49\n0 + 49 = 50\n50 + 5 = 55\n55 + 4 = 59\n59 - 0 =",
+            "Response": " 59\n\n59",
+            "Extract-Response": "\n\n59"
+        }
+    ]
+}

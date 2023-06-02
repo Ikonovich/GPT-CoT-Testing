@@ -24,6 +24,7 @@ last_query_time = 0
 
 # Stores tuples of (local model, tokenizer),
 # by the same key values as in config.LOCAL.
+# by the same key values as in config.LOCAL.
 local_models = dict()
 
 
@@ -228,7 +229,7 @@ def run_test(model: str, modality: str, dataset: str, args):
     # Results file: Stores last index ran, total count, correct counts, and accuracy.
     if dataset in MODIFIED_COT_DATASETS:
         output_file = dataset + "-" + mode + "-" + model + ".json"
-        save_directory = path.join(RESULTS_FOLDER, mode, model, modality, dataset_sub)
+        save_directory = path.join(RESULTS_FOLDER, "modified_cot", model, modality, dataset_sub)
     else:
         output_file = prompt + "-" + extraction_type + "-" + model + "-" + modality + "-" + dataset + ".json"
         save_directory = path.join(RESULTS_FOLDER, model, modality, dataset_sub)
@@ -236,13 +237,14 @@ def run_test(model: str, modality: str, dataset: str, args):
     output_path = path.join(save_directory, output_file)
     dataset_path = path.join(DATASET_FOLDER, DATASETS[dataset])
 
-    # Set the start index
+    # Load any previous test results and set the start index
     # This lets us continue from where we left off if the model is overloaded or the test has to restart.
+    test_results = None
     start_index = 0
     if cont and path.exists(output_path):
         try:
-            previous = read_json(filepath=output_path)
-            start_index = len(previous["Trials"])
+            test_results = read_json(filepath=output_path)
+            start_index = len(test_results["Trials"])
 
         except JSONDecodeError as e:
             print(f"There was an error decoding the prior test results at {output_path} into json at index {e.pos}")
@@ -287,8 +289,8 @@ def run_test(model: str, modality: str, dataset: str, args):
             results["Injected CoT"] = cot
             # If the model is local, concatenate the question and steps.
             if model == 'goat' or model in COMPLETION:
-                response = local_query(
-                    model_name=model,
+                response = query(
+                    model=model,
                     prompt=prompt + " \n" + cot,
                     max_tokens=max_tokens)
             # Otherwise, send the steps as GPT assistant message and the query as a user message.
@@ -320,9 +322,7 @@ def run_test(model: str, modality: str, dataset: str, args):
                 args=args)
         results["Extract-Response"] = extraction_response
 
-        if path.exists(output_path):
-            test_results = read_json(filepath=output_path)
-        else:
+        if test_results is None:
             # Generate new test metadata
             test_results = {"Mode": args.mode,
                             "Model": model,
@@ -334,11 +334,11 @@ def run_test(model: str, modality: str, dataset: str, args):
             if "step" in dataset:
                 test_results["Steps"] = int(regex.findall(r"\d{1,2}", dataset)[0])
 
-        test_results.update({"Extraction Type": extraction_type,
-                             "Simple Prompt": use_simple_prompt,
-                             "Test Path": output_path,
-                             "Trials": list()
-                             })
+            test_results.update({"Extraction Type": extraction_type,
+                                 "Simple Prompt": use_simple_prompt,
+                                 "Test Path": output_path,
+                                 "Trials": list()
+                                 })
 
         test_results["Trials"].append(results)
         write_json(filepath=output_path, data=test_results)

@@ -5,8 +5,8 @@ import os
 
 from regex import regex
 
-from config import DATASETS, DATASET_FOLDER
-from utils.file_utils import read_json, write_json, load_dataset
+from config import DATASETS, DATASET_FOLDER, RESULTS_FOLDER
+from utils.file_utils import read_json, write_json, load_dataset, get_filepaths
 from utils.query_utils import multi_message_query, timer
 
 
@@ -292,6 +292,8 @@ def extract_steps():
         write_json(filepath=path, data=results)
 
 
+
+
 def create_modified_steps():
     # -- BASELINE ###
     modify_steps(mode="Last",
@@ -369,6 +371,27 @@ def create_modified_steps():
                  remove_last=False,
                  folder_name="First-Step-Double-Mod-Off-By-One-Keep-Last")
 
+
+def get_expected_answer():
+    # Finds the expected answers of problems with a modified last step.
+    filepaths = get_filepaths(root=os.path.join(RESULTS_FOLDER, "modified_cot"),
+                              contains=["Last-Step-Single-Mod-Off-By-One-Keep-Last"])
+
+    for path in filepaths:
+        data = read_json(path)
+        trials = data["Trials"]
+
+        for trial in trials:
+            # Get the last step and remove the equals sign
+            step = trial["Steps"][-1]
+            step = step[:step.index("=")]
+
+            # Evaluate
+            expected = eval(step)
+            trial["Expected Answer"] = expected
+
+        data["Trials"] = trials
+        write_json(filepath=path, data=data)
 
 if __name__ == "__main__":
     create_modified_steps()
