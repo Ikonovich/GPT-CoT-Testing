@@ -45,6 +45,10 @@ for i in range(0, STEPWISE_MAX_SIZE):
 # Create a mapping of modified CoT datasets. We also append these to our regular datasets.
 MODIFIED_COT_DATASETS = dict()
 for i in range(0, STEPWISE_MAX_SIZE):
+    # Unmodified CoT reasoning.
+    MODIFIED_COT_DATASETS[f"unmodified-{i + 1}-step"] = os.path.join("Stepwise_Extracted",
+                                                                                        "Unmodified",
+                                                                                        f"steps_unmodified_{i + 1}step.json")
     # BASELINE:
     # Offset a single val in the modified step by one, remove the final answer but keep the last step.
 

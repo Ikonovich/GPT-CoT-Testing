@@ -1,3 +1,4 @@
+import copy
 import json
 import random
 
@@ -285,8 +286,17 @@ def extract_steps():
             if len(steps) == 0:
                 continue
 
-            item["New Steps"] = steps
+            item["Steps"] = steps
+            # Make new steps with the final answer removed
+            new_steps = copy.deepcopy(steps)
+            stop_index = new_steps[-1].index("=")
+            new_steps[-1] = new_steps[-1][:stop_index + 1]
+            item["New Steps"] = new_steps
 
+            # Set the expected answer
+            eval_step = new_steps[-1][:stop_index]
+            expected = eval(eval_step)
+            item["Expected Answer"] = expected
             results.append(item)
 
         write_json(filepath=path, data=results)
@@ -455,7 +465,7 @@ def create_modified_steps():
 
 
 if __name__ == "__main__":
-    get_baseline_accuracy()
+    #get_baseline_accuracy()
     # calculate_expected_answers()
     # assign_expected_answers()
     # create_modified_steps()

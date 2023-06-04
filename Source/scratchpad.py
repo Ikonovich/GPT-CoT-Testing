@@ -133,7 +133,7 @@ def scratchpad_test(datum: dict, model_one: str, model_two: str, modality: str, 
         messages = [
             roles["Answering"],
             {"role": "user", "content": prompt},
-            internal_message
+            {"role": "assistant", "content": internal_message}
         ]
 
     external_message = multi_message_query(model=model_two, messages=messages, max_tokens=max_tokens)
