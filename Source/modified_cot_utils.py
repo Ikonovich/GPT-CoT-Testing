@@ -285,13 +285,95 @@ def extract_steps():
             if len(steps) == 0:
                 continue
 
-            item["Steps"] = steps
+            item["New Steps"] = steps
 
             results.append(item)
 
         write_json(filepath=path, data=results)
 
 
+def get_baseline_accuracy():
+    # Calculates the comparative accuracy of the modified cot questions on the corresponding
+    # model and modality.
+    for i in range(1, 9):
+        modified_paths = get_filepaths(root=os.path.join(RESULTS_FOLDER, "modified_cot"),
+                                     contains=[f"Last-Step-Single-Mod-Off-By-One-Keep-Last-{i}-step"])
+
+        for path in modified_paths:
+            total = 0
+            accurate = 0
+
+            modified = read_json(path)
+            modality = modified["Modality"]
+            model = modified["Model"]
+            extraction_type = modified["Extraction Type"]
+            baseline_path = os.path.join(RESULTS_FOLDER, model, modality, "stepwise", f"Simple-{extraction_type}-{model}-{modality}-{i}step.json")
+            baseline = read_json(filepath=baseline_path)["Trials"]
+
+            for entry in modified["Trials"]:
+                total += 1
+                original = baseline[entry["Index"]]
+                if original["Index"] != entry["Index"]:
+                    raise ValueError("Out-of-order trials detected.")
+
+                try:
+                    if float(entry["GT"]) == float(entry["Final Answer"]):
+                        accurate += 1
+                except:  # Failed to convert the value to a float, so it's not accurate
+                    pass
+
+            if accurate == 0:
+                accuracy = 0
+            else:
+                accuracy = (accurate / total) * 100
+            modified["Baseline Accuracy"] = accuracy
+            write_json(filepath=path, data=modified)
+
+
+def calculate_expected_answers():
+    # Finds the expected answers of problems with a modified last step and add them to the original questions.
+    filepaths = get_filepaths(root=r"Datasets\Stepwise_Extracted", contains=["Keep-Last"])
+    for path in filepaths:
+        data = read_json(path)
+
+        for question in data:
+            # Get the last step and remove the equals sign
+            step = question["New Steps"][-1]
+            step = step[:step.index("=")]
+
+            # Evaluate and store
+            expected = eval(step)
+            question["Expected Answer"] = expected
+
+        write_json(filepath=path, data=data)
+
+
+def assign_expected_answers():
+    # Takes generated expected answers and assigns them to their respective trials
+
+    modes = ["Last-Step-Single-Mod-Off-By-One-Keep-Last", "First-Step-Single-Mod-Off-By-One-Keep-Last", "Middle-Step-Single-Mod-Off-By-One-Keep-Last"]
+    for i in range(1, 9):
+
+        for mode in modes:
+            question_path = f"Datasets/Stepwise_Extracted/{mode}/{i}-step.json"
+            result_paths = get_filepaths(root=os.path.join(RESULTS_FOLDER, "modified_cot"),
+                                         contains=[f"{mode}-{i}-step"])
+
+            questions = read_json(question_path)
+            for path in result_paths:
+                results = read_json(path)
+                trials = results["Trials"]
+                for j in range(len(trials)):
+                    trial = trials[j]
+                    question = questions[j]
+
+                    # Sanity check
+                    if trial["Index"] != question["Index"]:
+                        raise ValueError("Out of order trials detected.")
+                    trial["Expected Answer"] = question["Expected Answer"]
+
+                results["Trials"] = trials
+                write_json(filepath=path, data=results)
 
 
 def create_modified_steps():
@@ -372,29 +454,11 @@ def create_modified_steps():
                  folder_name="First-Step-Double-Mod-Off-By-One-Keep-Last")
 
 
-def get_expected_answer():
-    # Finds the expected answers of problems with a modified last step.
-    filepaths = get_filepaths(root=os.path.join(RESULTS_FOLDER, "modified_cot"),
-                              contains=["Last-Step-Single-Mod-Off-By-One-Keep-Last"])
-
-    for path in filepaths:
-        data = read_json(path)
-        trials = data["Trials"]
-
-        for trial in trials:
-            # Get the last step and remove the equals sign
-            step = trial["Steps"][-1]
-            step = step[:step.index("=")]
-
-            # Evaluate
-            expected = eval(step)
-            trial["Expected Answer"] = expected
-
-        data["Trials"] = trials
-        write_json(filepath=path, data=data)
-
 if __name__ == "__main__":
-    create_modified_steps()
+    get_baseline_accuracy()
+    # calculate_expected_answers()
+    # assign_expected_answers()
+    # create_modified_steps()
     # generate_steps()
-    # extract_steps()
+    extract_steps()
 

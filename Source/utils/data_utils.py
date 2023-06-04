@@ -197,13 +197,25 @@ def path_to_metadata(test_path: str) -> dict[str, str]:
     return metadata
 
 
-def count_cot(data: list[dict], dataset: str) -> tuple[int, int, int, int, int, int]:
+def calculate_metrics(data: list[dict], dataset: str) -> tuple[int, int, int, int, int, int, int]:
+    # Total number of queries and the total number that have accurate responses
     total = 0
     total_accurate = 0
+    # Total number of responses determined to contain CoT reasoning and
+    # the total number of those that are accurate.
     cot_total = 0
     cot_accurate = 0
+    # Total number of responses found to NOT contain CoT reasoning, and the
+    # number that are accurate.
     non_cot_total = 0
     non_cot_accurate = 0
+
+    # For modified last-step datasets, the number of responses that were accurate
+    # to the expected response.
+    if "Expected Answer" in data[0]:
+        accurate_to_expected = 0
+    else:
+        accurate_to_expected = None
 
     for entry in data:
         total += 1
@@ -221,6 +233,11 @@ def count_cot(data: list[dict], dataset: str) -> tuple[int, int, int, int, int, 
             elif float(answer) == float(gt):
                 is_accurate = 1
                 total_accurate += 1
+
+            if "Expected Answer" in entry:
+                if float(answer) == float(entry["Expected Answer"]):
+                    accurate_to_expected += 1
+
         except ValueError:
             is_accurate = 0
 
@@ -256,7 +273,7 @@ def count_cot(data: list[dict], dataset: str) -> tuple[int, int, int, int, int, 
                 non_cot_total += 1
                 non_cot_accurate += is_accurate
 
-    return total, total_accurate, cot_accurate, cot_total, non_cot_accurate, non_cot_total
+    return total, total_accurate, cot_accurate, cot_total, non_cot_accurate, non_cot_total, accurate_to_expected
 
 
 def test_quantification(test_path: str = None):
@@ -266,7 +283,7 @@ def test_quantification(test_path: str = None):
     # Calculate total accuracy, % of answers containing Chain-of-Thought reasoning,
     # the accuracy of CoT answers, and the accuracy of Non-CoT answers,
     # along with over all counts of each item type.
-    total, total_accurate, cot_accurate, cot_total, non_cot_accurate, non_cot_total = count_cot(
+    total, total_accurate, cot_accurate, cot_total, non_cot_accurate, non_cot_total, accurate_to_expected = calculate_metrics(
         data=data["Trials"], dataset=data["Dataset"])
 
     if cot_total == 0:
@@ -284,7 +301,8 @@ def test_quantification(test_path: str = None):
     total_accuracy = (total_accurate / total)
     ci_radius = (z_val * math.sqrt((total_accuracy * (1 - total_accuracy)) / total)) * 100
     total_accuracy = total_accuracy * 100
-    return {"Total": total,
+
+    results = {"Total": total,
             "Total Accurate": total_accurate,
             "Total Accuracy": total_accuracy,
             "Percent of Answers Containing CoT": cot_percent,
@@ -293,3 +311,14 @@ def test_quantification(test_path: str = None):
             "ci_radius": ci_radius,
             "ci_upper": total_accuracy + ci_radius,
             "ci_lower": total_accuracy - ci_radius}
+
+    if accurate_to_expected is not None:
+        accurate_to_expected = accurate_to_expected / total
+        ci_radius = (z_val * math.sqrt((accurate_to_expected * (1 - accurate_to_expected)) / total)) * 100
+        accurate_to_expected = accurate_to_expected * 100
+        results["Matches Expected"] = accurate_to_expected
+        results["ME ci_radius"] = ci_radius
+        results["ME ci_upper"] = accurate_to_expected + ci_radius
+        results["ME ci_lower"] = accurate_to_expected - ci_radius
+
+    return results

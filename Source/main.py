@@ -15,7 +15,8 @@ from scratchpad import multi_query_test
 
 def main():
     args = parse_args()
-    config.GPU_ID = args.gpu
+    config.__dict__['GPU_ID'] = args.gpu
+    config.__dict__['WAIT_TIME'] = args.wait_time
     mode = args.mode
     if mode == "extract":
         extract_answers(root=RESULTS_FOLDER)

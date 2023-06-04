@@ -16,6 +16,7 @@ from transformers import (
 )
 from peft import PeftModel
 
+import config
 from config import *
 from utils.file_utils import load_dataset, write_json, read_json
 
@@ -33,7 +34,7 @@ def timer(delay: float | int = None):
     global last_query_time
 
     if delay is None:
-        delay = WAIT_TIME
+        delay = config.__dict__['WAIT_TIME']
     cur_time = time.time()
     diff = cur_time - last_query_time
     if diff < delay:
@@ -122,20 +123,20 @@ def openai_query(model_name: str, prompt: str, max_tokens: int) -> str:
 
 
 def load_local_model(model_name: str):
-    torch.cuda.set_device(GPU_ID)
+    print(f"Setting GPU to {config.__dict__['GPU_ID']}")
+    torch.cuda.set_device(config.__dict__['GPU_ID'])
 
     if model_name == "goat":
         tokenizer = LlamaTokenizer.from_pretrained('decapoda-research/llama-7b-hf')
         model = LlamaForCausalLM.from_pretrained(
             'decapoda-research/llama-7b-hf',
             torch_dtype=torch.float16,
-            device_map="auto")
+            device_map={'': GPU_ID}).to('cuda')
         model = PeftModel.from_pretrained(
             model,
             "tiedong/goat-lora-7b",
             torch_dtype=torch.float16,
-            device_map={'': 0}
-        )
+            device_map={'': GPU_ID}).to('cuda')
         local_models[model_name] = (model, tokenizer)
 
     elif model_name in LOCAL_AUTO:
@@ -260,6 +261,7 @@ def run_test(model: str, modality: str, dataset: str, args):
     else:
         end_index = min(num_samples, len(data))
 
+    print("Beginning test " + model + "-" + modality + "-" + dataset)
     for j in range(start_index, end_index):
         # Get the question, ground truth, and full dataset entry
         x, y, test_entry = data[j]
@@ -341,6 +343,7 @@ def run_test(model: str, modality: str, dataset: str, args):
                                  })
 
         test_results["Trials"].append(results)
+        print(f"Saving results to {output_path}")
         write_json(filepath=output_path, data=test_results)
         trial_index = test_entry["Index"]
         # print(f"Model: {model} Dataset: {dataset} Index: {trial_index} Iteration: {j}"

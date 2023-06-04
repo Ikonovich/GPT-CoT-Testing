@@ -4,7 +4,7 @@ This module contains various configurations that aren't individual to each test.
 import os
 
 # Stores the ID of the GPU to utilize
-GPU_ID = 2
+GPU_ID = None
 
 # Stores the minimum wait time between queries, in seconds
 WAIT_TIME = 0

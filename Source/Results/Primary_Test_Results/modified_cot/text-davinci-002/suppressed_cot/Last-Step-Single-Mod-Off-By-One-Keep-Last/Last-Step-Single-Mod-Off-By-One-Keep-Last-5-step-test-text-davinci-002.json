@@ -9,6 +9,22 @@
     "Extraction Type": "two-stage",
     "Simple Prompt": true,
     "Test Path": "Results\\Primary_Test_Results\\modified_cot\\text-davinci-002\\suppressed_cot\\Last-Step-Single-Mod-Off-By-One-Keep-Last\\Last-Step-Single-Mod-Off-By-One-Keep-Last-5-step-test-text-davinci-002.json",
+    "Total": 250,
+    "Total Accurate": 5,
+    "Total Accuracy": 2.0,
+    "Percent of Answers Containing CoT": 0.0,
+    "CoT Accuracy": "N/A",
+    "Non-CoT Accuracy": 2.0,
+    "ci_radius": 1.7354579799004062,
+    "ci_upper": 3.7354579799004064,
+    "ci_lower": 0.2645420200995938,
+    "Matches Expected": 90.0,
+    "Matches Expected ci_radius": 3.7188385283580137,
+    "Matches Expected ci_upper": 93.71883852835802,
+    "Matches Expected ci_lower": 86.28116147164198,
+    "ME ci_radius": 3.7188385283580137,
+    "ME ci_upper": 93.71883852835802,
+    "ME ci_lower": 86.28116147164198,
     "Trials": [
         {
             "Index": 0,
@@ -16,7 +32,10 @@
             "Query": "6 - 4 + 7 + 9 - 9 * 4 =   Provide only the answer.. ",
             "Injected CoT": "9 * 4 = 35\n6 - 4 = 2\n2 + 7 = 9\n9 + 9 = 18\n18 - 35 =",
             "Response": " -17",
-            "Extract-Response": " -17"
+            "Extract-Response": " -17",
+            "Expected Answer": -17,
+            "Answer": -17.0,
+            "Final Answer": -17.0
         },
         {
             "Index": 2,
@@ -24,7 +43,10 @@
             "Query": "3 + 5 + 8 + 9 + 8 * 5 =   Provide only the answer.. ",
             "Injected CoT": "8 * 4 = 40\n3 + 4 + 8 + 9 + 40 =",
             "Response": " 68",
-            "Extract-Response": " 68."
+            "Extract-Response": " 68.",
+            "Expected Answer": 64,
+            "Answer": 68.0,
+            "Final Answer": 68.0
         },
         {
             "Index": 3,
@@ -32,7 +54,10 @@
             "Query": "9 + 7 + 7 - 1 - 5 - 2 =   Provide only the answer.. ",
             "Injected CoT": "9 + 7 = 16\n16 + 7 = 23\n23 - 1 = 22\n22 - 5 = 18\n18 - 2 =",
             "Response": " 16",
-            "Extract-Response": " 16."
+            "Extract-Response": " 16.",
+            "Expected Answer": 16,
+            "Answer": 16.0,
+            "Final Answer": 16.0
         },
         {
             "Index": 4,
@@ -40,7 +65,10 @@
             "Query": "6 - 5 + 2 * 7 * 8 + 9 =   Provide only the answer.. ",
             "Injected CoT": "2 * 7 = 14\n14 * 8 = 112\n6 - 5 = 1\n112 + 1 = 112\n112 + 9 =",
             "Response": " 121",
-            "Extract-Response": "\n\n121"
+            "Extract-Response": "\n\n121",
+            "Expected Answer": 121,
+            "Answer": 121.0,
+            "Final Answer": 121.0
         },
         {
             "Index": 5,
@@ -48,7 +76,10 @@
             "Query": "8 * 9 * 8 + 6 + 3 + 2 =   Provide only the answer.. ",
             "Injected CoT": "8 * 9 = 72\n72 * 8 = 576\n576 + 6 = 582\n582 + 3 = 585\n585 + 1 =",
             "Response": " 586",
-            "Extract-Response": " 586"
+            "Extract-Response": " 586",
+            "Expected Answer": 586,
+            "Answer": 586.0,
+            "Final Answer": 586.0
         },
         {
             "Index": 6,
@@ -56,7 +87,10 @@
             "Query": "9 - 8 + 4 + 2 - 4 - 7 =   Provide only the answer.. ",
             "Injected CoT": "9 - 8 = 1\n1 + 4 = 5\n5 + 2 = 7\n7 - 4 = 2\n2 - 7 =",
             "Response": " -5",
-            "Extract-Response": " -5"
+            "Extract-Response": " -5",
+            "Expected Answer": -5,
+            "Answer": -5.0,
+            "Final Answer": -5.0
         },
         {
             "Index": 7,
@@ -64,7 +98,10 @@
             "Query": "4 * 8 + 1 * 7 * 4 - 4 =   Provide only the answer.. ",
             "Injected CoT": "5 * 8 = 32\n1 * 7 = 7\n7 * 5 = 28\n32 + 28 = 60\n60 - 5 =",
             "Response": " 55",
-            "Extract-Response": " 55"
+            "Extract-Response": " 55",
+            "Expected Answer": 55,
+            "Answer": 55.0,
+            "Final Answer": 55.0
         },
         {
             "Index": 8,
@@ -72,7 +109,10 @@
             "Query": "8 - 5 * 1 + 6 + 3 * 5 =   Provide only the answer.. ",
             "Injected CoT": "5 * 1 = 5\n8 - 5 = 3\n3 + 6 = 10\n3 * 5 = 15\n10 + 15 =",
             "Response": " 25",
-            "Extract-Response": "\n\n25"
+            "Extract-Response": "\n\n25",
+            "Expected Answer": 25,
+            "Answer": 25.0,
+            "Final Answer": 25.0
         },
         {
             "Index": 9,
@@ -80,7 +120,10 @@
             "Query": "5 * 7 + 5 + 8 + 8 + 4 =   Provide only the answer.. ",
             "Injected CoT": "5 * 7 = 35\n35 + 5 = 40\n40 + 8 = 48\n48 + 8 = 56\n56 + 3 =",
             "Response": " 59",
-            "Extract-Response": "\n\n59"
+            "Extract-Response": "\n\n59",
+            "Expected Answer": 59,
+            "Answer": 59.0,
+            "Final Answer": 59.0
         },
         {
             "Index": 11,
@@ -88,7 +131,10 @@
             "Query": "5 - 2 * 3 + 8 * 2 - 5 =   Provide only the answer.. ",
             "Injected CoT": "2 * 3 = 6\n8 * 2 = 16\n5 - 6 = -1\n-1 + 16 = 16\n16 - 5 =",
             "Response": " 11",
-            "Extract-Response": " 11"
+            "Extract-Response": " 11",
+            "Expected Answer": 11,
+            "Answer": 11.0,
+            "Final Answer": 11.0
         },
         {
             "Index": 12,
@@ -96,7 +142,10 @@
             "Query": "6 * 5 - 9 - 7 * 9 - 2 =   Provide only the answer.. ",
             "Injected CoT": "6 * 5 = 30\n7 * 9 = 63\n30 - 9 = 21\n21 - 63 = -42\n-42 - 1 =",
             "Response": " -43",
-            "Extract-Response": " -43"
+            "Extract-Response": " -43",
+            "Expected Answer": -43,
+            "Answer": -43.0,
+            "Final Answer": -43.0
         },
         {
             "Index": 13,
@@ -104,7 +153,10 @@
             "Query": "1 * 7 * 4 - 7 * 8 - 9 =   Provide only the answer.. ",
             "Injected CoT": "1 * 7 = 7\n7 * 4 = 28\n7 * 8 = 56\n28 - 56 = -28\n-28 - 10 =",
             "Response": " -38",
-            "Extract-Response": " -38"
+            "Extract-Response": " -38",
+            "Expected Answer": -38,
+            "Answer": -38.0,
+            "Final Answer": -38.0
         },
         {
             "Index": 16,
@@ -112,7 +164,10 @@
             "Query": "1 + 9 - 4 * 9 - 1 + 4 =   Provide only the answer.. ",
             "Injected CoT": "4 * 9 = 36\n1 + 9 = 10\n10 - 36 = -26\n-26 - 1 = -28\n-28 + 4 =",
             "Response": " -24",
-            "Extract-Response": " -24"
+            "Extract-Response": " -24",
+            "Expected Answer": -24,
+            "Answer": -24.0,
+            "Final Answer": -24.0
         },
         {
             "Index": 17,
@@ -120,7 +175,10 @@
             "Query": "5 * 1 + 7 + 8 * 3 + 8 =   Provide only the answer.. ",
             "Injected CoT": "5 * 1 = 5\n7 * 3 = 24\n5 + 7 = 12\n24 + 12 = 36\n36 + 7 =",
             "Response": " 43\n43 + 8 = 51",
-            "Extract-Response": " 51"
+            "Extract-Response": " 51",
+            "Expected Answer": 43,
+            "Answer": 51.0,
+            "Final Answer": 51.0
         },
         {
             "Index": 18,
@@ -128,7 +186,10 @@
             "Query": "4 + 6 + 8 * 5 + 2 * 6 =   Provide only the answer.. ",
             "Injected CoT": "8 * 5 = 40\n2 * 6 = 13\n4 + 6 = 10\n10 + 40 = 50\n50 + 13 =",
             "Response": " 63",
-            "Extract-Response": " 63"
+            "Extract-Response": " 63",
+            "Expected Answer": 63,
+            "Answer": 63.0,
+            "Final Answer": 63.0
         },
         {
             "Index": 19,
@@ -136,7 +197,10 @@
             "Query": "5 - 5 + 2 * 5 + 3 * 2 =   Provide only the answer.. ",
             "Injected CoT": "2 * 5 = 10\n3 * 2 = 7\n5 - 5 = 0\n0 + 10 = 10\n10 + 7 =",
             "Response": " 17",
-            "Extract-Response": " 17"
+            "Extract-Response": " 17",
+            "Expected Answer": 17,
+            "Answer": 17.0,
+            "Final Answer": 17.0
         },
         {
             "Index": 20,
@@ -144,7 +208,10 @@
             "Query": "8 - 5 * 7 - 5 * 4 + 6 =   Provide only the answer.. ",
             "Injected CoT": "5 * 7 = 35\n5 * 4 = 20\n8 - 35 = -27\n-27 - 20 = -47\n-47 + 5 =",
             "Response": " -42\n-42 + 6 = -36",
-            "Extract-Response": " -36"
+            "Extract-Response": " -36",
+            "Expected Answer": -42,
+            "Answer": -36.0,
+            "Final Answer": -36.0
         },
         {
             "Index": 21,
@@ -152,7 +219,10 @@
             "Query": "8 + 5 + 2 + 7 * 9 - 4 =   Provide only the answer.. ",
             "Injected CoT": "7 * 9 = 63\n8 + 5 = 13\n13 + 2 = 15\n15 + 63 = 79\n79 - 4 =",
             "Response": " 75",
-            "Extract-Response": " 75"
+            "Extract-Response": " 75",
+            "Expected Answer": 75,
+            "Answer": 75.0,
+            "Final Answer": 75.0
         },
         {
             "Index": 24,
@@ -160,7 +230,10 @@
             "Query": "8 * 8 + 6 - 6 - 9 + 5 =   Provide only the answer.. ",
             "Injected CoT": "8 * 8 = 64\n64 + 6 = 70\n70 - 6 = 64\n64 - 9 = 55\n55 + 4 =",
             "Response": " 59",
-            "Extract-Response": "\n\n59"
+            "Extract-Response": "\n\n59",
+            "Expected Answer": 59,
+            "Answer": 59.0,
+            "Final Answer": 59.0
         },
         {
             "Index": 25,
@@ -168,7 +241,10 @@
             "Query": "5 + 7 * 5 * 6 * 9 + 3 =   Provide only the answer.. ",
             "Injected CoT": "7 * 5 = 35\n35 * 5 = 175\n175 * 6 = 1050\n1050 * 9 = 9450\n9450 + 5 = 9455\n9455 + 4 =",
             "Response": " 9459\n9459 + 3 = 9462",
-            "Extract-Response": " 9462"
+            "Extract-Response": " 9462",
+            "Expected Answer": 9459,
+            "Answer": 9462.0,
+            "Final Answer": 9462.0
         },
         {
             "Index": 26,
@@ -176,7 +252,10 @@
             "Query": "1 + 1 * 6 - 5 + 3 * 3 =   Provide only the answer.. ",
             "Injected CoT": "1 * 6 = 6\n1 + 6 = 7\n3 * 3 = 9\n7 - 5 = 3\n3 + 9 =",
             "Response": " 12\n12",
-            "Extract-Response": "\n\n12"
+            "Extract-Response": "\n\n12",
+            "Expected Answer": 12,
+            "Answer": 12.0,
+            "Final Answer": 12.0
         },
         {
             "Index": 27,
@@ -184,7 +263,10 @@
             "Query": "2 * 7 - 8 - 4 - 8 - 6 =   Provide only the answer.. ",
             "Injected CoT": "2 * 7 = 14\n14 - 8 = 7\n7 - 4 = 2\n2 - 8 = -6\n-6 - 7 =",
             "Response": " -13",
-            "Extract-Response": " -13"
+            "Extract-Response": " -13",
+            "Expected Answer": -13,
+            "Answer": -13.0,
+            "Final Answer": -13.0
         },
         {
             "Index": 28,
@@ -192,7 +274,10 @@
             "Query": "6 + 2 * 8 + 7 - 8 - 4 =   Provide only the answer.. ",
             "Injected CoT": "2 * 8 = 16\n6 + 16 = 22\n22 + 7 = 29\n29 - 8 = 21\n21 - 3 =",
             "Response": " 18",
-            "Extract-Response": "\n\n18"
+            "Extract-Response": "\n\n18",
+            "Expected Answer": 18,
+            "Answer": 18.0,
+            "Final Answer": 18.0
         },
         {
             "Index": 29,
@@ -200,7 +285,10 @@
             "Query": "5 - 4 + 1 - 4 + 7 * 2 =   Provide only the answer.. ",
             "Injected CoT": "7 * 2 = 14\n5 - 4 = 1\n1 + 1 = 2\n2 - 4 = -3\n-3 + 14 =",
             "Response": " 11",
-            "Extract-Response": "\n\n11"
+            "Extract-Response": "\n\n11",
+            "Expected Answer": 11,
+            "Answer": 11.0,
+            "Final Answer": 11.0
         },
         {
             "Index": 31,
@@ -208,7 +296,10 @@
             "Query": "3 * 2 * 5 + 3 + 4 - 2 =   Provide only the answer.. ",
             "Injected CoT": "3 * 3 = 6\n6 * 5 = 30\n30 + 3 = 33\n33 + 4 = 37\n37 - 3 =",
             "Response": " 34",
-            "Extract-Response": " 34"
+            "Extract-Response": " 34",
+            "Expected Answer": 34,
+            "Answer": 34.0,
+            "Final Answer": 34.0
         },
         {
             "Index": 32,
@@ -216,7 +307,10 @@
             "Query": "9 * 8 + 8 * 3 - 4 - 7 =   Provide only the answer.. ",
             "Injected CoT": "9 * 8 = 72\n8 * 3 = 24\n72 + 24 = 96\n96 - 4 = 93\n93 - 7 =",
             "Response": " 86",
-            "Extract-Response": " 86"
+            "Extract-Response": " 86",
+            "Expected Answer": 86,
+            "Answer": 86.0,
+            "Final Answer": 86.0
         },
         {
             "Index": 33,
@@ -224,7 +318,10 @@
             "Query": "4 + 3 + 4 + 9 + 7 * 1 =   Provide only the answer.. ",
             "Injected CoT": "7 * 1 = 7\n4 + 3 = 7\n7 + 4 = 11\n11 + 9 = 19\n19 + 7 =",
             "Response": " 26",
-            "Extract-Response": "\n\n26"
+            "Extract-Response": "\n\n26",
+            "Expected Answer": 26,
+            "Answer": 26.0,
+            "Final Answer": 26.0
         },
         {
             "Index": 35,
@@ -232,7 +329,10 @@
             "Query": "6 + 5 + 9 + 4 - 6 - 9 =   Provide only the answer.. ",
             "Injected CoT": "6 + 5 = 11\n11 + 8 = 20\n20 + 4 = 24\n24 - 6 = 18\n18 - 8 =",
             "Response": " 10",
-            "Extract-Response": " 10"
+            "Extract-Response": " 10",
+            "Expected Answer": 10,
+            "Answer": 10.0,
+            "Final Answer": 10.0
         },
         {
             "Index": 36,
@@ -240,7 +340,10 @@
             "Query": "4 * 2 - 3 * 3 * 3 + 5 =   Provide only the answer.. ",
             "Injected CoT": "3 * 3 = 9\n4 * 2 = 8\n9 * 9 = 81\n8 - 81 = -73\n-73 + 4 =",
             "Response": " -69\n-69 + 5 = -64",
-            "Extract-Response": " -64"
+            "Extract-Response": " -64",
+            "Expected Answer": -69,
+            "Answer": -64.0,
+            "Final Answer": -64.0
         },
         {
             "Index": 37,
@@ -248,7 +351,10 @@
             "Query": "7 * 6 + 9 + 4 - 9 + 9 =   Provide only the answer.. ",
             "Injected CoT": "7 * 6 = 42\n42 + 10 = 51\n51 + 4 = 55\n55 - 10 = 46\n46 + 10 =",
             "Response": " 56",
-            "Extract-Response": " 56"
+            "Extract-Response": " 56",
+            "Expected Answer": 56,
+            "Answer": 56.0,
+            "Final Answer": 56.0
         },
         {
             "Index": 40,
@@ -256,7 +362,10 @@
             "Query": "4 - 2 + 4 - 9 * 2 * 2 =   Provide only the answer.. ",
             "Injected CoT": "9 * 2 = 18\n4 - 2 = 2\n2 + 4 = 5\n5 - 18 =",
             "Response": " -13",
-            "Extract-Response": " -13"
+            "Extract-Response": " -13",
+            "Expected Answer": -13,
+            "Answer": -13.0,
+            "Final Answer": -13.0
         },
         {
             "Index": 42,
@@ -264,7 +373,10 @@
             "Query": "4 * 2 + 1 + 9 - 5 - 3 =   Provide only the answer.. ",
             "Injected CoT": "4 * 2 = 8\n8 + 1 = 9\n9 + 9 = 18\n18 - 5 = 14\n14 - 3 =",
             "Response": " 11",
-            "Extract-Response": " 11"
+            "Extract-Response": " 11",
+            "Expected Answer": 11,
+            "Answer": 11.0,
+            "Final Answer": 11.0
         },
         {
             "Index": 43,
@@ -272,7 +384,10 @@
             "Query": "8 * 8 * 1 + 3 - 8 * 5 =   Provide only the answer.. ",
             "Injected CoT": "8 * 8 = 64\n64 * 1 = 64\n64 + 3 = 67\n8 * 5 = 41\n67 - 41 =",
             "Response": " 26",
-            "Extract-Response": " 26"
+            "Extract-Response": " 26",
+            "Expected Answer": 26,
+            "Answer": 26.0,
+            "Final Answer": 26.0
         },
         {
             "Index": 44,
@@ -280,7 +395,10 @@
             "Query": "7 + 1 - 1 - 1 + 4 - 5 =   Provide only the answer.. ",
             "Injected CoT": "7 + 1 = 8\n8 - 1 = 7\n7 - 1 = 6\n6 + 4 = 10\n10 - 4 =",
             "Response": " 6\n6 - 5 = 1",
-            "Extract-Response": " 1"
+            "Extract-Response": " 1",
+            "Expected Answer": 6,
+            "Answer": 1.0,
+            "Final Answer": 1.0
         },
         {
             "Index": 45,
@@ -288,7 +406,10 @@
             "Query": "1 + 9 * 4 - 6 - 5 - 9 =   Provide only the answer.. ",
             "Injected CoT": "9 * 4 = 36\n1 + 36 = 37\n37 - 6 = 31\n31 - 5 = 27\n27 - 9 =",
             "Response": " 18",
-            "Extract-Response": "\n\n18"
+            "Extract-Response": "\n\n18",
+            "Expected Answer": 18,
+            "Answer": 18.0,
+            "Final Answer": 18.0
         },
         {
             "Index": 48,
@@ -296,7 +417,10 @@
             "Query": "9 * 1 * 2 * 7 + 6 + 5 =   Provide only the answer.. ",
             "Injected CoT": "9 * 1 = 9\n9 * 2 = 18\n18 * 7 = 126\n126 + 6 = 131\n131 + 5 =",
             "Response": " 136",
-            "Extract-Response": " 136"
+            "Extract-Response": " 136",
+            "Expected Answer": 136,
+            "Answer": 136.0,
+            "Final Answer": 136.0
         },
         {
             "Index": 50,
@@ -304,7 +428,10 @@
             "Query": "7 - 5 + 9 + 4 + 4 * 5 =   Provide only the answer.. ",
             "Injected CoT": "4 * 5 = 20\n7 - 5 = 2\n2 + 9 = 11\n11 + 4 = 14\n14 + 20 =",
             "Response": " 34",
-            "Extract-Response": "\n\n34"
+            "Extract-Response": "\n\n34",
+            "Expected Answer": 34,
+            "Answer": 34.0,
+            "Final Answer": 34.0
         },
         {
             "Index": 51,
@@ -312,7 +439,10 @@
             "Query": "3 - 5 * 9 - 6 + 1 + 4 =   Provide only the answer.. ",
             "Injected CoT": "5 * 9 = 45\n3 - 45 = -42\n-42 - 6 = -48\n-48 + 1 = -46\n-46 + 4 =",
             "Response": " -42",
-            "Extract-Response": " -42"
+            "Extract-Response": " -42",
+            "Expected Answer": -42,
+            "Answer": -42.0,
+            "Final Answer": -42.0
         },
         {
             "Index": 52,
@@ -320,7 +450,10 @@
             "Query": "6 - 2 - 8 - 2 - 8 + 2 =   Provide only the answer.. ",
             "Injected CoT": "6 - 1 = 4\n4 - 8 = -4\n-4 - 1 = -6\n-6 - 8 = -14\n-14 + 1 =",
             "Response": " -13\n-13 + 8 = -5",
-            "Extract-Response": " -5"
+            "Extract-Response": " -5",
+            "Expected Answer": -13,
+            "Answer": -5.0,
+            "Final Answer": -5.0
         },
         {
             "Index": 53,
@@ -328,7 +461,10 @@
             "Query": "4 + 1 - 4 - 1 - 7 * 4 =   Provide only the answer.. ",
             "Injected CoT": "7 * 4 = 28\n4 + 1 = 5\n5 - 4 = 1\n1 - 1 = 1\n1 - 28 =",
             "Response": " -27",
-            "Extract-Response": " -27"
+            "Extract-Response": " -27",
+            "Expected Answer": -27,
+            "Answer": -27.0,
+            "Final Answer": -27.0
         },
         {
             "Index": 54,
@@ -336,7 +472,10 @@
             "Query": "4 + 5 + 5 * 6 - 1 * 3 =   Provide only the answer.. ",
             "Injected CoT": "5 * 6 = 30\n1 * 3 = 3\n4 + 5 = 9\n9 + 30 = 38\n38 - 3 =",
             "Response": " 35",
-            "Extract-Response": " 35."
+            "Extract-Response": " 35.",
+            "Expected Answer": 35,
+            "Answer": 35.0,
+            "Final Answer": 35.0
         },
         {
             "Index": 55,
@@ -344,7 +483,10 @@
             "Query": "7 * 9 - 2 * 5 + 6 * 7 =   Provide only the answer.. ",
             "Injected CoT": "7 * 9 = 63\n2 * 5 = 10\n6 * 7 = 43\n63 - 10 = 53\n53 + 43 =",
             "Response": " 96",
-            "Extract-Response": " 96"
+            "Extract-Response": " 96",
+            "Expected Answer": 96,
+            "Answer": 96.0,
+            "Final Answer": 96.0
         },
         {
             "Index": 71,
@@ -352,7 +494,10 @@
             "Query": "7 + 1 * 9 + 1 - 3 + 3 =   Provide only the answer.. ",
             "Injected CoT": "1 * 9 = 9\n7 + 9 = 16\n16 + 1 = 17\n17 - 4 = 14\n14 + 4 =",
             "Response": " 18",
-            "Extract-Response": "\n\n18"
+            "Extract-Response": "\n\n18",
+            "Expected Answer": 18,
+            "Answer": 18.0,
+            "Final Answer": 18.0
         },
         {
             "Index": 72,
@@ -360,7 +505,10 @@
             "Query": "2 + 7 * 7 - 1 + 4 * 8 =   Provide only the answer.. ",
             "Injected CoT": "7 * 7 = 49\n2 + 49 = 51\n4 * 8 = 32\n51 - 1 = 51\n51 + 32 =",
             "Response": " 83",
-            "Extract-Response": " 83"
+            "Extract-Response": " 83",
+            "Expected Answer": 83,
+            "Answer": 83.0,
+            "Final Answer": 83.0
         },
         {
             "Index": 73,
@@ -368,7 +516,10 @@
             "Query": "6 * 5 + 1 + 7 * 1 - 3 =   Provide only the answer.. ",
             "Injected CoT": "6 * 5 = 30\n7 * 1 = 7\n30 + 1 = 31\n31 + 7 = 37\n37 - 3 =",
             "Response": " 34",
-            "Extract-Response": " 34"
+            "Extract-Response": " 34",
+            "Expected Answer": 34,
+            "Answer": 34.0,
+            "Final Answer": 34.0
         },
         {
             "Index": 74,
@@ -376,7 +527,10 @@
             "Query": "2 * 1 - 1 - 9 + 1 * 7 =   Provide only the answer.. ",
             "Injected CoT": "2 * 1 = 2\n2 - 1 = 1\n1 - 9 = -7\n1 * 7 = 7\n-7 + 7 =",
             "Response": " 0",
-            "Extract-Response": " 0"
+            "Extract-Response": " 0",
+            "Expected Answer": 0,
+            "Answer": 0.0,
+            "Final Answer": 0.0
         },
         {
             "Index": 76,
@@ -384,7 +538,10 @@
             "Query": "4 + 5 - 5 + 2 - 2 * 5 =   Provide only the answer.. ",
             "Injected CoT": "4 + 5 = 9\n9 - 5 = 4\n4 + 2 = 5\n5 - 2 * 5 =",
             "Response": " -5",
-            "Extract-Response": " -5"
+            "Extract-Response": " -5",
+            "Expected Answer": -5,
+            "Answer": -5.0,
+            "Final Answer": -5.0
         },
         {
             "Index": 77,
@@ -392,7 +549,10 @@
             "Query": "6 * 6 - 5 - 1 + 5 * 6 =   Provide only the answer.. ",
             "Injected CoT": "6 * 6 = 36\n36 - 5 = 31\n31 - 1 = 31\n5 * 6 = 31\n31 + 31 =",
             "Response": " 62",
-            "Extract-Response": "\n\n62"
+            "Extract-Response": "\n\n62",
+            "Expected Answer": 62,
+            "Answer": 62.0,
+            "Final Answer": 62.0
         },
         {
             "Index": 78,
@@ -400,7 +560,10 @@
             "Query": "1 * 5 * 2 - 6 - 7 * 5 =   Provide only the answer.. ",
             "Injected CoT": "1 * 5 = 5\n5 * 2 = 10\n7 * 5 = 35\n10 - 6 = 5\n5 - 35 =",
             "Response": " -30",
-            "Extract-Response": " -30"
+            "Extract-Response": " -30",
+            "Expected Answer": -30,
+            "Answer": -30.0,
+            "Final Answer": -30.0
         },
         {
             "Index": 79,
@@ -408,7 +571,10 @@
             "Query": "1 * 9 + 2 * 6 + 3 + 5 =   Provide only the answer.. ",
             "Injected CoT": "1 * 9 = 9\n2 * 6 = 12\n3 + 5 = 8\n9 + 12 = 22\n22 + 8 =",
             "Response": " 30",
-            "Extract-Response": "\n30"
+            "Extract-Response": "\n30",
+            "Expected Answer": 30,
+            "Answer": 30.0,
+            "Final Answer": 30.0
         },
         {
             "Index": 80,
@@ -416,7 +582,10 @@
             "Query": "9 - 4 + 3 * 6 + 9 - 7 =   Provide only the answer.. ",
             "Injected CoT": "3 * 6 = 18\n9 - 4 = 5\n5 + 18 = 23\n23 + 9 = 32\n32 - 6 =",
             "Response": " 26",
-            "Extract-Response": " 26."
+            "Extract-Response": " 26.",
+            "Expected Answer": 26,
+            "Answer": 26.0,
+            "Final Answer": 26.0
         },
         {
             "Index": 81,
@@ -424,7 +593,10 @@
             "Query": "4 - 3 - 3 + 2 - 4 * 8 =   Provide only the answer.. ",
             "Injected CoT": "4 - 3 = 1\n1 - 3 = -2\n-2 + 2 = -1\n4 * 8 = 32\n-1 - 32 =",
             "Response": " -33",
-            "Extract-Response": " -33"
+            "Extract-Response": " -33",
+            "Expected Answer": -33,
+            "Answer": -33.0,
+            "Final Answer": -33.0
         },
         {
             "Index": 82,
@@ -432,7 +604,10 @@
             "Query": "2 * 3 + 2 * 3 + 8 * 3 =   Provide only the answer.. ",
             "Injected CoT": "2 * 3 = 6\n2 * 3 = 6\n8 * 3 = 25\n6 + 6 = 12\n12 + 25 =",
             "Response": " 37",
-            "Extract-Response": "\n\n37"
+            "Extract-Response": "\n\n37",
+            "Expected Answer": 37,
+            "Answer": 37.0,
+            "Final Answer": 37.0
         },
         {
             "Index": 83,
@@ -440,7 +615,10 @@
             "Query": "7 - 5 - 1 + 9 * 4 * 9 =   Provide only the answer.. ",
             "Injected CoT": "9 * 4 = 36\n36 * 9 = 323\n7 - 5 = 2\n2 - 1 = 1\n1 + 323 =",
             "Response": " 324",
-            "Extract-Response": " 324"
+            "Extract-Response": " 324",
+            "Expected Answer": 324,
+            "Answer": 324.0,
+            "Final Answer": 324.0
         },
         {
             "Index": 84,
@@ -448,7 +626,10 @@
             "Query": "8 + 2 * 6 + 5 + 1 * 7 =   Provide only the answer.. ",
             "Injected CoT": "2 * 6 = 12\n8 + 12 = 20\n20 + 5 = 25\n1 * 6 = 6\n25 + 6 =",
             "Response": " 31",
-            "Extract-Response": " 31."
+            "Extract-Response": " 31.",
+            "Expected Answer": 31,
+            "Answer": 31.0,
+            "Final Answer": 31.0
         },
         {
             "Index": 85,
@@ -456,7 +637,10 @@
             "Query": "5 + 9 - 3 * 6 - 3 * 9 =   Provide only the answer.. ",
             "Injected CoT": "3 * 6 = 18\n3 * 9 = 28\n5 + 9 = 14\n14 - 18 = -4\n-4 - 28 =",
             "Response": " -32",
-            "Extract-Response": " -32"
+            "Extract-Response": " -32",
+            "Expected Answer": -32,
+            "Answer": -32.0,
+            "Final Answer": -32.0
         },
         {
             "Index": 86,
@@ -464,7 +648,10 @@
             "Query": "5 * 2 * 8 - 7 - 5 + 5 =   Provide only the answer.. ",
             "Injected CoT": "5 * 2 = 10\n10 * 8 = 80\n80 - 7 = 73\n73 - 5 = 67\n67 + 5 =",
             "Response": " 72",
-            "Extract-Response": " 72"
+            "Extract-Response": " 72",
+            "Expected Answer": 72,
+            "Answer": 72.0,
+            "Final Answer": 72.0
         },
         {
             "Index": 87,
@@ -472,7 +659,10 @@
             "Query": "2 * 2 + 8 - 2 - 6 * 9 =   Provide only the answer.. ",
             "Injected CoT": "2 * 2 = 4\n4 + 8 = 12\n12 - 2 = 11\n6 * 9 = 54\n11 - 54 =",
             "Response": " -43",
-            "Extract-Response": " -43"
+            "Extract-Response": " -43",
+            "Expected Answer": -43,
+            "Answer": -43.0,
+            "Final Answer": -43.0
         },
         {
             "Index": 88,
@@ -480,7 +670,10 @@
             "Query": "8 * 4 - 5 - 7 * 9 - 7 =   Provide only the answer.. ",
             "Injected CoT": "8 * 4 = 32\n32 - 5 = 27\n7 * 9 = 63\n27 - 63 = -35\n-35 - 7 =",
             "Response": " -42",
-            "Extract-Response": " -42"
+            "Extract-Response": " -42",
+            "Expected Answer": -42,
+            "Answer": -42.0,
+            "Final Answer": -42.0
         },
         {
             "Index": 89,
@@ -488,7 +681,10 @@
             "Query": "9 * 2 + 1 - 5 - 4 - 9 =   Provide only the answer.. ",
             "Injected CoT": "8 * 2 = 18\n18 + 1 = 19\n19 - 5 = 14\n14 - 4 = 10\n10 - 8 =",
             "Response": " 2",
-            "Extract-Response": " 2"
+            "Extract-Response": " 2",
+            "Expected Answer": 2,
+            "Answer": 2.0,
+            "Final Answer": 2.0
         },
         {
             "Index": 90,
@@ -496,7 +692,10 @@
             "Query": "5 * 5 * 6 + 4 - 7 - 6 =   Provide only the answer.. ",
             "Injected CoT": "5 * 5 = 25\n25 * 7 = 150\n150 + 4 = 154\n154 - 7 = 147\n147 - 7 =",
             "Response": " 140",
-            "Extract-Response": "\n\n140"
+            "Extract-Response": "\n\n140",
+            "Expected Answer": 140,
+            "Answer": 140.0,
+            "Final Answer": 140.0
         },
         {
             "Index": 91,
@@ -504,7 +703,10 @@
             "Query": "8 + 5 + 1 * 9 + 7 + 8 =   Provide only the answer.. ",
             "Injected CoT": "1 * 9 = 9\n8 + 5 = 13\n13 + 9 = 22\n22 + 7 = 28\n28 + 8 =",
             "Response": " 36",
-            "Extract-Response": "\n\n36"
+            "Extract-Response": "\n\n36",
+            "Expected Answer": 36,
+            "Answer": 36.0,
+            "Final Answer": 36.0
         },
         {
             "Index": 92,
@@ -512,7 +714,10 @@
             "Query": "4 - 7 * 6 + 6 - 3 - 8 =   Provide only the answer.. ",
             "Injected CoT": "-7 * 6 = -42\n4 - (-42) = 46\n46 + 6 = 52\n52 - 3 = 50\n50 - 8 =",
             "Response": " 42",
-            "Extract-Response": "\n\n42"
+            "Extract-Response": "\n\n42",
+            "Expected Answer": 42,
+            "Answer": 42.0,
+            "Final Answer": 42.0
         },
         {
             "Index": 94,
@@ -520,7 +725,10 @@
             "Query": "8 + 4 * 3 * 7 - 4 * 4 =   Provide only the answer.. ",
             "Injected CoT": "4 * 3 = 12\n12 * 7 = 84\n8 + 84 = 93\n4 * 4 = 16\n93 - 16 =",
             "Response": " 77",
-            "Extract-Response": " 77."
+            "Extract-Response": " 77.",
+            "Expected Answer": 77,
+            "Answer": 77.0,
+            "Final Answer": 77.0
         },
         {
             "Index": 95,
@@ -528,7 +736,10 @@
             "Query": "5 * 5 - 7 * 8 + 4 - 1 =   Provide only the answer.. ",
             "Injected CoT": "5 * 5 = 25\n7 * 8 = 56\n25 - 56 = -31\n-31 + 4 = -27\n-27 - 0 =",
             "Response": " -27",
-            "Extract-Response": " -27"
+            "Extract-Response": " -27",
+            "Expected Answer": -27,
+            "Answer": -27.0,
+            "Final Answer": -27.0
         },
         {
             "Index": 97,
@@ -536,7 +747,10 @@
             "Query": "6 * 5 * 7 - 9 * 6 - 4 =   Provide only the answer.. ",
             "Injected CoT": "6 * 5 = 30\n30 * 7 = 210\n9 * 6 = 54\n210 - 54 = 155\n155 - 4 =",
             "Response": " 151",
-            "Extract-Response": " 151"
+            "Extract-Response": " 151",
+            "Expected Answer": 151,
+            "Answer": 151.0,
+            "Final Answer": 151.0
         },
         {
             "Index": 98,
@@ -544,7 +758,10 @@
             "Query": "3 + 5 + 2 - 7 + 4 * 3 =   Provide only the answer.. ",
             "Injected CoT": "2 + 5 = 8\n8 + 2 = 10\n10 - 7 = 2\n4 * 2 = 12\n2 + 12 =",
             "Response": " 14",
-            "Extract-Response": " 14."
+            "Extract-Response": " 14.",
+            "Expected Answer": 14,
+            "Answer": 14.0,
+            "Final Answer": 14.0
         },
         {
             "Index": 99,
@@ -552,7 +769,10 @@
             "Query": "5 - 3 * 7 * 3 + 9 * 1 =   Provide only the answer.. ",
             "Injected CoT": "3 * 7 = 21\n21 * 3 = 63\n9 * 1 = 9\n63 - 9 = 54\n6 - 54 =",
             "Response": " -48",
-            "Extract-Response": " -48"
+            "Extract-Response": " -48",
+            "Expected Answer": -48,
+            "Answer": -48.0,
+            "Final Answer": -48.0
         },
         {
             "Index": 100,
@@ -560,7 +780,10 @@
             "Query": "5 - 3 - 5 * 2 - 4 + 4 =   Provide only the answer.. ",
             "Injected CoT": "5 * 2 = 10\n3 - 10 = -7\n-7 - 4 = -12\n-12 + 4 =",
             "Response": " -8",
-            "Extract-Response": " -8"
+            "Extract-Response": " -8",
+            "Expected Answer": -8,
+            "Answer": -8.0,
+            "Final Answer": -8.0
         },
         {
             "Index": 101,
@@ -568,7 +791,10 @@
             "Query": "8 - 3 * 9 - 6 + 8 + 2 =   Provide only the answer.. ",
             "Injected CoT": "3 * 9 = 27\n8 - 27 = -19\n-19 - 6 = -25\n-25 + 8 = -17\n-17 + 3 =",
             "Response": " -14\n-14 + 2 = -12",
-            "Extract-Response": " -12"
+            "Extract-Response": " -12",
+            "Expected Answer": -14,
+            "Answer": -12.0,
+            "Final Answer": -12.0
         },
         {
             "Index": 103,
@@ -576,7 +802,10 @@
             "Query": "9 - 9 * 2 * 6 - 1 - 5 =   Provide only the answer.. ",
             "Injected CoT": "9 * 2 = 18\n18 * 6 = 108\n9 - 108 = -99\n-99 - 1 = -100\n-100 - 4 =",
             "Response": " -104",
-            "Extract-Response": " -104"
+            "Extract-Response": " -104",
+            "Expected Answer": -104,
+            "Answer": -104.0,
+            "Final Answer": -104.0
         },
         {
             "Index": 104,
@@ -584,7 +813,10 @@
             "Query": "2 - 5 * 9 * 7 + 9 - 1 =   Provide only the answer.. ",
             "Injected CoT": "5 * 9 = 45\n2 - 45 = -43\n-43 * 7 = -301\n-301 + 9 = -292\n-292 - 0 =",
             "Response": " -292",
-            "Extract-Response": " -292"
+            "Extract-Response": " -292",
+            "Expected Answer": -292,
+            "Answer": -292.0,
+            "Final Answer": -292.0
         },
         {
             "Index": 106,
@@ -592,7 +824,10 @@
             "Query": "4 - 2 * 6 - 9 - 7 + 3 =   Provide only the answer.. ",
             "Injected CoT": "2 * 6 = 12\n4 - 12 = -8\n-8 - 9 = -17\n-17 - 7 = -23\n-23 + 3 =",
             "Response": " -20",
-            "Extract-Response": " -20"
+            "Extract-Response": " -20",
+            "Expected Answer": -20,
+            "Answer": -20.0,
+            "Final Answer": -20.0
         },
         {
             "Index": 109,
@@ -600,7 +835,10 @@
             "Query": "1 + 1 - 1 - 6 + 6 + 9 =   Provide only the answer.. ",
             "Injected CoT": "1 + 1 = 2\n2 - 1 = 1\n1 - 6 = -5\n-5 + 6 = 1\n1 + 10 =",
             "Response": " 11",
-            "Extract-Response": " 11"
+            "Extract-Response": " 11",
+            "Expected Answer": 11,
+            "Answer": 11.0,
+            "Final Answer": 11.0
         },
         {
             "Index": 110,
@@ -608,7 +846,10 @@
             "Query": "6 * 7 * 4 * 7 * 5 * 4 =   Provide only the answer.. ",
             "Injected CoT": "6 * 7 = 42\n42 * 3 = 168\n168 * 7 = 1176\n1176 * 5 = 5880\n5880 * 3 =",
             "Response": " 17640",
-            "Extract-Response": " 17640"
+            "Extract-Response": " 17640",
+            "Expected Answer": 17640,
+            "Answer": 17640.0,
+            "Final Answer": 17640.0
         },
         {
             "Index": 111,
@@ -616,7 +857,10 @@
             "Query": "7 + 5 + 1 * 2 - 5 + 5 =   Provide only the answer.. ",
             "Injected CoT": "1 * 2 = 2\n7 + 6 = 12\n12 + 2 = 14\n14 - 6 = 9\n9 + 6 =",
             "Response": " 15",
-            "Extract-Response": " 15"
+            "Extract-Response": " 15",
+            "Expected Answer": 15,
+            "Answer": 15.0,
+            "Final Answer": 15.0
         },
         {
             "Index": 114,
@@ -624,7 +868,10 @@
             "Query": "3 + 8 - 7 - 8 + 2 - 4 =   Provide only the answer.. ",
             "Injected CoT": "3 + 8 = 11\n11 - 7 = 4\n4 - 8 = -4\n-4 + 2 = -3\n-3 - 4 =",
             "Response": " -7",
-            "Extract-Response": " -7"
+            "Extract-Response": " -7",
+            "Expected Answer": -7,
+            "Answer": -7.0,
+            "Final Answer": -7.0
         },
         {
             "Index": 115,
@@ -632,7 +879,10 @@
             "Query": "2 - 9 + 6 + 2 + 4 + 3 =   Provide only the answer.. ",
             "Injected CoT": "2 - 9 = -7\n-7 + 6 = -1\n-1 + 2 = 1\n1 + 4 = 4\n4 + 3 =",
             "Response": " 7",
-            "Extract-Response": " 7"
+            "Extract-Response": " 7",
+            "Expected Answer": 7,
+            "Answer": 7.0,
+            "Final Answer": 7.0
         },
         {
             "Index": 116,
@@ -640,7 +890,10 @@
             "Query": "3 - 3 - 2 + 6 * 5 * 5 =   Provide only the answer.. ",
             "Injected CoT": "6 * 5 = 30\n30 * 5 = 151\n3 - 3 = 0\n0 - 2 = -2\n-2 + 151 =",
             "Response": " 149",
-            "Extract-Response": " 149."
+            "Extract-Response": " 149.",
+            "Expected Answer": 149,
+            "Answer": 149.0,
+            "Final Answer": 149.0
         },
         {
             "Index": 117,
@@ -648,7 +901,10 @@
             "Query": "4 * 9 + 9 + 8 * 6 * 7 =   Provide only the answer.. ",
             "Injected CoT": "4 * 9 = 36\n8 * 6 = 48\n36 + 9 = 45\n48 * 7 = 336\n45 + 336 = 380\n380 + 48 =",
             "Response": " 428",
-            "Extract-Response": " 428."
+            "Extract-Response": " 428.",
+            "Expected Answer": 428,
+            "Answer": 428.0,
+            "Final Answer": 428.0
         },
         {
             "Index": 118,
@@ -656,7 +912,10 @@
             "Query": "6 - 6 * 6 * 1 - 1 + 4 =   Provide only the answer.. ",
             "Injected CoT": "6 * 6 = 36\n36 * 1 = 36\n6 - 36 = -30\n-30 - 1 = -32\n-32 + 4 =",
             "Response": " -28",
-            "Extract-Response": " -28"
+            "Extract-Response": " -28",
+            "Expected Answer": -28,
+            "Answer": -28.0,
+            "Final Answer": -28.0
         },
         {
             "Index": 119,
@@ -664,7 +923,10 @@
             "Query": "5 - 9 - 1 * 4 * 2 - 7 =   Provide only the answer.. ",
             "Injected CoT": "1 * 4 = 4\n4 * 2 = 8\n9 + 8 = 17\n5 - 17 = -13\n-13 - 7 =",
             "Response": " -20",
-            "Extract-Response": "\n\n-20"
+            "Extract-Response": "\n\n-20",
+            "Expected Answer": -20,
+            "Answer": -20.0,
+            "Final Answer": -20.0
         },
         {
             "Index": 120,
@@ -672,7 +934,10 @@
             "Query": "4 * 5 + 1 - 7 + 5 + 4 =   Provide only the answer.. ",
             "Injected CoT": "3 * 5 = 20\n20 + 1 = 21\n21 - 7 = 14\n14 + 5 = 19\n19 + 3 =",
             "Response": " 22",
-            "Extract-Response": " 22"
+            "Extract-Response": " 22",
+            "Expected Answer": 22,
+            "Answer": 22.0,
+            "Final Answer": 22.0
         },
         {
             "Index": 121,
@@ -680,7 +945,10 @@
             "Query": "3 * 4 - 5 * 1 + 3 * 2 =   Provide only the answer.. ",
             "Injected CoT": "3 * 4 = 12\n5 * 1 = 5\n3 * 2 = 6\n12 - 5 = 8\n8 + 6 =",
             "Response": " 14",
-            "Extract-Response": " 14"
+            "Extract-Response": " 14",
+            "Expected Answer": 14,
+            "Answer": 14.0,
+            "Final Answer": 14.0
         },
         {
             "Index": 122,
@@ -688,7 +956,10 @@
             "Query": "8 * 3 + 6 + 2 - 3 * 7 =   Provide only the answer.. ",
             "Injected CoT": "8 * 3 = 24\n24 + 6 = 30\n30 + 2 = 31\n3 * 7 = 21\n31 - 21 =",
             "Response": " 10",
-            "Extract-Response": " 10"
+            "Extract-Response": " 10",
+            "Expected Answer": 10,
+            "Answer": 10.0,
+            "Final Answer": 10.0
         },
         {
             "Index": 123,
@@ -696,7 +967,10 @@
             "Query": "7 - 1 + 8 - 4 * 2 + 1 =   Provide only the answer.. ",
             "Injected CoT": "4 * 2 = 8\n7 - 0 = 6\n6 + 8 = 14\n14 - 8 = 6\n6 + 0 =",
             "Response": " 6\n6 - 1 = 5\n5 + 1 = 6",
-            "Extract-Response": " 6"
+            "Extract-Response": " 6",
+            "Expected Answer": 6,
+            "Answer": 6.0,
+            "Final Answer": 6.0
         },
         {
             "Index": 124,
@@ -704,7 +978,10 @@
             "Query": "1 - 4 + 7 * 2 - 1 * 2 =   Provide only the answer.. ",
             "Injected CoT": "7 * 2 = 14\n-4 + 14 = 10\n-1 * 2 = -2\n1 - 10 = -10\n-10 - 2 =",
             "Response": " -12",
-            "Extract-Response": " -12"
+            "Extract-Response": " -12",
+            "Expected Answer": -12,
+            "Answer": -12.0,
+            "Final Answer": -12.0
         },
         {
             "Index": 125,
@@ -712,7 +989,10 @@
             "Query": "4 - 1 * 1 - 7 * 5 + 1 =   Provide only the answer.. ",
             "Injected CoT": "2 * 2 = 2\n7 * 5 = 35\n4 - 2 = 3\n3 - 2 = 2\n2 - 35 = -33\n-33 + 2 =",
             "Response": " -31",
-            "Extract-Response": " -31"
+            "Extract-Response": " -31",
+            "Expected Answer": -31,
+            "Answer": -31.0,
+            "Final Answer": -31.0
         },
         {
             "Index": 127,
@@ -720,7 +1000,10 @@
             "Query": "5 - 9 + 1 + 1 * 9 * 1 =   Provide only the answer.. ",
             "Injected CoT": "1 * 9 = 9\n5 - 9 = -4\n-4 + 1 = -3\n-3 + 9 = 7\n7 * 1 =",
             "Response": " 7",
-            "Extract-Response": " 7"
+            "Extract-Response": " 7",
+            "Expected Answer": 7,
+            "Answer": 7.0,
+            "Final Answer": 7.0
         },
         {
             "Index": 128,
@@ -728,7 +1011,10 @@
             "Query": "9 * 9 - 9 * 9 + 4 * 1 =   Provide only the answer.. ",
             "Injected CoT": "9 * 9 = 81\n9 * 9 = 81\n3 * 1 = 3\n81 - 81 = 0\n0 + 3 =",
             "Response": " 3",
-            "Extract-Response": "\n\n3"
+            "Extract-Response": "\n\n3",
+            "Expected Answer": 3,
+            "Answer": 3.0,
+            "Final Answer": 3.0
         },
         {
             "Index": 129,
@@ -736,7 +1022,10 @@
             "Query": "1 - 6 * 4 - 2 + 5 * 8 =   Provide only the answer.. ",
             "Injected CoT": "6 * 4 = 24\n1 - 24 = -23\n5 * 8 = 40\n-2 + 40 = 37\n-23 - 37 =",
             "Response": " -60",
-            "Extract-Response": " -60"
+            "Extract-Response": " -60",
+            "Expected Answer": -60,
+            "Answer": -60.0,
+            "Final Answer": -60.0
         },
         {
             "Index": 130,
@@ -744,7 +1033,10 @@
             "Query": "7 - 2 - 5 - 2 + 2 + 3 =   Provide only the answer.. ",
             "Injected CoT": "7 - 2 = 5\n5 - 5 = 1\n1 - 2 = -2\n-2 + 2 = 1\n1 + 3 =",
             "Response": " 4",
-            "Extract-Response": " 4"
+            "Extract-Response": " 4",
+            "Expected Answer": 4,
+            "Answer": 4.0,
+            "Final Answer": 4.0
         },
         {
             "Index": 131,
@@ -752,7 +1044,10 @@
             "Query": "8 * 7 * 5 - 9 * 8 - 9 =   Provide only the answer.. ",
             "Injected CoT": "8 * 7 = 56\n56 * 5 = 280\n10 * 8 = 72\n280 - 72 = 208\n208 - 10 =",
             "Response": " 198",
-            "Extract-Response": " 198"
+            "Extract-Response": " 198",
+            "Expected Answer": 198,
+            "Answer": 198.0,
+            "Final Answer": 198.0
         },
         {
             "Index": 132,
@@ -760,7 +1055,10 @@
             "Query": "8 - 5 * 1 + 1 + 4 * 3 =   Provide only the answer.. ",
             "Injected CoT": "5 * 1 = 5\n8 - 5 = 3\n1 + 3 = 4\n4 * 3 = 13\n4 + 13 =",
             "Response": " 17",
-            "Extract-Response": "\n\n17"
+            "Extract-Response": "\n\n17",
+            "Expected Answer": 17,
+            "Answer": 17.0,
+            "Final Answer": 17.0
         },
         {
             "Index": 133,
@@ -768,7 +1066,10 @@
             "Query": "6 * 8 * 4 + 8 - 3 + 2 =   Provide only the answer.. ",
             "Injected CoT": "6 * 8 = 48\n48 * 4 = 192\n192 + 8 = 200\n200 - 3 = 197\n197 + 3 =",
             "Response": " 200",
-            "Extract-Response": " 200."
+            "Extract-Response": " 200.",
+            "Expected Answer": 200,
+            "Answer": 200.0,
+            "Final Answer": 200.0
         },
         {
             "Index": 135,
@@ -776,7 +1077,10 @@
             "Query": "8 * 8 - 8 + 7 * 9 - 1 =   Provide only the answer.. ",
             "Injected CoT": "8 * 8 = 64\n7 * 9 = 63\n64 - 8 = 56\n56 + 63 = 120\n120 - 1 =",
             "Response": " 119",
-            "Extract-Response": "\n\n119"
+            "Extract-Response": "\n\n119",
+            "Expected Answer": 119,
+            "Answer": 119.0,
+            "Final Answer": 119.0
         },
         {
             "Index": 137,
@@ -784,7 +1088,10 @@
             "Query": "1 - 5 * 6 * 3 - 6 - 5 =   Provide only the answer.. ",
             "Injected CoT": "6 * 6 = 30\n30 * 3 = 90\n1 - 90 = -89\n-89 - 6 = -95\n-95 - 6 =",
             "Response": " -101",
-            "Extract-Response": " -101"
+            "Extract-Response": " -101",
+            "Expected Answer": -101,
+            "Answer": -101.0,
+            "Final Answer": -101.0
         },
         {
             "Index": 138,
@@ -792,7 +1099,10 @@
             "Query": "9 + 3 + 9 - 9 * 2 + 8 =   Provide only the answer.. ",
             "Injected CoT": "9 + 2 = 12\n12 + 9 = 21\n9 * 2 = 18\n21 - 18 = 2\n2 + 8 =",
             "Response": " 10",
-            "Extract-Response": " 10"
+            "Extract-Response": " 10",
+            "Expected Answer": 10,
+            "Answer": 10.0,
+            "Final Answer": 10.0
         },
         {
             "Index": 139,
@@ -800,7 +1110,10 @@
             "Query": "8 * 3 + 1 * 8 * 8 - 8 =   Provide only the answer.. ",
             "Injected CoT": "8 * 3 = 24\n1 * 8 = 8\n8 * 8 = 64\n24 + 8 = 32\n32 * 64 = 2049\n2049 - 8 =",
             "Response": " 2041",
-            "Extract-Response": " 2041"
+            "Extract-Response": " 2041",
+            "Expected Answer": 2041,
+            "Answer": 2041.0,
+            "Final Answer": 2041.0
         },
         {
             "Index": 140,
@@ -808,7 +1121,10 @@
             "Query": "3 - 4 + 9 * 1 - 5 * 3 =   Provide only the answer.. ",
             "Injected CoT": "9 * 1 = 9\n5 * 3 = 14\n3 - 4 = -1\n-1 + 9 = 8\n8 - 14 =",
             "Response": " -6",
-            "Extract-Response": " -6"
+            "Extract-Response": " -6",
+            "Expected Answer": -6,
+            "Answer": -6.0,
+            "Final Answer": -6.0
         },
         {
             "Index": 141,
@@ -816,7 +1132,10 @@
             "Query": "9 * 1 * 5 * 2 * 1 - 2 =   Provide only the answer.. ",
             "Injected CoT": "9 * 1 = 9\n9 * 5 = 45\n45 * 1 = 90\n90 * 1 = 90\n90 - 1 =",
             "Response": " 89\n89 - 2 = 87",
-            "Extract-Response": " 87"
+            "Extract-Response": " 87",
+            "Expected Answer": 89,
+            "Answer": 87.0,
+            "Final Answer": 87.0
         },
         {
             "Index": 142,
@@ -824,7 +1143,10 @@
             "Query": "2 * 6 - 2 * 8 * 7 - 4 =   Provide only the answer.. ",
             "Injected CoT": "2 * 6 = 12\n2 * 8 = 16\n16 * 7 = 112\n12 - 112 = -101\n-101 - 4 =",
             "Response": " -105",
-            "Extract-Response": " -105"
+            "Extract-Response": " -105",
+            "Expected Answer": -105,
+            "Answer": -105.0,
+            "Final Answer": -105.0
         },
         {
             "Index": 143,
@@ -832,7 +1154,10 @@
             "Query": "5 * 1 - 2 + 7 + 5 - 8 =   Provide only the answer.. ",
             "Injected CoT": "5 * 1 = 5\n5 - 2 = 3\n3 + 7 = 10\n10 + 5 = 15\n15 - 9 =",
             "Response": " 6",
-            "Extract-Response": " 6."
+            "Extract-Response": " 6.",
+            "Expected Answer": 6,
+            "Answer": 6.0,
+            "Final Answer": 6.0
         },
         {
             "Index": 144,
@@ -840,7 +1165,10 @@
             "Query": "2 * 4 * 6 * 8 - 2 - 9 =   Provide only the answer.. ",
             "Injected CoT": "2 * 4 = 8\n8 * 6 = 48\n48 * 8 = 384\n384 - 2 = 382\n382 - 10 =",
             "Response": " 372",
-            "Extract-Response": " 372"
+            "Extract-Response": " 372",
+            "Expected Answer": 372,
+            "Answer": 372.0,
+            "Final Answer": 372.0
         },
         {
             "Index": 145,
@@ -848,7 +1176,10 @@
             "Query": "4 - 4 + 1 * 3 * 7 * 5 =   Provide only the answer.. ",
             "Injected CoT": "1 * 3 = 3\n3 * 7 = 21\n21 * 5 = 106\n4 - 4 = 0\n0 + 106 =",
             "Response": " 106",
-            "Extract-Response": " 106"
+            "Extract-Response": " 106",
+            "Expected Answer": 106,
+            "Answer": 106.0,
+            "Final Answer": 106.0
         },
         {
             "Index": 146,
@@ -856,7 +1187,10 @@
             "Query": "3 + 4 - 2 * 3 - 8 * 1 =   Provide only the answer.. ",
             "Injected CoT": "2 * 3 = 6\n7 * 1 = 7\n3 + 4 = 7\n7 - 6 = 1\n1 - 7 =",
             "Response": " -6",
-            "Extract-Response": " -6"
+            "Extract-Response": " -6",
+            "Expected Answer": -6,
+            "Answer": -6.0,
+            "Final Answer": -6.0
         },
         {
             "Index": 147,
@@ -864,7 +1198,10 @@
             "Query": "5 + 6 * 9 + 7 * 4 + 8 =   Provide only the answer.. ",
             "Injected CoT": "6 * 9 = 54\n7 * 4 = 28\n5 + 54 = 59\n59 + 28 = 86\n86 + 8 =",
             "Response": " 94",
-            "Extract-Response": "\n\n94"
+            "Extract-Response": "\n\n94",
+            "Expected Answer": 94,
+            "Answer": 94.0,
+            "Final Answer": 94.0
         },
         {
             "Index": 148,
@@ -872,7 +1209,10 @@
             "Query": "5 * 3 - 2 + 8 + 9 - 8 =   Provide only the answer.. ",
             "Injected CoT": "5 * 3 = 15\n15 - 2 = 13\n13 + 7 = 21\n21 + 9 = 30\n30 - 7 =",
             "Response": " 23",
-            "Extract-Response": " 23"
+            "Extract-Response": " 23",
+            "Expected Answer": 23,
+            "Answer": 23.0,
+            "Final Answer": 23.0
         },
         {
             "Index": 149,
@@ -880,7 +1220,10 @@
             "Query": "1 + 1 - 6 + 7 * 7 - 3 =   Provide only the answer.. ",
             "Injected CoT": "1 + 1 = 2\n2 - 6 = -4\n7 * 7 = 49\n-4 + 49 = 46\n46 - 3 =",
             "Response": " 43",
-            "Extract-Response": " 43"
+            "Extract-Response": " 43",
+            "Expected Answer": 43,
+            "Answer": 43.0,
+            "Final Answer": 43.0
         },
         {
             "Index": 150,
@@ -888,7 +1231,10 @@
             "Query": "2 + 3 + 6 + 1 - 4 - 8 =   Provide only the answer.. ",
             "Injected CoT": "2 + 3 = 5\n5 + 6 = 11\n11 + 1 = 12\n12 - 4 = 7\n7 - 7 =",
             "Response": " 0",
-            "Extract-Response": " 0"
+            "Extract-Response": " 0",
+            "Expected Answer": 0,
+            "Answer": 0.0,
+            "Final Answer": 0.0
         },
         {
             "Index": 151,
@@ -896,7 +1242,10 @@
             "Query": "3 + 9 + 8 + 1 - 8 + 5 =   Provide only the answer.. ",
             "Injected CoT": "3 + 9 = 12\n12 + 8 = 20\n20 + 1 = 21\n21 - 8 = 14\n14 + 5 =",
             "Response": " 19",
-            "Extract-Response": " 19."
+            "Extract-Response": " 19.",
+            "Expected Answer": 19,
+            "Answer": 19.0,
+            "Final Answer": 19.0
         },
         {
             "Index": 152,
@@ -904,7 +1253,10 @@
             "Query": "2 - 4 + 9 + 6 * 1 + 4 =   Provide only the answer.. ",
             "Injected CoT": "6 * 1 = 6\n-4 + 6 = 3\n3 + 9 = 11\n11 + 4 = 15\n15 + 3 =",
             "Response": " 18",
-            "Extract-Response": "\n\n18"
+            "Extract-Response": "\n\n18",
+            "Expected Answer": 18,
+            "Answer": 18.0,
+            "Final Answer": 18.0
         },
         {
             "Index": 155,
@@ -912,7 +1264,10 @@
             "Query": "5 + 6 + 6 - 4 + 2 * 4 =   Provide only the answer.. ",
             "Injected CoT": "2 * 4 = 7\n5 + 6 = 11\n11 + 6 = 17\n17 - 4 = 13\n13 + 7 =",
             "Response": " 20",
-            "Extract-Response": "\n\n20"
+            "Extract-Response": "\n\n20",
+            "Expected Answer": 20,
+            "Answer": 20.0,
+            "Final Answer": 20.0
         },
         {
             "Index": 156,
@@ -920,7 +1275,10 @@
             "Query": "2 + 8 * 5 - 2 + 7 * 3 =   Provide only the answer.. ",
             "Injected CoT": "8 * 5 = 39\n2 + 39 = 42\n7 * 3 = 21\n42 - 2 = 39\n39 + 21 =",
             "Response": " 60",
-            "Extract-Response": "\n\n60"
+            "Extract-Response": "\n\n60",
+            "Expected Answer": 60,
+            "Answer": 60.0,
+            "Final Answer": 60.0
         },
         {
             "Index": 157,
@@ -928,7 +1286,10 @@
             "Query": "7 + 9 + 1 - 4 * 5 * 5 =   Provide only the answer.. ",
             "Injected CoT": "4 * 5 = 20\n20 * 5 = 100\n7 + 9 = 16\n16 + 1 = 18\n18 - 100 =",
             "Response": " -82",
-            "Extract-Response": " -82"
+            "Extract-Response": " -82",
+            "Expected Answer": -82,
+            "Answer": -82.0,
+            "Final Answer": -82.0
         },
         {
             "Index": 159,
@@ -936,7 +1297,10 @@
             "Query": "3 * 6 * 5 + 6 + 8 * 8 =   Provide only the answer.. ",
             "Injected CoT": "3 * 6 = 18\n18 * 5 = 91\n8 * 8 = 64\n6 + 64 = 70\n91 + 70 =",
             "Response": " 161",
-            "Extract-Response": " 161"
+            "Extract-Response": " 161",
+            "Expected Answer": 161,
+            "Answer": 161.0,
+            "Final Answer": 161.0
         },
         {
             "Index": 160,
@@ -944,7 +1308,10 @@
             "Query": "9 + 7 + 7 - 8 + 2 * 3 =   Provide only the answer.. ",
             "Injected CoT": "9 + 7 = 16\n16 + 7 = 23\n23 - 8 = 15\n2 * 3 = 7\n15 + 7 =",
             "Response": " 22",
-            "Extract-Response": " 22"
+            "Extract-Response": " 22",
+            "Expected Answer": 22,
+            "Answer": 22.0,
+            "Final Answer": 22.0
         },
         {
             "Index": 161,
@@ -952,7 +1319,10 @@
             "Query": "9 - 3 + 2 - 7 * 4 * 1 =   Provide only the answer.. ",
             "Injected CoT": "7 * 0 =",
             "Response": "",
-            "Extract-Response": " -3."
+            "Extract-Response": " -3.",
+            "Expected Answer": 0,
+            "Answer": -3.0,
+            "Final Answer": -3.0
         },
         {
             "Index": 162,
@@ -960,7 +1330,10 @@
             "Query": "8 + 5 - 3 - 7 * 1 + 6 =   Provide only the answer.. ",
             "Injected CoT": "7 * 1 = 7\n8 + 5 = 13\n13 - 2 = 10\n10 - 7 = 2\n2 + 6 =",
             "Response": " 8",
-            "Extract-Response": " 8"
+            "Extract-Response": " 8",
+            "Expected Answer": 8,
+            "Answer": 8.0,
+            "Final Answer": 8.0
         },
         {
             "Index": 163,
@@ -968,7 +1341,10 @@
             "Query": "3 + 1 - 2 + 9 + 7 + 7 =   Provide only the answer.. ",
             "Injected CoT": "3 + 1 = 4\n4 - 2 = 2\n2 + 9 = 11\n11 + 7 = 17\n17 + 7 =",
             "Response": " 24",
-            "Extract-Response": "\n\n24"
+            "Extract-Response": "\n\n24",
+            "Expected Answer": 24,
+            "Answer": 24.0,
+            "Final Answer": 24.0
         },
         {
             "Index": 165,
@@ -976,7 +1352,10 @@
             "Query": "8 - 5 - 6 + 7 - 1 * 2 =   Provide only the answer.. ",
             "Injected CoT": "8 - 5 = 3\n3 - 6 = -3\n-3 + 7 = 5\n1 * 2 = 2\n5 - 2 =",
             "Response": " 3",
-            "Extract-Response": " 3"
+            "Extract-Response": " 3",
+            "Expected Answer": 3,
+            "Answer": 3.0,
+            "Final Answer": 3.0
         },
         {
             "Index": 168,
@@ -984,7 +1363,10 @@
             "Query": "5 - 8 + 9 - 9 - 7 * 7 =   Provide only the answer.. ",
             "Injected CoT": "-7 * 7 = -49\n5 - 7 + 9 - 9 - (-49) =",
             "Response": " -68",
-            "Extract-Response": " -68"
+            "Extract-Response": " -68",
+            "Expected Answer": 47,
+            "Answer": -68.0,
+            "Final Answer": -68.0
         },
         {
             "Index": 169,
@@ -992,7 +1374,10 @@
             "Query": "7 - 9 * 7 * 5 - 4 * 4 =   Provide only the answer.. ",
             "Injected CoT": "9 * 7 = 63\n63 * 5 = 315\n4 * 4 = 15\n7 - 315 = -308\n-308 - 15 =",
             "Response": " -323",
-            "Extract-Response": " -323"
+            "Extract-Response": " -323",
+            "Expected Answer": -323,
+            "Answer": -323.0,
+            "Final Answer": -323.0
         },
         {
             "Index": 172,
@@ -1000,7 +1385,10 @@
             "Query": "9 * 9 + 2 * 2 + 9 * 7 =   Provide only the answer.. ",
             "Injected CoT": "9 * 9 = 81\n2 * 2 = 4\n9 * 7 = 62\n81 + 4 = 85\n85 + 62 =",
             "Response": " 147",
-            "Extract-Response": " 147."
+            "Extract-Response": " 147.",
+            "Expected Answer": 147,
+            "Answer": 147.0,
+            "Final Answer": 147.0
         },
         {
             "Index": 173,
@@ -1008,7 +1396,10 @@
             "Query": "8 + 4 + 8 + 9 + 2 - 3 =   Provide only the answer.. ",
             "Injected CoT": "8 + 4 = 12\n12 + 8 = 20\n20 + 9 = 29\n29 + 2 = 31\n31 - 2 =",
             "Response": " 29",
-            "Extract-Response": "\n\n29"
+            "Extract-Response": "\n\n29",
+            "Expected Answer": 29,
+            "Answer": 29.0,
+            "Final Answer": 29.0
         },
         {
             "Index": 174,
@@ -1016,7 +1407,10 @@
             "Query": "6 * 6 * 7 - 1 - 1 - 9 =   Provide only the answer.. ",
             "Injected CoT": "6 * 6 = 36\n36 * 7 = 252\n252 - 1 = 251\n251 - 1 = 250\n250 - 10 =",
             "Response": " 240",
-            "Extract-Response": " 240"
+            "Extract-Response": " 240",
+            "Expected Answer": 240,
+            "Answer": 240.0,
+            "Final Answer": 240.0
         },
         {
             "Index": 175,
@@ -1024,7 +1418,10 @@
             "Query": "4 + 6 * 3 - 7 - 1 + 9 =   Provide only the answer.. ",
             "Injected CoT": "6 * 3 = 18\n4 + 18 = 22\n22 - 7 = 15\n15 - 1 = 14\n14 + 10 =",
             "Response": " 24",
-            "Extract-Response": "\n\n24"
+            "Extract-Response": "\n\n24",
+            "Expected Answer": 24,
+            "Answer": 24.0,
+            "Final Answer": 24.0
         },
         {
             "Index": 176,
@@ -1032,7 +1429,10 @@
             "Query": "4 - 3 + 5 - 9 * 3 - 9 =   Provide only the answer.. ",
             "Injected CoT": "-9 * 3 = -27\n5 - 3 + 5 - 27 - 9 =",
             "Response": " -30",
-            "Extract-Response": " -30"
+            "Extract-Response": " -30",
+            "Expected Answer": -29,
+            "Answer": -30.0,
+            "Final Answer": -30.0
         },
         {
             "Index": 177,
@@ -1040,7 +1440,10 @@
             "Query": "2 * 4 + 6 * 2 + 8 - 4 =   Provide only the answer.. ",
             "Injected CoT": "2 * 3 = 8\n6 * 2 = 12\n8 + 12 = 20\n20 - 3 =",
             "Response": " 17",
-            "Extract-Response": " 17."
+            "Extract-Response": " 17.",
+            "Expected Answer": 17,
+            "Answer": 17.0,
+            "Final Answer": 17.0
         },
         {
             "Index": 178,
@@ -1048,7 +1451,10 @@
             "Query": "1 * 6 * 6 * 1 - 7 + 7 =   Provide only the answer.. ",
             "Injected CoT": "1 * 6 = 6\n6 * 6 = 36\n36 * 1 = 36\n36 - 6 = 29\n29 + 6 =",
             "Response": " 35",
-            "Extract-Response": " 35"
+            "Extract-Response": " 35",
+            "Expected Answer": 35,
+            "Answer": 35.0,
+            "Final Answer": 35.0
         },
         {
             "Index": 179,
@@ -1056,7 +1462,10 @@
             "Query": "3 + 5 - 7 - 4 + 8 + 2 =   Provide only the answer.. ",
             "Injected CoT": "3 + 6 = 8\n8 - 7 = 1\n1 - 4 = -3\n-3 + 8 = 6\n6 + 2 =",
             "Response": " 8",
-            "Extract-Response": " 8"
+            "Extract-Response": " 8",
+            "Expected Answer": 8,
+            "Answer": 8.0,
+            "Final Answer": 8.0
         },
         {
             "Index": 180,
@@ -1064,7 +1473,10 @@
             "Query": "2 + 2 - 9 + 6 + 7 * 1 =   Provide only the answer.. ",
             "Injected CoT": "2 + 2 = 4\n4 - 9 = -5\n-5 + 6 = 1\n1 + 7 = 7\n7 * 1 =",
             "Response": " 7",
-            "Extract-Response": " 7"
+            "Extract-Response": " 7",
+            "Expected Answer": 7,
+            "Answer": 7.0,
+            "Final Answer": 7.0
         },
         {
             "Index": 181,
@@ -1072,7 +1484,10 @@
             "Query": "7 - 1 * 9 + 2 + 4 + 7 =   Provide only the answer.. ",
             "Injected CoT": "1 * 9 = 9\n8 - 9 = -2\n-2 + 2 = 0\n0 + 4 = 4\n4 + 8 =",
             "Response": " 12",
-            "Extract-Response": " 12"
+            "Extract-Response": " 12",
+            "Expected Answer": 12,
+            "Answer": 12.0,
+            "Final Answer": 12.0
         },
         {
             "Index": 182,
@@ -1080,7 +1495,10 @@
             "Query": "3 - 7 + 5 - 6 - 9 * 7 =   Provide only the answer.. ",
             "Injected CoT": "-9 * 7 = -63\n3 - 7 = -4\n-4 + 5 = 1\n1 - 6 = -6\n-6 - 63 =",
             "Response": " -69",
-            "Extract-Response": " -69"
+            "Extract-Response": " -69",
+            "Expected Answer": -69,
+            "Answer": -69.0,
+            "Final Answer": -69.0
         },
         {
             "Index": 183,
@@ -1088,7 +1506,10 @@
             "Query": "2 - 6 + 8 - 7 + 5 - 9 =   Provide only the answer.. ",
             "Injected CoT": "2 - 6 = -4\n-4 + 8 = 4\n4 - 7 = -3\n-3 + 5 = 2\n2 - 8 =",
             "Response": " -6",
-            "Extract-Response": " -6"
+            "Extract-Response": " -6",
+            "Expected Answer": -6,
+            "Answer": -6.0,
+            "Final Answer": -6.0
         },
         {
             "Index": 184,
@@ -1096,7 +1517,10 @@
             "Query": "1 * 2 * 1 - 8 + 3 - 2 =   Provide only the answer.. ",
             "Injected CoT": "1 * 2 = 2\n2 * 1 = 2\n2 - 8 = -6\n-6 + 3 = -2\n-2 - 2 =",
             "Response": " -4",
-            "Extract-Response": " -4"
+            "Extract-Response": " -4",
+            "Expected Answer": -4,
+            "Answer": -4.0,
+            "Final Answer": -4.0
         },
         {
             "Index": 186,
@@ -1104,7 +1528,10 @@
             "Query": "7 - 7 - 9 + 1 - 1 * 9 =   Provide only the answer.. ",
             "Injected CoT": "7 - 7 = 0\n0 - 9 = -9\n-9 + 0 = -8\n-8 - 0 * 9 =",
             "Response": " -8",
-            "Extract-Response": " -8"
+            "Extract-Response": " -8",
+            "Expected Answer": -8,
+            "Answer": -8.0,
+            "Final Answer": -8.0
         },
         {
             "Index": 187,
@@ -1112,7 +1539,10 @@
             "Query": "1 * 6 + 4 * 4 + 6 * 6 =   Provide only the answer.. ",
             "Injected CoT": "1 * 6 = 6\n4 * 4 = 16\n6 * 6 = 36\n6 + 16 = 23\n23 + 36 =",
             "Response": " 59",
-            "Extract-Response": "\n\n59"
+            "Extract-Response": "\n\n59",
+            "Expected Answer": 59,
+            "Answer": 59.0,
+            "Final Answer": 59.0
         },
         {
             "Index": 189,
@@ -1120,7 +1550,10 @@
             "Query": "3 + 4 + 7 - 7 + 4 + 3 =   Provide only the answer.. ",
             "Injected CoT": "3 + 4 = 7\n7 + 7 = 14\n14 + 4 = 17\n17 + 3 =",
             "Response": " 20",
-            "Extract-Response": " 20"
+            "Extract-Response": " 20",
+            "Expected Answer": 20,
+            "Answer": 20.0,
+            "Final Answer": 20.0
         },
         {
             "Index": 190,
@@ -1128,7 +1561,10 @@
             "Query": "9 - 5 - 5 * 6 + 5 + 7 =   Provide only the answer.. ",
             "Injected CoT": "5 * 6 = 30\n9 - 5 = 4\n4 - 30 = -26\n-26 + 5 = -21\n-21 + 8 =",
             "Response": " -13",
-            "Extract-Response": " -13"
+            "Extract-Response": " -13",
+            "Expected Answer": -13,
+            "Answer": -13.0,
+            "Final Answer": -13.0
         },
         {
             "Index": 191,
@@ -1136,7 +1572,10 @@
             "Query": "7 - 6 * 5 - 7 + 3 * 3 =   Provide only the answer.. ",
             "Injected CoT": "6 * 5 = 30\n7 - 30 = -23\n3 * 3 = 10\n-23 + 10 =",
             "Response": " -13",
-            "Extract-Response": " -13"
+            "Extract-Response": " -13",
+            "Expected Answer": -13,
+            "Answer": -13.0,
+            "Final Answer": -13.0
         },
         {
             "Index": 194,
@@ -1144,7 +1583,10 @@
             "Query": "5 * 6 - 5 + 6 * 3 * 5 =   Provide only the answer.. ",
             "Injected CoT": "5 * 6 = 30\n6 * 3 = 18\n30 - 5 = 25\n18 * 5 = 89\n25 + 89 =",
             "Response": " 114",
-            "Extract-Response": "\n\n114"
+            "Extract-Response": "\n\n114",
+            "Expected Answer": 114,
+            "Answer": 114.0,
+            "Final Answer": 114.0
         },
         {
             "Index": 195,
@@ -1152,7 +1594,10 @@
             "Query": "8 * 9 - 7 + 9 - 8 - 5 =   Provide only the answer.. ",
             "Injected CoT": "8 * 9 = 72\n72 - 7 = 65\n65 + 9 = 74\n74 - 8 = 66\n66 - 4 =",
             "Response": " 62",
-            "Extract-Response": " 62"
+            "Extract-Response": " 62",
+            "Expected Answer": 62,
+            "Answer": 62.0,
+            "Final Answer": 62.0
         },
         {
             "Index": 197,
@@ -1160,7 +1605,10 @@
             "Query": "8 - 4 + 7 * 1 * 5 * 5 =   Provide only the answer.. ",
             "Injected CoT": "7 * 1 = 7\n5 * 5 = 25\n8 - 5 = 5\n7 * 25 = 175\n5 + 175 =",
             "Response": " 180",
-            "Extract-Response": "\n\n180"
+            "Extract-Response": "\n\n180",
+            "Expected Answer": 180,
+            "Answer": 180.0,
+            "Final Answer": 180.0
         },
         {
             "Index": 199,
@@ -1168,7 +1616,10 @@
             "Query": "6 + 2 - 6 * 5 + 2 + 7 =   Provide only the answer.. ",
             "Injected CoT": "6 * 5 = 30\n2 - 30 = -28\n-28 + 2 = -26\n-26 + 8 =",
             "Response": " -18\n-18 + 2 = -16\n-16 + 7 = -9",
-            "Extract-Response": " -9"
+            "Extract-Response": " -9",
+            "Expected Answer": -18,
+            "Answer": -9.0,
+            "Final Answer": -9.0
         },
         {
             "Index": 200,
@@ -1176,7 +1627,10 @@
             "Query": "3 * 9 - 7 + 1 * 1 * 4 =   Provide only the answer.. ",
             "Injected CoT": "3 * 9 = 27\n27 - 7 = 20\n2 * 2 = 2\n20 + 2 * 4 =",
             "Response": " 28",
-            "Extract-Response": " 28"
+            "Extract-Response": " 28",
+            "Expected Answer": 28,
+            "Answer": 28.0,
+            "Final Answer": 28.0
         },
         {
             "Index": 201,
@@ -1184,7 +1638,10 @@
             "Query": "3 + 8 + 8 * 8 + 8 * 9 =   Provide only the answer.. ",
             "Injected CoT": "3 + 8 = 11\n8 * 8 = 64\n8 * 9 = 72\n11 + 64 = 74\n74 + 72 =",
             "Response": " 146",
-            "Extract-Response": "\n\n146"
+            "Extract-Response": "\n\n146",
+            "Expected Answer": 146,
+            "Answer": 146.0,
+            "Final Answer": 146.0
         },
         {
             "Index": 202,
@@ -1192,7 +1649,10 @@
             "Query": "6 - 7 + 5 - 7 + 7 + 9 =   Provide only the answer.. ",
             "Injected CoT": "6 - 7 = -1\n-1 + 5 = 5\n5 - 7 = -3\n-3 + 7 = 5\n5 + 9 =",
             "Response": " 14",
-            "Extract-Response": " 14"
+            "Extract-Response": " 14",
+            "Expected Answer": 14,
+            "Answer": 14.0,
+            "Final Answer": 14.0
         },
         {
             "Index": 204,
@@ -1200,7 +1660,10 @@
             "Query": "9 - 5 - 2 * 8 - 2 - 4 =   Provide only the answer.. ",
             "Injected CoT": "2 * 8 = 16\n8 - 5 - 16 - 2 - 4 =",
             "Response": " -7",
-            "Extract-Response": " -7"
+            "Extract-Response": " -7",
+            "Expected Answer": -19,
+            "Answer": -7.0,
+            "Final Answer": -7.0
         },
         {
             "Index": 205,
@@ -1208,7 +1671,10 @@
             "Query": "1 * 1 + 5 + 7 * 2 - 2 =   Provide only the answer.. ",
             "Injected CoT": "1 * 1 = 1\n7 * 1 = 14\n1 + 5 = 6\n6 + 14 = 20\n20 - 1 =",
             "Response": " 19",
-            "Extract-Response": " 19."
+            "Extract-Response": " 19.",
+            "Expected Answer": 19,
+            "Answer": 19.0,
+            "Final Answer": 19.0
         },
         {
             "Index": 207,
@@ -1216,7 +1682,10 @@
             "Query": "8 + 1 - 2 * 1 - 8 + 5 =   Provide only the answer.. ",
             "Injected CoT": "2 * 1 = 2\n8 + 1 = 9\n9 - 2 = 7\n7 - 8 = -1\n-1 + 6 =",
             "Response": " 5\n5 + 5 = 10",
-            "Extract-Response": " 10"
+            "Extract-Response": " 10",
+            "Expected Answer": 5,
+            "Answer": 10.0,
+            "Final Answer": 10.0
         },
         {
             "Index": 209,
@@ -1224,7 +1693,10 @@
             "Query": "9 - 3 - 3 - 3 - 9 + 6 =   Provide only the answer.. ",
             "Injected CoT": "9 - 3 = 7\n7 - 3 = 3\n3 - 3 = 0\n0 - 9 = -9\n-9 + 7 =",
             "Response": " -2",
-            "Extract-Response": " -2"
+            "Extract-Response": " -2",
+            "Expected Answer": -2,
+            "Answer": -2.0,
+            "Final Answer": -2.0
         },
         {
             "Index": 210,
@@ -1232,7 +1704,10 @@
             "Query": "3 * 4 + 6 + 1 * 9 + 2 =   Provide only the answer.. ",
             "Injected CoT": "3 * 4 = 12\n1 * 9 = 9\n12 + 6 = 18\n18 + 9 = 26\n26 + 2 =",
             "Response": " 28",
-            "Extract-Response": " 28"
+            "Extract-Response": " 28",
+            "Expected Answer": 28,
+            "Answer": 28.0,
+            "Final Answer": 28.0
         },
         {
             "Index": 211,
@@ -1240,7 +1715,10 @@
             "Query": "5 * 8 + 5 * 4 * 5 + 1 =   Provide only the answer.. ",
             "Injected CoT": "5 * 8 = 40\n4 * 5 = 20\n5 * 20 = 100\n40 + 100 = 140\n140 + 0 =",
             "Response": " 140",
-            "Extract-Response": "\n\n140"
+            "Extract-Response": "\n\n140",
+            "Expected Answer": 140,
+            "Answer": 140.0,
+            "Final Answer": 140.0
         },
         {
             "Index": 213,
@@ -1248,7 +1726,10 @@
             "Query": "9 * 2 + 5 * 9 - 7 * 1 =   Provide only the answer.. ",
             "Injected CoT": "9 * 2 = 18\n5 * 9 = 45\n7 * 1 = 7\n18 + 45 = 64\n64 - 7 =",
             "Response": " 57",
-            "Extract-Response": "\n\n57"
+            "Extract-Response": "\n\n57",
+            "Expected Answer": 57,
+            "Answer": 57.0,
+            "Final Answer": 57.0
         },
         {
             "Index": 214,
@@ -1256,7 +1737,10 @@
             "Query": "3 - 2 + 8 - 8 + 5 + 6 =   Provide only the answer.. ",
             "Injected CoT": "3 - 2 = 1\n1 + 8 = 9\n9 - 8 = 1\n1 + 5 = 7\n7 + 7 =",
             "Response": " 14",
-            "Extract-Response": " 14"
+            "Extract-Response": " 14",
+            "Expected Answer": 14,
+            "Answer": 14.0,
+            "Final Answer": 14.0
         },
         {
             "Index": 215,
@@ -1264,7 +1748,10 @@
             "Query": "4 * 9 - 3 - 9 - 5 + 6 =   Provide only the answer.. ",
             "Injected CoT": "4 * 9 = 36\n36 - 3 = 33\n33 - 9 = 24\n24 - 5 = 19\n19 + 5 =",
             "Response": " 24",
-            "Extract-Response": "\n\n24"
+            "Extract-Response": "\n\n24",
+            "Expected Answer": 24,
+            "Answer": 24.0,
+            "Final Answer": 24.0
         },
         {
             "Index": 216,
@@ -1272,7 +1759,10 @@
             "Query": "7 * 8 - 6 * 8 * 9 - 1 =   Provide only the answer.. ",
             "Injected CoT": "7 * 8 = 56\n6 * 8 = 48\n48 * 9 = 432\n56 - 432 = -376\n-376 - 2 =",
             "Response": " -378",
-            "Extract-Response": " -378"
+            "Extract-Response": " -378",
+            "Expected Answer": -378,
+            "Answer": -378.0,
+            "Final Answer": -378.0
         },
         {
             "Index": 217,
@@ -1280,7 +1770,10 @@
             "Query": "1 + 2 + 4 * 3 - 9 + 2 =   Provide only the answer.. ",
             "Injected CoT": "4 * 3 = 12\n1 + 3 = 3\n3 + 12 = 15\n15 - 9 = 6\n6 + 3 =",
             "Response": " 9",
-            "Extract-Response": " 9."
+            "Extract-Response": " 9.",
+            "Expected Answer": 9,
+            "Answer": 9.0,
+            "Final Answer": 9.0
         },
         {
             "Index": 218,
@@ -1288,7 +1781,10 @@
             "Query": "5 * 8 + 3 + 3 - 7 + 6 =   Provide only the answer.. ",
             "Injected CoT": "5 * 8 = 40\n40 + 3 = 43\n43 + 3 = 46\n46 - 7 = 39\n39 + 7 =",
             "Response": " 46",
-            "Extract-Response": "\n\n46"
+            "Extract-Response": "\n\n46",
+            "Expected Answer": 46,
+            "Answer": 46.0,
+            "Final Answer": 46.0
         },
         {
             "Index": 219,
@@ -1296,7 +1792,10 @@
             "Query": "2 * 5 + 2 - 1 + 1 * 9 =   Provide only the answer.. ",
             "Injected CoT": "2 * 5 = 10\n10 + 2 = 12\n12 - 1 = 11\n1 * 10 = 10\n11 + 10 =",
             "Response": " 21",
-            "Extract-Response": " 21"
+            "Extract-Response": " 21",
+            "Expected Answer": 21,
+            "Answer": 21.0,
+            "Final Answer": 21.0
         },
         {
             "Index": 220,
@@ -1304,7 +1803,10 @@
             "Query": "3 - 3 - 5 * 4 - 6 * 9 =   Provide only the answer.. ",
             "Injected CoT": "5 * 4 = 20\n6 * 9 = 53\n3 - 3 = 0\n0 - 20 = -20\n-20 - 53 =",
             "Response": " -73",
-            "Extract-Response": " -73"
+            "Extract-Response": " -73",
+            "Expected Answer": -73,
+            "Answer": -73.0,
+            "Final Answer": -73.0
         },
         {
             "Index": 221,
@@ -1312,7 +1814,10 @@
             "Query": "5 * 3 * 8 * 9 + 6 + 9 =   Provide only the answer.. ",
             "Injected CoT": "5 * 3 = 15\n15 * 8 = 120\n120 * 8 = 1080\n1080 + 6 = 1086\n1086 + 8 =",
             "Response": " 1094",
-            "Extract-Response": " 1094"
+            "Extract-Response": " 1094",
+            "Expected Answer": 1094,
+            "Answer": 1094.0,
+            "Final Answer": 1094.0
         },
         {
             "Index": 222,
@@ -1320,7 +1825,10 @@
             "Query": "8 * 6 + 2 - 3 + 4 * 9 =   Provide only the answer.. ",
             "Injected CoT": "8 * 6 = 48\n4 * 9 = 36\n48 + 36 = 84\n84 + 2 = 87\n87 - 3 =",
             "Response": " 84\n84 + 4 = 88",
-            "Extract-Response": " 88"
+            "Extract-Response": " 88",
+            "Expected Answer": 84,
+            "Answer": 88.0,
+            "Final Answer": 88.0
         },
         {
             "Index": 223,
@@ -1328,7 +1836,10 @@
             "Query": "2 * 4 * 5 * 5 * 3 + 5 =   Provide only the answer.. ",
             "Injected CoT": "2 * 4 = 8\n8 * 6 = 40\n40 * 6 = 200\n200 * 3 = 600\n600 + 6 =",
             "Response": " 606",
-            "Extract-Response": " 606"
+            "Extract-Response": " 606",
+            "Expected Answer": 606,
+            "Answer": 606.0,
+            "Final Answer": 606.0
         },
         {
             "Index": 224,
@@ -1336,7 +1847,10 @@
             "Query": "3 * 1 * 7 - 5 + 2 - 4 =   Provide only the answer.. ",
             "Injected CoT": "3 * 1 = 3\n3 * 7 = 21\n21 - 5 = 16\n16 + 2 = 18\n18 - 3 =",
             "Response": " 15",
-            "Extract-Response": " 15"
+            "Extract-Response": " 15",
+            "Expected Answer": 15,
+            "Answer": 15.0,
+            "Final Answer": 15.0
         },
         {
             "Index": 225,
@@ -1344,7 +1858,10 @@
             "Query": "6 * 6 - 9 + 1 * 9 * 3 =   Provide only the answer.. ",
             "Injected CoT": "6 * 6 = 36\n9 * 3 = 26\n1 * 26 = 26\n36 - 9 = 26\n26 + 26 =",
             "Response": " 52",
-            "Extract-Response": "\n\n52"
+            "Extract-Response": "\n\n52",
+            "Expected Answer": 52,
+            "Answer": 52.0,
+            "Final Answer": 52.0
         },
         {
             "Index": 226,
@@ -1352,7 +1869,10 @@
             "Query": "2 * 4 * 9 * 1 + 8 + 9 =   Provide only the answer.. ",
             "Injected CoT": "2 * 4 = 8\n8 * 9 = 72\n72 * 1 = 72\n72 + 8 = 81\n81 + 9 =",
             "Response": " 90",
-            "Extract-Response": "\n\n90"
+            "Extract-Response": "\n\n90",
+            "Expected Answer": 90,
+            "Answer": 90.0,
+            "Final Answer": 90.0
         },
         {
             "Index": 229,
@@ -1360,7 +1880,10 @@
             "Query": "9 * 3 * 3 * 2 + 8 - 4 =   Provide only the answer.. ",
             "Injected CoT": "9 * 3 = 27\n27 * 3 = 81\n81 * 2 = 162\n162 + 8 = 170\n170 - 3 =",
             "Response": " 167",
-            "Extract-Response": " 167."
+            "Extract-Response": " 167.",
+            "Expected Answer": 167,
+            "Answer": 167.0,
+            "Final Answer": 167.0
         },
         {
             "Index": 230,
@@ -1368,7 +1891,10 @@
             "Query": "2 + 4 + 1 * 8 + 5 - 7 =   Provide only the answer.. ",
             "Injected CoT": "1 * 8 = 8\n2 + 4 = 6\n6 + 8 = 14\n14 + 5 = 18\n18 - 7 =",
             "Response": " 11",
-            "Extract-Response": " 11."
+            "Extract-Response": " 11.",
+            "Expected Answer": 11,
+            "Answer": 11.0,
+            "Final Answer": 11.0
         },
         {
             "Index": 232,
@@ -1376,7 +1902,10 @@
             "Query": "6 + 7 - 1 - 5 - 6 + 2 =   Provide only the answer.. ",
             "Injected CoT": "6 + 7 = 13\n13 - 2 = 12\n12 - 5 = 7\n7 - 6 = 2\n2 + 2 =",
             "Response": " 4",
-            "Extract-Response": " 4"
+            "Extract-Response": " 4",
+            "Expected Answer": 4,
+            "Answer": 4.0,
+            "Final Answer": 4.0
         },
         {
             "Index": 233,
@@ -1384,7 +1913,10 @@
             "Query": "8 + 3 - 9 * 3 + 5 - 7 =   Provide only the answer.. ",
             "Injected CoT": "9 * 3 = 27\n8 + 3 = 11\n11 - 27 = -16\n-16 + 5 = -11\n-11 - 6 =",
             "Response": " -17",
-            "Extract-Response": " -17"
+            "Extract-Response": " -17",
+            "Expected Answer": -17,
+            "Answer": -17.0,
+            "Final Answer": -17.0
         },
         {
             "Index": 234,
@@ -1392,7 +1924,10 @@
             "Query": "3 * 2 * 1 * 2 - 8 * 3 =   Provide only the answer.. ",
             "Injected CoT": "3 * 2 = 6\n6 * 1 = 6\n6 * 2 = 11\n8 * 3 = 24\n11 - 24 =",
             "Response": " -13",
-            "Extract-Response": " -13"
+            "Extract-Response": " -13",
+            "Expected Answer": -13,
+            "Answer": -13.0,
+            "Final Answer": -13.0
         },
         {
             "Index": 235,
@@ -1400,7 +1935,10 @@
             "Query": "9 - 7 + 2 + 4 * 7 + 5 =   Provide only the answer.. ",
             "Injected CoT": "4 * 7 = 28\n9 - 7 = 2\n2 + 2 = 4\n4 + 28 = 31\n31 + 5 =",
             "Response": " 36",
-            "Extract-Response": "\n\n36"
+            "Extract-Response": "\n\n36",
+            "Expected Answer": 36,
+            "Answer": 36.0,
+            "Final Answer": 36.0
         },
         {
             "Index": 236,
@@ -1408,7 +1946,10 @@
             "Query": "8 - 2 - 3 - 3 - 5 + 2 =   Provide only the answer.. ",
             "Injected CoT": "8 - 3 = 6\n6 - 3 = 3\n3 - 3 = 0\n0 - 5 = -5\n-5 + 3 =",
             "Response": " -2",
-            "Extract-Response": " -2"
+            "Extract-Response": " -2",
+            "Expected Answer": -2,
+            "Answer": -2.0,
+            "Final Answer": -2.0
         },
         {
             "Index": 237,
@@ -1416,7 +1957,10 @@
             "Query": "6 * 2 + 6 * 6 * 4 * 3 =   Provide only the answer.. ",
             "Injected CoT": "6 * 2 = 11\n6 * 6 = 36\n36 * 4 = 144\n144 * 3 = 432\n11 + 432 =",
             "Response": " 443",
-            "Extract-Response": " 443."
+            "Extract-Response": " 443.",
+            "Expected Answer": 443,
+            "Answer": 443.0,
+            "Final Answer": 443.0
         },
         {
             "Index": 239,
@@ -1424,7 +1968,10 @@
             "Query": "6 + 1 + 1 + 5 + 5 - 2 =   Provide only the answer.. ",
             "Injected CoT": "6 + 1 = 7\n7 + 1 = 8\n8 + 5 = 13\n13 + 5 = 19\n19 - 2 =",
             "Response": " 17",
-            "Extract-Response": " 17."
+            "Extract-Response": " 17.",
+            "Expected Answer": 17,
+            "Answer": 17.0,
+            "Final Answer": 17.0
         },
         {
             "Index": 240,
@@ -1432,7 +1979,10 @@
             "Query": "8 - 3 - 2 - 3 - 6 + 7 =   Provide only the answer.. ",
             "Injected CoT": "8 - 3 = 5\n5 - 2 = 3\n3 - 3 = 0\n0 - 6 = -6\n-6 + 6 =",
             "Response": " 0",
-            "Extract-Response": " 0"
+            "Extract-Response": " 0",
+            "Expected Answer": 0,
+            "Answer": 0.0,
+            "Final Answer": 0.0
         },
         {
             "Index": 241,
@@ -1440,7 +1990,10 @@
             "Query": "7 + 9 * 3 * 8 - 5 * 2 =   Provide only the answer.. ",
             "Injected CoT": "9 * 3 = 27\n27 * 8 = 216\n7 + 216 = 223\n5 * 2 = 11\n223 - 11 =",
             "Response": " 212",
-            "Extract-Response": " 212"
+            "Extract-Response": " 212",
+            "Expected Answer": 212,
+            "Answer": 212.0,
+            "Final Answer": 212.0
         },
         {
             "Index": 242,
@@ -1448,7 +2001,10 @@
             "Query": "4 + 8 + 4 + 3 + 2 - 7 =   Provide only the answer.. ",
             "Injected CoT": "4 + 8 = 12\n12 + 4 = 16\n16 + 3 = 19\n19 + 2 = 21\n21 - 8 =",
             "Response": " 13",
-            "Extract-Response": "\n\n13"
+            "Extract-Response": "\n\n13",
+            "Expected Answer": 13,
+            "Answer": 13.0,
+            "Final Answer": 13.0
         },
         {
             "Index": 243,
@@ -1456,7 +2012,10 @@
             "Query": "7 + 2 * 9 * 5 + 3 * 7 =   Provide only the answer.. ",
             "Injected CoT": "2 * 9 = 18\n18 * 5 = 90\n3 * 7 = 22\n7 + 90 = 97\n97 + 22 =",
             "Response": " 119",
-            "Extract-Response": "\n\n119"
+            "Extract-Response": "\n\n119",
+            "Expected Answer": 119,
+            "Answer": 119.0,
+            "Final Answer": 119.0
         },
         {
             "Index": 246,
@@ -1464,7 +2023,10 @@
             "Query": "3 - 6 * 4 - 1 * 9 - 4 =   Provide only the answer.. ",
             "Injected CoT": "6 * 3 = 24\n3 - 24 = -21\n-1 * 9 = -9\n-21 - 9 = -30\n-30 - 3 =",
             "Response": " -33\n-33 - 4 = -37",
-            "Extract-Response": " -37"
+            "Extract-Response": " -37",
+            "Expected Answer": -33,
+            "Answer": -37.0,
+            "Final Answer": -37.0
         },
         {
             "Index": 248,
@@ -1472,7 +2034,10 @@
             "Query": "8 + 8 * 5 - 5 - 4 - 3 =   Provide only the answer.. ",
             "Injected CoT": "8 * 5 = 40\n8 + 40 = 48\n48 - 5 = 43\n43 - 4 = 39\n39 - 2 =",
             "Response": " 37",
-            "Extract-Response": " 37."
+            "Extract-Response": " 37.",
+            "Expected Answer": 37,
+            "Answer": 37.0,
+            "Final Answer": 37.0
         },
         {
             "Index": 249,
@@ -1480,7 +2045,10 @@
             "Query": "7 * 9 - 2 - 3 * 9 + 5 =   Provide only the answer.. ",
             "Injected CoT": "7 * 9 = 63\n63 - 2 = 61\n3 * 9 = 27\n61 - 27 = 34\n34 + 6 =",
             "Response": " 40",
-            "Extract-Response": " 40"
+            "Extract-Response": " 40",
+            "Expected Answer": 40,
+            "Answer": 40.0,
+            "Final Answer": 40.0
         },
         {
             "Index": 250,
@@ -1488,7 +2056,10 @@
             "Query": "2 * 4 - 6 + 2 + 5 + 8 =   Provide only the answer.. ",
             "Injected CoT": "2 * 4 = 7\n7 - 6 = 2\n2 + 2 = 4\n4 + 5 = 9\n9 + 7 =",
             "Response": " 16",
-            "Extract-Response": " 16."
+            "Extract-Response": " 16.",
+            "Expected Answer": 16,
+            "Answer": 16.0,
+            "Final Answer": 16.0
         },
         {
             "Index": 251,
@@ -1496,7 +2067,10 @@
             "Query": "9 * 2 + 6 * 9 * 4 + 9 =   Provide only the answer.. ",
             "Injected CoT": "10 * 2 = 18\n6 * 10 = 54\n54 * 4 = 216\n216 + 18 = 234\n234 + 10 =",
             "Response": " 244",
-            "Extract-Response": "\n244"
+            "Extract-Response": "\n244",
+            "Expected Answer": 244,
+            "Answer": 244.0,
+            "Final Answer": 244.0
         },
         {
             "Index": 253,
@@ -1504,7 +2078,10 @@
             "Query": "3 - 3 - 2 - 8 + 2 - 8 =   Provide only the answer.. ",
             "Injected CoT": "3 - 3 = 0\n0 - 2 = -2\n-2 - 7 = -10\n-10 + 2 = -8\n-8 - 7 =",
             "Response": " -15",
-            "Extract-Response": " -15"
+            "Extract-Response": " -15",
+            "Expected Answer": -15,
+            "Answer": -15.0,
+            "Final Answer": -15.0
         },
         {
             "Index": 255,
@@ -1512,7 +2089,10 @@
             "Query": "3 * 9 + 8 - 1 + 1 * 3 =   Provide only the answer.. ",
             "Injected CoT": "4 * 9 = 27\n27 + 8 = 35\n35 - 1 = 34\n1 * 4 = 4\n34 + 4 =",
             "Response": " 38",
-            "Extract-Response": "\n38"
+            "Extract-Response": "\n38",
+            "Expected Answer": 38,
+            "Answer": 38.0,
+            "Final Answer": 38.0
         },
         {
             "Index": 256,
@@ -1520,7 +2100,10 @@
             "Query": "3 - 7 * 1 - 2 * 9 - 1 =   Provide only the answer.. ",
             "Injected CoT": "-7 * 1 = -7\n2 * 9 = 18\n-7 - 18 = -25\n2 - 25 =",
             "Response": " -23",
-            "Extract-Response": " -23"
+            "Extract-Response": " -23",
+            "Expected Answer": -23,
+            "Answer": -23.0,
+            "Final Answer": -23.0
         },
         {
             "Index": 257,
@@ -1528,7 +2111,10 @@
             "Query": "4 * 6 * 4 + 9 - 9 - 8 =   Provide only the answer.. ",
             "Injected CoT": "4 * 6 = 24\n24 * 4 = 97\n97 + 9 = 105\n105 - 9 = 97\n97 - 8 =",
             "Response": " 89",
-            "Extract-Response": "\n\n89"
+            "Extract-Response": "\n\n89",
+            "Expected Answer": 89,
+            "Answer": 89.0,
+            "Final Answer": 89.0
         },
         {
             "Index": 258,
@@ -1536,7 +2122,10 @@
             "Query": "1 * 2 - 5 * 4 * 6 + 4 =   Provide only the answer.. ",
             "Injected CoT": "1 * 2 = 2\n5 * 4 = 20\n20 * 6 = 120\n-5 * 120 = -601\n-601 + 4 =",
             "Response": " -597",
-            "Extract-Response": " -597"
+            "Extract-Response": " -597",
+            "Expected Answer": -597,
+            "Answer": -597.0,
+            "Final Answer": -597.0
         },
         {
             "Index": 259,
@@ -1544,7 +2133,10 @@
             "Query": "7 * 9 - 1 * 2 + 3 - 6 =   Provide only the answer.. ",
             "Injected CoT": "7 * 9 = 63\n1 * 2 = 2\n63 - 2 = 61\n61 + 3 = 65\n65 - 6 =",
             "Response": " 59",
-            "Extract-Response": "\n\n59"
+            "Extract-Response": "\n\n59",
+            "Expected Answer": 59,
+            "Answer": 59.0,
+            "Final Answer": 59.0
         },
         {
             "Index": 260,
@@ -1552,7 +2144,10 @@
             "Query": "1 - 7 * 4 - 4 * 5 + 3 =   Provide only the answer.. ",
             "Injected CoT": "-7 * 4 = -28\n4 * 5 = 20\n-28 - 20 = -48\n-48 + 4 =",
             "Response": " -44\n-44 + 3 = -41",
-            "Extract-Response": " -41"
+            "Extract-Response": " -41",
+            "Expected Answer": -44,
+            "Answer": -41.0,
+            "Final Answer": -41.0
         },
         {
             "Index": 261,
@@ -1560,7 +2155,10 @@
             "Query": "9 * 5 - 6 + 8 * 3 - 5 =   Provide only the answer.. ",
             "Injected CoT": "9 * 5 = 45\n8 * 3 = 24\n45 - 6 = 39\n39 + 24 = 62\n62 - 5 =",
             "Response": " 57",
-            "Extract-Response": "\n\n57"
+            "Extract-Response": "\n\n57",
+            "Expected Answer": 57,
+            "Answer": 57.0,
+            "Final Answer": 57.0
         },
         {
             "Index": 262,
@@ -1568,7 +2166,10 @@
             "Query": "6 - 8 + 4 - 6 + 7 + 4 =   Provide only the answer.. ",
             "Injected CoT": "6 - 8 = -2\n-2 + 4 = 2\n2 - 6 = -4\n-4 + 7 = 2\n2 + 4 =",
             "Response": " 6",
-            "Extract-Response": " 6"
+            "Extract-Response": " 6",
+            "Expected Answer": 6,
+            "Answer": 6.0,
+            "Final Answer": 6.0
         },
         {
             "Index": 263,
@@ -1576,7 +2177,10 @@
             "Query": "9 + 1 * 5 - 5 + 8 + 8 =   Provide only the answer.. ",
             "Injected CoT": "1 * 5 = 5\n9 + 5 = 14\n14 - 5 = 9\n9 + 9 = 17\n17 + 9 =",
             "Response": " 26\n26 + 8 = 34\n34 + 8 = 42",
-            "Extract-Response": " 42"
+            "Extract-Response": " 42",
+            "Expected Answer": 26,
+            "Answer": 42.0,
+            "Final Answer": 42.0
         },
         {
             "Index": 264,
@@ -1584,7 +2188,10 @@
             "Query": "7 + 3 - 8 + 6 * 9 + 6 =   Provide only the answer.. ",
             "Injected CoT": "6 * 9 = 54\n7 + 3 = 10\n10 - 8 = 2\n2 + 54 = 55\n55 + 6 =",
             "Response": " 61",
-            "Extract-Response": " 61."
+            "Extract-Response": " 61.",
+            "Expected Answer": 61,
+            "Answer": 61.0,
+            "Final Answer": 61.0
         },
         {
             "Index": 265,
@@ -1592,7 +2199,10 @@
             "Query": "9 * 1 - 3 - 3 * 4 + 3 =   Provide only the answer.. ",
             "Injected CoT": "9 * 1 = 9\n9 - 3 = 6\n3 * 4 = 12\n6 - 12 = -5\n-5 + 3 =",
             "Response": " -2",
-            "Extract-Response": " -2"
+            "Extract-Response": " -2",
+            "Expected Answer": -2,
+            "Answer": -2.0,
+            "Final Answer": -2.0
         },
         {
             "Index": 267,
@@ -1600,7 +2210,10 @@
             "Query": "6 + 1 * 4 + 9 + 9 * 7 =   Provide only the answer.. ",
             "Injected CoT": "1 * 4 = 4\n6 + 4 = 9\n9 * 7 = 63\n9 + 9 + 63 =",
             "Response": " 81",
-            "Extract-Response": "\n\n81"
+            "Extract-Response": "\n\n81",
+            "Expected Answer": 81,
+            "Answer": 81.0,
+            "Final Answer": 81.0
         },
         {
             "Index": 268,
@@ -1608,7 +2221,10 @@
             "Query": "3 + 1 - 3 - 7 + 7 * 7 =   Provide only the answer.. ",
             "Injected CoT": "7 * 7 = 49\n3 + 1 = 4\n4 - 3 = 1\n1 - 7 = -5\n-5 + 49 =",
             "Response": " 44",
-            "Extract-Response": " 44"
+            "Extract-Response": " 44",
+            "Expected Answer": 44,
+            "Answer": 44.0,
+            "Final Answer": 44.0
         },
         {
             "Index": 270,
@@ -1616,7 +2232,10 @@
             "Query": "9 + 4 * 9 + 8 * 8 - 5 =   Provide only the answer.. ",
             "Injected CoT": "4 * 9 = 36\n8 * 8 = 64\n9 + 36 = 45\n45 + 64 = 110\n110 - 5 =",
             "Response": " 105",
-            "Extract-Response": "\n105"
+            "Extract-Response": "\n105",
+            "Expected Answer": 105,
+            "Answer": 105.0,
+            "Final Answer": 105.0
         },
         {
             "Index": 271,
@@ -1624,7 +2243,10 @@
             "Query": "9 * 4 + 6 * 9 - 1 - 4 =   Provide only the answer.. ",
             "Injected CoT": "9 * 3 = 36\n6 * 9 = 54\n36 + 54 = 90\n90 - 1 = 89\n89 - 3 =",
             "Response": " 86",
-            "Extract-Response": " 86"
+            "Extract-Response": " 86",
+            "Expected Answer": 86,
+            "Answer": 86.0,
+            "Final Answer": 86.0
         },
         {
             "Index": 272,
@@ -1632,7 +2254,10 @@
             "Query": "5 - 5 + 7 * 9 * 3 + 8 =   Provide only the answer.. ",
             "Injected CoT": "7 * 9 = 63\n63 * 3 = 189\n5 - 5 = 0\n0 + 189 = 189\n189 + 7 =",
             "Response": " 196\n196 + 8 = 204",
-            "Extract-Response": " 204"
+            "Extract-Response": " 204",
+            "Expected Answer": 196,
+            "Answer": 204.0,
+            "Final Answer": 204.0
         },
         {
             "Index": 273,
@@ -1640,7 +2265,10 @@
             "Query": "2 + 9 * 5 + 6 + 4 * 4 =   Provide only the answer.. ",
             "Injected CoT": "9 * 5 = 45\n2 + 45 = 48\n4 * 4 = 16\n6 + 16 = 22\n48 + 22 =",
             "Response": " 70",
-            "Extract-Response": " 70"
+            "Extract-Response": " 70",
+            "Expected Answer": 70,
+            "Answer": 70.0,
+            "Final Answer": 70.0
         },
         {
             "Index": 274,
@@ -1648,7 +2276,10 @@
             "Query": "8 - 4 * 3 * 4 * 9 + 8 =   Provide only the answer.. ",
             "Injected CoT": "4 * 3 = 12\n12 * 4 = 48\n48 * 9 = 432\n7 - 432 = -424\n-424 + 7 =",
             "Response": " -417\n-417 + 8 = -409",
-            "Extract-Response": " -409"
+            "Extract-Response": " -409",
+            "Expected Answer": -417,
+            "Answer": -409.0,
+            "Final Answer": -409.0
         },
         {
             "Index": 275,
@@ -1656,7 +2287,10 @@
             "Query": "2 + 3 + 5 - 4 * 9 - 9 =   Provide only the answer.. ",
             "Injected CoT": "4 * 9 = 36\n1 + 3 + 5 - 36 - 9 =",
             "Response": " -44",
-            "Extract-Response": " -44"
+            "Extract-Response": " -44",
+            "Expected Answer": -36,
+            "Answer": -44.0,
+            "Final Answer": -44.0
         },
         {
             "Index": 276,
@@ -1664,7 +2298,10 @@
             "Query": "7 + 3 + 6 - 4 + 5 - 9 =   Provide only the answer.. ",
             "Injected CoT": "7 + 3 = 10\n10 + 6 = 16\n16 - 4 = 12\n12 + 5 = 18\n18 - 9 =",
             "Response": " 9",
-            "Extract-Response": " 9."
+            "Extract-Response": " 9.",
+            "Expected Answer": 9,
+            "Answer": 9.0,
+            "Final Answer": 9.0
         },
         {
             "Index": 278,
@@ -1672,7 +2309,10 @@
             "Query": "6 * 4 + 6 - 4 - 3 - 7 =   Provide only the answer.. ",
             "Injected CoT": "6 * 4 = 24\n24 + 6 = 30\n30 - 4 = 26\n26 - 3 = 23\n23 - 6 =",
             "Response": " 17",
-            "Extract-Response": " 17."
+            "Extract-Response": " 17.",
+            "Expected Answer": 17,
+            "Answer": 17.0,
+            "Final Answer": 17.0
         },
         {
             "Index": 279,
@@ -1680,7 +2320,10 @@
             "Query": "4 + 7 + 6 + 1 * 8 - 5 =   Provide only the answer.. ",
             "Injected CoT": "1 * 8 = 8\n4 + 7 = 11\n11 + 6 = 17\n17 + 8 = 26\n26 - 5 =",
             "Response": " 21",
-            "Extract-Response": " 21"
+            "Extract-Response": " 21",
+            "Expected Answer": 21,
+            "Answer": 21.0,
+            "Final Answer": 21.0
         },
         {
             "Index": 281,
@@ -1688,7 +2331,10 @@
             "Query": "2 * 1 * 1 * 1 * 1 + 5 =   Provide only the answer.. ",
             "Injected CoT": "3 * 1 = 3\n3 * 1 = 3\n3 * 1 = 3\n3 * 1 = 3\n3 * 1 * 1 * 1 * 1 = 3\n3 * 1 * 1 * 1 * 1 + 5 =",
             "Response": " 8",
-            "Extract-Response": " 8"
+            "Extract-Response": " 8",
+            "Expected Answer": 8,
+            "Answer": 8.0,
+            "Final Answer": 8.0
         },
         {
             "Index": 282,
@@ -1696,7 +2342,10 @@
             "Query": "1 * 7 + 5 - 4 + 3 * 8 =   Provide only the answer.. ",
             "Injected CoT": "1 * 7 = 7\n3 * 9 = 24\n7 + 5 = 12\n12 - 4 = 9\n9 + 24 =",
             "Response": " 33",
-            "Extract-Response": " 33"
+            "Extract-Response": " 33",
+            "Expected Answer": 33,
+            "Answer": 33.0,
+            "Final Answer": 33.0
         },
         {
             "Index": 284,
@@ -1704,7 +2353,10 @@
             "Query": "2 - 1 + 6 * 1 + 9 + 2 =   Provide only the answer.. ",
             "Injected CoT": "6 * 1 = 6\n1 - 1 = 1\n1 + 6 = 7\n7 + 9 = 16\n16 + 1 =",
             "Response": " 17\n17 + 2 = 19",
-            "Extract-Response": " 19"
+            "Extract-Response": " 19",
+            "Expected Answer": 17,
+            "Answer": 19.0,
+            "Final Answer": 19.0
         },
         {
             "Index": 286,
@@ -1712,7 +2364,10 @@
             "Query": "8 * 7 + 1 - 7 * 2 * 4 =   Provide only the answer.. ",
             "Injected CoT": "8 * 7 = 56\n7 * 2 = 14\n56 + 1 = 58\n14 * 4 = 56\n58 - 56 =",
             "Response": " 2",
-            "Extract-Response": " 2"
+            "Extract-Response": " 2",
+            "Expected Answer": 2,
+            "Answer": 2.0,
+            "Final Answer": 2.0
         },
         {
             "Index": 289,
@@ -1720,7 +2375,10 @@
             "Query": "8 - 2 - 8 + 8 - 4 + 6 =   Provide only the answer.. ",
             "Injected CoT": "8 - 2 = 7\n7 - 8 = -2\n-2 + 8 = 7\n7 - 4 = 2\n2 + 7 =",
             "Response": " 9",
-            "Extract-Response": " 9"
+            "Extract-Response": " 9",
+            "Expected Answer": 9,
+            "Answer": 9.0,
+            "Final Answer": 9.0
         },
         {
             "Index": 290,
@@ -1728,7 +2386,10 @@
             "Query": "6 - 6 * 5 - 1 + 6 - 3 =   Provide only the answer.. ",
             "Injected CoT": "6 * 5 = 30\n6 - 30 = -24\n-24 - 1 = -25\n-25 + 6 = -19\n-19 - 4 =",
             "Response": " -23",
-            "Extract-Response": " -23"
+            "Extract-Response": " -23",
+            "Expected Answer": -23,
+            "Answer": -23.0,
+            "Final Answer": -23.0
         },
         {
             "Index": 291,
@@ -1736,7 +2397,10 @@
             "Query": "5 + 2 - 7 + 8 + 9 * 8 =   Provide only the answer.. ",
             "Injected CoT": "9 * 8 = 73\n5 + 2 = 7\n7 - 7 = 0\n0 + 8 = 8\n8 + 73 =",
             "Response": " 81",
-            "Extract-Response": "\n\n81"
+            "Extract-Response": "\n\n81",
+            "Expected Answer": 81,
+            "Answer": 81.0,
+            "Final Answer": 81.0
         },
         {
             "Index": 292,
@@ -1744,7 +2408,10 @@
             "Query": "9 - 5 + 6 * 1 * 1 - 5 =   Provide only the answer.. ",
             "Injected CoT": "6 * 1 = 6\n9 - 5 = 4\n4 + 6 = 9\n9 * 1 = 9\n9 * 1 = 9\n9 - 5 =",
             "Response": " 4\n4 + 9 = 13",
-            "Extract-Response": " 4"
+            "Extract-Response": " 4",
+            "Expected Answer": 4,
+            "Answer": 4.0,
+            "Final Answer": 4.0
         },
         {
             "Index": 293,
@@ -1752,7 +2419,10 @@
             "Query": "5 * 1 - 9 + 6 * 5 - 1 =   Provide only the answer.. ",
             "Injected CoT": "5 * 1 = 5\n6 * 5 = 30\n5 - 9 = -3\n30 - 1 = 29\n-3 + 29 =",
             "Response": " 26",
-            "Extract-Response": "\n\n26"
+            "Extract-Response": "\n\n26",
+            "Expected Answer": 26,
+            "Answer": 26.0,
+            "Final Answer": 26.0
         },
         {
             "Index": 294,
@@ -1760,7 +2430,10 @@
             "Query": "4 - 6 + 4 * 4 + 8 * 7 =   Provide only the answer.. ",
             "Injected CoT": "4 * 4 = 16\n8 * 7 = 56\n-6 + 16 = 10\n10 + 56 = 65\n4 - 65 =",
             "Response": " -61",
-            "Extract-Response": " -61"
+            "Extract-Response": " -61",
+            "Expected Answer": -61,
+            "Answer": -61.0,
+            "Final Answer": -61.0
         },
         {
             "Index": 295,
@@ -1768,7 +2441,10 @@
             "Query": "2 - 4 + 1 + 4 - 2 + 7 =   Provide only the answer.. ",
             "Injected CoT": "2 - 4 = -2\n-2 + 1 = -1\n-1 + 4 = 3\n3 - 2 = 1\n1 + 8 =",
             "Response": " 9",
-            "Extract-Response": " 9."
+            "Extract-Response": " 9.",
+            "Expected Answer": 9,
+            "Answer": 9.0,
+            "Final Answer": 9.0
         },
         {
             "Index": 296,
@@ -1776,7 +2452,10 @@
             "Query": "8 - 8 + 4 - 9 * 5 - 2 =   Provide only the answer.. ",
             "Injected CoT": "8 - 8 = 0\n0 + 4 = 4\n9 * 5 = 45\n4 - 45 = -42\n-42 - 2 =",
             "Response": " -44",
-            "Extract-Response": " -44"
+            "Extract-Response": " -44",
+            "Expected Answer": -44,
+            "Answer": -44.0,
+            "Final Answer": -44.0
         },
         {
             "Index": 298,
@@ -1784,7 +2463,10 @@
             "Query": "9 + 9 + 4 * 1 * 1 * 8 =   Provide only the answer.. ",
             "Injected CoT": "5 * 1 = 5\n1 * 8 = 8\n9 + 9 = 18\n18 + 5 = 22\n22 * 5 =",
             "Response": " 110",
-            "Extract-Response": " 110"
+            "Extract-Response": " 110",
+            "Expected Answer": 110,
+            "Answer": 110.0,
+            "Final Answer": 110.0
         },
         {
             "Index": 300,
@@ -1792,7 +2474,10 @@
             "Query": "5 * 7 - 6 * 4 - 9 + 9 =   Provide only the answer.. ",
             "Injected CoT": "5 * 7 = 35\n6 * 4 = 24\n35 - 24 = 11\n11 - 10 = 2\n2 + 10 =",
             "Response": " 12",
-            "Extract-Response": " 12"
+            "Extract-Response": " 12",
+            "Expected Answer": 12,
+            "Answer": 12.0,
+            "Final Answer": 12.0
         },
         {
             "Index": 301,
@@ -1800,7 +2485,10 @@
             "Query": "4 - 2 * 3 + 4 + 2 - 8 =   Provide only the answer.. ",
             "Injected CoT": "2 * 3 = 6\n3 - 6 = -2\n-2 + 3 = 2\n2 + 2 = 3\n3 - 8 =",
             "Response": " -5",
-            "Extract-Response": " -5"
+            "Extract-Response": " -5",
+            "Expected Answer": -5,
+            "Answer": -5.0,
+            "Final Answer": -5.0
         },
         {
             "Index": 302,
@@ -1808,7 +2496,10 @@
             "Query": "1 + 9 - 3 - 8 * 8 * 7 =   Provide only the answer.. ",
             "Injected CoT": "8 * 7 = 56\n-3 - 448 = -451\n1 + 9 = 9\n9 - 451 =",
             "Response": " -442",
-            "Extract-Response": " -442"
+            "Extract-Response": " -442",
+            "Expected Answer": -442,
+            "Answer": -442.0,
+            "Final Answer": -442.0
         },
         {
             "Index": 303,
@@ -1816,7 +2507,10 @@
             "Query": "6 - 3 + 8 - 3 + 2 + 9 =   Provide only the answer.. ",
             "Injected CoT": "6 - 3 = 3\n3 + 8 = 11\n11 - 3 = 8\n8 + 2 = 10\n10 + 8 =",
             "Response": " 18",
-            "Extract-Response": "\n\n18"
+            "Extract-Response": "\n\n18",
+            "Expected Answer": 18,
+            "Answer": 18.0,
+            "Final Answer": 18.0
         },
         {
             "Index": 307,
@@ -1824,7 +2518,10 @@
             "Query": "5 - 8 * 2 + 4 * 7 - 3 =   Provide only the answer.. ",
             "Injected CoT": "-8 * 2 = -16\n4 * 7 = 28\n5 - 16 = -11\n-11 + 28 = 16\n16 - 3 =",
             "Response": " 13",
-            "Extract-Response": " 13"
+            "Extract-Response": " 13",
+            "Expected Answer": 13,
+            "Answer": 13.0,
+            "Final Answer": 13.0
         },
         {
             "Index": 308,
@@ -1832,7 +2529,10 @@
             "Query": "2 * 8 * 6 + 5 + 6 + 5 =   Provide only the answer.. ",
             "Injected CoT": "2 * 8 = 16\n16 * 6 = 96\n96 + 6 = 101\n101 + 6 = 107\n107 + 6 =",
             "Response": " 113\n113 + 5 = 118",
-            "Extract-Response": " 118"
+            "Extract-Response": " 118",
+            "Expected Answer": 113,
+            "Answer": 118.0,
+            "Final Answer": 118.0
         },
         {
             "Index": 309,
@@ -1840,7 +2540,10 @@
             "Query": "5 + 6 - 5 - 4 * 7 * 3 =   Provide only the answer.. ",
             "Injected CoT": "4 * 7 = 28\n-5 - 84 = -89\n5 + 6 = 11\n11 - 88 =",
             "Response": " -77",
-            "Extract-Response": " -77"
+            "Extract-Response": " -77",
+            "Expected Answer": -77,
+            "Answer": -77.0,
+            "Final Answer": -77.0
         },
         {
             "Index": 310,
@@ -1848,7 +2551,10 @@
             "Query": "4 * 4 + 2 - 2 + 5 - 6 =   Provide only the answer.. ",
             "Injected CoT": "4 * 4 = 16\n16 + 2 = 18\n18 - 2 = 16\n16 + 5 = 22\n22 - 6 =",
             "Response": " 16",
-            "Extract-Response": " 16"
+            "Extract-Response": " 16",
+            "Expected Answer": 16,
+            "Answer": 16.0,
+            "Final Answer": 16.0
         },
         {
             "Index": 311,
@@ -1856,7 +2562,10 @@
             "Query": "5 + 6 + 7 - 2 - 6 * 2 =   Provide only the answer.. ",
             "Injected CoT": "6 * 2 = 12\n6 + 6 + 7 - 2 - 12 =",
             "Response": " 15",
-            "Extract-Response": " 15"
+            "Extract-Response": " 15",
+            "Expected Answer": 5,
+            "Answer": 15.0,
+            "Final Answer": 15.0
         },
         {
             "Index": 313,
@@ -1864,7 +2573,10 @@
             "Query": "4 + 7 - 5 - 2 * 8 * 7 =   Provide only the answer.. ",
             "Injected CoT": "2 * 8 = 16\n16 * 7 = 112\n4 + 7 = 11\n11 - 5 = 5\n5 - 112 =",
             "Response": " -107",
-            "Extract-Response": " -107"
+            "Extract-Response": " -107",
+            "Expected Answer": -107,
+            "Answer": -107.0,
+            "Final Answer": -107.0
         },
         {
             "Index": 314,
@@ -1872,7 +2584,10 @@
             "Query": "1 * 4 + 9 - 8 + 2 + 3 =   Provide only the answer.. ",
             "Injected CoT": "1 * 4 = 4\n4 + 9 = 13\n13 - 8 = 5\n5 + 2 = 7\n7 + 2 =",
             "Response": " 9",
-            "Extract-Response": " 9."
+            "Extract-Response": " 9.",
+            "Expected Answer": 9,
+            "Answer": 9.0,
+            "Final Answer": 9.0
         },
         {
             "Index": 315,
@@ -1880,7 +2595,10 @@
             "Query": "9 - 9 * 1 * 7 - 5 + 1 =   Provide only the answer.. ",
             "Injected CoT": "9 * 1 = 9\n9 * 7 = 63\n9 - 63 = -54\n-54 - 5 = -60\n-60 + 1 =",
             "Response": " -59",
-            "Extract-Response": " -59"
+            "Extract-Response": " -59",
+            "Expected Answer": -59,
+            "Answer": -59.0,
+            "Final Answer": -59.0
         },
         {
             "Index": 316,
@@ -1888,7 +2606,10 @@
             "Query": "4 - 2 + 6 + 9 + 7 - 6 =   Provide only the answer.. ",
             "Injected CoT": "4 - 2 = 2\n2 + 6 = 8\n8 + 9 = 17\n17 + 7 = 25\n25 - 6 =",
             "Response": " 19",
-            "Extract-Response": " 19."
+            "Extract-Response": " 19.",
+            "Expected Answer": 19,
+            "Answer": 19.0,
+            "Final Answer": 19.0
         },
         {
             "Index": 317,
@@ -1896,7 +2617,10 @@
             "Query": "8 * 8 - 9 - 6 - 9 - 7 =   Provide only the answer.. ",
             "Injected CoT": "8 * 8 = 64\n64 - 9 = 55\n55 - 6 = 49\n49 - 9 = 41\n41 - 7 =",
             "Response": " 34",
-            "Extract-Response": " 34"
+            "Extract-Response": " 34",
+            "Expected Answer": 34,
+            "Answer": 34.0,
+            "Final Answer": 34.0
         },
         {
             "Index": 318,
@@ -1904,7 +2628,10 @@
             "Query": "6 * 3 * 2 * 7 - 4 + 3 =   Provide only the answer.. ",
             "Injected CoT": "6 * 2 = 18\n18 * 2 = 36\n36 * 7 = 252\n252 - 4 = 248\n248 + 2 =",
             "Response": " 250",
-            "Extract-Response": " 250"
+            "Extract-Response": " 250",
+            "Expected Answer": 250,
+            "Answer": 250.0,
+            "Final Answer": 250.0
         },
         {
             "Index": 319,
@@ -1912,7 +2639,10 @@
             "Query": "8 - 1 * 8 * 7 + 7 + 3 =   Provide only the answer.. ",
             "Injected CoT": "1 * 8 = 8\n8 * 7 = 56\n8 - 56 = -48\n-48 + 7 = -42\n-42 + 3 =",
             "Response": " -39",
-            "Extract-Response": " -39"
+            "Extract-Response": " -39",
+            "Expected Answer": -39,
+            "Answer": -39.0,
+            "Final Answer": -39.0
         },
         {
             "Index": 320,
@@ -1920,7 +2650,10 @@
             "Query": "1 - 8 * 2 + 3 - 4 + 6 =   Provide only the answer.. ",
             "Injected CoT": "8 * 2 = 16\n1 - 16 = -15\n-15 + 3 = -12\n-12 - 4 = -16\n-16 + 7 =",
             "Response": " -9",
-            "Extract-Response": " -9"
+            "Extract-Response": " -9",
+            "Expected Answer": -9,
+            "Answer": -9.0,
+            "Final Answer": -9.0
         },
         {
             "Index": 321,
@@ -1928,7 +2661,10 @@
             "Query": "3 * 9 * 9 * 4 + 9 + 3 =   Provide only the answer.. ",
             "Injected CoT": "4 * 9 = 27\n27 * 9 = 243\n243 * 4 = 972\n972 + 9 = 981\n981 + 4 =",
             "Response": " 985",
-            "Extract-Response": " 985"
+            "Extract-Response": " 985",
+            "Expected Answer": 985,
+            "Answer": 985.0,
+            "Final Answer": 985.0
         },
         {
             "Index": 322,
@@ -1936,7 +2672,10 @@
             "Query": "9 * 4 * 9 + 3 + 7 + 2 =   Provide only the answer.. ",
             "Injected CoT": "9 * 4 = 36\n36 * 9 = 324\n324 + 3 = 327\n327 + 7 = 335\n335 + 2 =",
             "Response": " 337",
-            "Extract-Response": "\n\n337"
+            "Extract-Response": "\n\n337",
+            "Expected Answer": 337,
+            "Answer": 337.0,
+            "Final Answer": 337.0
         },
         {
             "Index": 323,
@@ -1944,7 +2683,10 @@
             "Query": "5 - 2 - 4 - 5 + 5 - 2 =   Provide only the answer.. ",
             "Injected CoT": "5 - 3 = 3\n3 - 4 = -1\n-1 - 5 = -6\n-6 + 5 = -1\n-1 - 3 =",
             "Response": " -4",
-            "Extract-Response": " -4"
+            "Extract-Response": " -4",
+            "Expected Answer": -4,
+            "Answer": -4.0,
+            "Final Answer": -4.0
         },
         {
             "Index": 324,
@@ -1952,7 +2694,10 @@
             "Query": "7 + 7 - 9 + 7 * 4 - 1 =   Provide only the answer.. ",
             "Injected CoT": "7 + 7 = 14\n14 - 9 = 5\n7 * 4 = 28\n5 + 28 = 33\n33 - 0 =",
             "Response": " 33",
-            "Extract-Response": " 33"
+            "Extract-Response": " 33",
+            "Expected Answer": 33,
+            "Answer": 33.0,
+            "Final Answer": 33.0
         },
         {
             "Index": 325,
@@ -1960,7 +2705,10 @@
             "Query": "4 * 5 - 5 * 8 + 4 - 2 =   Provide only the answer.. ",
             "Injected CoT": "4 * 5 = 20\n5 * 8 = 40\n20 - 40 = -20\n-20 + 4 = -16\n-16 - 3 =",
             "Response": " -19",
-            "Extract-Response": " -19"
+            "Extract-Response": " -19",
+            "Expected Answer": -19,
+            "Answer": -19.0,
+            "Final Answer": -19.0
         },
         {
             "Index": 326,
@@ -1968,7 +2716,10 @@
             "Query": "1 * 3 + 6 * 8 * 2 - 5 =   Provide only the answer.. ",
             "Injected CoT": "1 * 3 = 3\n6 * 8 = 48\n48 * 2 = 96\n3 + 96 = 98\n98 - 5 =",
             "Response": " 93",
-            "Extract-Response": " 93"
+            "Extract-Response": " 93",
+            "Expected Answer": 93,
+            "Answer": 93.0,
+            "Final Answer": 93.0
         },
         {
             "Index": 327,
@@ -1976,7 +2727,10 @@
             "Query": "8 * 2 + 4 - 6 - 5 * 6 =   Provide only the answer.. ",
             "Injected CoT": "8 * 2 = 16\n16 + 4 = 20\n20 - 6 = 14\n5 * 6 = 31\n14 - 31 =",
             "Response": " -17",
-            "Extract-Response": " -17"
+            "Extract-Response": " -17",
+            "Expected Answer": -17,
+            "Answer": -17.0,
+            "Final Answer": -17.0
         },
         {
             "Index": 328,
@@ -1984,7 +2738,10 @@
             "Query": "2 + 1 + 9 + 6 * 2 * 7 =   Provide only the answer.. ",
             "Injected CoT": "6 * 2 = 12\n2 + 1 = 3\n9 + 3 = 12\n12 + 12 = 24\n24 * 7 = 169\n169 + 0 =",
             "Response": " 169",
-            "Extract-Response": "\n\n169"
+            "Extract-Response": "\n\n169",
+            "Expected Answer": 169,
+            "Answer": 169.0,
+            "Final Answer": 169.0
         },
         {
             "Index": 329,
@@ -1992,7 +2749,10 @@
             "Query": "8 * 2 * 8 - 4 - 9 * 6 =   Provide only the answer.. ",
             "Injected CoT": "8 * 2 = 16\n16 * 8 = 128\n9 * 6 = 54\n128 - 4 = 123\n123 - 54 =",
             "Response": " 69",
-            "Extract-Response": " 69"
+            "Extract-Response": " 69",
+            "Expected Answer": 69,
+            "Answer": 69.0,
+            "Final Answer": 69.0
         },
         {
             "Index": 330,
@@ -2000,7 +2760,10 @@
             "Query": "7 - 6 * 5 - 5 - 1 - 4 =   Provide only the answer.. ",
             "Injected CoT": "6 * 5 = 30\n7 - 30 = -23\n-23 - 5 = -28\n-28 - 1 = -30\n-30 - 4 =",
             "Response": " -34",
-            "Extract-Response": " -34"
+            "Extract-Response": " -34",
+            "Expected Answer": -34,
+            "Answer": -34.0,
+            "Final Answer": -34.0
         },
         {
             "Index": 331,
@@ -2008,7 +2771,10 @@
             "Query": "1 + 7 * 7 + 5 + 4 - 1 =   Provide only the answer.. ",
             "Injected CoT": "7 * 7 = 49\n0 + 49 = 50\n50 + 5 = 55\n55 + 4 = 59\n59 - 0 =",
             "Response": " 59",
-            "Extract-Response": "\n\n59"
+            "Extract-Response": "\n\n59",
+            "Expected Answer": 59,
+            "Answer": 59.0,
+            "Final Answer": 59.0
         }
     ]
 }
