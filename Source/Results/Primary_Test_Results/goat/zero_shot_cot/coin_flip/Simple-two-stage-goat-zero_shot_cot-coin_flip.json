@@ -1,0 +1,48 @@
+{
+    "Mode": "test",
+    "Model": "goat",
+    "Model Index": 4,
+    "Modality": "zero_shot_cot",
+    "Modality Index": 1,
+    "Dataset": "coin_flip",
+    "Extraction Type": "two-stage",
+    "Simple Prompt": true,
+    "Test Path": "Results/Primary_Test_Results/goat/zero_shot_cot/coin_flip/Simple-two-stage-goat-zero_shot_cot-coin_flip.json",
+    "Trials": [
+        {
+            "Index": 0,
+            "GT": "yes",
+            "Query": "A coin is heads up. Whitney flips the coin. Erika does not flip the coin. Tj does not flip the coin. Benito flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\". Options: Yes, No.  Let's think step by step.",
+            "Response": "First, Whitney flips the coin.  Then, Erika does not flip the coin.  Then, Tj does not flip the coin.  Then, Benito flips the coin.  Now, the coin is heads up.",
+            "Extract-Response": "Yes."
+        },
+        {
+            "Index": 1,
+            "GT": "no",
+            "Query": "A coin is heads up. Lucky does not flip the coin. Mireya flips the coin. Jj flips the coin. Kc flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\". Options: Yes, No.  Let's think step by step.",
+            "Response": "Mireya flips the coin. Jj flips the coin. Kc flips the coin. Is the coin still heads up? No, it's tails up.",
+            "Extract-Response": "3."
+        },
+        {
+            "Index": 2,
+            "GT": "no",
+            "Query": "A coin is heads up. Caleb flips the coin. Chase flips the coin. Eleazar flips the coin. Chanel does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\". Options: Yes, No.  Let's think step by step.",
+            "Response": "Caleb flips the coin.  Chase flips the coin.  Eleazar flips the coin.  Chanel does not flip the coin.  Therefore, the coin is still heads up.",
+            "Extract-Response": "1."
+        },
+        {
+            "Index": 3,
+            "GT": "no",
+            "Query": "A coin is heads up. Silvia flips the coin. Carolina does not flip the coin. Stan flips the coin. Chuck flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\". Options: Yes, No.  Let's think step by step.",
+            "Response": "Silvia flips the coin.  Carolina does not flip the coin.  Stan flips the coin.  Chuck flips the coin.  Is the coin still heads up?  Yes, it is.",
+            "Extract-Response": "1."
+        },
+        {
+            "Index": 4,
+            "GT": "yes",
+            "Query": "A coin is heads up. Breanna flips the coin. Trey does not flip the coin. Omar flips the coin. Patrice does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\". Options: Yes, No.  Let's think step by step.",
+            "Response": "Breanna flips the coin.  Trey does not flip the coin.  Omar flips the coin.  Patrice does not flip the coin.  Is the coin still heads up?  Yes, it is.",
+            "Extract-Response": "1."
+        }
+    ]
+}
