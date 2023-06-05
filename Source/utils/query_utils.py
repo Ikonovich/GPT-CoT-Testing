@@ -87,7 +87,7 @@ def local_query(model_name: str, prompt: str, max_tokens: int) -> str:
             output_scores=True,
             stopping_criteria=transformers.StoppingCriteriaList())
         response = generated.sequences[0]
-        response = tokenizer.decode(response, skip_special_tokens=True).strip()
+        response = tokenizer.decode(response, skip_special_tokens=True)
         response = response.split(prompt)[1].strip()
     return response
 
@@ -131,12 +131,12 @@ def load_local_model(model_name: str):
         model = LlamaForCausalLM.from_pretrained(
             'decapoda-research/llama-7b-hf',
             torch_dtype=torch.float16,
-            device_map={'': GPU_ID}).to('cuda')
+            device_map={'': config.__dict__['GPU_ID']}).to('cuda')
         model = PeftModel.from_pretrained(
             model,
             "tiedong/goat-lora-7b",
             torch_dtype=torch.float16,
-            device_map={'': GPU_ID}).to('cuda')
+            device_map={'': config.__dict__['GPU_ID']}).to('cuda')
         local_models[model_name] = (model, tokenizer)
 
     elif model_name in LOCAL_AUTO:

@@ -1,0 +1,2014 @@
+{
+    "Mode": "test",
+    "Model": "text-davinci-002",
+    "Model Index": 0,
+    "Modality": "zero_shot",
+    "Modality Index": 0,
+    "Dataset": "unmodified",
+    "Steps": 9,
+    "Extraction Type": "in-brackets",
+    "Simple Prompt": true,
+    "Test Path": "Results\\Primary_Test_Results\\modified_cot\\text-davinci-002\\zero_shot\\unmodified\\unmodified-9-step-test-text-davinci-002.json",
+    "Trials": [
+        {
+            "Index": 0,
+            "GT": 369,
+            "Query": "1 * 2 + 7 * 6 * 9 - 2 - 1 - 1 - 1 - 6 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "1 * 2 = 2\n7 * 6 = 42\n42 * 9 = 378\n2 + 378 = 380\n380 - 2 = 378\n378 - 1 = 377\n377 - 1 = 376\n376 - 1 = 375\n375 - 6 =",
+            "Response": " 369",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 2,
+            "GT": 75,
+            "Query": "5 + 8 * 5 + 4 * 8 + 9 - 9 - 7 + 9 - 4 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "8 * 5 = 40\n4 * 8 = 32\n5 + 40 = 45\n45 + 32 = 77\n77 - 9 = 68\n68 - 7 = 61\n61 + 9 = 70\n70 - 4 =",
+            "Response": " 66\n\n{66}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 4,
+            "GT": -957,
+            "Query": "3 + 9 - 8 * 4 * 3 * 5 * 2 - 3 * 1 * 3 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "8 * 4 = 32\n32 * 3 = 96\n96 * 5 = 480\n480 * 2 = 960\n3 * 1 = 3\n3 * 3 = 9\n9 + 960 = 969\n3 + 9 = 12\n12 - 969 =",
+            "Response": " -957\n\n{-957}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 6,
+            "GT": 128,
+            "Query": "5 * 9 + 7 + 6 * 8 + 7 * 6 - 2 - 2 * 6 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "5 * 9 = 45\n6 * 8 = 48\n7 * 6 = 42\n2 * 6 = 12\n45 + 7 = 52\n48 + 42 = 90\n2 * 6 = 12\n52 + 90 = 142\n142 - 2 = 140\n140 - 12 =",
+            "Response": " 128\n\n{128}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 8,
+            "GT": 91,
+            "Query": "9 + 5 * 5 + 9 * 6 - 1 * 7 + 2 + 3 + 5 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "5 * 5 = 25\n9 * 6 = 54\n1 * 7 = 7\n9 + 25 = 34\n34 + 54 = 88\n88 - 7 = 81\n81 + 2 = 83\n83 + 3 = 86\n86 + 5 =",
+            "Response": " 91",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 9,
+            "GT": 2,
+            "Query": "3 + 6 * 6 - 6 * 6 - 4 - 1 * 2 + 6 - 1 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "6 * 6 = 36\n6 * 6 = 36\n3 + 36 = 39\n39 - 36 = 3\n3 - 4 = -1\n1 * 2 = 2\n-1 + 6 = 5\n5 - 1 =",
+            "Response": " 4\n\n{4}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 11,
+            "GT": 18,
+            "Query": "5 - 1 * 8 - 1 + 8 + 6 + 1 + 6 + 7 - 6 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "1 * 8 = 8\n5 - 8 = -3\n-3 - 1 = -4\n-4 + 8 = 4\n4 + 6 = 10\n10 + 1 = 11\n11 + 6 = 17\n17 + 7 = 24\n24 - 6 =",
+            "Response": " 18\n\n{18}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 14,
+            "GT": -68,
+            "Query": "9 + 1 - 9 * 9 + 9 - 1 * 4 - 9 + 4 + 3 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "9 * 9 = 81\n1 * 4 = 4\n9 * 81 = 729\n729 - 9 = 720\n720 - 4 = 716\n716 - 9 = 707\n707 + 4 = 711\n711 + 3 =",
+            "Response": " 714",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 15,
+            "GT": 60,
+            "Query": "2 * 2 * 7 - 6 + 7 * 7 - 2 - 3 + 3 - 9 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "2 * 2 = 4\n4 * 7 = 28\n28 - 6 = 22\n7 * 7 = 49\n2 - 2 = 0\n3 - 3 = 0\n0 + 0 = 0\n49 - 0 = 49\n49 - 9 = 40\n22 + 40 =",
+            "Response": " 62\n\n{62}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 16,
+            "GT": 737,
+            "Query": "2 * 6 + 1 * 6 + 4 * 9 * 4 * 5 - 5 + 4 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "2 * 6 = 12\n1 * 6 = 6\n4 * 9 = 36\n36 * 4 = 144\n144 * 5 = 720\n12 + 6 = 18\n18 + 720 = 738\n738 - 5 = 733\n733 + 4 =",
+            "Response": " 737",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 18,
+            "GT": 15,
+            "Query": "8 * 7 - 6 - 6 - 3 * 1 - 8 - 6 - 9 - 3 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "8 * 7 = 56\n56 - 6 = 50\n50 - 6 = 44\n3 * 1 = 3\n44 - 3 = 41\n41 - 8 = 33\n33 - 6 = 27\n27 - 9 = 18\n18 - 3 =",
+            "Response": " 15\n\n{15}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 20,
+            "GT": -238,
+            "Query": "3 * 9 - 1 * 1 * 6 * 6 * 1 * 7 - 7 - 6 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "1 * 6 = 6\n6 * 6 = 36\n36 * 1 = 36\n36 * 7 = 252\n252 + 7 = 259\n3 * 9 = 27\n259 - 27 =",
+            "Response": " 232\n\n{232}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 22,
+            "GT": -4,
+            "Query": "7 + 1 + 6 + 3 - 3 + 2 + 1 - 8 - 8 - 5 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "7 + 1 = 8\n8 + 6 = 14\n14 + 3 = 17\n17 - 3 = 14\n14 + 2 = 16\n16 + 1 = 17\n17 - 8 = 9\n9 - 8 = 1\n1 - 5 =",
+            "Response": " -4",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 23,
+            "GT": -114,
+            "Query": "3 - 3 * 4 * 4 - 6 * 8 * 1 - 5 * 6 + 9 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "3 * 4 = 12\n12 * 4 = 48\n6 * 8 = 48\n48 * 1 = 48\n5 * 6 = 30\n48 + 48 = 96\n96 - 30 = 66\n66 - 5 = 61\n61 + 9 =",
+            "Response": " 70",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 28,
+            "GT": -27,
+            "Query": "3 + 9 - 8 - 6 - 6 * 2 * 3 + 1 + 7 + 3 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "6 * 2 = 12\n12 * 3 = 36\n3 + 9 = 12\n12 - 8 = 4\n4 - 6 = -2\n-2 - 36 = -38\n-38 + 1 = -37\n-37 + 7 = -30\n-30 + 3 =",
+            "Response": " -27\n\n(-27)",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 29,
+            "GT": -146,
+            "Query": "2 - 7 + 3 - 1 * 8 - 9 - 8 * 8 * 2 + 1 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "8 * 2 = 16\n-8 * 16 = -128\n-128 - 9 = -137\n-137 - 8 = -145\n-145 * 1 = -145\n-145 + 3 = -142\n-142 - 7 = -149\n-149 + 2 = -147\n-147 + 1 =",
+            "Response": " -146",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 31,
+            "GT": 18,
+            "Query": "6 * 4 + 1 - 2 * 3 * 9 + 7 * 7 - 5 + 3 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "6 * 4 = 24\n2 * 3 = 6\n6 * 9 = 54\n24 + 1 = 25\n54 - 6 = 48\n7 * 7 = 49\n48 + 49 = 97\n97 - 5 = 92\n92 + 3 =",
+            "Response": " 95",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 34,
+            "GT": -1,
+            "Query": "2 * 5 * 3 - 3 + 5 - 1 - 4 * 8 + 3 - 3 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "2 * 5 = 10\n10 * 3 = 30\n30 - 3 = 27\n27 + 5 = 32\n32 - 1 = 31\n31 - 4 * 8 = -1\n-1 + 3 = 2\n2 - 3 =",
+            "Response": " -1\n\n{-1}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 35,
+            "GT": 97,
+            "Query": "4 + 5 * 4 + 4 * 9 + 8 * 3 + 1 + 8 + 4 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "5 * 4 = 20\n4 + 20 = 24\n9 * 4 = 36\n24 + 36 = 60\n8 * 3 = 24\n1 + 24 = 25\n25 + 8 = 33\n33 + 4 =",
+            "Response": " 37\n\n37",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 37,
+            "GT": -45,
+            "Query": "3 - 2 * 4 * 6 - 3 - 4 + 1 * 5 - 2 + 4 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "2 * 4 = 8\n8 * 6 = 48\n3 - 48 = -45\n-45 - 3 = -48\n-48 - 4 = -52\n1 * 5 = 5\n-52 + 5 = -47\n-47 - 2 = -49\n-49 + 4 =",
+            "Response": " -45",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 38,
+            "GT": 107,
+            "Query": "4 - 1 * 6 + 1 * 2 + 3 * 2 * 9 * 2 - 1 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "1 * 6 = 6\n3 * 2 = 6\n6 * 9 = 54\n54 * 2 = 108\n4 - 6 = -2\n-2 + 1 = -1\n-1 + 2 = 1\n1 + 108 = 109\n109 - 1 =",
+            "Response": " 108",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 40,
+            "GT": -4,
+            "Query": "1 * 8 * 5 - 9 - 5 * 7 - 8 + 3 - 1 + 6 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "1 * 8 = 8\n8 * 5 = 40\n40 - 9 = 31\n5 * 7 = 35\n31 - 35 = -4\n-4 - 8 = -12\n-12 + 3 = -9\n-9 - 1 = -10\n-10 + 6 =",
+            "Response": " -4\n\n{-4}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 43,
+            "GT": 36,
+            "Query": "2 - 5 * 4 + 5 * 6 - 4 + 5 * 6 + 7 - 9 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "5 * 4 = 20\n5 * 6 = 30\n5 * 6 = 30\n2 - 20 = -18\n-18 + 30 = 12\n12 - 4 = 8\n8 + 30 = 38\n38 + 7 = 45\n45 - 9 =",
+            "Response": " 36",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 44,
+            "GT": 74,
+            "Query": "4 * 4 + 4 * 9 + 3 * 3 - 5 + 7 + 7 + 4 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "4 * 4 = 16\n4 * 9 = 36\n3 * 3 = 9\n16 + 36 = 52\n52 + 9 = 61\n61 - 5 = 56\n56 + 7 = 63\n63 + 7 = 70\n70 + 4 =",
+            "Response": " 74\n\n{74}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 45,
+            "GT": 281,
+            "Query": "8 * 4 * 9 - 1 - 2 * 9 + 8 + 6 + 4 - 6 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "8 * 4 = 32\n32 * 9 = 288\n2 * 9 = 18\n1 - 18 = -17\n-17 + 8 = -9\n-9 + 6 = -3\n-3 + 4 = 1\n288 - 1 = 287\n287 + 1 =",
+            "Response": " 288",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 47,
+            "GT": -11,
+            "Query": "1 - 6 + 1 - 3 * 4 + 6 + 4 - 1 * 4 - 1 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "-3 * 4 = -12\n1 - 6 + 1 - 12 + 6 + 4 - 1 * 4 - 1 = \n-1 * 4 = -4\n1 - 6 + 1 - 12 + 6 + 4 - 4 - 1 = \n-6 + 1 = -5\n-5 - 12 = -17\n-17 + 6 = -11\n-11 + 4 = -7\n-7 - 1 =",
+            "Response": " -8\n\n{-8}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 49,
+            "GT": 32,
+            "Query": "7 + 4 - 7 + 9 + 2 * 9 - 6 + 8 - 4 + 3 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "2 * 9 = 18\n7 + 4 = 11\n11 - 7 = 4\n4 + 9 = 13\n13 + 18 = 31\n31 - 6 = 25\n25 + 8 = 33\n33 - 4 = 29\n29 + 3 =",
+            "Response": " 32",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 50,
+            "GT": 17,
+            "Query": "9 - 2 * 6 + 3 - 9 + 1 + 3 * 9 * 1 - 2 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "2 * 6 = 12\n9 - 12 = -3\n-3 + 3 = 0\n0 - 9 = -9\n-9 + 1 = -8\n3 * 9 = 27\n27 * 1 = 27\n-8 + 27 = 19\n19 - 2 =",
+            "Response": " 17",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 51,
+            "GT": 471,
+            "Query": "9 * 3 * 5 * 1 + 1 * 7 * 8 * 6 - 7 + 7 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "9 * 3 = 27\n27 * 5 = 135\n135 * 1 = 135\n1 * 7 = 7\n7 * 8 = 56\n56 * 6 = 336\n135 + 336 = 471\n471 - 7 = 464\n464 + 7 =",
+            "Response": " 471",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 52,
+            "GT": 93,
+            "Query": "8 * 5 - 3 + 5 * 5 - 9 - 5 - 4 + 7 * 7 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "8 * 5 = 40\n40 - 3 = 37\n5 * 5 = 25\n37 + 25 = 62\n62 - 9 = 53\n53 - 5 = 48\n48 - 4 = 44\n7 * 7 = 49\n44 + 49 =",
+            "Response": " 93\n\n{93}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 53,
+            "GT": 57,
+            "Query": "3 * 3 * 6 - 4 - 2 * 5 + 7 - 1 + 9 + 2 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "3 * 3 = 9\n9 * 6 = 54\n2 * 5 = 10\n54 - 4 = 50\n50 - 10 = 40\n40 + 7 = 47\n47 - 1 = 46\n46 + 9 = 55\n55 + 2 =",
+            "Response": " 57",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 55,
+            "GT": -9,
+            "Query": "6 - 3 * 4 - 2 + 2 * 1 - 5 + 6 - 3 - 1 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "3 * 4 = 12\n6 - 12 = -6\n-6 - 2 = -8\n2 * 1 = 2\n-8 + 2 = -6\n-6 - 5 = -11\n-11 + 6 = -5\n-5 - 3 = -8\n-8 - 1 =",
+            "Response": " -9\n\n{-9}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 58,
+            "GT": 157,
+            "Query": "5 * 3 * 8 + 4 + 4 * 8 + 3 - 6 + 1 + 3 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "5 * 3 = 15\n15 * 8 = 120\n4 * 8 = 32\n120 + 32 = 152\n3 - 6 = -3\n-3 + 1 = -2\n-2 + 3 = 1\n152 + 1 =",
+            "Response": " 153\n\n153",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 65,
+            "GT": 32,
+            "Query": "6 * 5 * 1 + 1 + 5 - 2 * 3 + 2 * 5 - 8 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "6 * 5 = 30\n30 * 1 = 30\n2 * 3 = 6\n2 * 5 = 10\n30 + 1 = 31\n31 + 5 = 36\n36 - 6 = 30\n30 + 10 = 40\n40 - 8 =",
+            "Response": " 32\n\n{32}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 66,
+            "GT": -89,
+            "Query": "4 - 5 - 4 * 5 - 8 * 3 - 9 + 5 - 5 * 8 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "4 - 5 = -1\n-1 - 4 * 5 = -21\n-21 - 8 * 3 = -45\n-45 - 9 = -54\n-54 + 5 = -49\n-49 - 5 * 8 =",
+            "Response": " -289",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 73,
+            "GT": 68,
+            "Query": "7 * 4 - 7 + 9 + 7 + 1 * 2 * 2 + 9 * 3 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "7 * 4 = 28\n28 - 7 = 21\n1 * 2 = 2\n2 * 2 = 4\n9 * 3 = 27\n21 + 9 = 30\n30 + 7 = 37\n37 + 4 =",
+            "Response": " 41\n\n{41}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 74,
+            "GT": 33,
+            "Query": "4 * 9 - 5 + 7 + 4 + 2 - 5 - 1 - 7 + 2 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "4 * 9 = 36\n36 - 5 = 31\n31 + 7 = 38\n38 + 4 = 42\n42 + 2 = 44\n44 - 5 = 39\n39 - 1 = 38\n38 - 7 = 31\n31 + 2 =",
+            "Response": " 33\n\n{33}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 78,
+            "GT": -10,
+            "Query": "7 - 1 + 6 - 2 - 2 * 7 * 1 - 2 - 7 + 3 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "7 - 1 = 6\n6 + 6 = 12\n2 * 7 = 14\n14 * 1 = 14\n12 - 14 = -2\n-2 - 2 = -4\n-4 - 7 = -11\n-11 + 3 =",
+            "Response": " -8\n\n{-8}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 84,
+            "GT": 15,
+            "Query": "7 + 2 - 5 - 8 + 3 + 5 * 5 - 9 - 8 + 8 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "5 * 5 = 25\n7 + 2 = 9\n9 - 5 = 4\n4 - 8 = -4\n-4 + 3 = -1\n-1 + 25 = 24\n24 - 9 = 15\n15 - 8 = 7\n7 + 8 =",
+            "Response": " 15",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 85,
+            "GT": 23,
+            "Query": "9 * 8 - 4 * 6 - 7 + 3 * 7 * 3 - 9 * 9 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "9 * 8 = 72\n4 * 6 = 24\n3 * 7 = 21\n21 * 3 = 63\n9 * 9 = 81\n72 - 24 = 48\n48 - 7 = 41\n41 + 63 = 104\n104 - 81 =",
+            "Response": " 23",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 86,
+            "GT": 54,
+            "Query": "5 * 8 + 2 * 2 * 4 - 8 - 5 + 2 + 2 + 7 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "5 * 8 = 40\n2 * 2 = 4\n4 * 4 = 16\n40 + 16 = 56\n56 - 8 = 48\n48 - 5 = 43\n43 + 2 = 45\n45 + 2 = 47\n47 + 7 =",
+            "Response": " 54\n\n{54}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 88,
+            "GT": -32,
+            "Query": "3 - 6 - 1 * 5 * 5 + 9 - 8 * 1 + 4 - 9 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "1 * 5 = 5\n6 - 5 = 1\n8 * 1 = 8\n9 - 8 = 1\n1 + 1 = 2\n2 - 5 = -3\n-3 - 4 = -7\n-7 - 9 =",
+            "Response": " -16\n-16 + 1 = -15",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 89,
+            "GT": 40,
+            "Query": "8 + 1 * 5 + 1 * 3 + 1 + 9 + 8 + 3 * 2 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "1 * 5 = 5\n1 * 3 = 3\n3 * 2 = 6\n8 + 5 = 13\n13 + 3 = 16\n16 + 1 = 17\n17 + 9 = 26\n26 + 8 = 34\n34 + 6 =",
+            "Response": " 40\n\n{40}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 90,
+            "GT": 39,
+            "Query": "9 - 2 + 6 + 2 * 6 * 2 + 7 + 5 - 9 - 1 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "2 * 6 = 12\n12 * 2 = 24\n9 - 2 = 7\n7 + 6 = 13\n13 + 24 = 37\n37 + 7 = 44\n44 + 5 = 49\n49 - 9 = 40\n40 - 1 =",
+            "Response": " 39",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 91,
+            "GT": -40,
+            "Query": "1 - 6 * 7 - 1 + 1 - 2 + 3 + 4 - 2 - 2 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "-6 * 7 = -42\n1 - (-42) = 43\n43 + 1 = 44\n44 - 2 = 42\n42 + 3 = 45\n45 + 4 = 49\n49 - 2 = 47\n47 - 2 =",
+            "Response": " 45",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 92,
+            "GT": -365,
+            "Query": "6 - 6 * 9 * 6 - 8 * 7 + 6 - 7 + 3 + 7 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "6 * 9 = 54\n54 * 6 = 324\n8 * 7 = 56\n324 - 56 = 268\n6 - 7 = -1\n-1 + 3 = 2\n2 + 7 = 9\n268 - 9 =",
+            "Response": " 259",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 93,
+            "GT": 22,
+            "Query": "9 + 8 + 6 * 9 + 3 - 9 - 9 * 4 - 6 - 1 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "6 * 9 = 54\n9 + 8 = 17\n17 + 54 = 71\n71 + 3 = 74\n9 - 9 = 0\n4 * 9 = 36\n0 - 36 = -36\n-36 - 6 = -42\n-42 - 1 = -43\n74 + (-43) =",
+            "Response": " 31\n\n{31}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 94,
+            "GT": 539,
+            "Query": "6 * 7 * 4 + 2 + 4 + 5 * 1 + 8 * 9 * 5 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "6 * 7 = 42\n42 * 4 = 168\n5 * 1 = 5\n8 * 9 = 72\n72 * 5 = 360\n168 + 2 = 170\n170 + 4 = 174\n174 + 5 = 179\n179 + 360 =",
+            "Response": " 539\n\n{539}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 97,
+            "GT": -7,
+            "Query": "8 - 9 * 6 - 9 + 6 + 8 * 5 - 1 + 3 * 1 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "9 * 6 = 54\n8 - 54 = -46\n-46 - 9 = -55\n-55 + 6 = -49\n8 * 5 = 40\n-49 + 40 = -9\n-1 + 3 = 2\n-9 + 2 =",
+            "Response": " -7\n\n{-7}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 99,
+            "GT": 52,
+            "Query": "1 + 1 + 5 - 4 - 3 - 7 + 8 + 3 + 6 * 8 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "6 * 8 = 48\n1 + 1 = 2\n2 + 5 = 7\n7 - 4 = 3\n3 - 3 = 0\n0 - 7 = -7\n-7 + 8 = 1\n1 + 3 = 4\n4 + 48 =",
+            "Response": " 52",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 101,
+            "GT": -961,
+            "Query": "8 + 7 * 7 - 1 - 3 * 7 * 6 * 8 - 1 * 9 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "7 * 7 = 49\n8 + 49 = 57\n7 * 6 = 42\n42 * 8 = 336\n336 * 3 = 1008\n1 * 9 = 9\n1008 - 9 = 999\n57 - 1 = 56\n56 - 999 =",
+            "Response": " -943",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 102,
+            "GT": -27,
+            "Query": "3 - 6 - 6 + 7 - 6 * 5 + 2 + 5 + 3 - 5 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "3 - 6 = -3\n-3 - 6 = -9\n-9 + 7 = -2\n-6 * 5 = -30\n-2 - 30 = -32\n-32 + 2 = -30\n-30 + 5 = -25\n-25 + 3 = -22\n-22 - 5 =",
+            "Response": " -27\n\n{-27}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 103,
+            "GT": 13,
+            "Query": "8 + 4 * 6 - 9 + 4 - 4 - 2 - 1 * 2 * 4 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "4 * 6 = 24\n8 + 24 = 32\n32 - 9 = 23\n23 + 4 = 27\n27 - 4 = 23\n23 - 2 = 21\n1 * 2 = 2\n2 * 4 = 8\n21 - 8 =",
+            "Response": " 13",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 107,
+            "GT": 1710,
+            "Query": "7 - 9 * 1 * 1 - 8 - 8 + 6 * 9 * 4 * 8 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "9 * 1 = 9\n1 * 9 = 9\n6 * 9 = 54\n4 * 54 = 216\n216 * 8 = 1728\n7 - 9 = -2\n-2 * 1 = -2\n-2 * 1 = -2\n-2 - 8 = -10\n-10 - 8 = -18\n54 * 216 = 11664\n11664 + 6 = 11670\n11670 * 8 = 93360\n-18 + 93360 =",
+            "Response": " 93342\n93342 + 1728 = 95070\n95070 + -2 = 95068",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 108,
+            "GT": -22,
+            "Query": "9 - 8 - 4 * 7 + 4 + 3 + 9 + 1 - 5 - 7 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "4 * 7 = 28\n-8 + 9 = 1\n1 - 28 = -27\n-27 + 4 = -23\n-23 + 3 = -20\n-20 + 9 = -11\n-11 + 1 = -10\n-10 - 5 = -15\n-15 - 7 =",
+            "Response": " -22\n\n{-22}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 110,
+            "GT": -2,
+            "Query": "4 - 3 * 5 + 1 - 3 + 1 * 6 + 7 + 7 - 9 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "3 * 5 = 15\n4 - 15 = -11\n1 * 6 = 6\n-11 + 1 = -10\n-10 - 3 = -13\n-13 + 6 = -7\n-7 + 7 = 0\n0 - 9 =",
+            "Response": " -9\n\n{-9}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 111,
+            "GT": 1,
+            "Query": "4 * 9 - 5 - 8 + 4 - 9 * 2 - 2 - 6 * 1 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "4 * 9 = 36\n36 - 5 = 31\n31 - 8 = 23\n23 + 4 = 27\n9 * 2 = 18\n27 - 18 = 9\n2 - 6 = -4\n9 * -4 =",
+            "Response": " -36\n\n{-36}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 115,
+            "GT": 24,
+            "Query": "5 - 1 * 7 - 1 * 3 * 1 + 6 + 7 * 3 + 2 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "1 * 7 = 7\n3 * 1 = 3\n7 * 3 = 21\n5 - 7 = -2\n-2 - 3 = -5\n-5 + 6 = 1\n1 + 7 = 8\n8 * 3 = 24\n24 + 2 =",
+            "Response": " 26",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 116,
+            "GT": -14,
+            "Query": "8 - 1 - 3 - 3 * 8 + 5 + 3 - 3 * 1 + 1 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "3 * 8 = 24\n8 - 1 = 7\n7 - 3 = 4\n4 - 24 = -20\n-20 + 5 = -15\n-15 + 3 = -12\n-12 - 3 = -15\n-15 * 1 = -15\n-15 + 1 =",
+            "Response": " -14\n\n{-14}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 117,
+            "GT": -36,
+            "Query": "6 - 9 * 7 + 8 - 6 - 2 + 4 + 1 + 8 * 2 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "9 * 7 = 63\n6 - 63 = -57\n-57 + 8 = -49\n-49 - 6 = -55\n-55 - 2 = -57\n-57 + 4 = -53\n-53 + 1 = -52\n8 * 2 = 16\n-52 + 16 =",
+            "Response": " 14",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 118,
+            "GT": 185,
+            "Query": "7 - 2 - 5 + 7 * 4 * 7 - 4 * 6 + 5 + 8 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "7 - 2 = 5\n5 - 5 = 0\n7 * 4 = 28\n28 * 7 = 196\n4 * 6 = 24\n196 - 24 = 172\n0 + 5 = 5\n5 + 8 =",
+            "Response": " 13\n\n{13}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 119,
+            "GT": 69,
+            "Query": "6 - 8 * 3 + 1 - 7 - 5 + 7 * 8 + 6 * 7 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "8 * 3 = 24\n6 - 24 = -18\n-18 + 1 = -17\n-17 - 7 = -24\n-24 - 5 = -29\n7 * 8 = 56\n6 * 7 = 42\n-29 + 56 = 27\n27 + 42 =",
+            "Response": " 69\n\n{69}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 120,
+            "GT": 53,
+            "Query": "2 * 5 * 9 - 8 - 8 + 7 * 2 - 5 - 5 * 6 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "2 * 5 = 10\n10 * 9 = 90\n90 - 8 = 82\n82 - 8 = 74\n7 * 2 = 14\n74 + 14 = 88\n88 - 5 = 83\n5 * 6 = 30\n83 - 30 =",
+            "Response": " 53\n\n{53}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 121,
+            "GT": -121,
+            "Query": "4 * 3 - 1 * 7 - 5 * 5 * 6 + 2 * 2 * 6 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "4 * 3 = 12\n1 * 7 = 7\n5 * 5 = 25\n25 * 6 = 150\n2 * 2 = 4\n4 * 6 = 24\n12 - 7 = 5\n5 - 150 = -145\n-145 + 24 =",
+            "Response": " -121",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 122,
+            "GT": 2,
+            "Query": "4 - 1 - 5 - 2 * 4 + 1 - 7 * 3 + 8 * 4 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "2 * 4 = 8\n-1 * 8 = -8\n-5 - 8 = -13\n-13 + 1 = -12\n-7 * 3 = -21\n8 * 4 = 32\n-12 - 21 = -33\n-33 + 32 =",
+            "Response": " -1",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 123,
+            "GT": 127,
+            "Query": "6 + 4 * 1 * 4 * 5 - 3 + 3 * 8 * 2 - 4 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "4 * 1 = 4\n4 * 4 = 16\n16 * 5 = 80\n6 + 80 = 86\n8 * 2 = 16\n3 * 16 = 48\n48 + 3 = 51\n86 - 51 = 35\n35 - 4 =",
+            "Response": " 31",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 124,
+            "GT": -65,
+            "Query": "4 - 7 + 2 * 3 + 7 - 5 - 9 * 7 - 2 - 5 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "2 * 3 = 6\n-9 * 7 = -63\n4 - 7 = -3\n-3 + 6 = 3\n3 + 7 = 10\n10 - 5 = 5\n5 - 63 = -58\n-58 - 2 = -60\n-60 - 5 =",
+            "Response": " -65",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 125,
+            "GT": -71,
+            "Query": "6 - 4 * 4 - 7 - 5 * 1 - 9 - 6 * 8 + 8 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "4 * 4 = 16\n6 - 16 = -10\n-10 - 7 = -17\n5 * 1 = 5\n-17 - 5 = -22\n6 * 8 = 48\n-22 - 9 = -31\n-31 - 48 = -79\n-79 + 8 =",
+            "Response": " -71",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 131,
+            "GT": -544,
+            "Query": "3 + 6 + 7 - 6 * 2 * 8 * 6 + 1 + 7 + 8 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "6 * 2 = 12\n12 * 8 = 96\n96 * 6 = 576\n3 + 6 = 9\n9 + 7 = 16\n16 - 576 = -560\n-560 + 1 = -559\n-559 + 7 = -552\n-552 + 8 =",
+            "Response": " -544\n\n{-544}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 133,
+            "GT": 89,
+            "Query": "9 * 7 - 1 - 8 + 3 * 3 + 6 + 7 * 4 - 8 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "9 * 7 = 63\n63 - 1 = 62\n62 - 8 = 54\n3 * 3 = 9\n54 + 9 = 63\n63 + 6 = 69\n7 * 4 = 28\n69 + 28 = 97\n97 - 8 =",
+            "Response": " 89",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 134,
+            "GT": 19,
+            "Query": "2 + 7 + 2 - 7 + 1 - 7 + 7 - 4 + 2 * 9 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "2 + 7 = 9\n9 + 2 = 11\n11 - 7 = 4\n4 + 1 = 5\n5 - 7 = -2\n-2 + 7 = 5\n5 - 4 = 1\n2 * 9 = 18\n1 + 18 =",
+            "Response": " 19\n\n{19}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 136,
+            "GT": 65,
+            "Query": "7 * 6 + 5 + 3 + 2 * 6 - 9 + 8 + 9 - 5 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "7 * 6 = 42\n2 * 6 = 12\n42 + 5 = 47\n47 + 3 = 50\n50 + 12 = 62\n62 - 9 = 53\n53 + 8 = 61\n61 + 9 = 70\n70 - 5 =",
+            "Response": " 65\n\n{65}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 137,
+            "GT": 25,
+            "Query": "3 * 5 * 2 * 1 + 6 - 6 - 3 + 6 - 7 - 1 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "3 * 5 = 15\n15 * 2 = 30\n30 * 1 = 30\n30 + 6 = 36\n36 - 6 = 30\n30 - 3 = 27\n27 + 6 = 33\n33 - 7 = 26\n26 - 1 =",
+            "Response": " 25\n\n{25}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 139,
+            "GT": -83,
+            "Query": "5 - 6 * 3 - 4 - 9 * 9 + 6 + 8 - 3 + 4 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "-6 * 3 = -18\n5 - (-18) - 4 - 9 * 9 + 6 + 8 - 3 + 4 = \n-9 * 9 = -81\n5 - (-18) - 4 - 81 + 6 + 8 - 3 + 4 = \n5 - (-18) = 23\n23 - 4 = 19\n19 + 6 = 25\n25 + 8 = 33\n33 - 3 = 30\n30 + 4 =",
+            "Response": " 34",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 140,
+            "GT": -100,
+            "Query": "2 + 2 - 4 - 1 - 2 * 7 * 8 + 5 + 2 + 6 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "2 + 2 = 4\n4 - 4 = 0\n0 - 1 = -1\n2 * 7 = 14\n14 * 8 = 112\n-1 - 112 = -113\n-113 + 5 = -108\n-108 + 2 = -106\n-106 + 6 =",
+            "Response": " -100\n\n{-100}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 142,
+            "GT": 59,
+            "Query": "6 + 5 * 4 + 6 * 7 + 4 - 3 - 6 * 1 - 4 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "5 * 4 = 20\n6 * 7 = 42\n6 * 1 = 6\n6 + 20 = 26\n26 + 42 = 68\n68 + 4 = 72\n72 - 3 = 69\n69 - 6 = 63\n63 - 4 =",
+            "Response": " 59",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 143,
+            "GT": 21,
+            "Query": "7 * 6 + 4 - 9 + 7 - 3 * 7 + 4 - 5 - 1 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "7 * 6 = 42\n42 + 4 = 46\n46 - 9 = 37\n37 + 7 = 44\n3 * 7 = 21\n44 - 21 = 23\n23 + 4 = 27\n27 - 5 = 22\n22 - 1 =",
+            "Response": " 21\n\n{21}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 144,
+            "GT": 270,
+            "Query": "8 + 8 - 6 - 8 * 8 + 3 * 3 + 5 * 7 * 9 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "8 + 8 = 16\n16 - 6 = 10\n8 * 8 = 64\n10 - 64 = -54\n3 * 3 = 9\n5 * 7 = 35\n35 * 9 = 315\n-54 + 9 = -45\n-45 + 315 =",
+            "Response": " 270\n\n{270}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 145,
+            "GT": 157,
+            "Query": "1 + 1 + 6 + 5 * 7 * 2 + 6 + 1 + 9 * 8 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "5 * 7 = 35\n9 * 8 = 72\n1 + 1 = 2\n6 + 1 = 7\n2 + 6 = 8\n35 * 2 = 70\n8 + 70 = 78\n78 + 7 = 85\n85 + 72 =",
+            "Response": " 157",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 146,
+            "GT": 31,
+            "Query": "9 + 7 * 7 - 8 - 2 + 1 - 7 + 6 - 8 - 9 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "7 * 7 = 49\n9 + 49 = 58\n58 - 8 = 50\n50 - 2 = 48\n48 + 1 = 49\n49 - 7 = 42\n42 + 6 = 48\n48 - 8 = 40\n40 - 9 =",
+            "Response": " 31\n\n{31}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 149,
+            "GT": -12,
+            "Query": "6 + 8 - 5 * 2 + 7 - 4 - 8 - 6 + 2 - 7 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "5 * 2 = 10\n6 + 8 = 14\n14 - 10 = 4\n4 + 7 = 11\n11 - 4 = 7\n7 - 8 = -1\n-1 - 6 = -7\n-7 + 2 = -5\n-5 - 7 =",
+            "Response": " -12",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 152,
+            "GT": -29,
+            "Query": "6 * 6 - 7 - 5 * 6 + 1 - 2 - 6 * 4 - 3 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "6 * 6 = 36\n5 * 6 = 30\n6 * 4 = 24\n36 - 7 = 29\n29 - 30 = -1\n-1 + 1 = 0\n0 - 2 = -2\n-2 - 24 = -26\n-26 - 3 =",
+            "Response": " -29",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 154,
+            "GT": 16,
+            "Query": "6 + 3 + 3 * 2 * 2 + 7 + 4 - 7 * 1 - 9 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "3 * 2 = 6\n2 * 2 = 4\n6 * 4 = 24\n6 + 3 = 9\n9 + 24 = 33\n33 + 7 = 40\n40 + 4 = 44\n7 * 1 = 7\n44 - 7 = 37\n37 - 9 =",
+            "Response": " 28\n\n{28}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 157,
+            "GT": 60,
+            "Query": "6 - 2 + 3 + 3 - 4 - 7 + 6 * 9 + 3 + 4 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "6 - 2 = 4\n4 + 3 = 7\n7 + 3 = 10\n10 - 4 = 6\n6 - 7 = -1\n6 * 9 = 54\n-1 + 54 = 53\n53 + 3 = 56\n56 + 4 =",
+            "Response": " 60\n\n{60}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 158,
+            "GT": 25,
+            "Query": "6 * 3 - 2 + 6 + 1 - 8 + 1 * 6 - 5 + 9 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "6 * 3 = 18\n18 - 2 = 16\n16 + 6 = 22\n22 + 1 = 23\n23 - 8 = 15\n1 * 6 = 6\n15 + 6 = 21\n21 - 5 = 16\n16 + 9 =",
+            "Response": " 25\n\n{25}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 162,
+            "GT": -13,
+            "Query": "2 * 1 + 5 - 5 - 9 - 6 * 5 + 5 * 6 - 6 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "2 * 1 = 2\n6 * 5 = 30\n5 * 6 = 30\n2 + 5 = 7\n7 - 5 = 2\n2 - 9 = -7\n-7 - 30 = -37\n-37 + 30 = -7\n-7 + 30 = 23\n23 - 6 = 17\n17 + 30 = 47\n47 - 6 = 41\n41 - 6 =",
+            "Response": " 35\n35 - 6 = 29\n29 - 6 = 23\n23 - 6 = 17\n17 - 6 = 11\n11 - 6 = 5\n5 - 6 = -1",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 163,
+            "GT": 132,
+            "Query": "4 - 6 + 7 + 9 * 3 * 5 - 6 + 1 - 2 - 1 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "9 * 3 = 27\n27 * 5 = 135\n4 - 6 = -2\n-2 + 7 = 5\n5 + 135 = 140\n140 - 6 = 134\n134 + 1 = 135\n135 - 2 = 133\n133 - 1 =",
+            "Response": " 132",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 164,
+            "GT": 199,
+            "Query": "8 - 8 + 8 * 5 * 1 * 5 + 3 - 6 + 3 - 1 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "8 - 8 = 0\n5 * 1 = 5\n5 * 5 = 25\n0 + 25 = 25\n25 + 3 = 28\n28 - 6 = 22\n22 + 3 = 25\n25 - 1 =",
+            "Response": " 24\n\n{24}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 165,
+            "GT": -58,
+            "Query": "8 - 7 * 9 + 5 - 3 - 6 - 2 + 4 - 6 + 5 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "7 * 9 = 63\n8 - 63 = -55\n-55 + 5 = -50\n-50 - 3 = -53\n-53 - 6 = -59\n-59 - 2 = -61\n-61 + 4 = -57\n-57 - 6 = -63\n-63 + 5 =",
+            "Response": " -58",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 167,
+            "GT": -351,
+            "Query": "3 - 7 * 8 * 6 - 2 - 2 * 1 - 1 * 2 * 7 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "7 * 8 = 56\n56 * 6 = 336\n3 - 336 = -333\n2 * 1 = 2\n-2 - 2 = -4\n1 * 2 = 2\n2 * 7 = 14\n-4 - 14 =",
+            "Response": " -18\n-333 - 18 = -351",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 168,
+            "GT": 36,
+            "Query": "1 * 9 + 3 * 8 - 1 + 7 + 2 + 5 - 4 - 6 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "1 * 9 = 9\n3 * 8 = 24\n9 + 24 = 33\n33 + 7 = 40\n40 + 2 = 42\n42 + 5 = 47\n-4 - 6 = -10\n47 - 10 =",
+            "Response": " 37\n\n{37}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 171,
+            "GT": -30,
+            "Query": "3 + 9 - 5 * 7 + 4 - 5 + 3 - 9 + 6 - 6 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "5 * 7 = 35\n3 + 9 = 12\n12 - 35 = -23\n-23 + 4 = -19\n-19 - 5 = -24\n-24 + 3 = -21\n-21 - 9 = -30\n-30 + 6 = -24\n-24 - 6 =",
+            "Response": " -30\n\n{-30}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 175,
+            "GT": -56,
+            "Query": "1 - 6 - 8 * 3 - 7 + 4 * 9 - 8 * 6 - 8 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "-8 * 3 = -24\n-6 - 24 = -30\n4 * 9 = 36\n-8 * 6 = -48\n-30 + 36 = 6\n6 - 7 = -1\n-1 - 8 =",
+            "Response": " -9\n\n{-9}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 176,
+            "GT": 10,
+            "Query": "8 - 9 - 4 * 9 - 7 - 2 * 3 + 4 * 5 * 3 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "4 * 5 = 20\n9 * 4 = 36\n3 * 20 = 60\n20 - 9 = 11\n36 - 7 = 29\n2 * 3 = 6\n60 + 29 = 89\n89 - 6 = 83\n8 - 83 =",
+            "Response": " -75\n\n{-75}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 177,
+            "GT": 30,
+            "Query": "8 + 2 + 2 + 1 - 3 - 4 + 7 - 1 + 9 + 9 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "8 + 2 = 10\n10 + 2 = 12\n12 + 1 = 13\n13 - 3 = 10\n10 - 4 = 6\n6 + 7 = 13\n13 - 1 = 12\n12 + 9 = 21\n21 + 9 =",
+            "Response": " 30\n\n{30}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 183,
+            "GT": 26,
+            "Query": "6 * 9 - 6 + 2 - 8 * 3 + 4 + 2 + 1 - 7 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "6 * 9 = 54\n54 - 6 = 48\n48 + 2 = 50\n8 * 3 = 24\n50 - 24 = 26\n26 + 4 = 30\n30 + 2 = 32\n32 + 1 = 33\n33 - 7 =",
+            "Response": " 26\n\n{26}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 184,
+            "GT": -84,
+            "Query": "7 - 9 * 2 - 8 * 9 - 6 - 6 * 1 + 8 + 3 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "9 * 2 = 18\n8 * 9 = 72\n6 * 1 = 6\n18 * -1 = -18\n72 * -1 = -72\n6 * -1 = -6\n7 + -18 = -11\n-11 + -72 = -83\n-83 + -6 = -89\n-89 + 8 = -81\n-81 + 3 =",
+            "Response": " -78\n\n{-78}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 185,
+            "GT": -17,
+            "Query": "1 - 9 + 2 + 4 - 6 + 9 + 3 * 6 - 6 * 6 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "3 * 6 = 18\n6 * 6 = 36\n1 - 9 = -8\n-8 + 2 = -6\n-6 + 4 = -2\n-2 - 6 = -8\n-8 + 9 = 1\n1 + 18 = 19\n19 - 36 =",
+            "Response": " -17",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 187,
+            "GT": -100,
+            "Query": "5 - 3 * 2 * 4 - 1 * 7 - 3 - 8 * 9 + 1 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "3 * 2 = 6\n6 * 4 = 24\n1 * 7 = 7\n8 * 9 = 72\n5 - 24 = -19\n-19 - 7 = -26\n-26 - 3 = -29\n-29 - 72 = -101\n-101 + 1 =",
+            "Response": " -100",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 188,
+            "GT": -18,
+            "Query": "5 - 8 * 4 + 7 - 2 - 3 - 4 + 3 + 5 + 3 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "-8 * 4 = -32\n5 - (-32) = 37\n37 + 7 = 44\n44 - 2 = 42\n42 - 3 = 39\n39 - 4 = 35\n35 + 3 = 38\n38 + 5 = 43\n43 + 3 =",
+            "Response": " 46",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 189,
+            "GT": 41,
+            "Query": "3 + 2 + 9 + 1 * 8 * 4 + 3 + 5 - 6 - 7 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "1 * 8 = 8\n8 * 4 = 32\n3 + 2 = 5\n5 + 9 = 14\n14 + 1 = 15\n15 + 32 = 47\n47 + 3 = 50\n50 + 5 = 55\n55 - 6 = 49\n49 - 7 =",
+            "Response": " 42\n\n{42}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 191,
+            "GT": 375,
+            "Query": "8 * 7 * 5 - 2 + 2 * 6 * 8 - 2 * 3 + 7 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "8 * 7 = 56\n56 * 5 = 280\n2 * 6 = 12\n12 * 8 = 96\n280 - 2 = 278\n96 + 278 = 374\n2 * 3 = 6\n374 - 6 = 368\n368 + 7 =",
+            "Response": " 375",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 192,
+            "GT": 1507,
+            "Query": "7 * 9 * 8 * 3 - 8 - 3 + 8 - 1 + 3 - 4 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "7 * 9 = 63\n63 * 8 = 504\n504 * 3 = 1512\n1512 - 8 = 1504\n1504 - 3 = 1501\n1501 + 8 = 1509\n1509 - 1 = 1508\n1508 + 3 = 1511\n1511 - 4 =",
+            "Response": " 1507\n\n{1507}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 194,
+            "GT": 111,
+            "Query": "1 * 5 + 2 + 8 * 9 + 3 + 6 - 1 + 4 * 6 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "1 * 5 = 5\n8 * 9 = 72\n4 * 6 = 24\n5 + 2 = 7\n72 + 3 = 75\n6 - 1 = 5\n24 + 4 = 28\n5 + 75 = 80\n80 + 28 =",
+            "Response": " 108",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 195,
+            "GT": 5,
+            "Query": "2 * 2 * 4 - 5 * 1 + 3 * 1 - 9 - 9 + 9 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "2 * 2 = 4\n4 * 4 = 16\n5 * 1 = 5\n3 * 1 = 3\n9 + 9 = 18\n18 - 5 = 13\n13 + 3 = 16\n16 - 9 = 7\n7 - 9 = -2\n-2 + 9 = 7\n16 + 7 =",
+            "Response": " 23",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 196,
+            "GT": 27,
+            "Query": "7 + 5 + 7 + 2 + 4 - 3 + 7 - 7 - 2 + 7 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "7 + 5 = 12\n12 + 7 = 19\n19 + 2 = 21\n21 + 4 = 25\n25 - 3 = 22\n22 + 7 = 29\n29 - 7 = 22\n22 - 2 = 20\n20 + 7 =",
+            "Response": " 27",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 198,
+            "GT": 22,
+            "Query": "8 + 2 + 1 + 8 + 3 - 4 - 5 + 2 * 3 + 3 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "2 * 3 = 6\n8 + 2 + 1 + 8 + 3 - 4 - 5 + 6 + 3 =",
+            "Response": " \n\n{25}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 200,
+            "GT": -81,
+            "Query": "7 - 7 * 5 - 8 - 6 - 3 - 4 * 7 - 8 * 1 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "7 * 5 = 35\n35 - 7 = 28\n28 - 8 = 20\n20 - 6 = 14\n14 - 3 = 11\n4 * 7 = 28\n8 * 1 = 8\n28 + 8 = 36\n36 + 11 =",
+            "Response": " 47\n\n{47}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 202,
+            "GT": -6,
+            "Query": "4 * 8 + 7 - 5 - 6 + 6 - 7 * 4 - 8 - 4 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "4 * 8 = 32\n32 + 7 = 39\n39 - 5 = 34\n34 - 6 = 28\n28 + 6 = 34\n7 * 4 = 28\n34 - 28 = 6\n6 - 8 = -2\n-2 - 4 =",
+            "Response": " -6\n\n{-6}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 207,
+            "GT": 318,
+            "Query": "5 * 6 * 3 * 4 + 5 + 4 - 6 * 8 + 2 - 5 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "5 * 6 = 30\n30 * 3 = 90\n90 * 4 = 360\n360 + 5 = 365\n365 + 4 = 369\n6 * 8 = 48\n369 - 48 = 321\n321 + 2 = 323\n323 - 5 =",
+            "Response": " 318\n\n{318}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 209,
+            "GT": 20,
+            "Query": "4 + 5 * 6 - 2 * 7 - 9 + 7 + 8 - 5 - 1 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "5 * 6 = 30\n4 + 30 = 34\n2 * 7 = 14\n34 - 14 = 20\n20 - 9 = 11\n11 + 7 = 18\n18 + 8 = 26\n26 - 5 = 21\n21 - 1 =",
+            "Response": " 20\n\n{20}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 210,
+            "GT": 1278,
+            "Query": "9 * 6 * 4 * 6 - 3 + 3 + 7 * 2 - 4 * 8 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "9 * 6 = 54\n54 * 4 = 216\n216 * 6 = 1296\n7 * 2 = 14\n4 * 8 = 32\n1296 - 3 = 1293\n1293 + 3 = 1296\n1296 + 14 = 1310\n1310 - 32 =",
+            "Response": " 1278\n\n{1278}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 212,
+            "GT": 702,
+            "Query": "8 * 2 * 8 * 5 - 5 + 7 * 9 + 2 + 2 * 1 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "8 * 2 = 16\n16 * 8 = 128\n128 * 5 = 640\n640 - 5 = 635\n7 * 9 = 63\n2 * 1 = 2\n63 + 2 = 65\n635 + 65 =",
+            "Response": " 700\n\n{700}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 213,
+            "GT": 43,
+            "Query": "6 * 6 + 6 + 4 - 8 + 7 - 1 * 2 - 1 + 1 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "6 * 6 = 36\n36 + 6 = 42\n42 + 4 = 46\n46 - 8 = 38\n38 + 7 = 45\n45 - 1 * 2 = 43\n43 - 1 = 42\n42 + 1 =",
+            "Response": " 43\n\n{43}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 214,
+            "GT": 134,
+            "Query": "8 * 7 + 9 + 8 * 9 + 9 - 4 - 6 + 1 - 3 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "8 * 7 = 56\n8 * 9 = 72\n56 + 9 = 65\n72 + 9 = 81\n65 + 81 = 146\n146 - 4 = 142\n142 - 6 = 136\n136 + 1 = 137\n137 - 3 =",
+            "Response": " 134\n\n{134}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 215,
+            "GT": -99,
+            "Query": "7 * 5 * 7 + 4 * 4 - 9 * 5 * 8 - 5 + 5 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "7 * 5 = 35\n35 * 7 = 245\n4 * 4 = 16\n9 * 5 = 45\n45 * 8 = 360\n245 - 360 = -115\n-115 - 5 = -120\n-120 + 5 =",
+            "Response": " -115",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 216,
+            "GT": 27,
+            "Query": "8 + 5 + 6 + 3 - 1 + 6 + 3 * 3 - 8 - 1 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "3 * 3 = 9\n8 + 5 = 13\n13 + 6 = 19\n19 + 3 = 22\n22 - 1 = 21\n21 + 6 = 27\n27 - 8 = 19\n19 - 1 = 18\n18 + 9 =",
+            "Response": " 27",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 217,
+            "GT": 59,
+            "Query": "2 - 2 * 9 + 7 + 7 * 6 + 3 + 2 * 8 + 7 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "2 * 9 = 18\n2 - 18 = -16\n7 * 6 = 42\n2 * 8 = 16\n-16 + 7 + 42 + 3 + 16 + 7 =",
+            "Response": " 85",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 220,
+            "GT": -79,
+            "Query": "5 + 1 + 2 - 5 * 4 - 2 - 6 + 5 - 8 * 8 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "5 + 1 = 6\n6 + 2 = 8\n5 * 4 = 20\n20 - 8 = 12\n12 - 2 = 10\n10 - 6 = 4\n4 + 5 = 9\n8 * 8 = 64\n9 - 64 =",
+            "Response": " -55",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 223,
+            "GT": 11,
+            "Query": "5 - 3 - 3 + 6 - 3 * 5 * 1 + 8 * 2 + 5 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "5 - 3 = 2\n2 - 3 = -1\n-1 + 6 = 5\n5 - 3 * 5 * 1 = -10\n-10 + 8 * 2 = 6\n6 + 5 =",
+            "Response": " 11\n\n{11}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 226,
+            "GT": -2,
+            "Query": "5 - 4 + 2 * 4 - 5 - 3 - 1 + 5 - 4 - 3 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "2 * 4 = 8\n5 - 4 = 1\n1 + 8 = 9\n9 - 5 = 4\n4 - 3 = 1\n1 - 1 = 0\n0 + 5 = 5\n5 - 4 = 1\n1 - 3 =",
+            "Response": " -2\n-2 + 5 = 3",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 227,
+            "GT": 119,
+            "Query": "7 * 4 - 1 + 6 + 9 * 7 + 2 + 5 + 2 * 8 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "7 * 4 = 28\n9 * 7 = 63\n2 * 8 = 16\n28 - 1 = 27\n27 + 6 = 33\n33 + 63 = 96\n96 + 5 = 101\n101 + 16 =",
+            "Response": " 117\n\n{117}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 233,
+            "GT": -144,
+            "Query": "9 - 9 * 8 + 1 - 6 + 5 - 1 - 9 * 8 - 8 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "9 * 8 = 72\n9 - 72 = -63\n-63 + 1 = -62\n-62 - 6 = -68\n-68 + 5 = -63\n-63 - 1 = -64\n-9 * 8 = -72\n-64 - 72 = -136\n-136 - 8 =",
+            "Response": " -144",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 234,
+            "GT": -19,
+            "Query": "4 + 1 * 2 * 4 - 3 + 6 - 4 * 8 + 6 - 8 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "1 * 2 = 2\n2 * 4 = 8\n4 + 8 = 12\n12 - 3 = 9\n9 + 6 = 15\n4 * 8 = 32\n15 - 32 = -17\n-17 + 6 = -11\n-11 - 8 =",
+            "Response": " -19\n\n{-19}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 235,
+            "GT": 105,
+            "Query": "2 - 2 - 3 * 1 + 3 + 9 * 9 - 3 + 9 * 3 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "3 * 1 = 3\n2 - 2 = 0\n0 - 3 = -3\n9 * 9 = 81\n-3 + 81 = 78\n9 * 3 = 27\n78 + 27 =",
+            "Response": " 105\n\n{105}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 237,
+            "GT": -98,
+            "Query": "4 + 1 * 1 - 9 * 1 - 6 * 2 * 8 + 3 - 1 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "1 * 1 = 1\n9 * 1 = 9\n2 * 8 = 16\n6 * 16 = 96\n4 + 1 = 5\n5 - 1 = 4\n4 - 9 = -5\n-5 - 96 = -101\n-101 + 3 = -98\n-98 - 1 =",
+            "Response": " -99",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 238,
+            "GT": -127,
+            "Query": "8 - 9 * 9 - 6 * 4 - 2 * 9 + 8 - 4 * 5 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "9 * 9 = 81\n6 * 4 = 24\n2 * 9 = 18\n4 * 5 = 20\n81 * -1 = -81\n24 * -1 = -24\n18 * -1 = -18\n-81 - 24 = -105\n-105 - 20 = -125\n-125 + 8 = -117\n-117 - 20 =",
+            "Response": " -137\n-137 + 8 = -129\n\n{-129}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 239,
+            "GT": -5,
+            "Query": "1 - 7 + 9 - 6 - 3 + 4 + 4 + 2 - 2 - 7 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "-7 + 9 = 2\n2 - 6 = -4\n-4 - 3 = -7\n-7 + 4 = -3\n-3 + 4 = 1\n1 + 2 = 3\n3 - 2 = 1\n1 - 7 = -6\n-6 - 7 =",
+            "Response": " -13",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 240,
+            "GT": 125,
+            "Query": "6 * 9 * 2 - 4 - 6 * 2 + 6 * 6 + 2 - 5 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "6 * 9 = 54\n54 * 2 = 108\n6 * 2 = 12\n108 - 4 = 104\n104 - 12 = 92\n6 * 6 = 36\n92 + 36 = 128\n2 - 5 = -3\n128 - 3 =",
+            "Response": " 125\n\n{125}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 241,
+            "GT": 18,
+            "Query": "5 + 6 * 2 - 2 + 1 + 7 - 7 + 9 + 2 - 9 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "6 * 2 = 12\n5 + 12 = 17\n17 - 2 = 15\n15 + 1 = 16\n16 + 7 = 23\n23 - 7 = 16\n16 + 9 = 25\n25 + 2 = 27\n27 - 9 =",
+            "Response": " 18\n\n{18}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 243,
+            "GT": -29,
+            "Query": "7 + 2 - 6 + 5 - 6 + 2 + 9 - 2 * 7 * 3 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "2 * 7 = 14\n14 * 3 = 42\n7 + 2 = 9\n9 - 6 = 3\n3 + 5 = 8\n8 - 6 = 2\n2 + 2 = 4\n4 + 9 = 13\n13 - 42 =",
+            "Response": " -29",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 245,
+            "GT": 25,
+            "Query": "5 - 8 + 6 - 9 + 6 * 3 + 9 + 4 + 9 - 9 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "6 * 3 = 18\n5 - 8 = -3\n-3 + 6 = 3\n3 - 9 = -6\n-6 + 18 = 12\n12 + 9 = 21\n21 + 4 = 25\n25 + 9 = 34\n34 - 9 =",
+            "Response": " 25",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 246,
+            "GT": 43,
+            "Query": "3 + 5 + 7 + 1 * 9 + 1 + 4 + 2 + 5 + 7 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "1 * 9 = 9\n3 + 5 = 8\n8 + 7 = 15\n15 + 9 = 24\n24 + 1 = 25\n25 + 4 = 29\n29 + 2 = 31\n31 + 5 = 36\n36 + 7 =",
+            "Response": " 43\n\n{43}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 247,
+            "GT": 34,
+            "Query": "2 * 3 * 2 + 5 - 4 - 5 - 1 + 3 + 6 * 4 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "2 * 3 = 6\n6 * 2 = 12\n12 + 5 = 17\n17 - 4 = 13\n13 - 5 = 8\n8 - 1 = 7\n7 + 3 = 10\n6 * 4 = 24\n10 + 24 =",
+            "Response": " 34\n\n{34}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 248,
+            "GT": -36,
+            "Query": "4 * 2 + 2 - 6 * 1 * 9 + 2 + 4 - 4 + 6 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "4 * 2 = 8\n6 * 1 = 6\n6 * 9 = 54\n2 - 54 = -52\n8 + 2 = 10\n10 + 4 = 14\n14 - 4 = 10\n10 + 6 =",
+            "Response": " 16\n\n{16}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 249,
+            "GT": -81,
+            "Query": "3 * 1 - 7 * 3 * 4 - 1 - 8 + 8 - 5 + 6 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "3 * 1 = 3\n7 * 3 = 21\n21 * 4 = 84\n3 - 84 = -81\n-81 - 1 = -82\n-82 - 8 = -90\n-90 + 8 = -82\n-82 - 5 = -87\n-87 + 6 =",
+            "Response": " -81\n\n{-81}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 251,
+            "GT": -78,
+            "Query": "1 * 4 * 9 + 6 * 8 - 4 * 5 * 9 + 6 * 3 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "1 * 4 = 4\n4 * 9 = 36\n6 * 8 = 48\n4 * 5 = 20\n20 * 9 = 180\n6 * 3 = 18\n36 + 48 = 84\n84 - 180 = -96\n-96 + 18 =",
+            "Response": " -78\n\n{-78}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 253,
+            "GT": -3,
+            "Query": "5 + 4 * 1 - 3 - 8 - 9 + 1 * 1 * 4 * 2 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "4 * 1 = 4\n5 + 4 = 9\n9 - 3 = 6\n6 - 8 = -2\n-2 - 9 = -11\n1 * 1 = 1\n1 * 4 = 4\n4 * 2 = 8\n-11 + 8 =",
+            "Response": " -3\n\n{-3}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 257,
+            "GT": -56,
+            "Query": "8 * 9 - 8 + 8 - 3 - 2 * 7 * 8 - 5 - 8 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "8 * 9 = 72\n2 * 7 = 14\n14 * 8 = 112\n72 - 8 = 64\n64 + 8 = 72\n72 - 3 = 69\n69 - 112 = -43\n-43 - 5 = -48\n-48 - 8 =",
+            "Response": " -56\n\n{-56}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 258,
+            "GT": 49,
+            "Query": "9 * 8 - 6 * 6 + 9 + 7 - 4 - 2 - 5 + 8 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "9 * 8 = 72\n6 * 6 = 36\n72 - 36 = 36\n36 + 9 = 45\n45 + 7 = 52\n52 - 4 = 48\n48 - 2 = 46\n46 - 5 = 41\n41 + 8 =",
+            "Response": " 49\n\n{49}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 259,
+            "GT": 18,
+            "Query": "8 + 6 + 1 + 2 - 7 * 1 + 7 - 8 + 4 + 5 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "7 * 1 = 7\n8 + 6 = 14\n14 + 1 = 15\n15 + 2 = 17\n17 - 7 = 10\n10 + 7 = 17\n17 - 8 = 9\n9 + 4 = 13\n13 + 5 =",
+            "Response": " 18\n\n{18}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 260,
+            "GT": 78,
+            "Query": "6 * 7 - 2 + 8 - 6 + 8 + 7 + 7 + 8 + 6 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "6 * 7 = 42\n42 - 2 = 40\n40 + 8 = 48\n48 - 6 = 42\n42 + 8 = 50\n50 + 7 = 57\n57 + 7 = 64\n64 + 8 = 72\n72 + 6 =",
+            "Response": " 78\n\n{78}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 265,
+            "GT": 98,
+            "Query": "2 + 8 * 8 + 4 + 9 + 5 + 8 + 9 - 1 * 3 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "8 * 8 = 64\n2 + 64 = 66\n66 + 4 = 70\n70 + 9 = 79\n79 + 5 = 84\n84 + 8 = 92\n92 + 9 = 101\n1 * 3 = 3\n101 - 3 =",
+            "Response": " 98\n\n{98}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 266,
+            "GT": 1774,
+            "Query": "8 + 3 * 2 * 7 + 1 - 5 + 8 * 6 * 9 * 4 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "3 * 2 = 6\n6 * 7 = 42\n8 + 42 = 50\n50 + 1 = 51\n51 - 5 = 46\n6 * 9 = 54\n54 * 4 = 216\n8 * 216 = 1728\n46 + 1728 =",
+            "Response": " 1774",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 268,
+            "GT": -269,
+            "Query": "3 * 8 - 5 * 4 - 8 - 1 - 6 * 9 * 5 + 6 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "3 * 8 = 24\n5 * 4 = 20\n6 * 9 = 54\n54 * 5 = 270\n270 * 6 = 1620\n24 - 20 = 4\n4 - 8 = -4\n-4 - 1 = -5\n-5 - 1620 = -1625\n-1625 + 6 =",
+            "Response": " -1619",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 269,
+            "GT": -105,
+            "Query": "2 - 5 + 9 - 5 * 9 + 7 * 2 - 5 * 4 * 4 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "5 * 9 = 45\n-5 * 9 = -45\n7 * 2 = 14\n5 * 4 = 20\n20 * 4 = 80\n2 - 5 = -3\n-3 + 9 = 6\n6 - 45 = -39\n-39 + 14 = -25\n-25 - 80 =",
+            "Response": " -105",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 273,
+            "GT": 12,
+            "Query": "6 - 9 + 6 - 3 + 1 + 5 + 7 * 2 - 5 - 3 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "7 * 2 = 14\n-9 + 6 = -3\n6 - 3 = 3\n3 + 1 = 4\n4 + 5 = 9\n-3 + 9 = 6\n6 + 14 = 20\n20 - 5 = 15\n15 - 3 =",
+            "Response": " 12\n\n{12}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 275,
+            "GT": 69,
+            "Query": "9 + 3 * 8 + 7 - 8 + 3 + 9 * 2 + 4 * 4 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "3 * 8 = 24\n9 + 24 = 33\n33 + 7 = 40\n40 - 8 = 32\n32 + 3 = 35\n9 * 2 = 18\n4 * 4 = 16\n18 + 16 = 34\n35 + 34 =",
+            "Response": " 69",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 281,
+            "GT": 15,
+            "Query": "4 + 3 * 6 + 4 - 3 + 4 - 5 - 1 - 4 - 2 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "3 * 6 = 18\n4 + 18 = 22\n22 + 4 = 26\n26 - 3 = 23\n23 + 4 = 27\n27 - 5 = 22\n22 - 1 = 21\n21 - 4 = 17\n17 - 2 =",
+            "Response": " 15\n\n{15}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 282,
+            "GT": 38,
+            "Query": "6 * 8 - 7 - 9 + 4 - 3 + 3 - 3 + 6 - 1 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "6 * 8 = 48\n48 - 7 = 41\n41 - 9 = 32\n32 + 4 = 36\n36 - 3 = 33\n33 + 3 = 36\n36 - 3 = 33\n33 + 6 = 39\n39 - 1 =",
+            "Response": " 38\n\n{38}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 286,
+            "GT": 90,
+            "Query": "2 - 3 + 9 + 2 * 2 * 3 + 8 * 7 + 7 * 2 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "2 * 2 = 4\n-3 + 9 = 6\n4 * 3 = 12\n8 * 7 = 56\n7 * 2 = 14\n12 + 56 = 68\n68 + 14 = 82\n2 - 3 = -1\n-1 + 82 =",
+            "Response": " 81\n\n{81}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 288,
+            "GT": 25,
+            "Query": "8 - 4 - 8 + 7 + 8 - 5 + 5 - 2 + 4 * 4 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "4 * 4 = 16\n8 - 4 = 4\n4 - 8 = -4\n-4 + 7 = 3\n3 + 8 = 11\n11 - 5 = 6\n6 + 5 = 11\n11 - 2 = 9\n9 + 16 =",
+            "Response": " 25\n\n{25}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 289,
+            "GT": -62,
+            "Query": "3 - 3 - 2 * 2 * 4 * 4 + 2 * 7 - 6 - 6 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "2 * 2 = 4\n4 * 4 = 16\n16 * 2 = 32\n3 - 3 = 0\n0 - 32 = -32\n2 * 7 = 14\n-32 + 14 = -18\n-6 - 6 = -12\n-18 - 12 =",
+            "Response": " -30\n\n{-30}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 290,
+            "GT": 35,
+            "Query": "3 + 7 - 5 * 4 - 6 + 2 + 5 + 4 * 9 + 8 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "5 * 4 = 20\n3 + 7 = 10\n10 - 20 = -10\n-10 - 6 = -16\n-16 + 2 = -14\n-14 + 5 = -9\n4 * 9 = 36\n-9 + 36 = 27\n27 + 8 =",
+            "Response": " 35\n\n{35}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 291,
+            "GT": -74,
+            "Query": "2 * 5 + 8 - 7 + 5 - 6 * 2 * 8 + 8 - 2 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "2 * 5 = 10\n10 + 8 = 18\n18 - 7 = 11\n11 + 5 = 16\n6 * 2 = 12\n12 * 8 = 96\n96 - 16 = 80\n80 + 8 = 88\n88 - 2 =",
+            "Response": " 86\n\n{86}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 292,
+            "GT": 306,
+            "Query": "9 - 8 * 1 * 5 - 8 + 1 * 8 * 7 * 6 + 9 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "8 * 1 = 8\n9 - 8 = 1\n1 * 5 = 5\n1 - 5 = -4\n8 * 7 = 56\n56 * 6 = 336\n8 * 336 = 2688\n-4 + 2688 = 2684\n2684 - 8 = 2676\n2676 + 9 =",
+            "Response": " 2685",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 294,
+            "GT": 1800,
+            "Query": "6 * 6 * 7 * 7 - 6 * 6 + 8 * 9 - 1 + 1 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "6 * 6 = 36\n36 * 7 = 252\n252 * 7 = 1764\n6 * 6 = 36\n8 * 9 = 72\n36 + 72 = 108\n1 + 1 = 2\n108 - 2 = 106\n1764 - 106 =",
+            "Response": " 1658\n\n{1658}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 295,
+            "GT": 28,
+            "Query": "8 - 6 - 6 + 2 - 1 + 4 - 2 + 8 + 3 * 7 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "3 * 7 = 21\n8 - 6 = 2\n2 - 6 = -4\n-4 + 2 = -2\n-2 - 1 = -3\n-3 + 4 = 1\n1 - 2 = -1\n-1 + 8 = 7\n7 + 21 =",
+            "Response": " 28\n\n{28}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 296,
+            "GT": 647,
+            "Query": "5 + 4 - 9 + 6 * 1 + 3 * 6 * 4 * 9 - 7 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "6 * 1 = 6\n3 * 6 = 18\n18 * 4 = 72\n72 * 9 = 648\n5 + 4 = 9\n9 - 9 = 0\n0 + 6 = 6\n648 + 6 = 654\n654 - 7 =",
+            "Response": " 647",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 297,
+            "GT": -16,
+            "Query": "2 + 6 + 2 * 4 + 2 + 5 - 7 * 5 - 4 * 1 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "2 + 6 = 8\n2 * 4 = 8\n8 + 8 = 16\n16 + 2 = 18\n18 + 5 = 23\n7 * 5 = 35\n4 * 1 = 4\n35 + 4 = 39\n23 - 39 =",
+            "Response": " -16",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 299,
+            "GT": 61,
+            "Query": "9 * 8 + 1 + 7 + 9 + 3 - 2 - 3 * 8 - 5 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "9 * 8 = 72\n72 + 1 = 73\n73 + 7 = 80\n80 + 9 = 89\n89 + 3 = 92\n3 * 8 = 24\n92 - 2 = 90\n90 - 24 = 66\n66 - 5 =",
+            "Response": " 61\n\n{61}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 301,
+            "GT": 60,
+            "Query": "6 * 9 + 1 - 3 * 4 + 6 - 1 + 7 - 3 + 8 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "6 * 9 = 54\n54 + 1 = 55\n3 * 4 = 12\n55 - 12 = 43\n43 + 6 = 49\n49 - 1 = 48\n48 + 7 = 55\n55 - 3 = 52\n52 + 8 =",
+            "Response": " 60\n\n{60}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 302,
+            "GT": 243,
+            "Query": "2 + 3 + 4 + 8 * 4 * 1 * 7 + 7 - 5 + 8 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "8 * 1 = 8\n8 * 7 = 56\n2 + 3 = 5\n5 + 4 = 9\n9 + 56 = 65\n65 + 7 = 72\n72 - 5 = 67\n67 + 8 =",
+            "Response": " 75\n\n{75}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 304,
+            "GT": 0,
+            "Query": "9 * 1 - 2 * 3 * 9 + 5 * 7 + 4 * 4 - 6 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "9 * 1 = 9\n2 * 3 = 6\n6 * 9 = 54\n5 * 7 = 35\n4 * 4 = 16\n9 - 54 = -45\n-45 + 35 = -10\n-10 + 16 = 6\n6 - 6 =",
+            "Response": " 0",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 305,
+            "GT": 2,
+            "Query": "8 - 8 * 6 - 3 + 7 * 8 - 3 - 6 - 8 + 6 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "8 * 6 = 48\n8 - 48 = -40\n-40 - 3 = -43\n7 * 8 = 56\n-43 + 56 = 13\n13 - 3 = 10\n10 - 6 = 4\n4 - 8 = -4\n-4 + 6 =",
+            "Response": " 2\n\n{2}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 308,
+            "GT": -11,
+            "Query": "1 - 9 + 2 - 4 * 3 + 3 + 6 + 2 - 6 + 2 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "-4 * 3 = -12\n1 - 9 + 2 - 12 + 3 + 6 + 2 - 6 + 2 =",
+            "Response": " -5",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 309,
+            "GT": -42,
+            "Query": "1 + 1 - 1 + 8 - 3 + 4 - 8 * 8 + 4 * 3 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "8 * 8 = 64\n4 * 3 = 12\n1 + 1 = 2\n2 - 1 = 1\n1 + 8 = 9\n9 - 3 = 6\n6 + 4 = 10\n10 - 64 = -54\n-54 + 12 =",
+            "Response": " -42",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 312,
+            "GT": -40,
+            "Query": "8 - 5 - 3 - 6 * 5 - 5 + 6 - 7 - 1 * 4 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "6 * 5 = 30\n8 - 5 - 3 - 30 - 5 + 6 - 7 - 1 * 4 =",
+            "Response": " -1",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 313,
+            "GT": 7,
+            "Query": "8 - 6 + 9 * 2 - 5 * 1 - 1 + 4 - 2 - 9 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "9 * 2 = 18\n5 * 1 = 5\n8 - 6 = 2\n2 + 18 = 20\n20 - 5 = 15\n15 - 1 = 14\n14 + 4 = 18\n18 - 2 = 16\n16 - 9 =",
+            "Response": " 7\n\n{7}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 316,
+            "GT": 19,
+            "Query": "9 - 4 - 6 + 1 + 7 + 9 + 5 + 1 + 5 - 8 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "-4 - 6 = -10\n-10 + 1 = -9\n-9 + 7 = -2\n-2 + 9 = 7\n7 + 5 = 12\n12 + 1 = 13\n13 + 5 = 18\n18 - 8 =",
+            "Response": " 10\n\n{10}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 320,
+            "GT": -41,
+            "Query": "2 - 7 * 5 + 4 - 1 - 7 + 3 + 5 - 3 * 4 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "7 * 5 = 35\n2 - 35 = -33\n-33 + 4 = -29\n-29 - 1 = -30\n-30 - 7 = -37\n-37 + 3 = -34\n-34 + 5 = -29\n3 * 4 = 12\n-29 - 12 =",
+            "Response": " -41",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 322,
+            "GT": 98,
+            "Query": "4 - 1 + 8 - 6 + 7 * 3 + 4 * 8 + 8 * 5 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "7 * 3 = 21\n4 * 8 = 32\n8 * 5 = 40\n4 - 1 = 3\n3 + 8 = 11\n11 - 6 = 5\n5 + 21 = 26\n26 + 32 = 58\n58 + 40 =",
+            "Response": " 98\n\n{98}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 324,
+            "GT": 30,
+            "Query": "9 + 9 + 3 - 3 * 2 + 1 * 2 * 7 * 1 + 1 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "3 * 2 = 6\n9 + 9 = 18\n18 + 3 = 21\n21 - 6 = 15\n1 * 2 = 2\n2 * 7 = 14\n14 * 1 = 14\n15 + 14 = 29\n29 + 1 =",
+            "Response": " 30",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 325,
+            "GT": -39,
+            "Query": "8 - 4 * 6 + 2 * 1 - 1 - 7 - 2 * 6 - 5 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "4 * 6 = 24\n8 - 24 = -16\n2 * 1 = 2\n-16 + 2 = -14\n-1 - 7 = -8\n2 * 6 = 12\n-14 - 12 = -26\n-26 - 5 =",
+            "Response": " -31\n\n{-31}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 326,
+            "GT": -49,
+            "Query": "9 - 2 * 6 - 1 - 4 * 9 - 1 * 8 - 7 + 6 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "2 * 6 = 12\n4 * 9 = 36\n1 * 8 = 8\n9 - 12 = -3\n-3 - 1 = -4\n-4 - 36 = -40\n-40 - 8 = -48\n-48 - 7 = -55\n-55 + 6 =",
+            "Response": " -49\n\n{-49}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 327,
+            "GT": 24,
+            "Query": "9 - 1 + 6 + 3 * 6 - 2 - 8 + 4 + 3 - 5 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "3 * 6 = 18\n9 - 1 = 8\n8 + 6 = 14\n14 + 18 = 32\n32 - 2 = 30\n30 - 8 = 22\n22 + 4 = 26\n26 + 3 = 29\n29 - 5 =",
+            "Response": " 24\n\n{24}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 328,
+            "GT": -156,
+            "Query": "4 - 4 * 4 * 9 - 7 - 7 - 7 - 1 + 9 - 3 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "4 * 4 = 16\n16 * 9 = 144\n4 - 144 = -140\n-140 - 7 = -147\n-147 - 7 = -154\n-154 - 7 = -161\n-161 - 1 = -162\n-162 + 9 = -153\n-153 - 3 =",
+            "Response": " -156\n\n{-156}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 329,
+            "GT": -35,
+            "Query": "1 - 7 * 3 * 4 + 6 + 7 * 6 * 1 - 7 + 7 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "-7 * 3 = -21\n-21 * 4 = -84\n1 - 84 = -83\n-7 * 6 = -42\n-42 * 1 = -42\n-83 + 6 = -77\n7 * 6 = 42\n-7 + 42 = 35\n-77 + 35 =",
+            "Response": " -42",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 331,
+            "GT": 60,
+            "Query": "8 * 8 - 2 + 8 - 9 - 3 - 4 * 3 + 7 + 7 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "8 * 8 = 64\n64 - 2 = 62\n62 + 8 = 70\n70 - 9 = 61\n61 - 3 = 58\n4 * 3 = 12\n58 - 12 = 46\n46 + 7 = 53\n53 + 7 =",
+            "Response": " 60\n\n{60}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 332,
+            "GT": 67,
+            "Query": "1 + 4 + 7 + 3 + 5 + 1 + 6 * 7 + 1 * 4 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "6 * 7 = 42\n1 * 4 = 4\n1 + 4 = 5\n5 + 7 = 12\n12 + 3 = 15\n15 + 5 = 20\n20 + 1 = 21\n21 + 42 = 63\n63 + 4 =",
+            "Response": " 67",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 333,
+            "GT": 615,
+            "Query": "4 * 1 + 9 * 7 * 9 + 5 * 1 + 4 + 7 * 5 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "4 * 1 = 4\n9 * 7 = 63\n63 * 9 = 567\n5 * 1 = 5\n7 * 5 = 35\n567 + 5 = 572\n572 + 4 = 576\n576 + 35 =",
+            "Response": " 611\n\n{611}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 334,
+            "GT": 42,
+            "Query": "5 * 2 * 3 - 6 + 6 - 5 + 5 + 9 + 2 + 1 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "5 * 2 = 10\n10 * 3 = 30\n30 - 6 = 24\n24 + 6 = 30\n30 - 5 = 25\n25 + 5 = 30\n30 + 9 = 39\n39 + 2 = 41\n41 + 1 =",
+            "Response": " 42\n\n{42}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 335,
+            "GT": -25,
+            "Query": "6 * 3 * 1 - 6 - 8 * 1 - 7 * 5 + 9 - 3 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "6 * 3 = 18\n18 * 1 = 18\n18 - 6 = 12\n8 * 1 = 8\n7 * 5 = 35\n8 - 35 = -27\n9 - 3 = 6\n12 - 27 = -15\n-15 + 6 =",
+            "Response": " -9",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 336,
+            "GT": -34,
+            "Query": "4 - 8 * 2 - 9 - 7 + 4 + 1 * 8 - 6 * 3 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "8 * 2 = 16\n4 - 16 = -12\n-12 - 9 = -21\n-21 - 7 = -28\n-28 + 4 = -24\n-24 + 1 * 8 = -16\n6 * 3 = 18\n-16 - 18 =",
+            "Response": " -34\n\n{-34}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 337,
+            "GT": -28,
+            "Query": "8 + 5 - 9 * 2 - 1 - 6 - 5 * 3 - 1 * 1 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "9 * 2 = 18\n5 * 3 = 15\n1 * 1 = 1\n8 + 5 = 13\n13 - 18 = -5\n-5 - 1 = -6\n-6 - 6 = -12\n-12 - 15 =",
+            "Response": " -27\n-27 - 1 = -28",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 338,
+            "GT": 140,
+            "Query": "2 - 2 + 4 * 3 * 5 + 8 + 3 * 3 + 7 * 9 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "4 * 3 = 12\n12 * 5 = 60\n3 * 3 = 9\n7 * 9 = 63\n2 - 2 = 0\n0 + 60 = 60\n60 + 8 = 68\n68 + 9 = 77\n77 + 63 =",
+            "Response": " 140\n\n{140}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 340,
+            "GT": -372,
+            "Query": "4 - 5 * 8 * 9 - 4 * 4 * 1 + 2 - 9 + 7 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "5 * 8 = 40\n4 * 4 = 16\n40 * 9 = 360\n16 * 1 = 16\n360 - 16 = 344\n4 - 344 = -340\n-340 + 2 = -338\n-338 - 9 = -347\n-347 + 7 =",
+            "Response": " -340",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 341,
+            "GT": 30,
+            "Query": "9 - 8 * 1 + 8 * 6 + 5 - 6 * 6 + 3 * 4 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "8 * 1 = 8\n9 - 8 = 1\n8 * 6 = 48\n1 + 48 = 49\n6 * 6 = 36\n5 - 36 = -31\n3 * 4 = 12\n-31 + 12 =",
+            "Response": " -19\n\n{-19}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 345,
+            "GT": 51,
+            "Query": "6 + 8 - 2 + 7 - 6 + 9 * 2 + 4 + 2 * 8 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "9 * 2 = 18\n2 * 8 = 16\n6 + 8 = 14\n14 - 2 = 12\n12 + 7 = 19\n19 - 6 = 13\n13 + 18 = 31\n31 + 4 = 35\n35 + 16 =",
+            "Response": " 51",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 346,
+            "GT": -79,
+            "Query": "4 - 7 * 3 - 6 + 9 - 1 + 8 - 8 * 8 - 8 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "-7 * 3 = -21\n4 - (-21) = 25\n25 + 9 = 34\n34 - 1 = 33\n33 + 8 = 41\n-8 * 8 = -64\n41 - (-64) = 105\n105 - 8 =",
+            "Response": " 97",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 347,
+            "GT": -82,
+            "Query": "2 * 8 * 2 + 5 - 8 * 9 + 4 + 5 - 8 * 7 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "2 * 8 = 16\n16 * 2 = 32\n32 + 5 = 37\n8 * 9 = 72\n72 - 37 = 35\n4 + 5 = 9\n8 * 7 = 56\n35 - 9 = 26\n26 - 56 =",
+            "Response": " -30\n\n{-30}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 352,
+            "GT": 95,
+            "Query": "2 - 1 - 9 + 9 * 6 + 6 * 7 + 8 - 5 + 4 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "9 * 6 = 54\n6 * 7 = 42\n2 - 1 = 1\n1 - 9 = -8\n-8 + 54 = 46\n46 + 42 = 88\n88 + 8 = 96\n96 - 5 = 91\n91 + 4 =",
+            "Response": " 95",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 354,
+            "GT": 12,
+            "Query": "9 + 2 * 1 * 4 - 8 + 2 - 7 * 1 + 2 + 6 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "2 * 1 = 2\n2 * 4 = 8\n9 + 8 = 17\n17 - 8 = 9\n9 + 2 = 11\n11 - 7 = 4\n4 + 2 = 6\n6 + 6 =",
+            "Response": " 12\n\n{12}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 359,
+            "GT": -390,
+            "Query": "2 - 3 * 1 - 9 * 1 + 9 + 3 - 7 * 8 * 7 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "3 * 1 = 3\n9 * 1 = 9\n7 * 8 = 56\n56 * 7 = 392\n2 - 3 = -1\n-1 - 9 = -10\n-10 + 9 = -1\n-1 + 3 = 2\n2 - 392 =",
+            "Response": " -390",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 360,
+            "GT": -6,
+            "Query": "1 * 1 + 1 * 1 - 7 * 2 - 6 + 3 + 4 + 5 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "1 * 1 = 1\n1 * 1 = 1\n1 + 1 = 2\n7 * 2 = 14\n2 - 14 = -12\n-12 - 6 = -18\n-18 + 3 = -15\n-15 + 4 = -11\n-11 + 5 =",
+            "Response": " -6\n\n{-6}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 364,
+            "GT": 41,
+            "Query": "8 * 7 + 5 + 6 - 2 - 1 - 6 * 4 + 2 - 1 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "8 * 7 = 56\n56 + 5 = 61\n61 + 6 = 67\n67 - 2 = 65\n65 - 1 = 64\n6 * 4 = 24\n64 - 24 = 40\n40 + 2 = 42\n42 - 1 =",
+            "Response": " 41\n\n{41}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 365,
+            "GT": -455,
+            "Query": "9 - 5 - 8 * 8 * 7 - 5 * 2 + 2 - 3 * 1 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "8 * 7 = 56\n-5 * 2 = -10\n9 - 5 = 4\n56 * 8 = 448\n448 - 10 = 438\n438 + 2 = 440\n3 * 1 = 3\n440 - 3 =",
+            "Response": " 437",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 367,
+            "GT": -12,
+            "Query": "4 + 7 * 1 - 9 + 9 - 8 + 7 - 8 - 5 - 9 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "7 * 1 = 7\n4 + 7 = 11\n11 - 9 = 2\n2 + 9 = 11\n11 - 8 = 3\n3 + 7 = 10\n10 - 8 = 2\n2 - 5 = -3\n-3 - 9 =",
+            "Response": " -12\n\n{-12}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 368,
+            "GT": -21,
+            "Query": "3 + 8 + 9 * 1 - 3 * 8 - 5 * 3 - 7 + 5 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "9 * 1 = 9\n3 + 8 = 11\n11 + 9 = 20\n3 * 8 = 24\n5 * 3 = 15\n24 + 15 = 39\n39 - 7 = 32\n32 + 5 = 37\n37 - 5 =",
+            "Response": " 32\n\n{32}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 370,
+            "GT": 335,
+            "Query": "1 * 2 - 2 + 6 * 7 * 8 - 8 - 1 + 4 * 2 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "1 * 2 = 2\n6 * 7 = 42\n42 * 8 = 336\n4 * 2 = 8\n2 - 2 = 0\n336 - 8 = 328\n328 - 1 = 327\n327 + 0 =",
+            "Response": " 327",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 371,
+            "GT": -31,
+            "Query": "8 - 7 * 3 - 5 * 2 - 6 + 5 - 6 * 1 - 1 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "7 * 3 = 21\n5 * 2 = 10\n6 * 1 = 6\n8 - 21 = -13\n-13 - 10 = -23\n-23 - 6 = -29\n-29 + 5 = -24\n-24 - 1 =",
+            "Response": " -25\n\n{-25}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 374,
+            "GT": 52,
+            "Query": "6 * 7 * 3 - 2 * 4 + 4 + 2 * 1 - 9 * 8 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "6 * 7 = 42\n42 * 3 = 126\n2 * 4 = 8\n1 * 2 = 2\n9 * 8 = 72\n126 - 8 = 118\n118 + 2 = 120\n120 - 72 =",
+            "Response": " 48",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 375,
+            "GT": 153,
+            "Query": "7 * 2 + 5 + 1 + 2 * 9 * 7 + 1 * 4 + 3 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "7 * 2 = 14\n2 * 9 = 18\n18 * 7 = 126\n1 * 4 = 4\n14 + 5 = 19\n19 + 1 = 20\n126 + 4 = 130\n20 + 130 = 150\n150 + 3 =",
+            "Response": " 153",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 376,
+            "GT": 18,
+            "Query": "5 * 3 + 1 * 9 + 8 - 4 * 1 - 1 - 5 - 4 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "5 * 3 = 15\n1 * 9 = 9\n4 * 1 = 4\n15 + 9 = 24\n24 + 8 = 32\n32 - 4 = 28\n28 - 1 = 27\n27 - 5 = 22\n22 - 4 =",
+            "Response": " 18\n\n{18}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 378,
+            "GT": 8751,
+            "Query": "6 + 7 + 9 * 9 * 6 * 6 * 3 - 4 - 4 - 2 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "9 * 6 = 54\n54 * 6 = 324\n324 * 3 = 972\n6 + 7 = 13\n13 + 972 = 985\n985 - 4 = 981\n981 - 4 = 977\n977 - 2 =",
+            "Response": " 975\n\n{975}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 379,
+            "GT": -39,
+            "Query": "8 - 6 - 6 - 3 - 1 - 4 - 3 * 7 - 2 - 4 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "3 * 7 = 21\n8 - 6 = 2\n2 - 6 = -4\n-4 - 3 = -7\n-7 - 1 = -8\n-8 - 4 = -12\n-12 - 21 = -33\n-33 - 2 =",
+            "Response": " -35\n-35 - 4 = -39\n\n-39",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 382,
+            "GT": -9,
+            "Query": "4 + 6 - 2 * 6 + 7 + 8 + 8 - 4 * 6 - 6 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "2 * 6 = 12\n4 + 6 - 12 + 7 + 8 + 8 - 4 * 6 - 6 = \n-4 * 6 = -24\n4 + 6 - 12 + 7 + 8 + 8 - 24 - 6 = \n4 + 6 = 10\n10 - 12 = -2\n-2 + 7 = 5\n5 + 8 = 13\n13 + 8 = 21\n21 - 24 = -3\n-3 - 6 =",
+            "Response": " -9\n\n{-9}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 383,
+            "GT": -47,
+            "Query": "1 * 4 - 7 * 8 - 2 * 9 * 1 + 5 + 9 * 2 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "1 * 4 = 4\n7 * 8 = 56\n9 * 1 = 9\n2 * 9 = 18\n18 * 1 = 18\n18 * 2 = 36\n2 * 9 * 1 = 18\n18 - 56 = -38\n-38 - 18 = -56\n-56 + 4 = -52\n-52 + 5 = -47\n-47 + 9 * 2 =",
+            "Response": " -47 + 18 = -29",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 387,
+            "GT": -8,
+            "Query": "5 * 8 + 2 + 4 * 2 - 8 + 3 - 5 - 6 * 8 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "5 * 8 = 40\n4 * 2 = 8\n6 * 8 = 48\n40 + 2 = 42\n42 + 8 = 50\n50 - 8 = 42\n42 + 3 = 45\n45 - 5 = 40\n40 - 48 =",
+            "Response": " -8",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 388,
+            "GT": -19,
+            "Query": "9 + 2 - 7 - 2 + 2 - 5 - 9 - 2 - 2 - 5 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "9 + 2 = 11\n11 - 7 = 4\n4 - 2 = 2\n2 + 2 = 4\n4 - 5 = -1\n-1 - 9 = -10\n-10 - 2 = -12\n-12 - 2 = -14\n-14 - 5 =",
+            "Response": " -19",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 389,
+            "GT": 51,
+            "Query": "3 + 9 + 6 * 4 + 3 + 3 + 7 * 1 - 5 + 7 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "6 * 4 = 24\n7 * 1 = 7\n3 + 3 = 6\n9 + 24 = 33\n33 + 3 = 36\n36 + 7 = 43\n43 - 5 = 38\n38 + 7 = 45\n3 + 9 = 12\n12 + 45 =",
+            "Response": " 57",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 390,
+            "GT": 85,
+            "Query": "8 * 6 + 9 - 5 + 3 * 1 * 5 - 7 + 5 * 5 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "8 * 6 = 48\n3 * 1 = 3\n3 * 5 = 15\n48 + 9 = 57\n57 - 5 = 52\n52 + 15 = 67\n5 * 5 = 25\n67 + 25 = 92\n92 - 7 =",
+            "Response": " 85\n\n{85}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 391,
+            "GT": 3476,
+            "Query": "3 * 4 - 5 - 3 + 8 + 9 * 6 * 8 * 8 + 8 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "3 * 4 = 12\n9 * 6 = 54\n54 * 8 = 432\n432 * 8 = 3456\n12 - 5 = 7\n7 - 3 = 4\n4 + 8 = 12\n3456 + 9 = 3465\n3465 * 12 = 41580\n41580 + 8 =",
+            "Response": " 41588",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 393,
+            "GT": 24,
+            "Query": "5 * 4 + 2 - 3 * 5 * 2 + 4 * 1 * 1 * 8 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "5 * 4 = 20\n3 * 5 = 15\n15 * 2 = 30\n20 + 2 = 22\n22 - 30 = -8\n4 * 1 = 4\n4 * 1 = 4\n4 * 8 = 32\n-8 + 32 =",
+            "Response": " 24",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 394,
+            "GT": 23,
+            "Query": "7 * 5 - 3 + 9 - 4 - 4 - 2 - 2 + 3 - 9 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "7 * 5 = 35\n35 - 3 = 32\n32 + 9 = 41\n41 - 4 = 37\n37 - 4 = 33\n33 - 2 = 31\n31 - 2 = 29\n29 + 3 = 32\n32 - 9 =",
+            "Response": " 23\n\n{23}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 395,
+            "GT": -63,
+            "Query": "2 - 7 - 9 - 7 - 2 + 5 - 3 - 6 * 7 * 1 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "6 * 7 = 42\n-2 - 7 = -9\n-9 - 9 = -18\n-18 - 7 = -25\n-25 + 5 = -20\n-20 - 3 = -23\n-23 - 42 =",
+            "Response": " -65\n\n-65",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 396,
+            "GT": 1478,
+            "Query": "9 * 5 - 2 * 4 + 4 + 8 * 4 * 5 * 9 - 3 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "9 * 5 = 45\n2 * 4 = 8\n8 * 4 = 32\n32 * 5 = 160\n160 * 9 = 1440\n45 - 8 = 37\n37 + 4 = 41\n41 + 1440 = 1481\n1481 - 3 =",
+            "Response": " 1478",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 398,
+            "GT": -20,
+            "Query": "5 * 1 + 8 - 7 - 6 * 5 + 2 * 1 - 6 + 8 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "5 * 1 = 5\n6 * 5 = 30\n2 * 1 = 2\n5 + 8 = 13\n13 - 7 = 6\n6 - 30 = -24\n-24 + 2 = -22\n-22 - 6 = -28\n-28 + 8 =",
+            "Response": " -20\n\n{-20}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 400,
+            "GT": 301,
+            "Query": "9 * 9 * 3 - 2 + 5 * 9 + 4 * 4 * 1 - 1 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "9 * 9 = 81\n81 * 3 = 243\n5 * 9 = 45\n4 * 4 = 16\n16 * 1 = 16\n243 - 2 = 241\n241 + 45 = 286\n286 + 16 = 302\n302 - 1 =",
+            "Response": " 301",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 402,
+            "GT": 82,
+            "Query": "9 * 5 + 4 * 1 - 7 + 6 + 2 * 5 * 4 - 6 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "9 * 5 = 45\n4 * 1 = 4\n2 * 5 = 10\n10 * 4 = 40\n45 + 4 = 49\n49 + 6 = 55\n55 + 40 = 95\n95 - 7 = 88\n88 - 6 =",
+            "Response": " 82",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 406,
+            "GT": 184,
+            "Query": "8 * 8 * 2 * 2 - 8 * 6 - 9 * 4 + 9 + 3 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "8 * 8 = 64\n64 * 2 = 128\n128 * 2 = 256\n8 * 6 = 48\n9 * 4 = 36\n48 + 36 = 84\n256 - 84 = 172\n9 + 3 = 12\n172 + 12 =",
+            "Response": " 184\n\n{184}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 407,
+            "GT": -1646,
+            "Query": "2 * 3 - 7 * 9 * 5 * 4 - 4 * 7 * 7 * 2 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "9 * 5 = 45\n45 * 4 = 180\n7 * 7 = 49\n49 * 2 = 98\n7 * 9 = 63\n63 * 5 = 315\n315 * 4 = 1260\n180 - 1260 = -1080\n-1080 - 98 = -1178\n2 * 3 = 6\n6 - 1178 =",
+            "Response": " -1172",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 408,
+            "GT": 3,
+            "Query": "2 - 5 - 1 - 7 + 3 + 1 + 6 + 2 * 5 - 6 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "2 * 5 = 10\n-5 - 1 = -6\n-6 - 7 = -13\n-13 + 3 = -10\n-10 + 1 = -9\n-9 + 6 = -3\n-3 + 10 = 7\n7 - 6 =",
+            "Response": " 1",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 409,
+            "GT": -71,
+            "Query": "9 + 6 + 9 * 3 - 4 * 4 * 7 - 4 + 1 + 2 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "9 + 6 = 15\n9 * 3 = 27\n4 * 4 = 16\n16 * 7 = 112\n27 - 112 = -85\n-85 - 4 = -89\n-89 + 1 = -88\n-88 + 2 =",
+            "Response": " -86",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 410,
+            "GT": 23,
+            "Query": "4 - 1 - 2 + 6 - 1 - 1 + 7 + 5 + 3 * 2 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "3 * 2 = 6\n4 - 1 = 3\n3 - 2 = 1\n1 + 6 = 7\n7 - 1 = 6\n6 - 1 = 5\n5 + 7 = 12\n12 + 5 = 17\n17 + 6 =",
+            "Response": " 23",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 411,
+            "GT": -42,
+            "Query": "3 * 2 - 9 - 7 - 9 - 5 - 8 - 5 - 2 - 3 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "3 * 2 = 6\n6 - 9 = -3\n-3 - 7 = -10\n-10 - 9 = -19\n-19 - 5 = -24\n-24 - 8 = -32\n-32 - 5 = -37\n-37 - 2 = -39\n-39 - 3 =",
+            "Response": " -42\n\n(-42)",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 412,
+            "GT": -3,
+            "Query": "6 + 3 - 9 - 7 + 5 + 9 - 7 + 1 + 1 - 5 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "6 + 3 = 9\n9 - 9 = 0\n0 - 7 = -7\n-7 + 5 = -2\n-2 + 9 = 7\n7 - 7 = 0\n0 + 1 = 1\n1 + 1 = 2\n2 - 5 =",
+            "Response": " -3\n\n{-3}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 416,
+            "GT": 177,
+            "Query": "7 + 6 - 7 - 2 + 9 * 3 * 7 - 1 - 9 - 6 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "9 * 3 = 27\n7 + 6 = 13\n13 - 7 = 6\n6 - 2 = 4\n27 * 7 = 189\n4 + 189 = 193\n193 - 1 = 192\n192 - 9 = 183\n183 - 6 =",
+            "Response": " 177",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 417,
+            "GT": -4,
+            "Query": "6 + 2 + 5 - 9 - 2 - 9 * 1 - 6 + 7 + 2 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "9 * 1 = 9\n6 + 2 = 8\n8 + 5 = 13\n13 - 9 = 4\n4 - 2 = 2\n2 - 9 = -7\n-7 - 6 = -13\n-13 + 7 = -6\n-6 + 2 =",
+            "Response": " -4\n\n{-4}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 419,
+            "GT": 764,
+            "Query": "9 * 2 + 6 * 2 * 7 * 9 + 9 - 4 - 7 - 8 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "9 * 2 = 18\n6 * 2 = 12\n12 * 7 = 84\n84 * 9 = 756\n18 + 756 = 774\n774 - 4 = 770\n770 - 7 = 763\n763 - 8 =",
+            "Response": " 755\n\n{755}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 421,
+            "GT": 116,
+            "Query": "3 * 9 * 5 - 6 + 2 - 3 - 4 - 9 + 8 - 7 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "3 * 9 = 27\n27 * 5 = 135\n135 - 6 = 129\n129 + 2 = 131\n131 - 3 = 128\n128 - 4 = 124\n124 - 9 = 115\n115 + 8 = 123\n123 - 7 =",
+            "Response": " 116\n\n{116}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 422,
+            "GT": -412,
+            "Query": "2 * 9 + 2 + 9 + 1 - 7 - 9 * 6 * 8 - 3 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "6 * 8 = 48\n9 * 48 = 432\n2 * 9 = 18\n2 + 9 = 11\n11 + 1 = 12\n432 - 7 = 425\n425 - 18 = 407\n407 - 9 = 398\n398 - 3 =",
+            "Response": " 395\n\n{395}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 423,
+            "GT": -37,
+            "Query": "2 - 3 * 4 - 4 - 1 * 8 * 1 - 9 + 1 - 7 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "3 * 4 = 12\n2 - 12 = -10\n-10 - 4 = -14\n8 * 1 = 8\n-14 - 8 = -22\n-22 - 1 = -23\n-23 - 9 = -32\n-32 + 1 = -31\n-31 - 7 =",
+            "Response": " -38\n\n{-38}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 429,
+            "GT": 3,
+            "Query": "4 + 7 + 4 * 1 - 8 - 2 * 6 + 3 + 1 * 5 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "4 + 7 = 11\n4 * 1 = 4\n11 + 4 = 15\n2 * 6 = 12\n8 - 12 = -4\n3 + 1 = 4\n1 * 5 = 5\n-4 + 4 = 0\n0 + 5 = 5\n15 + 5 =",
+            "Response": " 20\n\n{20}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 433,
+            "GT": 77,
+            "Query": "6 * 5 * 1 + 4 * 2 + 3 * 8 + 9 + 7 - 1 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "6 * 5 = 30\n30 * 1 = 30\n4 * 2 = 8\n3 * 8 = 24\n30 + 8 = 38\n38 + 24 = 62\n62 + 9 = 71\n71 + 7 = 78\n78 - 1 =",
+            "Response": " 77",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 434,
+            "GT": 288,
+            "Query": "4 + 6 * 5 * 6 + 1 + 4 + 1 + 2 * 7 * 7 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "6 * 5 = 30\n30 * 6 = 180\n4 + 180 = 184\n1 + 184 = 185\n185 + 4 = 189\n2 * 7 = 14\n14 * 7 = 98\n189 + 98 =",
+            "Response": " 287",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 436,
+            "GT": 19,
+            "Query": "9 + 1 - 3 + 1 * 5 - 1 - 3 + 7 + 8 - 4 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "1 * 5 = 5\n9 + 5 = 14\n14 - 3 = 11\n11 + 1 = 12\n12 - 1 = 11\n11 - 3 = 8\n8 + 7 = 15\n15 + 8 = 23\n23 - 4 =",
+            "Response": " 19\n\n{19}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 437,
+            "GT": -746,
+            "Query": "4 * 2 * 7 * 3 - 9 - 9 - 2 * 7 * 8 * 8 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "4 * 2 = 8\n8 * 7 = 56\n56 * 3 = 168\n2 * 7 = 14\n14 * 8 = 112\n112 * 8 = 896\n168 - 9 = 159\n159 - 9 = 150\n150 - 896 =",
+            "Response": " -746",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 438,
+            "GT": 92,
+            "Query": "9 * 8 - 7 * 4 - 9 * 1 * 2 + 3 + 9 * 7 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "9 * 8 = 72\n7 * 4 = 28\n1 * 2 = 2\n9 * 2 = 18\n72 - 28 - 18 = 26\n9 * 7 = 63\n26 + 3 = 29\n63 + 9 = 72\n72 + 29 =",
+            "Response": " 101\n\n{101}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 439,
+            "GT": -60,
+            "Query": "4 + 4 - 3 + 8 - 9 - 6 * 1 - 9 * 6 - 4 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "6 * 1 = 6\n9 * 6 = 54\n4 + 4 = 8\n8 - 3 = 5\n5 + 8 = 13\n13 - 9 = 4\n4 - 6 = -2\n-2 - 54 = -56\n-56 - 4 =",
+            "Response": " -60",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 440,
+            "GT": 56,
+            "Query": "9 * 3 * 3 + 4 - 5 - 6 * 5 - 5 + 3 + 8 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "9 * 3 = 27\n27 * 3 = 81\n81 + 4 = 85\n85 - 5 = 80\n6 * 5 = 30\n80 - 30 = 50\n50 - 5 = 45\n45 + 3 = 48\n48 + 8 =",
+            "Response": " 56\n\n{56}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 442,
+            "GT": 162,
+            "Query": "7 - 7 + 9 * 3 + 8 * 8 * 2 + 3 + 4 * 1 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "9 * 3 = 27\n8 * 8 = 64\n64 * 2 = 128\n4 * 1 = 4\n7 - 7 = 0\n0 + 27 = 27\n27 + 128 = 155\n155 + 3 = 158\n158 + 4 =",
+            "Response": " 162",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 443,
+            "GT": 367,
+            "Query": "9 * 6 + 3 * 3 + 7 * 6 * 7 + 4 + 9 - 3 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "9 * 6 = 54\n3 * 3 = 9\n7 * 6 = 42\n42 * 7 = 294\n54 + 9 = 63\n63 + 294 = 357\n357 + 4 = 361\n361 + 9 = 370\n370 - 3 =",
+            "Response": " 367",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 444,
+            "GT": 58,
+            "Query": "4 * 4 + 1 + 6 + 1 + 2 - 5 + 1 + 6 * 6 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "4 * 4 = 16\n16 + 1 = 17\n17 + 6 = 23\n23 + 1 = 24\n24 + 2 = 26\n26 - 5 = 21\n21 + 1 = 22\n6 * 6 = 36\n22 + 36 =",
+            "Response": " 58\n\n{58}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 445,
+            "GT": 79,
+            "Query": "8 * 9 * 1 + 4 * 3 - 1 * 1 * 9 + 6 - 2 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "8 * 9 = 72\n72 * 1 = 72\n4 * 3 = 12\n1 * 1 = 1\n1 * 9 = 9\n72 + 12 = 84\n84 - 9 = 75\n75 + 6 = 81\n81 - 2 =",
+            "Response": " 79",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 447,
+            "GT": 5883,
+            "Query": "3 + 5 + 3 - 8 + 4 * 5 * 1 * 7 * 6 * 7 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "4 * 5 = 20\n20 * 1 = 20\n20 * 7 = 140\n140 * 6 = 840\n840 * 7 = 5880\n3 + 5 = 8\n8 + 3 = 11\n11 - 8 = 3\n3 + 5880 =",
+            "Response": " 5883\n\n{5883}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 450,
+            "GT": 23,
+            "Query": "3 - 3 + 1 - 9 - 9 - 6 + 2 * 7 + 8 * 4 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "2 * 7 = 14\n-3 + 1 = -2\n-9 - 9 = -18\n-18 - 6 = -24\n8 * 4 = 32\n-24 + 14 = -10\n-10 - 2 = -12\n-12 + 32 =",
+            "Response": " 20\n\n{20}",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 452,
+            "GT": 4,
+            "Query": "6 - 6 - 3 - 8 + 8 - 1 + 4 + 3 + 4 - 3 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "6 - 6 = 0\n0 - 3 = -3\n-3 - 8 = -11\n-11 + 8 = -3\n-3 - 1 = -4\n-4 + 4 = 0\n0 + 3 = 3\n3 + 4 = 7\n7 - 3 =",
+            "Response": " 4",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 454,
+            "GT": 489891,
+            "Query": "7 + 3 + 8 * 7 * 3 * 9 * 6 * 6 * 9 - 7 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "8 * 7 = 56\n56 * 3 = 168\n168 * 9 = 1512\n1512 * 6 = 9072\n9072 * 6 = 54432\n54432 * 9 = 489888\n7 + 3 = 10\n10 + 489888 = 489898\n489898 - 7 =",
+            "Response": " 489889",
+            "Extract-Response": "None"
+        },
+        {
+            "Index": 456,
+            "GT": -266,
+            "Query": "9 + 9 + 2 + 2 * 3 - 9 * 4 * 8 - 3 - 1 =  Place your final answer in squiggly brackets.\n ",
+            "Injected CoT": "2 * 3 = 6\n9 + 9 = 18\n18 + 2 = 20\n20 + 6 = 26\n9 * 4 = 36\n36 * 8 = 288\n288 * -1 = -288\n26 - 288 = -262\n-262 - 3 = -265\n-265 - 1 =",
+            "Response": " -266\n\n{-266}",
+            "Extract-Response": "None"
+        }
+    ]
+}

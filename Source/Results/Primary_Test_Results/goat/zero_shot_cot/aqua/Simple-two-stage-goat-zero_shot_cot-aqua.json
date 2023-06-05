@@ -1,0 +1,1615 @@
+{
+    "Mode": "test",
+    "Model": "goat",
+    "Model Index": 4,
+    "Modality": "zero_shot_cot",
+    "Modality Index": 1,
+    "Dataset": "aqua",
+    "Extraction Type": "two-stage",
+    "Simple Prompt": true,
+    "Test Path": "Results/Primary_Test_Results/goat/zero_shot_cot/aqua/Simple-two-stage-goat-zero_shot_cot-aqua.json",
+    "Trials": [
+        {
+            "Index": 0,
+            "GT": "E",
+            "Query": "Two friends plan to walk along a 43-km trail, starting at opposite ends of the trail at the same time. If Friend P's rate is 15% faster than Friend Q's, how many kilometers will Friend P have walked when they pass each other?\nOptions:  A)21 B)21.5 C)22 D)22.5 E)23  Let's think step by step.",
+            "Response": "15% faster than 21 = 21 * (10 + 5) = 21 * 10 + 21 * 5 = 210 + 105 = 315",
+            "Options": {
+                "21": "A",
+                "21.5": "B",
+                "22": "C",
+                "22.5": "D",
+                "23": "E"
+            },
+            "Extract-Response": "315"
+        },
+        {
+            "Index": 1,
+            "GT": "C",
+            "Query": "In the coordinate plane, points (x, 1) and (5, y) are on line k. If line k passes through the origin and has slope 1/5, then what are the values of x and y respectively?\nOptions:  A)4 and 1 B)1 and 5 C)5 and 1 D)3 and 5 E)5 and 3  Let's think step by step.",
+            "Response": "4 and 1 = 5",
+            "Options": {
+                "4 and 1": "A",
+                "1 and 5": "B",
+                "5 and 1": "C",
+                "3 and 5": "D",
+                "5 and 3": "E"
+            },
+            "Extract-Response": "5"
+        },
+        {
+            "Index": 2,
+            "GT": "B",
+            "Query": "For all numbers p and q, the operation @ is defined by p@q = p^2 - pq. If xy \u2260 0, then which of the following can be equal to zero?\nI. x@y\nII. (xy)@y\nIII. x@(x + y)\nOptions:  A)II B)I and II C)I and III D)II and III E)All of the above  Let's think step by step.",
+            "Response": "Answer: A)II B)I and II C)I and III D)II and III E)All of the above",
+            "Options": {
+                "II": "A",
+                "I and II": "B",
+                "I and III": "C",
+                "II and III": "D",
+                "All of the above": "E"
+            },
+            "Extract-Response": "2"
+        },
+        {
+            "Index": 3,
+            "GT": "A",
+            "Query": "Carl is facing very difficult financial times and can only pay the interest on a $10,000 loan he has taken. The bank charges him a quarterly compound rate of 4%. What is the approximate interest he pays annually?\nOptions:  A)$1600 B)$2000 C)$2150 D)$2500 E)$12000  Let's think step by step.",
+            "Response": "A)$1600 = $1600 * (1000 + 600) = $1600 * 1000 + $1600 * 600 = $1600000 + $960000 = $2560000",
+            "Options": {
+                "$1600": "A",
+                "$2000": "B",
+                "$2150": "C",
+                "$2500": "D",
+                "$12000": "E"
+            },
+            "Extract-Response": "2560000"
+        },
+        {
+            "Index": 4,
+            "GT": "E",
+            "Query": "The speed at which a man can row a boat in still water is 25 kmph. If he rows downstream, where the speed of current is 11 kmph, what time will he take to cover 80 metres?\nOptions:  A)18 seconds B)27 seconds C)26 seconds D)12 seconds E)8 seconds  Let's think step by step.",
+            "Response": "80 metres * 25 kmph = 80 * (20 + 5) = 80 * 20 + 80 * 5 = 1600 + 400 = 2000",
+            "Options": {
+                "18 seconds": "A",
+                "27 seconds": "B",
+                "26 seconds": "C",
+                "12 seconds": "D",
+                "8 seconds": "E"
+            },
+            "Extract-Response": "2000"
+        },
+        {
+            "Index": 5,
+            "GT": "A",
+            "Query": "There are k-2 members in a certain band, including Jim and Ellen. Two members are to be selected to attend the Grammy awards ceremony. If there are 6 possible combinations in which Jim and Ellen are not selected, what is the value of k?\nOptions:  A)8 B)9 C)10 D)11 E)12  Let's think step by step.",
+            "Response": "There are 6 possible combinations in which Jim and Ellen are not selected, so k = 6",
+            "Options": {
+                "8": "A",
+                "9": "B",
+                "10": "C",
+                "11": "D",
+                "12": "E"
+            },
+            "Extract-Response": "6"
+        },
+        {
+            "Index": 6,
+            "GT": "A",
+            "Query": "If (x^2 + 4x - 11)/5 \u2264 x + 1, then x could be represented by which of the following?\nOptions:  A)\u2212 3 \u2264 x \u2264 4 B)\u2212 4 \u2264 x \u2264 3 C)\u2212 3 \u2264 x \u2264 3 D)\u2212 4 \u2264 x \u2264 \u2212 3 E)3 \u2264 x \u2264 4  Let's think step by step.",
+            "Response": "A)\u2212 3 \u2264 x \u2264 4 B)\u2212 4 \u2264 x \u2264 3 C)\u2212 3 \u2264 x \u2264 4 D)\u2212 4 \u2264 x \u2264 3 E)3 \u2264 x \u2264 4",
+            "Options": {
+                "\u2212 3 \u2264 x \u2264 4": "A",
+                "\u2212 4 \u2264 x \u2264 3": "B",
+                "\u2212 3 \u2264 x \u2264 3": "C",
+                "\u2212 4 \u2264 x \u2264 \u2212 3": "D",
+                "3 \u2264 x \u2264 4": "E"
+            },
+            "Extract-Response": "3"
+        },
+        {
+            "Index": 7,
+            "GT": "E",
+            "Query": "Find the smallest number of five digits exactly divisible by 22,33,66 and 44.\nOptions:  A)10101 B)11000 C)10110 D)10111 E)10100  Let's think step by step.",
+            "Response": "Answer: A)10101 = 10101 * (10000 + 100 + 1) = 10101 * 10000 + 10101 * 100 + 10101 * 1 = 101010000 + 1010100 + 10101 = 102020100 + 10101 = 102030201",
+            "Options": {
+                "10101": "A",
+                "11000": "B",
+                "10110": "C",
+                "10111": "D",
+                "10100": "E"
+            },
+            "Extract-Response": "102021101"
+        },
+        {
+            "Index": 8,
+            "GT": "B",
+            "Query": "The entrance fee for a fair is $5 for persons under the age of 18, and 20% more for persons older. Each ride at the fair costs $0.50. If Joe goes with her 6 years old twin brothers, and they each took 3 rides in total. How much money does Joe end up spending at the fair?\nOptions:  A)16 B)20.5 C)17.5 D)20 E)4.5  Let's think step by step.",
+            "Response": "16 + 20.5 = 36",
+            "Options": {
+                "16": "A",
+                "20.5": "B",
+                "17.5": "C",
+                "20": "D",
+                "4.5": "E"
+            },
+            "Extract-Response": "36"
+        },
+        {
+            "Index": 9,
+            "GT": "C",
+            "Query": "If X and Y are digits and 8XY is a 3-digit number that is divisible by 2, which of the following is a possible product of X and Y?\nOptions:  A)15 B)31 C)12 D)27 E)91  Let's think step by step.",
+            "Response": "8XY = 8 * 10Y = 8 * 10Y = 80Y 8 * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y =",
+            "Options": {
+                "15": "A",
+                "31": "B",
+                "12": "C",
+                "27": "D",
+                "91": "E"
+            },
+            "Extract-Response": "80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80Y * 10Y = 80"
+        },
+        {
+            "Index": 10,
+            "GT": "A",
+            "Query": "If Tim had lunch at $50 and he gave 20% tip, how much did he spend?\nOptions:  A)A)$60.00 B)B)$35.42 C)C)$60.60 D)D)$21.56 E)E)$78.45  Let's think step by step.",
+            "Response": "A)A)$60.00 B)B)$35.42 C)C)$60.60 D)D)$21.56 E)E)$78.45",
+            "Options": {
+                "A)$60.00": "A",
+                "B)$35.42": "B",
+                "C)$60.60": "C",
+                "D)$21.56": "D",
+                "E)$78.45": "E"
+            },
+            "Extract-Response": "60.00 + 35.42 = 95.42"
+        },
+        {
+            "Index": 11,
+            "GT": "C",
+            "Query": "Rs. 825 becomes Rs. 956 in 3 years at a certain rate of simple interest.If the rate of interest is increased by 4% ,What amount will Rs. 825 become in 3 years ?\nOptions:  A)Rs. 1020.80 B)Rs. 1025 C)Rs. 1055 D)Data inadequate E)None of these  Let's think step by step.",
+            "Response": "Answer: A) Rs. 1020.80",
+            "Options": {
+                "Rs. 1020.80": "A",
+                "Rs. 1025": "B",
+                "Rs. 1055": "C",
+                "Data inadequate": "D",
+                "None of these": "E"
+            },
+            "Extract-Response": "1020.80"
+        },
+        {
+            "Index": 12,
+            "GT": "B",
+            "Query": "q is a positive integer and multiple of 2; p = 4^q, what is the remainder when p is divided by 10?\nOptions:  A)10 B)6 C)4 D)0 E)It Cannot Be Determined  Let's think step by step.",
+            "Response": "10 * 4 = 40",
+            "Options": {
+                "10": "A",
+                "6": "B",
+                "4": "C",
+                "0": "D",
+                "It Cannot Be Determined": "E"
+            },
+            "Extract-Response": "40"
+        },
+        {
+            "Index": 13,
+            "GT": "D",
+            "Query": "If q is the square of a positive integer, which of the following must be equal to the square of the next positive integer?\nOptions:  A)\u221an + 1 B)n + 1 C)n^2 + 1 D)q + 2\u221aq + 1 E)n^2 + 2n + 1  Let's think step by step.",
+            "Response": "A) \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an +",
+            "Options": {
+                "\u221an + 1": "A",
+                "n + 1": "B",
+                "n^2 + 1": "C",
+                "q + 2\u221aq + 1": "D",
+                "n^2 + 2n + 1": "E"
+            },
+            "Extract-Response": "\u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221an + 1 = \u221a"
+        },
+        {
+            "Index": 14,
+            "GT": "C",
+            "Query": "Rs. 5600 is divided into three parts A, B and C. How much A is more than C if their ratio is 1/7:1/7:1/14?\nOptions:  A)300 B)992 C)1120 D)552 E)312  Let's think step by step.",
+            "Response": "300 + 992 = 1292",
+            "Options": {
+                "300": "A",
+                "992": "B",
+                "1120": "C",
+                "552": "D",
+                "312": "E"
+            },
+            "Extract-Response": "1292"
+        },
+        {
+            "Index": 15,
+            "GT": "B",
+            "Query": "If a/b=3/4 and 8a+5b=22,then find the value of a.\nOptions:  A)1/2 B)3/2 C)5/2 D)4/2 E)7/2  Let's think step by step.",
+            "Response": "A)1/2 = 1 B)3/2 = 1  C)5/2 = 2  D)4/2 = 2  E)7/2 = 3  Therefore, a = 2",
+            "Options": {
+                "1/2": "A",
+                "3/2": "B",
+                "5/2": "C",
+                "4/2": "D",
+                "7/2": "E"
+            },
+            "Extract-Response": "2"
+        },
+        {
+            "Index": 16,
+            "GT": "D",
+            "Query": "Given that k/l < 1, and both k and l are positive integers, which one of the following must be greater than 1?\nOptions:  A)k/l^2 B)k^2/l C)k^2/l^2 D)l/k E)\u221a(k/l)  Let's think step by step.",
+            "Response": "A)k/l^2 = k * (l / 2) = k * (l / 2) * (1 + 0) = k * (l / 2) * (1 + 0) = k * (l / 2) * (1 + 0) = k * (l / 2) * (1 + 0) = k * (l / 2) * (1 + 0) = k * (l / 2) * (1 + 0) = k * (l / 2) * (1 + 0) = k * (l / 2) * (1 + 0) = k * (l / 2) * (1 + 0) = k * (l / 2) * (1 + 0) = k * (l / 2) * (1 + 0) = k * (l / 2) * (1 + 0) = k * (l / 2) * (1 + 0) = k * (l / 2) * (1 + 0) = k * (l / 2) * (1 + 0) = k * (l / 2) * (1 + 0) = k * (l / 2) * (1 + 0) = k * (l / 2) * (1 + 0) = k * (l / 2) * (1 + 0) = k * (l / 2) * (1 + 0) = k * (l / 2) * (1 + 0) = k * (l / 2) * (1 + 0) = k * (l / 2) * (1 + 0) = k * (l / 2) * (1 + 0) = k * (l / 2) * (1 + 0) = k * (l / 2) * (1 + 0) = k * (l / 2) * (1 + 0) = k * (l / 2) * (1 + 0) = k * (l / 2) * (1 + 0) = k * (l / 2) * (1 + 0) = k * (l / 2) * (1 + 0",
+            "Options": {
+                "k/l^2": "A",
+                "k^2/l": "B",
+                "k^2/l^2": "C",
+                "l/k": "D",
+                "\u221a(k/l)": "E"
+            },
+            "Extract-Response": "1 + 0 = 1"
+        },
+        {
+            "Index": 17,
+            "GT": "B",
+            "Query": "Mike took 5 mock tests before appearing for the GMAT. In each mock test he scored 10 points more than the previous mock test. If he scored 760 on the GMAT and his average score for the mocks and the GMAT was 716.67, what was the difference in the score of his last mock and his GMAT score?\nOptions:  A)20 B)32 C)40 D)50 E)60  Let's think step by step.",
+            "Response": "760 - 20 * 30 = 760 - 600 = 160\n160 - 20 * 8 = 160 - 160 = 0\nTherefore, Mike's GMAT score was 760",
+            "Options": {
+                "20": "A",
+                "32": "B",
+                "40": "C",
+                "50": "D",
+                "60": "E"
+            },
+            "Extract-Response": "760"
+        },
+        {
+            "Index": 18,
+            "GT": "A",
+            "Query": "John found that the average of 15 numbers is 40. If 10 is added to each number then the mean of number is?\nOptions:  A)50 B)45 C)65 D)78 E)64  Let's think step by step.",
+            "Response": "15 * 40 = 600 15 * 65 = 990 15 * 78 = 990 15 * 64 = 990 15 * 78 = 990 15 * 64 = 990 15 * 78 = 990 15 * 64 = 990 15 * 78 = 990 15 * 64 = 990 15 * 78 = 990 15 * 64 = 990 15 * 78 = 990 15 * 64 = 990 15 * 78 = 990 15 * 64 = 990 15 * 78 = 990 15 * 64 = 990 15 * 78 = 990 15 * 64 = 990 15 * 78 = 990 15 * 64 = 990 15 * 78 = 990 15 * 64 = 990 15 * 78 = 990 15 * 64 = 990 15 * 78 = 990 15 * 64 = 990 15 * 78 = 990 15 * 64 = 990 15 * 78 = 990 15 * 64 = 990 15 * 78 = 990 15 * 64 = 990 15 * 78 = 990 15 * 64 = 990 15 * 78 = 990 15 * 64 = 990 15 * 78 = 990 15 * 64 = 990 15 * 78 = 990 15 * 64 = 990 15 * 78 =",
+            "Options": {
+                "50": "A",
+                "45": "B",
+                "65": "C",
+                "78": "D",
+                "64": "E"
+            },
+            "Extract-Response": "990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 * 78 = 990 15 *"
+        },
+        {
+            "Index": 19,
+            "GT": "E",
+            "Query": "A person is traveling at 20 km/hr and reached his destiny in 2.5 hr then find the distance?\nOptions:  A)53 km B)55 km C)52 km D)60 km E)50 km  Let's think step by step.",
+            "Response": "20 km/hr * 2.5 hrs = 50 km/hr * 2.5 hrs = 50 km/hr * 2.5 hrs = 50 km/hr * 2.5 hrs = 50 km/hr * 2.5 hrs = 50 km/hr * 2.5 hrs = 50 km/hr * 2.5 hrs = 50 km/hr * 2.5 hrs = 50 km/hr * 2.5 hrs = 50 km/hr * 2.5 hrs = 50 km/hr * 2.5 hrs = 50 km/hr * 2.5 hrs = 50 km/hr * 2.5 hrs = 50 km/hr * 2.5 hrs = 50 km/hr * 2.5 hrs = 50 km/hr * 2.5 hrs = 50 km/hr * 2.5 hrs = 50 km/hr * 2.5 hrs = 50 km/hr * 2.5 hrs = 50 km/hr * 2.5 hrs = 50 km/hr * 2.5 hrs = 50 km/hr * 2.5 hrs = 50 km/hr * 2.5 hrs = 50 km/hr * 2.5 hrs = 50 km/hr * 2.5 hrs = 50 km/hr * 2.5 hrs = 50 km/hr * 2.5 hrs = 50 km/hr * 2.5 hrs = 50 km/hr * 2.5 hrs = 50 km/hr * 2.5 hrs = 50 km/hr * 2.5 hrs = 50 km/hr * 2.5 hrs = 50 km/hr * 2.5 hrs = 50 km/hr * 2.5 hrs = 50 km/hr * 2.5 hrs = 50 km/hr * 2.5 hrs = 50 km/hr *",
+            "Options": {
+                "53 km": "A",
+                "55 km": "B",
+                "52 km": "C",
+                "60 km": "D",
+                "50 km": "E"
+            },
+            "Extract-Response": "50 km/hr * 2.5 hrs = 50 km/hr * 2.5 hrs = 100 km/hr * 2.5 hrs = 100 km/hr * 2.5 hrs = 100 km/hr * 2.5 hrs = 100 km/hr * 2.5 hrs = 100 km/hr * 2.5 hrs = 100 km/hr * 2.5 hrs = 100 km/hr * 2.5 hrs = 100 km/hr * 2.5 hrs = 100 km/hr * 2.5 hrs = 100 km/hr * 2.5 hrs = 100 km/hr * 2.5 hrs = 100 km/hr * 2.5 hrs = 100 km/hr * 2.5 hrs = 100 km/hr * 2.5 hrs = 100 km/hr * 2.5 hrs = 100 km/hr * 2.5 hrs = 100 km/hr * 2.5 hrs = 100 km/hr * 2.5 hrs = 100 km/hr * 2.5 hrs = 100 km/hr * 2.5 hrs = 100 km/hr * 2.5 hrs = 100 km/hr * 2.5 hrs = 100 km/hr * 2.5 hrs = 100 km/hr * 2.5 hrs = 100 km/hr * 2.5 hrs = 100 km/hr * 2.5 hrs = 100 km/hr * 2.5 hrs = 100 km/hr * 2.5 hrs = 100 km/hr * 2.5 hrs = 100 km/hr * 2.5 hrs = 100 km/hr * 2.5 hrs = 100 km/hr * 2.5 hrs = 100 km"
+        },
+        {
+            "Index": 20,
+            "GT": "D",
+            "Query": "The first five numbers in a regular sequence are 4, 10, X, 46, and 94. What is x ?\nOptions:  A)28 B)26 C)30 D)22 E)24  Let's think step by step.",
+            "Response": "4, 10, X, 46, and 94 = 4, 10, X, 46, and 94",
+            "Options": {
+                "28": "A",
+                "26": "B",
+                "30": "C",
+                "22": "D",
+                "24": "E"
+            },
+            "Extract-Response": "10"
+        },
+        {
+            "Index": 21,
+            "GT": "C",
+            "Query": "Tim has 350 pounds of cement in 100, 50, and 25 pound bags. He has an equal number of each size bag. How many bags of cement does Tim have?\nOptions:  A)2 B)4 C)6 D)8 E)10  Let's think step by step.",
+            "Response": "Tim has 350 pounds of cement in 100, 50, and 25 pound bags.  He has an equal number of each size bag.  Therefore, Tim has 350 * 100 = 35000, 350 * 50 = 17500, 350 * 25 = 7000, 350 * 10 = 35000, 350 * 50 = 17500, 350 * 25 = 7000, 350 * 10 = 35000, 350 * 25 = 7000, 350 * 10 = 35000, 350 * 25 = 7000, 350 * 10 = 35000, 350 * 25 = 7000, 350 * 10 = 35000, 350 * 25 = 7000, 350 * 10 = 35000, 350 * 25 = 7000, 350 * 10 = 35000, 350 * 25 = 7000, 350 * 10 = 35000, 350 * 25 = 7000, 350 * 10 = 35000, 350 * 25 = 7000, 350 * 10 = 35000, 350 * 25 = 7000, 350 * 10 = 35000, 350 * 25 = 7000, 350 * 10 = 35000, 350 * 25 = 7000, 350 * 10 = 35000, 350 * 25 = 7000",
+            "Options": {
+                "2": "A",
+                "4": "B",
+                "6": "C",
+                "8": "D",
+                "10": "E"
+            },
+            "Extract-Response": "35000"
+        },
+        {
+            "Index": 22,
+            "GT": "C",
+            "Query": "What is the least value of x, So that 2x5475 is divisible by 9\nOptions:  A)7 B)8 C)4 D)3 E)2  Let's think step by step.",
+            "Response": "2x5475 = 10950",
+            "Options": {
+                "7": "A",
+                "8": "B",
+                "4": "C",
+                "3": "D",
+                "2": "E"
+            },
+            "Extract-Response": "10950"
+        },
+        {
+            "Index": 23,
+            "GT": "B",
+            "Query": "Square P is inscribed in circle Q. If the perimeter of P is 40, what is the circumference of Q?\nOptions:  A)11\u221a 2\u03c0 B)10\u221a 2\u03c0 C)9\u221a 2\u03c0 D)8\u221a 2\u03c0 E)7\u221a 2\u03c0  Let's think step by step.",
+            "Response": "40 * 2\u03c0 = 80 * 2\u03c0 80 * 2\u03c0 = 160 * 2\u03c0 160 * 2\u03c0 = 320 * 2\u03c0 320 * 2\u03c0 = 640 * 2\u03c0 640 * 2\u03c0 = 1280 * 2\u03c0 1280 * 2\u03c0 = 2560 * 2\u03c0 2560 * 2\u03c0 = 5120 * 2\u03c0 5120 * 2\u03c0 = 10240 * 2\u03c0 10240 * 2\u03c0 = 20480 * 2\u03c0 20480 * 2\u03c0 = 40960 * 2\u03c0 40960 * 2\u03c0 = 81920 * 2\u03c0 81920 * 2\u03c0 = 163840 * 2\u03c0 163840 * 2\u03c0 = 327680 * 2\u03c0 327680 * 2\u03c0 = 655360 * 2\u03c0 655360 * 2\u03c0 = 1310720 * 2\u03c0 1310720 * 2\u03c0 = 2621440 * 2\u03c0 2621440 * 2\u03c0 = 5242880 * 2\u03c0 5242880 * 2\u03c0 = 10485760 * 2\u03c0 10485760 * 2\u03c0 = 20971520 * 2\u03c0 20971520 * 2\u03c0 = 41943040 * 2\u03c0 41943040 * 2\u03c0 = 83886080 * 2\u03c0 83886080 * 2\u03c0 = 167772160 * 2\u03c0 167772160 * 2\u03c0 = 335544320 * 2\u03c0 3",
+            "Options": {
+                "11\u221a 2\u03c0": "A",
+                "10\u221a 2\u03c0": "B",
+                "9\u221a 2\u03c0": "C",
+                "8\u221a 2\u03c0": "D",
+                "7\u221a 2\u03c0": "E"
+            },
+            "Extract-Response": "335544320 * 2\u03c0 = 671088640 * 2\u03c0"
+        },
+        {
+            "Index": 24,
+            "GT": "A",
+            "Query": "A debtor reached an agreement with his creditor to repay a loan by making a monthly payment which is double of the amount she paid the previous month. If the debtors first payment was $200, and he is expected to pay back 51200, how many months will it take to fully repay the loan?\nOptions:  A)9 B)10 C)9 D)12 E)10  Let's think step by step.",
+            "Response": "9 * 200 = 1800 10 * 100 = 1000 9 * 900 = 8100 9 * 100 = 900 9 * 900 = 8100 9 * 100 = 8100 9 * 100 = 8100 9 * 100 = 8100 9 * 100 = 8100 9 * 100 = 8100 9 * 100 = 8100 9 * 100 = 8100 9 * 100 = 8100 9 * 100 = 8100 9 * 100 = 8100 9 * 100 = 8100 9 * 100 = 8100 9 * 100 = 8100 9 * 100 = 8100 9 * 100 = 8100 9 * 100 = 8100 9 * 100 = 8100 9 * 100 = 8100 9 * 100 = 8100 9 * 100 = 8100 9 * 100 = 8100 9 * 100 = 8100 9 * 100 = 8100 9 * 100 = 8100 9 * 100 = 8100 9 * 100 = 8100 9 * 100 = 8100 9 * 100 = 8100 9 * 100 = 8100 9 * 100 = 8100 9 * 100 = 8100 9 * 100 = 8100 9 * 100 = 8100 9 * 100 = 8100 9 * 1",
+            "Options": {
+                "9": "C",
+                "10": "E",
+                "12": "D"
+            },
+            "Extract-Response": "9 * 200 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1 = 1800 9 * 1"
+        },
+        {
+            "Index": 25,
+            "GT": "C",
+            "Query": "As a bicycle salesperson, James earns a fixed salary of $30 per week plus $6 per bicycle for the first 6 bicycles he sells, $12 per bicycle for the next 6 bicycles he sells, and $18 per bicycle for every bicycle sold after first 12. This week, he earned more than twice as much as he did last week. If he sold x bicycles last week and y bicycles this week, which of the following statements must be true?\nI. y<2x\nII. y>x\nIII. y>3\nOptions:  A)I,II only B)I only C)II,III only D)II only E)III only  Let's think step by step.",
+            "Response": "Statement I: y < 2x Therefore, y = x",
+            "Options": {
+                "I,II only": "A",
+                "I only": "B",
+                "II,III only": "C",
+                "II only": "D",
+                "III only": "E"
+            },
+            "Extract-Response": "2x"
+        },
+        {
+            "Index": 26,
+            "GT": "A",
+            "Query": "A school currently maintains a fixed number of students per class. If the ratio of students per class were to be increased by 1, 10 fewer classes would be run for a total of 120 students. What is the current ratio Q of students per class?\nOptions:  A)Q=3 B)Q=4 C)6 D)8 E)12  Let's think step by step.",
+            "Response": "Q = 3",
+            "Options": {
+                "Q=3": "A",
+                "Q=4": "B",
+                "6": "C",
+                "8": "D",
+                "12": "E"
+            },
+            "Extract-Response": "3"
+        },
+        {
+            "Index": 27,
+            "GT": "A",
+            "Query": "A survey reveals that the average income of a company\u2019s customers is $45,000 per year. If 50 customers respond to the survey and the average income of the wealthiest 10 of those customers is $95,000, what is the average income of the other 40 customers?\nIs there a way to solve this using weighted average concept instead of doing tedious calculations?\nOptions:  A) $32,500 B) $35,000 C) $37,500 D) $42,500 E) $50,000  Let's think step by step.",
+            "Response": "A) $32,500 + B) $35,000 + C) $37,500 + D) $42,500 + E) $50,000 = $89,500 + $37,500 + $42,500 + $50,000 + $50,000 = $127,000 + $42,500 + $42,500 + $50,000 + $50,000 = 179,500 + $42,500 + $42,500 + $50,000 + $50,000 = 1841650 + $42,500 + $42,500 + $50,000 + $50,000 = 1883900 + $42,500 + $42,500 + $50,000 + $50,000 = 1888150 + $42,500 + $42,500 + $50,000 + $50,000 = 1892380 + $42,500 + $42,500 + $50,000 + $50,000 = 1896630 + $42,500 + $42,500 + $50,000 + $50,000 = 1900880 + $42,500 + $42,500 + $50,000 + $50,000 = 1905130 + $42,500 + $42,500 + $50,000 + $50,000 = 1909380 + $42,500 + $42,500 + $50,000 + $50,000 = 1913630 + $4",
+            "Options": {
+                " $32,500": "A",
+                " $35,000": "B",
+                " $37,500": "C",
+                " $42,500": "D",
+                " $50,000": "E"
+            },
+            "Extract-Response": "1913630 + $42,500 + $42,500 + $50,000 + $50,000 = 1917880 + $42,500 + $42,500 + $50,000 + $50,000 = 1922130 + $42,500 + $42,500 + $50,000 + $50,000 = 1926380 + $42,500 + $42,500 + $50,000 + $50,000 = 1930630 + $42,500 + $42,500 + $50,000 + $50,000 = 1934880 + $42,500 + $42,500 + $50,000 + $50,000 = 1939130 + $42,500 + $42,500 + $50,000 + $50,000 = 1943380 + $42,500 + $42,500 + $50,000 + $50,000 = 1947630 + $42,500 + $42,500 + $50,000 + $50,000 = 1951880 + $42,500 + $42,500 + $50,000 + $50,000 = 1956130 + $42,500 + $42,500 + $50,000 + $50,000 = 1960380 + $42,500 + $42,500 + $50,000 + $50,000 = 1964630 + $42,500 + $42,"
+        },
+        {
+            "Index": 28,
+            "GT": "C",
+            "Query": "The slant height of a cone is 35 cm and radius of the base is 14cm, find the curved surface of the cone.\nOptions:  A)4150 B)1780 C)1540 D)1500 E)6100  Let's think step by step.",
+            "Response": "4150 * 1780 = 4150 * (1000 + 700 + 80) = 4150 * 1000 + 4150 * 700 + 4150 * 80 = 4150000 + 2905000 + 332000 = 7055000 + 332000 = 7387000",
+            "Options": {
+                "4150": "A",
+                "1780": "B",
+                "1540": "C",
+                "1500": "D",
+                "6100": "E"
+            },
+            "Extract-Response": "7387000"
+        },
+        {
+            "Index": 29,
+            "GT": "A",
+            "Query": "A cheese factory sells its cheese in rectangular blocks. A normal block has a volume of 8 cubic feet. If a small block has half the width, half the depth, and half the length of a normal block, what is the volume of cheese in a small block in cubic feet?\nOptions:  A)1 B)5 C)4 D)6 E)2  Let's think step by step.",
+            "Response": "A normal block has a volume of 8 cubic feet.  A small block has half the width, half the depth, and half the length of a normal block.  Therefore, a small block has a volume of 4 cubic feet.",
+            "Options": {
+                "1": "A",
+                "5": "B",
+                "4": "C",
+                "6": "D",
+                "2": "E"
+            },
+            "Extract-Response": "4"
+        },
+        {
+            "Index": 30,
+            "GT": "A",
+            "Query": "In a new housing development, trees are to be planted along the sidewalk of a certain street. Each tree takes up one square foot of sidewalk space, and there are to be 20 feet between each tree. How many trees can be planted if the road is 148 feet long?\nOptions:  A)8 B)9 C)10 D)11 E)16  Let's think step by step.",
+            "Response": "148 * 20 = 2960",
+            "Options": {
+                "8": "A",
+                "9": "B",
+                "10": "C",
+                "11": "D",
+                "16": "E"
+            },
+            "Extract-Response": "2960"
+        },
+        {
+            "Index": 31,
+            "GT": "C",
+            "Query": "What will be the difference in simple and compound interest on 2000 after three years at the rate of 10 percent per annum?\nOptions:  A)160 B)42 C)62 D)20 E)None of these  Let's think step by step.",
+            "Response": "2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000",
+            "Options": {
+                "160": "A",
+                "42": "B",
+                "62": "C",
+                "20": "D",
+                "None of these": "E"
+            },
+            "Extract-Response": "20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 = 20000 2000 * 10 ="
+        },
+        {
+            "Index": 32,
+            "GT": "C",
+            "Query": "A $500 investment and a $1,500 investment have a combined yearly return of 19 percent of the total of the two investments. If the $500 investment has a yearly return of 7 percent, what percent yearly return does the $1,500 investment have?\nOptions:  A)9% B)10% C)23% D)21% E)22%  Let's think step by step.",
+            "Response": "A $500 investment and a $1,500 investment have a combined yearly return of 19 percent of the total of the two investments.  If the $500 investment has a yearly return of 7 percent, what percent yearly return does the $1,500 investment have?\nAnswer: 19 percent of $1,500 = 19 * (1000 + 500) = 19 * 1000 + 19 * 500 = 19000 + 9500 = 28500",
+            "Options": {
+                "9%": "A",
+                "10%": "B",
+                "23%": "C",
+                "21%": "D",
+                "22%": "E"
+            },
+            "Extract-Response": "19 * 1000 + 19 * 500 = 19000 + 9500 = 28500"
+        },
+        {
+            "Index": 33,
+            "GT": "C",
+            "Query": "Find the constant k so that : -x2 - (k + 11)x - 8 = -(x - 2)(x - 4)\nOptions:  A)11 B)12 C)17 D)14 E)15  Let's think step by step.",
+            "Response": "Answer: A)11 B)12 C)17 D)14 E)15",
+            "Options": {
+                "11": "A",
+                "12": "B",
+                "17": "C",
+                "14": "D",
+                "15": "E"
+            },
+            "Extract-Response": "12"
+        },
+        {
+            "Index": 34,
+            "GT": "B",
+            "Query": "A positive whole number has factors of 3 and 5. The number MUST be divisible by: I. 15 II. 30 III. 60\nOptions:  A)I & II B)III C)I & III D)II & III E)II  Let's think step by step.",
+            "Response": "Answer: A)I & II B)III C)I & III D)II & III E)II",
+            "Options": {
+                "I & II": "A",
+                "III": "B",
+                "I & III": "C",
+                "II & III": "D",
+                "II": "E"
+            },
+            "Extract-Response": "3"
+        },
+        {
+            "Index": 35,
+            "GT": "A",
+            "Query": "Krishan and Nandan jointly started a business. Krishan invested six times as Nandan did and invested his money for double time as compared to Nandan. Nandan earned Rs. 6000. If the gain is proportional to the money invested and the time for which the money is invested then the total gain was?\nOptions:  A)Rs.78000 B)Rs.48000 C)Rs.6000 D)Rs.82000 E)Rs.32000  Let's think step by step.",
+            "Response": "Krishan invested six times as Nandan did and invested his money for double time as compared to Nandan.  Nandan earned Rs.6000",
+            "Options": {
+                "Rs.78000": "A",
+                "Rs.48000": "B",
+                "Rs.6000": "C",
+                "Rs.82000": "D",
+                "Rs.32000": "E"
+            },
+            "Extract-Response": "B)Rs.48000"
+        },
+        {
+            "Index": 36,
+            "GT": "C",
+            "Query": "There are 8 players in a chess group, and each player plays each of the others once. Given that each game is played by two players, how many total games will be played?\nOptions:  A)10 B)30 C)28 D)60 E)90  Let's think step by step.",
+            "Response": "There are 8 players in a chess group, and each player plays each of the others once.  Therefore, there are 8 * 8 = 64",
+            "Options": {
+                "10": "A",
+                "30": "B",
+                "28": "C",
+                "60": "D",
+                "90": "E"
+            },
+            "Extract-Response": "64"
+        },
+        {
+            "Index": 37,
+            "GT": "E",
+            "Query": "A pipe takes a hours to fill the tank. But because of a leakage it took 2 times of its original time. Find the time taken by the leakage to empty the tank\nOptions:  A)50 min B)60 min C)90 min D)80 min E)120 min  Let's think step by step.",
+            "Response": "50 min * 2 = 100 min 90 min * 2 = 180 min 80 min * 2 = 160 min 160 min * 2 = 320 min 320 min * 2 = 640 min 640 min * 2 = 1280 min 1280 min * 2 = 2560 min 2560 min * 2 = 5120 min 5120 min * 2 = 10240 min 10240 min * 2 = 20480 min 20480 min * 2 = 40960 min 40960 min * 2 = 81920 min 81920 min * 2 = 163840 min 163840 min * 2 = 327680 min 327680 min * 2 = 655360 min 655360 min * 2 = 1310720 min 1310720 min * 2 = 2621440 min 2621440 min = 2621440 min 2621440 min = 2621440 min 2621440 min = 2621440 min 2621440 min = 2621440 min 2621440 min = 2621440 min 2621440 min = 2621440 min 2621440 min = 2621440 min 2621440 min = 2621440 min 2621440 min = 2621440 min 2621440 min = 2621440 min 2621440 min = 2621440 min 2621440 min = 26214",
+            "Options": {
+                "50 min": "A",
+                "60 min": "B",
+                "90 min": "C",
+                "80 min": "D",
+                "120 min": "E"
+            },
+            "Extract-Response": "2621440 min"
+        },
+        {
+            "Index": 38,
+            "GT": "D",
+            "Query": "Today is 22 days before Mariah's graduation. If she graduates on a Friday, what day of the week is it today?\nOptions:  A)Monday B)Friday C)Tuesday D)Thursday E)Sunday  Let's think step by step.",
+            "Response": "Today is 22 days before Mariah's graduation. If she graduates on a Friday, what day of the week is it today? Answer: Today is 22 days before Mariah's graduation. If she graduates on a Friday, what day of the week is it today? Answer: Today is 22 days before Mariah's graduation. If she graduates on a Friday, what day of the week is it today? Answer: Today is 22 days before Mariah's graduation. If she graduates on a Friday, what day of the week is it today? Answer: Today is 22 days before Mariah's graduation. If she graduates on a Friday, what day of the week is it today? Answer: Today is 22 days before Mariah's graduation. If she graduates on a Friday, what day of the week is it today? Answer: Today is 22 days before Mariah's graduation. If she graduates on a Friday, what day of the week is it today? Answer: Today is 22 days before Mariah's graduation. If she graduates on a Friday, what day of the week is it today? Answer: Today is 22 days before Mariah's graduation. If she graduates on a Friday, what day of the week is it today? Answer: Today is 22 days before Mariah's graduation. If she graduates on a Friday, what day of the week is it today? Answer: Today is 22 days before Mariah's graduation. If she graduates on a Friday, what day of the week is it today? Answer: Today is 22 days before Mariah's graduation. If she graduates on a Friday, what day of the week is it today? Answer: Today is 22 days before Mariah's graduation. If she graduates on a Friday, what day of the week is it today? Answer: Today is 22 days before Mariah's graduation. If she graduates on a Friday, what day of the week is it today? Answer: Today is 22 days before Mariah's graduation. If she graduates on a Friday, what day of the week is it today? Answer: Today is 22 days before Mariah's graduation. If she gradu",
+            "Options": {
+                "Monday": "A",
+                "Friday": "B",
+                "Tuesday": "C",
+                "Thursday": "D",
+                "Sunday": "E"
+            },
+            "Extract-Response": "22 days before Mariah's graduation. If she graduates on a Friday, what day of the week is it today? Answer: Today is 22 days before Mariah's graduation. If she graduates on a Friday, what day of the week is it today? Answer: Today is 22 days before Mariah's graduation. If she graduates on a Friday, what day of the week is it today? Answer: Today is 22 days before Mariah's graduation. If she graduates on a Friday, what day of the week is it today? Answer: Today is 22 days before Mariah's graduation. If she graduates on a Friday, what day of the week is it today? Answer: Today is 22 days before Mariah's graduation. If she graduates on a Friday, what day of the week is it today? Answer: Today is 22 days before Mariah's graduation. If she graduates on a Friday, what day of the week is it today? Answer: Today is 22 days before Mariah's graduation. If she graduates on a Friday, what day of the week is it today? Answer: Today is 22 days before Mariah's graduation. If she graduates on a Friday, what day of the week is it today? Answer: Today is 22 days before Mariah's graduation. If she graduates on a Friday, what day of the week is it today? Answer: Today is 22 days before Mariah's graduation. If she graduates on a Friday, what day of the week is it today? Answer: Today is 22 days before Mariah's graduation. If she graduates on a Friday, what day of the week is it today? Answer: Today is 22 days before Mariah's graduation. If she graduates on a Friday, what day of the week is it today? Answer: Today is 22 days before Mariah's graduation. If she graduates on a Friday, what day of the week is it today? Answer: Today is 22 days before Mariah's graduation. If she graduates on a Friday, what day of the week is it today? Answer: Today is 22 days before Mariah's graduation. If she graduates on a"
+        },
+        {
+            "Index": 39,
+            "GT": "D",
+            "Query": "Suppose a, b, and c are positive integers with a < b < c such that\n1/a\n+\n1/b\n+\n1/c\n= 1. What is\na + b + c?\nOptions:  A)1 B)4 C)9 D)11 E)no such integers exist  Let's think step by step.",
+            "Response": "1/a = 1 1/b = 4 1/c = 9  Therefore, a + b + c = 10",
+            "Options": {
+                "1": "A",
+                "4": "B",
+                "9": "C",
+                "11": "D",
+                "no such integers exist": "E"
+            },
+            "Extract-Response": "10"
+        },
+        {
+            "Index": 40,
+            "GT": "A",
+            "Query": "The age of man is three times the sum of the ages of his two sons.Four years hence,his age will be double of the sum of the ages of his sons.The father\u00e2\u20ac\u2122s present age is :\nOptions:  A)36 years B)45 years C)50 years D)55 years E)75 years  Let's think step by step.",
+            "Response": "Answer: A)36 years + B)45 years + C)50 years + D)55 years + E)75 years = 81 years + 50 years + 50 years + 55 years + 75 years = 131 years + 50 years + 50 years + 55 years + 75 years = 181 years + 50 years + 50 years + 55 years + 75 years = 1861 years + 50 years + 50 years + 55 years + 75 years = 1911 years + 50 years + 50 years + 55 years + 75 years = 1961 years + 50 years + 50 years + 55 years + 75 years = 2011 years + 50 years + 50 years + 55 years + 75 years = 2061 years + 50 years + 50 years + 55 years + 75 years = 2111 years + 50 years + 50 years + 55 years + 75 years = 2161 years + 50 years + 50 years + 55 years + 75 years = 2211 years + 50 years + 50 years + 55 years + 75 years = 2261 years + 50 years + 50 years + 55 years + 75 years = 2311 years + 50 years + 50 years + 55 years + 75 years = 2361 years + 50 years + 50 years + 55 years + 75 years = 2411 years + 50 years + 50 years + 55 years + 75 years = 2461 years + 50 years + 50 years + 55 years + 75 years = 2511 years + 50 years + 50 years + 55 years + 75 years = 2561 years + 50 years + 50 years + 55 years + 75",
+            "Options": {
+                "36 years": "A",
+                "45 years": "B",
+                "50 years": "C",
+                "55 years": "D",
+                "75 years": "E"
+            },
+            "Extract-Response": "2561 years + 50 years + 50 years + 55 years + 75 = 2611 years + 50 years + 50 years + 55 years + 75 = 2661 years + 50 years + 50 years + 55 years + 75 = 2711 years + 50 years + 50 years + 55 years + 75 = 2761 years + 50 years + 50 years + 55 years + 75 = 2811 years + 50 years + 50 years + 55 years + 75 = 2861 years + 50 years + 50 years + 55 years + 75 = 2911 years + 50 years + 50 years + 55 years + 75 = 2961 years + 50 years + 50 years + 55 years + 75 = 3011 years + 50 years + 50 years + 55 years + 75 = 3061 years + 50 years + 50 years + 55 years + 75 = 3111 years + 50 years + 50 years + 55 years + 75 = 3161 years + 50 years + 50 years + 55 years + 75 = 3211 years + 50 years + 50 years + 55 years + 75 = 3261 years + 50 years + 50 years + 55 years + 75 = 3311 years + 50 years + 50 years + 55 years + 75 = 3361 years + 50 years + 50 years + 55 years + 75 = 3411 years + 50 years + 50 years + 55 years + 75 = 3461 years + 50 years + 50 years + 55 years + 75 = 3511 years + 50 years + 50 years + 5"
+        },
+        {
+            "Index": 41,
+            "GT": "B",
+            "Query": "A bottle of coke contains 200gm in place of 1kg of fluid. Find the actual % difference, given a 10% gain on initial fluid?\nOptions:  A)32.5% B)112.5% C)35% D)40% E)50%  Let's think step by step.",
+            "Response": "A)32.5% = 32.5 * 10 = 32.5 * 10 = 32.500 B)112.5% = 112.5 * 10 = 112.500 C)35% = 35 * 10 = 3500 D)40% = 40 * 10 = 4000 E)50% = 50 * 10 = 5000",
+            "Options": {
+                "32.5%": "A",
+                "112.5%": "B",
+                "35%": "C",
+                "40%": "D",
+                "50%": "E"
+            },
+            "Extract-Response": "5000"
+        },
+        {
+            "Index": 42,
+            "GT": "D",
+            "Query": "A person can walk at a constant rate of 8mph and can bike at a rate of 16mph. If he wants to travel 64 miles in 8 hours using bike and walking at their constant rates, how much distance would he require to walk?\nOptions:  A)20 B)30 C)48 D)64 E)72  Let's think step by step.",
+            "Response": "64 * 8 = 512",
+            "Options": {
+                "20": "A",
+                "30": "B",
+                "48": "C",
+                "64": "D",
+                "72": "E"
+            },
+            "Extract-Response": "512"
+        },
+        {
+            "Index": 43,
+            "GT": "A",
+            "Query": "5358 x 51 = ?\nOptions:  A)273258 B)273268 C)273348 D)273358 E)None of these  Let's think step by step.",
+            "Response": "5358 * 51 = 5358 * (50 + 1) = 5358 * 50 + 5358 * 1 = 267900 + 5358 = 268435",
+            "Options": {
+                "273258": "A",
+                "273268": "B",
+                "273348": "C",
+                "273358": "D",
+                "None of these": "E"
+            },
+            "Extract-Response": "267900 + 5358 = 268435"
+        },
+        {
+            "Index": 44,
+            "GT": "D",
+            "Query": "3 persons (1 couple and 1 single) are seated at random in a row of 5 chairs. What is the probability that the couple does not sit together?\nOptions:  A)5/7 B)4/5 C)2/5 D)3/5 E)11/8  Let's think step by step.",
+            "Response": "A)5/7 = 0 R 3",
+            "Options": {
+                "5/7": "A",
+                "4/5": "B",
+                "2/5": "C",
+                "3/5": "D",
+                "11/8": "E"
+            },
+            "Extract-Response": "0"
+        },
+        {
+            "Index": 45,
+            "GT": "D",
+            "Query": "In a recent survey at a local deli, it was observed that 3 out of 5 customers bought a bagel and 5 out of 7 customers bought a coffee. Some customers bought both. If 8 customers are selected, what are the chances that at least 1 customer bought a coffee and a bagel?\nOptions:  A)27/343 B)3/7 C)27/125 D)199/245 E)9/125  Let's think step by step.",
+            "Response": "There are 8 customers, so the probability of at least 1 customer buying a coffee and a bagel is 8 * (1 + 9) = 8 * (1 + 9) = 8 * 1 + 8 * 9 = 8 * 1 + 72 * 9 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8",
+            "Options": {
+                "27/343": "A",
+                "3/7": "B",
+                "27/125": "C",
+                "199/245": "D",
+                "9/125": "E"
+            },
+            "Extract-Response": "8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 + 647 = 8 * 1 +"
+        },
+        {
+            "Index": 46,
+            "GT": "A",
+            "Query": "|x+3| \u2013 |4-x| = |8+x| How many S solutions will this equation have?\nOptions:  A)0 B)1 C)2 D)3 E)4  Let's think step by step.",
+            "Response": "First, |x+3| - |4 - x| = |x+3| - |4 - x| = |x+3|  Second, |x+3| - |4 - x| = |x+3| - |4 - x| = |x+3|  Third, |x+3| - |4 - x| = |x+3| - |4 - x| = |x+3|  Fourth, |x+3| - |4 - x| = |x+3| - |4 - x| = |x+3|  Fifth, |x+3| - |4 - x| = |x+3| - |4 - x| = |x+3|  Sixth, |x+3| - |4 - x| = |x+3| - |4 - x| = |x+3|  Seventh, |x+3| - |4 - x| = |x+3| - |4 - x| = |x+3|  Eighth, |x+3| - |4 - x| = |x+3| - |4 - x| = |x+3|  Ninth, |x+3| - |4 - x| = |x+3| - |4 - x| = |x+3|  Tenth, |x+3| - |4 - x| = |x+3| - |4 - x| = |x+3|  Eleventh, |x+3| - |4 - x| = |x+3| - |4 - x| = |x+3|  Twelfth, |x+3| - |4 - x| = |x+3| - |4 - x| = |x+3|  Thirteenth, |x+3| - |4 - x| = |x+3| - |4 - x| = |x+3|  Fourteenth, |x+3| - |4 - x| = |x+3| - |4 - x| = |x+3|  Fifteenth, |x+3| - |4 - x| = |x+3| - |4 - x| = |x+3|  Sixteenth, |x+3| - |4 - x| =",
+            "Options": {
+                "0": "A",
+                "1": "B",
+                "2": "C",
+                "3": "D",
+                "4": "E"
+            },
+            "Extract-Response": "16"
+        },
+        {
+            "Index": 47,
+            "GT": "B",
+            "Query": "The output of a factory was increased by 10% to keep up with rising demand. To handle the holiday rush, this new output was increased by 20%. By approximately what percent would the output now have to be decreased in order to restore the original output?\nOptions:  A)20% B)24% C)30% D)32% E)79%  Let's think step by step.",
+            "Response": "10% increase + 20% increase = 30% increase. 30% increase - 20% increase = 10% increase. 10% increase - 20% increase = -9% increase. -9% increase - 20% increase = -11% increase. -11% increase - 30% increase = -19% increase. -19% increase - 30% increase = -11% increase. -11% increase - 30% increase = -19% increase. -19% increase - 30% increase = -11% increase. -11% increase - 30% increase = -19% increase. -19% increase - 30% increase = -11% increase. -11% increase - 30% increase = -19% increase. -19% increase - 30% increase = -11% increase. -11% increase - 30% increase = -19% increase. -19% increase - 30% increase = -11% increase. -11% increase - 30% increase = -19% increase. -19% increase - 30% increase = -11% increase. -11% increase - 30% increase = -19% increase. -19% increase - 30% increase = -11% increase. -11% increase - 30% increase = -19% increase. -19% increase - 30% increase = -11% increase. -11% increase - 30% increase = -19% increase. -19% increase - 30% increase = -11% increase. -11% increase - 30% increase = -19% increase. -19% increase - 30% increase = -11% increase. -11% increase - 30% increase = -19% increase. -19% increase - 30% increase = -11% increase. -11% increase - 30% increase = -19% increase. -19% increase - 30% increase = -11% increase. -11% increase - 30%",
+            "Options": {
+                "20%": "A",
+                "24%": "B",
+                "30%": "C",
+                "32%": "D",
+                "79%": "E"
+            },
+            "Extract-Response": "11%"
+        },
+        {
+            "Index": 48,
+            "GT": "E",
+            "Query": "In a graduate physics course, 70 percent of the students are male and 30 percent of the students are married. If two-sevenths of the male students are married, what fraction of the male students is single?\nOptions:  A)2/7 B)1/3 C)1/2 D)2/3 E)5/7  Let's think step by step.",
+            "Response": "70 percent of the students are male, so 70 * 70 = 4900. 30 percent of the students are married, so 30 * 70 = 2100. 2 * 70 = 1400. 2 * 70 = 1400. 2 * 70 = 1400. 2 * 70 = 1400. 2 * 70 = 1400. 2 * 70 = 1400. 2 * 70 = 1400. 2 * 70 = 1400. 2 * 70 = 1400. 2 * 70 = 1400. 2 * 70 = 1400. 2 * 70 = 1400. 2 * 70 = 1400. 2 * 70 = 1400. 2 * 70 = 1400. 2 * 70 = 1400. 2 * 70 = 1400. 2 * 70 = 1400. 2 * 70 = 1400. 2 * 70 = 1400. 2 * 70 = 1400. 2 * 70 = 1400. 2 * 70 = 1400. 2 * 70 = 1400. 2 * 70 = 1400. 2 * 70 = 1400. 2 * 70 = 1400. 2 * 70 = 1400. 2 * 70 = 1400. 2 * 70 = 1400. 2 * 70 = 1400. 2 * 70 = 1400. 2 * 70 = 1400. 2 * 70 = 1400. 2 * 70 = 1400. 2 * 70 =",
+            "Options": {
+                "2/7": "A",
+                "1/3": "B",
+                "1/2": "C",
+                "2/3": "D",
+                "5/7": "E"
+            },
+            "Extract-Response": "1400."
+        },
+        {
+            "Index": 49,
+            "GT": "D",
+            "Query": "The cost of painting the whole surface area of a cube at the rate of 13 paise per Sq.cm is Rs. 343.98. Then the volume of the cube is\nOptions:  A)8500 cm3 B)9000 cm3 C)9250 cm3 D)9261 cm3 E)None  Let's think step by step.",
+            "Response": "8500 cm3 * 9000 cm3 = 74500 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 *",
+            "Options": {
+                "8500 cm3": "A",
+                "9000 cm3": "B",
+                "9250 cm3": "C",
+                "9261 cm3": "D",
+                "None": "E"
+            },
+            "Extract-Response": "670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3 * 9000 cm3 = 670000 cm3"
+        },
+        {
+            "Index": 50,
+            "GT": "A",
+            "Query": "A man sold 20 articles for $60 and gained 20%. How many articles should he sell for $50 to incur a loss 20%?\nOptions:  A)25 B)36 C)40 D)50 E)48  Let's think step by step.",
+            "Response": "25 * 50 = 1250",
+            "Options": {
+                "25": "A",
+                "36": "B",
+                "40": "C",
+                "50": "D",
+                "48": "E"
+            },
+            "Extract-Response": "1250"
+        },
+        {
+            "Index": 51,
+            "GT": "C",
+            "Query": "A man invests some money partly in 9% stock at 96 and partly in 12% stock at 120. To obtain equal dividends from both, he must invest the money in the ratio:\nOptions:  A)3:5 B)2:1 C)16:15 D)4:5 E)None of these  Let's think step by step.",
+            "Response": "A)3:5 B)2:1 C)16:15 D)4:5 E)None of these  A)3:5 B)2:1 C)16:15 D)4:5 E)None of these  A)3:5 B)2:1 C)16:15 D)4:5 E)None of these  A)3:5 B)2:1 C)16:15 D)4:5 E)None of these  A)3:5 B)2:1 C)16:15 D)4:5 E)None of these  A)3:5 B)2:1 C)16:15 D)4:5 E)None of these  A)3:5 B)2:1 C)16:15 D)4:5 E)None of these  A)3:5 B)2:1 C)16:15 D)4:5 E)None of these  A)3:5 B)2:1 C)16:15 D)4:5 E)None of these  A)3:5 B)2:1 C)16:15 D)4:5 E)None of these  A)3:5 B)2:1 C)16:15 D)4:5 E)None of these  A)3:5 B)2:1 C)16:15 D)4:5 E)None of these  A)3:5 B)2:1 C)16:15 D)4:5 E)None of these  A)3:5 B)2:1 C)16:15 D)4:5 E)None of these  A)3:5 B)2:1 C)16:15 D)4:5 E)None of these  A)3:5 B)2:1 C)16:15 D)4:5 E)None of these  A)3:5 B)2:1 C)16:15 D)4:5 E)None of these  A)3:5 B)2:1 C)16:15 D)4:5 E)None of these  A)3:5 B)2",
+            "Options": {
+                "3:5": "A",
+                "2:1": "B",
+                "16:15": "C",
+                "4:5": "D",
+                "None of these": "E"
+            },
+            "Extract-Response": "3:5"
+        },
+        {
+            "Index": 52,
+            "GT": "A",
+            "Query": "A, B, C rent a pasture. A puts 10 oxen for 7 months, B puts 12 oxen for 5 months and C puts 15 oxen for 3 months for grazing. If the rent of the pasture is Rs. 175, how much must C pay as his share of rent?\nOptions:  A)Rs. 45 B)Rs. 50 C)Rs. 55 D)Rs. 60 E)Rs. 65  Let's think step by step.",
+            "Response": "A)Rs. 45 B)Rs. 50 C)Rs. 55 D)Rs. 65 E)Rs. 65",
+            "Options": {
+                "Rs. 45": "A",
+                "Rs. 50": "B",
+                "Rs. 55": "C",
+                "Rs. 60": "D",
+                "Rs. 65": "E"
+            },
+            "Extract-Response": "55"
+        },
+        {
+            "Index": 53,
+            "GT": "B",
+            "Query": "A train 500 m long can cross an electric pole in 20 sec and then find the speed of the train?\nOptions:  A)95 Kmph B)90 Kmph C)92 Kmph D)95 Kmph E)98 Kmph  Let's think step by step.",
+            "Response": "500 m = 500 * 10 = 500 * 10 = 5000",
+            "Options": {
+                "95 Kmph": "D",
+                "90 Kmph": "B",
+                "92 Kmph": "C",
+                "98 Kmph": "E"
+            },
+            "Extract-Response": "5000"
+        },
+        {
+            "Index": 54,
+            "GT": "D",
+            "Query": "The smallest number when increased by \" 1 \" is exactly divisible by 6,9,15,35,45 is:\nOptions:  A)631 B)630 C)359 D)629 E)600  Let's think step by step.",
+            "Response": "631 - 629 * 1 = 631 - 629 = 2\nTherefore, 631 / 629 = 1 R 2",
+            "Options": {
+                "631": "A",
+                "630": "B",
+                "359": "C",
+                "629": "D",
+                "600": "E"
+            },
+            "Extract-Response": "631 / 629 = 1"
+        },
+        {
+            "Index": 55,
+            "GT": "B",
+            "Query": "How many keystrokes are needed to type the numbers from 1 to 500?\nOptions:  A)1156 B)1392 C)1480 D)1562 E)1788  Let's think step by step.",
+            "Response": "1156 = 1156 * 1",
+            "Options": {
+                "1156": "A",
+                "1392": "B",
+                "1480": "C",
+                "1562": "D",
+                "1788": "E"
+            },
+            "Extract-Response": "1156 * 1"
+        },
+        {
+            "Index": 56,
+            "GT": "E",
+            "Query": "In a two-digit number, the digit in the unit's place is four times the digit in ten's place and the sum of the digits is equal to 10. What is the number?\nOptions:  A)82 B)41 C)14 D)56 E)28  Let's think step by step.",
+            "Response": "82 * 10 = 820",
+            "Options": {
+                "82": "A",
+                "41": "B",
+                "14": "C",
+                "56": "D",
+                "28": "E"
+            },
+            "Extract-Response": "820"
+        },
+        {
+            "Index": 57,
+            "GT": "E",
+            "Query": "The edge of a cube is 7a cm. Find its surface?\nOptions:  A)24a8 B)24a4 C)24a1 D)24a2 E)294a2  Let's think step by step.",
+            "Response": "24a8 * 3 = 7224",
+            "Options": {
+                "24a8": "A",
+                "24a4": "B",
+                "24a1": "C",
+                "24a2": "D",
+                "294a2": "E"
+            },
+            "Extract-Response": "7224"
+        },
+        {
+            "Index": 58,
+            "GT": "B",
+            "Query": "A shop sells chocolates It is used to sell chocolates for Rs.2 each but there were no sales at that price.When it reduced the price all the chocolates sold out enabling the shopkeeper to realize Rs 164.90 from the chocolates alone If the new price was not less than half the original price quoted How many chocolates were sold?\nOptions:  A)1.9 B)1.7 C)1.2 D)1.5 E)1.6  Let's think step by step.",
+            "Response": "1.9 * 100 = 1900 1.9 * 100 = 1900 1.9 * 100 = 1900 1.9 * 100 = 1900 1.9 * 100 = 1900 1.9 * 100 = 1900 1.9 * 100 = 1900 1.9 * 100 = 1900 1.9 * 100 = 1900 1.9 * 100 = 1900 1.9 * 100 = 1900 1.9 * 100 = 1900 1.9 * 100 = 1900 1.9 * 100 = 1900 1.9 * 100 = 1900 1.9 * 100 = 1900 1.9 * 100 = 1900 1.9 * 100 = 1900 1.9 * 100 = 1900 1.9 * 100 = 1900 1.9 * 100 = 1900 1.9 * 100 = 1900 1.9 * 100 = 1900 1.9 * 100 = 1900 1.9 * 100 = 1900 1.9 * 100 = 1900 1.9 * 100 = 1900 1.9 * 100 = 1900 1.9 * 100 = 1900 1.9 * 100 = 1900 1.9 * 100 = 1900 1.9 * 100 = 1900 1.9 * 100 = 1900 1.9 * 100 = 1900 1",
+            "Options": {
+                "1.9": "A",
+                "1.7": "B",
+                "1.2": "C",
+                "1.5": "D",
+                "1.6": "E"
+            },
+            "Extract-Response": "1900"
+        },
+        {
+            "Index": 59,
+            "GT": "A",
+            "Query": "A board 7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nOptions:  A)31 inches B)32 inches C)33 inches D)34 inches E)35 inches  Let's think step by step.",
+            "Response": "7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nAnswer: 7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nAnswer: 7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nAnswer: 7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nAnswer: 7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nAnswer: 7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nAnswer: 7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nAnswer: 7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nAnswer: 7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nAnswer: 7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nAnswer: 7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nAnswer: 7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nAnswer: 7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nAnswer: 7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nAnswer: 7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nAnswer: 7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nAnswer: 7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nAnswer: 7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nAnswer: 7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nAnswer",
+            "Options": {
+                "31 inches": "A",
+                "32 inches": "B",
+                "33 inches": "C",
+                "34 inches": "D",
+                "35 inches": "E"
+            },
+            "Extract-Response": "7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nAnswer: 7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nAnswer: 7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nAnswer: 7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nAnswer: 7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nAnswer: 7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nAnswer: 7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nAnswer: 7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nAnswer: 7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nAnswer: 7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nAnswer: 7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nAnswer: 7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nAnswer: 7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nAnswer: 7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nAnswer: 7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nAnswer: 7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nAnswer: 7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nAnswer: 7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nAnswer: 7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nAnswer:"
+        },
+        {
+            "Index": 60,
+            "GT": "B",
+            "Query": "Find the number of zeroes in the expression 15*32*25*22*40*75*98*112*125\nOptions:  A)12 B)9 C)14 D)7 E)6  Let's think step by step.",
+            "Response": "12 * 32 * 25 * 22 * 40 * 98 * 125 = 12 * 32 * 25 * 22 * 40 * 98 * 125 = 12 * 32 * 25 * 22 * 40 * 98 * 125 = 12 * 32 * 25 * 22 * 40 * 98 * 125 = 12 * 32 * 25 * 22 * 40 * 98 * 125 = 12 * 32 * 25 * 22 * 40 * 98 * 125 = 12 * 32 * 25 * 22 * 40 * 98 * 125 = 12 * 32 * 25 * 22 * 40 * 98 * 125 = 12 * 32 * 25 * 22 * 40 * 98 * 125 = 12 * 32 * 25 * 22 * 40 * 98 * 125 = 12 * 32 * 25 * 22 * 40 * 98 * 125 = 12 * 32 * 25 * 22 * 40 * 98 * 125 = 12 * 32 * 25 * 22 * 40 * 98 * 125 = 12 * 32 * 25 * 22 * 40 * 98 * 125 = 12 * 32 * 25 * 22 * 40 * 98 * 125 = 12 * 32 * 25 * 22 * 40 * 98 * 125 = 12 * 32 * 25 * 22 * 40 * 98 * 125 = 12 * 32 * 25 * 22 * 40",
+            "Options": {
+                "12": "A",
+                "9": "B",
+                "14": "C",
+                "7": "D",
+                "6": "E"
+            },
+            "Extract-Response": "12 * 32 * 25 * 22 * 40 = 12 * 32 * 25 * 22 * 40 = 12 * 32 * 25 * 22 * 40 = 12 * 32 * 25 * 22 * 40 = 12 * 32 * 25 * 22 * 40 = 12 * 32 * 25 * 22 * 40 = 12 * 32 * 25 * 22 * 40 = 12 * 32 * 25 * 22 * 40 = 12 * 32 * 25 * 22 * 40 = 12 * 32 * 25 * 22 * 40 = 12 * 32 * 25 * 22 * 40 = 12 * 32 * 25 * 22 * 40 = 12 * 32 * 25 * 22 * 40 = 12 * 32 * 25 * 22 * 40 = 12 * 32 * 25 * 22 * 40 = 12 * 32 * 25 * 22 * 40 = 12 * 32 * 25 * 22 * 40 = 12 * 32 * 25 * 22 * 40 = 12 * 32 * 25 * 22 * 40 = 12 * 32 * 25 * 22 * 40 = 12 * 32 * 25 * 22 * 40 = 12 * 32 * 25 * 22 * 40 = 12 * 32 * 25 * 22 * 40 = 12 * 32 * 25 * 22 * 40 = 12 * 32 * 25 * 22 * 40 = 12 * 32 * 25 *"
+        },
+        {
+            "Index": 61,
+            "GT": "C",
+            "Query": "The diagonals of a rhombus are 18 cm and 22 cm. Find its area?\nOptions:  A)277 B)266 C)198 D)288 E)212  Let's think step by step.",
+            "Response": "18 cm * 266 = 266 * (100 + 80 + 8) = 266 * 100 + 266 * 80 + 266 * 8 = 26600 + 21280 + 2128 = 47880 + 2128 = 49008",
+            "Options": {
+                "277": "A",
+                "266": "B",
+                "198": "C",
+                "288": "D",
+                "212": "E"
+            },
+            "Extract-Response": "49008"
+        },
+        {
+            "Index": 62,
+            "GT": "D",
+            "Query": "If rupee one produces rupees nine over a period of 40 years, find the rate of simple interest?\nOptions:  A)22 1/8 % B)22 3/2 % C)28 1/2 % D)22 1/2 % E)32 1/2 %  Let's think step by step.",
+            "Response": "22 1/8 % = 2 R 6",
+            "Options": {
+                "22 1/8 %": "A",
+                "22 3/2 %": "B",
+                "28 1/2 %": "C",
+                "22 1/2 %": "D",
+                "32 1/2 %": "E"
+            },
+            "Extract-Response": "22 1/8 %"
+        },
+        {
+            "Index": 63,
+            "GT": "B",
+            "Query": "A and B invests Rs.6000 and Rs.12000 in a business. After 4 months, A withdraws half of his capital and 2 months later, B withdraws one-third of his capital. In what ratio should they share the profits at the end of the year?\nOptions:  A)32:99 B)8:21 C)32:45 D)34:89 E)35:21  Let's think step by step.",
+            "Response": "A)32:99 - 21:45 * 1 = 32:99 - 21:45 = 11:54 B)8:21 - 21:45 * 1 = 8:21 - 21:45 = 60:26 C)60:26 - 21:45 * 2 = 60:26 - 42:90 = 18:36 D)18:36 - 21:45 * 8 = 18:36 - 168:36 = 212:36 E)212:36 - 21:45 * 9 = 212:36 - 199:45 = 13:29 F)13:29 - 21:45 * 6 = 13:29 - 126:27 = 74:22 G)74:22 - 21:45 * 3 = 74:22 - 63:35 = 11:87 H)11:87 - 21:45 * 2 = 11:87 - 42:90 = 69:97 I)69:97 - 21:45 * 3 = 69:97 - 63:35 = 66:62 J)66:62 - 21:45 * 2 = 66:62 - 42:90 = 23:72 K)23:72 - 21:45 * 1 = 23:72 - 21:45 = 12:27 L)12:27 - 21:45 * 5 = 12:27 - 105:22 = 20:25 M)20:25 - 21:45 * 9 = 20:25 - 19:45 = 0:80 N)0:80 - 21:45",
+            "Options": {
+                "32:99": "A",
+                "8:21": "B",
+                "32:45": "C",
+                "34:89": "D",
+                "35:21": "E"
+            },
+            "Extract-Response": "69:97"
+        },
+        {
+            "Index": 64,
+            "GT": "C",
+            "Query": "A train covers a distance of 10km in 10 min. If it takes 6 sec to pass a telegraph post, then the length of the train is?\nOptions:  A)m B)m C)m D)m E)m  Let's think step by step.",
+            "Response": "10km * 10min = 100km * 10min = 1000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10",
+            "Options": {
+                "m": "E"
+            },
+            "Extract-Response": "10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000km * 10min = 10000"
+        },
+        {
+            "Index": 65,
+            "GT": "C",
+            "Query": "The rental charge for a car is 34 cents for the first 1/4 mile driven and 6 cents for every 1/5 mile driven over the initial 1/4 mile. If a man paid $1.24 in rental charges, how many miles did he drive?\nOptions:  A)2.5 B)3.0 C)3.25 D)3.75 E)4.0  Let's think step by step.",
+            "Response": "2.5 * 100 = 2500 2.5 * 100 = 2500 2.5 * 100 = 2500 2.5 * 100 = 2500 2.5 * 100 = 2500 2.5 * 100 = 2500 2.5 * 100 = 2500 2.5 * 100 = 2500 2.5 * 100 = 2500 2.5 * 100 = 2500 2.5 * 100 = 2500 2.5 * 100 = 2500 2.5 * 100 = 2500 2.5 * 100 = 2500 2.5 * 100 = 2500 2.5 * 100 = 2500 2.5 * 100 = 2500 2.5 * 100 = 2500 2.5 * 100 = 2500 2.5 * 100 = 2500 2.5 * 100 = 2500 2.5 * 100 = 2500 2.5 * 100 = 2500 2.5 * 100 = 2500 2.5 * 100 = 2500 2.5 * 100 = 2500 2.5 * 100 = 2500 2.5 * 100 = 2500 2.5 * 100 = 2500 2.5 * 100 = 2500 2.5 * 100 = 2500 2.5 * 100 = 2500 2.5 * 100 = 2500 2.5 * 100 = 2500 2",
+            "Options": {
+                "2.5": "A",
+                "3.0": "B",
+                "3.25": "C",
+                "3.75": "D",
+                "4.0": "E"
+            },
+            "Extract-Response": "2500"
+        },
+        {
+            "Index": 66,
+            "GT": "D",
+            "Query": "A question paper consists of three sections 4,5 and 6 questions respectively. Attempting one question from each section is compulsory but a candidate need not attempt all the questions. In how many ways can a candidate attempt the questions?\nOptions:  A)209 B)(4!-1)*(5!-1)*(6!-1) C)119 D)29295 E)None  Let's think step by step.",
+            "Response": "Answer: 209 * (4! - 1) * (5! - 1) * (6! - 1) = 209 * (4! - 1) * (5! - 1) * (6! - 1) = 209 * (4! - 1) * (5! - 1) * (6! - 1) = 209 * (4! - 1) * (5! - 1) * (6! - 1) = 209 * (4! - 1) * (5! - 1) * (6! - 1) = 209 * (4! - 1) * (5! - 1) * (6! - 1) = 209 * (4! - 1) * (5! - 1) * (6! - 1) = 209 * (4! - 1) * (5! - 1) * (6! - 1) = 209 * (4! - 1) * (5! - 1) * (6! - 1) = 209 * (4! - 1) * (5! - 1) * (6! - 1) = 209 * (4! - 1) * (5! - 1) * (6! - 1) = 209 * (4! - 1) * (5! - 1) * (6! - 1) = 209 * (4! - 1) * (5! - 1) * (6! - 1) = 209 * (4! - 1) * (5! - 1) * (6! - 1) = 209 * (4! - 1) * (5! - 1) * (6! - 1) = 209 * (4! - 1) * (5! - 1) * (6! - 1) = 209 * (4! - 1) * (5! - 1) * (6! - 1) = 209 * (4! - 1) * (5!",
+            "Options": {
+                "209": "A",
+                "(4!-1)*(5!-1)*(6!-1)": "B",
+                "119": "C",
+                "29295": "D",
+                "None": "E"
+            },
+            "Extract-Response": "209 * (4! - 1) * (5! - 1) * (6! - 1) = 209 * (4! - 1) * (5! - 1) * (6! - 1) = 209 * (4! - 1) * (5! - 1) * (6! - 1) = 209 * (4! - 1) * (5! - 1) * (6! - 1) = 209 * (4! - 1) * (5! - 1) * (6! - 1) = 209 * (4! - 1) * (5! - 1) * (6! - 1) = 209 * (4! - 1) * (5! - 1) * (6! - 1) = 209 * (4! - 1) * (5! - 1) * (6! - 1) = 209 * (4! - 1) * (5! - 1) * (6! - 1) = 209 * (4! - 1) * (5! - 1) * (6! - 1) = 209 * (4! - 1) * (5! - 1) * (6! - 1) = 209 * (4! - 1) * (5! - 1) * (6! - 1) = 209 * (4! - 1) * (5! - 1) * (6! - 1) = 209 * (4! - 1) * (5! - 1) * (6! - 1) = 209 * (4! - 1) * (5! - 1) * (6! - 1) = 209 * (4! - 1) * (5! - 1) * (6! - 1) = 209 * (4! - 1) * (5! - 1) * (6! - 1) = 209 * (4! - 1) * (5! - 1)"
+        },
+        {
+            "Index": 67,
+            "GT": "D",
+            "Query": "10 women can complete a work in 9 days and 10 children take 12 days to complete the work. How many days will 6 women and 7 children take to complete the work?\nOptions:  A)4 B)5 C)7 D)8 E)2  Let's think step by step.",
+            "Response": "10 women can complete a work in 9 days. 10 children take 12 days to complete the work. Therefore, 6 women and 7 children will take 21 days to complete the work.\nAnswer: 6 women and 7 children will take 21 days to complete the work.",
+            "Options": {
+                "4": "A",
+                "5": "B",
+                "7": "C",
+                "8": "D",
+                "2": "E"
+            },
+            "Extract-Response": "21"
+        },
+        {
+            "Index": 68,
+            "GT": "E",
+            "Query": "Three numbers are in the ratio 5 : 6 : 7. The sum of its longest and smallest numbers equals the sum of the third number and 54. Find the third number?\nOptions:  A)A)37 B)B)85 C)C)48 D)D)43 E)E)54  Let's think step by step.",
+            "Response": "5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7",
+            "Options": {
+                "A)37": "A",
+                "B)85": "B",
+                "C)48": "C",
+                "D)43": "D",
+                "E)54": "E"
+            },
+            "Extract-Response": "5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 = 5 : 6 : 7 ="
+        },
+        {
+            "Index": 69,
+            "GT": "C",
+            "Query": "At the end of a business conference the nine people present all shake hands with each other once. How many handshakes will there be altogether ?\nOptions:  A)20 B)45 C)36 D)90 E)95  Let's think step by step.",
+            "Response": "20 + 45 = 65 65 + 90 = 155 155 + 95 = 164 164 + 95 = 173 173 + 95 = 182 182 + 95 = 191 191 + 95 = 200 200 + 95 = 209 209 + 95 = 218 218 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95",
+            "Options": {
+                "20": "A",
+                "45": "B",
+                "36": "C",
+                "90": "D",
+                "95": "E"
+            },
+            "Extract-Response": "227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 227 + 95 = 227 2"
+        },
+        {
+            "Index": 70,
+            "GT": "E",
+            "Query": "Sum of the squares of three numbers is 351 and the sum of their products taken two at a time is 245. Find the sum?\nOptions:  A)20 B)22 C)25 D)26 E)29  Let's think step by step.",
+            "Response": "20 + 22 = 42",
+            "Options": {
+                "20": "A",
+                "22": "B",
+                "25": "C",
+                "26": "D",
+                "29": "E"
+            },
+            "Extract-Response": "42"
+        },
+        {
+            "Index": 71,
+            "GT": "D",
+            "Query": "What is the are of an equilateral triangle of side 16 cm?\nOptions:  A)64\u221a6 cm2 B)64\u221a3 cm2 C)64\u221a9 cm2 D)34\u221a3 cm2 E)24\u221a3 cm2  Let's think step by step.",
+            "Response": "16 cm2 * 64 = 64 * (10 + 6) = 64 * 10 + 64 * 6 = 640 + 384 = 1024",
+            "Options": {
+                "64\u221a6 cm2": "A",
+                "64\u221a3 cm2": "B",
+                "64\u221a9 cm2": "C",
+                "34\u221a3 cm2": "D",
+                "24\u221a3 cm2": "E"
+            },
+            "Extract-Response": "640 + 384 = 1004"
+        },
+        {
+            "Index": 72,
+            "GT": "A",
+            "Query": "Each of the following equations W has at least one solution EXCEPT\nOptions:  A)W=\u20132^n = (\u20132)^-n B)2^-n = (\u20132)^n C)2^n = (\u20132)^-n D)(\u20132)^n = \u20132^n E)(\u20132)^-n = \u20132^-n  Let's think step by step.",
+            "Response": "A)W = \u20132^n = (\u20132)^n B)2^-n = (\u20132)^n C)2^n = (\u20132)^n D)\u20132^n = \u20132^-n  Therefore, W = \u20132^n",
+            "Options": {
+                "W=\u20132^n = (\u20132)^-n": "A",
+                "2^-n = (\u20132)^n": "B",
+                "2^n = (\u20132)^-n": "C",
+                "(\u20132)^n = \u20132^n": "D",
+                "(\u20132)^-n = \u20132^-n": "E"
+            },
+            "Extract-Response": "2^n"
+        },
+        {
+            "Index": 73,
+            "GT": "A",
+            "Query": "If the population of a certain country increases at the rate of one person every 40 seconds, by how many persons does the population increase in 1 hour?\nOptions:  A)90 B)120 C)150 D)180 E)160  Let's think step by step.",
+            "Response": "90 * 40 = 3600",
+            "Options": {
+                "90": "A",
+                "120": "B",
+                "150": "C",
+                "180": "D",
+                "160": "E"
+            },
+            "Extract-Response": "3600"
+        },
+        {
+            "Index": 74,
+            "GT": "B",
+            "Query": "A train crosses a platform of 120 m in 15 sec, same train crosses another platform of length 180 m in 18 sec. then find the length of the train?\nOptions:  A)288 B)180 C)288 D)277 E)265  Let's think step by step.",
+            "Response": "15 sec * 120 m = 120 * (10 + 5) = 120 * 10 + 120 * 5 = 1200 + 600 = 1800",
+            "Options": {
+                "288": "C",
+                "180": "B",
+                "277": "D",
+                "265": "E"
+            },
+            "Extract-Response": "1800"
+        },
+        {
+            "Index": 75,
+            "GT": "E",
+            "Query": "Find the area of a rhombus whose side is 25 cm and one of the diagonals is 30 cm?\nOptions:  A)272 sq.cm B)267 sq.cm C)286 sq.cm D)251 sq.cm E)600 sq.cm  Let's think step by step.",
+            "Response": "272 * 251 = 272 * (200 + 50 + 1) = 272 * 200 + 272 * 50 + 272 * 1 = 54400 + 13600 + 272 = 68000 + 272 = 68272",
+            "Options": {
+                "272 sq.cm": "A",
+                "267 sq.cm": "B",
+                "286 sq.cm": "C",
+                "251 sq.cm": "D",
+                "600 sq.cm": "E"
+            },
+            "Extract-Response": "68272"
+        },
+        {
+            "Index": 76,
+            "GT": "B",
+            "Query": "How long does a train 110 m long running at the speed of 72 km/hr takes to cross a bridge 132 m length?\nOptions:  A)12.8 sec B)12.1 sec C)12.2 sec D)12.6 sec E)11.1 sec  Let's think step by step.",
+            "Response": "Answer: 110 m * 12.8 sec = 110 * (100 + 20 + 8) = 110 * 100 + 110 * 20 + 110 * 8 = 11000 + 2200 + 880 = 13200 + 880 = 14080",
+            "Options": {
+                "12.8 sec": "A",
+                "12.1 sec": "B",
+                "12.2 sec": "C",
+                "12.6 sec": "D",
+                "11.1 sec": "E"
+            },
+            "Extract-Response": "14080"
+        },
+        {
+            "Index": 77,
+            "GT": "C",
+            "Query": "The consumption of diesel per hour of a bus varies directly as square of its speed. When the bus is travelling at 60 kmph its consumption is 1 litre per hour. if each litre costs $60 and other expenses per hous is $ 60, then what would be the minimum expenditure required to cover a distance of 600 Km?\nOptions:  A)120 B)1250 C)1200 D)1100 E)1150  Let's think step by step.",
+            "Response": "1200 * 600 = 720000 1200 * 600 = 720000 1200 * 600 = 720000 1200 * 600 = 720000 1200 * 600 = 720000 1200 * 600 = 720000 1200 * 600 = 720000 1200 * 600 = 720000 1200 * 600 = 720000 1200 * 600 = 720000 1200 * 600 = 720000 1200 * 600 = 720000 1200 * 600 = 720000 1200 * 600 = 720000 1200 * 600 = 720000 1200 * 600 = 720000 1200 * 600 = 720000 1200 * 600 = 720000 1200 * 600 = 720000 1200 * 600 = 720000 1200 * 600 = 720000 1200 * 600 = 720000 1200 * 600 = 720000 1200 * 600 = 720000 1200 * 600 = 720000 1200 * 600 = 720000 1200 * 600 = 720000 1200 * 600 = 720000 1200 * 6",
+            "Options": {
+                "120": "A",
+                "1250": "B",
+                "1200": "C",
+                "1100": "D",
+                "1150": "E"
+            },
+            "Extract-Response": "720000"
+        },
+        {
+            "Index": 78,
+            "GT": "C",
+            "Query": "From a group of 7 men and 6 women, five persons are to be selected to form a committee so that at least 3 men are there on the committee. What is the probability of having 0 woman in committee ?\nOptions:  A)7/36 B)9/144 C)1/36 D)1/18 E)5/18  Let's think step by step.",
+            "Response": "7 / 36 = 0 R 7",
+            "Options": {
+                "7/36": "A",
+                "9/144": "B",
+                "1/36": "C",
+                "1/18": "D",
+                "5/18": "E"
+            },
+            "Extract-Response": "0"
+        },
+        {
+            "Index": 79,
+            "GT": "B",
+            "Query": "A box contains nine bulbs out of which 4 are defective. If four bulbs are chosen at random, find the probability that exactly three bulbs are good.?\nOptions:  A)20/69 B)20/63 C)20/65 D)20/61 E)20/62  Let's think step by step.",
+            "Response": "20 / 69 = 0 R 20",
+            "Options": {
+                "20/69": "A",
+                "20/63": "B",
+                "20/65": "C",
+                "20/61": "D",
+                "20/62": "E"
+            },
+            "Extract-Response": "0"
+        },
+        {
+            "Index": 80,
+            "GT": "E",
+            "Query": "A train passes a station platform in 32 sec and a man standing on the platform in 20 sec. If the speed of the train is 54 km/hr. What is the length of the platform?\nOptions:  A)228 B)240 C)887 D)166 E)180  Let's think step by step.",
+            "Response": "32 sec * 54 km/hr = 54 * (30 + 2) = 54 * 30 + 54 * 2 = 1620 + 108 = 1728",
+            "Options": {
+                "228": "A",
+                "240": "B",
+                "887": "C",
+                "166": "D",
+                "180": "E"
+            },
+            "Extract-Response": "1728"
+        },
+        {
+            "Index": 81,
+            "GT": "B",
+            "Query": "If |w|=\u2212w, which of the following must be true?\nOptions:  A)x\u22650 B)w\u22640 C)x2>x D)x3<0 E)2x<x  Let's think step by step.",
+            "Response": "We know that |w| = -w, which means that w < 0. Since w < 0, we know that x > 0. Therefore, A)x\u22650 B)w\u22640 C)x2>x D)x3<0 E)2x<x",
+            "Options": {
+                "x\u22650": "A",
+                "w\u22640": "B",
+                "x2>x": "C",
+                "x3<0": "D",
+                "2x<x": "E"
+            },
+            "Extract-Response": "B)w\u22640"
+        },
+        {
+            "Index": 82,
+            "GT": "C",
+            "Query": "Two numbers are less than third number by 30% and 37% respectively. How much percent is the second number less than by the first\nOptions:  A)8% B)9% C)10% D)11% E)12%  Let's think step by step.",
+            "Response": "8% < 11% = -3% 9% < 11% = -2% 11% < 12% = -1% 12% < 13% = -1% 13% < 14% = -1% 14% < 15% = -1% 15% < 16% = -1% 16% < 17% = -1% 17% < 18% = -1% 18% < 19% = -1% 19% < 20% = -1% 20% < 21% = -1% 21% < 22% = -1% 22% < 23% = -1% 23% < 24% = -1% 24% < 25% = -1% 25% < 26% = -1% 26% < 27% = -1% 27% < 28% = -1% 28% < 29% = -1% 29% < 30% = -1% 30% < 31% = -1% 31% < 32% = -1% 32% < 33% = -1% 33% < 34% = -1% 34% < 35% = -1% 35% < 36% = -1% 36% < 37% = -1% 37% < 38% = -1% 38% < 39% = -1% 39% < 40% = -1% 40% < 41% = -1% 41% < 42% = -1% 42% < 43% = -1% 43% < 44% = -1% 44% < 45% = -1% 45% < 46% = -1% 46% < 47% = -1% 47% < 48% = -1% 48% < 4",
+            "Options": {
+                "8%": "A",
+                "9%": "B",
+                "10%": "C",
+                "11%": "D",
+                "12%": "E"
+            },
+            "Extract-Response": "8% < 11% = -3% 11% < 12% = -1% 12% < 13% = -1% 13% < 14% = -1% 14% < 15% = -1% 15% < 16% = -1% 16% < 17% = -1% 17% < 18% = -1% 18% < 19% = -1% 19% < 20% = -1% 20% < 21% = -1% 21% < 22% = -1% 22% < 23% = -1% 23% < 24% = -1% 24% < 25% = -1% 25% < 26% = -1% 26% < 27% = -1% 27% < 28% = -1% 28% < 29% = -1% 29% < 30% = -1% 30% < 31% = -1% 31% < 32% = -1% 32% < 33% = -1% 33% < 34% = -1% 34% < 35% = -1% 35% < 36% = -1% 36% < 37% = -1% 37% < 38% = -1% 38% < 39% = -1% 39% < 40% = -1% 40% < 41% = -1% 41% < 42% = -1% 42% < 43% = -1% 43% < 44% = -1% 44% < 45% = -1% 45% < 46% = -1% 46% < 47% = -1% 47% < 48% = -1% 48% < 49% = -1% 49% < 5"
+        },
+        {
+            "Index": 83,
+            "GT": "C",
+            "Query": "How many numbers from 39 to 79 are exactly divisible by 11?\nOptions:  A)5 B)7 C)4 D)11 E)12  Let's think step by step.",
+            "Response": "39 - 11 * 3 = 39 - 33 = 6  Therefore, 39 / 11 = 3 R 6",
+            "Options": {
+                "5": "A",
+                "7": "B",
+                "4": "C",
+                "11": "D",
+                "12": "E"
+            },
+            "Extract-Response": "39 / 11 = 3 R 6"
+        },
+        {
+            "Index": 84,
+            "GT": "B",
+            "Query": "It is found that the volume of a cube is numerically equal to its surface area. Then the measure of its edge in meters is:\nOptions:  A)4 B)6 C)8 D)9 E)cannot be determined  Let's think step by step.",
+            "Response": "The volume of a cube is numerically equal to its surface area. Then the measure of its edge in meters is: V = SA",
+            "Options": {
+                "4": "A",
+                "6": "B",
+                "8": "C",
+                "9": "D",
+                "cannot be determined": "E"
+            },
+            "Extract-Response": "4"
+        },
+        {
+            "Index": 85,
+            "GT": "D",
+            "Query": "if there are 30 cans out of them one is poisned if a person tastes very little he will die within 14 hours so if there are mice to test and 24 hours to test, how many mices are required to find the poisned can?\nOptions:  A)3 B)2 C)6 D)1 E)7  Let's think step by step.",
+            "Response": "There are 30 cans out of them one is poisned if a person tastes very little he will die within 14 hours so if there are mice to test and 24 hours to test, how many mice are required to find the poisned can?\nAnswer: 30 cans * 24 hours = 30 * (20 + 4) = 30 * 20 + 30 * 4 = 600 + 120 = 720",
+            "Options": {
+                "3": "A",
+                "2": "B",
+                "6": "C",
+                "1": "D",
+                "7": "E"
+            },
+            "Extract-Response": "720"
+        },
+        {
+            "Index": 86,
+            "GT": "B",
+            "Query": "How long does a train 165 meters long running at the rate of 72 kmph take to cross a bridge 660 meters in length?\nOptions:  A)28 B)41.25 C)55 D)18 E)12  Let's think step by step.",
+            "Response": "165 * 72 = 165 * (70 + 2) = 165 * 70 + 165 * 2 = 11550 + 330 = 11880",
+            "Options": {
+                "28": "A",
+                "41.25": "B",
+                "55": "C",
+                "18": "D",
+                "12": "E"
+            },
+            "Extract-Response": "11880"
+        },
+        {
+            "Index": 87,
+            "GT": "A",
+            "Query": "A particular store purchased a stock of turtleneck sweaters and marked up its cost by 20%. During the New Year season, it further marked up its prices by 25% of the original retail price. In February, the store then offered a discount of 15%. What was its profit on the items sold in February?\nOptions:  A)27.5% B)30% C)35% D)37.5% E)40%  Let's think step by step.",
+            "Response": "27.5% * 100 = 27.500 27.5% * 100 = 27.500 27.5% * 100 = 27.500 27.5% * 100 = 27.500 27.5% * 100 = 27.500 27.5% * 100 = 27.500 27.5% * 100 = 27.500 27.5% * 100 = 27.500 27.5% * 100 = 27.500 27.5% * 100 = 27.500 27.5% * 100 = 27.500 27.5% * 100 = 27.500 27.5% * 100 = 27.500 27.5% * 100 = 27.500 27.5% * 100 = 27.500 27.5% * 100 = 27.500 27.5% * 100 = 27.500 27.5% * 100 = 27.500 27.5% * 100 = 27.500 27.5% * 100 = 27.500 27.5% * 100 = 27.500 27.5% * 100 = 27.500 27.5% * 100 = 27.500 27.5% * 100 = 27.500 27.5% * 100 = 27.500 27.5% * 100 = 27.500 27.5% * 100 = 27.50",
+            "Options": {
+                "27.5%": "A",
+                "30%": "B",
+                "35%": "C",
+                "37.5%": "D",
+                "40%": "E"
+            },
+            "Extract-Response": "27.500."
+        },
+        {
+            "Index": 88,
+            "GT": "A",
+            "Query": "Half of 2 percent written as decimal is\nOptions:  A)0.01 B)0.5 C)0.05 D)0.005 E)None of these  Let's think step by step.",
+            "Response": "2 percent of 1000 = 200 2 percent of 1000 = 200 2 percent of 1000 = 200 2 percent of 1000 = 200 2 percent of 1000 = 200 2 percent of 1000 = 200 2 percent of 1000 = 200 2 percent of 1000 = 200 2 percent of 1000 = 200 2 percent of 1000 = 200 2 percent of 1000 = 200 2 percent of 1000 = 200 2 percent of 1000 = 200 2 percent of 1000 = 200 2 percent of 1000 = 200 2 percent of 1000 = 200 2 percent of 1000 = 200 2 percent of 1000 = 200 2 percent of 1000 = 200 2 percent of 1000 = 200 2 percent of 1000 = 200 2 percent of 1000 = 200 2 percent of 1000 = 200 2 percent of 1000 = 200 2 percent of 1000 = 200 2 percent of 1000 = 200 2 percent of 1000 = 200 2 percent of 1000 = 200 2 percent of 1000 = 200 2 percent of 1000 = 200 2 percent of 1000 = 200 2 percent of 1000 = 200 2 percent of 1000 = 200 2 percent of 1000 = 200 2 percent of 1000 = 200 2 percent of 1000 = 200 2 percent of 100",
+            "Options": {
+                "0.01": "A",
+                "0.5": "B",
+                "0.05": "C",
+                "0.005": "D",
+                "None of these": "E"
+            },
+            "Extract-Response": "200"
+        },
+        {
+            "Index": 89,
+            "GT": "C",
+            "Query": "If books bought at prices ranging from Rs. 98 to Rs. 195 are sold at prices ranging from Rs. 120 to Rs 215, what is the greatest possible profit that might be made in selling 13 books ?\nOptions:  A)Rs. 1650 B)Rs. 3000 C)Rs. 1521 D)Rs. 1400 E)Rs. 1560  Let's think step by step.",
+            "Response": "13 books = 13 * 100 = 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100",
+            "Options": {
+                "Rs. 1650": "A",
+                "Rs. 3000": "B",
+                "Rs. 1521": "C",
+                "Rs. 1400": "D",
+                "Rs. 1560": "E"
+            },
+            "Extract-Response": "1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 * 100 = 1300 13 *"
+        },
+        {
+            "Index": 90,
+            "GT": "B",
+            "Query": "Two trains A and B starting from two points and travelling in opposite directions, reach their destinations 9 hours and 4 hours respectively after meeting each other. If the train A travels at 60kmph, find the rate at which the train B runs.\nOptions:  A)40 B)90 C)120 D)80 E)100  Let's think step by step.",
+            "Response": "Answer: 40 + 90 = 130",
+            "Options": {
+                "40": "A",
+                "90": "B",
+                "120": "C",
+                "80": "D",
+                "100": "E"
+            },
+            "Extract-Response": "130"
+        },
+        {
+            "Index": 91,
+            "GT": "A",
+            "Query": "I bought three toys for my triplet boys (one for each). I placed the toys in the dark store. One by one each boy went to the store and pick the toy. What is the probability that no boy will choose his own toy?\nOptions:  A)1/3 B)2/3 C)3/3 D)4/3 E)5/3  Let's think step by step.",
+            "Response": "A)1/3 = 1/3 B)2/3 = 2/3 C)3/3 = 3/3 D)4/3 = 4/3 E)5/3 = 5/3",
+            "Options": {
+                "1/3": "A",
+                "2/3": "B",
+                "3/3": "C",
+                "4/3": "D",
+                "5/3": "E"
+            },
+            "Extract-Response": "5/3 = 1 R 2"
+        },
+        {
+            "Index": 92,
+            "GT": "B",
+            "Query": "A man, a woman and a boy can complete a job in 3 days, 4 days and 12 days respectively. How many boys must assist 1 man and 1 woman to complete the job in 1/4th of a day?\nOptions:  A)10 B)41 C)31 D)21 E)22  Let's think step by step.",
+            "Response": "10 + 41 = 51 10 + 41 = 51 10 + 41 = 51 20 + 41 = 55 20 + 41 = 59 20 + 41 = 63 20 + 41 = 67 20 + 41 = 71 20 + 41 = 75 20 + 41 = 79 20 + 41 = 83 20 + 41 = 87 20 + 41 = 91 20 + 41 = 95 20 + 41 = 99 20 + 41 = 103 20 + 41 = 107 20 + 41 = 111 20 + 41 = 115 20 + 41 = 119 20 + 41 = 123 20 + 41 = 127 20 + 41 = 131 20 + 41 = 135 20 + 41 = 139 20 + 41 = 143 20 + 41 = 147 20 + 41 = 151 20 + 41 = 155 20 + 41 = 159 20 + 41 = 163 20 + 41 = 167 20 + 41 = 171 20 + 41 = 175 20 + 41 = 179 20 + 41 = 183 20 + 41 = 187 20 + 41 = 191 20 + 41 = 195 20 + 41 = 199 20 + 41 = 203 20 + 41 = 207 20 + 41 = 211 20 + 41 = 21",
+            "Options": {
+                "10": "A",
+                "41": "B",
+                "31": "C",
+                "21": "D",
+                "22": "E"
+            },
+            "Extract-Response": "211 20 + 41 = 215 20 + 41 = 219 20 + 41 = 223 20 + 41 = 227 20 + 41 = 231 20 + 41 = 235 20 + 41 = 239 20 + 41 = 243 20 + 41 = 247 20 + 41 = 251 20 + 41 = 255 20 + 41 = 259 20 + 41 = 263 20 + 41 = 267 20 + 41 = 271 20 + 41 = 275 20 + 41 = 279 20 + 41 = 283 20 + 41 = 287 20 + 41 = 291 20 + 41 = 295 20 + 41 = 299 20 + 41 = 303 20 + 41 = 307 20 + 41 = 311 20 + 41 = 315 20 + 41 = 319 20 + 41 = 323 20 + 41 = 327 20 + 41 = 331 20 + 41 = 335 20 + 41 = 339 20 + 41 = 343 20 + 41 = 347 20 + 41 = 351 20 + 41 = 355 20 + 41 = 359 20 + 41 = 363 20 + 41 = 367 20 + 41 = 371 20 + 41 = 375 20 + 41 = 379 20 +"
+        },
+        {
+            "Index": 93,
+            "GT": "A",
+            "Query": "At present, the ratio between the ages of Amit and Dhiraj is 5 : 4. After 6 years, Amit\u2019s age will be 26 years. What is the age of Dhiraj at present?\nOptions:  A)16 B)77 C)566 D)197 E)161  Let's think step by step.",
+            "Response": "5 : 4 = 1",
+            "Options": {
+                "16": "A",
+                "77": "B",
+                "566": "C",
+                "197": "D",
+                "161": "E"
+            },
+            "Extract-Response": "1"
+        },
+        {
+            "Index": 94,
+            "GT": "B",
+            "Query": "A and B invests Rs.3000 and Rs.4000 respectively in a business. If A doubles his capital after 6 months. In what ratio should A and B divide that year's profit?\nOptions:  A)9:6 B)9:8 C)9:1 D)9:9 E)9:5  Let's think step by step.",
+            "Response": "A)9:6 - 9 * 10 = 9 * 9 = 810 A)9:6 - 9 * 10 = 9 * 6 = 540 B)9 * 10 - 9 * 10 = 90 C)9 * 10 - 9 * 10 = 90 D)9 * 10 - 9 * 10 = 90 E)9 * 10 - 9 * 10 = 90 F)9 * 10 - 9 * 10 = 90 G)9 * 10 - 9 * 10 = 90 H)9 * 10 - 9 * 10 = 90 I)9 * 10 - 9 * 10 = 90 J)9 * 10 - 9 * 10 = 90 K)9 * 10 - 9 * 10 = 90 L)9 * 10 - 9 * 10 = 90 M)9 * 10 - 9 * 10 = 90 N)9 * 10 - 9 * 10 = 90 O)9 * 10 - 9 * 10 = 90 P)9 * 10 - 9 * 10 = 90 Q)9 * 10 - 9 * 10 = 90 R)9 * 10 - 9 * 10 = 90 S)9 * 10 - 9 * 10 = 90 T)9 * 10 - 9 * 10 = 90 U)9 * 10 - 9 * 10 = 90 V)9 * 10 - 9 * 10 = 90 W)9 * 10 - 9 * 10 = 90 X)9 * 10 - 9 * 10 = 90 Y)9 * 10 - 9 * 10 = 90 Z)9 * 10 - 9 * 10 = 90 AA)9 * 10 - 9 * 10 =",
+            "Options": {
+                "9:6": "A",
+                "9:8": "B",
+                "9:1": "C",
+                "9:9": "D",
+                "9:5": "E"
+            },
+            "Extract-Response": "90"
+        },
+        {
+            "Index": 95,
+            "GT": "B",
+            "Query": "If x-y=10, which of the following must be true?\nI. Both x and y are positive\nII. If x is negative, y must be negative\nIII.If x is positive, y must be positive\nOptions:  A)I only B)II only C)III only D)I and II E)II and III  Let's think step by step.",
+            "Response": "If x - y = 10, then x = 20 and y = 10.  Therefore, I and II are correct.",
+            "Options": {
+                "I only": "A",
+                "II only": "B",
+                "III only": "C",
+                "I and II": "D",
+                "II and III": "E"
+            },
+            "Extract-Response": "20 and 10."
+        },
+        {
+            "Index": 96,
+            "GT": "B",
+            "Query": "If each side of a square is increased by 25%, find the percentage change in its area?\nOptions:  A)65.25 B)56.25 C)65 D)56 E)25  Let's think step by step.",
+            "Response": "65.25 * 100 = 65.2500 65.25 * 100 = 65.2500 65.25 * 100 = 65.2500 65.25 * 100 = 65.2500 65.25 * 100 = 65.2500 65.25 * 100 = 65.2500 65.25 * 100 = 65.2500 65.25 * 100 = 65.2500 65.25 * 100 = 65.2500 65.25 * 100 = 65.2500 65.25 * 100 = 65.2500 65.25 * 100 = 65.2500 65.25 * 100 = 65.2500 65.25 * 100 = 65.2500 65.25 * 100 = 65.2500 65.25 * 100 = 65.2500 65.25 * 100 = 65.2500 65.25 * 100 = 65.2500 65.25 * 100 = 65.2500 65.25 * 100 = 65.2500 65.25 * 100 = 65.2500 65.25 * 100 = 65.2500 65.25 * 100 = 65.2500 65.25 * 100 = 65.2500 65.25 * 100 = 65.2500 65.25 * 100 =",
+            "Options": {
+                "65.25": "A",
+                "56.25": "B",
+                "65": "C",
+                "56": "D",
+                "25": "E"
+            },
+            "Extract-Response": "65.2500"
+        },
+        {
+            "Index": 97,
+            "GT": "C",
+            "Query": "If the sum and difference of two numbers are 20 and 8 respectively, then the difference of their square is:\nOptions:  A)12 B)28 C)160 D)180 E)18  Let's think step by step.",
+            "Response": "20 + 8 = 28",
+            "Options": {
+                "12": "A",
+                "28": "B",
+                "160": "C",
+                "180": "D",
+                "18": "E"
+            },
+            "Extract-Response": "28"
+        },
+        {
+            "Index": 98,
+            "GT": "B",
+            "Query": "If $500 is deposited into a savings account at an annual interest rate of 5% that compounds monthly, what is the value of the investment after 10 years?\nOptions:  A)$750.00 B)$823.50 C)$973.25 D)$1000.25 E)$1100.00  Let's think step by step.",
+            "Response": "500 + 500 * 1 = 500 + 500 = 1000 1000 * 1 = 1000 1000 = 1000 1000 * 1 = 1000 1000 = 1000 1000 * 1 = 1000 1000 = 1000 1000 * 1 = 1000 1000 = 1000 1000 * 1 = 1000 1000 = 1000 1000 * 1 = 1000 1000 = 1000 1000 * 1 = 1000 1000 = 1000 1000 * 1 = 1000 1000 = 1000 1000 * 1 = 1000 1000 = 1000 1000 * 1 = 1000 1000 = 1000 1000 * 1 = 1000 1000 = 1000 1000 * 1 = 1000 1000 = 1000 1000 * 1 = 1000 1000 = 1000 1000 * 1 = 1000 1000 = 1000 1000 * 1 = 1000 1000 = 1000 1000 * 1 = 1000 1000 = 1000 1000 * 1 = 1000 1000 = 1000 1000 * 1 = 1000 1000 = 1000 1000 * 1 = 1000 1000 = 1000 1000 * 1 =",
+            "Options": {
+                "$750.00": "A",
+                "$823.50": "B",
+                "$973.25": "C",
+                "$1000.25": "D",
+                "$1100.00": "E"
+            },
+            "Extract-Response": "1000 1000 * 1 = 1000 1000 = 1000 1000 * 1 = 1000 1000 = 1000 1000 * 1 = 1000 1000 = 1000 1000 * 1 = 1000 1000 = 1000 1000 * 1 = 1000 1000 = 1000 1000 * 1 = 1000 1000 = 1000 1000 * 1 = 1000 1000 = 1000 1000 * 1 = 1000 1000 = 1000 1000 * 1 = 1000 1000 = 1000 1000 * 1 = 1000 1000 = 1000 1000 * 1 = 1000 1000 = 1000 1000 * 1 = 1000 1000 = 1000 1000 * 1 = 1000 1000 = 1000 1000 * 1 = 1000 1000 = 1000 1000 * 1 = 1000 1000 = 1000 1000 * 1 = 1000 1000 = 1000 1000 * 1 = 1000 1000 = 1000 1000 * 1 = 1000 1000 = 1000 1000 * 1 = 1000 1000 = 1000 1000 * 1 = 1000 1000 = 1000 1000 * 1"
+        },
+        {
+            "Index": 99,
+            "GT": "D",
+            "Query": "Two jars contain milk and water in the ratio 5: 4 and 2: 1 regpectively. What volume should be taken out from the first jar if volumes have to be taken out from both jars so as to fill up a third 30 l jar with milk to water in the ratio 1: 1 ?\nOptions:  A)7.5 l B)15 l C)22.5 l D)It is impossible E)none of these  Let's think step by step.",
+            "Response": "Answer: 7.5 l + 15 l = 90 l",
+            "Options": {
+                "7.5 l": "A",
+                "15 l": "B",
+                "22.5 l": "C",
+                "It is impossible": "D",
+                "none of these": "E"
+            },
+            "Extract-Response": "90 l"
+        },
+        {
+            "Index": 100,
+            "GT": "D",
+            "Query": "A clock shows the time as 9 a.m. If the minute hand gains 5 minutes every hour, how many minutes will the clock gain by 5 p.m.?\nOptions:  A)30 min B)35 min C)45 min D)40 min E)55 min  Let's think step by step.",
+            "Response": "9 a.m. + 35 min = 12 a.m. + 35 min = 15 a.m. + 35 min = 153 a.m. + 35 min = 156 a.m. + 35 min = 159 a.m. + 35 min = 162 a.m. + 35 min = 165 a.m. + 35 min = 168 a.m. + 35 min = 1684 a.m. + 35 min = 1687 a.m. + 35 min = 1690 a.m. + 35 min = 1693 a.m. + 35 min = 1696 a.m. + 35 min = 1699 a.m. + 35 min = 1702 a.m. + 35 min = 1705 a.m. + 35 min = 1708 a.m. + 35 min = 1711 a.m. + 35 min = 1714 a.m. + 35 min = 1717 a.m. + 35 min = 1721 a.m. + 35 min = 1724 a.m. + 35 min = 1727 a.m. + 35 min = 1731 a.m. + 35 min = 1734 a.m. + 35 min = 1737 a.m. + 35 min = 1741 a.m. + 35 min = 1744 a.m. + 35 min = 1747 a.m. + 35 min = 1751 a.m. + 35 min = 1754 a.m. + 35 min = 1757 a.m. + 35 min = 1761 a.m. + 35 min = 1764 a.m. + 35 min =",
+            "Options": {
+                "30 min": "A",
+                "35 min": "B",
+                "45 min": "C",
+                "40 min": "D",
+                "55 min": "E"
+            },
+            "Extract-Response": "1761 a.m. + 35 min = 1764 a.m. + 35 min = 1767 a.m. + 35 min = 1771 a.m. + 35 min = 1774 a.m. + 35 min = 1777 a.m. + 35 min = 1781 a.m. + 35 min = 1784 a.m. + 35 min = 1787 a.m. + 35 min = 1790 a.m. + 35 min = 1793 a.m. + 35 min = 1796 a.m. + 35 min = 1799 a.m. + 35 min = 1802 a.m. + 35 min = 1805 a.m. + 35 min = 1808 a.m. + 35 min = 1811 a.m. + 35 min = 1814 a.m. + 35 min = 1817 a.m. + 35 min = 1821 a.m. + 35 min = 1824 a.m. + 35 min = 1827 a.m. + 35 min = 1831 a.m. + 35 min = 1834 a.m. + 35 min = 1837 a.m. + 35 min = 1841 a.m. + 35 min = 1844 a.m. + 35 min = 1847 a.m. + 35 min = 1851 a.m. + 35 min = 1854 a.m. + 35 min = 1857 a.m. + 35 min = 1861 a.m. + 35 min = 1864 a.m. + 35 min = 1867 a.m. + 35 min = 18"
+        },
+        {
+            "Index": 101,
+            "GT": "C",
+            "Query": "At a Supermarket a certain item has increased from 72 cents per pound to 78 cents per pound. What is the % increase in the cost of item?\nOptions:  A)6.33% B)7.22% C)8.33% D)8% E)7%  Let's think step by step.",
+            "Response": "78 cents per pound - 72 cents per pound = 6 cents per pound 6 cents per pound - 72 cents per pound = -66 cents per pound  -66 cents per pound - 72 cents per pound = -66 cents per pound  -66 cents per pound - 72 cents per pound = -66 cents per pound  -66 cents per pound - 72 cents per pound = -66 cents per pound  -66 cents per pound - 72 cents per pound = -66 cents per pound  -66 cents per pound - 72 cents per pound = -66 cents per pound  -66 cents per pound - 72 cents per pound = -66 cents per pound  -66 cents per pound - 72 cents per pound = -66 cents per pound  -66 cents per pound - 72 cents per pound = -66 cents per pound  -66 cents per pound - 72 cents per pound = -66 cents per pound  -66 cents per pound - 72 cents per pound = -66 cents per pound  -66 cents per pound - 72 cents per pound = -66 cents per pound  -66 cents per pound - 72 cents per pound = -66 cents per pound  -66 cents per pound - 72 cents per pound = -66 cents per pound  -66 cents per pound - 72 cents per pound = -66 cents per pound  -66 cents per pound - 72 cents per pound = -66 cents per pound  -66 cents per pound - 72 cents per pound = -66 cents per pound  -66 cents per pound - 72 cents per pound = -66 cents per pound  -6",
+            "Options": {
+                "6.33%": "A",
+                "7.22%": "B",
+                "8.33%": "C",
+                "8%": "D",
+                "7%": "E"
+            },
+            "Extract-Response": "66 cents per pound"
+        },
+        {
+            "Index": 102,
+            "GT": "D",
+            "Query": "How many positive 5-digit integers have the odd sum E of their digits?\nOptions:  A)9*10^2 B)9*10^3 C)10^4 D)45*10^3 E)9*10^4  Let's think step by step.",
+            "Response": "9 * 10^2 = 90 9 * 10^3 = 90 9 * 10^4 = 90 9 * 10^5 = 90 9 * 10^6 = 90 9 * 10^7 = 90 9 * 10^8 = 90 9 * 10^9 = 90 9 * 10^10 = 90 9 * 10^11 = 90 9 * 10^12 = 90 9 * 10^13 = 90 9 * 10^14 = 90 9 * 10^15 = 90 9 * 10^16 = 90 9 * 10^17 = 90 9 * 10^18 = 90 9 * 10^19 = 90 9 * 10^20 = 90 9 * 10^21 = 90 9 * 10^22 = 90 9 * 10^23 = 90 9 * 10^24 = 90 9 * 10^25 = 90 9 * 10^26 = 90 9 * 10^27 = 90 9 * 10^28 = 90 9 * 10^29 = 90 9 * 10^30 = 90 9 * 10^31 = 90 9 * 10^32 = 90 9 * 10^33 = 90 9 * 10^34 = 90 9 * 10^35 = 90 9 * 10^36 = 90 9 * 10^37 = 90 9 * 10^38 = 90 9 * 10^39 = 90 9 * 10^40 = 90 9 * 10^41 = 90",
+            "Options": {
+                "9*10^2": "A",
+                "9*10^3": "B",
+                "10^4": "C",
+                "45*10^3": "D",
+                "9*10^4": "E"
+            },
+            "Extract-Response": "90"
+        },
+        {
+            "Index": 103,
+            "GT": "E",
+            "Query": "There are different 15 circles. What is the number of the greatest possible points with which the circles intersect?\nOptions:  A)390 B)100 C)110 D)180 E)210  Let's think step by step.",
+            "Response": "15 circles have 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15",
+            "Options": {
+                "390": "A",
+                "100": "B",
+                "110": "C",
+                "180": "D",
+                "210": "E"
+            },
+            "Extract-Response": "1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 * 100 = 1500 15 *"
+        },
+        {
+            "Index": 104,
+            "GT": "B",
+            "Query": "B completes a work in 9 days. A alone can do it in 10 days. If both work together, the work can be completed in how many days?\nOptions:  A)3.75 days B)4.73 days C)5.75 days D)6.75 days E)7.73 days  Let's think step by step.",
+            "Response": "Answer: B)4.73 days",
+            "Options": {
+                "3.75 days": "A",
+                "4.73 days": "B",
+                "5.75 days": "C",
+                "6.75 days": "D",
+                "7.73 days": "E"
+            },
+            "Extract-Response": "4.73 days"
+        },
+        {
+            "Index": 105,
+            "GT": "C",
+            "Query": "A vessel is filled with liquid, 3 parts of which are water and 5 parts syrup. How much of the mixture must be drawn off and replaced with water so that the mixture may be half water and half syrup?\nOptions:  A)1/3 B)1/4 C)1/5 D)1/7 E)1/8  Let's think step by step.",
+            "Response": "A)1/3 = 1/9 B)1/4 = 1/9 C)1/5 = 1/9 D)1/8 = 1/9 E)1/8 = 1/9",
+            "Options": {
+                "1/3": "A",
+                "1/4": "B",
+                "1/5": "C",
+                "1/7": "D",
+                "1/8": "E"
+            },
+            "Extract-Response": "1/9"
+        },
+        {
+            "Index": 106,
+            "GT": "A",
+            "Query": "A car is running at a speed of 96kmph. What distance will it cover in 14sec?\nOptions:  A)378m B)350m C)380m D)200m E)250m  Let's think step by step.",
+            "Response": "96kmph * 14sec = 96 * (10 + 4) = 96 * 10 + 96 * 4 = 960 + 384 = 1344",
+            "Options": {
+                "378m": "A",
+                "350m": "B",
+                "380m": "C",
+                "200m": "D",
+                "250m": "E"
+            },
+            "Extract-Response": "960 + 384 = 1344"
+        },
+        {
+            "Index": 107,
+            "GT": "A",
+            "Query": "The average of 6 observations is 11. A new observation is included and the new average is decreased by 1. The seventh observation is?\nOptions:  A)4 B)3 C)5 D)6 E)7  Let's think step by step.",
+            "Response": "A)4 - 6 = -2  B)3 - 2 = 1  C)5 - 1 = 4  D)6 - 1 = 5  E)7 - 1 = 6",
+            "Options": {
+                "4": "A",
+                "3": "B",
+                "5": "C",
+                "6": "D",
+                "7": "E"
+            },
+            "Extract-Response": "6"
+        },
+        {
+            "Index": 108,
+            "GT": "B",
+            "Query": "The population of a town increased from 1,75,000 to 2,62,500 in a decade. The average percent increase of population per year is :\nOptions:  A)4.37% B)5% C)6% D)8.75% E)None of these  Let's think step by step.",
+            "Response": "1,750000 / 2 = 875000 2,625000 / 2 = 1350000 875000 / 2 = 4375000 1350000 / 2 = 6750000 4375000 / 2 = 21875000 6750000 / 2 = 33750000 21875000 / 2 = 109375000 6750000 / 2 = 33750000 109375000 / 2 = 54650000 6750000 / 2 = 33750000 109375000 / 2 = 54650000 6750000 / 2 = 33750000 109375000 / 2 = 54650000 6750000 / 2 = 33750000 109375000 / 2 = 54650000 6750000 / 2 = 33750000 109375000 / 2 = 54650000 6750000 / 2 = 33750000 109375000 / 2 = 54650000 6750000 / 2 = 33750000 109375000 / 2 = 54650000 6750000 / 2 = 33750000 109375000 / 2 = 54650000 6750000 / 2 = 33",
+            "Options": {
+                "4.37%": "A",
+                "5%": "B",
+                "6%": "C",
+                "8.75%": "D",
+                "None of these": "E"
+            },
+            "Extract-Response": "109375000 / 2 = 54650000"
+        },
+        {
+            "Index": 109,
+            "GT": "A",
+            "Query": "If a + b = y and a - b = z , then 3ab =\ncan someone explain!\nOptions:  A)(3y^2 - 3z^2)/4 B)(3z^2 - 3y^2)/4 C)3y+3z/2 D)3y - 3z/2 E)3y^2 - 3z^2/2  Let's think step by step.",
+            "Response": "A) 3y^2 - 3z^2/2 = 3y^2 - 1.5z^2 = 1.5y^2 B) 1.5y^2 - 3z^2/2 = 1.5y^2 - 1.5z^2 = 1.5y^2 C) 1.5y^2 - 1.5z^2 = 1.5y^2 - 1.5z^2 = 1.5y^2 D) 1.5y^2 - 1.5z^2 = 1.5y^2 - 1.5z^2 = 1.5y^2 E) 1.5y^2 - 1.5z^2 = 1.5y^2 - 1.5z^2 = 1.5y^2 F) 1.5y^2 - 1.5z^2 = 1.5y^2 - 1.5z^2 = 1.5y^2 G) 1.5y^2 - 1.5z^2 = 1.5y^2 - 1.5z^2 = 1.5y^2 H) 1.5y^2 - 1.5z^2 = 1.5y^2 - 1.5z^2 = 1.5y^2 I) 1.5y^2 - 1.5z^2 = 1.5y^2 - 1.5z^2 = 1.5y^2 J) 1.5y^2 - 1.5z^2 = 1.5y^2 - 1.5z^2 = 1.5y^2 K) 1.5y^2 - 1.5z^2 = 1.5y^2 - 1.5z^2 = 1.5y^2 L) 1.5y^2 - 1.5z^2 = 1.5y^2 - 1.5z^2 = 1.5y^2 M) 1.5y^2 - 1.5z^2 = 1.5y^",
+            "Options": {
+                "(3y^2 - 3z^2)/4": "A",
+                "(3z^2 - 3y^2)/4": "B",
+                "3y+3z/2": "C",
+                "3y - 3z/2": "D",
+                "3y^2 - 3z^2/2": "E"
+            },
+            "Extract-Response": "1.5y^2"
+        },
+        {
+            "Index": 110,
+            "GT": "C",
+            "Query": "If two numbers are in the ratio 2:3. If 10 is added to both of the numbers then the ratio becomes 3:4 then find the smallest number?\nOptions:  A)12 B)18 C)20 D)24 E)26  Let's think step by step.",
+            "Response": "12 + 18 = 30",
+            "Options": {
+                "12": "A",
+                "18": "B",
+                "20": "C",
+                "24": "D",
+                "26": "E"
+            },
+            "Extract-Response": "30"
+        },
+        {
+            "Index": 111,
+            "GT": "B",
+            "Query": "A batsman in his 12th innings makes a score of 65 and thereby increases his average by 2 runs. What is his average after the 12th innings if he had never been \u2018not out\u2019?\nOptions:  A)42 B)43 C)44 D)45 E)46  Let's think step by step.",
+            "Response": "65 + 42 = 107",
+            "Options": {
+                "42": "A",
+                "43": "B",
+                "44": "C",
+                "45": "D",
+                "46": "E"
+            },
+            "Extract-Response": "107"
+        },
+        {
+            "Index": 112,
+            "GT": "E",
+            "Query": "In a division sum, the remainder is 6 and the divisor is 5 times the quotient and is obtained by adding 7 to the thrice of the remainder. The dividend is\nOptions:  A)74 B)78 C)86 D)92 E)106  Let's think step by step.",
+            "Response": "74 / 5 = 14 R 4",
+            "Options": {
+                "74": "A",
+                "78": "B",
+                "86": "C",
+                "92": "D",
+                "106": "E"
+            },
+            "Extract-Response": "74"
+        },
+        {
+            "Index": 113,
+            "GT": "B",
+            "Query": "The average weight of 8 person's increases by 2.5 kg when a new person comes in place of one of them weighing 55 kg. What might be the weight of the new person?\nOptions:  A)70kg B)75kg C)80kg D)85kg E)90kg  Let's think step by step.",
+            "Response": "When a new person comes in place of one of them weighing 55 kg, the average weight of 8 person's increases by 2.5 kg. Therefore, the average weight of 8 person's increases by 2.5 kg. Therefore, the average weight of 8 person's increases by 2.5 kg. Therefore, the average weight of 8 person's increases by 2.5 kg. Therefore, the average weight of 8 person's increases by 2.5 kg. Therefore, the average weight of 8 person's increases by 2.5 kg. Therefore, the average weight of 8 person's increases by 2.5 kg. Therefore, the average weight of 8 person's increases by 2.5 kg. Therefore, the average weight of 8 person's increases by 2.5 kg. Therefore, the average weight of 8 person's increases by 2.5 kg. Therefore, the average weight of 8 person's increases by 2.5 kg. Therefore, the average weight of 8 person's increases by 2.5 kg. Therefore, the average weight of 8 person's increases by 2.5 kg. Therefore, the average weight of 8 person's increases by 2.5 kg. Therefore, the average weight of 8 person's increases by 2.5 kg. Therefore, the average weight of 8 person's increases by 2.5 kg. Therefore, the average weight of 8 person's increases by 2.5 kg. Therefore, the average weight of 8 person's increases by 2.5 kg. Therefore, the average weight of 8 person's increases by 2.5 kg. Therefore, the average weight of 8 person's increases by 2.5 kg. Therefore, the average weight of 8 person's increases by 2.5 kg. Therefore, the average weight of 8 person's increases by 2.5 kg. Therefore, the average weight of 8 person's increases by 2.5 kg. Therefore, the average weight of 8 person's increases by 2.5 kg. Therefore, the average weight of 8 person's increases by 2.5 kg. Therefore, the average weight of 8 person's increases by 2.5 kg. Therefore",
+            "Options": {
+                "70kg": "A",
+                "75kg": "B",
+                "80kg": "C",
+                "85kg": "D",
+                "90kg": "E"
+            },
+            "Extract-Response": "70 kg."
+        },
+        {
+            "Index": 114,
+            "GT": "B",
+            "Query": "Amy has to visit towns B and C in any order. The roads connecting these towns with her home are shown on the diagram. How many different routes can she take starting from A and returning to A, going through both B and C (but not more than once through each) and not travelling any road twice on the same trip?\nOptions:  A)10 B)8 C)6 D)4 E)2  Let's think step by step.",
+            "Response": "Answer: 10 + 8 = 18",
+            "Options": {
+                "10": "A",
+                "8": "B",
+                "6": "C",
+                "4": "D",
+                "2": "E"
+            },
+            "Extract-Response": "18"
+        }
+    ]
+}
