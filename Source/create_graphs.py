@@ -173,222 +173,61 @@ def graph_stepwise(model: str, max_steps: int = 9):
 
 
 def extraction_comparison():
-    frames = list()
+    dataframes = []
+    datasets = ["gsm8k", "coin_flip", "aqua", "mmlu-college", "mmlu-high-school"]
+    for dataset in datasets:
+        # Determine extraction types based on dataset
+        extraction_types = ["two-stage", "in-brackets", "two-stage-multi-choice"] #if dataset == "mmlu-combined" else ["two-stage", "in-brackets"]
 
-    # -- Aqua zero shot frames
-    frames.append(pd.DataFrame({
-        "Model": "gpt-4",
-        "Model Index": model_index_map["gpt-4"],
-        "Extraction": "In-Brackets",
-        "Extraction Index": 2,
-        "Dataset": "aqua",
-        "Dataset Index": 2,
-        "Total Accuracy": [60.167],
-        "Modality": "zero_shot"
-    }))
+        # Search metadata for gpt-3.5-turbo
+        data_gpt3 = search_metadata(models=["gpt-3.5-turbo"],
+                                    modalities=["zero_shot"],
+                                    datasets=[dataset],
+                                    extraction_types=extraction_types,
+                                    include_secondary=True)
+        # Melt data for gpt-3.5-turbo
+        data_gpt3 = pd.melt(data_gpt3,
+                            id_vars=["Model", "Modality", "Dataset Index", "Extraction Type", "Dataset"],
+                            value_vars=["Total Accuracy"],
+                            value_name="Accuracy")
 
-    frames.append(pd.DataFrame({
-        "Model": "gpt-4",
-        "Model Index": model_index_map["gpt-4"],
-        "Extraction": "Two-Stage",
-        "Extraction Index": 1,
-        "Dataset": "aqua",
-        "Dataset Index": 2,
-        "Total Accuracy": [62.0],
-        "Modality": "zero_shot"
-    }))
+        # Search metadata for gpt-4
+        data_gpt4 = search_metadata(models=["gpt-4"],
+                                    modalities=["zero_shot"],
+                                    datasets=[dataset],
+                                    extraction_types=extraction_types,
+                                    include_secondary=True)
 
-    frames.append(pd.DataFrame({
-        "Model": "gpt-3.5-turbo",
-        "Model Index": model_index_map["gpt-3.5-turbo"],
-        "Extraction": "In-Brackets",
-        "Extraction Index": 2,
-        "Dataset": "aqua",
-        "Dataset Index": 2,
-        "Total Accuracy": [53.5461],
-        "Modality": "zero_shot"
-    }))
+        # Melt data for gpt-4
+        data_gpt4 = pd.melt(data_gpt4,
+                            id_vars=["Model", "Modality", "Dataset Index", "Extraction Type", "Dataset"],
+                            value_vars=["Total Accuracy"],
+                            value_name="Accuracy")
 
-    frames.append(pd.DataFrame({
-        "Model": "gpt-3.5-turbo",
-        "Model Index": model_index_map["gpt-3.5-turbo"],
-        "Extraction": "two-stage",
-        "Extraction Index": 1,
-        "Dataset": "aqua",
-        "Dataset Index": 2,
-        "Total Accuracy": [52.5],
-        "Modality": "zero_shot"
-    }))
+        # Combine gpt-3.5-turbo and gpt-4 data
+        data = pd.concat([data_gpt3, data_gpt4])
 
-    # -- GSM8k zero shot frames
-    frames.append(pd.DataFrame({
-        "Model": "gpt-4",
-        "Model Index": model_index_map["gpt-4"],
-        "Extraction": "two-stage",
-        "Extraction Index": 1,
-        "Dataset": "gsm8k",
-        "Dataset Index": 0,
-        "Total Accuracy": [92.0],
-        "Modality": "zero_shot"
-    }))
+        dataframes.append(data)
 
-    frames.append(pd.DataFrame({
-        "Model": "gpt-4",
-        "Model Index": model_index_map["gpt-4"],
-        "Extraction": "in-brackets",
-        "Extraction Index": 2,
-        "Dataset": "gsm8k",
-        "Dataset Index": 0,
-        "Total Accuracy": [93.1667],
-        "Modality": "zero_shot"
-    }))
+    # Combine all datasets
+    data = pd.concat(dataframes)
 
-    frames.append(pd.DataFrame({
-        "Model": "gpt-3.5-turbo",
-        "Model Index": model_index_map["gpt-3.5-turbo"],
-        "Extraction": "in-brackets",
-        "Extraction Index": 2,
-        "Dataset": "gsm8k",
-        "Dataset Index": 0,
-        "Total Accuracy": [78.8333],
-        "Modality": "zero_shot"
-    }))
+    # Set up the plot
+    filename = "gpt-extraction-comparison.svg"
 
-    frames.append(pd.DataFrame({
-        "Model": "gpt-3.5-turbo",
-        "Model Index": model_index_map["gpt-3.5-turbo"],
-        "Extraction": "two-stage",
-        "Extraction Index": 1,
-        "Dataset": "gsm8k",
-        "Dataset Index": 0,
-        "Total Accuracy": [80.16667],
-        "Modality": "zero_shot"
-    }))
-
-    # -- mmlu zero shot frames
-    frames.append(pd.DataFrame({
-        "Model": "gpt-4",
-        "Model Index": model_index_map["gpt-4"],
-        "Extraction": "two-stage",
-        "Extraction Index": 1,
-        "Dataset": "mmlu-combined",
-        "Dataset Index": 3,
-        "Total Accuracy": [57.866],
-        "Modality": "zero_shot"
-    }))
-
-    frames.append(pd.DataFrame({
-        "Model": "gpt-4",
-        "Model Index": model_index_map["gpt-4"],
-        "Extraction": "in-brackets",
-        "Extraction Index": 2,
-        "Dataset": "mmlu-combined",
-        "Dataset Index": 3,
-        "Total Accuracy": [57.6],
-        "Modality": "zero_shot"
-    }))
-
-    frames.append(pd.DataFrame({
-        "Model": "gpt-3.5-turbo",
-        "Model Index": model_index_map["gpt-3.5-turbo"],
-        "Extraction": "in-brackets",
-        "Extraction Index": 2,
-        "Dataset": "mmlu-combined",
-        "Dataset Index": 3,
-        "Total Accuracy": [8.9783],
-        "Modality": "zero_shot"
-    }))
-
-    frames.append(pd.DataFrame({
-        "Model": "gpt-3.5-turbo",
-        "Model Index": model_index_map["gpt-3.5-turbo"],
-        "Extraction": "two-stage",
-        "Extraction Index": 1,
-        "Dataset": "mmlu-combined",
-        "Dataset Index": 3,
-        "Total Accuracy": [52.0],
-        "Modality": "zero_shot"
-    }))
-
-    # -- coin flip zero shot frames
-    frames.append(pd.DataFrame({
-        "Model": "gpt-4",
-        "Model Index": model_index_map["gpt-4"],
-        "Extraction": "two-stage",
-        "Extraction Index": 1,
-        "Dataset": "coin_flip",
-        "Dataset Index": 1,
-        "Total Accuracy": [55.4],
-        "Modality": "zero_shot"
-    }))
-
-    frames.append(pd.DataFrame({
-        "Model": "gpt-4",
-        "Model Index": model_index_map["gpt-4"],
-        "Extraction": "in-brackets",
-        "Extraction Index": 2,
-        "Dataset": "coin_flip",
-        "Dataset Index": 1,
-        "Total Accuracy": [55.6],
-        "Modality": "zero_shot"
-    }))
-
-    frames.append(pd.DataFrame({
-        "Model": "gpt-3.5-turbo",
-        "Model Index": model_index_map["gpt-3.5-turbo"],
-        "Extraction": "in-brackets",
-        "Extraction Index": 2,
-        "Dataset": "coin_flip",
-        "Dataset Index": 1,
-        "Total Accuracy": [39.6],
-        "Modality": "zero_shot"
-    }))
-
-    frames.append(pd.DataFrame({
-        "Model": "gpt-3.5-turbo",
-        "Model Index": model_index_map["gpt-3.5-turbo"],
-        "Extraction": "two-stage",
-        "Extraction Index": 1,
-        "Dataset": "coin_flip",
-        "Dataset Index": 1,
-        "Total Accuracy": [46.6],
-        "Modality": "zero_shot"
-    }))
-
-    modalities = ["zero_shot"]
-
-    # gpt4_data = data[(data["Model"] == "gpt-4")]
-
-    datasets = ["gsm8k", "coin_flip", "aqua", "mmlu-combined"]
-    data = search_metadata(models=["gpt-4"],
-                           modalities=["zero_shot"],
-                           datasets=datasets,
-                           extraction_types=["two-stage", "in-brackets", "two-stage-style-two"],
-                           include_secondary=True)
-
-    # data = pd.melt(data,
-    #                id_vars=["Dataset Index", "Extraction Type", "Dataset"],
-    #                value_vars=["Total Accuracy"],
-    #                value_name="Accuracy").sort_values("Model")
-    data = pd.melt(data,
-                   id_vars=["Model", "Modality", "Dataset Index", "Extraction Type", "Dataset"],
-                   value_vars=["Total Accuracy"],
-                   value_name="Accuracy")
-
-    palette = [modality_to_color_map[i] for i in modalities]
-    fig, ax = plt.subplots(1, 4, figsize=(4, 4), layout="constrained")
-    fig.suptitle("Extraction Comparison, GPT-4")
-
+    # Set up the plot
     sns.set_style("whitegrid")
+    # Rename the labels in the "Extraction Type" column
+    data['Extraction Type'] = data['Extraction Type'].replace({"in-brackets": "Brackets",
+                                                            "two-stage": "2-Stage",
+                                                            "two-stage-multi-choice": "2-Stage Style 2"})
 
-    chart_labels = ["GSM8k", "Coin Flip", "AQuA-RAT", "MMLU"]
-    i = 0
-    frame = data.groupby("Dataset Index")
-    for item in frame:
-        generate_singular_plot(ax=ax, x="Extraction Type", y="Accuracy", coordinate=i,
-                               data=item[1], xtick_labels=None, title=chart_labels[i],
-                               palette=palette)
+    # Create faceted bar plot
+    g = sns.catplot(x="Extraction Type", y="Accuracy", hue="Model", col="Dataset", data=data, kind="bar", height=4, aspect=.7)
 
-        i += 1
-    plt.savefig(os.path.join(GRAPHS_FOLDER, "gpt-4-Extraction Comparison.svg"), format='svg', dpi=1200)
-    plt.close("all")
+    # Save the plot
+    g.savefig(os.path.join(GRAPHS_FOLDER, filename), format='svg', dpi=1200)
+
+    # Close the plot to free memory
+    plt.close()
+    print("generated")
