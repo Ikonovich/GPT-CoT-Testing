@@ -123,6 +123,8 @@ in_bracket_prompt = "Place your final answer in squiggly brackets.\n"
 # Used to extract the answer during the two stage extraction query for style one.
 # For style two, see query_utils.two_stage_style_two_generation
 two_stage_extract_prompt = "The answer is "
+# Two stage extraction prompt for multiple choice questions. x should be replaced with the last available option.
+multi_choice_prompt = lambda x: f"Therefore, among A through {x}, the answer is"
 # Prompt to extract chain-of-thought reasoning
 cot_prompt = "Let's think step by step."
 # Used for the suppressed_cot modality

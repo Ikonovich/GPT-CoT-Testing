@@ -1,0 +1,349 @@
+{
+    "Mode": "test",
+    "Model": "gpt-3.5-turbo",
+    "Model Index": 1,
+    "Modality": "zero_shot",
+    "Modality Index": 0,
+    "Dataset": "aqua",
+    "Extraction Type": "two-stage-multi-choice",
+    "Simple Prompt": true,
+    "Test Path": "Results\\Primary_Test_Results\\gpt-3.5-turbo\\zero_shot\\aqua\\Simple-two-stage-multi-choice-gpt-3.5-turbo-zero_shot-aqua.json",
+    "Trials": [
+        {
+            "Index": 0,
+            "GT": "E",
+            "Query": "Two friends plan to walk along a 43-km trail, starting at opposite ends of the trail at the same time. If Friend P's rate is 15% faster than Friend Q's, how many kilometers will Friend P have walked when they pass each other?\nOptions:  A)21 B)21.5 C)22 D)22.5 E)23  ",
+            "Response": "Let's call the distance Friend Q walks before they meet up \"x\". This means that Friend P walks the remaining $43-x$ kilometers. \n\nWe know that Friend P walks 15% faster than Friend Q, which means that their speed is 1.15 times that of Friend Q. \n\nUsing the formula $distance = rate \\cdot time$, we can set up two equations: \n\n$distance\\ Friend\\ Q\\ walks = x$ \n\n$distance\\ Friend\\ P\\ walks = 43-x$ \n\n$\\frac{distance\\ Friend\\ P\\ walks}{rate\\ of\\ Friend\\ P} = \\frac{distance\\ Friend\\ Q\\ walks}{rate\\ of\\ Friend\\ Q}$ \n\n$\\frac{43-x}{1.15r} = \\frac{x}{r}$ \n\nSimplifying this equation, we get: \n\n$43-x = 1.15x$ \n\n$2.15x = 43$ \n\n$x \\approx 20$ \n\nSo Friend Q walks about 20 kilometers before they meet up, which means that Friend P walks the remaining $43-20=23$ kilometers. \n\nTherefore, the answer is $\\boxed{\\textbf{(E) }23}$.",
+            "Options": {
+                "21": "A",
+                "21.5": "B",
+                "22": "C",
+                "22.5": "D",
+                "23": "E"
+            },
+            "Extract-Response": "$\\boxed{\\textbf{(E) }23}$."
+        },
+        {
+            "Index": 1,
+            "GT": "C",
+            "Query": "In the coordinate plane, points (x, 1) and (5, y) are on line k. If line k passes through the origin and has slope 1/5, then what are the values of x and y respectively?\nOptions:  A)4 and 1 B)1 and 5 C)5 and 1 D)3 and 5 E)5 and 3  ",
+            "Response": "Since line $k$ passes through the origin and has slope $\\frac{1}{5}$, its equation is $y=\\frac{1}{5}x$. Setting $y=1$ in this equation gives $1=\\frac{1}{5}x$, so $x=5$. Setting $x=5$ in the equation gives $y=\\frac{1}{5}(5)=1$. Therefore, the values of $x$ and $y$ are $\\boxed{\\textbf{(C) }5\\text{ and }1}$.",
+            "Options": {
+                "4 and 1": "A",
+                "1 and 5": "B",
+                "5 and 1": "C",
+                "3 and 5": "D",
+                "5 and 3": "E"
+            },
+            "Extract-Response": "$\\boxed{\\textbf{(C) }5\\text{ and }1}$."
+        },
+        {
+            "Index": 2,
+            "GT": "B",
+            "Query": "For all numbers p and q, the operation @ is defined by p@q = p^2 - pq. If xy \u2260 0, then which of the following can be equal to zero?\nI. x@y\nII. (xy)@y\nIII. x@(x + y)\nOptions:  A)II B)I and II C)I and III D)II and III E)All of the above  ",
+            "Response": "We can simplify each expression using the given operation:\n\nI. $x@y = x^2 - xy$\nII. $(xy)@y = (xy)^2 - xy^2 = xy(xy-y)$\nIII. $x@(x+y) = x^2 - x(x+y) = -xy$\n\nNow we can see which expressions can be equal to zero:\n\nI. $x^2 - xy = 0 \\Rightarrow x(x-y) = 0 \\Rightarrow x=0$ or $x=y$\nII. $xy(xy-y) = 0 \\Rightarrow xy=0$ or $y=0$ or $y=x$\nIII. $-xy = 0 \\Rightarrow x=0$ or $y=0$\n\nTherefore, the only expression that cannot be equal to zero is II when $x$ and $y$ are both non-zero. So the answer is $\\boxed{\\textbf{(A) } II}$.",
+            "Options": {
+                "II": "A",
+                "I and II": "B",
+                "I and III": "C",
+                "II and III": "D",
+                "All of the above": "E"
+            },
+            "Extract-Response": "$\\boxed{\\textbf{(A) } II}$."
+        },
+        {
+            "Index": 3,
+            "GT": "A",
+            "Query": "Carl is facing very difficult financial times and can only pay the interest on a $10,000 loan he has taken. The bank charges him a quarterly compound rate of 4%. What is the approximate interest he pays annually?\nOptions:  A)$1600 B)$2000 C)$2150 D)$2500 E)$12000  ",
+            "Response": "Since the interest is compounded quarterly, the interest rate per quarter is $\\frac{4\\%}{4}=1\\%$. Therefore, after one quarter, Carl will owe $10,000\\cdot 1.01=10,100$ dollars. After two quarters, he will owe $10,100\\cdot 1.01=10,201$ dollars. After three quarters, he will owe $10,201\\cdot 1.01=10,303.01$ dollars. Finally, after four quarters (one year), he will owe $10,303.01\\cdot 1.01=10,406.0601$ dollars. \n\nThe interest he paid over the year is the difference between what he owes at the end of the year and what he owed at the beginning of the year, which is $10,406.0601-10,000=406.0601$ dollars. \n\nTherefore, the approximate interest he pays annually is $\\boxed{\\textbf{(A)}\\ 1600}$ dollars.",
+            "Options": {
+                "$1600": "A",
+                "$2000": "B",
+                "$2150": "C",
+                "$2500": "D",
+                "$12000": "E"
+            },
+            "Extract-Response": "$\\boxed{\\textbf{(A)}\\ 1600}$."
+        },
+        {
+            "Index": 4,
+            "GT": "E",
+            "Query": "The speed at which a man can row a boat in still water is 25 kmph. If he rows downstream, where the speed of current is 11 kmph, what time will he take to cover 80 metres?\nOptions:  A)18 seconds B)27 seconds C)26 seconds D)12 seconds E)8 seconds  ",
+            "Response": "Speed downstream = speed in still water + speed of current = 25 + 11 = 36 kmph\nWe need to convert this to meters per second, so:\n36 kmph = 36/3.6 m/s = 10 m/s\nTime taken to cover 80 meters at 10 m/s = distance/speed = 80/10 = 8 seconds\nTherefore, the answer is E) 8 seconds.",
+            "Options": {
+                "18 seconds": "A",
+                "27 seconds": "B",
+                "26 seconds": "C",
+                "12 seconds": "D",
+                "8 seconds": "E"
+            },
+            "Extract-Response": "E) 8 seconds."
+        },
+        {
+            "Index": 5,
+            "GT": "A",
+            "Query": "There are k-2 members in a certain band, including Jim and Ellen. Two members are to be selected to attend the Grammy awards ceremony. If there are 6 possible combinations in which Jim and Ellen are not selected, what is the value of k?\nOptions:  A)8 B)9 C)10 D)11 E)12  ",
+            "Response": "There are $k-2$ members in the band, and we need to choose 2 of them to attend the Grammy awards ceremony. This can be done in $\\binom{k-2}{2} = \\frac{(k-2)(k-3)}{2}$ ways. \n\nOut of these ways, we need to subtract the 6 combinations in which Jim and Ellen are not selected. This means that the other 2 members are chosen from the remaining $k-4$ members, which can be done in $\\binom{k-4}{2} = \\frac{(k-4)(k-5)}{2}$ ways. \n\nSo we have: \n\n$$\\frac{(k-2)(k-3)}{2} - 6 = \\frac{(k-4)(k-5)}{2}$$\n\nSimplifying this equation gives $k^2 - 11k + 28 = 0$, which factors as $(k-4)(k-7) = 0$. Since $k$ must be greater than 2 (since there are at least 2 members in the band), we have $k = \\boxed{\\textbf{(A) }8}$.",
+            "Options": {
+                "8": "A",
+                "9": "B",
+                "10": "C",
+                "11": "D",
+                "12": "E"
+            },
+            "Extract-Response": "$\\boxed{\\textbf{(A) }8}$."
+        },
+        {
+            "Index": 6,
+            "GT": "A",
+            "Query": "If (x^2 + 4x - 11)/5 \u2264 x + 1, then x could be represented by which of the following?\nOptions:  A)\u2212 3 \u2264 x \u2264 4 B)\u2212 4 \u2264 x \u2264 3 C)\u2212 3 \u2264 x \u2264 3 D)\u2212 4 \u2264 x \u2264 \u2212 3 E)3 \u2264 x \u2264 4  ",
+            "Response": "We begin by multiplying both sides of the inequality by $5$ to get rid of the denominator: $$x^2+4x-11\\leq 5x+5.$$ Rearranging, we have $$x^2-x-16\\leq 0.$$ Factoring the quadratic, we get $(x-4)(x+1)\\leq 0$. The inequality is satisfied when $x$ is between the roots of the quadratic, $-1$ and $4$. Therefore, the solution is $\\boxed{\\textbf{(A)}\\ -3\\leq x\\leq 4}$.",
+            "Options": {
+                "\u2212 3 \u2264 x \u2264 4": "A",
+                "\u2212 4 \u2264 x \u2264 3": "B",
+                "\u2212 3 \u2264 x \u2264 3": "C",
+                "\u2212 4 \u2264 x \u2264 \u2212 3": "D",
+                "3 \u2264 x \u2264 4": "E"
+            },
+            "Extract-Response": "$\\boxed{\\textbf{(A)}\\ -3\\leq x\\leq 4}$."
+        },
+        {
+            "Index": 7,
+            "GT": "E",
+            "Query": "Find the smallest number of five digits exactly divisible by 22,33,66 and 44.\nOptions:  A)10101 B)11000 C)10110 D)10111 E)10100  ",
+            "Response": "We need to find the LCM of 22, 33, 66, and 44. We can start by factoring each number into its prime factors:\n\n22 = 2 \u00d7 11\n33 = 3 \u00d7 11\n66 = 2 \u00d7 3 \u00d7 11\n44 = 2 \u00d7 2 \u00d7 11\n\nThe LCM will be the product of the highest powers of each prime factor. In this case, we need to include two 2's, one 3, and one 11. So the LCM is:\n\nLCM = 2 \u00d7 2 \u00d7 3 \u00d7 11 = 132\n\nThe smallest five-digit number divisible by 132 is the smallest multiple of 132 that is greater than or equal to 10,000. We can divide 10,000 by 132 to find the quotient and remainder:\n\n10,000 \u00f7 132 = 75 R 100\n\nSo the smallest multiple of 132 that is greater than or equal to 10,000 is:\n\n132 \u00d7 76 = 10,032\n\nTherefore, the answer is E) 10100.",
+            "Options": {
+                "10101": "A",
+                "11000": "B",
+                "10110": "C",
+                "10111": "D",
+                "10100": "E"
+            },
+            "Extract-Response": "E) 10100."
+        },
+        {
+            "Index": 8,
+            "GT": "B",
+            "Query": "The entrance fee for a fair is $5 for persons under the age of 18, and 20% more for persons older. Each ride at the fair costs $0.50. If Joe goes with her 6 years old twin brothers, and they each took 3 rides in total. How much money does Joe end up spending at the fair?\nOptions:  A)16 B)20.5 C)17.5 D)20 E)4.5  ",
+            "Response": "The entrance fee for Joe and her twin brothers is $5 each, since they are under 18. So the total entrance fee is $5*3 = $15.\nThe entrance fee for Joe is 20% more than $5, which is $6. So the total entrance fee for Joe is $6*1 = $6.\nThe total cost of the rides for each person is $0.50*3 = $1.50.\nSo the total cost of the rides for Joe and her twin brothers is $1.50*4 = $6.\nTherefore, the total amount of money Joe ends up spending at the fair is $15 + $6 = $21.\nThe correct answer is not among the options.",
+            "Options": {
+                "16": "A",
+                "20.5": "B",
+                "17.5": "C",
+                "20": "D",
+                "4.5": "E"
+            },
+            "Extract-Response": "none of the above."
+        },
+        {
+            "Index": 9,
+            "GT": "C",
+            "Query": "If X and Y are digits and 8XY is a 3-digit number that is divisible by 2, which of the following is a possible product of X and Y?\nOptions:  A)15 B)31 C)12 D)27 E)91  ",
+            "Response": "For a number to be divisible by 2, its units digit must be even. Therefore, $Y$ must be even. Since $X$ and $Y$ are digits, $X$ can be any digit from 0 to 9. Therefore, the possible products of $X$ and $Y$ are: $0\\cdot2=0$, $1\\cdot2=2$, $2\\cdot2=4$, $3\\cdot2=6$, $4\\cdot2=8$, $5\\cdot2=10$, $6\\cdot2=12$, $7\\cdot2=14$, $8\\cdot2=16$, and $9\\cdot2=18$. Out of these, only $6\\cdot2=12$ is an option, so the answer is $\\boxed{\\textbf{(C) }12}$.",
+            "Options": {
+                "15": "A",
+                "31": "B",
+                "12": "C",
+                "27": "D",
+                "91": "E"
+            },
+            "Extract-Response": "$\\boxed{\\textbf{(C) }12}$."
+        },
+        {
+            "Index": 10,
+            "GT": "A",
+            "Query": "If Tim had lunch at $50 and he gave 20% tip, how much did he spend?\nOptions:  A)A)$60.00 B)B)$35.42 C)C)$60.60 D)D)$21.56 E)E)$78.45  ",
+            "Response": "Tim gave a 20% tip, which is 0.2 x $50 = $<<0.2*50=10>>10.\nSo, he spent $50 + $10 = $<<50+10=60>>60.\nTherefore, the answer is A) $60.00.",
+            "Options": {
+                "A)$60.00": "A",
+                "B)$35.42": "B",
+                "C)$60.60": "C",
+                "D)$21.56": "D",
+                "E)$78.45": "E"
+            },
+            "Extract-Response": "A) $60.00."
+        },
+        {
+            "Index": 11,
+            "GT": "C",
+            "Query": "Rs. 825 becomes Rs. 956 in 3 years at a certain rate of simple interest.If the rate of interest is increased by 4% ,What amount will Rs. 825 become in 3 years ?\nOptions:  A)Rs. 1020.80 B)Rs. 1025 C)Rs. 1055 D)Data inadequate E)None of these  ",
+            "Response": "We can start by using the formula for simple interest:\n\nSimple Interest = (Principal x Rate x Time) / 100\n\nWe know that Rs. 825 becomes Rs. 956 in 3 years, so we can use this information to find the rate:\n\n956 - 825 = 131\nSimple Interest = (825 x Rate x 3) / 100\n131 = (825 x Rate x 3) / 100\nRate = 13100 / (825 x 3)\nRate = 5.03%\n\nNow we need to find out what amount Rs. 825 will become in 3 years at a rate that is 4% higher than 5.03%. We can use the same formula with the new rate:\n\nNew Rate = 5.03% + 4% = 9.03%\n\nAmount = (825 x 9.03 x 3) / 100 + 825\nAmount = Rs. 1020.80\n\nTherefore, the answer is (A) Rs. 1020.80.",
+            "Options": {
+                "Rs. 1020.80": "A",
+                "Rs. 1025": "B",
+                "Rs. 1055": "C",
+                "Data inadequate": "D",
+                "None of these": "E"
+            },
+            "Extract-Response": "(A) Rs. 1020.80."
+        },
+        {
+            "Index": 12,
+            "GT": "B",
+            "Query": "q is a positive integer and multiple of 2; p = 4^q, what is the remainder when p is divided by 10?\nOptions:  A)10 B)6 C)4 D)0 E)It Cannot Be Determined  ",
+            "Response": "We can find a pattern in the units digit of powers of 4: $4^1$ ends in 4, $4^2$ ends in 6, $4^3$ ends in 4, $4^4$ ends in 6, and so on. Since $q$ is a multiple of 2, we know that $p=4^q$ will end in a units digit of 6. Therefore, the remainder when $p$ is divided by 10 is $\\boxed{\\textbf{(B) }6}$.",
+            "Options": {
+                "10": "A",
+                "6": "B",
+                "4": "C",
+                "0": "D",
+                "It Cannot Be Determined": "E"
+            },
+            "Extract-Response": "$\\boxed{\\textbf{(B) }6}$."
+        },
+        {
+            "Index": 13,
+            "GT": "D",
+            "Query": "If q is the square of a positive integer, which of the following must be equal to the square of the next positive integer?\nOptions:  A)\u221an + 1 B)n + 1 C)n^2 + 1 D)q + 2\u221aq + 1 E)n^2 + 2n + 1  ",
+            "Response": "Since $q$ is the square of a positive integer, we can write $q = a^2$ for some positive integer $a$. The next positive integer after $a$ is $a+1$, so we want to find an expression that is equal to $(a+1)^2$. \n\nExpanding $(a+1)^2$ gives $(a+1)^2 = a^2 + 2a + 1$. Since $q=a^2$, we can substitute to get $(a+1)^2 = q + 2a + 1$. \n\nLooking at the answer choices, we see that only $\\boxed{\\textbf{(D)}\\ q + 2\\sqrt{q} + 1}$ matches this expression.",
+            "Options": {
+                "\u221an + 1": "A",
+                "n + 1": "B",
+                "n^2 + 1": "C",
+                "q + 2\u221aq + 1": "D",
+                "n^2 + 2n + 1": "E"
+            },
+            "Extract-Response": "$\\boxed{\\textbf{(D)}\\ q + 2\\sqrt{q} + 1}$."
+        },
+        {
+            "Index": 14,
+            "GT": "C",
+            "Query": "Rs. 5600 is divided into three parts A, B and C. How much A is more than C if their ratio is 1/7:1/7:1/14?\nOptions:  A)300 B)992 C)1120 D)552 E)312  ",
+            "Response": "The given ratio can be simplified as 2/14:2/14:1/14 or 2:2:1. \n\nLet the three parts be 2x, 2x, and x. \n\nTherefore, A+B+C= 2x+2x+x= 5x \n\nGiven, A:C= 2:1 \n\nSo, A= 2/3(5x) = 10x/3 \n\nC= 1/3(5x) = 5x/3 \n\nA-C= 10x/3 - 5x/3 = 5x/3 \n\nWe know that A+B+C= Rs. 5600 \n\n5x+5x+10x/3= 5600 \n\nSolving for x, we get x= 1120 \n\nTherefore, A-C= 5x/3= 5(1120)/3= 1866.67 \n\nRounded off to the nearest integer, A-C= 1867 \n\nHence, the answer is option C) 1120.",
+            "Options": {
+                "300": "A",
+                "992": "B",
+                "1120": "C",
+                "552": "D",
+                "312": "E"
+            },
+            "Extract-Response": "C) 1120."
+        },
+        {
+            "Index": 15,
+            "GT": "B",
+            "Query": "If a/b=3/4 and 8a+5b=22,then find the value of a.\nOptions:  A)1/2 B)3/2 C)5/2 D)4/2 E)7/2  ",
+            "Response": "We can use the first equation to express $b$ in terms of $a$: $$\\frac{a}{b}=\\frac{3}{4}\\implies b=\\frac{4a}{3}.$$ Substituting this into the second equation gives: $$8a+5\\left(\\frac{4a}{3}\\right)=22.$$ Simplifying: $$8a+\\frac{20a}{3}=22\\implies \\frac{44a}{3}=22\\implies a=\\boxed{\\textbf{(A) }\\frac{1}{2}}.$$",
+            "Options": {
+                "1/2": "A",
+                "3/2": "B",
+                "5/2": "C",
+                "4/2": "D",
+                "7/2": "E"
+            },
+            "Extract-Response": "$\\boxed{\\textbf{(A) }\\frac{1}{2}}$."
+        },
+        {
+            "Index": 16,
+            "GT": "D",
+            "Query": "Given that k/l < 1, and both k and l are positive integers, which one of the following must be greater than 1?\nOptions:  A)k/l^2 B)k^2/l C)k^2/l^2 D)l/k E)\u221a(k/l)  ",
+            "Response": "We can start by manipulating the given inequality: $$\\frac{k}{l}<1$$ $$k<l$$ Now we can try each option and see which one must be greater than 1. \n\nA) $k/l^2=\\frac{k}{l}\\cdot\\frac{1}{l}<1\\cdot\\frac{1}{l}=1/l<1$ \n\nB) $k^2/l=(k/l)\\cdot k<k\\cdot l<l^2$ \n\nC) $k^2/l^2=(k/l)^2<1$ \n\nD) $l/k>1$ since $k<l$ \n\nE) $\\sqrt{k/l}=\\sqrt{\\frac{k}{l}}<1$ since $k<l$ \n\nTherefore, the only option that must be greater than 1 is $\\boxed{\\textbf{(D) }l/k}$.",
+            "Options": {
+                "k/l^2": "A",
+                "k^2/l": "B",
+                "k^2/l^2": "C",
+                "l/k": "D",
+                "\u221a(k/l)": "E"
+            },
+            "Extract-Response": "$\\boxed{\\textbf{(D) }l/k}$."
+        },
+        {
+            "Index": 17,
+            "GT": "B",
+            "Query": "Mike took 5 mock tests before appearing for the GMAT. In each mock test he scored 10 points more than the previous mock test. If he scored 760 on the GMAT and his average score for the mocks and the GMAT was 716.67, what was the difference in the score of his last mock and his GMAT score?\nOptions:  A)20 B)32 C)40 D)50 E)60  ",
+            "Response": "Let's call Mike's score on the first mock test \"x\". Then, his scores on the subsequent mock tests would be x+10, x+20, x+30, and x+40. \n\nWe know that Mike took 5 mock tests, so his average score for all the mock tests would be: \n\n$\\frac{x + (x+10) + (x+20) + (x+30) + (x+40)}{5} = \\frac{5x + 100}{5} = x + 20$\n\nWe also know that his average score for all the mocks and the GMAT was 716.67, so we can set up the equation: \n\n$\\frac{(5x + 100) + 760}{6} = 716.67$\n\nSimplifying this equation, we get: \n\n$5x + 860 = 4300.02$\n\n$5x = 3439.98$\n\n$x = 687.996$\n\nRounding to the nearest whole number, we can say that Mike's score on the first mock test was 688. \n\nNow we can find the difference between his score on the last mock test and his GMAT score: \n\nLast mock test score = x+40 = 728 \n\nDifference = 760 - 728 = 32 \n\nTherefore, the answer is (B) 32.",
+            "Options": {
+                "20": "A",
+                "32": "B",
+                "40": "C",
+                "50": "D",
+                "60": "E"
+            },
+            "Extract-Response": "(B) 32."
+        },
+        {
+            "Index": 18,
+            "GT": "A",
+            "Query": "John found that the average of 15 numbers is 40. If 10 is added to each number then the mean of number is?\nOptions:  A)50 B)45 C)65 D)78 E)64  ",
+            "Response": "If the average of 15 numbers is 40, then the sum of the 15 numbers is $15 \\cdot 40 = 600$. \n\nIf 10 is added to each number, then the sum of the new numbers is $15 \\cdot (40+10) = 750$. \n\nThe new average is then $\\frac{750}{15} = \\boxed{\\textbf{(A) }50}$.",
+            "Options": {
+                "50": "A",
+                "45": "B",
+                "65": "C",
+                "78": "D",
+                "64": "E"
+            },
+            "Extract-Response": "$\\boxed{\\textbf{(A) }50}$."
+        },
+        {
+            "Index": 19,
+            "GT": "E",
+            "Query": "A person is traveling at 20 km/hr and reached his destiny in 2.5 hr then find the distance?\nOptions:  A)53 km B)55 km C)52 km D)60 km E)50 km  ",
+            "Response": "Distance = Speed x Time\nDistance = 20 km/hr x 2.5 hr = 50 km\nTherefore, the distance is 50 km. Answer: E) 50 km.",
+            "Options": {
+                "53 km": "A",
+                "55 km": "B",
+                "52 km": "C",
+                "60 km": "D",
+                "50 km": "E"
+            },
+            "Extract-Response": "E) 50 km."
+        },
+        {
+            "Index": 20,
+            "GT": "D",
+            "Query": "The first five numbers in a regular sequence are 4, 10, X, 46, and 94. What is x ?\nOptions:  A)28 B)26 C)30 D)22 E)24  ",
+            "Response": "To find the missing number, we need to look for a pattern in the sequence. One way to do this is to find the differences between consecutive terms:\n\n- The difference between 10 and 4 is 6.\n- The difference between X and 10 is unknown.\n- The difference between 46 and X is 36.\n- The difference between 94 and 46 is 48.\n\nNotice that the differences are not constant, which means the sequence is not arithmetic. However, we can still look for a pattern in the differences:\n\n- The difference between 10 and 4 is 6.\n- The difference between X and 10 is unknown, but it should be close to 6.\n- The difference between 46 and X is 36, which is 6 times 6.\n- The difference between 94 and 46 is 48, which is 8 times 6.\n\nBased on this pattern, we can guess that X is 10 + 6 = 16 more than 10, which gives us X = 26. Therefore, the answer is $\\boxed{\\textbf{(B) }26}$.",
+            "Options": {
+                "28": "A",
+                "26": "B",
+                "30": "C",
+                "22": "D",
+                "24": "E"
+            },
+            "Extract-Response": "$\\boxed{\\textbf{(B) }26}$."
+        },
+        {
+            "Index": 21,
+            "GT": "C",
+            "Query": "Tim has 350 pounds of cement in 100, 50, and 25 pound bags. He has an equal number of each size bag. How many bags of cement does Tim have?\nOptions:  A)2 B)4 C)6 D)8 E)10  ",
+            "Response": "Let the number of bags of each size be $x$. Then we have the equation $100x+50x+25x=350$, which simplifies to $175x=350$. Solving for $x$, we get $x=2$. Therefore, Tim has $2$ bags of each size, for a total of $2+2+2=\\boxed{\\textbf{(C)}\\ 6}$ bags.",
+            "Options": {
+                "2": "A",
+                "4": "B",
+                "6": "C",
+                "8": "D",
+                "10": "E"
+            },
+            "Extract-Response": "$\\boxed{\\textbf{(C)}\\ 6}$."
+        },
+        {
+            "Index": 22,
+            "GT": "C",
+            "Query": "What is the least value of x, So that 2x5475 is divisible by 9\nOptions:  A)7 B)8 C)4 D)3 E)2  ",
+            "Response": "The divisibility rule for 9 states that the sum of the digits of a number must be divisible by 9 for the entire number to be divisible by 9. \n\nIn this case, we have the number 2x5475. The sum of the digits is 2 + x + 5 + 4 + 7 + 5 = 23 + x. \n\nFor this number to be divisible by 9, the sum of the digits must be divisible by 9. Therefore, we need to find the smallest value of x that makes 23 + x divisible by 9. \n\nWe can start by testing the answer choices. \n\nIf x = 7, then 23 + x = 30, which is divisible by 9. \n\nIf x = 8, then 23 + x = 31, which is not divisible by 9. \n\nIf x = 4, then 23 + x = 27, which is divisible by 9. \n\nIf x = 3, then 23 + x = 26, which is not divisible by 9. \n\nIf x = 2, then 23 + x = 25, which is not divisible by 9. \n\nTherefore, the least value of x that makes 2x5475 divisible by 9 is x = 7. \n\nAnswer: A) 7",
+            "Options": {
+                "7": "A",
+                "8": "B",
+                "4": "C",
+                "3": "D",
+                "2": "E"
+            },
+            "Extract-Response": "A) 7."
+        },
+        {
+            "Index": 23,
+            "GT": "B",
+            "Query": "Square P is inscribed in circle Q. If the perimeter of P is 40, what is the circumference of Q?\nOptions:  A)11\u221a 2\u03c0 B)10\u221a 2\u03c0 C)9\u221a 2\u03c0 D)8\u221a 2\u03c0 E)7\u221a 2\u03c0  ",
+            "Response": "Let the side length of square P be $s$. Since the perimeter of P is 40, we have $4s = 40$, so $s = 10$. \n\n[asy]\npair A,B,C,D,O;\nO = (0,0);\nA = (-5,5);\nB = (5,5);\nC = (5,-5);\nD = (-5,-5);\ndraw(circle(O,5*sqrt(2)));\ndraw(A--B--C--D--cycle);\nlabel(\"$P$\", (0,0));\nlabel(\"$s$\", (A+B)/2, N);\n[/asy]\n\nSince P is inscribed in circle Q, the diameter of Q is equal to the diagonal of P. Using the Pythagorean Theorem, we find that the diagonal of P is $s\\sqrt{2}$, so the diameter of Q is $s\\sqrt{2}$. Therefore, the circumference of Q is $\\pi$ times the diameter, or $s\\sqrt{2}\\pi = 10\\sqrt{2}\\pi$. \n\nThe answer is $\\boxed{\\textbf{(B) }10\\sqrt{2}\\pi}$.",
+            "Options": {
+                "11\u221a 2\u03c0": "A",
+                "10\u221a 2\u03c0": "B",
+                "9\u221a 2\u03c0": "C",
+                "8\u221a 2\u03c0": "D",
+                "7\u221a 2\u03c0": "E"
+            },
+            "Extract-Response": "$\\boxed{\\textbf{(B) }10\\sqrt{2}\\pi}$."
+        }
+    ]
+}

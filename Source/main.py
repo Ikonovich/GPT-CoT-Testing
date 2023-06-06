@@ -108,18 +108,20 @@ def parse_args():
     )
 
     parser.add_argument(
-        "--extraction_type", type=str, choices=["two-stage", "in-brackets", "none", "two-stage-style-two"],
+        "--extraction_type", type=str, choices=["two-stage", "in-brackets", "none", "two-stage-style-two",
+                                                "two-stage-multi-choice"],
         help="Select the answer extraction method to use. Two-stage sends an extra query appended with "
-             + "\"The answer is\". In-brackets appends \"Place the final answer in squiggly brackets.\" to the "
-             + "question. None does neither of these and only attempts to extract the answer directly - this is not "
-             + "recommended for most cases."
+             "\"The answer is\". In-brackets appends \"Place the final answer in squiggly brackets.\" to the "
+             "question. Style two uses the query_utils.two_stage_style_two_generation function. Multi choice uses the prompt "
+             "\"Therefore, among A through (last option letter), the answer is\". None does none of these and only "
+             "attempts to extract the answer directly - this is not recommended for most cases."
     )
 
     parser.add_argument(
         "--continuation", type=ast.literal_eval, default=True,
         help="If true, will look for a file matching the parameters "
-             + "provided. If this file exists, will append all new results "
-             + "to the file located. Only applies if save==True."
+             "provided. If this file exists, will append all new results "
+             "to the file located. Only applies if save==True."
     )
 
     parser.add_argument(
