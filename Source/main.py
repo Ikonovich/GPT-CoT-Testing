@@ -19,9 +19,14 @@ def main():
     config.__dict__['WAIT_TIME'] = args.wait_time
     mode = args.mode
     if mode == "extract":
-        extract_answers(root=RESULTS_FOLDER)
+        # extract_answers(root=RESULTS_FOLDER)
+        extract_answers(root="Results/Secondary_Test_Results")
     elif mode == "metadata":
-        generate_metadata(root=RESULTS_FOLDER, test_file="Test_Results.csv",
+        # generate_metadata(root=RESULTS_FOLDER,
+        #                  test_file="Test_Results.csv",
+        #                  scratchpad_file="Scratchpad_Results.csv")
+        generate_metadata(root="Results/Secondary_Test_Results",
+                          test_file="Secondary_Test_Results.csv",
                           scratchpad_file="Scratchpad_Results.csv")
     elif mode == "graph":
         create_graphs()

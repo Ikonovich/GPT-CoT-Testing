@@ -124,6 +124,7 @@ def clean_answer(response: str, dataset: str, extraction_type: str, options: dic
 
 
 def _extract(data: list[str] | str, dataset: str, options: dict = None) -> list:
+    dataset = dataset.lower()
     # This function performs final extraction of possible answers from strings provided by the
     # answer_extraction function.
     # It runs linearly along each list index and string, such that answers
@@ -154,11 +155,11 @@ def _extract(data: list[str] | str, dataset: str, options: dict = None) -> list:
                 # Finally, try to map an option to a result
                 sample = sample.split(" ")
                 for substr in sample:
-                    for key in options:
-                        if key in substr:
+                    for key, value in options.items():
+                        if value in substr:
                             pred.append(options[key])
 
-        elif dataset in ['multiarith', 'gsm8k'] or 'step' in dataset or "Step" in dataset:
+        elif dataset in ['multiarith', 'gsm8k'] or 'step' in dataset or "modified" in dataset:
             # Remove commas and find an arbitrary length integers or float
             pred = sample.replace(',', '')
             pred = [s for s in regex.findall(r'-?\d+\.?\d*', pred)]

@@ -52,11 +52,12 @@ def generate_metadata(root: str = None, test_file: str = None, scratchpad_file: 
     if root is None:
         root = RESULTS_FOLDER
     if test_file is None:
-        test_file = "Test Results.csv"
+        test_file = "Test_Results.csv"
     if scratchpad_file is None:
-        scratchpad_file = "Scratchpad Results.csv"
+        scratchpad_file = "Scratchpad_Results.csv"
+
     test_paths = get_filepaths(root=root, contains=["json"], excludes=["scratchpad"])
-    scratch_paths = get_filepaths(root=root, contains=["json", "scratchpad"])
+    scratch_paths = get_filepaths(os.path.join(RESULTS_FOLDER, "scratchpad"), contains=["json", "scratchpad"])
 
     test_results = list()
     for i in range(len(test_paths)):
@@ -280,6 +281,9 @@ def test_quantification(test_path: str = None):
     # Quantifies results for all tests.
 
     data = read_json(test_path)
+    # if "Trials" not in data:
+    #     data = dict()
+
     # Calculate total accuracy, % of answers containing Chain-of-Thought reasoning,
     # the accuracy of CoT answers, and the accuracy of Non-CoT answers,
     # along with over all counts of each item type.

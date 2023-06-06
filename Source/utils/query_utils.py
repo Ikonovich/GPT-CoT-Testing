@@ -375,14 +375,14 @@ def extraction_query(model: str, prompt: str, response: str, options: dict[str, 
             prompt=extraction_prompt,
             max_tokens=max_tokens)
     elif extraction_type == "two-stage-multi-choice":
-        dataset = args.dataset
         # Resubmit the response for answer extraction
-        if dataset == "aqua":
+        if len(options) == 5:
             extraction_prompt = prompt + " " + response + "\n" + multi_choice_prompt("E")
-        elif "mmlu" in dataset:
+        elif len(options) == 4:
             extraction_prompt = prompt + " " + response + "\n" + multi_choice_prompt("D")
         else:
-            raise ValueError("Invalid dataset used for multi-choice extraction.")
+            raise ValueError("Multi-choice extraction is not set up for this number of options, but "
+                             "can probably be modified to do so.")
         extraction_response = query(
             model=model,
             prompt=extraction_prompt,
