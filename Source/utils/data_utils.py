@@ -19,9 +19,9 @@ def search_metadata(mode: str = "test",
         datasets = ["multiarith", "gsm8k", "aqua", "mmlu-combined", "coin_flip"]
 
     if mode == "test":
-        filename = "Test Results.csv"
+        filename = "Test_Results.csv"
     elif mode == "scratchpad":
-        filename = "Scratchpad Results.csv"
+        filename = "Scratchpad_Results.csv"
     else:
         raise ValueError("Provided mode is invalid.")
 
@@ -29,7 +29,7 @@ def search_metadata(mode: str = "test",
     frame = pd.read_csv(metapath)
 
     if include_secondary:
-        metapath = os.path.join(METADATA_FOLDER, "Secondary" + filename)
+        metapath = os.path.join(METADATA_FOLDER, "Secondary_" + filename)
         second_frame = pd.read_csv(metapath)
         frame = pd.concat([frame, second_frame])
 

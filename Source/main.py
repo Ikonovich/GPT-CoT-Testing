@@ -11,8 +11,9 @@ from answer_extraction import extract_answers
 from config import *
 from utils.query_utils import run_test
 from scratchpad import multi_query_test
+import os
 
-
+os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
 def main():
     args = parse_args()
     config.__dict__['GPU_ID'] = args.gpu
