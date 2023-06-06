@@ -1,0 +1,77 @@
+{
+    "Mode": "scratchpad",
+    "Internal Model": "gpt-3.5-turbo",
+    "Internal Model Index": 1,
+    "External Model": "gpt-3.5-turbo",
+    "External Model Index": 1,
+    "Modality": "suppressed_cot",
+    "Modality Index": 2,
+    "Dataset": "9step",
+    "Extraction Type": "in-brackets",
+    "Internal Role": {
+        "role": "system",
+        "content": "You are engaging in internal reasoning. None of your output from this cycle will be shown to the user. All of your output for this cycle will be available in the next cycle to allow you to produce relevant output for the user."
+    },
+    "External Role": {
+        "role": "system",
+        "content": "Use the provided reasoning to answer the user's latest message. Follow any instructions provided by the user."
+    },
+    "Trials": [
+        {
+            "Index": 0,
+            "Query": "1 * 2 + 7 * 6 * 9 - 2 - 1 - 1 - 1 - 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Reasoning": "{3763}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 369
+        },
+        {
+            "Index": 1,
+            "Query": "5 * 2 - 8 + 6 * 6 - 9 + 1 - 5 + 2 + 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Reasoning": "{30}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 28
+        },
+        {
+            "Index": 2,
+            "Query": "5 + 8 * 5 + 4 * 8 + 9 - 9 - 7 + 9 - 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Reasoning": "The final answer is {69}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 75
+        },
+        {
+            "Index": 3,
+            "Query": "6 - 1 - 6 - 4 * 4 + 1 + 2 * 8 - 5 + 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Reasoning": "The final answer is {10}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 4
+        },
+        {
+            "Index": 4,
+            "Query": "3 + 9 - 8 * 4 * 3 * 5 * 2 - 3 * 1 * 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Reasoning": "-579 {Note: The order of operations is important here.}",
+            "Response": "-579",
+            "GT": -957
+        },
+        {
+            "Index": 5,
+            "Query": "7 - 9 - 1 + 2 * 7 + 3 * 8 - 2 + 7 * 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Reasoning": "The final answer is {100}.",
+            "Response": "Hi, how can I assist you today?",
+            "GT": 96
+        },
+        {
+            "Index": 6,
+            "Query": "5 * 9 + 7 + 6 * 8 + 7 * 6 - 2 - 2 * 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Reasoning": "{87}",
+            "Response": "How can I assist you today?",
+            "GT": 128
+        },
+        {
+            "Index": 7,
+            "Query": "3 + 1 + 9 + 4 + 1 * 9 * 7 - 7 + 7 + 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Reasoning": "{139}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 89
+        }
+    ]
+}

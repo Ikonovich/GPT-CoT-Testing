@@ -9,6 +9,15 @@
     "Extraction Type": "two-stage",
     "Simple Prompt": true,
     "Test Path": "Results\\Secondary Test Results\\gpt-3.5-turbo\\two-stage-extraction\\mmlu stage two style one\\Simple-two-stage-gpt-35-suppressed_cot-mmlu-college.json",
+    "Total": 105,
+    "Total Accurate": 37,
+    "Total Accuracy": 35.23809523809524,
+    "Percent of Answers Containing CoT": 39.04761904761905,
+    "CoT Accuracy": 26.82926829268293,
+    "Non-CoT Accuracy": 40.625,
+    "ci_radius": 9.13750107665799,
+    "ci_upper": 44.37559631475323,
+    "ci_lower": 26.10059416143725,
     "Trials": [
         {
             "Query": "Let V be the set of all real polynomials p(x). Let transformations T, S be defined on V by T:p(x) -> xp(x) and S:p(x) -> p'(x) = d/dx p(x), and interpret (ST)(p(x)) as S(T(p(x))). Which of the following is true?",
@@ -77,8 +86,8 @@
                 "-2": "D"
             },
             "GT": "B",
-            "Answer": "C",
-            "Final Answer": "C"
+            "Answer": "",
+            "Final Answer": ""
         },
         {
             "Query": "Let k be the number of real solutions of the equation e^x + x - 2 = 0 in the interval [0, 1], and let n be the number of real solutions that are not in [0, 1]. Which of the following is true?",
@@ -1015,8 +1024,8 @@
                 "-sqrt(35)": "D"
             },
             "GT": "C",
-            "Answer": "C",
-            "Final Answer": "C"
+            "Answer": "",
+            "Final Answer": ""
         },
         {
             "Query": "Let R be a ring and let U and V be (two-sided) ideals of R. Which of the following must also be ideals of R ?\nI. {u + v : u \\in and v \\in V}\nII. {uv : u \\in U and v \\in V}\nIII. {x : x \\in U and x \\in V}",
@@ -1309,8 +1318,8 @@
                 "49": "D"
             },
             "GT": "C",
-            "Answer": "A",
-            "Final Answer": "A"
+            "Answer": "",
+            "Final Answer": ""
         },
         {
             "Query": "For which of the following rings is it possible for the product of two nonzero elements to be zero?",
@@ -1468,17 +1477,4 @@
         },
         {
             "Query": "Let T: R^2 -> R^2 be the linear transformation that maps the point (1, 2) to (2, 3) and the point (-1, 2) to (2, -3). Then T maps the point (2, 1) to",
-            "Response": "{C: (3, 2)}",
-            "Extract-Response": "{C}",
-            "Options": {
-                "(1, 6)": "A",
-                "(-1, 4)": "B",
-                "(3, 2)": "C",
-                "(-4, 3)": "D"
-            },
-            "GT": "A",
-            "Answer": "C",
-            "Final Answer": "C"
-        }
-    ]
-}
+            "Response": "{C: (3

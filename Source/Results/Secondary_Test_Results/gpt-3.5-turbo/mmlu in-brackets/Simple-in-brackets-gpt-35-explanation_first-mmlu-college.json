@@ -9,6 +9,15 @@
     "Extraction Type": "in-brackets",
     "Simple Prompt": true,
     "Test Path": "Results\\Secondary Test Results\\gpt-3.5-turbo\\mmlu in-brackets\\Simple-in-brackets-gpt-35-explanation_first-mmlu-college.json",
+    "Total": 105,
+    "Total Accurate": 42,
+    "Total Accuracy": 40.0,
+    "Percent of Answers Containing CoT": 100.0,
+    "CoT Accuracy": 40.0,
+    "Non-CoT Accuracy": "N/A",
+    "ci_radius": 9.370592297181645,
+    "ci_upper": 49.370592297181645,
+    "ci_lower": 30.629407702818355,
     "Trials": [
         {
             "GT": "D",
@@ -277,8 +286,8 @@
                 "2": "C",
                 "3": "D"
             },
-            "Answer": "D",
-            "Final Answer": "D"
+            "Answer": "",
+            "Final Answer": ""
         },
         {
             "GT": "B",
@@ -937,8 +946,8 @@
                 "6": "C",
                 "7": "D"
             },
-            "Answer": "D",
-            "Final Answer": "D"
+            "Answer": "A",
+            "Final Answer": "A"
         },
         {
             "GT": "D",
@@ -1327,8 +1336,8 @@
                 "8": "C",
                 "9": "D"
             },
-            "Answer": "C",
-            "Final Answer": "C"
+            "Answer": "A",
+            "Final Answer": "A"
         },
         {
             "GT": "C",
@@ -1402,8 +1411,8 @@
                 "31": "C",
                 "49": "D"
             },
-            "Answer": "A",
-            "Final Answer": "A"
+            "Answer": "B",
+            "Final Answer": "B"
         },
         {
             "GT": "C",
@@ -1522,8 +1531,8 @@
                 "0 or 1": "C",
                 "1, 2, or 3": "D"
             },
-            "Answer": "B",
-            "Final Answer": "B"
+            "Answer": "A",
+            "Final Answer": "A"
         },
         {
             "GT": "C",
@@ -1575,15 +1584,4 @@
             "Index": 104,
             "Extract-Response": "None",
             "Query": "Let T: R^2 -> R^2 be the linear transformation that maps the point (1, 2) to (2, 3) and the point (-1, 2) to (2, -3). Then T maps the point (2, 1) to",
-            "Response": "We can use the fact that any linear transformation can be represented by a matrix. Let's call this matrix A. Then we know that:\n\nA * [1, 2]^T = [2, 3]^T\nA * [-1, 2]^T = [2, -3]^T\n\nwhere \"^T\" denotes the transpose of a vector. We can write this system of equations as:\n\n[1  2]   [a  c]^T   [2  2]^T\n[-1 2] * [b  d]   = [3 -3]\n\nSolving for the elements of A, we get:\n\na = 2, b = -1, c = 1, d = -2\n\nSo the matrix representation of T is:\n\nA = [2 -1]\n    [1 -2]\n\nTo find where T maps the point (2, 1), we can simply multiply it by the matrix A:\n\nA * [2, 1]^T = [3, -3]^T\n\nTherefore, the answer is {D: (-4, 3)}.",
-            "Options": {
-                "(1, 6)": "A",
-                "(-1, 4)": "B",
-                "(3, 2)": "C",
-                "(-4, 3)": "D"
-            },
-            "Answer": "D",
-            "Final Answer": "D"
-        }
-    ]
-}
+            "Response": "We can use the fact that any linear transformation can be represented by a matrix. Let's call this matrix A. Then we know that:\n\nA * [1, 2]^T = [2, 3]^T\nA * [-1, 2]^T = [2, -3]^T\n\nwhere \"^T\" denotes the transpose of a vector. We can write this system of equations as:\n\n[1  2]   [a  c]^T   [2  2]^T\n[-1 2] * [b  d]   = [3 -3]\n\nSolving for the elements of A, we get:\n\na = 2, b = -1, c = 1, d = -2\n\nSo the matrix representation of T is:\n\nA = [2 -1]\n    [1 -2]\n\nTo find where T maps the point (2, 1), we can simply multiply it by the matrix A:\n\nA * [2, 1]^T = [3, -3]^T\n\nT

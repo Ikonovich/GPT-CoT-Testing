@@ -9,6 +9,15 @@
     "Extraction Type": "two-stage",
     "Simple Prompt": true,
     "Test Path": "Results\\Secondary Test Results\\gpt-3.5-turbo\\two-stage-extraction\\mmlu stage two style one\\Simple-two-stage-gpt-35-zero_shot_cot-mmlu-high-school.json",
+    "Total": 270,
+    "Total Accurate": 140,
+    "Total Accuracy": 51.85185185185185,
+    "Percent of Answers Containing CoT": 100.0,
+    "CoT Accuracy": 51.85185185185185,
+    "Non-CoT Accuracy": "N/A",
+    "ci_radius": 5.959998070081627,
+    "ci_upper": 57.81184992193347,
+    "ci_lower": 45.89185378177022,
     "Trials": [
         {
             "Query": "Joe was in charge of lights for a dance. The red light blinks every two seconds, the yellow light every three seconds, and the blue light every five seconds. If we include the very beginning and very end of the dance, how many times during a seven minute dance will all the lights come on at the same time? (Assume that all three lights blink simultaneously at the very beginning of the dance.)",
@@ -1323,8 +1332,8 @@
                 "43": "D"
             },
             "GT": "B",
-            "Answer": "C",
-            "Final Answer": "C"
+            "Answer": "",
+            "Final Answer": ""
         },
         {
             "Query": "Let $f(x)=3x+4$ and $g(x)=2x-3$. If $h(x)=f(g(x))$, then what is the inverse of $h(x)$?",
@@ -1855,8 +1864,8 @@
                 "0.667": "D"
             },
             "GT": "C",
-            "Answer": "B",
-            "Final Answer": "B"
+            "Answer": "",
+            "Final Answer": ""
         },
         {
             "Query": "How many positive and negative integers is $12$ a multiple of?",
@@ -3605,8 +3614,8 @@
                 "-48": "D"
             },
             "GT": "D",
-            "Answer": "D",
-            "Final Answer": "D"
+            "Answer": "",
+            "Final Answer": ""
         },
         {
             "Query": "Consider two positive even integers less than $15$ (not necessarily distinct). When the sum of these two numbers is added to their product, how many different possible values may result?",
@@ -3778,17 +3787,4 @@
         },
         {
             "Query": "When the expression $-2x^2-20x-53$ is written in the form $a(x+d)^2+e$, where $a$, $d$, and $e$ are constants, what is the sum $a+d+e$?",
-            "Response": "We can start by completing the square. First, we factor out the $-2$ from the quadratic: $$-2x^2-20x-53=-2(x^2+10x)-53.$$ To complete the square, we need to add and subtract $(10/2)^2=25$ inside the parentheses: $$-2(x^2+10x+25-25)-53=-2(x+5)^2+47.$$ Therefore, $a=-2$, $d=5$, and $e=47$, so $a+d+e=-2+5+47=\\boxed{\\textbf{(C) }6}$.",
-            "Extract-Response": "{C}",
-            "Options": {
-                "-80": "A",
-                "0": "B",
-                "6": "C",
-                "53": "D"
-            },
-            "GT": "B",
-            "Answer": "C",
-            "Final Answer": "C"
-        }
-    ]
-}
+            "Response": "We can start by completing the square. First, we factor out the $-2$ from the quadratic: $$-2x^2-20x-53=-2(x^2+10x)-53.$$ To complete the square, we need to add and subtract $(10/2)^2=25$ inside the parentheses: $$-2(x^2+10x+25-25)-53=-2(x+5)^2+47.$$ Therefore, $a=-2$, $d=5$, and $e=47$, so $a+d+e=-2+5+47=\\boxed{\\tex

@@ -9,6 +9,15 @@
     "Extraction Type": "in-brackets",
     "Simple Prompt": true,
     "Test Path": "Results\\Secondary Test Results\\gpt-3.5-turbo\\mmlu in-brackets\\Simple-in-brackets-gpt-35-zero_shot_cot-mmlu-college.json",
+    "Total": 105,
+    "Total Accurate": 51,
+    "Total Accuracy": 48.57142857142857,
+    "Percent of Answers Containing CoT": 100.0,
+    "CoT Accuracy": 48.57142857142857,
+    "Non-CoT Accuracy": "N/A",
+    "ci_radius": 9.55991631762538,
+    "ci_upper": 58.13134488905395,
+    "ci_lower": 39.01151225380319,
     "Trials": [
         {
             "GT": "D",
@@ -592,8 +601,8 @@
                 "3": "C",
                 "4": "D"
             },
-            "Answer": "B",
-            "Final Answer": "B"
+            "Answer": "A",
+            "Final Answer": "A"
         },
         {
             "GT": "D",
@@ -1492,8 +1501,8 @@
                 "sqrt(2)/4": "C",
                 "1/sqrt(2)": "D"
             },
-            "Answer": "A",
-            "Final Answer": "A"
+            "Answer": "E",
+            "Final Answer": "E"
         },
         {
             "GT": "D",
@@ -1575,15 +1584,4 @@
             "Index": 104,
             "Extract-Response": "None",
             "Query": "Let T: R^2 -> R^2 be the linear transformation that maps the point (1, 2) to (2, 3) and the point (-1, 2) to (2, -3). Then T maps the point (2, 1) to",
-            "Response": "We can start by finding the matrix representation of T. Let's call the matrix A. We know that T(1,2) = (2,3) and T(-1,2) = (2,-3), so we can set up the following system of equations:\n\nA * [1  -1] = [2  2]\n    [2   2]     [3 -3]\n\nSolving for A, we get:\n\nA = [2  2]\n    [1 -3]\n\nNow, we can use this matrix to find T(2,1). We have:\n\nT(2,1) = A * [2]\n            [1]\n\nMultiplying, we get:\n\nT(2,1) = [2  2] * [2] = [6]\n         [1 -3]   [1]   [-4]\n\nTherefore, the answer is {D: (-4, 3)}.",
-            "Options": {
-                "(1, 6)": "A",
-                "(-1, 4)": "B",
-                "(3, 2)": "C",
-                "(-4, 3)": "D"
-            },
-            "Answer": "D",
-            "Final Answer": "D"
-        }
-    ]
-}
+            "Response": "We can start by finding the matrix representation of T. Let's call the matrix A. We know that T(1,2) = (2,3) and T(-1,2) = (2,-3), so we can set up the following system of equations:\n\nA * [1  -1] = [2  2]\n    [2   2]     [3 -3]\n\nSolving for A, we get:\n\nA = [2  2]\n    [1 -3]\n\nNow, we can use this matrix to find T(2,1). We have:\n\nT(2,1) = A * [2]\n            [1]\n\nMultiplying, we get:\n\nT(2,1) = [2  2] * [2] = [6]\n        
