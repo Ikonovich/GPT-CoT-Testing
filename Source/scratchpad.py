@@ -1,6 +1,8 @@
 from json import JSONDecodeError
 from os import path
 
+from regex import regex
+
 from config import DATASET_FOLDER, DATASETS, RESULTS_FOLDER, model_index_map, modality_index_map, dataset_index_map, \
     MODIFIED_COT_DATASETS
 from utils.file_utils import load_dataset, read_json, write_json
@@ -101,6 +103,12 @@ def scratchpad_test(datum: dict, model_one: str, model_two: str, modality: str, 
     prompt = build_prompt(question=x, modality=modality, use_simple_prompt=True,
                           bracket_extract=True)
     results["Query"] = prompt
+
+    if 'step' in dataset:
+        results["Dataset"] = "stepwise"
+        results["Steps"] = regex.findall(r'-?\d+\.?\d*', dataset)[0]
+    else:
+        results["Dataset"] = dataset
 
     # Run the internal reasoning step.
     if dataset in MODIFIED_COT_DATASETS:

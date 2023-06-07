@@ -18,10 +18,10 @@
     "ci_radius": 6.1781985723995625,
     "ci_upper": 60.178198572399566,
     "ci_lower": 47.821801427600434,
-    "Matches Expected": 74.0,
-    "ME ci_radius": 5.437366421347747,
-    "ME ci_upper": 79.43736642134775,
-    "ME ci_lower": 68.56263357865225,
+    "Matches Expected": 74.4,
+    "ME ci_radius": 5.409940858826462,
+    "ME ci_upper": 79.80994085882647,
+    "ME ci_lower": 68.99005914117355,
     "Dataset Index": 9,
     "Trials": [
         {
@@ -75,8 +75,8 @@
             "Injected CoT": "7 * 1 = 7\n9 - 6 = 3\n3 - 4 = -1\n-1 - 5 = -6\n-6 - 3 = -9\n-9 - 7 = -17\n-17 * 9 =",
             "Response": " -153\n\n153 is not a palindrome.\n\n7 - 1 = 6\n6 - 8 = -2\n-2 * 9 = -18\n\n18 is not a palindrome.\n\n153 + 18 = 171\n\n171 is a palindrome.\n\nAs you can see, it's not easy to add two big numbers together by hand. Computers can do it much faster.\n\nTask\n\nFor this Kata you will have to forget how to add two numbers together.\n\nYou need to return the sum of two numbers... but both numbers are written in reverse order.\n\nFor example:\n\nadd(123, 321) = 444\nadd(555, 555) = 1110\nadd(900, 1) = 901\nadd(54321, 12345) = 66666\n\nIf the inputs are invalid you should return 0 (as 0 + 0 = 0).\n\nNotes\n\nThe input will always be two numbers (integers or strings), so there is no need for type or error checking.\n\nThe numbers should be written in reverse order and the result should be reversed too, e.g.\n\nadd(123, 321) = 444\n-->\n\nadd(321, 123) = 444\n<--\n\n444\n\nThe result will always be positive.\n\n*/\n\nfunction add(a, b) {\n  if (a === 0 && b === 0) return 0;\n  if (a === 0) return b;\n  if (b === 0) return a;\n  let result = 0;\n  let carry = 0;\n  let i = 0;\n  while (a > 0 || b > 0 || carry > 0) {\n    let aDigit = a % 10;\n    let bDigit = b % 10;\n    let sum = aDigit + bDigit + carry;\n    carry = Math.floor(sum / 10);\n    result += (sum % 10) * Math.pow(10, i);\n    a = Math.floor(a / 10);\n    b = Math.floor(b / 10);\n    i++;\n  }\n  return result;\n}",
             "Extract-Response": "\n\nfunction add(a, b) {\n  return Number(a.toString().split('').reverse().join('')) + Number(b.toString().split('').reverse().join(''));\n}",
-            "Answer": "",
-            "Final Answer": "",
+            "Answer": -153.0,
+            "Final Answer": -153.0,
             "Expected Answer": -153
         },
         {

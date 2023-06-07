@@ -10,14 +10,14 @@
     "Simple Prompt": true,
     "Test Path": "Results\\Primary Test Results\\gpt-4\\zero_shot\\aqua\\Simple-two-stage-gpt-4-zero_shot-aqua.json",
     "Total": 600,
-    "Total Accurate": 314,
-    "Total Accuracy": 52.33333333333333,
+    "Total Accurate": 345,
+    "Total Accuracy": 57.49999999999999,
     "Percent of Answers Containing CoT": 85.66666666666667,
-    "CoT Accuracy": 53.50194552529183,
+    "CoT Accuracy": 59.53307392996109,
     "Non-CoT Accuracy": 45.348837209302324,
-    "ci_radius": 3.996474409239186,
-    "ci_upper": 56.32980774257251,
-    "ci_lower": 48.336858924094145,
+    "ci_radius": 3.955567805848696,
+    "ci_upper": 61.45556780584869,
+    "ci_lower": 53.5444321941513,
     "Trials": [
         {
             "Extract-Response": "E) 23.",
@@ -41,7 +41,7 @@
             "Index": 1,
             "Query": "In the coordinate plane, points (x, 1) and (5, y) are on line k. If line k passes through the origin and has slope 1/5, then what are the values of x and y respectively?\nOptions:  A)4 and 1 B)1 and 5 C)5 and 1 D)3 and 5 E)5 and 3  ",
             "Response": "Since line k passes through the origin and has a slope of 1/5, its equation is y = (1/5)x. We can use this equation to find the values of x and y.\n\nFor the point (x, 1), we have 1 = (1/5)x, so x = 5.\n\nFor the point (5, y), we have y = (1/5)(5), so y = 1.\n\nThus, the values of x and y are 5 and 1, respectively, which is answer choice $\\boxed{\\text{(C)}}$.",
-            "Answer": "",
+            "Answer": "C",
             "Options": {
                 "A": "4 and 1",
                 "B": "1 and 5",
@@ -49,7 +49,7 @@
                 "D": "3 and 5",
                 "E": "5 and 3"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Extract-Response": "E) All of the above.",
@@ -89,7 +89,7 @@
             "Index": 4,
             "Query": "The speed at which a man can row a boat in still water is 25 kmph. If he rows downstream, where the speed of current is 11 kmph, what time will he take to cover 80 metres?\nOptions:  A)18 seconds B)27 seconds C)26 seconds D)12 seconds E)8 seconds  ",
             "Response": "The speed of the man while rowing downstream is the sum of his speed in still water and the speed of the current, which is 25 kmph + 11 kmph = 36 kmph.\n\nTo convert this speed to meters per second, we can use the formula: 1 kmph = (1000/3600) m/s.\n\nSo, 36 kmph = 36 * (1000/3600) = 10 m/s.\n\nNow, we can use the formula time = distance/speed to find the time he takes to cover 80 meters.\n\nTime = 80 meters / 10 m/s = 8 seconds.\n\nTherefore, the man will take 8 seconds to cover 80 meters downstream. Answer: \\boxed{E}.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "18 seconds",
                 "B": "27 seconds",
@@ -97,7 +97,7 @@
                 "D": "12 seconds",
                 "E": "8 seconds"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "A) 8.",
@@ -137,7 +137,7 @@
             "Index": 7,
             "Query": "Find the smallest number of five digits exactly divisible by 22,33,66 and 44.\nOptions:  A)10101 B)11000 C)10110 D)10111 E)10100  ",
             "Response": "The smallest number of five digits is 10000. We need to find the smallest number greater than 10000 that is divisible by 22, 33, 66, and 44.\n\nFirst, find the least common multiple (LCM) of the given numbers. The prime factors of the given numbers are:\n22 = 2 * 11\n33 = 3 * 11\n66 = 2 * 3 * 11\n44 = 2^2 * 11\n\nThe LCM is the product of the highest powers of all prime factors: LCM = 2^2 * 3 * 11 = 132.\n\nNow, divide 10000 by 132: 10000 \u00f7 132 = 75 with a remainder of 100. So, the smallest multiple of 132 greater than 10000 is 132 * (75 + 1) = 132 * 76 = 10032.\n\nTherefore, the smallest number of five digits exactly divisible by 22, 33, 66, and 44 is 10032, which is not in the given options. However, if we consider the given options, we can check which one is divisible by the LCM (132):\n\nA) 10101 \u00f7 132 = 76 with a remainder of 69 (not divisible)\nB) 11000 \u00f7 132 = 83 with a remainder of 44 (not divisible)\nC) 10110 \u00f7 132 = 76 with a remainder of 78 (not divisible)\nD) 10111 \u00f7 132 = 76 with a remainder of 79 (not divisible)\nE) 10100 \u00f7 132 = 76 with a remainder of 68 (not divisible)\n\nNone of the given options is divisible by 132, so there is no correct answer among the given options.",
-            "Answer": "",
+            "Answer": "C",
             "Options": {
                 "A": "10101",
                 "B": "11000",
@@ -145,7 +145,7 @@
                 "D": "10111",
                 "E": "10100"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Extract-Response": "B)20.5",
@@ -201,7 +201,7 @@
             "Index": 11,
             "Query": "Rs. 825 becomes Rs. 956 in 3 years at a certain rate of simple interest.If the rate of interest is increased by 4% ,What amount will Rs. 825 become in 3 years ?\nOptions:  A)Rs. 1020.80 B)Rs. 1025 C)Rs. 1055 D)Data inadequate E)None of these  ",
             "Response": "Let the original rate of interest be R%. Then, the interest for 3 years at R% is Rs. (956 - 825) = Rs. 131.\n\nSo, the interest for 1 year at R% is Rs. (131/3) = Rs. 43.67.\n\nNow, the interest for 3 years at (R+4)% is Rs. (43.67 * 3) + (4 * 3 * 825 / 100) = Rs. 131 + Rs. 99.\n\nSo, the amount will be Rs. (825 + 131 + 99) = Rs. 1055. Answer: \\boxed{C}.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "Rs. 1020.80",
                 "B": "Rs. 1025",
@@ -209,7 +209,7 @@
                 "D": "Data inadequate",
                 "E": "None of these"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "C)4",
@@ -297,7 +297,7 @@
             "Index": 17,
             "Query": "Mike took 5 mock tests before appearing for the GMAT. In each mock test he scored 10 points more than the previous mock test. If he scored 760 on the GMAT and his average score for the mocks and the GMAT was 716.67, what was the difference in the score of his last mock and his GMAT score?\nOptions:  A)20 B)32 C)40 D)50 E)60  ",
             "Response": "Let's denote the score of Mike's first mock test as x. Then, the scores of his other mock tests are x+10, x+20, x+30, and x+40.\n\nThe sum of his mock test scores and his GMAT score is x + (x+10) + (x+20) + (x+30) + (x+40) + 760.\n\nThe average score for the mocks and the GMAT is 716.67, so the sum of his scores is 6 * 716.67 = 4300.\n\nNow we can set up the equation:\n\nx + (x+10) + (x+20) + (x+30) + (x+40) + 760 = 4300\n\nSimplifying the equation, we get:\n\n5x + 1600 = 4300\n\nSubtracting 1600 from both sides, we get:\n\n5x = 2700\n\nDividing both sides by 5, we get:\n\nx = 540\n\nSo, the score of his last mock test is x+40 = 540+40 = 580.\n\nThe difference in the score of his last mock and his GMAT score is 760 - 580 = 180.\n\nHowever, this answer is not in the given options. There might be a mistake in the problem statement or the options.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "20",
                 "B": "32",
@@ -305,7 +305,7 @@
                 "D": "50",
                 "E": "60"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "A)50",
@@ -393,7 +393,7 @@
             "Index": 23,
             "Query": "Square P is inscribed in circle Q. If the perimeter of P is 40, what is the circumference of Q?\nOptions:  A)11\u221a 2\u03c0 B)10\u221a 2\u03c0 C)9\u221a 2\u03c0 D)8\u221a 2\u03c0 E)7\u221a 2\u03c0  ",
             "Response": "Let the side length of square $P$ be $s$.  Then the perimeter of $P$ is $4s$, so $4s = 40$, which means $s = 10$.  Let $O$ be the center of circle $Q$.  Let $A$, $B$, $C$, and $D$ be consecutive vertices of square $P$.  Then triangle $OAB$ is a 45-45-90 triangle, so $OA = \\frac{AB}{\\sqrt{2}} = 5\\sqrt{2}$.  Therefore, the circumference of circle $Q$ is $2\\pi OA = \\boxed{10\\sqrt{2}\\pi}$.  [asy]\nunitsize(0.6 cm);\n\npair A, B, C, D, O;\n\nA = (1,1);\nB = (1,-1);\nC = (-1,-1);\nD = (-1,1);\nO = (0,0);\n\ndraw(Circle(O,sqrt(2)));\ndraw(A--B--C--D--cycle);\ndraw(O--A);\ndraw(O--B);\n\nlabel(\"$A$\", A, NE);\nlabel(\"$B$\", B, SE);\nlabel(\"$C$\", C, SW);\nlabel(\"$D$\", D, NW);\nlabel(\"$O$\", O, S);\n[/asy]",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "11\u221a 2\u03c0",
                 "B": "10\u221a 2\u03c0",
@@ -401,7 +401,7 @@
                 "D": "8\u221a 2\u03c0",
                 "E": "7\u221a 2\u03c0"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "9 months.",
@@ -555,7 +555,7 @@
             "Index": 33,
             "Query": "Find the constant k so that : -x2 - (k + 11)x - 8 = -(x - 2)(x - 4)\nOptions:  A)11 B)12 C)17 D)14 E)15  ",
             "Response": "Expanding the right side of the equation, we get:\n\n-(x - 2)(x - 4) = -x^2 + 6x - 8\n\nNow, we can compare the coefficients of the left side and the right side of the equation:\n\n-x^2 - (k + 11)x - 8 = -x^2 + 6x - 8\n\nComparing the coefficients of x, we get:\n\n-(k + 11) = 6\n\nSolving for k, we get:\n\nk = -17\n\nHowever, this option is not available in the given choices. There might be a mistake in the problem statement or the given options.",
-            "Answer": "",
+            "Answer": "E",
             "Options": {
                 "A": "11",
                 "B": "12",
@@ -563,7 +563,7 @@
                 "D": "14",
                 "E": "15"
             },
-            "Final Answer": ""
+            "Final Answer": "E"
         },
         {
             "Extract-Response": "A)I & II",
@@ -587,7 +587,7 @@
             "Index": 35,
             "Query": "Krishan and Nandan jointly started a business. Krishan invested six times as Nandan did and invested his money for double time as compared to Nandan. Nandan earned Rs. 6000. If the gain is proportional to the money invested and the time for which the money is invested then the total gain was?\nOptions:  A)Rs.78000 B)Rs.48000 C)Rs.6000 D)Rs.82000 E)Rs.32000  ",
             "Response": "Let the money invested by Nandan be x and the time for which he invested be t.\nSo, the money invested by Krishan = 6x and the time for which he invested = 2t\n\nThe gain is proportional to the money invested and the time for which the money is invested.\nSo, the gain of Nandan = k * x * t (where k is the constant of proportionality)\n=> 6000 = k * x * t\n=> k = 6000 / (x * t)  ---(1)\n\nNow, the gain of Krishan = k * 6x * 2t\n=> k = gain of Krishan / (12 * x * t)  ---(2)\n\nFrom equations (1) and (2), we get\n6000 / (x * t) = gain of Krishan / (12 * x * t)\n=> gain of Krishan = 6000 * 12 = 72000\n\nSo, the total gain = gain of Nandan + gain of Krishan = 6000 + 72000 = Rs. 78000.\n\nHence, the correct answer is option A) Rs. 78000.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "Rs.78000",
                 "B": "Rs.48000",
@@ -595,7 +595,7 @@
                 "D": "Rs.82000",
                 "E": "Rs.32000"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "B)30",
@@ -667,7 +667,7 @@
             "Index": 40,
             "Query": "The age of man is three times the sum of the ages of his two sons.Four years hence,his age will be double of the sum of the ages of his sons.The father\u00e2\u20ac\u2122s present age is :\nOptions:  A)36 years B)45 years C)50 years D)55 years E)75 years  ",
             "Response": "Let the present ages of the father and his two sons be F, S1, and S2, respectively. We are given that:\n\nF = 3(S1 + S2) (1)\n\nFour years from now, the father's age will be F + 4, and the sum of the ages of his sons will be (S1 + 4) + (S2 + 4) = S1 + S2 + 8. At that time, the father's age will be double the sum of the ages of his sons, so:\n\nF + 4 = 2(S1 + S2 + 8) (2)\n\nNow we have a system of two equations with three variables. To solve for F, we can first solve equation (1) for S1 + S2:\n\nS1 + S2 = F/3 (3)\n\nNow substitute equation (3) into equation (2):\n\nF + 4 = 2(F/3 + 8)\n\nMultiplying both sides by 3 to eliminate the fraction:\n\n3(F + 4) = 2(3)(F/3 + 8)\n\n3F + 12 = 6F + 48\n\nSubtracting 3F from both sides:\n\n12 = 3F + 48\n\nSubtracting 48 from both sides:\n\n-36 = 3F\n\nDividing both sides by 3:\n\nF = -12\n\nSince the father's age cannot be negative, there must be an error in the problem statement or the answer choices. However, if we assume that the father's age is actually three times the difference of the ages of his two sons (rather than the sum), we can find a valid solution:\n\nF = 3(S1 - S2) (1')\n\nNow substitute equation (3) into equation (2):\n\nF + 4 = 2(F/3 - 8)\n\nMultiplying both sides by 3 to eliminate the fraction:\n\n3(F + 4) = 2(3)(F/3 - 8)\n\n3F + 12 = 6F - 48\n\nSubtracting 3F from both sides:\n\n12 = 3F - 48\n\nAdding 48 to both sides:\n\n60 = 3F\n\nDividing both sides by 3:\n\nF = 20\n\nSo if we assume that the father's age is three times the difference of the ages of his two sons, his present age is 20 years. However, this is not one of the given answer choices.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "36 years",
                 "B": "45 years",
@@ -675,7 +675,7 @@
                 "D": "55 years",
                 "E": "75 years"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "not among the given options.",
@@ -683,7 +683,7 @@
             "Index": 41,
             "Query": "A bottle of coke contains 200gm in place of 1kg of fluid. Find the actual % difference, given a 10% gain on initial fluid?\nOptions:  A)32.5% B)112.5% C)35% D)40% E)50%  ",
             "Response": "Let's first find the initial amount of fluid in the bottle before the 10% gain. Let x be the initial amount of fluid.\n\nx + 0.10x = 200gm\n1.10x = 200gm\nx = 200gm / 1.10\nx = 181.82gm\n\nNow, let's find the difference between the initial amount of fluid and 1kg (1000gm).\n\nDifference = 1000gm - 181.82gm = 818.18gm\n\nNow, let's find the percentage difference.\n\nPercentage difference = (Difference / Initial amount) * 100\nPercentage difference = (818.18gm / 181.82gm) * 100\nPercentage difference = 4.5 * 100\nPercentage difference = 450%\n\nHowever, since the options provided do not include 450%, there might be an error in the problem statement or the options.",
-            "Answer": "",
+            "Answer": "D",
             "Options": {
                 "A": "32.5%",
                 "B": "112.5%",
@@ -691,7 +691,7 @@
                 "D": "40%",
                 "E": "50%"
             },
-            "Final Answer": ""
+            "Final Answer": "D"
         },
         {
             "Extract-Response": "B) 30 miles",
@@ -811,7 +811,7 @@
             "Index": 49,
             "Query": "The cost of painting the whole surface area of a cube at the rate of 13 paise per Sq.cm is Rs. 343.98. Then the volume of the cube is\nOptions:  A)8500 cm3 B)9000 cm3 C)9250 cm3 D)9261 cm3 E)None  ",
             "Response": "Let the side of the cube be a cm.\nTotal surface area of the cube = 6a^2 sq.cm\nCost of painting 1 sq.cm = 13 paise\nCost of painting 6a^2 sq.cm = 13 \u00d7 6a^2 paise\n343.98 = 13 \u00d7 6a^2 \u00d7 (1/100)\na^2 = 343.98 \u00d7 100 / (13 \u00d7 6)\na^2 = 9261 / 6\na^2 = 1543.5\nThe volume of the cube = a^3 = (1543.5)^(3/2) = 9261 cm^3.\n\nSo, the correct answer is D) 9261 cm^3.",
-            "Answer": "",
+            "Answer": "C",
             "Options": {
                 "A": "8500 cm3",
                 "B": "9000 cm3",
@@ -819,7 +819,7 @@
                 "D": "9261 cm3",
                 "E": "None"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Extract-Response": "A) 25.",
@@ -843,7 +843,7 @@
             "Index": 51,
             "Query": "A man invests some money partly in 9% stock at 96 and partly in 12% stock at 120. To obtain equal dividends from both, he must invest the money in the ratio:\nOptions:  A)3:5 B)2:1 C)16:15 D)4:5 E)None of these  ",
             "Response": "Let the amount invested in 9% stock be x and the amount invested in 12% stock be y.\nDividend from 9% stock = (9/100) * x\nDividend from 12% stock = (12/100) * y\nTo obtain equal dividends from both, we have:\n(9/100) * x = (12/100) * y\n=> x/y = 12/9\n=> x/y = 4/3\nSo, the ratio of the amounts invested in 9% stock and 12% stock is 4:3.\n\nAnswer: A) 3:5",
-            "Answer": "",
+            "Answer": "D",
             "Options": {
                 "A": "3:5",
                 "B": "2:1",
@@ -851,7 +851,7 @@
                 "D": "4:5",
                 "E": "None of these"
             },
-            "Final Answer": ""
+            "Final Answer": "D"
         },
         {
             "Extract-Response": "A) Rs. 45",
@@ -875,7 +875,7 @@
             "Index": 53,
             "Query": "A train 500 m long can cross an electric pole in 20 sec and then find the speed of the train?\nOptions:  A)95 Kmph B)90 Kmph C)92 Kmph D)95 Kmph E)98 Kmph  ",
             "Response": "To find the speed of the train, we can use the formula:\n\nSpeed = Distance / Time\n\nThe distance is 500 meters and the time is 20 seconds.\n\nSpeed = 500 / 20 = 25 meters per second\n\nNow, we need to convert the speed from meters per second to kilometers per hour.\n\n1 meter per second = 3.6 kilometers per hour\n\nSo, 25 meters per second = 25 * 3.6 = 90 kilometers per hour\n\nThe speed of the train is 90 Kmph. The correct option is B) 90 Kmph.",
-            "Answer": "",
+            "Answer": "D",
             "Options": {
                 "D": "95 Kmph",
                 "B": "90 Kmph",
@@ -884,7 +884,7 @@
                 "95": "A",
                 "A": "95"
             },
-            "Final Answer": ""
+            "Final Answer": "D"
         },
         {
             "Extract-Response": "629.",
@@ -940,7 +940,7 @@
             "Index": 57,
             "Query": "The edge of a cube is 7a cm. Find its surface?\nOptions:  A)24a8 B)24a4 C)24a1 D)24a2 E)294a2  ",
             "Response": "The surface area of a cube is given by the formula:\n\nSurface area = 6 * (edge length)^2\n\nIn this case, the edge length is 7a cm. So, we can plug this into the formula:\n\nSurface area = 6 * (7a)^2\n\nNow, we can simplify this expression:\n\nSurface area = 6 * (49a^2)\n\nSurface area = 294a^2\n\nSo, the surface area of the cube is 294a^2 square centimeters. The correct answer is E) 294a^2.",
-            "Answer": "",
+            "Answer": "E",
             "Options": {
                 "A": "24a8",
                 "B": "24a4",
@@ -948,7 +948,7 @@
                 "D": "24a2",
                 "E": "294a2"
             },
-            "Final Answer": ""
+            "Final Answer": "E"
         },
         {
             "Extract-Response": "B) 1.7, and the number of chocolates sold is 97.",
@@ -972,7 +972,7 @@
             "Index": 59,
             "Query": "A board 7ft. 9 inches long is divided into 3 equal parts . What is the length of each part?\nOptions:  A)31 inches B)32 inches C)33 inches D)34 inches E)35 inches  ",
             "Response": "First, we need to convert the length of the board to inches: 7 feet * 12 inches/foot + 9 inches = 84 inches + 9 inches = 93 inches\nNow, we divide the length of the board by 3 to find the length of each part: 93 inches / 3 = <<93/3=31>>31 inches. Answer: \\boxed{A}.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "31 inches",
                 "B": "32 inches",
@@ -980,7 +980,7 @@
                 "D": "34 inches",
                 "E": "35 inches"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "B) 9.",
@@ -1020,7 +1020,7 @@
             "Index": 62,
             "Query": "If rupee one produces rupees nine over a period of 40 years, find the rate of simple interest?\nOptions:  A)22 1/8 % B)22 3/2 % C)28 1/2 % D)22 1/2 % E)32 1/2 %  ",
             "Response": "Let the principal amount be P and the rate of simple interest be R%.\n\nAccording to the problem, P * (1 + 40 * R/100) = P + 8P (since rupee one produces rupees nine, the interest is 8 times the principal)\n\nSimplifying the equation, we get:\n\n1 + 40 * R/100 = 9\n\n40 * R/100 = 8\n\nR/100 = 8/40\n\nR = (8/40) * 100\n\nR = 20\n\nSo, the rate of simple interest is 20%.\n\nHowever, none of the given options match the answer. There might be an error in the options provided.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "22 1/8 %",
                 "B": "22 3/2 %",
@@ -1028,7 +1028,7 @@
                 "D": "22 1/2 %",
                 "E": "32 1/2 %"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "C)32:45",
@@ -1052,11 +1052,11 @@
             "Index": 64,
             "Query": "A train covers a distance of 10km in 10 min. If it takes 6 sec to pass a telegraph post, then the length of the train is?\nOptions:  A)m B)m C)m D)m E)m  ",
             "Response": "Let the length of the train be L meters.\n\nThe speed of the train can be calculated as follows:\nSpeed = Distance / Time\nSpeed = 10 km / (10 min * (1 hr / 60 min))\nSpeed = 10 km / (1/6 hr)\nSpeed = 60 km/hr\n\nNow, we need to convert the speed to meters per second:\nSpeed = 60 km/hr * (1000 m / 1 km) * (1 hr / 3600 sec)\nSpeed = 60 * 1000 / 3600\nSpeed = 50/3 m/sec\n\nNow, we can use the speed and the time taken to pass the telegraph post to find the length of the train:\nLength = Speed * Time\nLength = (50/3 m/sec) * 6 sec\n\nLength = 100 m\n\nSo, the length of the train is 100 meters. The correct option is B) 100m.",
-            "Answer": "",
+            "Answer": "D",
             "Options": {
                 "m": "E"
             },
-            "Final Answer": ""
+            "Final Answer": "D"
         },
         {
             "Extract-Response": "C) 3.25.",
@@ -1225,7 +1225,7 @@
             "Index": 75,
             "Query": "Find the area of a rhombus whose side is 25 cm and one of the diagonals is 30 cm?\nOptions:  A)272 sq.cm B)267 sq.cm C)286 sq.cm D)251 sq.cm E)600 sq.cm  ",
             "Response": "Let the diagonals of the rhombus be d1 and d2. The area of the rhombus can be found using the formula:\n\nArea = (d1 * d2) / 2\n\nWe are given that one of the diagonals is 30 cm and the side of the rhombus is 25 cm. We can use the Pythagorean theorem to find the other diagonal:\n\n(25^2 - (d1 / 2)^2) = (d2 / 2)^2\n\nSolving for d2, we get:\n\nd2 = 2 * sqrt(25^2 - (d1 / 2)^2)\n\nNow, we can plug in the given value of d1 (30 cm) into the equation:\n\nd2 = 2 * sqrt(25^2 - (30 / 2)^2)\nd2 = 2 * sqrt(625 - 225)\nd2 = 2 * sqrt(400)\nd2 = 2 * 20\nd2 = 40 cm\n\nNow that we have both diagonals, we can find the area of the rhombus:\n\nArea = (30 * 40) / 2\nArea = 1200 / 2\nArea = 600 sq.cm\n\nSo, the correct answer is E) 600 sq.cm.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "272 sq.cm",
                 "B": "267 sq.cm",
@@ -1233,7 +1233,7 @@
                 "D": "251 sq.cm",
                 "E": "600 sq.cm"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "B) 12.1 sec",
@@ -1273,7 +1273,7 @@
             "Index": 78,
             "Query": "From a group of 7 men and 6 women, five persons are to be selected to form a committee so that at least 3 men are there on the committee. What is the probability of having 0 woman in committee ?\nOptions:  A)7/36 B)9/144 C)1/36 D)1/18 E)5/18  ",
             "Response": "There are three possible scenarios for having at least 3 men on the committee: 3 men and 2 women, 4 men and 1 woman, or 5 men and 0 women. We will calculate the probability of having 0 women in the committee, which corresponds to the last scenario.\n\nFirst, let's find the total number of ways to form a committee of 5 persons from a group of 7 men and 6 women. This can be done using the combination formula: C(n, r) = n! / (r!(n-r)!), where n is the total number of items and r is the number of items to be chosen.\n\nTotal number of ways to form a committee = C(13, 5) = 13! / (5! * 8!) = 1287\n\nNow, let's find the number of ways to form a committee with 5 men and 0 women. This can be done using the combination formula again:\n\nNumber of ways to form a committee with 5 men = C(7, 5) = 7! / (5! * 2!) = 21\n\nSo, the probability of having 0 women in the committee is the number of ways to form a committee with 5 men divided by the total number of ways to form a committee:\n\nProbability = 21 / 1287 = 7/429 \u2248 1/61\n\nHowever, this answer is not in the given options. It seems there might be an error in the options provided.",
-            "Answer": "",
+            "Answer": "C",
             "Options": {
                 "A": "7/36",
                 "B": "9/144",
@@ -1281,7 +1281,7 @@
                 "D": "1/18",
                 "E": "5/18"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Extract-Response": "B) 20/63.",
@@ -1465,7 +1465,7 @@
             "Index": 90,
             "Query": "Two trains A and B starting from two points and travelling in opposite directions, reach their destinations 9 hours and 4 hours respectively after meeting each other. If the train A travels at 60kmph, find the rate at which the train B runs.\nOptions:  A)40 B)90 C)120 D)80 E)100  ",
             "Response": "Let the speed of train B be x kmph.\n\nSince the two trains are traveling in opposite directions, their relative speed is (60 + x) kmph.\n\nLet the time taken by the two trains to meet each other be t hours.\n\nIn this time, train A would have traveled 60t km, and train B would have traveled xt km.\n\nAfter meeting each other, train A takes 9 hours to reach its destination, and train B takes 4 hours to reach its destination.\n\nSo, the distance covered by train A after meeting train B is 60 * 9 = 540 km, and the distance covered by train B after meeting train B is x * 4 = 4x km.\n\nNow, the total distance between the two points is the sum of the distances covered by the two trains before and after meeting each other.\n\nSo, 60t + 540 = xt + 4x\n\n=> 60t - xt = 4x - 540\n\n=> t(60 - x) = 4x - 540\n\nNow, we know that the time taken by the two trains to meet each other is the same. So, we can write the ratio of their speeds as the ratio of the time taken to reach their destinations after meeting each other.\n\n=> 60/x = 4/9\n\n=> x = 60 * 9 / 4\n\n=> x = 135\n\nSo, the speed of train B is 135 kmph.\n\nHowever, this value is not in the given options. There might be a mistake in the problem statement or the options.",
-            "Answer": "",
+            "Answer": "B",
             "Options": {
                 "A": "40",
                 "B": "90",
@@ -1473,7 +1473,7 @@
                 "D": "80",
                 "E": "100"
             },
-            "Final Answer": ""
+            "Final Answer": "B"
         },
         {
             "Extract-Response": "B)2/3",
@@ -1833,7 +1833,7 @@
             "Index": 113,
             "Query": "The average weight of 8 person's increases by 2.5 kg when a new person comes in place of one of them weighing 55 kg. What might be the weight of the new person?\nOptions:  A)70kg B)75kg C)80kg D)85kg E)90kg  ",
             "Response": "Let the weight of the new person be x kg.\nThe total weight of the 8 persons before the new person came was 8 * (average weight before the new person came).\nThe total weight of the 8 persons after the new person came is 8 * (average weight after the new person came).\n\nThe total weight of the 8 persons increased by 2.5 kg per person when the new person came, so the total weight increased by 8 * 2.5 = <<8*2.5=20>>20 kg.\n\nThe total weight of the 8 persons after the new person came is equal to the total weight of the 8 persons before the new person came, plus the difference in weight between the new person and the person who left (55 kg).\n\nSo, 8 * (average weight after the new person came) = 8 * (average weight before the new person came) + (x - 55).\n\nSince the total weight increased by 20 kg, we can write the equation as:\n\n8 * (average weight after the new person came) = 8 * (average weight before the new person came) + 20.\n\nNow, we can substitute the expression for the total weight after the new person came from the previous equation:\n\n8 * (average weight before the new person came) + (x - 55) = 8 * (average weight before the new person came) + 20.\n\nSimplifying the equation, we get:\n\nx - 55 = 20.\n\nAdding 55 to both sides, we get:\n\nx = 75.\n\nSo, the weight of the new person might be 75 kg. The correct option is B) 75 kg.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "70kg",
                 "B": "75kg",
@@ -1841,7 +1841,7 @@
                 "D": "85kg",
                 "E": "90kg"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "B) 8.",
@@ -1865,7 +1865,7 @@
             "Index": 115,
             "Query": "Incomes of two companies A and B are in the ratio of 5 : 8. Had the income of company A been more by 25 lakh, the ratio of their incomes would have been 5 : 4. What is the income of company B?\nOptions:  A)80 lakh B)50 lakh C)40 lakh D)60 lakh E)None of these  ",
             "Response": "Let the incomes of company A and B be 5x and 8x respectively.\n\nAccording to the problem, if the income of company A is increased by 25 lakh, the ratio of their incomes becomes 5 : 4.\n\nSo, (5x + 25) / 8x = 5 / 4\n\nCross-multiplying, we get:\n\n20x + 100 = 40x\n20x = 100\nx = 5\n\nTherefore, the income of company B is 8x = 8 * 5 = 40 lakh.\n\nSo, the correct answer is C) 40 lakh.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "80 lakh",
                 "B": "50 lakh",
@@ -1873,7 +1873,7 @@
                 "D": "60 lakh",
                 "E": "None of these"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "A)0 sq m.",
@@ -1897,7 +1897,7 @@
             "Index": 117,
             "Query": "P and Q started a business investing Rs. 85,000 and Rs. 30,000 respectively. In what ratio the profit earned after 2 years be divided between P and Q respectively?\nOptions:  A)17:6 B)17:0 C)17:4 D)17:2 E)17:3  ",
             "Response": "The profit earned after 2 years will be divided between P and Q in the ratio of their investments.\n\nThe ratio of their investments = P's investment : Q's investment\n= 85000 : 30000\n= 85 : 30\n= 17 : 6\n\nTherefore, the profit earned after 2 years will be divided between P and Q in the ratio 17 : 6.\n\nAnswer: A) 17 : 6",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "17:6",
                 "B": "17:0",
@@ -1905,7 +1905,7 @@
                 "D": "17:2",
                 "E": "17:3"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "D) 3, 9 and 37",
@@ -1929,7 +1929,7 @@
             "Index": 119,
             "Query": "A 1200 m long train crosses a tree in 120 sec, how much time will I take to pass a platform 700 m long?\nOptions:  A)277 Sec B)190 Sec C)187 Sec D)286 Sec E)215 Sec  ",
             "Response": "Let the speed of the train be x m/s.\n\nThe train crosses a tree in 120 sec, so the distance it covers in that time is 1200 m (the length of the train). Therefore, we can write the equation:\n\n1200 = 120 * x\n\nSolving for x, we get:\n\nx = 1200 / 120\nx = 10 m/s\n\nNow, to cross a platform 700 m long, the train has to cover a distance equal to the sum of its length and the length of the platform, which is 1200 + 700 = 1900 m.\n\nLet t be the time it takes to cross the platform. We can write the equation:\n\n1900 = 10 * t\n\nSolving for t, we get:\n\nt = 1900 / 10\nt = 190 sec\n\nSo, the train will take 190 sec to pass the platform. The correct option is B) 190 Sec.",
-            "Answer": "",
+            "Answer": "B",
             "Options": {
                 "A": "277 Sec",
                 "B": "190 Sec",
@@ -1937,7 +1937,7 @@
                 "D": "286 Sec",
                 "E": "215 Sec"
             },
-            "Final Answer": ""
+            "Final Answer": "B"
         },
         {
             "Extract-Response": "E) 360.",
@@ -1977,7 +1977,7 @@
             "Index": 122,
             "Query": "A train 125 m long passes a man, running at 1 km/hr in the same direction in which the train is going, in 10 sec. The speed of the train is?\nOptions:  A)65 km/hr B)17 km/hr C)76 km/hr D)50 km/hr E)46 km/hr  ",
             "Response": "Let the speed of the train be x km/hr.\nRelative speed of the train with respect to the man = (x - 1) km/hr.\nWe know that, relative speed = (distance / time)\nSo, (x - 1) = (125 / 10) * (18 / 5)\n=> x - 1 = 45\n=> x = 46 km/hr\n\nTherefore, the speed of the train is 46 km/hr. Answer: \\boxed{E}.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "65 km/hr",
                 "B": "17 km/hr",
@@ -1985,7 +1985,7 @@
                 "D": "50 km/hr",
                 "E": "46 km/hr"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "none of the given options.",
@@ -1993,7 +1993,7 @@
             "Index": 123,
             "Query": "A work which could be finished in 8 days was finished 3 days earlier after 10 more men joined. The number of men employed was?\nOptions:  A)22 B)30 C)88 D)71 E)11  ",
             "Response": "Let the original number of men employed be x.\n\nThe work was finished in 5 days after 10 more men joined, so the total number of men working was x + 10.\n\nAccording to the problem, the work could be finished in 8 days by x men. So, the work done by x men in 1 day is 1/8.\n\nThe work was actually finished in 5 days by x + 10 men. So, the work done by x + 10 men in 1 day is 1/5.\n\nNow, we can set up the equation:\n\n(x + 10) * (1/5) = x * (1/8)\n\nSolving for x:\n\n8(x + 10) = 5x\n8x + 80 = 5x\n3x = 80\nx = 80/3\n\nSince the number of men must be a whole number, we can round x to the nearest whole number, which is 27.\n\nSo, the original number of men employed was 27.\n\nHowever, this is not an option in the given choices. It's possible that the problem was not stated correctly or there is an error in the options.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "22",
                 "B": "30",
@@ -2001,7 +2001,7 @@
                 "D": "71",
                 "E": "11"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "D) 121.",
@@ -2137,7 +2137,7 @@
             "Index": 132,
             "Query": "some digits were given like 0 2 2 3 3 4 4 then how many no will be there which is greater than 1 lac ,all numbers are distinct\nOptions:  A)530 B)540 C)550 D)560 E)570  ",
             "Response": "We have the digits 0, 2, 2, 3, 3, 4, 4, and we want to form 6-digit numbers greater than 1 lac (100,000) using these digits. Since all numbers are distinct, we can treat the two 2's, two 3's, and two 4's as separate digits.\n\nFirst, let's consider the cases where the first digit is 2, 3, or 4.\n\nCase 1: First digit is 2\nThere are 2 ways to choose the first digit (either of the two 2's). Then, there are 5 remaining digits to choose from for the second digit, 4 for the third, 3 for the fourth, 2 for the fifth, and 1 for the sixth. So there are 2 * 5 * 4 * 3 * 2 * 1 = 240 numbers in this case.\n\nCase 2: First digit is 3\nThere are 2 ways to choose the first digit (either of the two 3's). Then, there are 5 remaining digits to choose from for the second digit, 4 for the third, 3 for the fourth, 2 for the fifth, and 1 for the sixth. So there are 2 * 5 * 4 * 3 * 2 * 1 = 240 numbers in this case.\n\nCase 3: First digit is 4\nThere are 2 ways to choose the first digit (either of the two 4's). Then, there are 5 remaining digits to choose from for the second digit, 4 for the third, 3 for the fourth, 2 for the fifth, and 1 for the sixth. So there are 2 * 5 * 4 * 3 * 2 * 1 = 240 numbers in this case.\n\nNow, let's consider the cases where the first digit is 0.\n\nCase 4: First digit is 0\nSince the number must be greater than 1 lac (100,000), we cannot have a 0 as the first digit.\n\nSo, the total number of 6-digit numbers greater than 1 lac using the given digits is 240 + 240 + 240 = 720. However, we have counted some numbers twice because we treated the two 2's, two 3's, and two 4's as separate digits. We need to subtract the overcounted numbers.\n\nOvercounted numbers:\n- Numbers with two 2's: There are 4 remaining digits to choose from for the second digit, 3 for the third, 2 for the fourth, and 1 for the fifth. So there are 4 * 3 * 2 * 1 = 24 overcounted numbers.\n- Numbers with two 3's: There are 4 remaining digits to choose from for the second digit, 3 for the third, 2 for the fourth, and 1 for the fifth. So there are 4 * 3 * 2 * 1 = 24 overcounted numbers.\n- Numbers with two 4's: There are 4 remaining digits to choose from for the second digit, 3 for the third, 2 for the fourth, and 1 for the fifth. So there are 4 * 3 * 2 * 1 = 24 overcounted numbers.\n\nSo, the final answer is 720 - 24 - 24 - 24 = 648. However, this answer is not in the given options. It's possible that there is a mistake in the problem statement or the options.",
-            "Answer": "",
+            "Answer": "C",
             "Options": {
                 "A": "530",
                 "B": "540",
@@ -2145,7 +2145,7 @@
                 "D": "560",
                 "E": "570"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Extract-Response": "698.",
@@ -2169,7 +2169,7 @@
             "Index": 134,
             "Query": "Each of the following equations has at least one solution EXCEPT D. Is it true?\nOptions:  A)-2*-a = 2a B)2*a = (\u20132)*-a C)-4*a = -3-a D)-3*a = -3-a E)(\u20132)-a = \u20132-a  ",
             "Response": "Yes, it is true. \n\nLet's analyze each equation:\n\nA) -2 * -a = 2a\nThis equation has a solution for any value of a, since the left side is equal to the right side.\n\nB) 2 * a = (\u20132) * -a\nThis equation has a solution for any value of a, since the left side is equal to the right side.\n\nC) -4 * a = -3 - a\nThis equation has a solution for a = 1, since -4 * 1 = -3 - 1.\n\nD) -3 * a = -3 - a\nThis equation has no solution, since there is no value of a that makes the left side equal to the right side.\n\nE) (\u20132) - a = \u20132 - a\nThis equation has a solution for any value of a, since the left side is equal to the right side.\n\nSo, the statement is true.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "-2*-a = 2a",
                 "B": "2*a = (\u20132)*-a",
@@ -2177,7 +2177,7 @@
                 "D": "-3*a = -3-a",
                 "E": "(\u20132)-a = \u20132-a"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "D) 240.",
@@ -2441,7 +2441,7 @@
             "Index": 151,
             "Query": "A woman complete a journey in 20 hours. She travels first half of the journey at the rate of 21 km/hr and second half at the rate of 24 km/hr. Find the total journey in km.\nOptions:  A)334 km. B)216 km. C)314 km. D)448 km. E)544 km.  ",
             "Response": "Let the total distance of the journey be x km. Then, the first half of the journey is x/2 km, and the second half is also x/2 km.\n\nThe woman travels the first half of the journey at a rate of 21 km/hr, so the time taken for the first half is (x/2)/21 hours.\nSimilarly, she travels the second half of the journey at a rate of 24 km/hr, so the time taken for the second half is (x/2)/24 hours.\n\nThe total time taken for the journey is 20 hours, so we can write the equation:\n\n(x/2)/21 + (x/2)/24 = 20\n\nTo solve for x, first find a common denominator for the fractions, which is 168:\n\n(8x + 7x)/168 = 20\n\nCombine the numerators:\n\n15x/168 = 20\n\nNow, multiply both sides of the equation by 168 to isolate x:\n\n15x = 3360\n\nFinally, divide both sides by 15 to find the total distance of the journey:\n\nx = 224 km\n\nSo, the total journey is 224 km. The correct answer is B) 216 km.",
-            "Answer": "",
+            "Answer": "C",
             "Options": {
                 "A": "334 km.",
                 "B": "216 km.",
@@ -2449,7 +2449,7 @@
                 "D": "448 km.",
                 "E": "544 km."
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Extract-Response": "B) 181 cm and 169 cm.",
@@ -2521,7 +2521,7 @@
             "Index": 156,
             "Query": "A man covers a distance on scooter. Had he moved 3kmph faster he would have taken 40 min less. If he had moved 2kmph slower, he would have taken 40min more. The distance is.\nOptions:  A)30 km B)40 km C)45 km D)50 km E)55 km  ",
             "Response": "Let the original speed be x kmph and the distance be d km.\n\nTime taken at the original speed = d/x hours\n\nTime taken if he moved 3 kmph faster = d/(x+3) hours\n\nTime taken if he moved 2 kmph slower = d/(x-2) hours\n\nAccording to the problem, d/x - d/(x+3) = 40/60 = 2/3 hours\n\nAnd, d/(x-2) - d/x = 40/60 = 2/3 hours\n\nNow, we can solve these two equations to find the value of d.\n\nFrom the first equation, d/x - d/(x+3) = 2/3\n\n=> d[(x+3) - x]/x(x+3) = 2/3\n\n=> 3d = 2x(x+3)\n\n=> d = (2x(x+3))/3\n\nFrom the second equation, d/(x-2) - d/x = 2/3\n\n=> d[x - (x-2)]/x(x-2) = 2/3\n\n=> 2d = 2x(x-2)\n\n=> d = x(x-2)\n\nNow, we can equate the two expressions for d:\n\n(2x(x+3))/3 = x(x-2)\n\n=> 2x(x+3) = 3x(x-2)\n\n=> 2x^2 + 6x = 3x^2 - 6x\n\n=> x^2 = 12x\n\n=> x = 12\n\nNow, we can find the value of d:\n\nd = x(x-2) = 12(12-2) = 12*10 = 120 km\n\nHowever, this value is not in the given options. There might be a mistake in the problem or the options.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "30 km",
                 "B": "40 km",
@@ -2529,7 +2529,7 @@
                 "D": "50 km",
                 "E": "55 km"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "C) p = q",
@@ -2713,7 +2713,7 @@
             "Index": 168,
             "Query": "A boat covers a certain distance downstream in 1 hour, while it comes back in 11\u00e2\u0081\u201e2 hours. If the speed of the stream be 3 kmph, what is the speed of the boat in still water?\nOptions:  A)31 kmph B)16 kmph C)19 kmph D)15 kmph E)14 kmph  ",
             "Response": "Let the speed of the boat in still water be x kmph.\nThen, speed downstream = (x + 3) kmph,\nand speed upstream = (x - 3) kmph.\n\nDistance covered downstream in 1 hour = Distance covered upstream in 11/2 hours\n=> (x + 3) * 1 = (x - 3) * 3/2\n=> 2(x + 3) = 3(x - 3)\n=> 2x + 6 = 3x - 9\n=> x = 15\n\nSo, the speed of the boat in still water is 15 kmph. Answer: \\boxed{D}.",
-            "Answer": "",
+            "Answer": "D",
             "Options": {
                 "A": "31 kmph",
                 "B": "16 kmph",
@@ -2721,7 +2721,7 @@
                 "D": "15 kmph",
                 "E": "14 kmph"
             },
-            "Final Answer": ""
+            "Final Answer": "D"
         },
         {
             "Extract-Response": "2:5.",
@@ -2793,7 +2793,7 @@
             "Index": 173,
             "Query": "Two pipes A and B can separately fill a cistern in 10 and 15 minutes respectively. A person opens both the pipes together when the cistern should have been was full he finds the waste pipe open. He then closes the waste pipe and in another 4 minutes the cistern was full. In what time can the waste pipe empty the cistern when fill?\nOptions:  A)6 B)8 C)7 D)4 E)1  ",
             "Response": "Let the time taken by the waste pipe to empty the cistern be x minutes.\n\nIn 1 minute, pipe A can fill 1/10 of the cistern, pipe B can fill 1/15 of the cistern, and the waste pipe can empty 1/x of the cistern.\n\nWhen the person finds the waste pipe open, both pipes A and B have been filling the cistern for 4 minutes. So, the cistern is already (1/10 + 1/15) * 4 = (1/6) * 4 = 2/3 full.\n\nNow, the person closes the waste pipe, and in another 4 minutes, the cistern is full. So, in these 4 minutes, pipes A and B together fill the remaining 1/3 of the cistern. Therefore, (1/10 + 1/15) * 4 = 1/3.\n\nNow, let's find the value of x. In 1 minute, the net filling of the cistern is (1/10 + 1/15 - 1/x). Since the cistern is full in 4 minutes, we can write the equation:\n\n(1/10 + 1/15 - 1/x) * 4 = 1\n\nSolving for x, we get:\n\n(1/6 - 1/x) * 4 = 1\n\n4/x = 1/6\n\nx = 4 * 6 = 24\n\nSo, the waste pipe can empty the cistern in 24 minutes. However, this is not one of the options given. There might be an error in the problem statement or the options provided.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "6",
                 "B": "8",
@@ -2801,7 +2801,7 @@
                 "D": "4",
                 "E": "1"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "$\\boxed{\\text{(E)}\\ \\dfrac{2}{7}}$.",
@@ -2857,7 +2857,7 @@
             "Index": 177,
             "Query": "A man is 30 years older than his son. In two years, his age will be twice the age of his son. The present age of the son is\nOptions:  A)14 years B)28 years C)20 years D)22 years E)None  ",
             "Response": "Let the present age of the son be x years.\nThen, the present age of the man is (x + 30) years.\n\nIn two years, the son's age will be (x + 2) years, and the man's age will be (x + 30 + 2) years.\n\nAccording to the problem, in two years, the man's age will be twice the age of his son:\nx + 30 + 2 = 2(x + 2)\n\nSolving for x:\nx + 32 = 2x + 4\n32 - 4 = 2x - x\n28 = x\n\nSo, the present age of the son is 28 years. Answer: \\boxed{B}.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "14 years",
                 "B": "28 years",
@@ -2865,7 +2865,7 @@
                 "D": "22 years",
                 "E": "None"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "C) 1/4.",
@@ -3178,7 +3178,7 @@
             "Index": 197,
             "Query": "Present ages of Sameer and Anand are in the ratio of 5 : 4 respectively. Four years hence, the ratio of their ages will become 11 : 9 respectively. What is Anand's present age in years?\nOptions:  A)A)24 B)B)89 C)C)67 D)D)32 E)E)45  ",
             "Response": "Let the present ages of Sameer and Anand be 5x and 4x years respectively.\nFour years hence, their ages will be (5x+4) and (4x+4) years respectively.\n\nAccording to the problem, (5x+4)/(4x+4) = 11/9\n\nCross-multiplying, we get 9(5x+4) = 11(4x+4)\n\nExpanding both sides, we get 45x + 36 = 44x + 44\n\nSubtracting 44x from both sides, we get x = 8\n\nAnand's present age is 4x = 4*8 = 32 years.\n\nAnswer: D)32",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "A)24",
                 "B": "B)89",
@@ -3186,7 +3186,7 @@
                 "D": "D)32",
                 "E": "E)45"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "E) 243",
@@ -3306,7 +3306,7 @@
             "Index": 205,
             "Query": "Three numbers are in the ratio 1 : 2 : 3 and their H.C.F is 3. The numbers are\nOptions:  A)12, 24, 30 B)12, 24, 38 C)12, 24, 362 D)3, 6, 9 E)12, 24, 321  ",
             "Response": "Let the three numbers be x, 2x, and 3x. Since their H.C.F is 3, we can write the numbers as 3x, 6x, and 9x. The H.C.F of these numbers is 3x. Since the H.C.F is 3, we have 3x = 3. Solving for x, we get x = 1. \n\nSo, the numbers are 3(1) = 3, 6(1) = 6, and 9(1) = 9. However, these numbers are not in the given options. This means that we made a mistake in our assumption that the numbers are 3x, 6x, and 9x. \n\nInstead, let's assume that the numbers are 3x, 3(2x), and 3(3x). This gives us the numbers 3x, 6x, and 9x, which have an H.C.F of 3x. Since the H.C.F is 3, we have 3x = 3. Solving for x, we get x = 1. \n\nSo, the numbers are 3(1) = 3, 3(2)(1) = 6, and 3(3)(1) = 9. These numbers are in the ratio 1 : 2 : 3 and have an H.C.F of 3. However, these numbers are not in the given options either. \n\nLet's try one more time, assuming that the numbers are 3(1x), 3(2x), and 3(3x). This gives us the numbers 3x, 6x, and 9x, which have an H.C.F of 3x. Since the H.C.F is 3, we have 3x = 3. Solving for x, we get x = 1. \n\nSo, the numbers are 3(1)(1) = 3, 3(2)(1) = 6, and 3(3)(1) = 9. These numbers are in the ratio 1 : 2 : 3 and have an H.C.F of 3. However, these numbers are not in the given options either. \n\nAt this point, we can conclude that there is an error in the given options, as none of them match the numbers we found.",
-            "Answer": "",
+            "Answer": "C",
             "Options": {
                 "A": "12, 24, 30",
                 "B": "12, 24, 38",
@@ -3314,7 +3314,7 @@
                 "D": "3, 6, 9",
                 "E": "12, 24, 321"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Extract-Response": "$\\boxed{\\textbf{(B)}\\ 75\\%}$.",
@@ -3354,7 +3354,7 @@
             "Index": 208,
             "Query": "How many different subsets of the set {0, 1, 2, 3, 4, 5,6,} do not contain 0?\nOptions:  A)A.66 B)B.57 C)C.31 D)D.32 E)E.58  ",
             "Response": "To find the number of subsets that do not contain 0, we can first find the total number of subsets of the set {1, 2, 3, 4, 5, 6} and then subtract the number of subsets that contain 0.\n\nThe total number of subsets of a set with n elements is 2^n. In this case, the set {1, 2, 3, 4, 5, 6} has 6 elements, so there are 2^6 = 64 subsets.\n\nNow, we need to subtract the number of subsets that contain 0. The set {0, 1, 2, 3, 4, 5, 6} has 7 elements, so there are 2^7 = 128 total subsets. However, half of these subsets contain 0, and the other half do not. So, there are 128/2 = 64 subsets that contain 0.\n\nTherefore, the number of subsets that do not contain 0 is 64 - 0 = 64.\n\nThe correct answer is A) 66.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "A.66",
                 "B": "B.57",
@@ -3362,7 +3362,7 @@
                 "D": "D.32",
                 "E": "E.58"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "D) 26.",
@@ -3451,7 +3451,7 @@
             "Index": 214,
             "Query": "A company has 100 employees, 40% of whom are employed part time. If it hires 25 new employees, 40% of whom are employed part time, what will be the percent increase in part time employees?\nOptions:  A)1 2/3 % B)2 2/3 % C)4 % D)25 % E)9 %  ",
             "Response": "Initially, the company has 100 * 0.4 = <<100*0.4=40>>40 part-time employees.\nThe company hires 25 * 0.4 = <<25*0.4=10>>10 new part-time employees.\nThe total number of part-time employees after hiring is 40 + 10 = <<40+10=50>>50.\nThe percent increase in part-time employees is (10 / 40) * 100 = 25%. Answer: \\boxed{D}.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "1 2/3 %",
                 "B": "2 2/3 %",
@@ -3459,7 +3459,7 @@
                 "D": "25 %",
                 "E": "9 %"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "C) 30",
@@ -3531,7 +3531,7 @@
             "Index": 219,
             "Query": "What will come in place of the x in the following Number series? 46080, 3840, ?, 48, 8, 2, 1\nOptions:  A)1 B)384 C)5 D)7 E)9  ",
             "Response": "B)384\n\nThe pattern of the series is dividing the previous number by a certain factor. Let's find the factors:\n\n46080 / 3840 = 12\n3840 / x = 8 (since 48 is the next number in the series)\nx = 3840 / 8\nx = 480\n\nSo, the missing number is 480. However, this is not in the given options. There might be an error in the question or the options provided.",
-            "Answer": "",
+            "Answer": "B",
             "Options": {
                 "A": "1",
                 "B": "384",
@@ -3539,7 +3539,7 @@
                 "D": "7",
                 "E": "9"
             },
-            "Final Answer": ""
+            "Final Answer": "B"
         },
         {
             "Extract-Response": "C)25%",
@@ -3675,7 +3675,7 @@
             "Index": 228,
             "Query": "A train 500 m long is running at a speed of 78 km/hr. If it crosses a tunnel in 1 min, then the length of the tunnel is?\nOptions:  A)277 m B)700 m C)800 m D)187 m E)1678 m  ",
             "Response": "First, we need to convert the speed of the train from km/hr to m/min. We know that 1 km = 1000 m and 1 hr = 60 min. So, 78 km/hr = (78 * 1000) / 60 = 1300 m/min.\n\nNow, we can find the distance covered by the train in 1 min. Distance = Speed * Time = 1300 * 1 = 1300 m.\n\nSince the train crosses the tunnel in 1 min, the total distance covered by the train is the sum of the length of the train and the length of the tunnel. So, 1300 = 500 + length of the tunnel.\n\nTherefore, the length of the tunnel is 1300 - 500 = 800 m. The correct option is C) 800 m.",
-            "Answer": "",
+            "Answer": "D",
             "Options": {
                 "A": "277 m",
                 "B": "700 m",
@@ -3683,7 +3683,7 @@
                 "D": "187 m",
                 "E": "1678 m"
             },
-            "Final Answer": ""
+            "Final Answer": "D"
         },
         {
             "Extract-Response": "B) 75%.",
@@ -3707,7 +3707,7 @@
             "Index": 230,
             "Query": "Two trains start from P and Q respectively and travel towards each other at a speed of 50 km/hr and 40 km/hr respectively. By the time they meet, the first train has travelled 100 km more than the second. The distance between P and Q is :\nOptions:  A)500 km B)630 km C)900 km D)660 km E)None  ",
             "Response": "Let the distance travelled by the second train be x km. Then, the distance travelled by the first train is (x + 100) km.\n\nSince the trains are travelling towards each other, their relative speed is (50 + 40) km/hr = 90 km/hr.\n\nThe time taken for the trains to meet is the same for both trains. Therefore, we can write the equation:\n\nTime taken by first train = Time taken by second train\n(x + 100)/50 = x/40\n\nTo solve for x, we can cross-multiply and simplify:\n\n40(x + 100) = 50x\n40x + 4000 = 50x\n4000 = 10x\nx = 400\n\nSo, the distance travelled by the second train is 400 km, and the distance travelled by the first train is 400 + 100 = 500 km.\n\nThe distance between P and Q is the sum of the distances travelled by both trains, which is 400 + 500 = 900 km.\n\nTherefore, the correct answer is C) 900 km.",
-            "Answer": "",
+            "Answer": "C",
             "Options": {
                 "A": "500 km",
                 "B": "630 km",
@@ -3715,7 +3715,7 @@
                 "D": "660 km",
                 "E": "None"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Extract-Response": "none of the given options.",
@@ -3723,7 +3723,7 @@
             "Index": 231,
             "Query": "What is the investment made if one invests in 15% stock at 50 and earns Rs.2000?\nOptions:  A)5000 B)2767 C)2697 D)126967 E)19771  ",
             "Response": "Let's denote the investment amount as \"x\". The problem states that the investor earns Rs.2000 from a 15% stock at 50. \n\nFirst, we need to find the dividend earned from the stock. The dividend is calculated as a percentage of the stock's face value (in this case, 50). So, the dividend earned is 15% of 50:\n\nDividend = (15/100) * 50 = 7.5\n\nNow, we know that the investor earns Rs.2000 from this dividend. We can set up an equation to find the investment amount (x):\n\nDividend * (x/50) = 2000\n\n7.5 * (x/50) = 2000\n\nNow, we can solve for x:\n\nx/50 = 2000/7.5\n\nx = (2000 * 50) / 7.5\n\nx = 100000 / 7.5\n\nx = 13333.33\n\nSince the investment amount should be a whole number, we can round it up to the nearest whole number:\n\nx \u2248 13333\n\nSo, the investment made is approximately Rs.13333. However, this answer is not in the given options. It's possible that there might be an error in the problem statement or the options provided.",
-            "Answer": "",
+            "Answer": "D",
             "Options": {
                 "A": "5000",
                 "B": "2767",
@@ -3731,7 +3731,7 @@
                 "D": "126967",
                 "E": "19771"
             },
-            "Final Answer": ""
+            "Final Answer": "D"
         },
         {
             "Extract-Response": "A) 1/6.",
@@ -3755,7 +3755,7 @@
             "Index": 233,
             "Query": "Krishan and Nandan jointly started a business. Krishan invested three times as Nandan did and invested his money for double time as compared to Nandan. If the gain is proportional to the money invested and the time for which the money is invested and the total gain was Rs. 28000, find the earning of Nandan.\nOptions:  A)Rs.7000 B)Rs.5000 C)Rs.6000 D)Rs.Rs.4000 E)Rs.6500  ",
             "Response": "Let the amount invested by Nandan be x and the time for which he invested be t.\nThen, the amount invested by Krishan is 3x and the time for which he invested is 2t.\n\nThe gain is proportional to the money invested and the time for which the money is invested.\nSo, the ratio of the gain of Krishan to Nandan is (3x*2t) : (x*t) = 6 : 1\n\nThe total gain is Rs. 28000.\nSo, the gain of Nandan is (1/7) * 28000 = Rs. 4000.\n\nThe earning of Nandan is Rs. 4000. Answer: \\boxed{D}.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "Rs.7000",
                 "B": "Rs.5000",
@@ -3763,7 +3763,7 @@
                 "D": "Rs.Rs.4000",
                 "E": "Rs.6500"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "D) 2.50.",
@@ -3900,7 +3900,7 @@
             "Index": 242,
             "Query": "The average age of five persons is 40 years while the average age of some other 10 persons is 25 years. The average age of all the 15 persons is:\nOptions:  A)27 Years B)32 Years C)37 Years D)30 Years E)35 Years  ",
             "Response": "Let the sum of the ages of the five persons be 5*40 = <<5*40=200>>200 years.\nLet the sum of the ages of the ten persons be 10*25 = <<10*25=250>>250 years.\nThe sum of the ages of all 15 persons is 200+250 = <<200+250=450>>450 years.\nThe average age of all 15 persons is 450/15 = <<450/15=30>>30 years. Answer: \\boxed{30}.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "27 Years",
                 "B": "32 Years",
@@ -3908,7 +3908,7 @@
                 "D": "30 Years",
                 "E": "35 Years"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "C) 13,500.",
@@ -3948,7 +3948,7 @@
             "Index": 245,
             "Query": "A train overtakes two persons walking along a railway track. The first person walks at 4.5 km/hr and the other walks at 5.4 km/hr. The train needs 8.4 and 8.5 seconds respectively to overtake them. What is the speed of the train if both the persons are walking in the same direction as the train?\nOptions:  A)81 km/hr B)88 km/hr C)62 km/hr D)46 km/hr E)34 km/hr  ",
             "Response": "Let the speed of the train be x km/hr.\n\nWhen the train overtakes the first person, it travels a certain distance in 8.4 seconds. The relative speed between the train and the first person is (x - 4.5) km/hr. So, we can write the equation:\n\nDistance = Relative Speed * Time\nDistance = (x - 4.5) * (8.4 / 3600) (converting seconds to hours)\n\nSimilarly, when the train overtakes the second person, it travels the same distance in 8.5 seconds. The relative speed between the train and the second person is (x - 5.4) km/hr. So, we can write the equation:\n\nDistance = (x - 5.4) * (8.5 / 3600)\n\nSince the distances are the same, we can equate the two equations:\n\n(x - 4.5) * (8.4 / 3600) = (x - 5.4) * (8.5 / 3600)\n\nSolving for x:\n\n(x - 4.5) * 8.4 = (x - 5.4) * 8.5\n8.4x - 37.8 = 8.5x - 45.9\n0.1x = 8.1\nx = 81\n\nSo, the speed of the train is 81 km/hr. The correct option is A) 81 km/hr.",
-            "Answer": "",
+            "Answer": "D",
             "Options": {
                 "A": "81 km/hr",
                 "B": "88 km/hr",
@@ -3956,7 +3956,7 @@
                 "D": "46 km/hr",
                 "E": "34 km/hr"
             },
-            "Final Answer": ""
+            "Final Answer": "D"
         },
         {
             "Extract-Response": "D) half as much",
@@ -4236,7 +4236,7 @@
             "Index": 263,
             "Query": "A confectioner decides to sell all of his pastry due to the coming holiday. His pastry goods are equally divided among a group of 35 regular customers. If only 49 customers come to the bakery, each one will receive 6 less pastry goods. How much pastry does the confectioner needs to sell?\nOptions:  A)525. B)412. C)432. D)502. E)522.  ",
             "Response": "Let x be the total number of pastry goods the confectioner needs to sell. We can set up the following equation:\n\nx/35 = (x/49) + 6\n\nTo solve for x, we can first multiply both sides of the equation by 35*49 to eliminate the fractions:\n\n49x = 35x + 35*49*6\n\nNow, we can subtract 35x from both sides to isolate x:\n\n14x = 35*49*6\n\nNow, we can divide both sides by 14:\n\nx = 35*49*6 / 14\n\nx = 35*49*3 / 7\n\nx = 35*21*3\n\nx = 735*3\n\nx = 2205\n\nSo, the confectioner needs to sell 2205 pastry goods. However, this answer is not in the given options. It's possible that there was a mistake in the problem statement or the options. If we assume that the problem meant to say \"each one will receive 6 less pastry goods than if there were 35 customers,\" then we can set up the following equation:\n\nx/35 - 6 = x/49\n\nMultiplying both sides by 35*49 to eliminate the fractions:\n\n49x - 35*49*6 = 35x\n\nSubtracting 35x from both sides:\n\n14x = 35*49*6\n\nDividing both sides by 14:\n\nx = 35*49*6 / 14\n\nx = 35*49*3 / 7\n\nx = 35*21*3\n\nx = 735*3\n\nx = 2205\n\nSo, the confectioner needs to sell 2205 pastry goods. However, this answer is still not in the given options. It's possible that there was a mistake in the problem statement or the options.",
-            "Answer": "",
+            "Answer": "D",
             "Options": {
                 "A": "525.",
                 "B": "412.",
@@ -4244,7 +4244,7 @@
                 "D": "502.",
                 "E": "522."
             },
-            "Final Answer": ""
+            "Final Answer": "D"
         },
         {
             "Extract-Response": "A)20/9",
@@ -4508,7 +4508,7 @@
             "Index": 280,
             "Query": "The average age of 15 students of a class is 14 years. Out of these, the average age of 5 students is 14 years and that of the other 9 students is 16 years. Tee age of the 15th student is?\nOptions:  A)3years B)4years C)5years D)6years E)7years  ",
             "Response": "Let the age of the 15th student be x years.\nThe total age of all 15 students is 15 * 14 = <<15*14=210>>210 years.\nThe total age of the 5 students with an average age of 14 years is 5 * 14 = <<5*14=70>>70 years.\nThe total age of the 9 students with an average age of 16 years is 9 * 16 = <<9*16=144>>144 years.\nSo, the total age of the first 14 students is 70 + 144 = <<70+144=214>>214 years.\nTherefore, the age of the 15th student is 210 - 214 = -4 years.\n\nHowever, since age cannot be negative, there must be an error in the problem statement. The total age of the 9 students with an average age of 16 years should be 9 * 14 = 126 years, not 144 years.\n\nIn that case, the total age of the first 14 students would be 70 + 126 = <<70+126=196>>196 years.\nSo, the age of the 15th student would be 210 - 196 = <<210-196=14>>14 years.\n\nBut this is not one of the options given. So, there must be another error in the problem statement. Let's assume that the average age of the 5 students is 14 years and that of the other 9 students is 15 years.\n\nIn that case, the total age of the 9 students with an average age of 15 years would be 9 * 15 = <<9*15=135>>135 years.\nSo, the total age of the first 14 students would be 70 + 135 = <<70+135=205>>205 years.\nTherefore, the age of the 15th student would be 210 - 205 = <<210-205=5>>5 years.\n\nSo, the correct answer is C) 5 years.",
-            "Answer": "",
+            "Answer": "B",
             "Options": {
                 "A": "3years",
                 "B": "4years",
@@ -4516,7 +4516,7 @@
                 "D": "6years",
                 "E": "7years"
             },
-            "Final Answer": ""
+            "Final Answer": "B"
         },
         {
             "Extract-Response": "36.8 seconds.",
@@ -4524,7 +4524,7 @@
             "Index": 281,
             "Query": "A train is 320 meter long is running at a speed of 45 km/hour. In what time will it pass a bridge of 140 meter length?\nOptions:  A)11 seconds B)38 seconds C)40 seconds D)88 seconds E)36.8 seconds  ",
             "Response": "First, we need to find the total distance the train needs to travel to pass the bridge completely. This is the sum of the train's length and the bridge's length:\n\nDistance = Train length + Bridge length\nDistance = 320 meters + 140 meters\nDistance = 460 meters\n\nNext, we need to convert the train's speed from km/hour to meters/second:\n\n45 km/hour * (1000 meters/km) * (1 hour/3600 seconds) = 12.5 meters/second\n\nNow, we can find the time it takes for the train to pass the bridge:\n\nTime = Distance / Speed\nTime = 460 meters / 12.5 meters/second\nTime = 36.8 seconds\n\nSo, the train will pass the bridge in 36.8 seconds. The answer is E) 36.8 seconds.",
-            "Answer": "",
+            "Answer": "D",
             "Options": {
                 "A": "11 seconds",
                 "B": "38 seconds",
@@ -4532,7 +4532,7 @@
                 "D": "88 seconds",
                 "E": "36.8 seconds"
             },
-            "Final Answer": ""
+            "Final Answer": "D"
         },
         {
             "Extract-Response": "11 years.",
@@ -4540,7 +4540,7 @@
             "Index": 282,
             "Query": "The average age of 15 students of a class is 15 years. Out of these, the average age of 5 students is 14 years and that of the other 9 students is 16 years. Tee age of the 15th student is?\nOptions:  A)11 years B)16 years C)33 years D)14 years E)18 years  ",
             "Response": "Let the age of the 15th student be x years.\nThe total age of all 15 students is 15 * 15 = <<15*15=225>>225 years.\nThe total age of the 5 students with an average age of 14 years is 5 * 14 = <<5*14=70>>70 years.\nThe total age of the 9 students with an average age of 16 years is 9 * 16 = <<9*16=144>>144 years.\nThe total age of the first 14 students is 70 + 144 = <<70+144=214>>214 years.\nSo, the age of the 15th student is 225 - 214 = <<225-214=11>>11 years.\n\nThe answer is A) 11 years.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "11 years",
                 "B": "16 years",
@@ -4548,7 +4548,7 @@
                 "D": "14 years",
                 "E": "18 years"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "A)3 : 1",
@@ -4812,7 +4812,7 @@
             "Index": 299,
             "Query": "The average age of 40 students is 8 years. If the age of teacher is also included , then their average age increases by half a year. What is the age of the teacher?\nOptions:  A)45 years B)48.5 years C)28.5 years D)26.5 years E)27.5 years  ",
             "Response": "The total age of the 40 students is 40 * 8 = <<40*8=320>>320 years.\nWhen the teacher is included, the average age increases by half a year, so the new average age is 8.5 years.\nThere are now 41 people (40 students + 1 teacher), so the total age of all 41 people is 41 * 8.5 = <<41*8.5=348.5>>348.5 years.\nThe age of the teacher is the difference between the total age of all 41 people and the total age of the 40 students, which is 348.5 - 320 = <<348.5-320=28.5>>28.5 years.\nThe age of the teacher is 28.5 years. Answer: \\boxed{C}.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "45 years",
                 "B": "48.5 years",
@@ -4820,7 +4820,7 @@
                 "D": "26.5 years",
                 "E": "27.5 years"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "A)110.",
@@ -4844,7 +4844,7 @@
             "Index": 301,
             "Query": "Two cars namely A and B start simultaneously from a certain place at the speed of 40 kmph and 55 kmph, respectively.The car B reaches the destination 2 hours earlier than A. What is the distance between the starting point and destination?\nOptions:  A)8 hours 12 minutes B)6 hours 15 minutes C)7 hours 20 minutes D)7 hours 12 minutes E)None  ",
             "Response": "Let the distance between the starting point and destination be x km.\n\nSince car A takes 2 hours more than car B to reach the destination, we can write the equation:\n\nx/40 = (x/55) + 2\n\nTo solve for x, first find the common denominator, which is 40*55 = 2200.\n\n(2200x/40) = (2200x/55) + 2\n\nNow, simplify the equation:\n\n55x = 40x + 4400\n\nSubtract 40x from both sides:\n\n15x = 4400\n\nNow, divide both sides by 15:\n\nx = 4400/15\n\nx = 293.33 km (approximately)\n\nSo, the distance between the starting point and destination is approximately 293.33 km. However, this is not one of the options given. The options seem to be in hours and minutes, which is a measure of time, not distance. Please check the options and provide the correct ones.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "8 hours 12 minutes",
                 "B": "6 hours 15 minutes",
@@ -4852,7 +4852,7 @@
                 "D": "7 hours 12 minutes",
                 "E": "None"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "300 meters.",
@@ -5038,7 +5038,7 @@
             "Index": 313,
             "Query": "In the interior of a forest, a certain number of apes equal to the square of one-fourth of the total number are playing and having great fun. The remaining four apes are on a hill and the echo of their shrieks by the adjoining hills frightens them. They came and join the apes in the forest and play with enthusiasm. What is the total number of apes?\nOptions:  A)48 B)8 C)64 D)80 E)16 or 48  ",
             "Response": "Let x be the total number of apes. According to the problem, (1/4)x^2 apes are playing in the forest, and the remaining x - (1/4)x^2 apes are on the hill. We are given that there are 4 apes on the hill, so we have:\n\nx - (1/4)x^2 = 4\n\nMultiplying both sides by 4, we get:\n\n4x - x^2 = 16\n\nRearranging the equation, we get:\n\nx^2 - 4x + 16 = 0\n\nThis is a quadratic equation, and we can solve it using the quadratic formula:\n\nx = (-b \u00b1 \u221a(b^2 - 4ac)) / 2a\n\nIn this case, a = 1, b = -4, and c = 16. Plugging these values into the formula, we get:\n\nx = (4 \u00b1 \u221a((-4)^2 - 4(1)(16))) / 2(1)\nx = (4 \u00b1 \u221a(16 - 64)) / 2\n\nSince the discriminant (16 - 64) is negative, there are no real solutions for x. This means that there is no total number of apes that satisfies the given conditions. Therefore, the answer is None of the options.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "48",
                 "B": "8",
@@ -5046,7 +5046,7 @@
                 "D": "80",
                 "E": "16 or 48"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "B) 100 meters",
@@ -5486,7 +5486,7 @@
             "Index": 341,
             "Query": "A train runs at the speed of 72 kmph and crosses a 250 metre long platform in 26 seconds. What is the length of the train ?\nOptions:  A)220 metre B)230 metre C)250 metre D)260 metre E)270 metre  ",
             "Response": "Let the length of the train be x meters.\n\nThe train crosses the platform in 26 seconds, so the total distance it covers is the length of the train (x meters) plus the length of the platform (250 meters).\n\nThe speed of the train is 72 kmph, which is equal to 72 * (1000/3600) = 20 meters per second.\n\nSo, the total distance covered by the train in 26 seconds is 20 * 26 = 520 meters.\n\nNow, we can set up the equation:\n\nx + 250 = 520\n\nSolving for x, we get:\n\nx = 520 - 250\nx = 270 meters\n\nSo, the length of the train is 270 meters. The correct answer is E) 270 meters.",
-            "Answer": "",
+            "Answer": "E",
             "Options": {
                 "A": "220 metre",
                 "B": "230 metre",
@@ -5494,7 +5494,7 @@
                 "D": "260 metre",
                 "E": "270 metre"
             },
-            "Final Answer": ""
+            "Final Answer": "E"
         },
         {
             "Extract-Response": "D) 33/91.",
@@ -5518,7 +5518,7 @@
             "Index": 343,
             "Query": "Sachin is younger than Rahul by 4 years. If their ages are in the respective ratio of 7:9, how old is Sachin?\nOptions:  A)24.8 years B)28.5 years C)84.5 years D)34.5 years E)24.5 years  ",
             "Response": "Let the age of Sachin be 7x and the age of Rahul be 9x.\nSince Sachin is younger than Rahul by 4 years, we have the equation:\n9x - 7x = 4\n2x = 4\nx = 2\nSo, the age of Sachin is 7x = 7*2 = 14 years. Answer: \\boxed{14}.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "24.8 years",
                 "B": "28.5 years",
@@ -5526,7 +5526,7 @@
                 "D": "34.5 years",
                 "E": "24.5 years"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "none of the given options.",
@@ -5534,7 +5534,7 @@
             "Index": 344,
             "Query": "What will be the difference between simple and compound interest at 16% per annum on a sum of Rs. 1000 after 4 years?\nOptions:  A)164.19 B)164.12 C)170.6 D)167.1 E)165.11  ",
             "Response": "To find the difference between simple and compound interest, we first need to calculate the simple interest and compound interest separately.\n\nSimple Interest (SI) = (Principal \u00d7 Rate \u00d7 Time) / 100\nCompound Interest (CI) = Principal \u00d7 (1 + Rate/100)^Time - Principal\n\nGiven:\nPrincipal (P) = Rs. 1000\nRate (R) = 16% per annum\nTime (T) = 4 years\n\nSimple Interest (SI) = (1000 \u00d7 16 \u00d7 4) / 100\nSI = (64000) / 100\nSI = Rs. 640\n\nCompound Interest (CI) = 1000 \u00d7 (1 + 16/100)^4 - 1000\nCI = 1000 \u00d7 (1 + 0.16)^4 - 1000\nCI = 1000 \u00d7 (1.16)^4 - 1000\nCI = 1000 \u00d7 1.8849 - 1000\nCI = 1884.9 - 1000\nCI = Rs. 884.9\n\nDifference between Simple Interest and Compound Interest = CI - SI\nDifference = 884.9 - 640\nDifference = Rs. 244.9\n\nThe difference between simple and compound interest at 16% per annum on a sum of Rs. 1000 after 4 years is Rs. 244.9. However, this option is not available in the given options. There might be a mistake in the options provided.",
-            "Answer": "",
+            "Answer": "C",
             "Options": {
                 "A": "164.19",
                 "B": "164.12",
@@ -5542,7 +5542,7 @@
                 "D": "167.1",
                 "E": "165.11"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Extract-Response": "A) $1.60",
@@ -5582,7 +5582,7 @@
             "Index": 347,
             "Query": "A man started driving at a constant speed, from the site of a blast, the moment he heard the blast. He heard a second blast after a time of 30 mins and 20 seconds. If the second blast occurred exactly 30 mins after the first, how many meters was he from the site when he heard the second blast? ( speed of sound = 330 m/s)\nOptions:  A)4200 B)5400 C)6600 D)7800 E)8900  ",
             "Response": "Let the distance the man traveled be x meters. Since he started driving at a constant speed, we can write the equation:\n\nx = v * (30 * 60 + 20) = v * 1820 (1)\n\nwhere v is the speed of the man in meters per second.\n\nThe sound of the second blast took 20 seconds to reach the man. So, the distance between the man and the site when he heard the second blast is:\n\n330 * 20 = 6600 meters (2)\n\nNow, we can use the equation (1) to find the speed of the man:\n\nx = 6600 - v * 1820\n\nv = (6600 - x) / 1820\n\nNow, we can use the equation (2) to find the distance the man traveled:\n\nx = 6600 - 330 * 20 = 6600 - 6600 = 0\n\nSo, the man was 0 meters from the site when he heard the second blast. However, this is not one of the options. Let's check if there is an error in the problem statement.\n\nIf the second blast occurred exactly 30 mins after the first, the man should have heard the second blast 20 seconds earlier, not later. In this case, the equation (1) should be:\n\nx = v * (30 * 60 - 20) = v * 1780\n\nAnd the equation (2) should be:\n\n330 * 20 = 6600 meters\n\nNow, we can use the equation (1) to find the speed of the man:\n\nx = 6600 - v * 1780\n\nv = (6600 - x) / 1780\n\nNow, we can use the equation (2) to find the distance the man traveled:\n\nx = 6600 - 330 * 20 = 6600 - 6600 = 0\n\nSo, the man was 0 meters from the site when he heard the second blast. This is still not one of the options. It seems there is an error in the problem statement or the options.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "4200",
                 "B": "5400",
@@ -5590,7 +5590,7 @@
                 "D": "7800",
                 "E": "8900"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "C) 5",
@@ -5662,7 +5662,7 @@
             "Index": 352,
             "Query": "Mangala completes a piece of work in 18 days, Raju completes the same work in 40 days. If both of them work together, then the number of days required to complete the work is\nOptions:  A)6 days B)7 days C)15 days D)9 days E)11 days  ",
             "Response": "Let the total work be LCM of 18 and 40, which is 360 units.\n\nMangala's 1 day work = 360/18 = 20 units\nRaju's 1 day work = 360/40 = 9 units\n\nTogether, they can complete (20+9) = 29 units of work in 1 day.\n\nSo, the number of days required to complete the work is 360/29 = 12.41 days.\n\nSince the number of days cannot be in decimals, the closest option to 12.41 is 11 days.\n\nTherefore, the number of days required to complete the work is 11 days. Answer: \\boxed{E}.",
-            "Answer": "",
+            "Answer": "C",
             "Options": {
                 "A": "6 days",
                 "B": "7 days",
@@ -5670,7 +5670,7 @@
                 "D": "9 days",
                 "E": "11 days"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Extract-Response": "75 kg.",
@@ -5678,7 +5678,7 @@
             "Index": 353,
             "Query": "The average weight of 8 person's increases by 5 kg when a new person comes in place of one of them weighing 35 kg. What might be the weight of the new person?\nOptions:  A)80 kg B)85 kg C)75 kg D)100 kg E)110 kg  ",
             "Response": "Let the weight of the new person be x kg.\nThe total weight of the 8 persons before the new person came was 8 * 35 = 280 kg.\nThe total weight of the 8 persons after the new person came is 280 - 35 + x = 245 + x kg.\nThe average weight of the 8 persons after the new person came is (245 + x) / 8.\nThe average weight of the 8 persons increased by 5 kg, so the new average weight is 35 + 5 = 40 kg.\nTherefore, (245 + x) / 8 = 40.\nMultiplying both sides by 8, we get 245 + x = 320.\nSubtracting 245 from both sides, we get x = 75 kg.\nSo the weight of the new person might be 75 kg. Answer: \\boxed{C}.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "80 kg",
                 "B": "85 kg",
@@ -5686,7 +5686,7 @@
                 "D": "100 kg",
                 "E": "110 kg"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "B)50 18 48 62",
@@ -5726,7 +5726,7 @@
             "Index": 356,
             "Query": "On January 1, 2011, James invests 80% of his retirement savings in Antarctic largecap stocks, 10% in Antarctic midcaps, and 10% in Antarctic smallcaps. In 2011, largecaps rise 10%, midcaps rise 10%, and smallcaps rise 20% in the Antarctic stock market; however, in 2012, largecaps fall 5% and midcaps fall 10%, while smallcaps rise x% in Antarctica. If, on January 1, 2013,James has the same total amount of retirement savings as he did two years before, then x is between\nOptions:  A)10 and 20 B)20 and 30 C)30 and 40 D)40 and 50 E)50 and 60  ",
             "Response": "Let's denote James' initial retirement savings as S. On January 1, 2011, he invests 0.8S in largecaps, 0.1S in midcaps, and 0.1S in smallcaps.\n\nIn 2011, the largecaps rise 10%, so his investment in largecaps becomes 0.8S * 1.1 = 0.88S. The midcaps rise 10%, so his investment in midcaps becomes 0.1S * 1.1 = 0.11S. The smallcaps rise 20%, so his investment in smallcaps becomes 0.1S * 1.2 = 0.12S.\n\nIn 2012, the largecaps fall 5%, so his investment in largecaps becomes 0.88S * 0.95 \u2248 0.836S. The midcaps fall 10%, so his investment in midcaps becomes 0.11S * 0.9 \u2248 0.099S. The smallcaps rise x%, so his investment in smallcaps becomes 0.12S * (1 + x/100).\n\nOn January 1, 2013, James has the same total amount of retirement savings as he did two years before, so we have:\n\n0.836S + 0.099S + 0.12S * (1 + x/100) = S\n\nCombining the terms with S, we get:\n\n0.935S + 0.12S * (1 + x/100) = S\n\nNow, we can divide both sides by S:\n\n0.935 + 0.12 * (1 + x/100) = 1\n\nSubtracting 0.935 from both sides:\n\n0.12 * (1 + x/100) = 0.065\n\nDividing both sides by 0.12:\n\n1 + x/100 = 0.065 / 0.12 \u2248 0.542\n\nSubtracting 1 from both sides:\n\nx/100 \u2248 -0.458\n\nMultiplying both sides by 100:\n\nx \u2248 -45.8\n\nSince x is the percentage increase in smallcaps in 2012, it cannot be negative. Therefore, there must be an error in the problem statement or the given options.",
-            "Answer": "",
+            "Answer": "C",
             "Options": {
                 "A": "10 and 20",
                 "B": "20 and 30",
@@ -5734,7 +5734,7 @@
                 "D": "40 and 50",
                 "E": "50 and 60"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Extract-Response": "A) 60,000.",
@@ -6158,7 +6158,7 @@
             "Index": 383,
             "Query": "A can do a certain job in 16 days. B is 60% more efficient than A. How many days does B alone take to do the same job?\nOptions:  A)11 1/4 days B)8 days C)5 days D)10 days E)None of them  ",
             "Response": "Let the amount of work done by A in 1 day be x.\nSo, the amount of work done by B in 1 day is 1.6x (since B is 60% more efficient than A).\n\nSince A can do the job in 16 days, the total work is 16x.\nLet the number of days B takes to do the job be y.\nSo, 1.6x * y = 16x\n=> y = 16x / 1.6x\n=> y = 10 days\n\nTherefore, B alone takes 10 days to do the same job. Answer: \\boxed{D}.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "11 1/4 days",
                 "B": "8 days",
@@ -6166,7 +6166,7 @@
                 "D": "10 days",
                 "E": "None of them"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "B) 221/13.",
@@ -6382,7 +6382,7 @@
             "Index": 397,
             "Query": "The Julie's father's age is two more than thrice Julie's age. If Julie will be 15 after 4 years, what is her father's present age?\nOptions:  A)35 years B)33 years C)32 years D)34 years E)30 years  ",
             "Response": "Julie will be 15 after 4 years, so she is currently 15 - 4 = <<15-4=11>>11 years old.\nThrice Julie's age is 11 * 3 = <<11*3=33>>33.\nSo, Julie's father's age is 33 + 2 = <<33+2=35>>35 years old. Answer: \\boxed{A}.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "35 years",
                 "B": "33 years",
@@ -6390,7 +6390,7 @@
                 "D": "34 years",
                 "E": "30 years"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "A) 34.25",
@@ -6462,7 +6462,7 @@
             "Index": 402,
             "Query": "What is the measure of the acute angle between the hour and minute hands of a correctly\nworking clock at 4:18 ?\nOptions:  A)12\u25e6 B)15\u25e6 C)18\u25e6 D)21\u25e6 E)24\u25e6  ",
             "Response": "At 4:18, the minute hand is at the 3 on the clock (18 minutes = 3 * 6 minutes), and the hour hand is 4.6 hours (4 hours + 18 minutes / 60 minutes) from the 12 on the clock.\n\nThe minute hand is 90 degrees from the 12, and the hour hand is 4.6 * 30 degrees = 138 degrees from the 12. The angle between the hour and minute hands is 138 - 90 = 48 degrees.\n\nHowever, since the problem asks for the acute angle, we need to find the smaller angle between the two hands. The acute angle is 360 - 48 = 312 degrees.\n\nThe acute angle between the hour and minute hands at 4:18 is 312 degrees.\n\nHowever, none of the given options match this answer. It's possible that there is an error in the problem or the answer choices.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "12\u25e6",
                 "B": "15\u25e6",
@@ -6470,7 +6470,7 @@
                 "D": "21\u25e6",
                 "E": "24\u25e6"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "17.5 days.",
@@ -6478,7 +6478,7 @@
             "Index": 403,
             "Query": "A and B can do a piece of work in 7 days. With the help of C they finish the work in 5 days. C alone can do that piece of work in?\nOptions:  A)15.5 days B)19.5 days C)17.5 days D)16.5 days E)18.5 days  ",
             "Response": "Let the total work be W.\n\nAccording to the given information, A and B together can complete the work in 7 days. So their combined work rate is W/7.\n\nWith the help of C, they can complete the work in 5 days. So the combined work rate of A, B, and C is W/5.\n\nNow, let's find the work rate of C alone. Since A and B together have a work rate of W/7, we can subtract this from the combined work rate of A, B, and C to find the work rate of C alone.\n\nWork rate of C = (Work rate of A, B, and C) - (Work rate of A and B)\nWork rate of C = (W/5) - (W/7)\n\nTo subtract these fractions, we need a common denominator, which is 35.\n\nWork rate of C = (7W/35) - (5W/35)\nWork rate of C = (7W - 5W) / 35\nWork rate of C = 2W / 35\n\nNow, we know that C alone can complete the work at a rate of 2W/35. To find the number of days C takes to complete the work, we can use the formula:\n\nNumber of days = Total work / Work rate\n\nNumber of days for C = W / (2W/35)\n\nNumber of days for C = 35 / 2\n\nNumber of days for C = 17.5 days\n\nSo, C alone can do that piece of work in 17.5 days. The correct answer is C) 17.5 days.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "15.5 days",
                 "B": "19.5 days",
@@ -6486,7 +6486,7 @@
                 "D": "16.5 days",
                 "E": "18.5 days"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "B) 18.",
@@ -6542,7 +6542,7 @@
             "Index": 407,
             "Query": "A can finish a work in 36days, B in 9days and C in 2days, B and C start the work but are forced to leave after 3 days. The remaining work was done by A in?\nOptions:  A)15days B)12days C)6days D)7days E)8days  ",
             "Response": "Let the total work be 36 units. Then, A's work rate is 1 unit/day, B's work rate is 4 units/day, and C's work rate is 18 units/day.\n\nIn the first 3 days, B and C together complete (4 + 18) * 3 = 22 * 3 = 66 units of work. However, since there are only 36 units of work in total, B and C together complete 36 units of work in 3 days.\n\nNow, the remaining work is 36 - 36 = 0 units. Since A's work rate is 1 unit/day, A completes the remaining work in 0 days.\n\nSo, the remaining work was done by A in 0 days. The correct answer is not in the given options.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "15days",
                 "B": "12days",
@@ -6550,7 +6550,7 @@
                 "D": "7days",
                 "E": "8days"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "9 : 10",
@@ -6558,7 +6558,7 @@
             "Index": 408,
             "Query": "The numbers of students speaking English and Hindi are in the ratio of 4 : 5. If the number of students speaking English increased by 35% and that speaking Hindi increased by 20%, what would be the new respective ratio?\nOptions:  A)19 : 20 B)7 : 8 C)8 : 9 D)Cannot be determined E)None of these  ",
             "Response": "Let the number of students speaking English be 4x and the number of students speaking Hindi be 5x.\n\nAfter the increase, the number of students speaking English will be 4x + 35% of 4x = 4x + 1.35x = 5.4x\nThe number of students speaking Hindi will be 5x + 20% of 5x = 5x + 1x = 6x\n\nThe new ratio will be 5.4x : 6x = 54 : 60 = 9 : 10\n\nThe answer is E) None of these.",
-            "Answer": "",
+            "Answer": "E",
             "Options": {
                 "A": "19 : 20",
                 "B": "7 : 8",
@@ -6566,7 +6566,7 @@
                 "D": "Cannot be determined",
                 "E": "None of these"
             },
-            "Final Answer": ""
+            "Final Answer": "E"
         },
         {
             "Extract-Response": "B) 2 days",
@@ -6606,7 +6606,7 @@
             "Index": 411,
             "Query": "A train passes a station platform in 32 seconds and a man standing on the platform in 20 seconds. If the speed of the train is 54 km/hr, what is the length of the platform?\nOptions:  A)180 m B)160 m C)240 m D)207 m E)202 m  ",
             "Response": "Let the length of the train be x meters and the length of the platform be y meters.\n\nWhen the train passes the man, it covers a distance equal to its own length (x meters) in 20 seconds.\nSo, the speed of the train relative to the man = x/20 m/s\n\nWhen the train passes the platform, it covers a distance equal to the sum of its own length and the length of the platform (x+y meters) in 32 seconds.\nSo, the speed of the train relative to the platform = (x+y)/32 m/s\n\nNow, we know that the speed of the train is 54 km/hr, which is equal to 54*(1000/3600) = 15 m/s.\n\nSince the man is standing on the platform, the speed of the train relative to the man and the platform is the same, which is 15 m/s.\n\nSo, we have the equation:\nx/20 = (x+y)/32 = 15\n\nSolving for x, we get:\nx = 20*15 = 300 meters (length of the train)\n\nNow, substituting the value of x in the equation (x+y)/32 = 15, we get:\n(300+y)/32 = 15\n\nSolving for y, we get:\ny = 32*15 - 300 = 480 - 300 = 180 meters (length of the platform)\n\nSo, the length of the platform is 180 meters.\n\nThe correct answer is A) 180 m.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "180 m",
                 "B": "160 m",
@@ -6614,7 +6614,7 @@
                 "D": "207 m",
                 "E": "202 m"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "200.",
@@ -6734,7 +6734,7 @@
             "Index": 419,
             "Query": "The average weight of 8 persons increases by 4 kg when a new person comes in place of one of them weighing 65 kg. What might be the weight of the new person ?\nOptions:  A)75 kg B)65 kg C)55 kg D)97 kg E)25 kg  ",
             "Response": "Let the weight of the new person be x kg.\nThe total weight of the 8 persons increased by 4 kg each, so the total increase in weight is 8 * 4 = <<8*4=32>>32 kg.\nSince the new person replaced a person weighing 65 kg, the new person must weigh 65 + 32 = <<65+32=97>>97 kg.\nSo, the weight of the new person might be 97 kg. Answer: \\boxed{D}.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "75 kg",
                 "B": "65 kg",
@@ -6742,7 +6742,7 @@
                 "D": "97 kg",
                 "E": "25 kg"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "B)log (2 + 3) = log (2 x 3)",
@@ -6766,7 +6766,7 @@
             "Index": 421,
             "Query": "A pipe takes a hours to fill the tank. But because of a leakage it took 7 times of its original time. Find the time taken by the leakage to empty the tank\nOptions:  A)50 min B)60 min C)90 min D)80 min E)70 min  ",
             "Response": "Let the time taken by the leakage to empty the tank be x hours.\n\nWithout the leakage, the pipe can fill the tank in a hours. So, the work done by the pipe in 1 hour is 1/a.\n\nWith the leakage, the pipe takes 7 times longer to fill the tank, which is 7a hours. Let the combined work done by the pipe and the leakage in 1 hour be 1/x. Since the leakage is emptying the tank, the work done by the leakage in 1 hour is -1/x.\n\nNow, we can write the equation:\n\n(1/a) - (1/x) = 1/(7a)\n\nTo solve for x, we can first find a common denominator for the fractions:\n\nx - a = 7a^2\n\nNow, we can solve for x:\n\nx = a + 7a^2\n\nSince we want to find the time taken by the leakage to empty the tank, we need to find the value of x in terms of a. We can plug in the given value of a:\n\nx = a + 7a^2\n\nx = 7a^2 + a\n\nNow, we can plug in the given value of a and solve for x:\n\nx = 7(1)^2 + 1\n\nx = 7 + 1\n\nx = 8\n\nSo, the time taken by the leakage to empty the tank is 8 hours. Converting this to minutes, we get:\n\n8 hours * 60 minutes/hour = 480 minutes\n\nSince the answer choices are in minutes, we can compare the given options to our calculated value:\n\nA) 50 min\nB) 60 min\nC) 90 min\nD) 80 min\nE) 70 min\n\nNone of the given options match our calculated value of 480 minutes. There may be an error in the problem statement or the answer choices.",
-            "Answer": "",
+            "Answer": "C",
             "Options": {
                 "A": "50 min",
                 "B": "60 min",
@@ -6774,7 +6774,7 @@
                 "D": "80 min",
                 "E": "70 min"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Extract-Response": "not in the given options. There might be an error in the problem statement or the given options.",
@@ -6958,7 +6958,7 @@
             "Index": 433,
             "Query": "Divide 71 into 2 parts such that 1 part exceeds the other by 8. What are the 2 no.'s in that part?\nOptions:  A)23 B)28 C)31 D)36 E)39  ",
             "Response": "Let the smaller part be x. Then the larger part is x + 8. According to the problem, the sum of these two parts is 71:\n\nx + (x + 8) = 71\n\nCombine like terms:\n\n2x + 8 = 71\n\nSubtract 8 from both sides:\n\n2x = 63\n\nDivide both sides by 2:\n\nx = 31.5\n\nSince the parts must be whole numbers, this solution is not valid. However, we can see that the answer must be close to 31.5. If we try x = 31, then the larger part is 31 + 8 = 39. The sum of these two parts is 31 + 39 = 70, which is 1 less than 71. If we try x = 32, then the larger part is 32 + 8 = 40. The sum of these two parts is 32 + 40 = 72, which is 1 more than 71. Therefore, there is no solution with whole numbers for the two parts.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "23",
                 "B": "28",
@@ -6966,7 +6966,7 @@
                 "D": "36",
                 "E": "39"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "D) II, III only.",
@@ -7038,7 +7038,7 @@
             "Index": 438,
             "Query": "log(a(a(a)^1/4)^1/4)^1/4 here base is a.\nOptions:  A)0 B)21/64 C)1 D)22/63 E)23/65  ",
             "Response": "We have the expression log_a(a(a(a)^1/4)^1/4)^1/4. \n\nFirst, let's simplify the expression inside the logarithm. We have:\n\na(a(a)^1/4)^1/4 = a^(1+(1/4)^1/4)\n\nNow, we can apply the logarithm:\n\nlog_a(a^(1+(1/4)^1/4)) = 1+(1/4)^1/4\n\nSo the answer is 1+(1/4)^1/4, which is not among the given options.",
-            "Answer": "",
+            "Answer": "1",
             "Options": {
                 "A": "0",
                 "B": "21/64",
@@ -7046,7 +7046,7 @@
                 "D": "22/63",
                 "E": "23/65"
             },
-            "Final Answer": ""
+            "Final Answer": "1"
         },
         {
             "Extract-Response": "E) None of these",
@@ -7326,7 +7326,7 @@
             "Index": 456,
             "Query": "In a function they are distributing noble prize. In how many ways can 3 prizes be distributed among 4 boys when a boy gets any no. of prizes?\nOptions:  A)26 B)34 C)64 D)60 E)72  ",
             "Response": "We can use the concept of stars and bars to solve this problem. We have 3 prizes (stars) and we want to distribute them among 4 boys (bars). We can represent this as a sequence of stars and bars, where the number of stars between the bars represents the number of prizes each boy gets.\n\nFor example, if we have the sequence *|**|*|, this means the first boy gets 1 prize, the second boy gets 2 prizes, and the third and fourth boys get 0 prizes.\n\nWe can think of this as placing 3 stars and 3 bars in a row. There are a total of 6 positions, and we need to choose 3 of them to place the stars. The remaining positions will be filled with bars.\n\nThe number of ways to do this is given by the combination formula: C(n, k) = n! / (k!(n-k)!), where n is the total number of positions and k is the number of positions we need to choose.\n\nIn this case, n = 6 and k = 3, so the number of ways to distribute the prizes is:\n\nC(6, 3) = 6! / (3!(6-3)!) = 6! / (3!3!) = (6*5*4) / (3*2*1) = 20*5 = 100\n\nHowever, this includes the case where all 3 prizes go to one boy, which is not allowed. There are 4 ways for this to happen (one for each boy), so we need to subtract these cases from our total.\n\nSo the final answer is 100 - 4 = 96 ways to distribute the prizes.",
-            "Answer": "",
+            "Answer": "C",
             "Options": {
                 "A": "26",
                 "B": "34",
@@ -7334,7 +7334,7 @@
                 "D": "60",
                 "E": "72"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Extract-Response": "D) 25.",
@@ -7582,7 +7582,7 @@
             "Index": 472,
             "Query": "A man has $ 10,000 to invest. He invests $ 4000 at 5 % and $ 3500 at 4 %. In order to have a yearly income of $ 500, he must invest the remainder at:\nOptions:  A)6 % B)6.1 % C)6.2 % D)6.3 % E)6.4 %  ",
             "Response": "Let x be the interest rate at which the man must invest the remainder of his money. The remainder of his money is $10,000 - $4,000 - $3,500 = $2,500.\n\nThe man wants a yearly income of $500. He will earn $4,000 * 0.05 = $<<4000*0.05=200>>200 from the first investment and $3,500 * 0.04 = $<<3500*0.04=140>>140 from the second investment. So, he needs to earn $500 - $200 - $140 = $<<500-200-140=160>>160 from the third investment.\n\nTo find the interest rate, we can set up the equation:\n\n$2,500 * x = $160\n\nNow, we can solve for x:\n\nx = $160 / $2,500 = 0.064\n\nSo, the man must invest the remainder of his money at an interest rate of 6.4%. The answer is E) 6.4%.",
-            "Answer": "",
+            "Answer": "E",
             "Options": {
                 "A": "6 %",
                 "B": "6.1 %",
@@ -7590,7 +7590,7 @@
                 "D": "6.3 %",
                 "E": "6.4 %"
             },
-            "Final Answer": ""
+            "Final Answer": "E"
         },
         {
             "Extract-Response": "not among the given options.",
@@ -7678,7 +7678,7 @@
             "Index": 478,
             "Query": "A train passes a station platform in 35 seconds and a man standing on the platform in 20 seconds. If the speed of the train is 54 km/hr, what is the length of the platform?\nOptions:  A)120 m B)225 m C)300 m D)360 m E)280 m  ",
             "Response": "Let the length of the train be x meters and the length of the platform be y meters.\n\nWhen the train passes the man, it covers a distance equal to its own length (x meters) in 20 seconds.\nSo, the speed of the train relative to the man = x/20 m/s\n\nWhen the train passes the platform, it covers a distance equal to the sum of its own length and the length of the platform (x+y meters) in 35 seconds.\nSo, the speed of the train relative to the platform = (x+y)/35 m/s\n\nNow, we know that the speed of the train is 54 km/hr. We need to convert this speed to m/s.\n54 km/hr = 54*(1000/3600) m/s = 15 m/s\n\nSince the man is standing on the platform, the speed of the train relative to the man is the same as the speed of the train relative to the platform.\nSo, x/20 = (x+y)/35\n\nWe also know that the speed of the train is 15 m/s.\nSo, x/20 = 15\n=> x = 300 meters\n\nNow, substituting the value of x in the equation x/20 = (x+y)/35, we get:\n300/20 = (300+y)/35\n=> 15 = (300+y)/35\n=> 15*35 = 300+y\n=> 525 = 300+y\n=> y = 225 meters\n\nSo, the length of the platform is 225 meters. The correct option is B.",
-            "Answer": "",
+            "Answer": "B",
             "Options": {
                 "A": "120 m",
                 "B": "225 m",
@@ -7686,7 +7686,7 @@
                 "D": "360 m",
                 "E": "280 m"
             },
-            "Final Answer": ""
+            "Final Answer": "B"
         },
         {
             "Extract-Response": "A) 4.",
@@ -7742,7 +7742,7 @@
             "Index": 482,
             "Query": "A train 120 m long crosses a platform 120 m long in 6 sec; find the speed of the train?\nOptions:  A)144 kmph B)58 kmph C)54 kmph D)94 kmph E)59 kmph  ",
             "Response": "To find the speed of the train, we can use the formula:\n\nSpeed = (Total distance covered) / (Time taken)\n\nThe total distance covered by the train is the sum of its own length and the length of the platform, which is 120 m + 120 m = 240 m.\n\nThe time taken is 6 seconds.\n\nSo, the speed of the train is:\n\nSpeed = 240 m / 6 s = 40 m/s\n\nNow, we need to convert this speed from meters per second to kilometers per hour. We can do this by multiplying the speed by 18/5:\n\nSpeed = 40 m/s * (18/5) = 144 km/h\n\nSo, the speed of the train is 144 km/h. The correct option is A) 144 kmph.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "144 kmph",
                 "B": "58 kmph",
@@ -7750,7 +7750,7 @@
                 "D": "94 kmph",
                 "E": "59 kmph"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "C) 9720.",
@@ -7982,7 +7982,7 @@
             "Index": 497,
             "Query": "The length of a rectangle is two - fifths of the radius of a circle. The radius of the circle is equal to the side of the square, whose area is 1225 sq.units. What is the area (in sq.units) of the rectangle if the rectangle if the breadth is 10 units?\nOptions:  A)140 sq.units B)186 sq.units C)176 sq.units D)865 sq.units E)143 sq.units  ",
             "Response": "The side of the square is equal to the square root of the area, so the side of the square is 35 units (since 35*35=1225).\nThe radius of the circle is equal to the side of the square, so the radius of the circle is 35 units.\nThe length of the rectangle is two-fifths of the radius of the circle, so the length of the rectangle is (2/5)*35=14 units.\nThe area of the rectangle is the length times the breadth, so the area of the rectangle is 14*10=<<14*10=140>>140 square units. Answer: \\boxed{140}.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "140 sq.units",
                 "B": "186 sq.units",
@@ -7990,7 +7990,7 @@
                 "D": "865 sq.units",
                 "E": "143 sq.units"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "D) 97",
@@ -8078,7 +8078,7 @@
             "Index": 503,
             "Query": "A sum of Rs.7000 is invested at a compound interest for three years, the rate of interest being 10% p.a., 20% p.a. and 25% p.a. for the 1st, 2nd and the 3rd years respectively. Find the interest received at the end of the three years.\nOptions:  A)A)282 B)B)4550 C)C)8383 D)D)8383 E)E)3284  ",
             "Response": "Let's calculate the amount after each year:\n\n1st year:\nAmount = Principal * (1 + Rate/100)\nAmount = 7000 * (1 + 10/100)\nAmount = 7000 * (1 + 0.1)\nAmount = 7000 * 1.1\nAmount = 7700\n\n2nd year:\nAmount = Principal * (1 + Rate/100)\nAmount = 7700 * (1 + 20/100)\nAmount = 7700 * (1 + 0.2)\nAmount = 7700 * 1.2\nAmount = 9240\n\n3rd year:\nAmount = Principal * (1 + Rate/100)\nAmount = 9240 * (1 + 25/100)\nAmount = 9240 * (1 + 0.25)\nAmount = 9240 * 1.25\nAmount = 11550\n\nNow, let's find the interest received at the end of the three years:\nInterest = Amount - Principal\nInterest = 11550 - 7000\nInterest = 4550\n\nSo, the interest received at the end of the three years is Rs. 4550. Answer: \\boxed{4550}.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "A)282",
                 "B": "B)4550",
@@ -8086,7 +8086,7 @@
                 "D": "D)8383",
                 "E": "E)3284"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "B) 820",
@@ -8190,7 +8190,7 @@
             "Index": 510,
             "Query": "If the numerator of a fraction be increased by 15% and its denominator be diminished by 8%, the value of the fraction is 15/16. Find the original fraction ?\nOptions:  A)1/2 B)3/5 C)5/7 D)9/11 E)3/4  ",
             "Response": "Let the original fraction be x/y.\n\nWhen the numerator is increased by 15%, the new numerator becomes 1.15x.\nWhen the denominator is diminished by 8%, the new denominator becomes 0.92y.\n\nAccording to the problem, the new fraction is 15/16:\n\n(1.15x) / (0.92y) = 15/16\n\nNow, we can cross-multiply and solve for x/y:\n\n16 * 1.15x = 15 * 0.92y\n18.4x = 13.8y\n\nDivide both sides by 13.8:\n\nx/y = (18.4/13.8)\n\nNow, we can simplify the fraction:\n\nx/y = (184/138) = (92/69)\n\nSince none of the answer choices match this fraction, we can conclude that there is an error in the problem or the answer choices.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "1/2",
                 "B": "3/5",
@@ -8198,7 +8198,7 @@
                 "D": "9/11",
                 "E": "3/4"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "C) 44",
@@ -8526,7 +8526,7 @@
             "Index": 531,
             "Query": "A cylindrical bucket of height 36 cm and radius 21 cm is filled with sand. The bucket is emptied on the ground and a conical heap of sand is formed, the height of the heap being 12 cm. The radius of the heap at the base is :\nOptions:  A)63 cm B)53 cm C)56 cm D)66 cm E)None of these  ",
             "Response": "Let the radius of the conical heap be r cm.\nSince the volume of the sand in the bucket is equal to the volume of the sand in the conical heap, we have\n\u03c0(21)^2(36) = (1/3)\u03c0r^2(12)\n=> r^2 = 21^2 * 36 * 3 / 12\n=> r^2 = 21^2 * 9\n=> r = 21 * 3 = 63 cm\n\nSo, the radius of the heap at the base is 63 cm. Answer: \\boxed{A}.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "63 cm",
                 "B": "53 cm",
@@ -8534,7 +8534,7 @@
                 "D": "66 cm",
                 "E": "None of these"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "B)383",
@@ -8782,7 +8782,7 @@
             "Index": 547,
             "Query": "By investing a 6% stock at 96 an income of Rs. 100 is obtained by making and investment of ?\nOptions:  A)Rs. 1600 B)Rs. 1504 C)Rs. 1666 D)Rs. 2000 E)Rs. 5760  ",
             "Response": "Let the investment amount be x.\n\nThe income from the 6% stock at 96 is (6/96)*x = (1/16)*x.\n\nWe are given that the income is Rs. 100.\n\nSo, (1/16)*x = 100.\n\nSolving for x, we get x = 100*16 = Rs. 1600.\n\nTherefore, the investment amount is Rs. 1600. Answer: \\boxed{A}.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "Rs. 1600",
                 "B": "Rs. 1504",
@@ -8790,7 +8790,7 @@
                 "D": "Rs. 2000",
                 "E": "Rs. 5760"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "none of the given options.",
@@ -8798,7 +8798,7 @@
             "Index": 548,
             "Query": "I bought two books; for Rs.540. I sold one at a loss of 15% and other at a gain of 19% and then I found each book was sold at the same price. Find the cost of the book sold at a loss?\nOptions:  A)197 B)280 C)189 D)278 E)315  ",
             "Response": "Let the cost of the book sold at a loss be x and the cost of the book sold at a gain be y.\n\nAccording to the problem, x + y = 540.\n\nThe book sold at a loss was sold at 85% of its cost price, so 0.85x is the selling price.\nThe book sold at a gain was sold at 119% of its cost price, so 1.19y is the selling price.\n\nSince both books were sold at the same price, we can equate the selling prices:\n\n0.85x = 1.19y\n\nNow we can solve for x in terms of y:\n\nx = (1.19y)/0.85\n\nSubstitute this expression for x into the first equation:\n\n(1.19y)/0.85 + y = 540\n\nMultiply both sides by 0.85 to get rid of the fraction:\n\n1.19y + 0.85y = 459\n\nCombine like terms:\n\n2.04y = 459\n\nDivide both sides by 2.04:\n\ny = 225\n\nNow substitute this value of y back into the expression for x:\n\nx = (1.19 * 225)/0.85\n\nx = 317.25/0.85\n\nx = 373.235\n\nSince the cost of the book sold at a loss is x, the answer is approximately 373.24. However, this is not one of the options given. It's possible that there was a mistake in the problem or the options. If we round the answer to the nearest whole number, we get 373, which is still not one of the options.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "197",
                 "B": "280",
@@ -8806,7 +8806,7 @@
                 "D": "278",
                 "E": "315"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "500 m.",
@@ -8814,7 +8814,7 @@
             "Index": 549,
             "Query": "A train 800 m long is running at a speed of 78 km/hr. If it crosses a tunnel in 1 min, then the length of the tunnel is?\nOptions:  A)176 m B)786 m C)500 m D)865 m E)796 m  ",
             "Response": "First, we need to find the distance the train travels in 1 minute. Since the train is running at a speed of 78 km/hr, we can convert this to meters per minute:\n\n78 km/hr * (1000 m/km) * (1 hr/60 min) = 1300 m/min\n\nNow, we know that the train travels a distance of 1300 meters in 1 minute. Since the train is 800 meters long, the length of the tunnel must be the difference between the distance the train travels and the length of the train:\n\nLength of tunnel = Distance traveled - Length of train\nLength of tunnel = 1300 m - 800 m\nLength of tunnel = 500 m\n\nSo, the length of the tunnel is 500 meters. The correct answer is C) 500 m.",
-            "Answer": "",
+            "Answer": "D",
             "Options": {
                 "A": "176 m",
                 "B": "786 m",
@@ -8822,7 +8822,7 @@
                 "D": "865 m",
                 "E": "796 m"
             },
-            "Final Answer": ""
+            "Final Answer": "D"
         },
         {
             "Extract-Response": "A) I only",
@@ -8910,7 +8910,7 @@
             "Index": 555,
             "Query": "Difference between the length &breadth of a rectangle is 10 m. If its perimeter is 206 m, then its area is?\nOptions:  A)2400 m^2 B)1500 m^2 C)2520 m^2 D)1200 m^2 E)2580 m^2  ",
             "Response": "Let the length of the rectangle be L meters and the breadth be B meters. We are given that the difference between the length and breadth is 10 meters, so we can write:\n\nL - B = 10  (1)\n\nWe are also given that the perimeter of the rectangle is 206 meters. The formula for the perimeter of a rectangle is:\n\nPerimeter = 2 * (Length + Breadth)\n\nSo, we can write:\n\n206 = 2 * (L + B)  (2)\n\nNow, we can solve these two equations simultaneously to find the values of L and B. From equation (1), we can write L as:\n\nL = B + 10\n\nSubstitute this value of L in equation (2):\n\n206 = 2 * (B + 10 + B)\n\nDivide both sides by 2:\n\n103 = B + 10 + B\n\nCombine the B terms:\n\n103 = 2B + 10\n\nSubtract 10 from both sides:\n\n93 = 2B\n\nDivide both sides by 2:\n\nB = 46.5\n\nNow that we have the value of B, we can find the value of L using the equation L = B + 10:\n\nL = 46.5 + 10\n\nL = 56.5\n\nNow that we have the values of L and B, we can find the area of the rectangle using the formula:\n\nArea = Length * Breadth\n\nArea = 56.5 * 46.5\n\nArea = 2624.25\n\nSince the options are all in whole numbers, we can round the area to the nearest whole number:\n\nArea \u2248 2624 m^2\n\nHowever, this option is not available in the given choices. It's possible that there was a mistake in the problem statement or the answer choices.",
-            "Answer": "",
+            "Answer": "B",
             "Options": {
                 "A": "2400 m^2",
                 "B": "1500 m^2",
@@ -8918,7 +8918,7 @@
                 "D": "1200 m^2",
                 "E": "2580 m^2"
             },
-            "Final Answer": ""
+            "Final Answer": "B"
         },
         {
             "Extract-Response": "C) 16000.",
@@ -8942,7 +8942,7 @@
             "Index": 557,
             "Query": "A is twice as good a work man as B and together they finish the work in 14 days. In how many days A alone can finish the work?\nOptions:  A)5 days B)21 days C)15 days D)25 days E)30 days  ",
             "Response": "Let A's 1 day work = x\nThen B's 1 day work = x/2 (since A is twice as good as B)\n\n(A + B)'s 1 day work = x + x/2 = 3x/2\n\nTogether, they finish the work in 14 days. So, their 14 days work = 1 (the whole work)\n14 * (3x/2) = 1\n=> 3x = 2/14\n=> x = 1/21\n\nA's 1 day work = x = 1/21\nSo, A alone can finish the work in 21 days.\n\nAnswer: B) 21 days.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "5 days",
                 "B": "21 days",
@@ -8950,7 +8950,7 @@
                 "D": "25 days",
                 "E": "30 days"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "not among the given options.",
@@ -8958,7 +8958,7 @@
             "Index": 558,
             "Query": "A train 240 m in length crosses a telegraph post in 16 seconds. The speed of the train is?\nOptions:  A)40 B)88 C)77 D)6 E)23  ",
             "Response": "To find the speed of the train, we can use the formula:\n\nSpeed = Distance / Time\n\nIn this case, the distance is the length of the train (240 m) and the time is 16 seconds. So we have:\n\nSpeed = 240 m / 16 s = 15 m/s\n\nNow we need to convert the speed from meters per second to kilometers per hour. We know that 1 m/s is equal to 3.6 km/h, so:\n\nSpeed = 15 m/s * 3.6 km/h = 54 km/h\n\nThe speed of the train is 54 km/h. However, this is not one of the options given. It's possible that there is an error in the problem statement or the options provided.",
-            "Answer": "",
+            "Answer": "D",
             "Options": {
                 "A": "40",
                 "B": "88",
@@ -8966,7 +8966,7 @@
                 "D": "6",
                 "E": "23"
             },
-            "Final Answer": ""
+            "Final Answer": "D"
         },
         {
             "Extract-Response": "D) 1/3.",
@@ -8990,7 +8990,7 @@
             "Index": 560,
             "Query": "How many three digit number can be formed with the numbers 1,2,3,4,5.\nOptions:  A)125 ways B)150 ways C)175 ways D)180 ways E)115 ways  ",
             "Response": "We can form a three-digit number using the numbers 1, 2, 3, 4, and 5 in the following way:\n\n1. Choose a number for the hundreds place: There are 5 options (1, 2, 3, 4, or 5).\n2. Choose a number for the tens place: There are 4 options left (since we cannot repeat the number chosen for the hundreds place).\n3. Choose a number for the units place: There are 3 options left (since we cannot repeat the numbers chosen for the hundreds and tens places).\n\nSo, the total number of three-digit numbers that can be formed is 5 \u00d7 4 \u00d7 3 = 60.\n\nHowever, this calculation assumes that we cannot have a zero in the tens or units place. Since we are only using the numbers 1, 2, 3, 4, and 5, there is no need to worry about this restriction.\n\nTherefore, the answer is 60 ways, which is not among the given options. The problem statement might have an error or a missing condition.",
-            "Answer": "",
+            "Answer": "C",
             "Options": {
                 "A": "125 ways",
                 "B": "150 ways",
@@ -8998,7 +8998,7 @@
                 "D": "180 ways",
                 "E": "115 ways"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Extract-Response": "none of the given options.",
@@ -9006,7 +9006,7 @@
             "Index": 561,
             "Query": "A five-digit number divisible by 3 is to be formed using numerical 0, 1, 2, 3, 4 and 5 without repetition. The total number W of ways this can be done is:\nOptions:  A)122 B)210 C)216 D)217 E)225  ",
             "Response": "We proceed using casework on the last digit of the five-digit number.\n\nCase 1: The last digit is 0.\n\nThere are 4 choices for the first digit (it can be 1, 2, 3, or 4), 3 choices for the second digit, 2 choices for the third digit, and 1 choice for the fourth digit. This gives us a total of $4 \\cdot 3 \\cdot 2 \\cdot 1 = 24$ ways.\n\nCase 2: The last digit is 3.\n\nThere are 4 choices for the first digit (it can be 0, 1, 2, or 4), 3 choices for the second digit, 2 choices for the third digit, and 1 choice for the fourth digit. This gives us a total of $4 \\cdot 3 \\cdot 2 \\cdot 1 = 24$ ways.\n\nCase 3: The last digit is 6.\n\nSince 6 is not one of the digits we can use, this case is impossible.\n\nThe total number of ways is $24 + 24 = \\boxed{48}$.",
-            "Answer": "",
+            "Answer": "C",
             "Options": {
                 "A": "122",
                 "B": "210",
@@ -9014,7 +9014,7 @@
                 "D": "217",
                 "E": "225"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Extract-Response": "B) -2",
@@ -9134,7 +9134,7 @@
             "Index": 569,
             "Query": "A, B and C enter into a partnership. They invest Rs. 40,000, Rs. 80,000 and Rs. 1,20,000 respectively. At the end of the first year, B withdraws Rs. 40,000, while at the end of the second year, C withdraws Rs. 80,000. In what ratio will the profit be shared at the end of 3 years ?\nOptions:  A)8:7:4 B)1:3:5 C)3:4:7 D)4:5:9 E)None of these  ",
             "Response": "A:B:C = (40000 * 3) : (80000 * 1 + 40000 * 2) : (120000 * 2 + 40000 * 1)\n= 120000 : 120000 : 240000\n= 1:1:2. Answer: E",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "8:7:4",
                 "B": "1:3:5",
@@ -9142,7 +9142,7 @@
                 "D": "4:5:9",
                 "E": "None of these"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "B)273257",
@@ -9166,7 +9166,7 @@
             "Index": 571,
             "Query": "Jacob brought a scooter for a certain sum of money. He spent 10% of the cost on repairs and sold the scooter for a profit of Rs. 1100. How much did he spend on repairs if he made a profit of 20%?\nOptions:  A)300 B)278 C)500 D)277 E)261  ",
             "Response": "Let the cost price of the scooter be x.\nHe spent 10% of the cost on repairs, so he spent 0.1x on repairs.\nHe sold the scooter for a profit of 20%, so he sold it for 1.2x.\nThe profit he made was Rs. 1100, so 1.2x - x = 1100.\n0.2x = 1100\nx = 1100 / 0.2 = 5500\nHe spent 0.1 * 5500 = Rs. 550 on repairs.\nHowever, this is not one of the options. There might be a mistake in the problem statement or the options provided.",
-            "Answer": "",
+            "Answer": "500",
             "Options": {
                 "A": "300",
                 "B": "278",
@@ -9174,7 +9174,7 @@
                 "D": "277",
                 "E": "261"
             },
-            "Final Answer": ""
+            "Final Answer": "500"
         },
         {
             "Extract-Response": "not available in the given options.",
@@ -9182,7 +9182,7 @@
             "Index": 572,
             "Query": "The average salary of a person for the months of January, February, March and April is Rs.8000 and that for the months February, March, April and May is Rs.8600. If his salary for the month of May is Rs.6500, find his salary for the month of January?\nOptions:  A)s.4100 B)s.4270 C)s.4500 D)s.4550 E)s.2500  ",
             "Response": "Let the salary for the month of January be x.\n\nThe total salary for the months of January, February, March, and April is 4 * 8000 = 32000.\nThe total salary for the months of February, March, April, and May is 4 * 8600 = 34400.\n\nNow, we can write the equation:\n32000 - x + 6500 = 34400\n\nSolving for x, we get:\nx = 34400 - 32000 + 6500\nx = 2400 + 6500\nx = 8900\n\nSo, the salary for the month of January is Rs. 8900. However, this is not one of the options given. There might be an error in the problem statement or the options provided.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "s.4100",
                 "B": "s.4270",
@@ -9190,7 +9190,7 @@
                 "D": "s.4550",
                 "E": "s.2500"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "B) 250.",
@@ -9246,7 +9246,7 @@
             "Index": 576,
             "Query": "Find the sum of prime numbers lying between 60 and 75?\nOptions:  A)198 B)201 C)252 D)272 E)None  ",
             "Response": "The prime numbers between 60 and 75 are 61, 67, and 71. The sum of these prime numbers is 61 + 67 + 71 = 199. The correct answer is E) None.",
-            "Answer": "",
+            "Answer": "E",
             "Options": {
                 "A": "198",
                 "B": "201",
@@ -9254,7 +9254,7 @@
                 "D": "272",
                 "E": "None"
             },
-            "Final Answer": ""
+            "Final Answer": "E"
         },
         {
             "Extract-Response": "2%.",
@@ -9406,7 +9406,7 @@
             "Index": 586,
             "Query": "The radius of a wheel is 22.4 cm. What is the distance covered by the wheel in making 320 resolutions?\nOptions:  A)724 m B)704 m C)287 m D)450.6 m E)927 m  ",
             "Response": "The distance covered by the wheel in making 1 revolution is equal to its circumference, which is 2 * pi * radius. So, the distance covered in making 320 revolutions is:\n\nDistance = 320 * 2 * pi * 22.4 cm\n\nDistance = 320 * 44.8 * pi cm\n\nDistance = 14336 * pi cm\n\nNow, we need to convert this distance to meters:\n\nDistance = 14336 * pi * (1 meter / 100 cm)\n\nDistance = 143.36 * pi meters\n\nDistance \u2248 450.6 meters\n\nSo, the correct answer is D) 450.6 m.",
-            "Answer": "",
+            "Answer": "D",
             "Options": {
                 "A": "724 m",
                 "B": "704 m",
@@ -9414,7 +9414,7 @@
                 "D": "450.6 m",
                 "E": "927 m"
             },
-            "Final Answer": ""
+            "Final Answer": "D"
         },
         {
             "Extract-Response": "10 a.m.",
@@ -9422,7 +9422,7 @@
             "Index": 587,
             "Query": "The distance between Delhi and Mathura is 110 kms. A starts from Delhi with a speed of 20 kmph at 7 a.m. for Mathura and B starts from Mathura with a speed of 25 kmph at 8 p.m. from Delhi. When will they meet?\nOptions:  A)12a.m B)10a.m C)19a.m D)76a.m E)37a.m  ",
             "Response": "Let's assume they meet after t hours from 7 a.m.\nIn t hours, A will cover 20t km.\nIn (t-1) hours, B will cover 25(t-1) km (since B starts 1 hour later).\n\nSince they are moving towards each other, the sum of the distances covered by A and B should be equal to the distance between Delhi and Mathura.\n\n20t + 25(t-1) = 110\n\n20t + 25t - 25 = 110\n\n45t = 135\n\nt = 3\n\nSo, they will meet after 3 hours from 7 a.m., which is 10 a.m.\n\nThe correct option is B) 10 a.m.",
-            "Answer": "",
+            "Answer": "A",
             "Options": {
                 "A": "12a.m",
                 "B": "10a.m",
@@ -9430,7 +9430,7 @@
                 "D": "76a.m",
                 "E": "37a.m"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Extract-Response": "A)Rs.5500",

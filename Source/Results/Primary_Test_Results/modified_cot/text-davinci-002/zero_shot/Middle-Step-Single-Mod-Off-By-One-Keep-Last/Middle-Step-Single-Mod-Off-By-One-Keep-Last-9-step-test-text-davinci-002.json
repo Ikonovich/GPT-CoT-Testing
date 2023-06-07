@@ -10,14 +10,14 @@
     "Simple Prompt": true,
     "Test Path": "Results\\Primary_Test_Results\\modified_cot\\text-davinci-002\\zero_shot\\Middle-Step-Single-Mod-Off-By-One-Keep-Last\\Middle-Step-Single-Mod-Off-By-One-Keep-Last-9-step-test-text-davinci-002.json",
     "Total": 250,
-    "Total Accurate": 139,
-    "Total Accuracy": 55.60000000000001,
+    "Total Accurate": 140,
+    "Total Accuracy": 56.00000000000001,
     "Percent of Answers Containing CoT": 9.2,
-    "CoT Accuracy": 8.695652173913043,
+    "CoT Accuracy": 13.043478260869565,
     "Non-CoT Accuracy": 60.352422907488986,
-    "ci_radius": 6.159067274839592,
-    "ci_upper": 61.7590672748396,
-    "ci_lower": 49.440932725160415,
+    "ci_radius": 6.153276330541316,
+    "ci_upper": 62.153276330541324,
+    "ci_lower": 49.84672366945869,
     "Dataset Index": 10,
     "Trials": [
         {
@@ -2367,8 +2367,8 @@
             "Injected CoT": "6 * 5 = 30\n30 * 1 = 30\n4 * 2 = 9\n3 * 9 = 24\n30 + 9 = 38\n38 + 24 = 62\n62 + 9 = 71\n71 + 7 = 78\n78 - 1 =",
             "Response": " 77\n\n*/\n\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nint main()\n{\n\tchar num[100];\n\tint i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, sum;\n\t\n\twhile(scanf(\"%s\", num) != EOF)\n\t{\n\t\tif(num[0] == '0' && num[1] == '\\0')\n\t\t{\n\t\t\tbreak;\n\t\t}\n\t\t\n\t\tsum = 0;\n\t\t\n\t\tfor(i = 0; i < strlen(num); i++)\n\t\t{\n\t\t\tif(i % 2 == 0)\n\t\t\t{\n\t\t\t\tsum = sum + (num[i] - '0');\n\t\t\t}\n\t\t\telse\n\t\t\t{\n\t\t\t\tsum = sum + ((num[i] - '0') * 2);\n\t\t\t}\n\t\t}\n\t\t\n\t\tif(sum % 10 == 0)\n\t\t{\n\t\t\tprintf(\"Valid\\n\");\n\t\t}\n\t\telse\n\t\t{\n\t\t\tprintf(\"Invalid\\n\");\n\t\t}\n\t}\n\t\n\treturn 0;\n}",
             "Extract-Response": "\n\nInvalid",
-            "Answer": "",
-            "Final Answer": ""
+            "Answer": 77.0,
+            "Final Answer": 77.0
         },
         {
             "Index": 434,

@@ -10,14 +10,14 @@
     "Simple Prompt": true,
     "Test Path": "Results\\Primary_Test_Results\\modified_cot\\text-davinci-002\\zero_shot\\unmodified\\unmodified-4-step-test-text-davinci-002.json",
     "Total": 250,
-    "Total Accurate": 215,
-    "Total Accuracy": 86.0,
+    "Total Accurate": 216,
+    "Total Accuracy": 86.4,
     "Percent of Answers Containing CoT": 8.799999999999999,
-    "CoT Accuracy": 22.727272727272727,
+    "CoT Accuracy": 27.27272727272727,
     "Non-CoT Accuracy": 92.10526315789474,
-    "ci_radius": 4.3012958047546554,
-    "ci_upper": 90.30129580475466,
-    "ci_lower": 81.69870419524534,
+    "ci_radius": 4.24925107001222,
+    "ci_upper": 90.64925107001223,
+    "ci_lower": 82.15074892998778,
     "Dataset Index": 8,
     "Trials": [
         {
@@ -1967,8 +1967,8 @@
             "Injected CoT": "9 + 1 = 10\n10 + 7 = 17\n17 + 6 = 23\n23 + 6 =",
             "Response": " 29\n\n29 is the checksum, which is the right most digit of the resulting sum.\n\nTherefore, the ISBN is 0-306-40615-2.\n\nIt is possible to calculate the check digit manually thus:\n\nFind the sum of the digits multiplied by their position in the number (counting from the right). For example, the sum of the digits for the ISBN above is\n\n0 \u00d7 10 + 6 \u00d7 9 + 0 \u00d7 8 + 6 \u00d7 7 + 4 \u00d7 6 + 0 \u00d7 5 + 6 \u00d7 4 + 1 \u00d7 3 + 5 \u00d7 2 =  \n0 + 54 + 0 + 42 + 24 + 0 + 24 + 12 + 15 = 159\nThe check digit is the amount that you would need to add to the sum to make it a multiple of 10. In this case it would be 1, so the check digit for the ISBN above is 1.\n\n*/\n\n#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cmath>\n#include <cstdio>\n#include <cstring>\n\nusing namespace std;\n\nint main()\n{\n\tstring isbn;\n\tcin >> isbn;\n\tint sum = 0;\n\tint count = 1;\n\tfor (int i = 0; i < isbn.size(); i++)\n\t{\n\t\tif (isbn[i] == '-')\n\t\t\tcontinue;\n\t\tif (isbn[i] == 'X')\n\t\t\tsum += 10 * count;\n\t\telse\n\t\t\tsum += (isbn[i] - '0') * count;\n\t\tcount++;\n\t}\n\tif (sum % 11 == 0)\n\t\tcout << \"Right\" << endl;\n\telse\n\t\tcout << isbn.substr(0, isbn.size() - 1) << (11 - sum % 11) << endl;\n\treturn 0;\n}",
             "Extract-Response": "\n\nRight",
-            "Answer": "",
-            "Final Answer": ""
+            "Answer": 29.0,
+            "Final Answer": 29.0
         },
         {
             "Index": 243,

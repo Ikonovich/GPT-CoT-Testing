@@ -10,6 +10,15 @@
     "Extraction Type": "in-brackets",
     "Simple Prompt": true,
     "Test Path": "Results\\Primary_Test_Results\\text-davinci-002\\zero_shot\\stepwise\\Simple-in-brackets-text-davinci-002-zero_shot-10step.json",
+    "Total": 48,
+    "Total Accurate": 1,
+    "Total Accuracy": 2.083333333333333,
+    "Percent of Answers Containing CoT": 6.25,
+    "CoT Accuracy": 0.0,
+    "Non-CoT Accuracy": 2.2222222222222223,
+    "ci_radius": 4.040574737950402,
+    "ci_upper": 6.123908071283735,
+    "ci_lower": -1.9572414046170685,
     "Trials": [
         {
             "Index": 0,
@@ -412,28 +421,36 @@
             "GT": 79,
             "Query": "1 - 2 - 1 + 7 * 6 + 4 + 8 + 9 + 2 + 8 * 2 =  Place your final answer in squiggly brackets.\n ",
             "Response": "\n{81}",
-            "Extract-Response": "None"
+            "Extract-Response": "None",
+            "Answer": 81.0,
+            "Final Answer": 81.0
         },
         {
             "Index": 45,
             "GT": 913,
             "Query": "5 + 5 * 5 * 4 * 8 + 7 * 8 * 3 - 6 - 6 * 9 =  Place your final answer in squiggly brackets.\n ",
             "Response": "\n {-38}",
-            "Extract-Response": "None"
+            "Extract-Response": "None",
+            "Answer": -38.0,
+            "Final Answer": -38.0
         },
         {
             "Index": 46,
             "GT": -88,
             "Query": "7 + 2 + 8 + 2 - 4 * 3 * 8 + 1 - 2 - 1 - 9 =  Place your final answer in squiggly brackets.\n ",
             "Response": "\n {-1}",
-            "Extract-Response": "None"
+            "Extract-Response": "None",
+            "Answer": -1.0,
+            "Final Answer": -1.0
         },
         {
             "Index": 47,
             "GT": -69,
             "Query": "6 - 9 + 4 - 5 - 6 * 5 - 1 - 7 * 2 * 3 + 8 =  Place your final answer in squiggly brackets.\n ",
             "Response": "\n-6 + 9 + 4 - 5 - 6 * 5 - 1 - 7 * 2 * 3 + 8 = -60",
-            "Extract-Response": "None"
+            "Extract-Response": "None",
+            "Answer": -60.0,
+            "Final Answer": -60.0
         }
     ]
 }

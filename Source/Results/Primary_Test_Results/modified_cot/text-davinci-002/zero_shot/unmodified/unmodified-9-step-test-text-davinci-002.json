@@ -10,14 +10,14 @@
     "Simple Prompt": true,
     "Test Path": "Results\\Primary_Test_Results\\modified_cot\\text-davinci-002\\zero_shot\\unmodified\\unmodified-9-step-test-text-davinci-002.json",
     "Total": 250,
-    "Total Accurate": 153,
-    "Total Accuracy": 61.199999999999996,
+    "Total Accurate": 155,
+    "Total Accuracy": 62.0,
     "Percent of Answers Containing CoT": 6.0,
-    "CoT Accuracy": 0.0,
+    "CoT Accuracy": 13.333333333333334,
     "Non-CoT Accuracy": 65.1063829787234,
-    "ci_radius": 6.040566097974593,
-    "ci_upper": 67.2405660979746,
-    "ci_lower": 55.159433902025405,
+    "ci_radius": 6.016912696724127,
+    "ci_upper": 68.01691269672412,
+    "ci_lower": 55.98308730327587,
     "Dataset Index": 8,
     "Trials": [
         {
@@ -1347,8 +1347,8 @@
             "Injected CoT": "1 * 9 = 9\n3 + 5 = 8\n8 + 7 = 15\n15 + 9 = 24\n24 + 1 = 25\n25 + 4 = 29\n29 + 2 = 31\n31 + 5 = 36\n36 + 7 =",
             "Response": " 43\n\n43 is the checksum, which can be used to verify the ISBN number.\n\n*/\n\n#include <stdio.h>\n\nint main(void)\n{\n    int gsi, group, publisher, item, check;\n    int d, i1, i2, i3, i4, i5, j1, j2, j3, j4, j5, first_sum, second_sum, total;\n\n    printf(\"Enter ISBN: \");\n    scanf(\"%d-%d-%d-%d-%d\", &gsi, &group, &publisher, &item, &check);\n\n    d = gsi / 100;\n    i1 = gsi / 10 % 10;\n    i2 = gsi % 10;\n    j1 = group / 10000;\n    j2 = group / 1000 % 10;\n    j3 = group / 100 % 10;\n    j4 = group / 10 % 10;\n    j5 = group % 10;\n    first_sum = d + i1 + i2 + j1 + j2 + j3 + j4 + j5;\n    second_sum = d * 3 + i1 * 2 + i2 * 1 + j1 * 5 + j2 * 4 + j3 * 3 + j4 * 2 + j5 * 1;\n    total = first_sum + second_sum;\n\n    if (total % 10 == 0)\n    {\n        printf(\"YES\\n\");\n    }\n    else\n    {\n        printf(\"NO\\n\");\n    }\n\n    return 0;\n}",
             "Extract-Response": "\n\nNO",
-            "Answer": "",
-            "Final Answer": ""
+            "Answer": 43.0,
+            "Final Answer": 43.0
         },
         {
             "Index": 247,
@@ -2367,8 +2367,8 @@
             "Injected CoT": "6 * 5 = 30\n30 * 1 = 30\n4 * 2 = 8\n3 * 8 = 24\n30 + 8 = 38\n38 + 24 = 62\n62 + 9 = 71\n71 + 7 = 78\n78 - 1 =",
             "Response": " 77\n\n*/\n\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nint main()\n{\n\tchar num[100];\n\tint i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, sum;\n\t\n\twhile(scanf(\"%s\", num) != EOF)\n\t{\n\t\tif(num[0] == '0' && num[1] == '\\0')\n\t\t{\n\t\t\tbreak;\n\t\t}\n\t\t\n\t\tsum = 0;\n\t\t\n\t\tfor(i = 0; i < strlen(num); i++)\n\t\t{\n\t\t\tif(i % 2 == 0)\n\t\t\t{\n\t\t\t\tsum = sum + (num[i] - '0');\n\t\t\t}\n\t\t\telse\n\t\t\t{\n\t\t\t\tsum = sum + ((num[i] - '0') * 2);\n\t\t\t}\n\t\t}\n\t\t\n\t\tif(sum % 10 == 0)\n\t\t{\n\t\t\tprintf(\"Valid\\n\");\n\t\t}\n\t\telse\n\t\t{\n\t\t\tprintf(\"Invalid\\n\");\n\t\t}\n\t}\n\t\n\treturn 0;\n}",
             "Extract-Response": "\n\nInvalid",
-            "Answer": "",
-            "Final Answer": ""
+            "Answer": 77.0,
+            "Final Answer": 77.0
         },
         {
             "Index": 434,

@@ -18,10 +18,10 @@
     "ci_radius": 6.0044368875024405,
     "ci_upper": 68.40443688750244,
     "ci_lower": 56.395563112497555,
-    "Matches Expected": 76.0,
-    "ME ci_radius": 5.294177329859664,
-    "ME ci_upper": 81.29417732985966,
-    "ME ci_lower": 70.70582267014034,
+    "Matches Expected": 76.4,
+    "ME ci_radius": 5.263671138663585,
+    "ME ci_upper": 81.66367113866359,
+    "ME ci_lower": 71.13632886133642,
     "Dataset Index": 9,
     "Trials": [
         {
@@ -537,8 +537,8 @@
             "Injected CoT": "9 * 3 = 36\n6 + 36 = 42\n6 * 1 = 6\n2 + 6 = 8\n42 + 8 =",
             "Response": " 50\n\n*/\n\n#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cmath>\n#include <queue>\n#include <stack>\n#include <map>\n#include <set>\n#include <unordered_map>\n#include <limits>\n#include <cassert>\n#include <fstream>\n#include <array>\n\nusing namespace std;\n\n#define endl \"\\n\"\n\n\nint main() {\n    std::ios_base::sync_with_stdio(0);\n    cin.tie(0);\n    cout.precision(10);\n\n    int n;\n    cin >> n;\n    vector<int> a(n);\n    for (size_t i = 0; i < a.size(); i++) {\n        cin >> a[i];\n    }\n    int result = 0;\n    for (size_t i = 0; i < a.size(); i++) {\n        for (size_t j = i + 1; j < a.size(); j++) {\n            if (a[i] == a[j]) {\n                result = 1;\n            }\n        }\n    }\n    if (result == 1) {\n        cout << \"NO\" << endl;\n    } else {\n        cout << \"YES\" << endl;\n    }\n\n    return 0;\n}",
             "Extract-Response": " YES",
-            "Answer": "",
-            "Final Answer": "",
+            "Answer": 50.0,
+            "Final Answer": 50.0,
             "Expected Answer": 50
         },
         {

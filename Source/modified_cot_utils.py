@@ -95,67 +95,6 @@ def generate_steps():
             write_json(filepath=output_path, data=responses)
 
 
-def modify_and_remove_final_step():
-    # Modify one and both numbers in each of the final steps, then remove the final step
-    # (if more than 1 step) or the final answer to the step (if only 1 step)
-    for i in range(1, 10):
-        path = os.path.join("Datasets", "Stepwise_Extracted", "Unmodified",
-                            f"responses_Simple-in-brackets-gpt-3.5-turbo-zero_shot_cot-{i}step.json")
-        data = read_json(path)
-        results = list()
-
-        for entry in data:
-            index = entry["Index"]
-            query = entry['Query']
-            steps = entry['Steps']
-            answer = entry['Answer']
-            gt = entry['GT']
-
-            new_steps = modify(steps, -1, 1)
-
-            # Cut off the query after the first equal sign
-            stop_index = query.index("=")
-            query = query[:stop_index + 1]
-            results.append({
-                "Index": index,
-                "Question": query,
-                "GT": gt,
-                "New Steps": new_steps,
-                "Original Steps": steps,
-                "Steps Length": steps
-            })
-
-        write_json(filepath=f"Datasets\\Stepwise_Extracted\\Modified-Single-Val-Final\\{i}-step.json", data=results)
-
-    # Double val modification with final step removal
-    for i in range(1, 10):
-        path = os.path.join("Datasets", "Stepwise_Extracted", "Unmodified",
-                            f"responses_Simple-in-brackets-gpt-3.5-turbo-zero_shot_cot-{i}step.json")
-        data = read_json(path)
-        results = list()
-
-        for entry in data:
-            index = entry["Index"]
-            query = entry['Query']
-            steps = entry['Steps']
-            gt = entry["GT"]
-            new_steps = modify(steps, -1, 2)
-
-            # Cut off the query after the first equal sign
-            stop_index = query.index("=")
-            query = query[:stop_index + 1]
-            results.append({
-                "Index": index,
-                "Question": query,
-                "GT": gt,
-                "New Steps": new_steps,
-                "Original Steps": steps,
-                "Steps Length": steps
-            })
-
-        write_json(filepath=f"Datasets\\Stepwise_Extracted\\Modified-Off-by-One-Val-Final\\{i}-step.json", data=results)
-
-
 def modify_steps(mode: str, mod_count: int, remove_last: bool, off_by_one: bool, folder_name: str):
     for i in range(1, 10):
         path = os.path.join("Datasets", "Stepwise_Extracted", "Unmodified", f"steps_unmodified_{i}step.json")

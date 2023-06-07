@@ -18,10 +18,10 @@
     "ci_radius": 6.12604576672424,
     "ci_upper": 63.72604576672423,
     "ci_lower": 51.473954233275755,
-    "Matches Expected": 69.6,
-    "ME ci_radius": 5.702003487897915,
-    "ME ci_upper": 75.3020034878979,
-    "ME ci_lower": 63.89799651210208,
+    "Matches Expected": 70.0,
+    "ME ci_radius": 5.68061968450626,
+    "ME ci_upper": 75.68061968450625,
+    "ME ci_lower": 64.31938031549375,
     "Dataset Index": 9,
     "Trials": [
         {
@@ -1010,8 +1010,8 @@
             "Injected CoT": "4 * 1 = 4\n4 * 2 = 10\n8 * 2 = 16\n4 - 10 - 16 - 7 =",
             "Response": " -29\n\n*/\n\n#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\n#include <cmath>\n#include <sstream>\n#include <map>\n#include <set>\n#include <iomanip>\n\n\n#define sz(a) int((a).size())\n#define pb push_back\n#define all(c) (c).begin(), (c).end()\n#define tr(c,i) for(typeof((c).begin()) i = (c).begin(); i!=(c).end(); i++\n#define present(c,x) ((c).find(x)!=(c).end())\n#define cpresent(c,x) (find(all(c),x) != (c).end())\n#define X first\n#define Y second\n\nusing namespace std;\n\ntypedef long long ll;\n\nint main(){\n\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n,m;\n    cin>>n>>m;\n    int arr[n];\n    for(int i=0; i<n; i++){\n        cin>>arr[i];\n    }\n    int sum = 0;\n    for(int i=0; i<n; i++){\n        sum += arr[i];\n    }\n    int count = 0;\n    for(int i=0; i<n; i++){\n        if(arr[i]*n > sum){\n            count++;\n        }\n    }\n    if(count >= m){\n        cout<<\"No\"<<endl;\n    }\n    else{\n        cout<<\"Yes\"<<endl;\n    }\n    return 0;\n}",
             "Extract-Response": "\n\nYes",
-            "Answer": "",
-            "Final Answer": "",
+            "Answer": -29.0,
+            "Final Answer": -29.0,
             "Expected Answer": -29
         },
         {

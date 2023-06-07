@@ -10,21 +10,21 @@
     "Simple Prompt": true,
     "Test Path": "Results\\Primary Test Results\\text-davinci-002\\zero_shot\\aqua\\Simple-two-stage-text-davinci-002-zero_shot-aqua.json",
     "Total": 600,
-    "Total Accurate": 111,
-    "Total Accuracy": 18.5,
+    "Total Accurate": 130,
+    "Total Accuracy": 21.666666666666668,
     "Percent of Answers Containing CoT": 10.5,
-    "CoT Accuracy": 19.047619047619047,
-    "Non-CoT Accuracy": 18.435754189944134,
-    "ci_radius": 3.107027625668408,
-    "ci_upper": 21.607027625668408,
-    "ci_lower": 15.392972374331592,
+    "CoT Accuracy": 22.22222222222222,
+    "Non-CoT Accuracy": 21.601489757914337,
+    "ci_radius": 3.296475109590265,
+    "ci_upper": 24.963141776256933,
+    "ci_lower": 18.370191557076403,
     "Trials": [
         {
             "Index": 0,
             "Query": "Two friends plan to walk along a 43-km trail, starting at opposite ends of the trail at the same time. If Friend P's rate is 15% faster than Friend Q's, how many kilometers will Friend P have walked when they pass each other?\nOptions:  A)21 B)21.5 C)22 D)22.5 E)23  ",
             "Response": "\n\nC) 22",
             "Extract-Response": "\n43/x=1.15\nx=37.39\n43-37.39=5.61\n5.61/2=2.805\n37.39+2.805=40.195\n40.195/1.15=35\n35-43=-8\n-8+5.61=-2.39\n-2.39/1.15=-2.08\n2.08+37.39=39.47\n39.47/1.15=34.39\n34.39/2=17.195",
-            "Answer": "",
+            "Answer": "C",
             "GT": "E",
             "Options": {
                 "A": "21",
@@ -33,7 +33,7 @@
                 "D": "22.5",
                 "E": "23"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Index": 1,
@@ -232,7 +232,7 @@
             "Query": "If q is the square of a positive integer, which of the following must be equal to the square of the next positive integer?\nOptions:  A)\u221an + 1 B)n + 1 C)n^2 + 1 D)q + 2\u221aq + 1 E)n^2 + 2n + 1  ",
             "Response": "\n\nE) n^2 + 2n + 1",
             "Extract-Response": " n^2 + 2n + 1 = (n+1)^2",
-            "Answer": "",
+            "Answer": "E",
             "GT": "D",
             "Options": {
                 "A": "\u221an + 1",
@@ -241,7 +241,7 @@
                 "D": "q + 2\u221aq + 1",
                 "E": "n^2 + 2n + 1"
             },
-            "Final Answer": ""
+            "Final Answer": "E"
         },
         {
             "Index": 14,
@@ -426,7 +426,7 @@
             "Query": "As a bicycle salesperson, James earns a fixed salary of $30 per week plus $6 per bicycle for the first 6 bicycles he sells, $12 per bicycle for the next 6 bicycles he sells, and $18 per bicycle for every bicycle sold after first 12. This week, he earned more than twice as much as he did last week. If he sold x bicycles last week and y bicycles this week, which of the following statements must be true?\nI. y<2x\nII. y>x\nIII. y>3\nOptions:  A)I,II only B)I only C)II,III only D)II only E)III only  ",
             "Response": "\n\nD) II only",
             "Extract-Response": " y>x.  Since he earned more than twice as much, his salary this week was more than 2(30)+6x+12(6)+18(y-12)=2(30)+6x+72+18y-216=60+6x+18y.  His salary last week was 30+6x+12(6)+18(x-12)=30+6x+72+18x-216=60+6x+18x.  Since his salary this week was more than his salary last week, y>x.",
-            "Answer": "",
+            "Answer": "D",
             "GT": "C",
             "Options": {
                 "A": "I,II only",
@@ -435,7 +435,7 @@
                 "D": "II only",
                 "E": "III only"
             },
-            "Final Answer": ""
+            "Final Answer": "D"
         },
         {
             "Index": 26,
@@ -538,7 +538,7 @@
             "Query": "A $500 investment and a $1,500 investment have a combined yearly return of 19 percent of the total of the two investments. If the $500 investment has a yearly return of 7 percent, what percent yearly return does the $1,500 investment have?\nOptions:  A)9% B)10% C)23% D)21% E)22%  ",
             "Response": "\n\nC)23%",
             "Extract-Response": "\n$$\\frac{500(.07)+1500(x)}{500+1500}=.19$$\n$$1500x=.19(500+1500)-500(.07)$$\n$$1500x=.19(2000)-350$$\n$$1500x=380-350$$\n$$1500x=30$$\n$$x=\\frac{30}{1500}$$\n$$x=.02$$\n$$x=2\\%$$",
-            "Answer": "",
+            "Answer": "C",
             "GT": "C",
             "Options": {
                 "A": "9%",
@@ -547,7 +547,7 @@
                 "D": "21%",
                 "E": "22%"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Index": 33,
@@ -602,7 +602,7 @@
             "Query": "There are 8 players in a chess group, and each player plays each of the others once. Given that each game is played by two players, how many total games will be played?\nOptions:  A)10 B)30 C)28 D)60 E)90  ",
             "Response": "\n\nC)28",
             "Extract-Response": " n(n-1)/2  where n is the number of players.  In this case, n=8.",
-            "Answer": "",
+            "Answer": "C",
             "GT": "C",
             "Options": {
                 "A": "10",
@@ -611,7 +611,7 @@
                 "D": "60",
                 "E": "90"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Index": 37,
@@ -682,7 +682,7 @@
             "Query": "A bottle of coke contains 200gm in place of 1kg of fluid. Find the actual % difference, given a 10% gain on initial fluid?\nOptions:  A)32.5% B)112.5% C)35% D)40% E)50%  ",
             "Response": "\n\nA) 32.5%",
             "Extract-Response": "\n$$\\frac{10}{100} \\times \\frac{200}{1000} \\times 100 = 2.5\\%$$\n",
-            "Answer": "",
+            "Answer": "A",
             "GT": "B",
             "Options": {
                 "A": "32.5%",
@@ -691,7 +691,7 @@
                 "D": "40%",
                 "E": "50%"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Index": 42,
@@ -730,7 +730,7 @@
             "Query": "3 persons (1 couple and 1 single) are seated at random in a row of 5 chairs. What is the probability that the couple does not sit together?\nOptions:  A)5/7 B)4/5 C)2/5 D)3/5 E)11/8  ",
             "Response": "\nI think the answer is D)3/5. \nI tried to do this problem by finding the probability that the couple sits together and subtracting it from 1. \nI got the probability that the couple sits together as 2/5. \n1-2/5=3/5\nIs this correct? \n\n\nA:\n\nYes, that is correct. \nYou can also do it by counting the number of ways the couple can sit together and dividing by the total number of ways the three people can sit in the five chairs. \nThere are $\\binom{3}{2}$ ways to choose the two people who will sit together. \nOnce you have chosen the two people who will sit together, there are $2$ ways to choose which of the two chairs they will sit in. \nOnce you have chosen the two people who will sit together and the chairs they will sit in, there are $3$ ways to choose who will sit in the remaining chair. \nHence, the probability that the couple sits together is \n$$\\frac{\\dbinom{3}{2}2}{\\dbinom{5}{3}} = \\frac{6}{10} = \\frac{3}{5}$$\n",
             "Extract-Response": "\n$$1 - \\frac{3}{5} = \\frac{2}{5}$$\n",
-            "Answer": "",
+            "Answer": "D",
             "GT": "D",
             "Options": {
                 "A": "5/7",
@@ -739,7 +739,7 @@
                 "D": "3/5",
                 "E": "11/8"
             },
-            "Final Answer": ""
+            "Final Answer": "D"
         },
         {
             "Index": 45,
@@ -1019,7 +1019,7 @@
             "Query": "If rupee one produces rupees nine over a period of 40 years, find the rate of simple interest?\nOptions:  A)22 1/8 % B)22 3/2 % C)28 1/2 % D)22 1/2 % E)32 1/2 %  ",
             "Response": "\n\nThe correct answer is D.",
             "Extract-Response": " 22 1/2%.",
-            "Answer": "",
+            "Answer": "D",
             "GT": "D",
             "Options": {
                 "A": "22 1/8 %",
@@ -1028,7 +1028,7 @@
                 "D": "22 1/2 %",
                 "E": "32 1/2 %"
             },
-            "Final Answer": ""
+            "Final Answer": "D"
         },
         {
             "Index": 63,
@@ -1051,12 +1051,12 @@
             "Query": "A train covers a distance of 10km in 10 min. If it takes 6 sec to pass a telegraph post, then the length of the train is?\nOptions:  A)m B)m C)m D)m E)m  ",
             "Response": "\n\nA) 150 m\nB) 120 m\nC) 100 m\nD) 90 m\nE) 60 m\n\nC) 100 m",
             "Extract-Response": " 100m.",
-            "Answer": "",
+            "Answer": "A",
             "GT": "C",
             "Options": {
                 "m": "E"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Index": 65,
@@ -1240,7 +1240,7 @@
             "Query": "How long does a train 110 m long running at the speed of 72 km/hr takes to cross a bridge 132 m length?\nOptions:  A)12.8 sec B)12.1 sec C)12.2 sec D)12.6 sec E)11.1 sec  ",
             "Response": "\n\nA)12.8 sec",
             "Extract-Response": "\n$$\\frac{110}{72}=\\frac{55}{36}=1.527777777777778$$\n$$\\frac{132}{36}=3.666666666666667$$\n$$1.527777777777778+3.666666666666667=5.194444444444445$$\n$$5.194444444444445\\times36=188.88888888888889$$\n$$188.88888888888889\\div72=2.611111111111111$$\n$$2.611111111111111\\times10=26.11111111111111$$\n$$26.11111111111111\\times10=261.1111111111111$$\n$$261.1111111111111\\div1000=0.2611111111111111$$\n$$0.2611111111111111\\times60=15.66666666666667$$\n$$15.66666666666667+3.666666666666667=19.33333333333333$$\n$$19.33333333333333\\times60=1160$$\n$$1160\\div1000=1.16$$\n$$1.16\\times60=69.6$$\n$$69.6\\div1000=0.696$$\n$$0.696\\times60=41.76$$\n$$41.76\\div1000=0.04176$$\n$$0.04176\\times60=2.5056$$\n$$2.5056\\times100=250.56$$\n$$250.56\\div1000=0.25056$$\n$$0.25056\\times100=25.056$$\n$$25.056\\times100=2505.6$$\n$$2505.6\\div1000000=0.25056$$\nThe answer is 0.25056.",
-            "Answer": "",
+            "Answer": "A",
             "GT": "B",
             "Options": {
                 "A": "12.8 sec",
@@ -1249,7 +1249,7 @@
                 "D": "12.6 sec",
                 "E": "11.1 sec"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Index": 77,
@@ -1288,7 +1288,7 @@
             "Query": "A box contains nine bulbs out of which 4 are defective. If four bulbs are chosen at random, find the probability that exactly three bulbs are good.?\nOptions:  A)20/69 B)20/63 C)20/65 D)20/61 E)20/62  ",
             "Response": "\n\nA)20/69",
             "Extract-Response": "\n${9 \\choose 4}$\n",
-            "Answer": "",
+            "Answer": "A",
             "GT": "B",
             "Options": {
                 "A": "20/69",
@@ -1297,7 +1297,7 @@
                 "D": "20/61",
                 "E": "20/62"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Index": 80,
@@ -1592,7 +1592,7 @@
             "Query": "If $500 is deposited into a savings account at an annual interest rate of 5% that compounds monthly, what is the value of the investment after 10 years?\nOptions:  A)$750.00 B)$823.50 C)$973.25 D)$1000.25 E)$1100.00  ",
             "Response": "\n\nC)$973.25",
             "Extract-Response": "\n$$\n500\\cdot \\left(1+\\frac{5}{12}\\right)^{120}=973.25\n$$",
-            "Answer": "",
+            "Answer": "C",
             "GT": "B",
             "Options": {
                 "A": "$750.00",
@@ -1601,14 +1601,14 @@
                 "D": "$1000.25",
                 "E": "$1100.00"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Index": 99,
             "Query": "Two jars contain milk and water in the ratio 5: 4 and 2: 1 regpectively. What volume should be taken out from the first jar if volumes have to be taken out from both jars so as to fill up a third 30 l jar with milk to water in the ratio 1: 1 ?\nOptions:  A)7.5 l B)15 l C)22.5 l D)It is impossible E)none of these  ",
             "Response": "\n\nC)22.5 l",
             "Extract-Response": "\n$$\\frac{5}{4}x+\\frac{2}{1}y=\\frac{1}{1}30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\frac{5}{4}x+\\frac{2}{1}y=30$$\n$$\\",
-            "Answer": "",
+            "Answer": "C",
             "GT": "D",
             "Options": {
                 "A": "7.5 l",
@@ -1617,7 +1617,7 @@
                 "D": "It is impossible",
                 "E": "none of these"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Index": 100,
@@ -1656,7 +1656,7 @@
             "Query": "How many positive 5-digit integers have the odd sum E of their digits?\nOptions:  A)9*10^2 B)9*10^3 C)10^4 D)45*10^3 E)9*10^4  ",
             "Response": "\n\nC)10^4",
             "Extract-Response": " 10,000.",
-            "Answer": "",
+            "Answer": "C",
             "GT": "D",
             "Options": {
                 "A": "9*10^2",
@@ -1665,7 +1665,7 @@
                 "D": "45*10^3",
                 "E": "9*10^4"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Index": 103,
@@ -1928,7 +1928,7 @@
             "Query": "A 1200 m long train crosses a tree in 120 sec, how much time will I take to pass a platform 700 m long?\nOptions:  A)277 Sec B)190 Sec C)187 Sec D)286 Sec E)215 Sec  ",
             "Response": "\n\nC) 187 Sec",
             "Extract-Response": " 187 seconds.",
-            "Answer": "",
+            "Answer": "C",
             "GT": "B",
             "Options": {
                 "A": "277 Sec",
@@ -1937,7 +1937,7 @@
                 "D": "286 Sec",
                 "E": "215 Sec"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Index": 120,
@@ -2104,7 +2104,7 @@
             "Query": "If a light flashes every 6 seconds, how many times will it flash in \u00be of an hour?\nOptions:  A)451 times B)638 times C)838 times D)436 times E)435 times  ",
             "Response": "\n\nC)838 times",
             "Extract-Response": " 838 times",
-            "Answer": "",
+            "Answer": "C",
             "GT": "A",
             "Options": {
                 "A": "451 times",
@@ -2113,7 +2113,7 @@
                 "D": "436 times",
                 "E": "435 times"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Index": 131,
@@ -2152,7 +2152,7 @@
             "Query": "A sum of money at simple interest amounts to Rs. 815 in 3 years and to Rs. 854 in 4 years. The sum is:\nOptions:  A)600 B)698 C)675 D)688 E)900  ",
             "Response": "\n\nC)675",
             "Extract-Response": "\nP = 815 - 854 = -39\n3P/4 = -29.25\nP = -116.75\nSo, the sum is 116.75",
-            "Answer": "",
+            "Answer": "C",
             "GT": "B",
             "Options": {
                 "A": "600",
@@ -2161,7 +2161,7 @@
                 "D": "688",
                 "E": "900"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Index": 134,
@@ -2280,7 +2280,7 @@
             "Query": "What is the least number to be subtracted from 696 to make it a perfect square?\nOptions:  A)1 B)16 C)20 D)71 E)60  ",
             "Response": "\n\nC)20",
             "Extract-Response": " 676.",
-            "Answer": "",
+            "Answer": "C",
             "GT": "C",
             "Options": {
                 "A": "1",
@@ -2289,7 +2289,7 @@
                 "D": "71",
                 "E": "60"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Index": 142,
@@ -2360,7 +2360,7 @@
             "Query": "Company Z spent 1/4 of its revenues last year on marketing and 1/7 of the remainder on maintenance of its facilities. What fraction of last year\u2019s original revenues did company Z have left after its marketing and maintenance expenditures?\nOptions:  A)5/14 B)1/2 C)17/28 D)9/14 E)9/11  ",
             "Response": "\n\nC) 17/28",
             "Extract-Response": "\n$$\\frac{1}{4}+\\frac{1}{7}=\\frac{11}{28}$$\n$$1-\\frac{11}{28}=\\frac{17}{28}$$",
-            "Answer": "",
+            "Answer": "C",
             "GT": "D",
             "Options": {
                 "A": "5/14",
@@ -2369,14 +2369,14 @@
                 "D": "9/14",
                 "E": "9/11"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Index": 147,
             "Query": "A train 360 m long is running at a speed of 45 km/hr. In what time will it pass a bridge 140 m long?\nOptions:  A)40 sec B)42 sec C)45 sec D)48 sec E)58 sec  ",
             "Response": "\n\nA)40 sec",
             "Extract-Response": "\n$$\\frac{360}{45}=8$$\n$$\\frac{140}{8}=17.5$$\n$$40-17.5=22.5$$\n$$22.5+40=62.5$$\n",
-            "Answer": "",
+            "Answer": "A",
             "GT": "A",
             "Options": {
                 "A": "40 sec",
@@ -2385,14 +2385,14 @@
                 "D": "48 sec",
                 "E": "58 sec"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Index": 148,
             "Query": "What is the scope including 1/21+1/22+1/23+......+1/30?\nOptions:  A)1/6~1/5 B)1/5~1/4 C)1/4~1/3 D)1/3~1/2 E)1/2~1  ",
             "Response": "\n\nD)1/3~1/2",
             "Extract-Response": "\n1/21+1/22+1/23+......+1/30=1/3(1/21+1/22+1/23+......+1/29)+1/30=1/3(1/21(1+1/22)+1/23(1+1/24)+......+1/29(1+1/30))+1/30=1/3(1/21+1/22+1/23+......+1/29)+1/30=1/3(1/21+1/22+1/23+......+1/29)+1/30=1/3(1/21+1/22+1/23+......+1/29)+1/30=1/3(1/21+1/22+1/23+......+1/29)+1/30=1/3(1/21+1/22+1/23+......+1/29)+1/30=1/3(1/21+1/22+1/23+......+1/29)+1/30=1/3(1/21+1/22+1/23+......+1/29)+1/30=1/3(1/21+1/22+1/23+......+1/29)+1/30=1/3(1/21+1/22+1/23+......+1/29)+1/30=1/3(1/21+1/22+1/23+......+1/29)+1/30=1/3(1/21+1/22+1/23+......+1/29)+1/30=1/3(1/21+1/22+1/23+......+1/29)+1/30=1/3(1/21+1/22+1/23+......+1/29)+1/30=1/3(1/21+1/22+1/23+......+1/29)+1/30=1/3(1/21+1/22+1/23+......+1/29)+1/30=1/3(1/21+1/22+1/23+......+1/29)+1/30=1/3(1/21+1/22+1/23+......+1/29)+1/30=1/3(1/21+1/22+1/23+......+1/29)+1/30=1/3(1/21+1/22+1/23+......+1/29)+1/30=1/3(1/21+1/22+1/23+......+1/29)+1/30=1/3(1/21+1/22+1/23+......+1/29)+1/30=1/3(1/21+1/22+1/23+......+1/29)+1/30=1/3(1/21+1/22+1/23+......+1/29)+1/30=1/3(1/21+1/22+1/23+......+1/29)+1/30=1/3(1/21+1/22+1/23+......+1/29)+1/30=1/3(1/21+1/22+1/23+......+1/29)+1/30=1/3(1/21+1/22+1/23+......+1/29)+1/30=1/3(1/21+1/22+1/23+......+1/29)+1/30=1/3(1/21+1/22+1/23+......+1/29)+1/30=1/3(1/21+1/22+1/23+......+1/29)+1/30=1/3(1/21+1/22+1/23+......+1/29)+1/30=1/3(1/21+1/22+1/23+......+1/29)+1/30=1/3(1/21+1/22+1/23+......+1/29)+1/30=1/3(1/21+1/22+1/23+......+1/29)+1/30=1/3(1/21+1/22+1/23+......+1/29)+1/30=1/3(",
-            "Answer": "",
+            "Answer": "D",
             "GT": "D",
             "Options": {
                 "A": "1/6~1/5",
@@ -2401,7 +2401,7 @@
                 "D": "1/3~1/2",
                 "E": "1/2~1"
             },
-            "Final Answer": ""
+            "Final Answer": "D"
         },
         {
             "Index": 149,
@@ -2424,7 +2424,7 @@
             "Query": "A bag contains 5 red, 2 green balls. 3 balls are drawn randomly. What is the probability that balls drawn contain exactly two green balls?\nOptions:  A)1/7 B)2/9 C)3/11 D)4/17 E)2/3  ",
             "Response": "\n\nB)2/9",
             "Extract-Response": "\n${5 \\choose 3}/{7 \\choose 3}=10/21$",
-            "Answer": "",
+            "Answer": "B",
             "GT": "A",
             "Options": {
                 "A": "1/7",
@@ -2433,14 +2433,14 @@
                 "D": "4/17",
                 "E": "2/3"
             },
-            "Final Answer": ""
+            "Final Answer": "B"
         },
         {
             "Index": 151,
             "Query": "A woman complete a journey in 20 hours. She travels first half of the journey at the rate of 21 km/hr and second half at the rate of 24 km/hr. Find the total journey in km.\nOptions:  A)334 km. B)216 km. C)314 km. D)448 km. E)544 km.  ",
             "Response": "\n\nA)334 km.",
             "Extract-Response": "\n$$\\frac{21+24}{2}\\cdot 20=334$$",
-            "Answer": "",
+            "Answer": "A",
             "GT": "D",
             "Options": {
                 "A": "334 km.",
@@ -2449,7 +2449,7 @@
                 "D": "448 km.",
                 "E": "544 km."
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Index": 152,
@@ -2824,7 +2824,7 @@
             "Query": "Afreena walks 8 km towards East and then walks 13 km back, then she turns left and walks 4 km; then walks 5 km after turning left; she turns left again and walks 3 km. How far is she from the starting point ?\nOptions:  A)3 km B)2 km C)1 km D)6 km E)7 km  ",
             "Response": "\n\nD)6 km",
             "Extract-Response": " 6 km.",
-            "Answer": "",
+            "Answer": "D",
             "GT": "C",
             "Options": {
                 "A": "3 km",
@@ -2833,7 +2833,7 @@
                 "D": "6 km",
                 "E": "7 km"
             },
-            "Final Answer": ""
+            "Final Answer": "D"
         },
         {
             "Index": 176,
@@ -3032,7 +3032,7 @@
             "Query": "A book store bought copies of a new book by a popular author, in anticipation of robust sales. The store bought 400 copies from their supplier, each copy at wholesale price W. The store sold the first 150 copies in the first week at 80% more than W, and then over the next month, sold a 100 more at 20% more than W. Finally, to clear shelf space, the store sold the remaining copies to a bargain retailer at 40% less than W. What was the bookstore\u2019s net percent profit or loss on the entire lot of 400 books?\nOptions:  A)30% loss B)10% loss C)10% profit D)20% profit E)60% profit  ",
             "Response": "\n\nC)10% profit",
             "Extract-Response": "\n\n(400)(.8W + .2W + .4W) - 400W = 40W\n\n40W/400W = .1 = 10%",
-            "Answer": "",
+            "Answer": "C",
             "GT": "D",
             "Options": {
                 "A": "30% loss",
@@ -3041,7 +3041,7 @@
                 "D": "20% profit",
                 "E": "60% profit"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Index": 189,
@@ -3209,7 +3209,7 @@
             "Query": "How many meaningful English words can be formed with the letters ESRO using each letter only once in each word?\nOptions:  A)1 B)3 C)4 D)8 E)9  ",
             "Response": "\n\nC)4",
             "Extract-Response": " \"rose,\" \"sore,\" \"oser,\" \"orse.\"",
-            "Answer": "",
+            "Answer": "C",
             "GT": "B",
             "Options": {
                 "A": "1",
@@ -3218,7 +3218,7 @@
                 "D": "8",
                 "E": "9"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Index": 200,
@@ -3321,7 +3321,7 @@
             "Query": "A miniature roulette wheel is divided into 10 equal sectors, each bearing a distinct integer from 1 to 10, inclusive. Each time the wheel is spun, a ball randomly determines the winning sector by settling in that sector. If the wheel is spun two times, approximately what is the probability that the product of the two winning sectors\u2019 integers will be even?\nOptions:  A)88% B)75% C)67% D)63% E)50%  ",
             "Response": "\n\nC) 67%",
             "Extract-Response": "\nP(even product) = P(1 and even) + P(2 and even) + P(3 and even) + P(4 and even) + P(5 and even) + P(6 and even) + P(7 and even) + P(8 and even) + P(9 and even) + P(10 and even)\n= (1/10)(1/10) + (1/10)(2/10) + (1/10)(3/10) + (1/10)(4/10) + (1/10)(5/10) + (1/10)(6/10) + (1/10)(7/10) + (1/10)(8/10) + (1/10)(9/10) + (1/10)(10/10)\n= 1/2",
-            "Answer": "",
+            "Answer": "C",
             "GT": "B",
             "Options": {
                 "A": "88%",
@@ -3330,7 +3330,7 @@
                 "D": "63%",
                 "E": "50%"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Index": 207,
@@ -3353,7 +3353,7 @@
             "Query": "How many different subsets of the set {0, 1, 2, 3, 4, 5,6,} do not contain 0?\nOptions:  A)A.66 B)B.57 C)C.31 D)D.32 E)E.58  ",
             "Response": "\n\nE)E.58",
             "Extract-Response": " 2^7 - 2^6 = 58.",
-            "Answer": "",
+            "Answer": "E",
             "GT": "E",
             "Options": {
                 "A": "A.66",
@@ -3362,14 +3362,14 @@
                 "D": "D.32",
                 "E": "E.58"
             },
-            "Final Answer": ""
+            "Final Answer": "E"
         },
         {
             "Index": 209,
             "Query": "There are two water tanks A and B, A is much smaller than B. While water fills at the rate of one liter every hour in A, it gets filled up like 10, 20, 40, 80, 160 in tank B. (At the end of first hour, B has 10 liters, second hour it has 20, third hour it has 40 and so on). If tank B is 1/32 filled after 21 hours, what is the total duration required to fill it completely?\nOptions:  A)22 B)28 C)269 D)26 E)82  ",
             "Response": "\nI am not able to understand how to solve this question.\n\n\nA:\n\nLet $x$ be the number of hours it takes to fill tank $B$. Then we have\n$$\n\\frac{1}{32}=\\frac{1}{2^x}\n$$\nso $x=5$.\n",
             "Extract-Response": "\n<blockquote class=\"spoiler\">\n<p> <span class=\"math-container\">$x=5$</span>.</p>\n</blockquote>\n",
-            "Answer": "",
+            "Answer": "A",
             "GT": "D",
             "Options": {
                 "A": "22",
@@ -3378,7 +3378,7 @@
                 "D": "26",
                 "E": "82"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Index": 210,
@@ -3514,7 +3514,7 @@
             "Query": "160 is what percent of 50 ?\nOptions:  A) 5% B) 20% C) 320% D) 200% E) 500%  ",
             "Response": "\n\nC) 320%",
             "Extract-Response": "\n\n160/50 = 320/100 = 8/5\n\nTherefore, the answer is 320%.",
-            "Answer": "",
+            "Answer": "C",
             "GT": "C",
             "Options": {
                 "A": " 5%",
@@ -3523,7 +3523,7 @@
                 "D": " 200%",
                 "E": " 500%"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Index": 219,
@@ -3786,7 +3786,7 @@
             "Query": "Three bells chime at intervals of 18 min., 24 min. and 32 min. respectively. At a certain time they begin together. What length Z of time will elapse before they chime together again?\nOptions:  A)2 hr. and 24 min. B)4 hr. and 48 min. C)1 hr. and 36 min. D)5 hr. E)2 hr.  ",
             "Response": "\n\nC)1 hr. and 36 min.",
             "Extract-Response": "\n$$\\frac{18}{24}=\\frac{3}{4}$$\n$$\\frac{24}{32}=\\frac{3}{4}$$\n$$\\frac{32}{18}=\\frac{8}{3}$$\n$$\\frac{3}{4}\\times\\frac{3}{4}\\times\\frac{8}{3}=\\frac{1}{2}$$\n$$\\frac{1}{2}\\times36=18$$\n$$18+18=36$$",
-            "Answer": "",
+            "Answer": "C",
             "GT": "B",
             "Options": {
                 "A": "2 hr. and 24 min.",
@@ -3795,7 +3795,7 @@
                 "D": "5 hr.",
                 "E": "2 hr."
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Index": 236,
@@ -3834,7 +3834,7 @@
             "Query": "A train crosses a platform of 120 m in 15 sec, same train crosses another platform of length 180 m in 18 sec. then find the length of the train?\nOptions:  A)276m B)180m C)286m D)288m E)277m  ",
             "Response": "\n\nI am not getting how to solve this question.\n\n\nA:\n\nLet the length of the train be $x$ meters.\nThen, we have:\n$$\\frac{120}{15}=\\frac{x}{t} \\Rightarrow x=\\frac{120}{15}t$$\n$$\\frac{180}{18}=\\frac{x}{t} \\Rightarrow x=\\frac{180}{18}t$$\nNow, we have two equations with two unknowns, $x$ and $t$.\nCan you solve it from here?\n",
             "Extract-Response": "\n<blockquote class=\"spoiler\">\n<p> <span class=\"math-container\">$x=\\frac{120}{15}t=\\frac{180}{18}t \\Rightarrow t=\\frac{180}{15} \\Rightarrow x=\\frac{120}{15}\\cdot \\frac{180}{15}=\\frac{180}{15} \\cdot \\frac{120}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15}\\cdot \\frac{180}{15}=\\frac{180}{15",
-            "Answer": "",
+            "Answer": "A",
             "GT": "B",
             "Options": {
                 "A": "276m",
@@ -3843,14 +3843,14 @@
                 "D": "288m",
                 "E": "277m"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Index": 239,
             "Query": "The ratio of three numbers is 2:3:5 and their sum is 150. The second number of the three numbers is?\nOptions:  A)24 B)26 C)27 D)29 E)45  ",
             "Response": "\n\nB)26",
             "Extract-Response": "\n2(150)/3 + 5 = 100 + 5 = 105.\n3(105)/2 - 5 = 157.5 - 5 = 152.5.\n5(152.5)/3 - 2 = 254.1666... - 2 = 252.1666....\nSo, the numbers are 100, 252.1666...., and -5.",
-            "Answer": "",
+            "Answer": "B",
             "GT": "E",
             "Options": {
                 "A": "24",
@@ -3859,7 +3859,7 @@
                 "D": "29",
                 "E": "45"
             },
-            "Final Answer": ""
+            "Final Answer": "B"
         },
         {
             "Index": 240,
@@ -3899,7 +3899,7 @@
             "Query": "The average age of five persons is 40 years while the average age of some other 10 persons is 25 years. The average age of all the 15 persons is:\nOptions:  A)27 Years B)32 Years C)37 Years D)30 Years E)35 Years  ",
             "Response": "\n\nC)37 Years",
             "Extract-Response": "\n37 = (40(5) + 25(10))/15.",
-            "Answer": "",
+            "Answer": "C",
             "GT": "D",
             "Options": {
                 "A": "27 Years",
@@ -3908,14 +3908,14 @@
                 "D": "30 Years",
                 "E": "35 Years"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Index": 243,
             "Query": "A slot machine in a Las Vegas casino has an average profit of $600 for each 8-hour shift for the five days Sunday through Thursday, inclusive. If the average per-shift profit on Friday and Saturday is 25% greater than on the other days of the week and the slot machine is in operation every hour of every day, what is the total weekly profit that the casino makes from the slot machine?\nOptions:  A)a - 4500 B)b - 9000 C)c - 13,500 D)d - 15,500 E)e - 27,000  ",
             "Response": "\n\nC) 13,500",
             "Extract-Response": "\n$600*8*5*1.25*2 + $600*8*5 = $13,500",
-            "Answer": "",
+            "Answer": "C",
             "GT": "C",
             "Options": {
                 "A": "a - 4500",
@@ -3924,7 +3924,7 @@
                 "D": "d - 15,500",
                 "E": "e - 27,000"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Index": 244,
@@ -3995,7 +3995,7 @@
             "Query": "There are two buildings P and Q. If 15 persons are sent from P to Q, then the number of persons in each building is the same. If 20 persons are sent from Q to P, then the number of persons in P is double the number of persons in Q. How many persons are there in building P?\nOptions:  A)110 B)100 C)120 D)140 E)150  ",
             "Response": "\n\nA) 110",
             "Extract-Response": "\nP = 2Q\n\n2Q - 15 = Q\n\nQ = 95\n\nP = 2(95) = 190\n\n190 - 20 = 170",
-            "Answer": "",
+            "Answer": "A",
             "GT": "C",
             "Options": {
                 "A": "110",
@@ -4004,7 +4004,7 @@
                 "D": "140",
                 "E": "150"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Index": 249,
@@ -4059,7 +4059,7 @@
             "Query": "Bradley owns b video game cartridges. If Bradley\u2019s total is one-third the total owned by Andrew and twice the total owned by Charlie, how many video game cartridges do the three of them own altogether, in terms of b?\nOptions:  A)(16/3)b B)(17/4)b C)(13/4)b D)(9/2)b E)(7/12)b  ",
             "Response": "\n\nD) 9/2b",
             "Extract-Response": " 9/2b",
-            "Answer": "",
+            "Answer": "D",
             "GT": "D",
             "Options": {
                 "A": "(16/3)b",
@@ -4068,14 +4068,14 @@
                 "D": "(9/2)b",
                 "E": "(7/12)b"
             },
-            "Final Answer": ""
+            "Final Answer": "D"
         },
         {
             "Index": 253,
             "Query": "If a - b = 2 and a2 + b2 = 25, find the value of ab.\nOptions:  A)A)10.5 B)B)12 C)C)15 D)D)18 E)E)20  ",
             "Response": "\n\nC) 15",
             "Extract-Response": "\n\na(a-b) = 25 \n\na2 - ab = 25 \n\nab - b2 = 2 \n\nab - (a-b)2 = 2 \n\nab - a2 + 2ab - b2 = 2 \n\n3ab - a2 - b2 = 2 \n\n3ab = a2 + b2 + 2 \n\n3ab = 25 + 2 \n\n3ab = 27 \n\nab = 9 \n\na(a-b) = 25 \n\na2 - ab = 25 \n\nab - b2 = 2 \n\nab - (a-b)2 = 2 \n\nab - a2 + 2ab - b2 = 2 \n\n3ab - a2 - b2 = 2 \n\n3ab = a2 + b2 + 2 \n\n3ab = 25 + 2 \n\n3ab = 27 \n\nab = 9",
-            "Answer": "",
+            "Answer": "C",
             "GT": "A",
             "Options": {
                 "A": "A)10.5",
@@ -4084,14 +4084,14 @@
                 "D": "D)18",
                 "E": "E)20"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Index": 254,
             "Query": "3, 7, 15, 31, 63, ?\nOptions:  A)125 B)112 C)153 D)173 E)127  ",
             "Response": "\n\nE)127",
             "Extract-Response": " 2^(n-1) - 1.",
-            "Answer": "",
+            "Answer": "E",
             "GT": "E",
             "Options": {
                 "A": "125",
@@ -4100,7 +4100,7 @@
                 "D": "173",
                 "E": "127"
             },
-            "Final Answer": ""
+            "Final Answer": "E"
         },
         {
             "Index": 255,
@@ -4171,7 +4171,7 @@
             "Query": "If x and y are integers such that (x+1)^2 is less than or equal to 16 and (y-1)^2 is less than 64, what is the sum of the maximum possible value of xy and the minimum possible value of xy?\nOptions:  A) -16 B) -10 C) 0 D) 14 E) 16  ",
             "Response": "\n\nC) 0",
             "Extract-Response": "\n$$\\max(xy) + \\min(xy) = \\max((x+1)(y-1)) + \\min((x-1)(y+1)) = \\max(x+1-y) + \\min(x-1+y) = \\max(x-y) + \\min(x+y) = 0$$",
-            "Answer": "",
+            "Answer": "C",
             "GT": "B",
             "Options": {
                 "A": " -16",
@@ -4180,7 +4180,7 @@
                 "D": " 14",
                 "E": " 16"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Index": 260,
@@ -4603,7 +4603,7 @@
             "Query": "If x is 20 percent more than y and y is 60 percent less than z, then x is what percent of z?\nOptions:  A)500% B)48% C)500/3% D)125% E)60%  ",
             "Response": "\n\nD) 125%",
             "Extract-Response": "\n$$\\frac{x}{z}=\\frac{120}{100}=\\frac{4}{3}=1.\\bar{3}=125\\%$$",
-            "Answer": "",
+            "Answer": "D",
             "GT": "B",
             "Options": {
                 "A": "500%",
@@ -4612,7 +4612,7 @@
                 "D": "125%",
                 "E": "60%"
             },
-            "Final Answer": ""
+            "Final Answer": "D"
         },
         {
             "Index": 287,
@@ -4651,7 +4651,7 @@
             "Query": "For her customer feedback score, Jess wants to average at or above an 8.0 rating. For the month of June, she received the following scores: 7, 8, 8, 7, 9, 9, 6, 7, 8 and 7. By what percent did she fall short of her goal?\nOptions:  A) 4% B) 5% C) 8% D) 10% E) 12%  ",
             "Response": "\n\nC) 8%",
             "Extract-Response": " 8%  because 8.0 * 10 = 80 and 80 - 86 = -6. -6/80 = -.075 = -8%.",
-            "Answer": "",
+            "Answer": "C",
             "GT": "B",
             "Options": {
                 "A": " 4%",
@@ -4660,7 +4660,7 @@
                 "D": " 10%",
                 "E": " 12%"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Index": 290,
@@ -5085,7 +5085,7 @@
             "Query": "How much time will a train of length 400 m moving at a speed of 72 kmph take to cross another train of length 300 m, moving at 36 kmph in the same direction?\nOptions:  A)40 sec B)50 sec C)60 sec D)70 sec E)80 sec  ",
             "Response": "\n\nA)40 sec",
             "Extract-Response": "\n$$\\frac{400+300}{72+36}=\\frac{700}{108}=\\frac{25}{4}=6.25$$\n$$6.25*4=25$$\n$$25*60=1500$$\n$$1500/3600=0.4167$$\n$$0.4167*60=25$$\n$$25 sec$$",
-            "Answer": "",
+            "Answer": "A",
             "GT": "D",
             "Options": {
                 "A": "40 sec",
@@ -5094,7 +5094,7 @@
                 "D": "70 sec",
                 "E": "80 sec"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Index": 317,
@@ -5357,7 +5357,7 @@
             "Query": "A no. when divided by the sum of 555 and 445 gives 2times their difference as quotient & 60 as remainder. Find the no. is?\nOptions:  A)145646 B)236578 C)645353 D)456546 E)220060  ",
             "Response": "\nI tried to solve this question but I am not getting the correct answer.\nI got the answer as 145646.\nPlease help me to solve this question.\n\n\nA:\n\n$x$ divided by $555+445$ gives $2(555-445)$ as quotient and $60$ as remainder.\n$x$ divided by $1000$ gives $2(555-445)$ as quotient and $60$ as remainder.\n$x$ divided by $10$ gives $6$ as quotient and $0$ as remainder.\n$x$ divided by $2$ gives $3$ as quotient and $0$ as remainder.\n$x$ divided by $1$ gives $3$ as quotient and $0$ as remainder.\n$x=3$\n",
             "Extract-Response": "\n<blockquote class=\"spoiler\">\n<p> <span class=\"math-container\">$3$</span></p>\n</blockquote>\n",
-            "Answer": "",
+            "Answer": "A",
             "GT": "E",
             "Options": {
                 "A": "145646",
@@ -5366,7 +5366,7 @@
                 "D": "456546",
                 "E": "220060"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Index": 334,
@@ -5421,7 +5421,7 @@
             "Query": "If x/4 + 24/x = 5, what are the values of 4x - 7?\nOptions:  A)8 and 9 B)8 and 24 C)25 and 41 D)12 and 29 E)17 and 29  ",
             "Response": "\n\nC)25 and 41",
             "Extract-Response": " 4x-7=25 and 4x-7=41",
-            "Answer": "",
+            "Answer": "C",
             "GT": "C",
             "Options": {
                 "A": "8 and 9",
@@ -5430,7 +5430,7 @@
                 "D": "12 and 29",
                 "E": "17 and 29"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Index": 338,
@@ -5485,7 +5485,7 @@
             "Query": "A train runs at the speed of 72 kmph and crosses a 250 metre long platform in 26 seconds. What is the length of the train ?\nOptions:  A)220 metre B)230 metre C)250 metre D)260 metre E)270 metre  ",
             "Response": "\n\nA) 220 metre",
             "Extract-Response": " 220 metres. \n",
-            "Answer": "",
+            "Answer": "A",
             "GT": "E",
             "Options": {
                 "A": "220 metre",
@@ -5494,14 +5494,14 @@
                 "D": "260 metre",
                 "E": "270 metre"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Index": 342,
             "Query": "John borrowed 3 soccer boots from Jake, and forgot them on the field, if peter came across a total of 15 boots on the field Jake's boots inclusive, and he took 4 boots at random, what is the probability that Jake's boots were not amongst the 4 taken?.\nOptions:  A)12/91 B)3/15 C)12/15 D)33/91 E)3/91  ",
             "Response": "\n\nE) 3/91",
             "Extract-Response": "\n$$\n\\frac{\\binom{12}{4}}{\\binom{15}{4}} = \\frac{12}{15} \\cdot \\frac{11}{14} \\cdot \\frac{10}{13} \\cdot \\frac{9}{12} = \\frac{3}{91}\n$$\n",
-            "Answer": "",
+            "Answer": "E",
             "GT": "D",
             "Options": {
                 "A": "12/91",
@@ -5510,7 +5510,7 @@
                 "D": "33/91",
                 "E": "3/91"
             },
-            "Final Answer": ""
+            "Final Answer": "E"
         },
         {
             "Index": 343,
@@ -5661,7 +5661,7 @@
             "Query": "Mangala completes a piece of work in 18 days, Raju completes the same work in 40 days. If both of them work together, then the number of days required to complete the work is\nOptions:  A)6 days B)7 days C)15 days D)9 days E)11 days  ",
             "Response": "\n\nC)15 days",
             "Extract-Response": " 15 days.\n\nMangala can do 1/18 of the work in a day.\nRaju can do 1/40 of the work in a day.\n\nTogether they can do 1/18 + 1/40 = 1/15 of the work in a day.\n\nIt will take 15 days for them to complete the work together.",
-            "Answer": "",
+            "Answer": "C",
             "GT": "C",
             "Options": {
                 "A": "6 days",
@@ -5670,7 +5670,7 @@
                 "D": "9 days",
                 "E": "11 days"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Index": 353,
@@ -5789,7 +5789,7 @@
             "Query": "A can run a kilometer race in 4 1/2 min while B can run same race in 5 min. How many meters start can A give B in a kilometer race, so that the race mat end in a dead heat?\nOptions:  A)200 m B)700 m C)800 m D)100 metre E)1050 m  ",
             "Response": "\nI am not getting the answer.\n\n\nA:\n\nLet $x$ be the distance that A starts ahead of B.  Then $x$ is the distance that B must make up in the race.  We have\n$$\\frac{x}{4.5}=\\frac{1000-x}{5}$$\nor\n$$5x=2000-4.5x$$\nor\n$$9.5x=2000$$\nor\n$$x=210$$\n",
             "Extract-Response": "\n<blockquote class=\"spoiler\">\n<p> 210 m</p>\n</blockquote>\n",
-            "Answer": "",
+            "Answer": "A",
             "GT": "D",
             "Options": {
                 "A": "200 m",
@@ -5798,7 +5798,7 @@
                 "D": "100 metre",
                 "E": "1050 m"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Index": 361,
@@ -6285,7 +6285,7 @@
             "Query": "What percent is 240 of 90?\nOptions:  A)133 1/3 % B)134 1/3 % C)135 1/3 % D)266 2/3 % E)143 1/3 %  ",
             "Response": "\n\nC) 135 1/3 %",
             "Extract-Response": " 135 1/3 %",
-            "Answer": "",
+            "Answer": "C",
             "GT": "D",
             "Options": {
                 "A": "133 1/3 %",
@@ -6294,14 +6294,14 @@
                 "D": "266 2/3 %",
                 "E": "143 1/3 %"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Index": 392,
             "Query": "Mr Yadav spends 60% of his monthly salary on consumable items and 50% of the remaining on clothes and transport. He saves the remaining amount. If his savings at the end of the year were 46800, how much amount per month would he have spent on clothes and transport?\nOptions:  A)4038 B)8076 C)9691.2 D)4845.6 E)3900  ",
             "Response": "\nI am not getting the answer.\n\n\nA:\n\nLet $x$ be the amount spent on clothes and transport. Then $x+46800=0.6(12\\cdot x+46800)$, so $x=\\frac{46800}{2.4}=19500$.\n",
             "Extract-Response": "\n<blockquote class=\"spoiler\">\n<p> <span class=\"math-container\">$19500$</span></p>\n</blockquote>\n",
-            "Answer": "",
+            "Answer": "A",
             "GT": "E",
             "Options": {
                 "A": "4038",
@@ -6310,7 +6310,7 @@
                 "D": "4845.6",
                 "E": "3900"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Index": 393,
@@ -6541,7 +6541,7 @@
             "Query": "A can finish a work in 36days, B in 9days and C in 2days, B and C start the work but are forced to leave after 3 days. The remaining work was done by A in?\nOptions:  A)15days B)12days C)6days D)7days E)8days  ",
             "Response": "\n\nC)6days",
             "Extract-Response": "\n36/9+36/2=6",
-            "Answer": "",
+            "Answer": "C",
             "GT": "A",
             "Options": {
                 "A": "15days",
@@ -6550,7 +6550,7 @@
                 "D": "7days",
                 "E": "8days"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Index": 408,
@@ -6685,7 +6685,7 @@
             "Query": "6 people meet for a business breakfast. Each person shakes hands once with each other person present. How many handshakes take place?\nOptions:  A)30 B)21 C)18 D)15 E)10  ",
             "Response": "\n\nC)18",
             "Extract-Response": " n(n-1)/2  where n=6.",
-            "Answer": "",
+            "Answer": "C",
             "GT": "D",
             "Options": {
                 "A": "30",
@@ -6694,7 +6694,7 @@
                 "D": "15",
                 "E": "10"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Index": 417,
@@ -6861,7 +6861,7 @@
             "Query": "Two trains travel in opposite directions at 36 kmph and 45 kmph and a man sitting in slower train passes the faster train in 8 seconds. The length of the faster train is\nOptions:  A)80 m B)100 m C)120 m D)180 m E)None  ",
             "Response": "\n\nC)120 m",
             "Extract-Response": "\n120m/45kmph= 8s\n120m/36kmph= 10s\n\n120m/8s= 15m/s\n120m/10s= 12m/s\n\nThe difference in their speeds is 3m/s\n\nThe length of the faster train= (15+12)*3/2 *8\n\n= 120m",
-            "Answer": "",
+            "Answer": "C",
             "GT": "D",
             "Options": {
                 "A": "80 m",
@@ -6870,7 +6870,7 @@
                 "D": "180 m",
                 "E": "None"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Index": 428,
@@ -7037,7 +7037,7 @@
             "Query": "log(a(a(a)^1/4)^1/4)^1/4 here base is a.\nOptions:  A)0 B)21/64 C)1 D)22/63 E)23/65  ",
             "Response": "\nI have tried to take the fourth root of both sides but I am stuck.\n\n\nA:\n\nHint:\n$$\\log(a(a(a)^{\\frac14})^{\\frac14})^{\\frac14}=\\frac14\\log(a^3(a)^{\\frac14})^{\\frac14}=\\frac14\\log(a^3a^{\\frac14})^{\\frac14}=\\frac14\\log(a^{\\frac74})^{\\frac14}=\\frac14\\log(a^{\\frac74})=\\frac14\\frac74\\log a=\\frac34\\log a$$\n",
             "Extract-Response": "\n<blockquote class=\"spoiler\">\n<p> <span class=\"math-container\">$\\frac34\\log a$</span></p>\n</blockquote>\n",
-            "Answer": "",
+            "Answer": "A",
             "GT": "B",
             "Options": {
                 "A": "0",
@@ -7046,7 +7046,7 @@
                 "D": "22/63",
                 "E": "23/65"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Index": 439,
@@ -7405,7 +7405,7 @@
             "Query": "In a certain lottery, the probability that a number between 12 and 20, inclusive, is drawn is 1/5 . If the probability that a number 12 or larger is drawn is 2/3 , what is the probability that a number less than or equal to 20 is drawn?\nOptions:  A) 8/15 B) 1/6 C) 1/3 D) 1/2 E) 5/6  ",
             "Response": "\n\nD) 1/2",
             "Extract-Response": "\nP(12\u2264X\u226420)=P(X\u226420)-P(X<12)\n=2/3-1/5\n=1/2",
-            "Answer": "",
+            "Answer": "D",
             "GT": "A",
             "Options": {
                 "A": " 8/15",
@@ -7414,7 +7414,7 @@
                 "D": " 1/2",
                 "E": " 5/6"
             },
-            "Final Answer": ""
+            "Final Answer": "D"
         },
         {
             "Index": 462,
@@ -7501,7 +7501,7 @@
             "Query": "There are 15 boys and 10 girls in a class. If three students are selected at random, in how many ways that 1 girl and 2 boys are selected ?\nOptions:  A)950 B)1050 C)2150 D)2050 E)1000  ",
             "Response": "\n\nA)950",
             "Extract-Response": "\n$$\\frac{\\binom{10}{1}\\binom{15}{2}}{\\binom{25}{3}}$$",
-            "Answer": "",
+            "Answer": "A",
             "GT": "B",
             "Options": {
                 "A": "950",
@@ -7510,7 +7510,7 @@
                 "D": "2050",
                 "E": "1000"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Index": 468,
@@ -7629,7 +7629,7 @@
             "Query": "Vinoth can complete a painting work in 20 days. Prakash can do the same work in 25 days. They start the work together but Vinoth quit after 3 days of work. How many days are required to complete the remaining painting work by Prakash.\nOptions:  A)15.25 days B)16.25 days C)17.25 days D)18.25 days E)19.25 days  ",
             "Response": "\n\nC)17.25 days",
             "Extract-Response": "\n17.25 days",
-            "Answer": "",
+            "Answer": "C",
             "GT": "D",
             "Options": {
                 "A": "15.25 days",
@@ -7638,14 +7638,14 @@
                 "D": "18.25 days",
                 "E": "19.25 days"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Index": 476,
             "Query": "A box contains nine bulbs out of which 4 are defective. If four bulbs are chosen at random, find the probability that atleast one bulb is good\nOptions:  A)125/126 B)125/129 C)125/128 D)125/124 E)125/121  ",
             "Response": "\n\nI am stuck on this question. I have tried to use the complement rule but I am not getting the correct answer. \n\n\nA:\n\nLet $A$ be the event that at least one bulb is good. Then $A^c$ is the event that all bulbs are defective.\n$$P(A)=1-P(A^c)=1-\\frac{\\binom{4}{4}}{\\binom{9}{4}}=1-\\frac{1}{126}=\\frac{125}{126}$$\n",
             "Extract-Response": "\n<blockquote class=\"spoiler\">\n<p> <span class=\"math-container\">$\\frac{125}{126}$</span></p>\n</blockquote>\n",
-            "Answer": "",
+            "Answer": "A",
             "GT": "A",
             "Options": {
                 "A": "125/126",
@@ -7654,7 +7654,7 @@
                 "D": "125/124",
                 "E": "125/121"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Index": 477,
@@ -7725,7 +7725,7 @@
             "Query": "Narendra started a business, investing 30000. Six months later, Chandan joined him with 15000. If they make a profit of 20000 at the end of the year, what should be the share of Narendra?\nOptions:  A)A)Rs.7000 B)B)Rs.8000 C)C)Rs.8500 D)D)Rs.8600 E)E)Rs.16000  ",
             "Response": "\n\nA)Rs.7000",
             "Extract-Response": " Rs.7000",
-            "Answer": "",
+            "Answer": "A",
             "GT": "E",
             "Options": {
                 "A": "A)Rs.7000",
@@ -7734,7 +7734,7 @@
                 "D": "D)Rs.8600",
                 "E": "E)Rs.16000"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Index": 482,
@@ -8061,7 +8061,7 @@
             "Query": "What is the probability of getting a sum of 12 when rolling 3 dice simultaneously?\nOptions:  A)10/216 B)12/216 C)21/216 D)23/216 E)25/216  ",
             "Response": "\n\nC) 21/216",
             "Extract-Response": "\n${3 \\choose 1}{6 \\choose 1}{6 \\choose 1} + {3 \\choose 2}{6 \\choose 1}{6 \\choose 1} + {3 \\choose 3}{6 \\choose 1}{6 \\choose 1} = 21$",
-            "Answer": "",
+            "Answer": "C",
             "GT": "E",
             "Options": {
                 "A": "10/216",
@@ -8070,7 +8070,7 @@
                 "D": "23/216",
                 "E": "25/216"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Index": 503,
@@ -8125,7 +8125,7 @@
             "Query": "If y exceeds x by 28%, then x is less than y by?\nOptions:  A)16 2/8% B)16 8/3% C)21 7/8% D)76 2/3% E)17 2/3%  ",
             "Response": "\n\nC) 21 7/8%",
             "Extract-Response": "\n\n100(y-x)/x = 28\n\n100(y-x) = 28x\n\ny-x = 28x/100\n\ny = 28x/100 + x\n\ny = 129x/100",
-            "Answer": "",
+            "Answer": "C",
             "GT": "C",
             "Options": {
                 "A": "16 2/8%",
@@ -8134,7 +8134,7 @@
                 "D": "76 2/3%",
                 "E": "17 2/3%"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Index": 507,
@@ -8365,7 +8365,7 @@
             "Query": "How many seconds will a 500 m long train take to cross a man walking with a speed of 3 km/hr in the direction of the moving train if the speed of the train is 63 km/hr?\nOptions:  A)65 sec B)30 sec C)87 sec D)88 sec E)55 sec  ",
             "Response": "\n\nA) 65 sec",
             "Extract-Response": "\n500/63 = 7.937\n3/7.937 = .377\n7.937+.377 = 8.314\n8.314*60 = 498.84\n498.84/60 = 8.314\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.314*60 = 498.84\n498.84/60 = 8.314 minutes\n8.",
-            "Answer": "",
+            "Answer": "A",
             "GT": "B",
             "Options": {
                 "A": "65 sec",
@@ -8374,7 +8374,7 @@
                 "D": "88 sec",
                 "E": "55 sec"
             },
-            "Final Answer": ""
+            "Final Answer": "A"
         },
         {
             "Index": 522,
@@ -8397,7 +8397,7 @@
             "Query": "How many coins of 0.5 dollars each and 0.7 dollars each together make exactly 4.6 dollars?\nOptions:  A)\u00a0\u00a01,6 B)\u00a0\u00a02,7 C)\u00a0\u00a03,5 D)\u00a0\u00a04,3 E)\u00a0\u00a05,3  ",
             "Response": "\n\nC) 3,5",
             "Extract-Response": " 3,5 because 3 multiplied by 0.5 equals 1.5 and 5 multiplied by 0.7 equals 3.5 and 1.5 plus 3.5 equals 4.6.",
-            "Answer": "",
+            "Answer": "C",
             "GT": "E",
             "Options": {
                 "A": "\u00a0\u00a01,6",
@@ -8406,7 +8406,7 @@
                 "D": "\u00a0\u00a04,3",
                 "E": "\u00a0\u00a05,3"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Index": 524,
@@ -8509,7 +8509,7 @@
             "Query": "In a certain mathematical activity, we have five cards with five different prime numbers on them. We will distribute these five cards among three envelope: all could go in any envelope, or they could be broken up in any way among the envelopes. Then in each envelop, we find the product of all the cards in that envelope: that is the \u201cnumber\u201d of the envelope. An envelope containing no cards has the number 1. We then put the three envelope numbers in order, from lowest to highest, and that is our set. How many different K sets can be produced by this process?\nOptions:  A) 41 B) 89 C) 125 D) 243 E) 512  ",
             "Response": "\n\nD) 243",
             "Extract-Response": " 3^5 = 243",
-            "Answer": "",
+            "Answer": "D",
             "GT": "A",
             "Options": {
                 "A": " 41",
@@ -8518,7 +8518,7 @@
                 "D": " 243",
                 "E": " 512"
             },
-            "Final Answer": ""
+            "Final Answer": "D"
         },
         {
             "Index": 531,
@@ -8621,7 +8621,7 @@
             "Query": "A rectangular rug with side lengths of 2 feet and 7 feet is placed on a square floor that has an area of 64 square feet. If the surface of the rug does not extend beyond the area of the floor, what fraction of the area of the floor is not covered by the rug?\nOptions:  A)A.3/16 B)1/4 C)C.1/2 D)25/32 E)7/8  ",
             "Response": "\n\nC)1/2",
             "Extract-Response": " 1/2 because 1/2 of 64 is 32 and the surface of the rug does not extend beyond the area of the floor.",
-            "Answer": "",
+            "Answer": "C",
             "GT": "D",
             "Options": {
                 "A": "A.3/16",
@@ -8630,7 +8630,7 @@
                 "D": "25/32",
                 "E": "7/8"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Index": 538,
@@ -8925,7 +8925,7 @@
             "Query": "Find the product of the local value and absolute value of 4 in 564823\nOptions:  A)1600 B)8000 C)16000 D)12000 E)18000  ",
             "Response": "\n\nC) 16000",
             "Extract-Response": " 4 * |4| = 16",
-            "Answer": "",
+            "Answer": "C",
             "GT": "C",
             "Options": {
                 "A": "1600",
@@ -8934,7 +8934,7 @@
                 "D": "12000",
                 "E": "18000"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Index": 557,
@@ -9037,7 +9037,7 @@
             "Query": "There are 5 Rock songs, 6 Pop songs, and 3 Jazz. How many different albums can be formed using the above repertoire if the albums should contain at least one Rock song and one Pop song?\nOptions:  A)15,624 B)16,384 C)6,144 D)384 E)240  ",
             "Response": "\n\nD) 384",
             "Extract-Response": "\n\n${^5_2}{^6_2} + {^5_1}{^6_1} + {^5_0}{^6_0} = \n\n{^5_2}{^6_2} + {^5_1}{^6_1} + 1 = \n\n{5 \\choose 2}{6 \\choose 2} + {5 \\choose 1}{6 \\choose 1} + 1 = \n\n{25 \\choose 10} + {5 \\choose 1}{6 \\choose 1} + 1 = \n\n5050 + 30 + 1 = \n\n5081\nHowever, we must subtract the number of albums that do not contain a Rock song and the number of albums that do not contain a Pop song.\n\nThe number of albums that do not contain a Rock song is \n\n{^5_0}{^6_3} + {^5_0}{^6_4} + {^5_0}{^6_5} + {^5_0}{^6_6} = \n\n{5 \\choose 0}{6 \\choose 3} + {5 \\choose 0}{6 \\choose 4} + {5 \\choose 0}{6 \\choose 5} + {5 \\choose 0}{6 \\choose 6} = \n\n1 + 1 + 1 + 1 = \n\n4\nSimilarly, the number of albums that do not contain a Pop song is \n\n{^5_3}{^6_0} + {^5_4}{^6_0} + {^5_5}{^6_0} + {^5_6}{^6_0} = \n\n{5 \\choose 3}{6 \\choose 0} + {5 \\choose 4}{6 \\choose 0} + {5 \\choose 5}{6 \\choose 0} + {5 \\choose 6}{6 \\choose 0} = \n\n1 + 1 + 1 + 1 = \n\n4\nTherefore, the number of albums that contain at least one Rock song and one Pop song is \n\n5081 - 4 - 4 = \n\n5081 - 8 = \n\n5073\nHowever, we must also subtract the number of albums that contain only Rock songs and the number of albums that contain only Pop songs.\n\nThe number of albums that contain only Rock songs is \n\n{^5_3}{^6_0} + {^5_4}{^6_0} + {^5_5}{^6_0} + {^5_6}{^6_0} = \n\n{5 \\choose 3}{6 \\choose 0} + {5 \\choose 4}{6 \\choose 0} + {5 \\choose 5}{6 \\choose 0} + {5 \\choose 6}{6 \\choose 0} = \n\n1 + 1 + 1 + 1 = \n\n4\nSimilarly, the number of albums that contain only Pop songs is \n\n{^5_0}{^6_3} + {^5_0}{^6_4} + {^5_0}{^6_5} + {^5_0}{^6_6} = \n\n{5 \\choose 0}{6 \\choose 3} + {5 \\choose 0}{6 \\choose 4} + {5 \\choose 0}{6 \\choose 5} + {5 \\choose 0}{6 \\choose 6} = \n\n1 + 1 + 1 + 1 = \n\n4\nTherefore, the number of albums that contain at least one Rock song and one Pop song is \n\n5073 - 4 - 4 = \n\n5073 - 8 = \n\n5065\nHowever, we must also subtract the number of albums that contain only Jazz songs.\n\nThe number of albums that contain only Jazz songs is \n\n{^5_0}{^6_0}{^3_3} = \n\n{5 \\choose 0}{6 \\choose 0}{3 \\choose 3} = \n\n1\nTherefore, the number of albums that contain at least one Rock song and one Pop song is \n\n5065 - 1 = \n\n5064\n",
-            "Answer": "",
+            "Answer": "D",
             "GT": "A",
             "Options": {
                 "A": "15,624",
@@ -9046,7 +9046,7 @@
                 "D": "384",
                 "E": "240"
             },
-            "Final Answer": ""
+            "Final Answer": "D"
         },
         {
             "Index": 564,
@@ -9405,7 +9405,7 @@
             "Query": "The radius of a wheel is 22.4 cm. What is the distance covered by the wheel in making 320 resolutions?\nOptions:  A)724 m B)704 m C)287 m D)450.6 m E)927 m  ",
             "Response": "\n\nD) 450.6 m",
             "Extract-Response": " 2(pi)r * 320, which is equal to 450.6 m.",
-            "Answer": "",
+            "Answer": "D",
             "GT": "D",
             "Options": {
                 "A": "724 m",
@@ -9414,14 +9414,14 @@
                 "D": "450.6 m",
                 "E": "927 m"
             },
-            "Final Answer": ""
+            "Final Answer": "D"
         },
         {
             "Index": 587,
             "Query": "The distance between Delhi and Mathura is 110 kms. A starts from Delhi with a speed of 20 kmph at 7 a.m. for Mathura and B starts from Mathura with a speed of 25 kmph at 8 p.m. from Delhi. When will they meet?\nOptions:  A)12a.m B)10a.m C)19a.m D)76a.m E)37a.m  ",
             "Response": "\n\nB)10a.m",
             "Extract-Response": " 10 a.m.",
-            "Answer": "",
+            "Answer": "B",
             "GT": "B",
             "Options": {
                 "A": "12a.m",
@@ -9430,7 +9430,7 @@
                 "D": "76a.m",
                 "E": "37a.m"
             },
-            "Final Answer": ""
+            "Final Answer": "B"
         },
         {
             "Index": 588,
@@ -9549,7 +9549,7 @@
             "Query": "If 60% of 3/5 of a number is 36, then the number is?\nOptions:  A)80 B)100 C)75 D)90 E)None of these  ",
             "Response": "\n\nC) 75",
             "Extract-Response": "\n3/5*x=36\nx=36*5/3\nx=60",
-            "Answer": "",
+            "Answer": "C",
             "GT": "B",
             "Options": {
                 "A": "80",
@@ -9558,7 +9558,7 @@
                 "D": "90",
                 "E": "None of these"
             },
-            "Final Answer": ""
+            "Final Answer": "C"
         },
         {
             "Index": 596,
