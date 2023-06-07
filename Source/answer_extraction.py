@@ -52,13 +52,20 @@ def extract_answers(root: str | None = None):
 
             else:
                 if "two-stage" in extraction_type:
-                    response = test["Extract-Response"]
+                    extraction_response = test["Extract-Response"]
+                    end_pred, front_pred = clean_answer(response=extraction_response, dataset=dataset,
+                                                        extraction_type=extraction_type,
+                                                        options=options)
+                    if end_pred == "":
+                        response = test["Response"]
+                        end_pred, front_pred = clean_answer(response=response, dataset=dataset,
+                                                            extraction_type=extraction_type,
+                                                            options=options)
                 else:
                     response = test["Response"]
-
-                end_pred, front_pred = clean_answer(response=response, dataset=dataset,
-                                                    extraction_type=extraction_type,
-                                                    options=options)
+                    end_pred, front_pred = clean_answer(response=response, dataset=dataset,
+                                                        extraction_type=extraction_type,
+                                                        options=options)
 
             if modality == "answer_first":
                 answer = front_pred
