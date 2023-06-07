@@ -1477,4 +1477,17 @@
         },
         {
             "Query": "Let T: R^2 -> R^2 be the linear transformation that maps the point (1, 2) to (2, 3) and the point (-1, 2) to (2, -3). Then T maps the point (2, 1) to",
-            "Response": "We can start by finding the matrix representation of T. Let's call the matrix A. We know that T(1,2) = (2,3) and T(-1,2) = (2,-3), so we can set up the following system of equations:\n\nA * [1  -1] = [2  2]\n    [2   2]     [3 -3]\n\nSolving for A, we get:\n\nA = [2  2]\n    [1 -3]\n\nNow, we can use this matrix to find T(2,1). We have:\n\nT(2,1) = A * [2]\n            [1]\n\nMultiplying, we get:\n\nT(2,1) = [2  2] * [2] = [6]\n         [1 -3]   [1]   [-4]\n\nTherefore, the answer is {D: (-4, 3)}
+            "Response": "We can start by finding the matrix representation of T. Let's call the matrix A. We know that T(1,2) = (2,3) and T(-1,2) = (2,-3), so we can set up the following system of equations:\n\nA * [1  -1] = [2  2]\n    [2   2]     [3 -3]\n\nSolving for A, we get:\n\nA = [2  2]\n    [1 -3]\n\nNow, we can use this matrix to find T(2,1). We have:\n\nT(2,1) = A * [2]\n            [1]\n\nMultiplying, we get:\n\nT(2,1) = [2  2] * [2] = [6]\n         [1 -3]   [1]   [-4]\n\nTherefore, the answer is {D: (-4, 3)}.",
+            "Extract-Response": "{D}",
+            "Options": {
+                "(1, 6)": "A",
+                "(-1, 4)": "B",
+                "(3, 2)": "C",
+                "(-4, 3)": "D"
+            },
+            "GT": "A",
+            "Answer": "D",
+            "Final Answer": "D"
+        }
+    ]
+}

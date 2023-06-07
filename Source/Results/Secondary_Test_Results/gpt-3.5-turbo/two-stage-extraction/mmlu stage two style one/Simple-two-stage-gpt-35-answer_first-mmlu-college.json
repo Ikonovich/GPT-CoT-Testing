@@ -1478,4 +1478,16 @@
         {
             "Query": "Let T: R^2 -> R^2 be the linear transformation that maps the point (1, 2) to (2, 3) and the point (-1, 2) to (2, -3). Then T maps the point (2, 1) to",
             "Response": "We can start by finding the matrix representation of T. Let's call the matrix A. We know that A multiplied by the column vector (1, 2) should give us the column vector (2, 3), and A multiplied by the column vector (-1, 2) should give us the column vector (2, -3). Writing this out as a system of equations, we have:\n\nA * [1; 2] = [2; 3]\nA * [-1; 2] = [2; -3]\n\nWe can solve for the entries of A by using the fact that matrix multiplication distributes over addition. That is, if we have a matrix A and column vectors u and v, then A * (u + v) = A * u + A * v. Using this property, we can write:\n\nA * [1; 2] + A * [-1; 2] = [2; 3] + [2; -3]\nA * [0; 4] = [4; 0]\nA * [0.5; 0] = [1; 0]\n\nSo the first column of A is [0.5; 0]. Similarly, we can find the second column of A:\n\nA * [1; 2] - A * [-1; 2] = [2; 3] - [2; -3]\nA * [2; 0] = [0; 6]\nA * [1; 0] = [0; 3]\n\nSo the second column of A is [1; 3]. Therefore, the matrix representation of T is:\n\nA = [0.5 1; 0 3]\n\nTo find where T maps the point (2, 1), we can multiply the matrix A by the column vector (2, 1):\n\nA * [2; 1] = [0.5 1; 0 3] * [2; 1] = [2.5; 3]\n\nTherefore, T maps the point (2, 1) to (2.5, 3), which is closest to answer choice $\\boxed{\\textbf{(A) } (1, 6)}$.",
-  
+            "Extract-Response": "{A}",
+            "Options": {
+                "(1, 6)": "A",
+                "(-1, 4)": "B",
+                "(3, 2)": "C",
+                "(-4, 3)": "D"
+            },
+            "GT": "A",
+            "Answer": "A",
+            "Final Answer": "A"
+        }
+    ]
+}

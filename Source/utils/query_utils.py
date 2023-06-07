@@ -332,6 +332,7 @@ def run_test(model: str, modality: str, dataset: str, args):
                             "Modality": modality,
                             "Modality Index": modality_index_map[modality],
                             "Dataset": dataset_sub,
+                            "Dataset Index": dataset_index_map[dataset_sub]
                             }
             if "step" in dataset:
                 test_results["Steps"] = int(regex.findall(r"\d{1,2}", dataset)[0])

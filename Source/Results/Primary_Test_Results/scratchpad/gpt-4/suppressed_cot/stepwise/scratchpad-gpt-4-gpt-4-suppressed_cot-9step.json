@@ -1,21 +1,22 @@
 {
-"Mode": "scratchpad",
-"Internal Model": "gpt-4",
-"Internal Model Index": 2,
-"External Model": "gpt-4",
-"External Model Index": 2,
-"Modality": "suppressed_cot",
-"Modality Index": 2,
-"Dataset": "9step",
-"Extraction Type": "in-brackets",
-"Internal Role": {
-    "role": "system",
-    "content": "You are engaging in internal reasoning. None of your output from this cycle will be shown to the user. All of your output for this cycle will be available in the next cycle to allow you to produce relevant output for the user."
-},
-"External Role": {
-    "role": "system",
-    "content": "Use the provided reasoning to answer the user's latest message. Follow any instructions provided by the user."
-},
+    "Mode": "scratchpad",
+    "Internal Model": "gpt-4",
+    "Internal Model Index": 2,
+    "External Model": "gpt-4",
+    "External Model Index": 2,
+    "Modality": "suppressed_cot",
+    "Modality Index": 2,
+    "Dataset": "stepwise",
+    "Steps": 9,
+    "Extraction Type": "in-brackets",
+    "Internal Role": {
+        "role": "system",
+        "content": "You are engaging in internal reasoning. None of your output from this cycle will be shown to the user. All of your output for this cycle will be available in the next cycle to allow you to produce relevant output for the user."
+    },
+    "External Role": {
+        "role": "system",
+        "content": "Use the provided reasoning to answer the user's latest message. Follow any instructions provided by the user."
+    },
     "Trials": [
         {
             "Index": 0,
@@ -4526,5 +4527,6 @@
     "Non-CoT Accuracy": 87.2,
     "ci_radius": 2.9284262859085257,
     "ci_upper": 90.12842628590853,
-    "ci_lower": 84.27157371409147
+    "ci_lower": 84.27157371409147,
+    "Dataset Index": 5
 }

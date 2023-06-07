@@ -1584,4 +1584,15 @@
             "Index": 104,
             "Extract-Response": "None",
             "Query": "Let T: R^2 -> R^2 be the linear transformation that maps the point (1, 2) to (2, 3) and the point (-1, 2) to (2, -3). Then T maps the point (2, 1) to",
-            "Response": "We can use the fact that any linear transformation can be represented by a matrix. Let's call this matrix A. Then we know that:\n\nA * [1, 2]^T = [2, 3]^T\nA * [-1, 2]^T = [2, -3]^T\n\nwhere \"^T\" denotes the transpose of a vector. We can write this system of equations as:\n\n[1  2]   [a  c]^T   [2  2]^T\n[-1 2] * [b  d]   = [3 -3]\n\nSolving for the elements of A, we get:\n\na = 2, b = -1, c = 1, d = -2\n\nSo the matrix representation of T is:\n\nA = [2 -1]\n    [1 -2]\n\nTo find where T maps the point (2, 1), we can simply multiply it by the matrix A:\n\nA * [2, 1]^T = [3, -3]^T\n\nT
+            "Response": "We can use the fact that any linear transformation can be represented by a matrix. Let's call this matrix A. Then we know that:\n\nA * [1, 2]^T = [2, 3]^T\nA * [-1, 2]^T = [2, -3]^T\n\nwhere \"^T\" denotes the transpose of a vector. We can write this system of equations as:\n\n[1  2]   [a  c]^T   [2  2]^T\n[-1 2] * [b  d]   = [3 -3]\n\nSolving for the elements of A, we get:\n\na = 2, b = -1, c = 1, d = -2\n\nSo the matrix representation of T is:\n\nA = [2 -1]\n    [1 -2]\n\nTo find where T maps the point (2, 1), we can simply multiply it by the matrix A:\n\nA * [2, 1]^T = [3, -3]^T\n\nTherefore, the answer is {D: (-4, 3)}.",
+            "Options": {
+                "(1, 6)": "A",
+                "(-1, 4)": "B",
+                "(3, 2)": "C",
+                "(-4, 3)": "D"
+            },
+            "Answer": "D",
+            "Final Answer": "D"
+        }
+    ]
+}

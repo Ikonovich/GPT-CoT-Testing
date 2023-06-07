@@ -1,6 +1,6 @@
 from regex import regex
 
-from config import RESULTS_FOLDER
+from config import RESULTS_FOLDER, dataset_index_map
 from utils.file_utils import get_filepaths, read_json, write_json
 
 
@@ -21,6 +21,8 @@ def extract_answers(root: str | None = None):
         modality = data["Modality"]
         dataset = data["Dataset"]
         extraction_type = data["Extraction Type"]
+
+        data["Dataset Index"] = dataset_index_map[data["Dataset"]]
 
         trials = data["Trials"]
         # Iterate over every test and run answer extraction.

@@ -24,7 +24,6 @@ def search_metadata(mode: str = "test",
         filename = "Scratchpad_Results.csv"
     else:
         raise ValueError("Provided mode is invalid.")
-
     metapath = os.path.join(METADATA_FOLDER, filename)
     frame = pd.read_csv(metapath)
 
@@ -57,7 +56,7 @@ def generate_metadata(root: str = None, test_file: str = None, scratchpad_file: 
         scratchpad_file = "Scratchpad_Results.csv"
 
     test_paths = get_filepaths(root=root, contains=["json"], excludes=["scratchpad"])
-    scratch_paths = get_filepaths(os.path.join(RESULTS_FOLDER, "scratchpad"), contains=["json", "scratchpad"])
+    scratch_paths = get_filepaths(os.path.join(root, "scratchpad"), contains=["json", "scratchpad"])
 
     test_results = list()
     for i in range(len(test_paths)):

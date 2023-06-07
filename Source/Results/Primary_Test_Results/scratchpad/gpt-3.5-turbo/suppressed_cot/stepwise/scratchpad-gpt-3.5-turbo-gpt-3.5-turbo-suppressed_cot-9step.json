@@ -6,7 +6,8 @@
     "External Model Index": 1,
     "Modality": "suppressed_cot",
     "Modality Index": 2,
-    "Dataset": "9step",
+    "Dataset": "stepwise",
+    "Steps": 9,
     "Extraction Type": "in-brackets",
     "Internal Role": {
         "role": "system",
@@ -22,56 +23,4510 @@
             "Query": "1 * 2 + 7 * 6 * 9 - 2 - 1 - 1 - 1 - 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
             "Reasoning": "{3763}",
             "Response": "Is there anything else I can assist you with?",
-            "GT": 369
+            "GT": 369,
+            "Answer": "",
+            "Final Answer": ""
         },
         {
             "Index": 1,
             "Query": "5 * 2 - 8 + 6 * 6 - 9 + 1 - 5 + 2 + 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
             "Reasoning": "{30}",
             "Response": "Hello! How can I assist you today?",
-            "GT": 28
+            "GT": 28,
+            "Answer": "",
+            "Final Answer": ""
         },
         {
             "Index": 2,
             "Query": "5 + 8 * 5 + 4 * 8 + 9 - 9 - 7 + 9 - 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
             "Reasoning": "The final answer is {69}.",
             "Response": "Is there anything else I can help you with?",
-            "GT": 75
+            "GT": 75,
+            "Answer": "",
+            "Final Answer": ""
         },
         {
             "Index": 3,
             "Query": "6 - 1 - 6 - 4 * 4 + 1 + 2 * 8 - 5 + 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
             "Reasoning": "The final answer is {10}.",
             "Response": "Is there anything else I can assist you with?",
-            "GT": 4
+            "GT": 4,
+            "Answer": "",
+            "Final Answer": ""
         },
         {
             "Index": 4,
             "Query": "3 + 9 - 8 * 4 * 3 * 5 * 2 - 3 * 1 * 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
             "Reasoning": "-579 {Note: The order of operations is important here.}",
             "Response": "-579",
-            "GT": -957
+            "GT": -957,
+            "Answer": -579.0,
+            "Final Answer": -579.0
         },
         {
             "Index": 5,
             "Query": "7 - 9 - 1 + 2 * 7 + 3 * 8 - 2 + 7 * 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
             "Reasoning": "The final answer is {100}.",
             "Response": "Hi, how can I assist you today?",
-            "GT": 96
+            "GT": 96,
+            "Answer": "",
+            "Final Answer": ""
         },
         {
             "Index": 6,
             "Query": "5 * 9 + 7 + 6 * 8 + 7 * 6 - 2 - 2 * 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
             "Reasoning": "{87}",
             "Response": "How can I assist you today?",
-            "GT": 128
+            "GT": 128,
+            "Answer": "",
+            "Final Answer": ""
         },
         {
             "Index": 7,
             "Query": "3 + 1 + 9 + 4 + 1 * 9 * 7 - 7 + 7 + 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
             "Reasoning": "{139}",
             "Response": "Hello! How can I assist you today?",
+            "GT": 89,
+            "Answer": "",
+            "Final Answer": ""
+        },
+        {
+            "Index": 8,
+            "Query": "9 + 5 * 5 + 9 * 6 - 1 * 7 + 2 + 3 + 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "My final answer is {77}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 91
+        },
+        {
+            "Index": 9,
+            "Query": "3 + 6 * 6 - 6 * 6 - 4 - 1 * 2 + 6 - 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-5}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 2
+        },
+        {
+            "Index": 10,
+            "Query": "9 * 5 * 7 - 4 * 1 - 8 - 1 - 8 + 5 + 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{302}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 302
+        },
+        {
+            "Index": 11,
+            "Query": "5 - 1 * 8 - 1 + 8 + 6 + 1 + 6 + 7 - 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {5}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 18
+        },
+        {
+            "Index": 12,
+            "Query": "1 * 3 + 9 - 5 + 2 - 7 * 7 + 1 * 1 - 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {-47}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": -46
+        },
+        {
+            "Index": 13,
+            "Query": "5 - 5 * 2 - 9 * 8 + 2 * 1 * 7 * 2 - 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {-71}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -50
+        },
+        {
+            "Index": 14,
+            "Query": "9 + 1 - 9 * 9 + 9 - 1 * 4 - 9 + 4 + 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-77}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -68
+        },
+        {
+            "Index": 15,
+            "Query": "2 * 2 * 7 - 6 + 7 * 7 - 2 - 3 + 3 - 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {67}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 60
+        },
+        {
+            "Index": 16,
+            "Query": "2 * 6 + 1 * 6 + 4 * 9 * 4 * 5 - 5 + 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{732}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 737
+        },
+        {
+            "Index": 17,
+            "Query": "7 - 7 + 1 + 3 + 4 * 6 * 8 + 8 - 9 * 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {174}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 168
+        },
+        {
+            "Index": 18,
+            "Query": "8 * 7 - 6 - 6 - 3 * 1 - 8 - 6 - 9 - 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {-10}.",
+            "Response": "How can I assist you today?",
+            "GT": 15
+        },
+        {
+            "Index": 19,
+            "Query": "6 * 7 - 6 - 5 - 8 - 6 * 5 + 3 * 2 * 2 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {2}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 5
+        },
+        {
+            "Index": 20,
+            "Query": "3 * 9 - 1 * 1 * 6 * 6 * 1 * 7 - 7 - 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {-253}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -238
+        },
+        {
+            "Index": 21,
+            "Query": "4 + 1 - 5 * 7 - 7 - 6 + 5 + 5 + 2 - 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {-46}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": -38
+        },
+        {
+            "Index": 22,
+            "Query": "7 + 1 + 6 + 3 - 3 + 2 + 1 - 8 - 8 - 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-6}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -4
+        },
+        {
+            "Index": 23,
+            "Query": "3 - 3 * 4 * 4 - 6 * 8 * 1 - 5 * 6 + 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-141",
+            "Response": "Hello! How can I assist you today?",
+            "GT": -114
+        },
+        {
+            "Index": 24,
+            "Query": "8 + 3 + 5 * 8 * 5 - 6 - 1 + 3 - 9 + 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "My final answer is {200}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 204
+        },
+        {
+            "Index": 25,
+            "Query": "4 * 8 + 9 + 8 * 3 - 8 * 2 + 1 + 6 + 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{49}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 64
+        },
+        {
+            "Index": 26,
+            "Query": "8 + 6 + 2 + 3 - 3 * 8 - 2 - 8 + 6 + 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is { -6 }.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -1
+        },
+        {
+            "Index": 27,
+            "Query": "8 - 3 * 2 * 5 + 5 * 4 * 6 * 8 + 9 + 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {962}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 955
+        },
+        {
+            "Index": 28,
+            "Query": "3 + 9 - 8 - 6 - 6 * 2 * 3 + 1 + 7 + 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {-34}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": -27
+        },
+        {
+            "Index": 29,
+            "Query": "2 - 7 + 3 - 1 * 8 - 9 - 8 * 8 * 2 + 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-1313",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -146
+        },
+        {
+            "Index": 30,
+            "Query": "8 * 8 * 2 - 5 + 2 + 2 - 8 + 5 * 4 * 2 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{ 78 }",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 159
+        },
+        {
+            "Index": 31,
+            "Query": "6 * 4 + 1 - 2 * 3 * 9 + 7 * 7 - 5 + 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-100}",
+            "Response": "What can I assist you with?",
+            "GT": 18
+        },
+        {
+            "Index": 32,
+            "Query": "5 + 7 - 3 * 8 * 4 + 6 * 7 * 4 * 8 - 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-725}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 1257
+        },
+        {
+            "Index": 33,
+            "Query": "6 - 8 - 5 - 6 + 2 - 4 - 5 + 5 * 5 + 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {36}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 13
+        },
+        {
+            "Index": 34,
+            "Query": "2 * 5 * 3 - 3 + 5 - 1 - 4 * 8 + 3 - 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-33}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -1
+        },
+        {
+            "Index": 35,
+            "Query": "4 + 5 * 4 + 4 * 9 + 8 * 3 + 1 + 8 + 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {69}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 97
+        },
+        {
+            "Index": 36,
+            "Query": "3 - 9 + 6 - 5 + 1 * 7 * 1 - 9 + 6 * 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {33}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 29
+        },
+        {
+            "Index": 37,
+            "Query": "3 - 2 * 4 * 6 - 3 - 4 + 1 * 5 - 2 + 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-45}",
+            "Response": "How can I assist you today?",
+            "GT": -45
+        },
+        {
+            "Index": 38,
+            "Query": "4 - 1 * 6 + 1 * 2 + 3 * 2 * 9 * 2 - 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{107}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 107
+        },
+        {
+            "Index": 39,
+            "Query": "2 * 1 - 5 + 7 * 4 - 4 - 2 * 7 - 2 + 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{15}",
+            "Response": "Do you have any other math problems you need help with?",
+            "GT": 9
+        },
+        {
+            "Index": 40,
+            "Query": "1 * 8 * 5 - 9 - 5 * 7 - 8 + 3 - 1 + 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-23}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -4
+        },
+        {
+            "Index": 41,
+            "Query": "6 * 9 * 4 - 2 - 3 * 1 - 2 - 6 - 2 + 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{205}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 210
+        },
+        {
+            "Index": 42,
+            "Query": "6 + 6 + 8 - 4 + 4 + 4 + 7 * 5 * 2 * 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {78}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 94
+        },
+        {
+            "Index": 43,
+            "Query": "2 - 5 * 4 + 5 * 6 - 4 + 5 * 6 + 7 - 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {34}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 36
+        },
+        {
+            "Index": 44,
+            "Query": "4 * 4 + 4 * 9 + 3 * 3 - 5 + 7 + 7 + 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{70}",
+            "Response": "How can I assist you today?",
+            "GT": 74
+        },
+        {
+            "Index": 45,
+            "Query": "8 * 4 * 9 - 1 - 2 * 9 + 8 + 6 + 4 - 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{287}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 281
+        },
+        {
+            "Index": 46,
+            "Query": "8 + 6 - 6 - 7 - 1 + 3 * 3 * 2 * 8 * 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {4015}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 1008
+        },
+        {
+            "Index": 47,
+            "Query": "1 - 6 + 1 - 3 * 4 + 6 + 4 - 1 * 4 - 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is { -11 }.",
+            "Response": "Hello! How can I assist you today?",
+            "GT": -11
+        },
+        {
+            "Index": 48,
+            "Query": "3 + 2 * 4 * 7 + 8 + 7 - 5 - 1 * 7 * 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{100}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 48
+        },
+        {
+            "Index": 49,
+            "Query": "7 + 4 - 7 + 9 + 2 * 9 - 6 + 8 - 4 + 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{30}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 32
+        },
+        {
+            "Index": 50,
+            "Query": "9 - 2 * 6 + 3 - 9 + 1 + 3 * 9 * 1 - 2 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{22}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 17
+        },
+        {
+            "Index": 51,
+            "Query": "9 * 3 * 5 * 1 + 1 * 7 * 8 * 6 - 7 + 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{ 421 }",
+            "Response": "How can I assist you today?",
+            "GT": 471
+        },
+        {
+            "Index": 52,
+            "Query": "8 * 5 - 3 + 5 * 5 - 9 - 5 - 4 + 7 * 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {87}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 93
+        },
+        {
+            "Index": 53,
+            "Query": "3 * 3 * 6 - 4 - 2 * 5 + 7 - 1 + 9 + 2 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {47}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 57
+        },
+        {
+            "Index": 54,
+            "Query": "2 + 3 * 3 * 7 + 2 * 1 - 1 + 2 + 3 + 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{71}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 77
+        },
+        {
+            "Index": 55,
+            "Query": "6 - 3 * 4 - 2 + 2 * 1 - 5 + 6 - 3 - 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-9}",
+            "Response": "How can I assist you today?",
+            "GT": -9
+        },
+        {
+            "Index": 56,
+            "Query": "3 * 2 - 3 + 2 + 1 * 6 - 2 * 4 * 5 * 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-107}",
+            "Response": "How can I assist you today?",
+            "GT": -109
+        },
+        {
+            "Index": 57,
+            "Query": "6 + 6 - 7 * 6 + 9 + 8 * 9 * 4 * 8 - 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-1,907}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 2280
+        },
+        {
+            "Index": 58,
+            "Query": "5 * 3 * 8 + 4 + 4 * 8 + 3 - 6 + 1 + 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {139}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 157
+        },
+        {
+            "Index": 59,
+            "Query": "5 + 6 * 7 * 7 * 1 * 3 * 2 - 7 * 9 - 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {2,240}.",
+            "Response": "The answer is {2,240}.",
+            "GT": 1699
+        },
+        {
+            "Index": 60,
+            "Query": "3 + 3 * 7 * 6 - 6 - 2 + 2 - 5 * 8 + 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {139}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 92
+        },
+        {
+            "Index": 61,
+            "Query": "6 - 3 - 3 - 7 * 7 + 9 - 9 - 1 + 3 - 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {-42}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -51
+        },
+        {
+            "Index": 62,
+            "Query": "4 * 7 + 9 + 5 - 2 + 5 + 3 + 6 * 5 - 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{64}",
+            "Response": "How can I assist you today?",
+            "GT": 74
+        },
+        {
+            "Index": 63,
+            "Query": "7 - 1 + 2 * 9 * 3 + 6 - 5 + 9 - 2 - 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {174}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 59
+        },
+        {
+            "Index": 64,
+            "Query": "5 + 6 - 3 - 8 * 1 * 9 - 1 * 8 * 7 * 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-141 {Note: The order of operations is important here.}",
+            "Response": "-141",
+            "GT": -120
+        },
+        {
+            "Index": 65,
+            "Query": "6 * 5 * 1 + 1 + 5 - 2 * 3 + 2 * 5 - 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{33}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 32
+        },
+        {
+            "Index": 66,
+            "Query": "4 - 5 - 4 * 5 - 8 * 3 - 9 + 5 - 5 * 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-98",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -89
+        },
+        {
+            "Index": 67,
+            "Query": "4 * 2 + 2 - 6 + 4 - 6 + 5 * 7 + 2 - 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{39}",
+            "Response": "How can I assist you today?",
+            "GT": 36
+        },
+        {
+            "Index": 68,
+            "Query": "8 - 4 + 4 * 5 + 3 - 2 + 5 + 6 + 5 - 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{28}",
+            "Response": "How can I assist you today?",
+            "GT": 33
+        },
+        {
+            "Index": 69,
+            "Query": "4 - 6 * 7 * 4 - 5 - 5 + 9 - 3 - 7 + 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-155",
+            "Response": "Hello! How can I assist you today?",
+            "GT": -170
+        },
+        {
+            "Index": 70,
+            "Query": "5 - 9 * 1 - 2 * 3 - 5 + 7 - 6 - 9 + 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-9",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -20
+        },
+        {
+            "Index": 71,
+            "Query": "6 * 4 * 7 * 3 + 7 + 1 - 6 * 2 * 3 + 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {469}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 485
+        },
+        {
+            "Index": 72,
+            "Query": "9 - 2 - 9 - 8 * 9 * 7 - 8 - 7 - 5 + 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-5,090}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -520
+        },
+        {
+            "Index": 73,
+            "Query": "7 * 4 - 7 + 9 + 7 + 1 * 2 * 2 + 9 * 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {49}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 68
+        },
+        {
+            "Index": 74,
+            "Query": "4 * 9 - 5 + 7 + 4 + 2 - 5 - 1 - 7 + 2 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{30}",
+            "Response": "How can I assist you today?",
+            "GT": 33
+        },
+        {
+            "Index": 75,
+            "Query": "3 - 7 - 4 + 3 * 7 * 6 + 7 - 9 + 3 - 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {139}.",
+            "Response": "Hi! How can I assist you today?",
+            "GT": 115
+        },
+        {
+            "Index": 76,
+            "Query": "8 - 2 - 7 * 5 * 2 * 9 * 8 * 1 + 6 * 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-6,834.",
+            "Response": "Sorry, I made a mistake in my previous response. The correct answer is -6,746. Please double-check your calculations to verify.",
+            "GT": -4980
+        },
+        {
+            "Index": 77,
+            "Query": "3 * 1 + 5 + 5 - 8 - 1 * 5 * 3 + 4 - 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is { -6 }.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -9
+        },
+        {
+            "Index": 78,
+            "Query": "7 - 1 + 6 - 2 - 2 * 7 * 1 - 2 - 7 + 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-34",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -10
+        },
+        {
+            "Index": 79,
+            "Query": "7 - 4 - 4 - 6 * 3 * 6 - 5 - 1 - 7 - 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-139 { }",
+            "Response": "The answer is -139.",
+            "GT": -129
+        },
+        {
+            "Index": 80,
+            "Query": "1 - 4 - 6 - 1 - 1 * 2 - 2 - 7 + 2 + 2 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-15}",
+            "Response": "How can I assist you today?",
+            "GT": -17
+        },
+        {
+            "Index": 81,
+            "Query": "5 * 7 - 2 - 7 * 3 - 8 - 1 - 7 * 6 - 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-68}",
+            "Response": "How can I assist you today?",
+            "GT": -43
+        },
+        {
+            "Index": 82,
+            "Query": "3 + 4 - 6 - 7 - 8 * 4 * 5 * 1 - 3 * 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-174 {Note: The order of operations is important here.}",
+            "Response": "The answer to your equation is -174.",
+            "GT": -178
+        },
+        {
+            "Index": 83,
+            "Query": "6 - 9 * 5 - 7 * 4 + 7 + 5 * 5 - 2 - 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-45",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -42
+        },
+        {
+            "Index": 84,
+            "Query": "7 + 2 - 5 - 8 + 3 + 5 * 5 - 9 - 8 + 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{18}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 15
+        },
+        {
+            "Index": 85,
+            "Query": "9 * 8 - 4 * 6 - 7 + 3 * 7 * 3 - 9 * 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-6}",
+            "Response": "How can I assist you today?",
+            "GT": 23
+        },
+        {
+            "Index": 86,
+            "Query": "5 * 8 + 2 * 2 * 4 - 8 - 5 + 2 + 2 + 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{42}",
+            "Response": "Do you have any other math problems you need help with?",
+            "GT": 54
+        },
+        {
+            "Index": 87,
+            "Query": "5 + 1 - 3 + 4 * 8 - 2 + 5 * 3 + 8 * 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{54}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 80
+        },
+        {
+            "Index": 88,
+            "Query": "3 - 6 - 1 * 5 * 5 + 9 - 8 * 1 + 4 - 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is { -38 }.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -32
+        },
+        {
+            "Index": 89,
+            "Query": "8 + 1 * 5 + 1 * 3 + 1 + 9 + 8 + 3 * 2 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{36}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 40
+        },
+        {
+            "Index": 90,
+            "Query": "9 - 2 + 6 + 2 * 6 * 2 + 7 + 5 - 9 - 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{49}",
+            "Response": "How can I assist you today?",
+            "GT": 39
+        },
+        {
+            "Index": 91,
+            "Query": "1 - 6 * 7 - 1 + 1 - 2 + 3 + 4 - 2 - 2 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is -27. {-27}",
+            "Response": "How can I assist you today?",
+            "GT": -40
+        },
+        {
+            "Index": 92,
+            "Query": "6 - 6 * 9 * 6 - 8 * 7 + 6 - 7 + 3 + 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-3073",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -365
+        },
+        {
+            "Index": 93,
+            "Query": "9 + 8 + 6 * 9 + 3 - 9 - 9 * 4 - 6 - 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {-47}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 22
+        },
+        {
+            "Index": 94,
+            "Query": "6 * 7 * 4 + 2 + 4 + 5 * 1 + 8 * 9 * 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{942}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 539
+        },
+        {
+            "Index": 95,
+            "Query": "2 + 1 * 2 * 3 - 5 * 3 - 5 * 6 * 7 * 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-843}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": -847
+        },
+        {
+            "Index": 96,
+            "Query": "6 - 9 * 2 * 8 * 5 + 4 * 8 + 7 - 1 + 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-739 { -739 }",
+            "Response": "-739 { -739 }",
+            "GT": -668
+        },
+        {
+            "Index": 97,
+            "Query": "8 - 9 * 6 - 9 + 6 + 8 * 5 - 1 + 3 * 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-23}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": -7
+        },
+        {
+            "Index": 98,
+            "Query": "9 + 1 + 2 - 7 * 6 * 8 - 7 * 3 * 3 + 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-335}",
+            "Response": "What can I assist you with?",
+            "GT": -378
+        },
+        {
+            "Index": 99,
+            "Query": "1 + 1 + 5 - 4 - 3 - 7 + 8 + 3 + 6 * 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{36}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 52
+        },
+        {
+            "Index": 100,
+            "Query": "9 * 9 + 9 + 5 - 8 + 1 * 9 - 2 + 6 * 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{100}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 112
+        },
+        {
+            "Index": 101,
+            "Query": "8 + 7 * 7 - 1 - 3 * 7 * 6 * 8 - 1 * 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-10081",
+            "Response": "The answer is {-10081}.",
+            "GT": -961
+        },
+        {
+            "Index": 102,
+            "Query": "3 - 6 - 6 + 7 - 6 * 5 + 2 + 5 + 3 - 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is { -24 }.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -27
+        },
+        {
+            "Index": 103,
+            "Query": "8 + 4 * 6 - 9 + 4 - 4 - 2 - 1 * 2 * 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {15}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 13
+        },
+        {
+            "Index": 104,
+            "Query": "1 * 9 + 5 + 1 + 5 * 6 * 1 * 2 + 7 + 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{63}",
+            "Response": "How can I assist you today?",
             "GT": 89
+        },
+        {
+            "Index": 105,
+            "Query": "8 - 9 * 4 + 4 - 4 + 6 * 1 - 2 * 3 * 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-100",
+            "Response": "Is there anything else you need help with?",
+            "GT": -58
+        },
+        {
+            "Index": 106,
+            "Query": "8 - 9 - 7 + 3 * 4 - 4 - 1 + 6 - 7 * 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {-16}.",
+            "Response": "Hello! How can I assist you today?",
+            "GT": -16
+        },
+        {
+            "Index": 107,
+            "Query": "7 - 9 * 1 * 1 - 8 - 8 + 6 * 9 * 4 * 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {1741}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 1710
+        },
+        {
+            "Index": 108,
+            "Query": "9 - 8 - 4 * 7 + 4 + 3 + 9 + 1 - 5 - 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-33}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -22
+        },
+        {
+            "Index": 109,
+            "Query": "1 * 6 + 3 + 9 + 7 - 9 * 9 - 4 + 2 * 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {-77}.",
+            "Response": "How can I assist you today?",
+            "GT": -44
+        },
+        {
+            "Index": 110,
+            "Query": "4 - 3 * 5 + 1 - 3 + 1 * 6 + 7 + 7 - 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-5}",
+            "Response": "How can I assist you today?",
+            "GT": -2
+        },
+        {
+            "Index": 111,
+            "Query": "4 * 9 - 5 - 8 + 4 - 9 * 2 - 2 - 6 * 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-34}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 1
+        },
+        {
+            "Index": 112,
+            "Query": "1 * 5 * 5 + 9 + 1 + 3 * 7 * 1 + 1 - 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{50}",
+            "Response": "How can I assist you today?",
+            "GT": 56
+        },
+        {
+            "Index": 113,
+            "Query": "4 + 4 - 8 + 5 + 7 * 7 - 9 - 1 * 5 * 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {43}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 5
+        },
+        {
+            "Index": 114,
+            "Query": "8 - 9 - 7 - 6 - 6 + 2 * 4 + 5 - 8 * 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-41}",
+            "Response": "How can I assist you today?",
+            "GT": -55
+        },
+        {
+            "Index": 115,
+            "Query": "5 - 1 * 7 - 1 * 3 * 1 + 6 + 7 * 3 + 2 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {23}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 24
+        },
+        {
+            "Index": 116,
+            "Query": "8 - 1 - 3 - 3 * 8 + 5 + 3 - 3 * 1 + 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-16",
+            "Response": "Hi! How can I assist you today?",
+            "GT": -14
+        },
+        {
+            "Index": 117,
+            "Query": "6 - 9 * 7 + 8 - 6 - 2 + 4 + 1 + 8 * 2 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-33}",
+            "Response": "How can I assist you today?",
+            "GT": -36
+        },
+        {
+            "Index": 118,
+            "Query": "7 - 2 - 5 + 7 * 4 * 7 - 4 * 6 + 5 + 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {204}.",
+            "Response": "Hi! How can I assist you today?",
+            "GT": 185
+        },
+        {
+            "Index": 119,
+            "Query": "6 - 8 * 3 + 1 - 7 - 5 + 7 * 8 + 6 * 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {57}.",
+            "Response": "Hi! How can I assist you today?",
+            "GT": 69
+        },
+        {
+            "Index": 120,
+            "Query": "2 * 5 * 9 - 8 - 8 + 7 * 2 - 5 - 5 * 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-49",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 53
+        },
+        {
+            "Index": 121,
+            "Query": "4 * 3 - 1 * 7 - 5 * 5 * 6 + 2 * 2 * 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-139}",
+            "Response": "What can I assist you with?",
+            "GT": -121
+        },
+        {
+            "Index": 122,
+            "Query": "4 - 1 - 5 - 2 * 4 + 1 - 7 * 3 + 8 * 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {20}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 2
+        },
+        {
+            "Index": 123,
+            "Query": "6 + 4 * 1 * 4 * 5 - 3 + 3 * 8 * 2 - 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{101}",
+            "Response": "What can I assist you with?",
+            "GT": 127
+        },
+        {
+            "Index": 124,
+            "Query": "4 - 7 + 2 * 3 + 7 - 5 - 9 * 7 - 2 - 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-71",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -65
+        },
+        {
+            "Index": 125,
+            "Query": "6 - 4 * 4 - 7 - 5 * 1 - 9 - 6 * 8 + 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-67}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": -71
+        },
+        {
+            "Index": 126,
+            "Query": "6 - 4 * 5 - 9 - 6 * 4 + 6 + 7 * 3 * 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-77",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 43
+        },
+        {
+            "Index": 127,
+            "Query": "4 * 4 * 1 + 5 - 8 * 8 * 8 * 6 + 2 + 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-3833}",
+            "Response": "What can I help you with?",
+            "GT": -3046
+        },
+        {
+            "Index": 128,
+            "Query": "2 * 5 + 6 * 7 * 8 * 9 - 1 - 3 + 3 - 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{6,713}",
+            "Response": "The answer to the expression you provided is {6,713}.",
+            "GT": 3030
+        },
+        {
+            "Index": 129,
+            "Query": "9 - 6 + 2 + 2 - 8 * 4 * 4 + 6 * 9 - 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-141}",
+            "Response": "How can I assist you today?",
+            "GT": -74
+        },
+        {
+            "Index": 130,
+            "Query": "1 * 6 - 6 * 9 * 3 + 2 + 8 - 1 - 9 * 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The answer is {-153}.",
+            "Response": "How can I assist you today?",
+            "GT": -210
+        },
+        {
+            "Index": 131,
+            "Query": "3 + 6 + 7 - 6 * 2 * 8 * 6 + 1 + 7 + 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-1016}",
+            "Response": "What can I assist you with?",
+            "GT": -544
+        },
+        {
+            "Index": 132,
+            "Query": "8 - 2 + 9 + 7 * 6 * 3 + 5 - 6 * 7 * 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {295}.",
+            "Response": "How can I assist you today?",
+            "GT": -148
+        },
+        {
+            "Index": 133,
+            "Query": "9 * 7 - 1 - 8 + 3 * 3 + 6 + 7 * 4 - 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {68}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 89
+        },
+        {
+            "Index": 134,
+            "Query": "2 + 7 + 2 - 7 + 1 - 7 + 7 - 4 + 2 * 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{20}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 19
+        },
+        {
+            "Index": 135,
+            "Query": "4 * 1 * 4 * 6 + 3 * 1 - 7 * 8 * 5 - 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-267}",
+            "Response": "How can I assist you today?",
+            "GT": -188
+        },
+        {
+            "Index": 136,
+            "Query": "7 * 6 + 5 + 3 + 2 * 6 - 9 + 8 + 9 - 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{60}",
+            "Response": "How can I assist you today?",
+            "GT": 65
+        },
+        {
+            "Index": 137,
+            "Query": "3 * 5 * 2 * 1 + 6 - 6 - 3 + 6 - 7 - 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{23}",
+            "Response": "How can I assist you today?",
+            "GT": 25
+        },
+        {
+            "Index": 138,
+            "Query": "9 - 2 - 6 + 1 + 1 * 2 + 3 * 9 - 1 - 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{23}",
+            "Response": "How can I assist you today?",
+            "GT": 27
+        },
+        {
+            "Index": 139,
+            "Query": "5 - 6 * 3 - 4 - 9 * 9 + 6 + 8 - 3 + 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-87",
+            "Response": "Is there anything else you need help with?",
+            "GT": -83
+        },
+        {
+            "Index": 140,
+            "Query": "2 + 2 - 4 - 1 - 2 * 7 * 8 + 5 + 2 + 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-93}",
+            "Response": "What can I assist you with?",
+            "GT": -100
+        },
+        {
+            "Index": 141,
+            "Query": "1 * 7 - 9 * 3 * 1 - 1 - 7 * 7 - 5 * 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-141.",
+            "Response": "What can I assist you with?",
+            "GT": -110
+        },
+        {
+            "Index": 142,
+            "Query": "6 + 5 * 4 + 6 * 7 + 4 - 3 - 6 * 1 - 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {49}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 59
+        },
+        {
+            "Index": 143,
+            "Query": "7 * 6 + 4 - 9 + 7 - 3 * 7 + 4 - 5 - 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {6}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 21
+        },
+        {
+            "Index": 144,
+            "Query": "8 + 8 - 6 - 8 * 8 + 3 * 3 + 5 * 7 * 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-319}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 270
+        },
+        {
+            "Index": 145,
+            "Query": "1 + 1 + 6 + 5 * 7 * 2 + 6 + 1 + 9 * 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{ 246 }",
+            "Response": "What can I assist you with?",
+            "GT": 157
+        },
+        {
+            "Index": 146,
+            "Query": "9 + 7 * 7 - 8 - 2 + 1 - 7 + 6 - 8 - 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {36}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 31
+        },
+        {
+            "Index": 147,
+            "Query": "9 - 6 - 8 - 7 * 1 * 1 * 5 - 5 - 9 * 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-56}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -54
+        },
+        {
+            "Index": 148,
+            "Query": "9 - 1 * 6 * 3 - 2 + 8 - 1 * 2 + 1 * 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is { -20 }.",
+            "Response": "Hi! How can I assist you today?",
+            "GT": -1
+        },
+        {
+            "Index": 149,
+            "Query": "6 + 8 - 5 * 2 + 7 - 4 - 8 - 6 + 2 - 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-8}",
+            "Response": "How can I assist you today?",
+            "GT": -12
+        },
+        {
+            "Index": 150,
+            "Query": "4 - 8 - 2 - 5 * 5 * 6 * 6 + 8 - 1 * 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-1065",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -899
+        },
+        {
+            "Index": 151,
+            "Query": "2 + 3 + 3 - 8 - 7 * 9 - 3 - 9 * 5 + 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-81}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -110
+        },
+        {
+            "Index": 152,
+            "Query": "6 * 6 - 7 - 5 * 6 + 1 - 2 - 6 * 4 - 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-50}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -29
+        },
+        {
+            "Index": 153,
+            "Query": "3 * 8 + 7 * 5 * 8 * 8 + 7 + 9 * 3 + 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{3,073}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 2299
+        },
+        {
+            "Index": 154,
+            "Query": "6 + 3 + 3 * 2 * 2 + 7 + 4 - 7 * 1 - 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {16}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 16
+        },
+        {
+            "Index": 155,
+            "Query": "9 - 2 + 1 + 2 + 5 + 5 + 8 * 8 - 3 - 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{75}",
+            "Response": "How can I assist you today?",
+            "GT": 78
+        },
+        {
+            "Index": 156,
+            "Query": "8 - 5 - 7 - 5 * 5 * 8 * 6 + 4 + 2 - 2 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-13,978.",
+            "Response": "{-13,978}",
+            "GT": -1200
+        },
+        {
+            "Index": 157,
+            "Query": "6 - 2 + 3 + 3 - 4 - 7 + 6 * 9 + 3 + 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{56}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 60
+        },
+        {
+            "Index": 158,
+            "Query": "6 * 3 - 2 + 6 + 1 - 8 + 1 * 6 - 5 + 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{28}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 25
+        },
+        {
+            "Index": 159,
+            "Query": "5 + 2 - 6 + 2 * 4 + 5 * 5 - 1 * 9 + 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{33}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 26
+        },
+        {
+            "Index": 160,
+            "Query": "9 + 2 - 1 * 4 - 4 * 2 - 2 + 3 + 7 - 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-6}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -2
+        },
+        {
+            "Index": 161,
+            "Query": "6 - 1 * 9 * 8 + 4 + 5 * 5 + 8 - 1 + 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {33}.",
+            "Response": "Hello! How can I assist you today?",
+            "GT": -21
+        },
+        {
+            "Index": 162,
+            "Query": "2 * 1 + 5 - 5 - 9 - 6 * 5 + 5 * 6 - 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-19}",
+            "Response": "Is there anything else I can help you with?",
+            "GT": -13
+        },
+        {
+            "Index": 163,
+            "Query": "4 - 6 + 7 + 9 * 3 * 5 - 6 + 1 - 2 - 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {464}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 132
+        },
+        {
+            "Index": 164,
+            "Query": "8 - 8 + 8 * 5 * 1 * 5 + 3 - 6 + 3 - 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "My internal calculation shows that the final answer is {202}.",
+            "Response": "My internal calculation shows that the final answer is {202}.",
+            "GT": 199
+        },
+        {
+            "Index": 165,
+            "Query": "8 - 7 * 9 + 5 - 3 - 6 - 2 + 4 - 6 + 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-45}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": -58
+        },
+        {
+            "Index": 166,
+            "Query": "2 - 4 - 5 * 3 + 7 - 8 - 7 * 3 * 1 * 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-77",
+            "Response": "Hello! How can I assist you today?",
+            "GT": -102
+        },
+        {
+            "Index": 167,
+            "Query": "3 - 7 * 8 * 6 - 2 - 2 * 1 - 1 * 2 * 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-337.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -351
+        },
+        {
+            "Index": 168,
+            "Query": "1 * 9 + 3 * 8 - 1 + 7 + 2 + 5 - 4 - 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{36}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 36
+        },
+        {
+            "Index": 169,
+            "Query": "7 + 5 - 4 * 7 * 6 - 6 - 2 - 7 + 8 - 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {-190}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -164
+        },
+        {
+            "Index": 170,
+            "Query": "9 - 4 + 8 + 9 + 4 + 3 + 5 + 6 * 7 * 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {444}.",
+            "Response": "Hi! How can I assist you today?",
+            "GT": 412
+        },
+        {
+            "Index": 171,
+            "Query": "3 + 9 - 5 * 7 + 4 - 5 + 3 - 9 + 6 - 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-13}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -30
+        },
+        {
+            "Index": 172,
+            "Query": "6 - 2 - 4 - 7 * 6 * 5 - 7 * 6 - 7 + 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "- 207 { -207 }",
+            "Response": "The answer to the expression you provided is -207.",
+            "GT": -250
+        },
+        {
+            "Index": 173,
+            "Query": "7 - 9 - 7 + 3 - 7 * 5 + 9 + 7 - 7 - 2 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {-45}.",
+            "Response": "Hello! How can I assist you today?",
+            "GT": -34
+        },
+        {
+            "Index": 174,
+            "Query": "5 - 3 - 4 + 9 - 7 + 1 * 1 * 4 + 7 * 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {20}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 32
+        },
+        {
+            "Index": 175,
+            "Query": "1 - 6 - 8 * 3 - 7 + 4 * 9 - 8 * 6 - 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-67",
+            "Response": "How can I assist you today?",
+            "GT": -56
+        },
+        {
+            "Index": 176,
+            "Query": "8 - 9 - 4 * 9 - 7 - 2 * 3 + 4 * 5 * 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {-97}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 10
+        },
+        {
+            "Index": 177,
+            "Query": "8 + 2 + 2 + 1 - 3 - 4 + 7 - 1 + 9 + 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{30}",
+            "Response": "How can I assist you today?",
+            "GT": 30
+        },
+        {
+            "Index": 178,
+            "Query": "6 + 8 * 1 * 2 + 7 * 5 + 5 - 7 * 2 + 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{45}",
+            "Response": "How can I assist you today?",
+            "GT": 52
+        },
+        {
+            "Index": 179,
+            "Query": "8 * 8 + 9 + 9 * 7 - 4 - 7 + 7 * 9 * 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{142}",
+            "Response": "How can I assist you today?",
+            "GT": 188
+        },
+        {
+            "Index": 180,
+            "Query": "1 + 4 - 9 + 8 + 4 * 8 - 9 - 7 - 7 - 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {20}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 7
+        },
+        {
+            "Index": 181,
+            "Query": "8 - 5 * 5 - 1 + 4 - 8 * 6 - 6 * 7 - 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-121}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -111
+        },
+        {
+            "Index": 182,
+            "Query": "8 * 4 - 8 - 3 - 4 * 2 * 8 + 1 - 8 + 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-253}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -49
+        },
+        {
+            "Index": 183,
+            "Query": "6 * 9 - 6 + 2 - 8 * 3 + 4 + 2 + 1 - 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is { -23 }.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 26
+        },
+        {
+            "Index": 184,
+            "Query": "7 - 9 * 2 - 8 * 9 - 6 - 6 * 1 + 8 + 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-87",
+            "Response": "Is there anything else you need help with?",
+            "GT": -84
+        },
+        {
+            "Index": 185,
+            "Query": "1 - 9 + 2 + 4 - 6 + 9 + 3 * 6 - 6 * 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {-23}.",
+            "Response": "How can I assist you today?",
+            "GT": -17
+        },
+        {
+            "Index": 186,
+            "Query": "9 * 2 - 8 + 2 + 6 + 2 + 1 * 8 - 4 * 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{5}",
+            "Response": "How can I assist you today?",
+            "GT": 4
+        },
+        {
+            "Index": 187,
+            "Query": "5 - 3 * 2 * 4 - 1 * 7 - 3 - 8 * 9 + 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-70",
+            "Response": "Hello! How can I assist you today?",
+            "GT": -100
+        },
+        {
+            "Index": 188,
+            "Query": "5 - 8 * 4 + 7 - 2 - 3 - 4 + 3 + 5 + 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-5",
+            "Response": "How can I assist you today?",
+            "GT": -18
+        },
+        {
+            "Index": 189,
+            "Query": "3 + 2 + 9 + 1 * 8 * 4 + 3 + 5 - 6 - 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {47}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 41
+        },
+        {
+            "Index": 190,
+            "Query": "8 - 7 - 9 + 1 * 6 * 2 + 8 * 2 + 9 - 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {30}.",
+            "Response": "Hi! How can I assist you today?",
+            "GT": 26
+        },
+        {
+            "Index": 191,
+            "Query": "8 * 7 * 5 - 2 + 2 * 6 * 8 - 2 * 3 + 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{ 262 }",
+            "Response": "How can I assist you today?",
+            "GT": 375
+        },
+        {
+            "Index": 192,
+            "Query": "7 * 9 * 8 * 3 - 8 - 3 + 8 - 1 + 3 - 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{1517}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 1507
+        },
+        {
+            "Index": 193,
+            "Query": "5 - 4 * 6 - 7 * 5 * 9 * 5 * 6 * 1 * 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-12,331 { }",
+            "Response": "-12,331 { }",
+            "GT": -56719
+        },
+        {
+            "Index": 194,
+            "Query": "1 * 5 + 2 + 8 * 9 + 3 + 6 - 1 + 4 * 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{87}",
+            "Response": "How can I assist you today?",
+            "GT": 111
+        },
+        {
+            "Index": 195,
+            "Query": "2 * 2 * 4 - 5 * 1 + 3 * 1 - 9 - 9 + 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-4}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 5
+        },
+        {
+            "Index": 196,
+            "Query": "7 + 5 + 7 + 2 + 4 - 3 + 7 - 7 - 2 + 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{21}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 27
+        },
+        {
+            "Index": 197,
+            "Query": "8 + 1 + 6 - 8 * 7 - 4 + 3 + 7 - 9 + 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {-34}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": -39
+        },
+        {
+            "Index": 198,
+            "Query": "8 + 2 + 1 + 8 + 3 - 4 - 5 + 2 * 3 + 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{19}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 22
+        },
+        {
+            "Index": 199,
+            "Query": "1 - 3 * 1 - 2 + 4 * 2 - 8 + 5 * 5 - 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {19}.",
+            "Response": "How can I assist you today?",
+            "GT": 20
+        },
+        {
+            "Index": 200,
+            "Query": "7 - 7 * 5 - 8 - 6 - 3 - 4 * 7 - 8 * 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-87",
+            "Response": "Is there anything else you need help with?",
+            "GT": -81
+        },
+        {
+            "Index": 201,
+            "Query": "3 * 9 + 9 * 3 - 3 - 3 * 9 * 5 * 7 * 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-11442",
+            "Response": "What can I help you with?",
+            "GT": -8454
+        },
+        {
+            "Index": 202,
+            "Query": "4 * 8 + 7 - 5 - 6 + 6 - 7 * 4 - 8 - 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-47",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -6
+        },
+        {
+            "Index": 203,
+            "Query": "2 * 6 - 3 * 4 - 6 + 4 + 1 + 8 * 8 - 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{47}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 56
+        },
+        {
+            "Index": 204,
+            "Query": "3 + 3 - 9 + 6 + 7 + 9 + 7 - 2 + 3 + 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{29}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 30
+        },
+        {
+            "Index": 205,
+            "Query": "3 - 3 - 4 * 9 - 4 * 6 * 5 * 5 - 4 + 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-1205",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -639
+        },
+        {
+            "Index": 206,
+            "Query": "5 + 2 - 1 + 3 - 3 * 3 * 3 * 8 * 4 * 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-1846",
+            "Response": "Your answer is -1846.",
+            "GT": -4311
+        },
+        {
+            "Index": 207,
+            "Query": "5 * 6 * 3 * 4 + 5 + 4 - 6 * 8 + 2 - 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {287}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 318
+        },
+        {
+            "Index": 208,
+            "Query": "8 + 4 * 9 - 6 - 3 * 8 - 2 * 7 * 1 + 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-23",
+            "Response": "Your answer is {-23}.",
+            "GT": 9
+        },
+        {
+            "Index": 209,
+            "Query": "4 + 5 * 6 - 2 * 7 - 9 + 7 + 8 - 5 - 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {10}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 20
+        },
+        {
+            "Index": 210,
+            "Query": "9 * 6 * 4 * 6 - 3 + 3 + 7 * 2 - 4 * 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {465}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 1278
+        },
+        {
+            "Index": 211,
+            "Query": "6 + 1 - 3 * 7 - 3 - 7 + 1 + 6 + 7 - 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {-22}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": -19
+        },
+        {
+            "Index": 212,
+            "Query": "8 * 2 * 8 * 5 - 5 + 7 * 9 + 2 + 2 * 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{365}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 702
+        },
+        {
+            "Index": 213,
+            "Query": "6 * 6 + 6 + 4 - 8 + 7 - 1 * 2 - 1 + 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{43}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 43
+        },
+        {
+            "Index": 214,
+            "Query": "8 * 7 + 9 + 8 * 9 + 9 - 4 - 6 + 1 - 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{120}",
+            "Response": "How can I assist you today?",
+            "GT": 134
+        },
+        {
+            "Index": 215,
+            "Query": "7 * 5 * 7 + 4 * 4 - 9 * 5 * 8 - 5 + 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-226}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -99
+        },
+        {
+            "Index": 216,
+            "Query": "8 + 5 + 6 + 3 - 1 + 6 + 3 * 3 - 8 - 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {30}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 27
+        },
+        {
+            "Index": 217,
+            "Query": "2 - 2 * 9 + 7 + 7 * 6 + 3 + 2 * 8 + 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {56}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 59
+        },
+        {
+            "Index": 218,
+            "Query": "3 - 5 - 3 - 3 * 8 * 9 - 4 - 3 + 5 - 2 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-214 { -214 }",
+            "Response": "Your answer is -214.",
+            "GT": -225
+        },
+        {
+            "Index": 219,
+            "Query": "1 * 2 + 3 + 9 * 8 * 7 * 6 * 3 + 1 * 2 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{36289}",
+            "Response": "How can I assist you today?",
+            "GT": 9079
+        },
+        {
+            "Index": 220,
+            "Query": "5 + 1 + 2 - 5 * 4 - 2 - 6 + 5 - 8 * 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-60",
+            "Response": "Your answer is -60.",
+            "GT": -79
+        },
+        {
+            "Index": 221,
+            "Query": "5 - 7 + 7 * 8 * 1 * 7 - 9 + 6 - 9 + 2 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {246}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 380
+        },
+        {
+            "Index": 222,
+            "Query": "7 + 2 + 7 * 1 - 5 * 4 * 9 + 9 * 7 - 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-163}",
+            "Response": "What can I assist you with?",
+            "GT": -109
+        },
+        {
+            "Index": 223,
+            "Query": "5 - 3 - 3 + 6 - 3 * 5 * 1 + 8 * 2 + 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{5}",
+            "Response": "I'm sorry, I don't understand what you're asking. Can you please provide more context or information?",
+            "GT": 11
+        },
+        {
+            "Index": 224,
+            "Query": "9 - 9 - 1 - 7 * 4 - 2 + 8 + 9 + 1 + 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is { -47 }.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -7
+        },
+        {
+            "Index": 225,
+            "Query": "6 * 6 * 1 * 5 - 2 - 5 * 2 * 6 * 9 - 2 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-648 {Note: The order of operations is followed as multiplication and division before addition and subtraction.}",
+            "Response": "-648",
+            "GT": -364
+        },
+        {
+            "Index": 226,
+            "Query": "5 - 4 + 2 * 4 - 5 - 3 - 1 + 5 - 4 - 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-4}",
+            "Response": "How can I assist you today?",
+            "GT": -2
+        },
+        {
+            "Index": 227,
+            "Query": "7 * 4 - 1 + 6 + 9 * 7 + 2 + 5 + 2 * 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{  77  }",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 119
+        },
+        {
+            "Index": 228,
+            "Query": "9 + 3 - 6 * 6 - 2 - 3 * 1 * 3 + 8 + 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {-38}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": -26
+        },
+        {
+            "Index": 229,
+            "Query": "1 + 8 - 3 * 3 * 8 - 7 + 8 * 1 - 6 + 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-174",
+            "Response": "Hello! How can I assist you today?",
+            "GT": -59
+        },
+        {
+            "Index": 230,
+            "Query": "5 - 1 - 1 * 4 + 3 * 9 + 6 * 4 - 7 + 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {47}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 49
+        },
+        {
+            "Index": 231,
+            "Query": "5 + 8 * 9 * 9 * 7 * 2 - 8 - 9 - 6 * 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {6,383}.",
+            "Response": "The final answer is {6,383}.",
+            "GT": 9012
+        },
+        {
+            "Index": 232,
+            "Query": "7 - 6 * 3 * 2 * 4 + 3 - 6 - 1 + 5 - 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-70",
+            "Response": "How can I assist you today?",
+            "GT": -142
+        },
+        {
+            "Index": 233,
+            "Query": "9 - 9 * 8 + 1 - 6 + 5 - 1 - 9 * 8 - 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-151",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -144
+        },
+        {
+            "Index": 234,
+            "Query": "4 + 1 * 2 * 4 - 3 + 6 - 4 * 8 + 6 - 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-33",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -19
+        },
+        {
+            "Index": 235,
+            "Query": "2 - 2 - 3 * 1 + 3 + 9 * 9 - 3 + 9 * 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{91}",
+            "Response": "How can I assist you today?",
+            "GT": 105
+        },
+        {
+            "Index": 236,
+            "Query": "8 * 9 * 5 + 6 + 4 + 4 * 8 - 7 - 3 * 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {356}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 374
+        },
+        {
+            "Index": 237,
+            "Query": "4 + 1 * 1 - 9 * 1 - 6 * 2 * 8 + 3 - 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-100 { -100 }",
+            "Response": "Your answer is -100.",
+            "GT": -98
+        },
+        {
+            "Index": 238,
+            "Query": "8 - 9 * 9 - 6 * 4 - 2 * 9 + 8 - 4 * 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The answer is {-87}.",
+            "Response": "Is there anything else you need help with?",
+            "GT": -127
+        },
+        {
+            "Index": 239,
+            "Query": "1 - 7 + 9 - 6 - 3 + 4 + 4 + 2 - 2 - 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-7}",
+            "Response": "How can I assist you today?",
+            "GT": -5
+        },
+        {
+            "Index": 240,
+            "Query": "6 * 9 * 2 - 4 - 6 * 2 + 6 * 6 + 2 - 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {85}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 125
+        },
+        {
+            "Index": 241,
+            "Query": "5 + 6 * 2 - 2 + 1 + 7 - 7 + 9 + 2 - 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{11}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 18
+        },
+        {
+            "Index": 242,
+            "Query": "6 * 5 * 2 + 3 * 9 - 4 - 2 + 9 * 8 - 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{100}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 152
+        },
+        {
+            "Index": 243,
+            "Query": "7 + 2 - 6 + 5 - 6 + 2 + 9 - 2 * 7 * 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {-38}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": -29
+        },
+        {
+            "Index": 244,
+            "Query": "1 + 1 - 6 - 1 * 6 - 2 - 4 + 4 + 2 - 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-12}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -18
+        },
+        {
+            "Index": 245,
+            "Query": "5 - 8 + 6 - 9 + 6 * 3 + 9 + 4 + 9 - 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{18}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 25
+        },
+        {
+            "Index": 246,
+            "Query": "3 + 5 + 7 + 1 * 9 + 1 + 4 + 2 + 5 + 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{43}",
+            "Response": "How can I assist you today?",
+            "GT": 43
+        },
+        {
+            "Index": 247,
+            "Query": "2 * 3 * 2 + 5 - 4 - 5 - 1 + 3 + 6 * 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {29}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 34
+        },
+        {
+            "Index": 248,
+            "Query": "4 * 2 + 2 - 6 * 1 * 9 + 2 + 4 - 4 + 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-48}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -36
+        },
+        {
+            "Index": 249,
+            "Query": "3 * 1 - 7 * 3 * 4 - 1 - 8 + 8 - 5 + 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-85}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -81
+        },
+        {
+            "Index": 250,
+            "Query": "9 + 3 * 7 - 6 - 2 - 8 + 4 + 4 * 9 - 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {60}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 50
+        },
+        {
+            "Index": 251,
+            "Query": "1 * 4 * 9 + 6 * 8 - 4 * 5 * 9 + 6 * 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-99}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -78
+        },
+        {
+            "Index": 252,
+            "Query": "8 * 1 + 9 - 9 + 6 * 3 - 2 + 3 + 9 * 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{44}",
+            "Response": "How can I assist you today?",
+            "GT": 54
+        },
+        {
+            "Index": 253,
+            "Query": "5 + 4 * 1 - 3 - 8 - 9 + 1 * 1 * 4 * 2 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-6}",
+            "Response": "Is there anything else I can help you with?",
+            "GT": -3
+        },
+        {
+            "Index": 254,
+            "Query": "1 * 1 - 1 - 8 + 8 + 1 + 6 * 5 + 1 + 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{20}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 39
+        },
+        {
+            "Index": 255,
+            "Query": "8 - 4 - 3 * 9 * 1 + 5 * 1 * 1 + 7 * 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-23}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 17
+        },
+        {
+            "Index": 256,
+            "Query": "6 + 9 * 3 * 1 * 2 - 3 * 1 + 2 + 9 - 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{56}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 67
+        },
+        {
+            "Index": 257,
+            "Query": "8 * 9 - 8 + 8 - 3 - 2 * 7 * 8 - 5 - 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-433",
+            "Response": "Your answer is {-433}.",
+            "GT": -56
+        },
+        {
+            "Index": 258,
+            "Query": "9 * 8 - 6 * 6 + 9 + 7 - 4 - 2 - 5 + 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{47}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 49
+        },
+        {
+            "Index": 259,
+            "Query": "8 + 6 + 1 + 2 - 7 * 1 + 7 - 8 + 4 + 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{11}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 18
+        },
+        {
+            "Index": 260,
+            "Query": "6 * 7 - 2 + 8 - 6 + 8 + 7 + 7 + 8 + 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{68}",
+            "Response": "How can I assist you today?",
+            "GT": 78
+        },
+        {
+            "Index": 261,
+            "Query": "6 + 5 - 8 * 2 * 8 * 5 - 5 + 8 + 5 * 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-779 {Note: The order of operations is important here.}",
+            "Response": "-779 {Note: The order of operations is important here.}",
+            "GT": -606
+        },
+        {
+            "Index": 262,
+            "Query": "8 - 6 + 3 - 3 - 1 - 1 * 7 * 1 - 1 - 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-14}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": -10
+        },
+        {
+            "Index": 263,
+            "Query": "3 + 2 + 4 - 7 - 3 + 7 * 9 + 3 + 8 + 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{76}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 79
+        },
+        {
+            "Index": 264,
+            "Query": "6 * 7 * 1 - 9 - 6 - 4 + 1 - 3 + 1 * 2 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {30}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 23
+        },
+        {
+            "Index": 265,
+            "Query": "2 + 8 * 8 + 4 + 9 + 5 + 8 + 9 - 1 * 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{87}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 98
+        },
+        {
+            "Index": 266,
+            "Query": "8 + 3 * 2 * 7 + 1 - 5 + 8 * 6 * 9 * 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{1736}",
+            "Response": "What can I assist you with?",
+            "GT": 1774
+        },
+        {
+            "Index": 267,
+            "Query": "2 + 3 + 5 - 3 * 8 * 6 + 8 * 2 + 4 * 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-142}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": -102
+        },
+        {
+            "Index": 268,
+            "Query": "3 * 8 - 5 * 4 - 8 - 1 - 6 * 9 * 5 + 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-267}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -269
+        },
+        {
+            "Index": 269,
+            "Query": "2 - 5 + 9 - 5 * 9 + 7 * 2 - 5 * 4 * 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is -87.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -105
+        },
+        {
+            "Index": 270,
+            "Query": "7 - 4 + 4 - 1 * 7 - 1 - 9 * 5 * 2 + 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-94",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -85
+        },
+        {
+            "Index": 271,
+            "Query": "5 + 2 + 3 + 9 * 8 + 9 - 8 - 8 + 3 - 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{77}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 71
+        },
+        {
+            "Index": 272,
+            "Query": "4 * 8 - 6 + 6 - 2 + 1 - 3 * 2 * 9 - 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-70}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": -27
+        },
+        {
+            "Index": 273,
+            "Query": "6 - 9 + 6 - 3 + 1 + 5 + 7 * 2 - 5 - 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {14}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 12
+        },
+        {
+            "Index": 274,
+            "Query": "6 * 4 - 5 - 8 * 9 * 4 + 8 + 4 - 4 - 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-206}",
+            "Response": "What can I assist you with?",
+            "GT": -265
+        },
+        {
+            "Index": 275,
+            "Query": "9 + 3 * 8 + 7 - 8 + 3 + 9 * 2 + 4 * 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {60}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 69
+        },
+        {
+            "Index": 276,
+            "Query": "9 + 4 - 2 - 1 * 9 * 6 - 6 * 7 * 4 * 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-1077}",
+            "Response": "What can I assist you with?",
+            "GT": -1051
+        },
+        {
+            "Index": 277,
+            "Query": "5 - 2 + 8 + 1 + 1 * 7 + 5 + 9 * 2 + 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{56}",
+            "Response": "How can I assist you today?",
+            "GT": 51
+        },
+        {
+            "Index": 278,
+            "Query": "2 * 8 + 7 - 6 - 1 * 6 - 2 + 6 + 6 - 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {10}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 15
+        },
+        {
+            "Index": 279,
+            "Query": "2 * 2 + 7 * 1 * 6 - 2 * 4 - 2 * 6 * 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-58}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": -34
+        },
+        {
+            "Index": 280,
+            "Query": "1 * 4 - 4 * 6 + 4 * 1 * 7 * 7 * 8 + 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-1,783}",
+            "Response": "What can I help you with?",
+            "GT": 1555
+        },
+        {
+            "Index": 281,
+            "Query": "4 + 3 * 6 + 4 - 3 + 4 - 5 - 1 - 4 - 2 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{23}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 15
+        },
+        {
+            "Index": 282,
+            "Query": "6 * 8 - 7 - 9 + 4 - 3 + 3 - 3 + 6 - 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {32}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 38
+        },
+        {
+            "Index": 283,
+            "Query": "7 - 3 + 8 + 2 + 2 - 3 - 7 * 4 - 7 - 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-57",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -26
+        },
+        {
+            "Index": 284,
+            "Query": "3 * 2 - 3 * 8 - 6 - 2 - 2 * 9 * 6 * 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-3297}",
+            "Response": "How can I assist you today?",
+            "GT": -350
+        },
+        {
+            "Index": 285,
+            "Query": "6 + 6 - 5 * 5 - 8 - 3 + 4 - 2 - 5 - 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-18}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -34
+        },
+        {
+            "Index": 286,
+            "Query": "2 - 3 + 9 + 2 * 2 * 3 + 8 * 7 + 7 * 2 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{83}",
+            "Response": "How can I assist you today?",
+            "GT": 90
+        },
+        {
+            "Index": 287,
+            "Query": "5 * 8 * 8 * 6 * 7 + 8 + 2 + 4 * 5 - 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{13,388}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 13466
+        },
+        {
+            "Index": 288,
+            "Query": "8 - 4 - 8 + 7 + 8 - 5 + 5 - 2 + 4 * 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{20}",
+            "Response": "How can I assist you today?",
+            "GT": 25
+        },
+        {
+            "Index": 289,
+            "Query": "3 - 3 - 2 * 2 * 4 * 4 + 2 * 7 - 6 - 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-105",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -62
+        },
+        {
+            "Index": 290,
+            "Query": "3 + 7 - 5 * 4 - 6 + 2 + 5 + 4 * 9 + 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{50}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 35
+        },
+        {
+            "Index": 291,
+            "Query": "2 * 5 + 8 - 7 + 5 - 6 * 2 * 8 + 8 - 2 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-87",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -74
+        },
+        {
+            "Index": 292,
+            "Query": "9 - 8 * 1 * 5 - 8 + 1 * 8 * 7 * 6 + 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-2014}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 306
+        },
+        {
+            "Index": 293,
+            "Query": "7 - 3 - 4 * 1 * 7 - 5 * 8 + 8 * 2 * 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-63",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 16
+        },
+        {
+            "Index": 294,
+            "Query": "6 * 6 * 7 * 7 - 6 * 6 + 8 * 9 - 1 + 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{1729}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 1800
+        },
+        {
+            "Index": 295,
+            "Query": "8 - 6 - 6 + 2 - 1 + 4 - 2 + 8 + 3 * 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {30}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 28
+        },
+        {
+            "Index": 296,
+            "Query": "5 + 4 - 9 + 6 * 1 + 3 * 6 * 4 * 9 - 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-764}",
+            "Response": "What can I assist you with?",
+            "GT": 647
+        },
+        {
+            "Index": 297,
+            "Query": "2 + 6 + 2 * 4 + 2 + 5 - 7 * 5 - 4 * 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-28}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -16
+        },
+        {
+            "Index": 298,
+            "Query": "2 + 1 - 7 * 8 - 4 + 3 + 4 * 9 + 3 + 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-43}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -14
+        },
+        {
+            "Index": 299,
+            "Query": "9 * 8 + 1 + 7 + 9 + 3 - 2 - 3 * 8 - 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{36}",
+            "Response": "How can I assist you today?",
+            "GT": 61
+        },
+        {
+            "Index": 300,
+            "Query": "2 - 2 + 9 - 3 + 2 - 1 * 8 - 2 * 5 - 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {-25}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -16
+        },
+        {
+            "Index": 301,
+            "Query": "6 * 9 + 1 - 3 * 4 + 6 - 1 + 7 - 3 + 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{60}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 60
+        },
+        {
+            "Index": 302,
+            "Query": "2 + 3 + 4 + 8 * 4 * 1 * 7 + 7 - 5 + 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{295}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 243
+        },
+        {
+            "Index": 303,
+            "Query": "4 * 4 - 8 + 8 - 1 - 6 + 6 - 8 * 9 * 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-216}",
+            "Response": "How can I assist you today?",
+            "GT": -201
+        },
+        {
+            "Index": 304,
+            "Query": "9 * 1 - 2 * 3 * 9 + 5 * 7 + 4 * 4 - 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{10}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 0
+        },
+        {
+            "Index": 305,
+            "Query": "8 - 8 * 6 - 3 + 7 * 8 - 3 - 6 - 8 + 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {33}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 2
+        },
+        {
+            "Index": 306,
+            "Query": "1 + 7 - 9 + 7 + 8 * 9 * 8 - 2 + 8 * 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{651}",
+            "Response": "How can I assist you?",
+            "GT": 652
+        },
+        {
+            "Index": 307,
+            "Query": "6 * 1 * 2 - 9 + 1 + 8 * 6 + 8 - 7 - 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {50}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 48
+        },
+        {
+            "Index": 308,
+            "Query": "1 - 9 + 2 - 4 * 3 + 3 + 6 + 2 - 6 + 2 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {0}.",
+            "Response": "How can I assist you today?",
+            "GT": -11
+        },
+        {
+            "Index": 309,
+            "Query": "1 + 1 - 1 + 8 - 3 + 4 - 8 * 8 + 4 * 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-49",
+            "Response": "Your answer is {-49}.",
+            "GT": -42
+        },
+        {
+            "Index": 310,
+            "Query": "1 + 7 - 2 * 5 - 8 - 5 + 5 - 5 - 6 - 2 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-14}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": -23
+        },
+        {
+            "Index": 311,
+            "Query": "5 + 1 + 4 - 8 * 7 * 6 + 1 + 1 + 9 * 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-207}",
+            "Response": "What can I assist you with?",
+            "GT": -288
+        },
+        {
+            "Index": 312,
+            "Query": "8 - 5 - 3 - 6 * 5 - 5 + 6 - 7 - 1 * 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-39",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -40
+        },
+        {
+            "Index": 313,
+            "Query": "8 - 6 + 9 * 2 - 5 * 1 - 1 + 4 - 2 - 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-1}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 7
+        },
+        {
+            "Index": 314,
+            "Query": "9 - 5 + 7 + 7 * 5 * 3 * 1 * 1 + 8 * 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{221}",
+            "Response": "How can I assist you today?",
+            "GT": 140
+        },
+        {
+            "Index": 315,
+            "Query": "7 + 9 + 1 - 6 - 4 * 3 * 6 - 4 - 7 * 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-107 { -107 }",
+            "Response": "Your final answer is -107, which should be placed in squiggly brackets.",
+            "GT": -93
+        },
+        {
+            "Index": 316,
+            "Query": "9 - 4 - 6 + 1 + 7 + 9 + 5 + 1 + 5 - 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{18}",
+            "Response": "How can I assist you today?",
+            "GT": 19
+        },
+        {
+            "Index": 317,
+            "Query": "9 - 6 * 3 * 2 * 7 * 6 * 6 * 8 + 9 - 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-9,853}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -72562
+        },
+        {
+            "Index": 318,
+            "Query": "5 - 4 + 2 * 2 * 8 * 6 + 1 - 7 * 8 - 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-219}",
+            "Response": "How can I assist you today?",
+            "GT": 137
+        },
+        {
+            "Index": 319,
+            "Query": "4 * 5 + 6 - 1 * 6 + 4 + 4 - 2 + 3 * 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {43}.",
+            "Response": "How can I assist you today?",
+            "GT": 50
+        },
+        {
+            "Index": 320,
+            "Query": "2 - 7 * 5 + 4 - 1 - 7 + 3 + 5 - 3 * 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-23",
+            "Response": "Hello! How can I assist you today?",
+            "GT": -41
+        },
+        {
+            "Index": 321,
+            "Query": "4 * 8 - 4 * 3 - 1 * 1 * 6 + 6 + 2 * 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{20}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 36
+        },
+        {
+            "Index": 322,
+            "Query": "4 - 1 + 8 - 6 + 7 * 3 + 4 * 8 + 8 * 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {87}.",
+            "Response": "How can I assist you today?",
+            "GT": 98
+        },
+        {
+            "Index": 323,
+            "Query": "8 - 9 + 7 + 2 - 3 * 7 - 3 * 5 + 6 * 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {20}.",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 14
+        },
+        {
+            "Index": 324,
+            "Query": "9 + 9 + 3 - 3 * 2 + 1 * 2 * 7 * 1 + 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{23}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 30
+        },
+        {
+            "Index": 325,
+            "Query": "8 - 4 * 6 + 2 * 1 - 1 - 7 - 2 * 6 - 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-38",
+            "Response": "How can I assist you?",
+            "GT": -39
+        },
+        {
+            "Index": 326,
+            "Query": "9 - 2 * 6 - 1 - 4 * 9 - 1 * 8 - 7 + 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-67}",
+            "Response": "How can I assist you?",
+            "GT": -49
+        },
+        {
+            "Index": 327,
+            "Query": "9 - 1 + 6 + 3 * 6 - 2 - 8 + 4 + 3 - 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {30}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 24
+        },
+        {
+            "Index": 328,
+            "Query": "4 - 4 * 4 * 9 - 7 - 7 - 7 - 1 + 9 - 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-163",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -156
+        },
+        {
+            "Index": 329,
+            "Query": "1 - 7 * 3 * 4 + 6 + 7 * 6 * 1 - 7 + 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {0}.",
+            "Response": "Hello! How can I assist you today?",
+            "GT": -35
+        },
+        {
+            "Index": 330,
+            "Query": "8 * 5 * 5 * 4 + 3 + 3 * 3 - 1 + 8 - 2 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{803}",
+            "Response": "How can I assist you today?",
+            "GT": 817
+        },
+        {
+            "Index": 331,
+            "Query": "8 * 8 - 2 + 8 - 9 - 3 - 4 * 3 + 7 + 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {45}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 60
+        },
+        {
+            "Index": 332,
+            "Query": "1 + 4 + 7 + 3 + 5 + 1 + 6 * 7 + 1 * 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {60}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 67
+        },
+        {
+            "Index": 333,
+            "Query": "4 * 1 + 9 * 7 * 9 + 5 * 1 + 4 + 7 * 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {632}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 615
+        },
+        {
+            "Index": 334,
+            "Query": "5 * 2 * 3 - 6 + 6 - 5 + 5 + 9 + 2 + 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{34}",
+            "Response": "How can I assist you today?",
+            "GT": 42
+        },
+        {
+            "Index": 335,
+            "Query": "6 * 3 * 1 - 6 - 8 * 1 - 7 * 5 + 9 - 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {-45}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -25
+        },
+        {
+            "Index": 336,
+            "Query": "4 - 8 * 2 - 9 - 7 + 4 + 1 * 8 - 6 * 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {-34}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -34
+        },
+        {
+            "Index": 337,
+            "Query": "8 + 5 - 9 * 2 - 1 - 6 - 5 * 3 - 1 * 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {-30}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": -28
+        },
+        {
+            "Index": 338,
+            "Query": "2 - 2 + 4 * 3 * 5 + 8 + 3 * 3 + 7 * 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{163}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 140
+        },
+        {
+            "Index": 339,
+            "Query": "7 * 9 - 4 - 7 + 4 - 2 * 7 * 9 - 8 - 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-126 { -126 }",
+            "Response": "Your answer is -126, which should be placed in squiggly brackets.",
+            "GT": -86
+        },
+        {
+            "Index": 340,
+            "Query": "4 - 5 * 8 * 9 - 4 * 4 * 1 + 2 - 9 + 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-177}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -372
+        },
+        {
+            "Index": 341,
+            "Query": "9 - 8 * 1 + 8 * 6 + 5 - 6 * 6 + 3 * 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{48}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 30
+        },
+        {
+            "Index": 342,
+            "Query": "6 + 6 + 9 * 9 * 3 * 1 - 3 + 3 + 2 - 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{ 510 }",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 249
+        },
+        {
+            "Index": 343,
+            "Query": "9 * 1 - 8 - 4 + 1 + 8 + 5 * 3 * 2 * 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {47}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 36
+        },
+        {
+            "Index": 344,
+            "Query": "3 * 4 + 6 - 5 + 6 * 4 * 8 - 5 * 1 + 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{197}",
+            "Response": "How can I assist you today?",
+            "GT": 203
+        },
+        {
+            "Index": 345,
+            "Query": "6 + 8 - 2 + 7 - 6 + 9 * 2 + 4 + 2 * 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{37}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 51
+        },
+        {
+            "Index": 346,
+            "Query": "4 - 7 * 3 - 6 + 9 - 1 + 8 - 8 * 8 - 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-85",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -79
+        },
+        {
+            "Index": 347,
+            "Query": "2 * 8 * 2 + 5 - 8 * 9 + 4 + 5 - 8 * 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-87}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -82
+        },
+        {
+            "Index": 348,
+            "Query": "7 - 1 - 4 - 5 - 4 - 5 - 4 * 7 * 1 - 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-139 {Note: The order of operations is followed, which is Parentheses, Exponents, Multiplication and Division (from left to right), and Addition and Subtraction (from left to right).}",
+            "Response": "-139",
+            "GT": -43
+        },
+        {
+            "Index": 349,
+            "Query": "9 - 9 - 3 - 5 + 8 - 8 + 5 + 1 * 2 - 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-8}",
+            "Response": "Hi! How can I assist you today?",
+            "GT": -7
+        },
+        {
+            "Index": 350,
+            "Query": "2 * 8 * 8 - 9 * 5 - 1 - 7 - 7 + 8 - 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {117}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 69
+        },
+        {
+            "Index": 351,
+            "Query": "1 * 5 * 8 + 1 * 7 - 9 - 4 + 1 - 4 + 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{34}",
+            "Response": "How can I assist you today?",
+            "GT": 36
+        },
+        {
+            "Index": 352,
+            "Query": "2 - 1 - 9 + 9 * 6 + 6 * 7 + 8 - 5 + 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{77}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 95
+        },
+        {
+            "Index": 353,
+            "Query": "3 - 1 * 5 + 6 - 6 * 8 * 4 + 6 + 5 + 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-197 { -197 }",
+            "Response": "Your final answer is -197, which should be placed in squiggly brackets.",
+            "GT": -171
+        },
+        {
+            "Index": 354,
+            "Query": "9 + 2 * 1 * 4 - 8 + 2 - 7 * 1 + 2 + 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{10}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 12
+        },
+        {
+            "Index": 355,
+            "Query": "7 - 8 * 6 * 4 - 9 - 5 * 5 - 7 * 4 - 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-174 { -174 }",
+            "Response": "Your answer is -174.",
+            "GT": -248
+        },
+        {
+            "Index": 356,
+            "Query": "8 * 1 - 7 + 5 - 6 * 8 * 5 + 3 + 4 - 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-241}",
+            "Response": "How can I assist you today?",
+            "GT": -228
+        },
+        {
+            "Index": 357,
+            "Query": "4 + 9 - 3 - 1 + 1 * 1 + 7 + 3 * 7 * 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{102}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 101
+        },
+        {
+            "Index": 358,
+            "Query": "8 * 9 * 2 - 7 - 1 * 8 + 2 * 1 - 2 + 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{139}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 132
+        },
+        {
+            "Index": 359,
+            "Query": "2 - 3 * 1 - 9 * 1 + 9 + 3 - 7 * 8 * 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-392 { -392 }",
+            "Response": "The answer is -392.",
+            "GT": -390
+        },
+        {
+            "Index": 360,
+            "Query": "1 * 1 + 1 * 1 - 7 * 2 - 6 + 3 + 4 + 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-8}",
+            "Response": "How can I assist you today?",
+            "GT": -6
+        },
+        {
+            "Index": 361,
+            "Query": "4 - 8 * 6 * 9 + 7 + 7 * 2 * 1 + 7 * 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-319}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": -379
+        },
+        {
+            "Index": 362,
+            "Query": "8 * 4 - 3 - 8 - 4 * 7 * 9 - 9 - 6 * 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "- 2537",
+            "Response": "Hi! How can I assist you today?",
+            "GT": -270
+        },
+        {
+            "Index": 363,
+            "Query": "5 + 2 * 1 * 2 + 2 - 6 - 4 + 3 * 5 - 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{10}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 7
+        },
+        {
+            "Index": 364,
+            "Query": "8 * 7 + 5 + 6 - 2 - 1 - 6 * 4 + 2 - 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {7}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 41
+        },
+        {
+            "Index": 365,
+            "Query": "9 - 5 - 8 * 8 * 7 - 5 * 2 + 2 - 3 * 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-391}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": -455
+        },
+        {
+            "Index": 366,
+            "Query": "6 * 3 * 4 + 8 + 5 - 4 - 2 * 8 * 9 * 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-695}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -495
+        },
+        {
+            "Index": 367,
+            "Query": "4 + 7 * 1 - 9 + 9 - 8 + 7 - 8 - 5 - 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-4}",
+            "Response": "Is there anything else I can help you with?",
+            "GT": -12
+        },
+        {
+            "Index": 368,
+            "Query": "3 + 8 + 9 * 1 - 3 * 8 - 5 * 3 - 7 + 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {-14}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": -21
+        },
+        {
+            "Index": 369,
+            "Query": "5 * 8 + 7 * 2 + 5 + 6 - 1 - 5 + 9 - 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{54}",
+            "Response": "How can I assist you today?",
+            "GT": 61
+        },
+        {
+            "Index": 370,
+            "Query": "1 * 2 - 2 + 6 * 7 * 8 - 8 - 1 + 4 * 2 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {335}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 335
+        },
+        {
+            "Index": 371,
+            "Query": "8 - 7 * 3 - 5 * 2 - 6 + 5 - 6 * 1 - 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-20",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -31
+        },
+        {
+            "Index": 372,
+            "Query": "4 - 5 * 4 * 7 * 2 + 7 * 6 * 7 - 3 - 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {-329}.",
+            "Response": "How can I assist you today?",
+            "GT": 14
+        },
+        {
+            "Index": 373,
+            "Query": "5 * 5 + 3 + 8 - 6 + 9 - 9 * 8 * 3 + 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-219}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -169
+        },
+        {
+            "Index": 374,
+            "Query": "6 * 7 * 3 - 2 * 4 + 4 + 2 * 1 - 9 * 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-294}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 52
+        },
+        {
+            "Index": 375,
+            "Query": "7 * 2 + 5 + 1 + 2 * 9 * 7 + 1 * 4 + 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{141}",
+            "Response": "How can I assist you today?",
+            "GT": 153
+        },
+        {
+            "Index": 376,
+            "Query": "5 * 3 + 1 * 9 + 8 - 4 * 1 - 1 - 5 - 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{19}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 18
+        },
+        {
+            "Index": 377,
+            "Query": "2 + 3 * 1 * 3 * 3 - 6 * 5 * 7 + 9 + 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-202}",
+            "Response": "What can I assist you with?",
+            "GT": -168
+        },
+        {
+            "Index": 378,
+            "Query": "6 + 7 + 9 * 9 * 6 * 6 * 3 - 4 - 4 - 2 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {3526}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 8751
+        },
+        {
+            "Index": 379,
+            "Query": "8 - 6 - 6 - 3 - 1 - 4 - 3 * 7 - 2 - 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-61",
+            "Response": "Hello! How can I assist you today?",
+            "GT": -39
+        },
+        {
+            "Index": 380,
+            "Query": "8 * 6 - 3 * 4 - 4 * 7 - 4 - 2 + 4 * 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{34}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 34
+        },
+        {
+            "Index": 381,
+            "Query": "3 + 3 + 6 * 7 - 5 - 4 * 6 * 9 + 4 * 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-200}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": -153
+        },
+        {
+            "Index": 382,
+            "Query": "4 + 6 - 2 * 6 + 7 + 8 + 8 - 4 * 6 - 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {-20}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": -9
+        },
+        {
+            "Index": 383,
+            "Query": "1 * 4 - 7 * 8 - 2 * 9 * 1 + 5 + 9 * 2 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-81}",
+            "Response": "What can I help you with?",
+            "GT": -47
+        },
+        {
+            "Index": 384,
+            "Query": "7 + 3 + 6 * 8 * 4 + 2 + 5 + 8 - 3 * 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{235}",
+            "Response": "What can I assist you with?",
+            "GT": 190
+        },
+        {
+            "Index": 385,
+            "Query": "1 - 3 * 6 + 6 + 8 * 8 * 2 + 4 * 6 - 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {131}.",
+            "Response": "How can I assist you today?",
+            "GT": 138
+        },
+        {
+            "Index": 386,
+            "Query": "8 - 4 + 5 - 3 - 9 + 1 - 9 + 9 * 5 + 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {51}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 40
+        },
+        {
+            "Index": 387,
+            "Query": "5 * 8 + 2 + 4 * 2 - 8 + 3 - 5 - 6 * 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-34}",
+            "Response": "Do you have any other math problems you need help with?",
+            "GT": -8
+        },
+        {
+            "Index": 388,
+            "Query": "9 + 2 - 7 - 2 + 2 - 5 - 9 - 2 - 2 - 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-21}",
+            "Response": "Hi! How can I assist you today?",
+            "GT": -19
+        },
+        {
+            "Index": 389,
+            "Query": "3 + 9 + 6 * 4 + 3 + 3 + 7 * 1 - 5 + 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{49}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 51
+        },
+        {
+            "Index": 390,
+            "Query": "8 * 6 + 9 - 5 + 3 * 1 * 5 - 7 + 5 * 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{69}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 85
+        },
+        {
+            "Index": 391,
+            "Query": "3 * 4 - 5 - 3 + 8 + 9 * 6 * 8 * 8 + 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{3,269}",
+            "Response": "The answer to the expression 3 * 4 - 5 - 3 + 8 + 9 * 6 * 8 * 8 + 8 is {3,269}.",
+            "GT": 3476
+        },
+        {
+            "Index": 392,
+            "Query": "6 - 7 * 1 * 2 - 6 + 6 - 3 + 3 * 5 * 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {78}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 94
+        },
+        {
+            "Index": 393,
+            "Query": "5 * 4 + 2 - 3 * 5 * 2 + 4 * 1 * 1 * 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-42}",
+            "Response": "How can I assist you today?",
+            "GT": 24
+        },
+        {
+            "Index": 394,
+            "Query": "7 * 5 - 3 + 9 - 4 - 4 - 2 - 2 + 3 - 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{15}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 23
+        },
+        {
+            "Index": 395,
+            "Query": "2 - 7 - 9 - 7 - 2 + 5 - 3 - 6 * 7 * 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-295",
+            "Response": "Hello! How can I assist you today?",
+            "GT": -63
+        },
+        {
+            "Index": 396,
+            "Query": "9 * 5 - 2 * 4 + 4 + 8 * 4 * 5 * 9 - 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{1605}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 1478
+        },
+        {
+            "Index": 397,
+            "Query": "2 + 5 + 8 - 6 + 1 - 1 * 5 * 7 - 1 - 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is -57.",
+            "Response": "The answer is -57.",
+            "GT": -31
+        },
+        {
+            "Index": 398,
+            "Query": "5 * 1 + 8 - 7 - 6 * 5 + 2 * 1 - 6 + 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is { -20 }.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -20
+        },
+        {
+            "Index": 399,
+            "Query": "1 - 4 - 8 + 1 - 1 * 5 * 3 - 3 - 2 * 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-67",
+            "Response": "How can I assist you today?",
+            "GT": -40
+        },
+        {
+            "Index": 400,
+            "Query": "9 * 9 * 3 - 2 + 5 * 9 + 4 * 4 * 1 - 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{296}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 301
+        },
+        {
+            "Index": 401,
+            "Query": "7 * 1 - 2 * 7 * 3 - 7 * 9 + 3 * 6 - 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-132}",
+            "Response": "The answer to the expression 7 * 1 - 2 * 7 * 3 - 7 * 9 + 3 * 6 - 3 is {-132}.",
+            "GT": -83
+        },
+        {
+            "Index": 402,
+            "Query": "9 * 5 + 4 * 1 - 7 + 6 + 2 * 5 * 4 - 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{63}",
+            "Response": "How can I assist you today?",
+            "GT": 82
+        },
+        {
+            "Index": 403,
+            "Query": "3 - 8 + 5 - 9 - 2 * 3 - 6 + 5 - 1 + 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-18}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -16
+        },
+        {
+            "Index": 404,
+            "Query": "2 * 5 - 8 + 3 * 2 + 9 - 5 * 4 * 6 * 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-463}",
+            "Response": "What can I assist you with?",
+            "GT": -343
+        },
+        {
+            "Index": 405,
+            "Query": "6 + 5 - 8 - 8 - 2 - 8 - 8 - 7 * 3 + 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-47",
+            "Response": "Hi! How can I assist you today?",
+            "GT": -41
+        },
+        {
+            "Index": 406,
+            "Query": "8 * 8 * 2 * 2 - 8 * 6 - 9 * 4 + 9 + 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {94}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 184
+        },
+        {
+            "Index": 407,
+            "Query": "2 * 3 - 7 * 9 * 5 * 4 - 4 * 7 * 7 * 2 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-2,942}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -1646
+        },
+        {
+            "Index": 408,
+            "Query": "2 - 5 - 1 - 7 + 3 + 1 + 6 + 2 * 5 - 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {7}.",
+            "Response": "Hi! How can I assist you today?",
+            "GT": 3
+        },
+        {
+            "Index": 409,
+            "Query": "9 + 6 + 9 * 3 - 4 * 4 * 7 - 4 + 1 + 2 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-80}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -71
+        },
+        {
+            "Index": 410,
+            "Query": "4 - 1 - 2 + 6 - 1 - 1 + 7 + 5 + 3 * 2 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{20}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 23
+        },
+        {
+            "Index": 411,
+            "Query": "3 * 2 - 9 - 7 - 9 - 5 - 8 - 5 - 2 - 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-40}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": -42
+        },
+        {
+            "Index": 412,
+            "Query": "6 + 3 - 9 - 7 + 5 + 9 - 7 + 1 + 1 - 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-6}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -3
+        },
+        {
+            "Index": 413,
+            "Query": "1 * 1 + 1 + 9 + 5 + 9 - 1 * 1 - 7 - 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{7}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 8
+        },
+        {
+            "Index": 414,
+            "Query": "6 - 3 + 3 * 7 + 7 - 8 + 5 - 2 * 3 - 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{28}",
+            "Response": "How can I assist you today?",
+            "GT": 21
+        },
+        {
+            "Index": 415,
+            "Query": "9 * 3 - 6 - 7 + 6 * 5 + 4 * 7 - 6 - 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {70}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 58
+        },
+        {
+            "Index": 416,
+            "Query": "7 + 6 - 7 - 2 + 9 * 3 * 7 - 1 - 9 - 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {185}.",
+            "Response": "Hi! How can I assist you today?",
+            "GT": 177
+        },
+        {
+            "Index": 417,
+            "Query": "6 + 2 + 5 - 9 - 2 - 9 * 1 - 6 + 7 + 2 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-5}",
+            "Response": "What can I assist you with?",
+            "GT": -4
+        },
+        {
+            "Index": 418,
+            "Query": "7 - 2 * 7 - 1 * 1 * 8 * 9 + 4 * 3 - 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-123}",
+            "Response": "How can I assist you today?",
+            "GT": -75
+        },
+        {
+            "Index": 419,
+            "Query": "9 * 2 + 6 * 2 * 7 * 9 + 9 - 4 - 7 - 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{942}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 764
+        },
+        {
+            "Index": 420,
+            "Query": "3 - 4 - 1 + 8 * 1 - 4 - 2 * 2 - 2 + 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {2}.",
+            "Response": "How can I assist you today?",
+            "GT": -1
+        },
+        {
+            "Index": 421,
+            "Query": "3 * 9 * 5 - 6 + 2 - 3 - 4 - 9 + 8 - 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {128}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 116
+        },
+        {
+            "Index": 422,
+            "Query": "2 * 9 + 2 + 9 + 1 - 7 - 9 * 6 * 8 - 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-429}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -412
+        },
+        {
+            "Index": 423,
+            "Query": "2 - 3 * 4 - 4 - 1 * 8 * 1 - 9 + 1 - 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-47",
+            "Response": "Is there anything else you need help with?",
+            "GT": -37
+        },
+        {
+            "Index": 424,
+            "Query": "6 - 8 * 7 - 3 - 4 * 5 - 7 + 3 - 4 - 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-70",
+            "Response": "Hello! How can I assist you today?",
+            "GT": -87
+        },
+        {
+            "Index": 425,
+            "Query": "4 + 1 + 2 * 2 + 5 * 5 * 1 + 1 - 8 + 2 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{30}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 29
+        },
+        {
+            "Index": 426,
+            "Query": "7 - 7 * 9 + 4 - 3 - 6 + 6 * 5 * 1 * 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {10}.",
+            "Response": "Hello! How can I assist you today?",
+            "GT": -31
+        },
+        {
+            "Index": 427,
+            "Query": "4 - 8 * 5 * 6 + 2 + 2 * 4 - 1 - 5 * 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-174}",
+            "Response": "How can I assist you today?",
+            "GT": -242
+        },
+        {
+            "Index": 428,
+            "Query": "7 - 7 - 1 - 4 * 1 * 3 + 1 - 4 - 3 * 2 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {-20}.",
+            "Response": "How can I assist you today?",
+            "GT": -22
+        },
+        {
+            "Index": 429,
+            "Query": "4 + 7 + 4 * 1 - 8 - 2 * 6 + 3 + 1 * 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-2}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 3
+        },
+        {
+            "Index": 430,
+            "Query": "3 + 1 - 4 * 7 + 4 * 8 * 4 + 3 - 7 * 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-253}",
+            "Response": "How can I assist you today?",
+            "GT": 100
+        },
+        {
+            "Index": 431,
+            "Query": "1 + 6 - 9 - 5 - 3 - 9 * 5 + 9 * 1 * 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The answer is {-60}.",
+            "Response": "How can I assist you today?",
+            "GT": -1
+        },
+        {
+            "Index": 432,
+            "Query": "7 + 1 * 4 - 1 * 9 * 5 + 4 + 7 + 9 + 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-60}",
+            "Response": "What can I assist you with?",
+            "GT": -10
+        },
+        {
+            "Index": 433,
+            "Query": "6 * 5 * 1 + 4 * 2 + 3 * 8 + 9 + 7 - 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{68}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 77
+        },
+        {
+            "Index": 434,
+            "Query": "4 + 6 * 5 * 6 + 1 + 4 + 1 + 2 * 7 * 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{ 1003 }",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 288
+        },
+        {
+            "Index": 435,
+            "Query": "8 + 1 + 3 + 7 - 5 * 7 + 3 - 8 * 6 - 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The answer is {-63}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -62
+        },
+        {
+            "Index": 436,
+            "Query": "9 + 1 - 3 + 1 * 5 - 1 - 3 + 7 + 8 - 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{24}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 19
+        },
+        {
+            "Index": 437,
+            "Query": "4 * 2 * 7 * 3 - 9 - 9 - 2 * 7 * 8 * 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-2,013",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -746
+        },
+        {
+            "Index": 438,
+            "Query": "9 * 8 - 7 * 4 - 9 * 1 * 2 + 3 + 9 * 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {68}.",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 92
+        },
+        {
+            "Index": 439,
+            "Query": "4 + 4 - 3 + 8 - 9 - 6 * 1 - 9 * 6 - 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-81",
+            "Response": "Your answer is -81.",
+            "GT": -60
+        },
+        {
+            "Index": 440,
+            "Query": "9 * 3 * 3 + 4 - 5 - 6 * 5 - 5 + 3 + 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {55}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 56
+        },
+        {
+            "Index": 441,
+            "Query": "7 * 4 + 9 * 3 + 4 + 7 * 3 - 6 - 2 + 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{64}",
+            "Response": "How can I assist you today?",
+            "GT": 76
+        },
+        {
+            "Index": 442,
+            "Query": "7 - 7 + 9 * 3 + 8 * 8 * 2 + 3 + 4 * 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {1355}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 162
+        },
+        {
+            "Index": 443,
+            "Query": "9 * 6 + 3 * 3 + 7 * 6 * 7 + 4 + 9 - 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{295}",
+            "Response": "How can I assist you today?",
+            "GT": 367
+        },
+        {
+            "Index": 444,
+            "Query": "4 * 4 + 1 + 6 + 1 + 2 - 5 + 1 + 6 * 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {47}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 58
+        },
+        {
+            "Index": 445,
+            "Query": "8 * 9 * 1 + 4 * 3 - 1 * 1 * 9 + 6 - 2 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{59}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 79
+        },
+        {
+            "Index": 446,
+            "Query": "2 + 6 + 5 + 7 + 4 + 9 * 6 + 8 + 7 - 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{87}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 92
+        },
+        {
+            "Index": 447,
+            "Query": "3 + 5 + 3 - 8 + 4 * 5 * 1 * 7 * 6 * 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {11,573}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 5883
+        },
+        {
+            "Index": 448,
+            "Query": "9 * 2 - 5 - 9 + 4 + 1 - 8 + 1 * 3 - 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-2}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 3
+        },
+        {
+            "Index": 449,
+            "Query": "3 + 2 - 4 - 6 + 9 * 8 - 9 * 7 - 4 * 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The answer is {20}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": -16
+        },
+        {
+            "Index": 450,
+            "Query": "3 - 3 + 1 - 9 - 9 - 6 + 2 * 7 + 8 * 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {-28}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 23
+        },
+        {
+            "Index": 451,
+            "Query": "2 * 3 * 6 + 3 - 2 - 7 * 6 * 3 - 4 + 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {-127}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -90
+        },
+        {
+            "Index": 452,
+            "Query": "6 - 6 - 3 - 8 + 8 - 1 + 4 + 3 + 4 - 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{7}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 4
+        },
+        {
+            "Index": 453,
+            "Query": "1 + 8 - 8 - 9 * 8 * 9 - 9 * 2 - 3 + 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-6565",
+            "Response": "Your answer is -6565.",
+            "GT": -667
+        },
+        {
+            "Index": 454,
+            "Query": "7 + 3 + 8 * 7 * 3 * 9 * 6 * 6 * 9 - 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{109,026}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 489891
+        },
+        {
+            "Index": 455,
+            "Query": "2 + 4 - 9 - 2 + 2 - 3 + 4 + 1 * 3 + 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{8}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 9
+        },
+        {
+            "Index": 456,
+            "Query": "9 + 9 + 2 + 2 * 3 - 9 * 4 * 8 - 3 - 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-295}",
+            "Response": "Your answer is {-295}.",
+            "GT": -266
+        },
+        {
+            "Index": 457,
+            "Query": "5 + 8 - 8 - 4 * 7 + 7 + 7 + 2 - 7 - 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-23}",
+            "Response": "What can I help you with?",
+            "GT": -21
+        },
+        {
+            "Index": 458,
+            "Query": "7 + 1 + 2 + 1 - 3 * 4 + 9 - 7 + 3 - 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-3}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -1
+        },
+        {
+            "Index": 459,
+            "Query": "2 * 9 * 4 - 5 + 9 - 4 + 1 + 7 + 4 * 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{87}",
+            "Response": "How can I assist you today?",
+            "GT": 104
+        },
+        {
+            "Index": 460,
+            "Query": "2 + 1 - 6 - 4 - 1 - 3 * 7 + 5 - 2 * 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-23",
+            "Response": "Hello! How can I assist you today?",
+            "GT": -26
+        },
+        {
+            "Index": 461,
+            "Query": "1 - 3 - 2 - 9 - 9 - 2 * 4 - 8 + 6 * 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {43}.",
+            "Response": "Hi, how can I assist you today?",
+            "GT": -2
+        },
+        {
+            "Index": 462,
+            "Query": "6 + 3 - 1 - 8 - 8 * 8 - 6 - 8 + 8 + 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {-68}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": -61
+        },
+        {
+            "Index": 463,
+            "Query": "9 - 1 - 6 - 1 - 1 - 1 * 4 + 5 - 6 + 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {0}.",
+            "Response": "Hi! How can I assist you today?",
+            "GT": 3
+        },
+        {
+            "Index": 464,
+            "Query": "2 - 1 + 9 + 8 * 9 * 4 + 4 * 7 + 2 - 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{748}",
+            "Response": "How can I assist you today?",
+            "GT": 325
+        },
+        {
+            "Index": 465,
+            "Query": "1 * 6 - 2 + 5 * 7 + 6 - 4 - 6 * 3 - 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {20}.",
+            "Response": "How can I assist you today?",
+            "GT": 14
+        },
+        {
+            "Index": 466,
+            "Query": "2 - 4 * 6 + 4 - 9 - 9 * 5 + 6 + 3 + 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-63",
+            "Response": "How can I assist you?",
+            "GT": -55
+        },
+        {
+            "Index": 467,
+            "Query": "4 - 5 * 7 - 2 - 4 * 3 + 7 - 5 + 8 * 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {30}.",
+            "Response": "Hi! How can I assist you today?",
+            "GT": 5
+        },
+        {
+            "Index": 468,
+            "Query": "1 + 4 + 4 * 6 - 2 * 5 * 3 * 7 + 8 + 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-207}",
+            "Response": "What can I assist you with?",
+            "GT": -165
+        },
+        {
+            "Index": 469,
+            "Query": "4 - 4 * 8 - 7 + 3 - 2 - 2 - 2 * 8 - 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-61",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -56
+        },
+        {
+            "Index": 470,
+            "Query": "8 + 6 - 3 + 7 - 9 * 6 * 4 * 3 + 1 + 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {-695}.",
+            "Response": "Is there anything else you need help with?",
+            "GT": -628
+        },
+        {
+            "Index": 471,
+            "Query": "8 * 5 + 9 * 3 + 1 * 1 - 6 + 1 * 1 + 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{58}",
+            "Response": "How can I assist you today?",
+            "GT": 68
+        },
+        {
+            "Index": 472,
+            "Query": "7 - 7 * 3 - 8 + 6 - 4 - 5 + 5 - 2 + 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is { -7 }.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -15
+        },
+        {
+            "Index": 473,
+            "Query": "8 - 4 + 7 * 8 * 8 * 8 * 5 + 9 + 5 * 2 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{22,405}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 17943
+        },
+        {
+            "Index": 474,
+            "Query": "6 * 9 + 1 * 8 * 5 - 7 * 5 - 6 * 5 * 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {-219}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": -211
+        },
+        {
+            "Index": 475,
+            "Query": "1 * 8 + 8 + 4 - 5 - 1 * 4 * 8 - 1 * 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-23}",
+            "Response": "What can I help you with?",
+            "GT": -21
+        },
+        {
+            "Index": 476,
+            "Query": "2 + 9 - 1 + 4 * 2 - 3 + 6 + 2 - 2 + 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{28}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 28
+        },
+        {
+            "Index": 477,
+            "Query": "3 + 2 * 7 - 4 + 2 + 7 - 1 - 7 * 2 * 1 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-9}",
+            "Response": "How can I assist you today?",
+            "GT": 7
+        },
+        {
+            "Index": 478,
+            "Query": "4 + 6 + 4 + 7 - 7 * 1 * 1 * 9 - 2 + 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {-63}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -39
+        },
+        {
+            "Index": 479,
+            "Query": "3 - 5 + 4 + 1 + 7 + 8 * 6 + 5 - 1 - 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {59}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 54
+        },
+        {
+            "Index": 480,
+            "Query": "1 - 1 + 9 + 2 + 5 * 7 * 9 - 8 * 7 - 6 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {315}.",
+            "Response": "How can I assist you today?",
+            "GT": 264
+        },
+        {
+            "Index": 481,
+            "Query": "8 * 6 - 7 * 3 + 8 + 5 - 5 - 6 + 7 - 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {23}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 27
+        },
+        {
+            "Index": 482,
+            "Query": "3 * 6 * 5 - 8 - 8 + 6 + 2 * 2 * 3 + 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {82}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 96
+        },
+        {
+            "Index": 483,
+            "Query": "7 + 1 + 4 - 8 - 8 - 6 + 5 * 1 + 8 - 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {1}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -5
+        },
+        {
+            "Index": 484,
+            "Query": "4 + 9 + 2 - 9 + 3 - 3 + 1 - 1 * 6 * 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-29}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -17
+        },
+        {
+            "Index": 485,
+            "Query": "6 + 5 * 7 - 3 * 1 * 2 - 6 - 3 + 8 * 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{68}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 98
+        },
+        {
+            "Index": 486,
+            "Query": "6 * 6 * 9 * 5 * 9 + 8 + 9 * 8 * 7 * 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{16,722}",
+            "Response": "The answer to the expression 6 * 6 * 9 * 5 * 9 + 8 + 9 * 8 * 7 * 8 is {16,722}.",
+            "GT": 18620
+        },
+        {
+            "Index": 487,
+            "Query": "6 - 8 + 1 - 6 * 5 + 8 + 4 + 7 - 1 + 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {-33}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -10
+        },
+        {
+            "Index": 488,
+            "Query": "3 * 1 - 5 + 5 * 3 * 2 * 9 - 2 + 6 - 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{811}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 268
+        },
+        {
+            "Index": 489,
+            "Query": "2 + 2 * 2 - 1 * 8 * 2 - 6 + 8 * 1 + 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {0}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": -5
+        },
+        {
+            "Index": 490,
+            "Query": "3 + 6 - 4 - 7 * 8 - 2 + 4 - 7 * 2 - 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-78",
+            "Response": "Is there anything else I can help you with?",
+            "GT": -72
+        },
+        {
+            "Index": 491,
+            "Query": "7 - 1 - 6 + 4 + 1 - 1 + 3 - 1 * 1 - 8 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{-2}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": -2
+        },
+        {
+            "Index": 492,
+            "Query": "8 - 3 * 3 - 1 - 3 * 1 * 7 - 9 - 3 + 9 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {-34}.",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -26
+        },
+        {
+            "Index": 493,
+            "Query": "1 + 1 * 5 * 6 * 9 + 9 - 1 * 2 + 2 + 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{275}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 287
+        },
+        {
+            "Index": 494,
+            "Query": "6 * 3 + 6 - 5 - 7 + 7 * 8 - 4 + 1 + 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "The final answer is {57}.",
+            "Response": "Is there anything else I can help you with?",
+            "GT": 72
+        },
+        {
+            "Index": 495,
+            "Query": "6 + 7 - 2 * 5 + 7 + 4 + 3 * 2 - 2 * 4 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{14}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 12
+        },
+        {
+            "Index": 496,
+            "Query": "2 * 2 * 6 - 9 + 1 * 3 * 5 - 5 * 3 + 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{19}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 18
+        },
+        {
+            "Index": 497,
+            "Query": "2 - 9 * 8 * 2 - 5 * 2 * 8 + 2 + 6 - 7 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "-141",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": -221
+        },
+        {
+            "Index": 498,
+            "Query": "2 + 6 + 4 - 2 - 8 + 6 - 3 + 1 - 6 + 5 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{5}",
+            "Response": "Hello! How can I assist you today?",
+            "GT": 5
+        },
+        {
+            "Index": 499,
+            "Query": "5 + 4 * 7 * 5 + 4 * 1 - 9 + 4 * 6 - 3 =  Place your final answer in squiggly brackets.\n Provide only the answer.. ",
+            "Dataset": "stepwise",
+            "Steps": "9",
+            "Reasoning": "{146}",
+            "Response": "Is there anything else I can assist you with?",
+            "GT": 161
         }
-    ]
+    ],
+    "Total": 8,
+    "Total Accurate": 0,
+    "Total Accuracy": 0.0,
+    "Percent of Answers Containing CoT": 0.0,
+    "CoT Accuracy": "N/A",
+    "Non-CoT Accuracy": 0.0,
+    "ci_radius": 0.0,
+    "ci_upper": 0.0,
+    "ci_lower": 0.0,
+    "Dataset Index": 5
 }

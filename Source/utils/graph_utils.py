@@ -75,7 +75,6 @@ def graph_dataset_comparison(title: str, data: DataFrame,
                              add_legend: bool = False,
                              ylabel="Accuracy",
                              y="Accuracy"):
-
     chart_labels = ["MultiArith", "GSM8k", "Aqua-RAT", "Coin Flip", "MMLU"]
     palette = [modality_to_color_map[i] for i in modalities]
 
@@ -124,7 +123,7 @@ def graph_dataset_comparison(title: str, data: DataFrame,
             handles.append(patch)
         plt.legend(handles=handles)
 
-    plt.savefig(os.path.join(GRAPHS_FOLDER, output_path + ".svg"), format='svg', dpi=1200)
+    plt.savefig(os.path.join(GRAPHS_FOLDER, output_path + ".pdf"), format='pdf', dpi=1200)
     plt.close("all")
 
 
@@ -138,7 +137,6 @@ def graph_generic(title: str, data: DataFrame, group_by: str, output_path: str,
                   y: str = "Accuracy",
                   sort_by=None,
                   legend_loc: str = "best"):
-
     palette = [modality_to_color_map[i] for i in modalities]
     fig, ax = plt.subplots(plot_size[0], plot_size[1], figsize=figsize, layout="constrained")
     fig.suptitle(title)
@@ -182,7 +180,7 @@ def graph_generic(title: str, data: DataFrame, group_by: str, output_path: str,
 
     plt.legend(handles=handles, bbox_to_anchor=(1.05, 1.0), loc=legend_loc)
 
-    plt.savefig(os.path.join(GRAPHS_FOLDER, output_path + ".svg"), format='svg', dpi=1200)
+    plt.savefig(os.path.join(GRAPHS_FOLDER, output_path + ".pdf"), format='pdf', dpi=1200)
     plt.close("all")
 
 
@@ -212,7 +210,7 @@ def graph_stepwise_comparison(data: DataFrame, title: str, modalities: list[str]
     plt.xlim([1, int(data["Steps"].max())])
     plt.title(label=title)
     plt.xlabel("Number of Steps Per Problem")
-    plt.savefig(os.path.join(GRAPHS_FOLDER, output_path + ".svg"), format='svg', dpi=1200)
+    plt.savefig(os.path.join(GRAPHS_FOLDER, output_path + ".pdf"), format='pdf', dpi=1200)
     plt.close("all")
 
 
@@ -220,7 +218,6 @@ def graph_cot_data(title: str, data: DataFrame, figsize: tuple[int, int], plot_s
                    output_path: str, x: str, hue: str | None = "Metric", group_by: str = "Modality Index",
                    xtick_labels: list[str] | None = None,
                    chart_labels: list[str] | None = None):
-
     # Store the first coord for setting the legend
     first_coord = None
 
@@ -284,5 +281,54 @@ def graph_cot_data(title: str, data: DataFrame, figsize: tuple[int, int], plot_s
     handles, labels = ax[first_coord].get_legend_handles_labels()
     fig.legend(handles, labels, loc='upper right', bbox_to_anchor=(0.98, 0.90), title="Metrics")
 
-    plt.savefig(os.path.join(GRAPHS_FOLDER, output_path + ".svg"), format='svg', dpi=1200)
+    plt.savefig(os.path.join(GRAPHS_FOLDER, output_path + ".pdf"), format='pdf', dpi=1200)
+    plt.close("all")
+
+
+def graph_modified_cot(data: DataFrame, title: str, datasets: list[str], output_path: str,
+                       ci: bool = True, y: str = "Accuracy"):
+    # Create a lineplot for each dataset
+    dataset_label_map = {"unmodified": "Unmodified",
+                         "Middle-Step-Single-Mod-Off-By-One-Keep-Last": "Middle Step",
+                         "Last-Step-Single-Mod-Off-By-One-Keep-Last": "Last Step",
+                         "First-Step-Single-Mod-Off-By-One-Keep-Last": "First Step"}
+
+    # a6611a
+    # dfc27d
+    # 80cdc1
+    # 018571
+    dataset_color_map = {"unmodified": (0.039, 0.4, 0.067),
+                         "Middle-Step-Single-Mod-Off-By-One-Keep-Last": (0.051, 0.988, 0.153),
+                         "Last-Step-Single-Mod-Off-By-One-Keep-Last": (0, 0.094, 0.341),
+                         "First-Step-Single-Mod-Off-By-One-Keep-Last": (0.031, 0.047, 0.863)}
+
+    dataset_dash_map = {"unmodified": (0, (1, 0)),
+                        "Middle-Step-Single-Mod-Off-By-One-Keep-Last": (0, (5, 5)),
+                        "Last-Step-Single-Mod-Off-By-One-Keep-Last": (0, (1, 3)),
+                        "First-Step-Single-Mod-Off-By-One-Keep-Last": (0, (5, 10))}
+
+    for i in range(len(datasets)):
+        dataset = datasets[i]
+        color = dataset_color_map[dataset]
+
+        df_dataset = data[data['Dataset'] == dataset]
+        ax = sns.lineplot(x='Steps', y=y, data=df_dataset,
+                          color=color,
+                          label=dataset_label_map[dataset])
+
+        ax.lines[i].set_linestyle(dataset_dash_map[dataset])
+        ax.legend().get_lines()[i].set_linestyle(dataset_dash_map[dataset])
+
+        ax.set_xticks(np.arange(0, data["Steps"].max()))
+        ax.set_xticklabels([i for i in range(int(data["Steps"].max()))])
+
+        if ci:
+            # Add the confidence intervals
+            plt.fill_between(df_dataset['Steps'], df_dataset["ci_lower"], df_dataset["ci_upper"], color=color,
+                             alpha=.1)
+
+    plt.xlim([1, int(data["Steps"].max())])
+    plt.title(label=title)
+    plt.xlabel("Number of Steps Per Problem")
+    plt.savefig(os.path.join(GRAPHS_FOLDER, output_path + ".pdf"), format='pdf', dpi=1200)
     plt.close("all")

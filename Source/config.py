@@ -146,6 +146,8 @@ modality_index_map = {"zero_shot": 0, "zero_shot_cot": 1, "suppressed_cot": 2,
                       "explanation_first": 3, "answer_first": 4, "the_answer_is": 5}
 # Maps non-stepwise datasets to indices
 dataset_index_map = {"multiarith": 0, "gsm8k": 1, "aqua": 2, "coin_flip": 3, "mmlu-combined": 4, "stepwise": 5,
-                     "mmlu-high-school": 6, "mmlu-college": 7}
+                     "mmlu-high-school": 6, "mmlu-college": 7, "unmodified": 8,
+                     "First-Step-Single-Mod-Off-By-One-Keep-Last": 9, "Middle-Step-Single-Mod-Off-By-One-Keep-Last": 10,
+                     "Last-Step-Single-Mod-Off-By-One-Keep-Last": 11}
 # Maps models to indices
 model_index_map = {"text-davinci-002": 0, "gpt-3.5-turbo": 1, "gpt-4": 2, "gpt-4-32k": 3, "goat": 4}

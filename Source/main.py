@@ -13,22 +13,24 @@ from utils.query_utils import run_test
 from scratchpad import multi_query_test
 import os
 
-os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
+
+
 def main():
     args = parse_args()
     config.__dict__['GPU_ID'] = args.gpu
     config.__dict__['WAIT_TIME'] = args.wait_time
     mode = args.mode
     if mode == "extract":
-        # extract_answers(root=RESULTS_FOLDER)
-        extract_answers(root="Results/Secondary_Test_Results")
+        extract_answers(root=RESULTS_FOLDER)
+        # extract_answers(root="Results/Secondary_Test_Results")
     elif mode == "metadata":
-        # generate_metadata(root=RESULTS_FOLDER,
-        #                  test_file="Test_Results.csv",
-        #                  scratchpad_file="Scratchpad_Results.csv")
-        generate_metadata(root="Results/Secondary_Test_Results",
-                          test_file="Secondary_Test_Results.csv",
-                          scratchpad_file="Scratchpad_Results.csv")
+        generate_metadata(root=RESULTS_FOLDER,
+                         test_file="Test_Results.csv",
+                         scratchpad_file="Scratchpad_Results.csv")
+        # generate_metadata(root="Results/Secondary_Test_Results",
+        #                   test_file="Secondary_Test_Results.csv",
+        #                   scratchpad_file="Secondary_Scratchpad_Results.csv")
     elif mode == "graph":
         create_graphs()
     elif mode == "test" or mode == "scratchpad" or mode == "modified_cot":

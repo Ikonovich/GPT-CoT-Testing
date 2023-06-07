@@ -9,6 +9,16 @@
     "Extraction Type": "two-stage",
     "Simple Prompt": true,
     "Test Path": "Results/Primary_Test_Results/modified_cot/goat/zero_shot_cot/unmodified/unmodified-2-step-test-goat.json",
+    "Total": 250,
+    "Total Accurate": 35,
+    "Total Accuracy": 14.000000000000002,
+    "Percent of Answers Containing CoT": 10.0,
+    "CoT Accuracy": 0.0,
+    "Non-CoT Accuracy": 15.555555555555555,
+    "ci_radius": 4.3012958047546554,
+    "ci_upper": 18.30129580475466,
+    "ci_lower": 9.698704195245346,
+    "Dataset Index": 8,
     "Trials": [
         {
             "Index": 0,
@@ -16,7 +26,9 @@
             "Query": "1 - 8 * 3 =   Let's think step by step.",
             "Injected CoT": "-8 * 3 = -24\n1 - (-24) =",
             "Response": "1\nTherefore, 1 - 8 * 1 = 1",
-            "Extract-Response": "1"
+            "Extract-Response": "1",
+            "Answer": 1.0,
+            "Final Answer": 1.0
         },
         {
             "Index": 1,
@@ -24,7 +36,9 @@
             "Query": "7 * 4 * 4 =   Let's think step by step.",
             "Injected CoT": "7 * 4 = 28\n28 * 4 =",
             "Response": "112",
-            "Extract-Response": "7 * 4 * 4 = 288"
+            "Extract-Response": "7 * 4 * 4 = 288",
+            "Answer": 7.0,
+            "Final Answer": 7.0
         },
         {
             "Index": 2,
@@ -32,7 +46,9 @@
             "Query": "1 + 3 - 8 =   Let's think step by step.",
             "Injected CoT": "1 + 3 = 4\n4 - 8 =",
             "Response": "-4\nTherefore, 1 + 3 = 4",
-            "Extract-Response": "4"
+            "Extract-Response": "4",
+            "Answer": 4.0,
+            "Final Answer": 4.0
         },
         {
             "Index": 3,
@@ -40,7 +56,9 @@
             "Query": "5 + 4 - 4 =   Let's think step by step.",
             "Injected CoT": "5 + 4 = 9\n9 - 4 =",
             "Response": "5\n5 - 4 = 1\nTherefore, 5 + 4 = 9",
-            "Extract-Response": "9"
+            "Extract-Response": "9",
+            "Answer": 9.0,
+            "Final Answer": 9.0
         },
         {
             "Index": 4,
@@ -48,7 +66,9 @@
             "Query": "6 * 3 + 9 =   Let's think step by step.",
             "Injected CoT": "6 * 3 = 18\n18 + 9 =",
             "Response": "27",
-            "Extract-Response": "6 * 27 = 162"
+            "Extract-Response": "6 * 27 = 162",
+            "Answer": 6.0,
+            "Final Answer": 6.0
         },
         {
             "Index": 5,
@@ -56,7 +76,9 @@
             "Query": "6 - 8 - 2 =   Let's think step by step.",
             "Injected CoT": "6 - 8 = -2\n-2 - 2 =",
             "Response": "0\nTherefore, 6 - 8 = -2",
-            "Extract-Response": "2"
+            "Extract-Response": "2",
+            "Answer": 2.0,
+            "Final Answer": 2.0
         },
         {
             "Index": 6,
@@ -64,7 +86,9 @@
             "Query": "7 - 2 + 3 =   Let's think step by step.",
             "Injected CoT": "7 - 2 = 5\n5 + 3 =",
             "Response": "8\n8 - 2 = 6\n6 - 2 = 4\n4 - 2 = 2\nTherefore, 7 - 2 = 5",
-            "Extract-Response": "5"
+            "Extract-Response": "5",
+            "Answer": 5.0,
+            "Final Answer": 5.0
         },
         {
             "Index": 7,
@@ -72,7 +96,9 @@
             "Query": "4 * 4 - 3 =   Let's think step by step.",
             "Injected CoT": "4 * 4 = 16\n16 - 3 =",
             "Response": "13\nTherefore, 4 * 4 = 52",
-            "Extract-Response": "52"
+            "Extract-Response": "52",
+            "Answer": 52.0,
+            "Final Answer": 52.0
         },
         {
             "Index": 8,
@@ -80,7 +106,9 @@
             "Query": "6 + 9 + 7 =   Let's think step by step.",
             "Injected CoT": "6 + 9 = 15\n15 + 7 =",
             "Response": "22",
-            "Extract-Response": "6 + 9 + 7 = 25"
+            "Extract-Response": "6 + 9 + 7 = 25",
+            "Answer": 6.0,
+            "Final Answer": 6.0
         },
         {
             "Index": 9,
@@ -88,7 +116,9 @@
             "Query": "1 - 3 + 8 =   Let's think step by step.",
             "Injected CoT": "-3 + 8 = 5\n1 + 5 =",
             "Response": "6\n6 - 3 = 3\nTherefore, 1 - 3 = -2",
-            "Extract-Response": "2"
+            "Extract-Response": "2",
+            "Answer": 2.0,
+            "Final Answer": 2.0
         },
         {
             "Index": 10,
@@ -96,7 +126,9 @@
             "Query": "5 * 5 + 9 =   Let's think step by step.",
             "Injected CoT": "5 * 5 = 25\n25 + 9 =",
             "Response": "34",
-            "Extract-Response": "5 * 34 = 170"
+            "Extract-Response": "5 * 34 = 170",
+            "Answer": 5.0,
+            "Final Answer": 5.0
         },
         {
             "Index": 11,
@@ -104,7 +136,9 @@
             "Query": "6 * 1 - 3 =   Let's think step by step.",
             "Injected CoT": "6 * 1 = 6\n6 - 3 =",
             "Response": "3\nTherefore, 6 * 1 = 6",
-            "Extract-Response": "6"
+            "Extract-Response": "6",
+            "Answer": 6.0,
+            "Final Answer": 6.0
         },
         {
             "Index": 12,
@@ -112,7 +146,9 @@
             "Query": "9 + 2 - 7 =   Let's think step by step.",
             "Injected CoT": "9 + 2 = 11\n11 - 7 =",
             "Response": "4\nTherefore, 9 + 2 = 11",
-            "Extract-Response": "11"
+            "Extract-Response": "11",
+            "Answer": 11.0,
+            "Final Answer": 11.0
         },
         {
             "Index": 13,
@@ -120,7 +156,9 @@
             "Query": "5 - 5 * 9 =   Let's think step by step.",
             "Injected CoT": "5 * 9 = 45\n5 - 45 =",
             "Response": "-40\nTherefore, 5 - 45 = -40",
-            "Extract-Response": "40"
+            "Extract-Response": "40",
+            "Answer": 40.0,
+            "Final Answer": 40.0
         },
         {
             "Index": 14,
@@ -128,7 +166,9 @@
             "Query": "2 * 9 - 5 =   Let's think step by step.",
             "Injected CoT": "2 * 9 = 18\n18 - 5 =",
             "Response": "13\nTherefore, 2 * 9 = 18",
-            "Extract-Response": "18"
+            "Extract-Response": "18",
+            "Answer": 18.0,
+            "Final Answer": 18.0
         },
         {
             "Index": 15,
@@ -136,7 +176,9 @@
             "Query": "6 - 9 - 2 =   Let's think step by step.",
             "Injected CoT": "6 - 9 = -3\n-3 - 2 =",
             "Response": "-1\nTherefore, 6 - 9 = -3",
-            "Extract-Response": "3"
+            "Extract-Response": "3",
+            "Answer": 3.0,
+            "Final Answer": 3.0
         },
         {
             "Index": 16,
@@ -144,7 +186,9 @@
             "Query": "5 * 7 * 7 =   Let's think step by step.",
             "Injected CoT": "5 * 7 = 35\n35 * 7 =",
             "Response": "225",
-            "Extract-Response": "5 * 7 * 7 = 1125"
+            "Extract-Response": "5 * 7 * 7 = 1125",
+            "Answer": 5.0,
+            "Final Answer": 5.0
         },
         {
             "Index": 17,
@@ -152,7 +196,9 @@
             "Query": "6 * 8 - 7 =   Let's think step by step.",
             "Injected CoT": "6 * 8 = 48\n48 - 7 =",
             "Response": "41",
-            "Extract-Response": "6 * 41 = 246"
+            "Extract-Response": "6 * 41 = 246",
+            "Answer": 6.0,
+            "Final Answer": 6.0
         },
         {
             "Index": 18,
@@ -160,7 +206,9 @@
             "Query": "1 * 6 + 3 =   Let's think step by step.",
             "Injected CoT": "1 * 6 = 6\n6 + 3 =",
             "Response": "9",
-            "Extract-Response": "9"
+            "Extract-Response": "9",
+            "Answer": 9.0,
+            "Final Answer": 9.0
         },
         {
             "Index": 19,
@@ -168,7 +216,9 @@
             "Query": "9 + 4 * 5 =   Let's think step by step.",
             "Injected CoT": "4 * 5 = 20\n9 + 20 =",
             "Response": "29",
-            "Extract-Response": "9 + 4 * 5 = 38"
+            "Extract-Response": "9 + 4 * 5 = 38",
+            "Answer": 9.0,
+            "Final Answer": 9.0
         },
         {
             "Index": 20,
@@ -176,7 +226,9 @@
             "Query": "5 - 6 * 7 =   Let's think step by step.",
             "Injected CoT": "-6 * 7 = -42\n5 - (-42) =",
             "Response": "9\nTherefore, 5 - 42 = -37",
-            "Extract-Response": "5 - 42 = -37"
+            "Extract-Response": "5 - 42 = -37",
+            "Answer": 5.0,
+            "Final Answer": 5.0
         },
         {
             "Index": 21,
@@ -184,7 +236,9 @@
             "Query": "1 - 9 * 8 =   Let's think step by step.",
             "Injected CoT": "-9 * 8 = -72\n1 - (-72) =",
             "Response": "71",
-            "Extract-Response": "1 - 9 * 7 = -9"
+            "Extract-Response": "1 - 9 * 7 = -9",
+            "Answer": 1.0,
+            "Final Answer": 1.0
         },
         {
             "Index": 22,
@@ -192,7 +246,9 @@
             "Query": "1 * 4 + 8 =   Let's think step by step.",
             "Injected CoT": "1 * 4 = 4\n4 + 8 =",
             "Response": "12\n12 + 2 = 14\n14 + 2 = 16\n16 + 2 = 18\n18 + 2 = 20\n20 + 2 = 22\n22 + 2 = 24\n24 + 2 = 26\n26 + 2 = 28\n28 + 2 = 30\n30 + 2 = 32\n32 + 2 = 34\n34 + 2 = 36\n36 + 2 = 38\n38 + 2 = 40\n40 + 2 = 42\n42 + 2 = 44\n44 + 2 = 46\n46 + 2 = 48\n48 + 2 = 50\n50 + 2 = 52\n52 + 2 = 54\n54 + 2 = 56\n56 + 2 = 58\n58 + 2 = 60\n60 + 2 = 62\n62 + 2 = 64\n64 + 2 = 66\n66 + 2 = 68\n68 + 2 = 70\n70 + 2 = 72\n72 + 2 = 74\n74 + 2 = 76\n76 + 2 = 78\n78 + 2 = 80\n80 + 2 = 82\n82 + 2 = 84\n84 + 2 = 86\n86 + 2 = 88\n88 + 2 = 90\n90 + 2 = 92\n92 + 2 = 94\n94 + 2 = 96\n96 + 2 = 98\n100 + 2 = 102\n102 + 2 = 104\n104 + 2 = 106\n106 + 2 = 108\n108 + 2 = 110\n110 + 2 = 112\n112 + 2",
-            "Extract-Response": "1 * 4 + 8 = 112"
+            "Extract-Response": "1 * 4 + 8 = 112",
+            "Answer": 1.0,
+            "Final Answer": 1.0
         },
         {
             "Index": 23,
@@ -200,7 +256,9 @@
             "Query": "5 * 9 + 1 =   Let's think step by step.",
             "Injected CoT": "5 * 9 = 45\n45 + 1 =",
             "Response": "46",
-            "Extract-Response": "5 * 9 + 1 = 45"
+            "Extract-Response": "5 * 9 + 1 = 45",
+            "Answer": 5.0,
+            "Final Answer": 5.0
         },
         {
             "Index": 24,
@@ -208,7 +266,9 @@
             "Query": "7 - 8 - 7 =   Let's think step by step.",
             "Injected CoT": "-8 - 7 = -15\n7 - 15 =",
             "Response": "-8\n-8 - 15 = -7\n-7 - 15 = -8\n-8 - 15 = -7\n-7 - 15 = -8\n-8 - 15 = -7\n-7 - 15 = -8\n-8 - 15 = -7\n-7 - 15 = -8\n-8 - 15 = -7\n-7 - 15 = -8\n-8 - 15 = -7\n-7 - 15 = -8\n-8 - 15 = -7\n-7 - 15 = -8\n-8 - 15 = -7\n-7 - 15 = -8\n-8 - 15 = -7\n-7 - 15 = -8\n-8 - 15 = -7\n-7 - 15 = -8\n-8 - 15 = -7\n-7 - 15 = -8\n-8 - 15 = -7\n-7 - 15 = -8\n-8 - 15 = -7\n-7 - 15 = -8\n-8 - 15 = -7\n-7 - 15 = -8\n-8 - 15 = -7\n-7 - 15 = -8\n-8 - 15 = -7\n-7 - 15 = -8\n-8 - 15 = -7\n-7 - 15 = -8\n-8 - 15 = -7\n-7 - 15 = -8\n-8 - 15 = -7\n-7 - 15 = -8\n-8 - 15 = -7\n-7 - 15 = -8\n-8 - 15 = -7\n-7 - 15 = -8\n-8 - 15 = -7\n-7 - 15 = -8\n-8 - 15 = -7\n-7 - 15 = -8\n-8 - 15 = -7\n-7 - 15 = -8\n-8 - 15 = -7\n-7 - 15 = -8\n-8 - 15 = -7",
-            "Extract-Response": "7 - 15 = -8"
+            "Extract-Response": "7 - 15 = -8",
+            "Answer": 7.0,
+            "Final Answer": 7.0
         },
         {
             "Index": 25,
@@ -216,7 +276,9 @@
             "Query": "6 + 9 * 2 =   Let's think step by step.",
             "Injected CoT": "9 * 2 = 18\n6 + 18 =",
             "Response": "24",
-            "Extract-Response": "6 + 9 * 2 = 24"
+            "Extract-Response": "6 + 9 * 2 = 24",
+            "Answer": 6.0,
+            "Final Answer": 6.0
         },
         {
             "Index": 26,
@@ -224,7 +286,9 @@
             "Query": "6 - 5 + 3 =   Let's think step by step.",
             "Injected CoT": "6 - 5 = 1\n1 + 3 =",
             "Response": "4\nTherefore, 6 - 5 + 3 = 1",
-            "Extract-Response": "6 - 5 + 3 = 1"
+            "Extract-Response": "6 - 5 + 3 = 1",
+            "Answer": 6.0,
+            "Final Answer": 6.0
         },
         {
             "Index": 27,
@@ -232,7 +296,9 @@
             "Query": "5 + 4 + 5 =   Let's think step by step.",
             "Injected CoT": "5 + 4 = 9\n9 + 5 =",
             "Response": "14\n14 + 5 = 19\n19 + 5 = 24\n24 + 5 = 29\n29 + 5 = 34\n34 + 5 = 39\n39 + 5 = 44\n44 + 5 = 49\n49 + 5 = 54\n54 + 5 = 59\n59 + 5 = 64\n64 + 5 = 70\n70 + 5 = 75\n75 + 5 = 80\n80 + 5 = 85\n85 + 5 = 90\n90 + 5 = 95\n95 + 5 = 100\n100 + 5 = 105\n105 + 5 = 110\n110 + 5 = 115\n115 + 5 = 120\n120 + 5 = 125\n125 + 5 = 130\n130 + 5 = 135\n135 + 5 = 140\n140 + 5 = 145\n145 + 5 = 150\n150 + 5 = 155\n155 + 5 = 160\n160 + 5 = 165\n165 + 5 = 170\n170 + 5 = 175\n175 + 5 = 180\n180 + 5 = 185\n185 + 5 = 190\n190 + 5 = 195\n195 + 5 = 200\n200 + 5 = 205\n205 + 5 = 210\n210 + 5 = 215\n215 + 5 = 220\n220 + 5 = 225\n225 + 5 = 230\n230 + 5 = 235\n235 + 5 = 240\n2",
-            "Extract-Response": "2"
+            "Extract-Response": "2",
+            "Answer": 2.0,
+            "Final Answer": 2.0
         },
         {
             "Index": 28,
@@ -240,7 +306,9 @@
             "Query": "4 * 6 * 2 =   Let's think step by step.",
             "Injected CoT": "4 * 6 = 24\n24 * 2 =",
             "Response": "48\nTherefore, 4 * 6 * 2 = 288",
-            "Extract-Response": "288"
+            "Extract-Response": "288",
+            "Answer": 288.0,
+            "Final Answer": 288.0
         },
         {
             "Index": 29,
@@ -248,7 +316,9 @@
             "Query": "2 * 9 * 8 =   Let's think step by step.",
             "Injected CoT": "2 * 9 = 18\n18 * 8 =",
             "Response": "144",
-            "Extract-Response": "2 * 9 * 144 = 288"
+            "Extract-Response": "2 * 9 * 144 = 288",
+            "Answer": 2.0,
+            "Final Answer": 2.0
         },
         {
             "Index": 30,
@@ -256,7 +326,9 @@
             "Query": "9 * 1 + 2 =   Let's think step by step.",
             "Injected CoT": "9 * 1 = 9\n9 + 2 =",
             "Response": "11",
-            "Extract-Response": "9 * 11 = 9 * (10 + 1) = 9 * 10 + 9 * 1 = 90 + 9 = 99"
+            "Extract-Response": "9 * 11 = 9 * (10 + 1) = 9 * 10 + 9 * 1 = 90 + 9 = 99",
+            "Answer": 9.0,
+            "Final Answer": 9.0
         },
         {
             "Index": 31,
@@ -264,7 +336,9 @@
             "Query": "9 * 6 - 9 =   Let's think step by step.",
             "Injected CoT": "9 * 6 = 54\n54 - 9 =",
             "Response": "45\nTherefore, 9 * 6 = 54",
-            "Extract-Response": "54"
+            "Extract-Response": "54",
+            "Answer": 54.0,
+            "Final Answer": 54.0
         },
         {
             "Index": 32,
@@ -272,7 +346,9 @@
             "Query": "4 + 9 + 7 =   Let's think step by step.",
             "Injected CoT": "4 + 9 = 13\n13 + 7 =",
             "Response": "20",
-            "Extract-Response": "20"
+            "Extract-Response": "20",
+            "Answer": 20.0,
+            "Final Answer": 20.0
         },
         {
             "Index": 33,
@@ -280,7 +356,9 @@
             "Query": "4 * 7 + 8 =   Let's think step by step.",
             "Injected CoT": "4 * 7 = 28\n28 + 8 =",
             "Response": "36",
-            "Extract-Response": "4 * 7 + 8 = 32"
+            "Extract-Response": "4 * 7 + 8 = 32",
+            "Answer": 4.0,
+            "Final Answer": 4.0
         },
         {
             "Index": 34,
@@ -288,7 +366,9 @@
             "Query": "3 - 1 * 9 =   Let's think step by step.",
             "Injected CoT": "1 * 9 = 9\n3 - 9 =",
             "Response": "-6\nTherefore, 3 - 9 = -6",
-            "Extract-Response": "6"
+            "Extract-Response": "6",
+            "Answer": 6.0,
+            "Final Answer": 6.0
         },
         {
             "Index": 35,
@@ -296,7 +376,9 @@
             "Query": "5 - 1 + 6 =   Let's think step by step.",
             "Injected CoT": "5 - 1 = 4\n4 + 6 =",
             "Response": "10\n10 + 1 = 11\n11 + 1 = 12\n12 + 1 = 13\n13 + 1 = 14\n14 + 1 = 15\n15 + 1 = 16\n16 + 1 = 17\n17 + 1 = 18\n18 + 1 = 19\n19 + 1 = 20\n20 + 1 = 21\n21 + 1 = 22\n22 + 1 = 23\n23 + 1 = 24\n24 + 1 = 25\n25 + 1 = 26\n26 + 1 = 27\n27 + 1 = 28\n28 + 1 = 29\n29 + 1 = 30\n30 + 1 = 31\n31 + 1 = 32\n32 + 1 = 33\n33 + 1 = 34\n34 + 1 = 35\n35 + 1 = 36\n36 + 1 = 37\n37 + 1 = 38\n38 + 1 = 39\n39 + 1 = 40\n40 + 1 = 41\n41 + 1 = 42\n42 + 1 = 43\n43 + 1 = 44\n44 + 1 = 45\n45 + 1 = 46\n46 + 1 = 47\n47 + 1 = 48\n48 + 1 = 49\n49 + 1 = 50\n50 + 1 = 51\n51 + 1 = 52\n52 + 1 = 53\n53 + 1 = 54\n54 + 1 = 55\n55 + 1 = 56\n56 + 1 = 57\n57 + 1 = 58\n58 + 1 = 59\n59 + 1 = 60\n60 + 1 = 6",
-            "Extract-Response": "60"
+            "Extract-Response": "60",
+            "Answer": 60.0,
+            "Final Answer": 60.0
         },
         {
             "Index": 36,
@@ -304,7 +386,9 @@
             "Query": "1 - 1 * 3 =   Let's think step by step.",
             "Injected CoT": "1 * 3 = 3\n1 - 3 =",
             "Response": "-2\nTherefore, 1 * 3 = 3",
-            "Extract-Response": "3"
+            "Extract-Response": "3",
+            "Answer": 3.0,
+            "Final Answer": 3.0
         },
         {
             "Index": 37,
@@ -312,7 +396,9 @@
             "Query": "6 * 4 * 6 =   Let's think step by step.",
             "Injected CoT": "6 * 4 = 24\n24 * 6 =",
             "Response": "144",
-            "Extract-Response": "6 * 4 * 6 = 256"
+            "Extract-Response": "6 * 4 * 6 = 256",
+            "Answer": 6.0,
+            "Final Answer": 6.0
         },
         {
             "Index": 38,
@@ -320,7 +406,9 @@
             "Query": "9 - 7 * 7 =   Let's think step by step.",
             "Injected CoT": "7 * 7 = 49\n-49 + 9 =",
             "Response": "58",
-            "Extract-Response": "9 - 7 * 1 = 9 - 7 = 2\nTherefore, 9 - 7 * 1 = 9 - 7 = 2"
+            "Extract-Response": "9 - 7 * 1 = 9 - 7 = 2\nTherefore, 9 - 7 * 1 = 9 - 7 = 2",
+            "Answer": 9.0,
+            "Final Answer": 9.0
         },
         {
             "Index": 39,
@@ -328,7 +416,9 @@
             "Query": "9 * 3 + 3 =   Let's think step by step.",
             "Injected CoT": "9 * 3 = 27\n27 + 3 =",
             "Response": "30",
-            "Extract-Response": "9 * 30 = 270"
+            "Extract-Response": "9 * 30 = 270",
+            "Answer": 9.0,
+            "Final Answer": 9.0
         },
         {
             "Index": 40,
@@ -336,7 +426,9 @@
             "Query": "8 - 1 + 2 =   Let's think step by step.",
             "Injected CoT": "8 - 1 = 7\n7 + 2 =",
             "Response": "9\n9 + 1 = 10\n10 + 1 = 11\n11 + 1 = 12\n12 + 1 = 13\n13 + 1 = 14\n14 + 1 = 15\n15 + 1 = 16\n16 + 1 = 17\n17 + 1 = 18\n18 + 1 = 19\n19 + 1 = 20\n20 + 1 = 21\n21 + 1 = 22\n22 + 1 = 23\n23 + 1 = 24\n24 + 1 = 25\n25 + 1 = 26\n26 + 1 = 27\n27 + 1 = 28\n28 + 1 = 29\n29 + 1 = 30\n30 + 1 = 31\n31 + 1 = 32\n32 + 1 = 33\n33 + 1 = 34\n34 + 1 = 35\n35 + 1 = 36\n36 + 1 = 37\n37 + 1 = 38\n38 + 1 = 39\n39 + 1 = 40\n40 + 1 = 41\n41 + 1 = 42\n42 + 1 = 43\n43 + 1 = 44\n44 + 1 = 45\n45 + 1 = 46\n46 + 1 = 47\n47 + 1 = 48\n48 + 1 = 49\n49 + 1 = 50\n50 + 1 = 51\n51 + 1 = 52\n52 + 1 = 53\n53 + 1 = 54\n54 + 1 = 55\n55 + 1 = 56\n56 + 1 = 57\n57 + 1 = 58\n58 + 1 = 59\n59 + 1 = 60",
-            "Extract-Response": "60"
+            "Extract-Response": "60",
+            "Answer": 60.0,
+            "Final Answer": 60.0
         },
         {
             "Index": 41,
@@ -344,7 +436,9 @@
             "Query": "7 * 5 - 6 =   Let's think step by step.",
             "Injected CoT": "7 * 5 = 35\n35 - 6 =",
             "Response": "39\nTherefore, 7 * 5 = 395",
-            "Extract-Response": "395"
+            "Extract-Response": "395",
+            "Answer": 395.0,
+            "Final Answer": 395.0
         },
         {
             "Index": 42,
@@ -352,7 +446,9 @@
             "Query": "2 + 7 + 9 =   Let's think step by step.",
             "Injected CoT": "2 + 7 = 9\n9 + 9 =",
             "Response": "18",
-            "Extract-Response": "18"
+            "Extract-Response": "18",
+            "Answer": 18.0,
+            "Final Answer": 18.0
         },
         {
             "Index": 43,
@@ -360,7 +456,9 @@
             "Query": "7 * 6 + 6 =   Let's think step by step.",
             "Injected CoT": "7 * 6 = 42\n42 + 6 =",
             "Response": "48",
-            "Extract-Response": "7 * 48 = 336"
+            "Extract-Response": "7 * 48 = 336",
+            "Answer": 7.0,
+            "Final Answer": 7.0
         },
         {
             "Index": 44,
@@ -368,7 +466,9 @@
             "Query": "6 - 5 - 6 =   Let's think step by step.",
             "Injected CoT": "6 - 5 = 1\n1 - 6 =",
             "Response": "-5\nTherefore, 6 - 5 = 1",
-            "Extract-Response": "1."
+            "Extract-Response": "1.",
+            "Answer": 1.0,
+            "Final Answer": 1.0
         },
         {
             "Index": 45,
@@ -376,7 +476,9 @@
             "Query": "4 * 1 * 3 =   Let's think step by step.",
             "Injected CoT": "4 * 1 = 4\n4 * 3 =",
             "Response": "12",
-            "Extract-Response": "4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 ="
+            "Extract-Response": "4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 = 4 * 1 * 3 =",
+            "Answer": 4.0,
+            "Final Answer": 4.0
         },
         {
             "Index": 46,
@@ -384,7 +486,9 @@
             "Query": "9 - 9 + 5 =   Let's think step by step.",
             "Injected CoT": "9 - 9 = 0\n0 + 5 =",
             "Response": "5",
-            "Extract-Response": "5"
+            "Extract-Response": "5",
+            "Answer": 5.0,
+            "Final Answer": 5.0
         },
         {
             "Index": 47,
@@ -392,7 +496,9 @@
             "Query": "9 - 9 + 8 =   Let's think step by step.",
             "Injected CoT": "9 - 9 = 0\n0 + 8 =",
             "Response": "8",
-            "Extract-Response": "8"
+            "Extract-Response": "8",
+            "Answer": 8.0,
+            "Final Answer": 8.0
         },
         {
             "Index": 48,
@@ -400,7 +506,9 @@
             "Query": "4 + 3 + 8 =   Let's think step by step.",
             "Injected CoT": "4 + 3 = 7\n7 + 8 =",
             "Response": "15",
-            "Extract-Response": "15"
+            "Extract-Response": "15",
+            "Answer": 15.0,
+            "Final Answer": 15.0
         },
         {
             "Index": 49,
@@ -408,7 +516,9 @@
             "Query": "2 + 1 - 8 =   Let's think step by step.",
             "Injected CoT": "2 + 1 = 3\n3 - 8 =",
             "Response": "-5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8",
-            "Extract-Response": "2 + 1 - 8 = -6"
+            "Extract-Response": "2 + 1 - 8 = -6",
+            "Answer": 2.0,
+            "Final Answer": 2.0
         },
         {
             "Index": 50,
@@ -416,7 +526,9 @@
             "Query": "1 + 8 * 5 =   Let's think step by step.",
             "Injected CoT": "8 * 5 = 40\n1 + 40 =",
             "Response": "41",
-            "Extract-Response": "1 + 8 * 5 = 41"
+            "Extract-Response": "1 + 8 * 5 = 41",
+            "Answer": 1.0,
+            "Final Answer": 1.0
         },
         {
             "Index": 51,
@@ -424,7 +536,9 @@
             "Query": "3 - 1 * 8 =   Let's think step by step.",
             "Injected CoT": "1 * 8 = 8\n3 - 8 =",
             "Response": "-5\nTherefore, 3 - 8 = -5",
-            "Extract-Response": "5"
+            "Extract-Response": "5",
+            "Answer": 5.0,
+            "Final Answer": 5.0
         },
         {
             "Index": 52,
@@ -432,7 +546,9 @@
             "Query": "3 + 9 + 2 =   Let's think step by step.",
             "Injected CoT": "3 + 9 = 12\n12 + 2 =",
             "Response": "14\n14 + 2 = 16\n16 + 2 = 18\n18 + 2 = 20\n20 + 2 = 22\n22 + 2 = 24\n24 + 2 = 26\n26 + 2 = 28\n28 + 2 = 30\n30 + 2 = 32\n32 + 2 = 34\n34 + 2 = 36\n36 + 2 = 38\n38 + 2 = 40\n40 + 2 = 42\n42 + 2 = 44\n44 + 2 = 46\n46 + 2 = 48\n48 + 2 = 50\n50 + 2 = 52\n52 + 2 = 54\n54 + 2 = 56\n56 + 2 = 58\n58 + 2 = 60\n60 + 2 = 62\n62 + 2 = 64\n64 + 2 = 66\n66 + 2 = 68\n68 + 2 = 70\n70 + 2 = 72\n72 + 2 = 74\n74 + 2 = 76\n76 + 2 = 78\n78 + 2 = 80\n80 + 2 = 82\n82 + 2 = 84\n84 + 2 = 86\n86 + 2 = 88\n88 + 2 = 90\n90 + 2 = 92\n92 + 2 = 94\n94 + 2 = 96\n96 + 2 = 98\n100 + 2 = 102\n102 + 2 = 104\n104 + 2 = 106\n106 + 2 = 108\n108 + 2 = 110\n110 + 2 = 112\n112 + 2 = 114\n114 +",
-            "Extract-Response": "114"
+            "Extract-Response": "114",
+            "Answer": 114.0,
+            "Final Answer": 114.0
         },
         {
             "Index": 53,
@@ -440,7 +556,9 @@
             "Query": "1 * 4 * 1 =   Let's think step by step.",
             "Injected CoT": "1 * 4 = 4\n4 * 1 =",
             "Response": "4\nTherefore, 1 * 4 = 4",
-            "Extract-Response": "4"
+            "Extract-Response": "4",
+            "Answer": 4.0,
+            "Final Answer": 4.0
         },
         {
             "Index": 54,
@@ -448,7 +566,9 @@
             "Query": "8 + 6 - 7 =   Let's think step by step.",
             "Injected CoT": "8 + 6 = 14\n14 - 7 =",
             "Response": "7\n7 - 7 = 0\nTherefore, 8 + 6 = 14",
-            "Extract-Response": "14"
+            "Extract-Response": "14",
+            "Answer": 14.0,
+            "Final Answer": 14.0
         },
         {
             "Index": 55,
@@ -456,7 +576,9 @@
             "Query": "7 - 4 + 4 =   Let's think step by step.",
             "Injected CoT": "7 - 4 = 3\n3 + 4 =",
             "Response": "7\nTherefore, 7 - 4 = 3",
-            "Extract-Response": "3"
+            "Extract-Response": "3",
+            "Answer": 3.0,
+            "Final Answer": 3.0
         },
         {
             "Index": 56,
@@ -464,7 +586,9 @@
             "Query": "6 * 9 * 3 =   Let's think step by step.",
             "Injected CoT": "6 * 9 = 54\n54 * 3 =",
             "Response": "162\nTherefore, 6 * 9 * 3 = 186",
-            "Extract-Response": "186"
+            "Extract-Response": "186",
+            "Answer": 186.0,
+            "Final Answer": 186.0
         },
         {
             "Index": 57,
@@ -472,7 +596,9 @@
             "Query": "6 * 4 * 3 =   Let's think step by step.",
             "Injected CoT": "6 * 4 = 24\n24 * 3 =",
             "Response": "72\nTherefore, 6 * 4 * 3 = 186",
-            "Extract-Response": "186"
+            "Extract-Response": "186",
+            "Answer": 186.0,
+            "Final Answer": 186.0
         },
         {
             "Index": 58,
@@ -480,7 +606,9 @@
             "Query": "3 - 4 * 7 =   Let's think step by step.",
             "Injected CoT": "-4 * 7 = -28\n3 - (-28) =",
             "Response": "3",
-            "Extract-Response": "3"
+            "Extract-Response": "3",
+            "Answer": 3.0,
+            "Final Answer": 3.0
         },
         {
             "Index": 59,
@@ -488,7 +616,9 @@
             "Query": "1 + 5 - 7 =   Let's think step by step.",
             "Injected CoT": "1 + 5 = 6\n6 - 7 =",
             "Response": "-1\nTherefore, 1 + 5 = 6",
-            "Extract-Response": "6"
+            "Extract-Response": "6",
+            "Answer": 6.0,
+            "Final Answer": 6.0
         },
         {
             "Index": 60,
@@ -496,7 +626,9 @@
             "Query": "4 - 5 + 2 =   Let's think step by step.",
             "Injected CoT": "4 - 5 = -1\n-1 + 2 =",
             "Response": "3\nTherefore, 4 - 5 = -1",
-            "Extract-Response": "4 - 5 = -1"
+            "Extract-Response": "4 - 5 = -1",
+            "Answer": 4.0,
+            "Final Answer": 4.0
         },
         {
             "Index": 61,
@@ -504,7 +636,9 @@
             "Query": "4 * 1 + 7 =   Let's think step by step.",
             "Injected CoT": "4 * 1 = 4\n4 + 7 =",
             "Response": "11\n11 + 4 = 15\n15 + 4 = 19\n19 + 4 = 23\n23 + 4 = 27\n27 + 4 = 31\n31 + 4 = 35\n35 + 4 = 39\n39 + 4 = 43\n43 + 4 = 47\n47 + 4 = 51\n51 + 4 = 55\n55 + 4 = 59\n59 + 4 = 63\n63 + 4 = 67\n67 + 4 = 71\n71 + 4 = 75\n75 + 4 = 80\n80 + 4 = 84\n84 + 4 = 88\n88 + 4 = 92\n92 + 4 = 96\n96 + 4 = 100\n100 + 4 = 104\n104 + 4 = 108\n108 + 4 = 112\n112 + 4 = 116\n116 + 4 = 120\n120 + 4 = 124\n124 + 4 = 128\n128 + 4 = 132\n132 + 4 = 136\n136 + 4 = 140\n140 + 4 = 144\n144 + 4 = 148\n148 + 4 = 152\n152 + 4 = 156\n156 + 4 = 160\n160 + 4 = 164\n164 + 4 = 168\n168 + 4 = 172\n172 + 4 = 176\n176 + 4 = 180\n180 + 4 = 184\n184 + 4 = 188\n188 + 4 = 192\n192 + 4 = 196",
-            "Extract-Response": "192 + 4 = 196"
+            "Extract-Response": "192 + 4 = 196",
+            "Answer": 192.0,
+            "Final Answer": 192.0
         },
         {
             "Index": 62,
@@ -512,7 +646,9 @@
             "Query": "6 * 4 * 9 =   Let's think step by step.",
             "Injected CoT": "6 * 4 = 24\n24 * 9 =",
             "Response": "216\nTherefore, 6 * 4 * 9 = 216",
-            "Extract-Response": "6 * 9 = 544"
+            "Extract-Response": "6 * 9 = 544",
+            "Answer": 6.0,
+            "Final Answer": 6.0
         },
         {
             "Index": 63,
@@ -520,7 +656,9 @@
             "Query": "7 + 8 + 7 =   Let's think step by step.",
             "Injected CoT": "7 + 8 = 15\n15 + 7 =",
             "Response": "22",
-            "Extract-Response": "22"
+            "Extract-Response": "22",
+            "Answer": 22.0,
+            "Final Answer": 22.0
         },
         {
             "Index": 64,
@@ -528,7 +666,9 @@
             "Query": "5 + 5 + 4 =   Let's think step by step.",
             "Injected CoT": "5 + 5 = 10\n10 + 4 =",
             "Response": "14\n14 + 5 = 19\n19 + 5 = 24\n24 + 5 = 29\n29 + 5 = 34\n34 + 5 = 39\n39 + 5 = 44\n44 + 5 = 49\n49 + 5 = 54\n54 + 5 = 59\n59 + 5 = 64\n64 + 5 = 70\n70 + 5 = 75\n75 + 5 = 80\n80 + 5 = 85\n85 + 5 = 90\n90 + 5 = 95\n95 + 5 = 100\n100 + 5 = 105\n105 + 5 = 110\n110 + 5 = 115\n115 + 5 = 120\n120 + 5 = 125\n125 + 5 = 130\n130 + 5 = 135\n135 + 5 = 140\n140 + 5 = 145\n145 + 5 = 150\n150 + 5 = 155\n155 + 5 = 160\n160 + 5 = 165\n165 + 5 = 170\n170 + 5 = 175\n175 + 5 = 180\n180 + 5 = 185\n185 + 5 = 190\n190 + 5 = 195\n195 + 5 = 200\n200 + 5 = 205\n205 + 5 = 210\n210 + 5 = 215\n215 + 5 = 220\n220 + 5 = 225\n225 + 5 = 230\n230 + 5 = 235\n235 + 5 = 240\n2",
-            "Extract-Response": "2"
+            "Extract-Response": "2",
+            "Answer": 2.0,
+            "Final Answer": 2.0
         },
         {
             "Index": 65,
@@ -536,7 +676,9 @@
             "Query": "8 * 7 + 3 =   Let's think step by step.",
             "Injected CoT": "8 * 7 = 56\n56 + 3 =",
             "Response": "59",
-            "Extract-Response": "8 * 59 = 472"
+            "Extract-Response": "8 * 59 = 472",
+            "Answer": 8.0,
+            "Final Answer": 8.0
         },
         {
             "Index": 66,
@@ -544,7 +686,9 @@
             "Query": "7 + 2 * 6 =   Let's think step by step.",
             "Injected CoT": "2 * 6 = 12\n7 + 12 =",
             "Response": "19",
-            "Extract-Response": "7 + 2 * 6 = 26"
+            "Extract-Response": "7 + 2 * 6 = 26",
+            "Answer": 7.0,
+            "Final Answer": 7.0
         },
         {
             "Index": 67,
@@ -552,7 +696,9 @@
             "Query": "8 * 6 - 9 =   Let's think step by step.",
             "Injected CoT": "8 * 6 = 48\n48 - 9 =",
             "Response": "39",
-            "Extract-Response": "8 * 39 = 312"
+            "Extract-Response": "8 * 39 = 312",
+            "Answer": 8.0,
+            "Final Answer": 8.0
         },
         {
             "Index": 68,
@@ -560,7 +706,9 @@
             "Query": "2 * 9 - 2 =   Let's think step by step.",
             "Injected CoT": "2 * 9 = 18\n18 - 2 =",
             "Response": "16\nTherefore, 2 * 9 = 18",
-            "Extract-Response": "18"
+            "Extract-Response": "18",
+            "Answer": 18.0,
+            "Final Answer": 18.0
         },
         {
             "Index": 69,
@@ -568,7 +716,9 @@
             "Query": "5 + 4 - 7 =   Let's think step by step.",
             "Injected CoT": "5 + 4 = 9\n9 - 7 =",
             "Response": "2\nTherefore, 5 + 4 = 9",
-            "Extract-Response": "9"
+            "Extract-Response": "9",
+            "Answer": 9.0,
+            "Final Answer": 9.0
         },
         {
             "Index": 70,
@@ -576,7 +726,9 @@
             "Query": "2 - 2 - 2 =   Let's think step by step.",
             "Injected CoT": "2 - 2 = 0\n0 - 2 =",
             "Response": "-2",
-            "Extract-Response": "2"
+            "Extract-Response": "2",
+            "Answer": 2.0,
+            "Final Answer": 2.0
         },
         {
             "Index": 71,
@@ -584,7 +736,9 @@
             "Query": "9 * 9 - 9 =   Let's think step by step.",
             "Injected CoT": "9 * 9 = 81\n81 - 9 =",
             "Response": "72",
-            "Extract-Response": "9 * 72 = 628"
+            "Extract-Response": "9 * 72 = 628",
+            "Answer": 9.0,
+            "Final Answer": 9.0
         },
         {
             "Index": 72,
@@ -592,7 +746,9 @@
             "Query": "5 - 8 + 9 =   Let's think step by step.",
             "Injected CoT": "-8 + 9 = 1\n5 + 1 =",
             "Response": "6",
-            "Extract-Response": "6"
+            "Extract-Response": "6",
+            "Answer": 6.0,
+            "Final Answer": 6.0
         },
         {
             "Index": 73,
@@ -600,7 +756,9 @@
             "Query": "6 * 7 + 9 =   Let's think step by step.",
             "Injected CoT": "6 * 7 = 42\n42 + 9 =",
             "Response": "51",
-            "Extract-Response": "6 * 51 = 306"
+            "Extract-Response": "6 * 51 = 306",
+            "Answer": 6.0,
+            "Final Answer": 6.0
         },
         {
             "Index": 74,
@@ -608,7 +766,9 @@
             "Query": "8 - 1 - 2 =   Let's think step by step.",
             "Injected CoT": "8 - 1 = 7\n7 - 2 =",
             "Response": "5\n5 - 2 = 3\n3 - 2 = 1\nTherefore, 8 - 2 = 6",
-            "Extract-Response": "6"
+            "Extract-Response": "6",
+            "Answer": 6.0,
+            "Final Answer": 6.0
         },
         {
             "Index": 75,
@@ -616,7 +776,9 @@
             "Query": "9 * 7 + 5 =   Let's think step by step.",
             "Injected CoT": "9 * 7 = 63\n63 + 5 =",
             "Response": "68",
-            "Extract-Response": "9 * 68 = 612"
+            "Extract-Response": "9 * 68 = 612",
+            "Answer": 9.0,
+            "Final Answer": 9.0
         },
         {
             "Index": 76,
@@ -624,7 +786,9 @@
             "Query": "6 - 1 + 7 =   Let's think step by step.",
             "Injected CoT": "6 - 1 = 5\n5 + 7 =",
             "Response": "12\nTherefore, 6 - 1 = 5",
-            "Extract-Response": "5"
+            "Extract-Response": "5",
+            "Answer": 5.0,
+            "Final Answer": 5.0
         },
         {
             "Index": 77,
@@ -632,7 +796,9 @@
             "Query": "5 * 7 * 8 =   Let's think step by step.",
             "Injected CoT": "5 * 7 = 35\n35 * 8 =",
             "Response": "280",
-            "Extract-Response": "5 * 7 * 8 = 1400"
+            "Extract-Response": "5 * 7 * 8 = 1400",
+            "Answer": 5.0,
+            "Final Answer": 5.0
         },
         {
             "Index": 78,
@@ -640,7 +806,9 @@
             "Query": "1 + 4 - 2 =   Let's think step by step.",
             "Injected CoT": "1 + 4 = 5\n5 - 2 =",
             "Response": "3\nTherefore, 1 + 4 = 5",
-            "Extract-Response": "5"
+            "Extract-Response": "5",
+            "Answer": 5.0,
+            "Final Answer": 5.0
         },
         {
             "Index": 79,
@@ -648,7 +816,9 @@
             "Query": "1 + 9 + 5 =   Let's think step by step.",
             "Injected CoT": "1 + 9 = 10\n10 + 5 =",
             "Response": "15\n15 + 5 = 20\n20 + 5 = 25\n25 + 5 = 30\n30 + 5 = 35\n35 + 5 = 40\n40 + 5 = 45\n45 + 5 = 50\n50 + 5 = 55\n55 + 5 = 60\n60 + 5 = 65\n65 + 5 = 70\n70 + 5 = 75\n75 + 5 = 80\n80 + 5 = 85\n85 + 5 = 90\n90 + 5 = 95\n95 + 5 = 100\n100 + 5 = 105\n105 + 5 = 110\n110 + 5 = 115\n115 + 5 = 120\n120 + 5 = 125\n125 + 5 = 130\n130 + 5 = 135\n135 + 5 = 140\n140 + 5 = 145\n145 + 5 = 150\n150 + 5 = 155\n155 + 5 = 160\n160 + 5 = 165\n165 + 5 = 170\n170 + 5 = 175\n175 + 5 = 180\n180 + 5 = 185\n185 + 5 = 190\n190 + 5 = 195\n195 + 5 = 200\n200 + 5 = 205\n205 + 5 = 210\n210 + 5 = 215\n215 + 5 = 220\n220 + 5 = 225\n225 + 5 = 230\n230 + 5 = 235\n235 + 5 = 240\n2",
-            "Extract-Response": "2"
+            "Extract-Response": "2",
+            "Answer": 2.0,
+            "Final Answer": 2.0
         },
         {
             "Index": 80,
@@ -656,7 +826,9 @@
             "Query": "2 - 8 * 9 =   Let's think step by step.",
             "Injected CoT": "8 * 9 = 72\n-72 + 2 =",
             "Response": "74",
-            "Extract-Response": "74"
+            "Extract-Response": "74",
+            "Answer": 74.0,
+            "Final Answer": 74.0
         },
         {
             "Index": 81,
@@ -664,7 +836,9 @@
             "Query": "6 * 2 * 2 =   Let's think step by step.",
             "Injected CoT": "6 * 2 = 12\n12 * 2 =",
             "Response": "24\nTherefore, 6 * 2 * 2 = 12 * 2 = 24",
-            "Extract-Response": "12 * 2 = 24"
+            "Extract-Response": "12 * 2 = 24",
+            "Answer": 12.0,
+            "Final Answer": 12.0
         },
         {
             "Index": 82,
@@ -672,7 +846,9 @@
             "Query": "6 * 9 * 9 =   Let's think step by step.",
             "Injected CoT": "6 * 9 = 54\n54 * 9 =",
             "Response": "486\nTherefore, 6 * 9 * 9 = 486",
-            "Extract-Response": "486"
+            "Extract-Response": "486",
+            "Answer": 486.0,
+            "Final Answer": 486.0
         },
         {
             "Index": 83,
@@ -680,7 +856,9 @@
             "Query": "2 - 1 + 5 =   Let's think step by step.",
             "Injected CoT": "2 - 1 = 1\n1 + 5 =",
             "Response": "6\nTherefore, 2 - 1 = 1",
-            "Extract-Response": "1."
+            "Extract-Response": "1.",
+            "Answer": 1.0,
+            "Final Answer": 1.0
         },
         {
             "Index": 84,
@@ -688,7 +866,9 @@
             "Query": "8 * 3 + 8 =   Let's think step by step.",
             "Injected CoT": "8 * 3 = 24\n24 + 8 =",
             "Response": "32",
-            "Extract-Response": "8 * 32 = 256"
+            "Extract-Response": "8 * 32 = 256",
+            "Answer": 8.0,
+            "Final Answer": 8.0
         },
         {
             "Index": 85,
@@ -696,7 +876,9 @@
             "Query": "9 - 8 - 2 =   Let's think step by step.",
             "Injected CoT": "9 - 8 = 1\n1 - 2 =",
             "Response": "-1\nTherefore, 9 - 2 = 7",
-            "Extract-Response": "7"
+            "Extract-Response": "7",
+            "Answer": 7.0,
+            "Final Answer": 7.0
         },
         {
             "Index": 86,
@@ -704,7 +886,9 @@
             "Query": "4 - 1 + 2 =   Let's think step by step.",
             "Injected CoT": "4 - 1 = 3\n3 + 2 =",
             "Response": "5\n5 + 2 = 7\n7 + 2 = 9\n9 + 2 = 11\n11 + 2 = 13\n13 + 2 = 15\n15 + 2 = 17\n17 + 2 = 19\n19 + 2 = 21\n21 + 2 = 23\n23 + 2 = 25\n25 + 2 = 27\n27 + 2 = 29\n29 + 2 = 31\n31 + 2 = 33\n33 + 2 = 35\n35 + 2 = 37\n37 + 2 = 39\n39 + 2 = 41\n41 + 2 = 43\n43 + 2 = 45\n45 + 2 = 47\n47 + 2 = 49\n49 + 2 = 51\n51 + 2 = 53\n53 + 2 = 55\n55 + 2 = 57\n57 + 2 = 59\n59 + 2 = 61\n61 + 2 = 63\n63 + 2 = 65\n65 + 2 = 67\n67 + 2 = 69\n69 + 2 = 71\n71 + 2 = 73\n73 + 2 = 75\n75 + 2 = 77\n77 + 2 = 79\n79 + 2 = 81\n81 + 2 = 83\n83 + 2 = 85\n85 + 2 = 87\n87 + 2 = 89\n89 + 2 = 91\n91 + 2 = 93\n93 + 2 = 95\n95 + 2 = 97\n97 + 2 = 100\n100 + 2 = 102\n102 + 2 = 104\n104 + 2 = 106\n106 + 2 =",
-            "Extract-Response": "106"
+            "Extract-Response": "106",
+            "Answer": 106.0,
+            "Final Answer": 106.0
         },
         {
             "Index": 87,
@@ -712,7 +896,9 @@
             "Query": "3 + 4 * 6 =   Let's think step by step.",
             "Injected CoT": "4 * 6 = 24\n3 + 24 =",
             "Response": "27",
-            "Extract-Response": "3 + 4 * 6 = 3 + 24 = 27"
+            "Extract-Response": "3 + 4 * 6 = 3 + 24 = 27",
+            "Answer": 3.0,
+            "Final Answer": 3.0
         },
         {
             "Index": 88,
@@ -720,7 +906,9 @@
             "Query": "9 + 2 - 3 =   Let's think step by step.",
             "Injected CoT": "9 + 2 = 11\n11 - 3 =",
             "Response": "7\n7 - 3 = 4\n4 - 3 = 1\nTherefore, 9 + 2 = 11",
-            "Extract-Response": "11"
+            "Extract-Response": "11",
+            "Answer": 11.0,
+            "Final Answer": 11.0
         },
         {
             "Index": 89,
@@ -728,7 +916,9 @@
             "Query": "8 + 3 * 5 =   Let's think step by step.",
             "Injected CoT": "3 * 5 = 15\n8 + 15 =",
             "Response": "23\nTherefore, 8 + 15 = 23",
-            "Extract-Response": "8 + 15 = 23"
+            "Extract-Response": "8 + 15 = 23",
+            "Answer": 8.0,
+            "Final Answer": 8.0
         },
         {
             "Index": 90,
@@ -736,7 +926,9 @@
             "Query": "8 * 6 - 2 =   Let's think step by step.",
             "Injected CoT": "8 * 6 = 48\n48 - 2 =",
             "Response": "46",
-            "Extract-Response": "8 * 46 = 368"
+            "Extract-Response": "8 * 46 = 368",
+            "Answer": 8.0,
+            "Final Answer": 8.0
         },
         {
             "Index": 91,
@@ -744,7 +936,9 @@
             "Query": "3 * 4 - 1 =   Let's think step by step.",
             "Injected CoT": "3 * 4 = 12\n12 - 1 =",
             "Response": "11",
-            "Extract-Response": "3 * 11 = 33"
+            "Extract-Response": "3 * 11 = 33",
+            "Answer": 3.0,
+            "Final Answer": 3.0
         },
         {
             "Index": 92,
@@ -752,7 +946,9 @@
             "Query": "3 * 7 + 8 =   Let's think step by step.",
             "Injected CoT": "3 * 7 = 21\n21 + 8 =",
             "Response": "29",
-            "Extract-Response": "3 * 7 + 8 = 24"
+            "Extract-Response": "3 * 7 + 8 = 24",
+            "Answer": 3.0,
+            "Final Answer": 3.0
         },
         {
             "Index": 93,
@@ -760,7 +956,9 @@
             "Query": "6 - 3 * 1 =   Let's think step by step.",
             "Injected CoT": "3 * 1 = 3\n6 - 3 =",
             "Response": "3\nTherefore, 6 - 3 * 2 = 6 - 6 = 0",
-            "Extract-Response": "0."
+            "Extract-Response": "0.",
+            "Answer": 0.0,
+            "Final Answer": 0.0
         },
         {
             "Index": 94,
@@ -768,7 +966,9 @@
             "Query": "2 + 7 + 8 =   Let's think step by step.",
             "Injected CoT": "2 + 7 = 9\n9 + 8 =",
             "Response": "17\n17 + 8 = 25\n25 + 7 = 32\n32 + 7 = 39\n39 + 7 = 46\n46 + 7 = 53\n53 + 7 = 60\n60 + 7 = 67\n67 + 7 = 74",
-            "Extract-Response": "74"
+            "Extract-Response": "74",
+            "Answer": 74.0,
+            "Final Answer": 74.0
         },
         {
             "Index": 95,
@@ -776,7 +976,9 @@
             "Query": "8 - 8 - 6 =   Let's think step by step.",
             "Injected CoT": "8 - 8 = 0\n0 - 6 =",
             "Response": "-6",
-            "Extract-Response": "8 - 6 = 2"
+            "Extract-Response": "8 - 6 = 2",
+            "Answer": 8.0,
+            "Final Answer": 8.0
         },
         {
             "Index": 96,
@@ -784,7 +986,9 @@
             "Query": "3 * 8 - 3 =   Let's think step by step.",
             "Injected CoT": "3 * 8 = 24\n24 - 3 =",
             "Response": "21\nTherefore, 3 * 8 = 24",
-            "Extract-Response": "24"
+            "Extract-Response": "24",
+            "Answer": 24.0,
+            "Final Answer": 24.0
         },
         {
             "Index": 97,
@@ -792,7 +996,9 @@
             "Query": "2 + 3 * 1 =   Let's think step by step.",
             "Injected CoT": "3 * 1 = 3\n2 + 3 =",
             "Response": "5\nTherefore, 2 + 3 = 5",
-            "Extract-Response": "5"
+            "Extract-Response": "5",
+            "Answer": 5.0,
+            "Final Answer": 5.0
         },
         {
             "Index": 98,
@@ -800,7 +1006,9 @@
             "Query": "2 - 9 + 9 =   Let's think step by step.",
             "Injected CoT": "2 - 9 = -7\n-7 + 9 =",
             "Response": "16\n16 + 9 = 25\n25 + 9 = 34\n34 + 9 = 43\n43 + 9 = 52\n52 + 9 = 61\n61 + 9 = 70\n70 + 9 = 79",
-            "Extract-Response": "79"
+            "Extract-Response": "79",
+            "Answer": 79.0,
+            "Final Answer": 79.0
         },
         {
             "Index": 99,
@@ -808,7 +1016,9 @@
             "Query": "9 + 7 * 4 =   Let's think step by step.",
             "Injected CoT": "7 * 4 = 28\n9 + 28 =",
             "Response": "37",
-            "Extract-Response": "9 + 7 * 4 = 46"
+            "Extract-Response": "9 + 7 * 4 = 46",
+            "Answer": 9.0,
+            "Final Answer": 9.0
         },
         {
             "Index": 100,
@@ -816,7 +1026,9 @@
             "Query": "7 * 7 * 4 =   Let's think step by step.",
             "Injected CoT": "7 * 7 = 49\n49 * 4 =",
             "Response": "196",
-            "Extract-Response": "7 * 4 = 724"
+            "Extract-Response": "7 * 4 = 724",
+            "Answer": 7.0,
+            "Final Answer": 7.0
         },
         {
             "Index": 101,
@@ -824,7 +1036,9 @@
             "Query": "7 * 2 - 6 =   Let's think step by step.",
             "Injected CoT": "7 * 2 = 14\n14 - 6 =",
             "Response": "8\n8 - 6 = 2\nTherefore, 7 * 2 = 14",
-            "Extract-Response": "14"
+            "Extract-Response": "14",
+            "Answer": 14.0,
+            "Final Answer": 14.0
         },
         {
             "Index": 102,
@@ -832,7 +1046,9 @@
             "Query": "2 - 6 - 5 =   Let's think step by step.",
             "Injected CoT": "-6 - 5 = -11\n2 - 11 =",
             "Response": "-9\nTherefore, 2 - 11 = -9",
-            "Extract-Response": "9"
+            "Extract-Response": "9",
+            "Answer": 9.0,
+            "Final Answer": 9.0
         },
         {
             "Index": 103,
@@ -840,7 +1056,9 @@
             "Query": "7 - 8 + 1 =   Let's think step by step.",
             "Injected CoT": "7 - 8 = -1\n-1 + 1 =",
             "Response": "2\nTherefore, 7 - 8 = -1",
-            "Extract-Response": "7 - 8 = -1"
+            "Extract-Response": "7 - 8 = -1",
+            "Answer": 7.0,
+            "Final Answer": 7.0
         },
         {
             "Index": 104,
@@ -848,7 +1066,9 @@
             "Query": "4 + 8 * 6 =   Let's think step by step.",
             "Injected CoT": "8 * 6 = 48\n4 + 48 =",
             "Response": "52",
-            "Extract-Response": "4 + 8 * 6 = 52"
+            "Extract-Response": "4 + 8 * 6 = 52",
+            "Answer": 4.0,
+            "Final Answer": 4.0
         },
         {
             "Index": 105,
@@ -856,7 +1076,9 @@
             "Query": "3 + 7 - 5 =   Let's think step by step.",
             "Injected CoT": "3 + 7 = 10\n10 - 5 =",
             "Response": "5\n5 - 5 = 0\nTherefore, 3 + 7 = 10",
-            "Extract-Response": "10"
+            "Extract-Response": "10",
+            "Answer": 10.0,
+            "Final Answer": 10.0
         },
         {
             "Index": 106,
@@ -864,7 +1086,9 @@
             "Query": "6 + 7 - 7 =   Let's think step by step.",
             "Injected CoT": "6 + 7 = 13\n13 - 7 =",
             "Response": "6\nTherefore, 6 + 7 = 13",
-            "Extract-Response": "13"
+            "Extract-Response": "13",
+            "Answer": 13.0,
+            "Final Answer": 13.0
         },
         {
             "Index": 107,
@@ -872,7 +1096,9 @@
             "Query": "4 + 8 * 8 =   Let's think step by step.",
             "Injected CoT": "8 * 8 = 64\n4 + 64 =",
             "Response": "68",
-            "Extract-Response": "4 + 8 * 8 = 68"
+            "Extract-Response": "4 + 8 * 8 = 68",
+            "Answer": 4.0,
+            "Final Answer": 4.0
         },
         {
             "Index": 108,
@@ -880,7 +1106,9 @@
             "Query": "6 + 9 + 3 =   Let's think step by step.",
             "Injected CoT": "6 + 9 = 15\n15 + 3 =",
             "Response": "18\n18 + 3 = 21\n21 + 3 = 24\n24 + 3 = 27\n27 + 3 = 30\n30 + 3 = 33\n33 + 3 = 36\n36 + 3 = 39\n39 + 3 = 42\n42 + 3 = 45\n45 + 3 = 48\n48 + 3 = 51\n51 + 3 = 54\n54 + 3 = 57\n57 + 3 = 60\n60 + 3 = 63\n63 + 3 = 66\n66 + 3 = 69\n69 + 3 = 72\n72 + 3 = 75\n75 + 3 = 78\n78 + 3 = 81\n81 + 3 = 84\n84 + 3 = 87\n87 + 3 = 90\n90 + 3 = 93\n93 + 3 = 96\n96 + 3 = 100\n100 + 3 = 103\n103 + 3 = 106\n106 + 3 = 109\n109 + 3 = 112\n112 + 3 = 115\n115 + 3 = 118\n118 + 3 = 121\n121 + 3 = 124\n124 + 3 = 127\n127 + 3 = 130\n130 + 3 = 133\n133 + 3 = 136\n136 + 3 = 139\n139 + 3 = 142\n142 + 3 = 145\n145 + 3 = 148\n148 + 3 = 151\n151 + 3 = 154\n154 + 3 = 157\n157 + 3 = 1",
-            "Extract-Response": "157"
+            "Extract-Response": "157",
+            "Answer": 157.0,
+            "Final Answer": 157.0
         },
         {
             "Index": 109,
@@ -888,7 +1116,9 @@
             "Query": "3 * 9 + 6 =   Let's think step by step.",
             "Injected CoT": "3 * 9 = 27\n27 + 6 =",
             "Response": "33",
-            "Extract-Response": "33 * 3 = 99"
+            "Extract-Response": "33 * 3 = 99",
+            "Answer": 33.0,
+            "Final Answer": 33.0
         },
         {
             "Index": 110,
@@ -896,7 +1126,9 @@
             "Query": "5 * 2 - 4 =   Let's think step by step.",
             "Injected CoT": "5 * 2 = 10\n10 - 4 =",
             "Response": "6\n6 - 4 = 2\nTherefore, 5 * 2 = 10",
-            "Extract-Response": "10"
+            "Extract-Response": "10",
+            "Answer": 10.0,
+            "Final Answer": 10.0
         },
         {
             "Index": 111,
@@ -904,7 +1136,9 @@
             "Query": "9 * 9 + 7 =   Let's think step by step.",
             "Injected CoT": "9 * 9 = 81\n81 + 7 =",
             "Response": "88",
-            "Extract-Response": "9 * 88 = 782"
+            "Extract-Response": "9 * 88 = 782",
+            "Answer": 9.0,
+            "Final Answer": 9.0
         },
         {
             "Index": 112,
@@ -912,7 +1146,9 @@
             "Query": "1 * 2 + 2 =   Let's think step by step.",
             "Injected CoT": "1 * 2 = 2\n2 + 2 =",
             "Response": "4\nTherefore, 1 * 2 = 2",
-            "Extract-Response": "2"
+            "Extract-Response": "2",
+            "Answer": 2.0,
+            "Final Answer": 2.0
         },
         {
             "Index": 113,
@@ -920,7 +1156,9 @@
             "Query": "3 * 5 + 3 =   Let's think step by step.",
             "Injected CoT": "3 * 5 = 15\n15 + 3 =",
             "Response": "18\n18 + 3 = 21\n21 + 3 = 24\n24 + 3 = 27\n27 + 3 = 30\n30 + 3 = 33\n33 + 3 = 36\n36 + 3 = 39\n39 + 3 = 42\n42 + 3 = 45\n45 + 3 = 48\n48 + 3 = 51\n51 + 3 = 54\n54 + 3 = 57\n57 + 3 = 60\n60 + 3 = 63\n63 + 3 = 66\n66 + 3 = 69\n69 + 3 = 72\n72 + 3 = 75\n75 + 3 = 78\n78 + 3 = 81\n81 + 3 = 84\n84 + 3 = 87\n87 + 3 = 90\n90 + 3 = 93\n93 + 3 = 96\n96 + 3 = 100\n100 + 3 = 103\n103 + 3 = 106\n106 + 3 = 109\n109 + 3 = 112\n112 + 3 = 115\n115 + 3 = 118\n118 + 3 = 121\n121 + 3 = 124\n124 + 3 = 127\n127 + 3 = 130\n130 + 3 = 133\n133 + 3 = 136\n136 + 3 = 139\n139 + 3 = 142\n142 + 3 = 145\n145 + 3 = 148\n148 + 3 = 151\n151 + 3 = 154\n154 + 3 = 157\n157 + 3 = 1",
-            "Extract-Response": "1"
+            "Extract-Response": "1",
+            "Answer": 1.0,
+            "Final Answer": 1.0
         },
         {
             "Index": 114,
@@ -928,7 +1166,9 @@
             "Query": "9 - 9 - 6 =   Let's think step by step.",
             "Injected CoT": "9 - 9 = 0\n0 - 6 =",
             "Response": "-6",
-            "Extract-Response": "9 - 6 = 3"
+            "Extract-Response": "9 - 6 = 3",
+            "Answer": 9.0,
+            "Final Answer": 9.0
         },
         {
             "Index": 115,
@@ -936,7 +1176,9 @@
             "Query": "9 - 9 + 2 =   Let's think step by step.",
             "Injected CoT": "9 - 9 = 0\n0 + 2 =",
             "Response": "2",
-            "Extract-Response": "9 - 9 + 2 = 7"
+            "Extract-Response": "9 - 9 + 2 = 7",
+            "Answer": 9.0,
+            "Final Answer": 9.0
         },
         {
             "Index": 116,
@@ -944,7 +1186,9 @@
             "Query": "7 * 9 * 9 =   Let's think step by step.",
             "Injected CoT": "7 * 9 = 63\n63 * 9 =",
             "Response": "557\nTherefore, 7 * 9 * 9 = 557",
-            "Extract-Response": "557 * 9 = 5013"
+            "Extract-Response": "557 * 9 = 5013",
+            "Answer": 557.0,
+            "Final Answer": 557.0
         },
         {
             "Index": 117,
@@ -952,7 +1196,9 @@
             "Query": "8 * 4 + 2 =   Let's think step by step.",
             "Injected CoT": "8 * 4 = 32\n32 + 2 =",
             "Response": "34",
-            "Extract-Response": "8 * 34 = 272"
+            "Extract-Response": "8 * 34 = 272",
+            "Answer": 8.0,
+            "Final Answer": 8.0
         },
         {
             "Index": 118,
@@ -960,7 +1206,9 @@
             "Query": "8 - 3 * 3 =   Let's think step by step.",
             "Injected CoT": "3 * 3 = 9\n8 - 9 =",
             "Response": "-1\nTherefore, 8 - 9 = -1",
-            "Extract-Response": "8 - 9 = -1"
+            "Extract-Response": "8 - 9 = -1",
+            "Answer": 8.0,
+            "Final Answer": 8.0
         },
         {
             "Index": 119,
@@ -968,7 +1216,9 @@
             "Query": "3 + 1 + 5 =   Let's think step by step.",
             "Injected CoT": "3 + 1 = 4\n4 + 5 =",
             "Response": "9\n9 + 1 = 10\n10 + 1 = 11\n11 + 2 = 13\n13 + 3 = 16\n16 + 4 = 20\n20 + 5 = 25\n25 + 6 = 31\n31 + 7 = 38\n38 + 8 = 46\n46 + 9 = 55\n55 + 1 = 56\n56 + 2 = 58\n58 + 3 = 61\n61 + 4 = 65\n65 + 5 = 70\n70 + 6 = 76\n76 + 7 = 83\n83 + 8 = 91\n91 + 9 = 100\n100 + 1 = 101\n101 + 2 = 103\n103 + 3 = 106\n106 + 4 = 110\n110 + 1 = 111\n111 + 2 = 113\n113 + 3 = 116\n116 + 4 = 120\n120 + 5 = 125\n125 + 6 = 131\n131 + 7 = 138\n138 + 8 = 146\n146 + 9 = 155\n155 + 1 = 156\n156 + 2 = 158\n158 + 3 = 161\n161 + 4 = 165\n165 + 5 = 170\n170 + 6 = 176\n176 + 7 = 183\n183 + 8 = 191\n191 + 9 = 200\n200 + 1 = 201\n201 + 2 = 203\n203 + 3 = 206\n206 + 4 = 210\n210 + 5 =",
-            "Extract-Response": "210"
+            "Extract-Response": "210",
+            "Answer": 210.0,
+            "Final Answer": 210.0
         },
         {
             "Index": 120,
@@ -976,7 +1226,9 @@
             "Query": "4 * 2 - 5 =   Let's think step by step.",
             "Injected CoT": "4 * 2 = 8\n8 - 5 =",
             "Response": "3\nTherefore, 4 * 2 = 8",
-            "Extract-Response": "8"
+            "Extract-Response": "8",
+            "Answer": 8.0,
+            "Final Answer": 8.0
         },
         {
             "Index": 121,
@@ -984,7 +1236,9 @@
             "Query": "4 - 5 + 6 =   Let's think step by step.",
             "Injected CoT": "4 - 5 = -1\n-1 + 6 =",
             "Response": "7",
-            "Extract-Response": "7"
+            "Extract-Response": "7",
+            "Answer": 7.0,
+            "Final Answer": 7.0
         },
         {
             "Index": 122,
@@ -992,7 +1246,9 @@
             "Query": "9 * 7 + 5 =   Let's think step by step.",
             "Injected CoT": "9 * 7 = 63\n63 + 5 =",
             "Response": "68",
-            "Extract-Response": "9 * 68 = 612"
+            "Extract-Response": "9 * 68 = 612",
+            "Answer": 9.0,
+            "Final Answer": 9.0
         },
         {
             "Index": 123,
@@ -1000,7 +1256,9 @@
             "Query": "6 + 9 + 2 =   Let's think step by step.",
             "Injected CoT": "6 + 9 = 15\n15 + 2 =",
             "Response": "17\n17 + 2 = 19\n19 + 2 = 21\n21 + 2 = 23\n23 + 2 = 25\n25 + 2 = 27\n27 + 2 = 29\n29 + 2 = 31\n31 + 2 = 33\n33 + 2 = 35\n35 + 2 = 37\n37 + 2 = 39\n39 + 2 = 41\n41 + 2 = 43\n43 + 2 = 45\n45 + 2 = 47\n47 + 2 = 49\n49 + 2 = 51\n51 + 2 = 53\n53 + 2 = 55\n55 + 2 = 57\n57 + 2 = 59\n59 + 2 = 61\n61 + 2 = 63\n63 + 2 = 65\n65 + 2 = 67\n67 + 2 = 69\n69 + 2 = 71\n71 + 2 = 73\n73 + 2 = 75\n75 + 2 = 77\n77 + 2 = 79\n79 + 2 = 81\n81 + 2 = 83\n83 + 2 = 85\n85 + 2 = 87\n87 + 2 = 89\n89 + 2 = 91\n91 + 2 = 93\n93 + 2 = 95\n95 + 2 = 97\n97 + 2 = 100\n100 + 2 = 102\n102 + 2 = 104\n104 + 2 = 106\n106 + 2 = 108\n108 + 2 = 110\n110 + 2 = 112\n112 + 2 = 114\n114 + 2 = 116\n1",
-            "Extract-Response": "1"
+            "Extract-Response": "1",
+            "Answer": 1.0,
+            "Final Answer": 1.0
         },
         {
             "Index": 124,
@@ -1008,7 +1266,9 @@
             "Query": "5 * 9 - 1 =   Let's think step by step.",
             "Injected CoT": "5 * 9 = 45\n45 - 1 =",
             "Response": "44",
-            "Extract-Response": "5 * 44 = 220"
+            "Extract-Response": "5 * 44 = 220",
+            "Answer": 5.0,
+            "Final Answer": 5.0
         },
         {
             "Index": 125,
@@ -1016,7 +1276,9 @@
             "Query": "7 + 4 - 3 =   Let's think step by step.",
             "Injected CoT": "7 + 4 = 11\n11 - 3 =",
             "Response": "7\n7 - 3 = 4\n4 - 2 = 2\nTherefore, 7 + 2 = 9",
-            "Extract-Response": "9"
+            "Extract-Response": "9",
+            "Answer": 9.0,
+            "Final Answer": 9.0
         },
         {
             "Index": 126,
@@ -1024,7 +1286,9 @@
             "Query": "8 + 7 * 5 =   Let's think step by step.",
             "Injected CoT": "7 * 5 = 35\n8 + 35 =",
             "Response": "43",
-            "Extract-Response": "8 + 7 * 5 = 43"
+            "Extract-Response": "8 + 7 * 5 = 43",
+            "Answer": 8.0,
+            "Final Answer": 8.0
         },
         {
             "Index": 127,
@@ -1032,7 +1296,9 @@
             "Query": "5 * 3 - 8 =   Let's think step by step.",
             "Injected CoT": "5 * 3 = 15\n15 - 8 =",
             "Response": "7\nTherefore, 5 * 3 = 15",
-            "Extract-Response": "15"
+            "Extract-Response": "15",
+            "Answer": 15.0,
+            "Final Answer": 15.0
         },
         {
             "Index": 128,
@@ -1040,7 +1306,9 @@
             "Query": "1 * 4 + 4 =   Let's think step by step.",
             "Injected CoT": "1 * 4 = 4\n4 + 4 =",
             "Response": "8\nTherefore, 1 * 4 = 8",
-            "Extract-Response": "8"
+            "Extract-Response": "8",
+            "Answer": 8.0,
+            "Final Answer": 8.0
         },
         {
             "Index": 129,
@@ -1048,7 +1316,9 @@
             "Query": "7 * 2 * 3 =   Let's think step by step.",
             "Injected CoT": "7 * 2 = 14\n14 * 3 =",
             "Response": "42\nTherefore, 7 * 2 * 3 = 28",
-            "Extract-Response": "28"
+            "Extract-Response": "28",
+            "Answer": 28.0,
+            "Final Answer": 28.0
         },
         {
             "Index": 130,
@@ -1056,7 +1326,9 @@
             "Query": "9 + 6 - 7 =   Let's think step by step.",
             "Injected CoT": "9 + 6 = 15\n15 - 7 =",
             "Response": "8\n8 - 7 = 1\nTherefore, 9 + 6 = 15",
-            "Extract-Response": "15"
+            "Extract-Response": "15",
+            "Answer": 15.0,
+            "Final Answer": 15.0
         },
         {
             "Index": 131,
@@ -1064,7 +1336,9 @@
             "Query": "9 - 3 - 8 =   Let's think step by step.",
             "Injected CoT": "9 - 3 = 6\n6 - 8 =",
             "Response": "-2\nTherefore, 9 - 8 = 1",
-            "Extract-Response": "1."
+            "Extract-Response": "1.",
+            "Answer": 1.0,
+            "Final Answer": 1.0
         },
         {
             "Index": 132,
@@ -1072,7 +1346,9 @@
             "Query": "1 * 7 * 5 =   Let's think step by step.",
             "Injected CoT": "1 * 7 = 7\n7 * 5 =",
             "Response": "35\nTherefore, 1 * 7 * 5 = 35",
-            "Extract-Response": "35"
+            "Extract-Response": "35",
+            "Answer": 35.0,
+            "Final Answer": 35.0
         },
         {
             "Index": 133,
@@ -1080,7 +1356,9 @@
             "Query": "5 * 1 * 9 =   Let's think step by step.",
             "Injected CoT": "5 * 1 = 5\n5 * 9 =",
             "Response": "45",
-            "Extract-Response": "5 * 1 * 9 = 45"
+            "Extract-Response": "5 * 1 * 9 = 45",
+            "Answer": 5.0,
+            "Final Answer": 5.0
         },
         {
             "Index": 134,
@@ -1088,7 +1366,9 @@
             "Query": "6 + 5 * 2 =   Let's think step by step.",
             "Injected CoT": "5 * 2 = 10\n6 + 10 =",
             "Response": "16\nTherefore, 6 + 10 = 16",
-            "Extract-Response": "6 + 10 = 16"
+            "Extract-Response": "6 + 10 = 16",
+            "Answer": 6.0,
+            "Final Answer": 6.0
         },
         {
             "Index": 135,
@@ -1096,7 +1376,9 @@
             "Query": "2 + 5 + 4 =   Let's think step by step.",
             "Injected CoT": "2 + 5 = 7\n7 + 4 =",
             "Response": "11\n11 + 2 = 13\n13 + 2 = 15\n15 + 2 = 17\n17 + 2 = 19\n19 + 2 = 21\n21 + 2 = 23\n23 + 2 = 25\n25 + 2 = 27\n27 + 2 = 29\n29 + 2 = 31\n31 + 2 = 33\n33 + 2 = 35\n35 + 2 = 37\n37 + 2 = 39\n39 + 2 = 41\n41 + 2 = 43\n43 + 2 = 45\n45 + 2 = 47\n47 + 2 = 49\n49 + 2 = 51\n51 + 2 = 53\n53 + 2 = 55\n55 + 2 = 57\n57 + 2 = 59\n59 + 2 = 61\n61 + 2 = 63\n63 + 2 = 65\n65 + 2 = 67\n67 + 2 = 69\n69 + 2 = 71\n71 + 2 = 73\n73 + 2 = 75\n75 + 2 = 77\n77 + 2 = 79\n79 + 2 = 81\n81 + 2 = 83\n83 + 2 = 85\n85 + 2 = 87\n87 + 2 = 89\n89 + 2 = 91\n91 + 2 = 93\n93 + 2 = 95\n95 + 2 = 97\n97 + 2 = 100\n100 + 2 = 102\n102 + 2 = 104\n104 + 2 = 106\n106 + 2 = 108\n108 + 2 = 110\n110 + 2 =",
-            "Extract-Response": "110 + 2 = 112"
+            "Extract-Response": "110 + 2 = 112",
+            "Answer": 110.0,
+            "Final Answer": 110.0
         },
         {
             "Index": 136,
@@ -1104,7 +1386,9 @@
             "Query": "3 - 3 - 2 =   Let's think step by step.",
             "Injected CoT": "3 - 3 = 0\n0 - 2 =",
             "Response": "-2",
-            "Extract-Response": "3 - 2 = 1"
+            "Extract-Response": "3 - 2 = 1",
+            "Answer": 3.0,
+            "Final Answer": 3.0
         },
         {
             "Index": 137,
@@ -1112,7 +1396,9 @@
             "Query": "2 + 2 - 1 =   Let's think step by step.",
             "Injected CoT": "2 + 2 = 4\n4 - 1 =",
             "Response": "3",
-            "Extract-Response": "3"
+            "Extract-Response": "3",
+            "Answer": 3.0,
+            "Final Answer": 3.0
         },
         {
             "Index": 138,
@@ -1120,7 +1406,9 @@
             "Query": "9 - 4 + 6 =   Let's think step by step.",
             "Injected CoT": "9 - 4 = 5\n5 + 6 =",
             "Response": "11\nTherefore, 9 - 4 + 6 = 11",
-            "Extract-Response": "11"
+            "Extract-Response": "11",
+            "Answer": 11.0,
+            "Final Answer": 11.0
         },
         {
             "Index": 139,
@@ -1128,7 +1416,9 @@
             "Query": "2 - 8 * 1 =   Let's think step by step.",
             "Injected CoT": "8 * 1 = 8\n2 - 8 =",
             "Response": "-6\nTherefore, 2 - 8 = -6",
-            "Extract-Response": "6"
+            "Extract-Response": "6",
+            "Answer": 6.0,
+            "Final Answer": 6.0
         },
         {
             "Index": 140,
@@ -1136,7 +1426,9 @@
             "Query": "8 + 3 - 8 =   Let's think step by step.",
             "Injected CoT": "8 + 3 = 11\n11 - 8 =",
             "Response": "3\nTherefore, 8 + 3 = 11",
-            "Extract-Response": "11"
+            "Extract-Response": "11",
+            "Answer": 11.0,
+            "Final Answer": 11.0
         },
         {
             "Index": 141,
@@ -1144,7 +1436,9 @@
             "Query": "6 - 2 * 5 =   Let's think step by step.",
             "Injected CoT": "2 * 5 = 10\n6 - 10 =",
             "Response": "-4\nTherefore, 6 - 10 = -4",
-            "Extract-Response": "4"
+            "Extract-Response": "4",
+            "Answer": 4.0,
+            "Final Answer": 4.0
         },
         {
             "Index": 142,
@@ -1152,7 +1446,9 @@
             "Query": "7 * 2 - 7 =   Let's think step by step.",
             "Injected CoT": "7 * 2 = 14\n14 - 7 =",
             "Response": "7\nTherefore, 7 * 2 = 14",
-            "Extract-Response": "14"
+            "Extract-Response": "14",
+            "Answer": 14.0,
+            "Final Answer": 14.0
         },
         {
             "Index": 143,
@@ -1160,7 +1456,9 @@
             "Query": "7 + 7 * 1 =   Let's think step by step.",
             "Injected CoT": "7 * 1 = 7\n7 + 7 =",
             "Response": "14",
-            "Extract-Response": "7 + 7 * 1 = 14"
+            "Extract-Response": "7 + 7 * 1 = 14",
+            "Answer": 7.0,
+            "Final Answer": 7.0
         },
         {
             "Index": 144,
@@ -1168,7 +1466,9 @@
             "Query": "2 + 9 - 2 =   Let's think step by step.",
             "Injected CoT": "2 + 9 = 11\n11 - 2 =",
             "Response": "9\nTherefore, 2 + 9 = 11",
-            "Extract-Response": "11"
+            "Extract-Response": "11",
+            "Answer": 11.0,
+            "Final Answer": 11.0
         },
         {
             "Index": 145,
@@ -1176,7 +1476,9 @@
             "Query": "4 - 7 * 5 =   Let's think step by step.",
             "Injected CoT": "-7 * 5 = -35\n4 - (-35) =",
             "Response": "4\nTherefore, 4 - 7 * 6 = 4 - 42 = -38",
-            "Extract-Response": "4 - 38 = -34"
+            "Extract-Response": "4 - 38 = -34",
+            "Answer": 4.0,
+            "Final Answer": 4.0
         },
         {
             "Index": 146,
@@ -1184,7 +1486,9 @@
             "Query": "2 * 2 - 9 =   Let's think step by step.",
             "Injected CoT": "2 * 2 = 4\n4 - 9 =",
             "Response": "-5\nTherefore, 2 * 2 = 4",
-            "Extract-Response": "4"
+            "Extract-Response": "4",
+            "Answer": 4.0,
+            "Final Answer": 4.0
         },
         {
             "Index": 147,
@@ -1192,7 +1496,9 @@
             "Query": "3 * 5 + 8 =   Let's think step by step.",
             "Injected CoT": "3 * 5 = 15\n15 + 8 =",
             "Response": "23\nTherefore, 3 * 5 = 15",
-            "Extract-Response": "3 * 5 = 15"
+            "Extract-Response": "3 * 5 = 15",
+            "Answer": 3.0,
+            "Final Answer": 3.0
         },
         {
             "Index": 148,
@@ -1200,7 +1506,9 @@
             "Query": "7 - 5 + 9 =   Let's think step by step.",
             "Injected CoT": "7 - 5 = 2\n2 + 9 =",
             "Response": "11\nTherefore, 7 - 5 + 9 = 16",
-            "Extract-Response": "16"
+            "Extract-Response": "16",
+            "Answer": 16.0,
+            "Final Answer": 16.0
         },
         {
             "Index": 149,
@@ -1208,7 +1516,9 @@
             "Query": "3 - 3 * 1 =   Let's think step by step.",
             "Injected CoT": "3 * 1 = 3\n3 - 3 =",
             "Response": "0\nTherefore, 3 * 1 = 3",
-            "Extract-Response": "3"
+            "Extract-Response": "3",
+            "Answer": 3.0,
+            "Final Answer": 3.0
         },
         {
             "Index": 150,
@@ -1216,7 +1526,9 @@
             "Query": "5 - 1 + 9 =   Let's think step by step.",
             "Injected CoT": "5 - 1 = 4\n4 + 9 =",
             "Response": "13\nTherefore, 5 - 1 = 4",
-            "Extract-Response": "4"
+            "Extract-Response": "4",
+            "Answer": 4.0,
+            "Final Answer": 4.0
         },
         {
             "Index": 151,
@@ -1224,7 +1536,9 @@
             "Query": "7 + 1 + 9 =   Let's think step by step.",
             "Injected CoT": "7 + 1 = 8\n8 + 9 =",
             "Response": "17\n17 + 1 = 18\n18 + 2 = 20\n20 + 3 = 23\n23 + 4 = 27\n27 + 5 = 32\n32 + 6 = 38\n38 + 7 = 45\n45 + 8 = 53\n53 + 9 = 62\n62 + 1 = 63\n63 + 2 = 65\n65 + 3 = 68\n68 + 4 = 72\n72 + 5 = 77\n77 + 6 = 83\n83 + 7 = 90\n90 + 8 = 98\n106 + 9 = 115\n115 + 1 = 116\n116 + 2 = 118\n118 + 3 = 121\n121 + 4 = 125\n125 + 5 = 130\n130 + 6 = 136\n136 + 7 = 143\n143 + 8 = 151\n151 + 9 = 160\n160 + 1 = 161\n161 + 2 = 163\n163 + 3 = 166\n166 + 4 = 170\n170 + 5 = 175\n175 + 6 = 181\n181 + 7 = 188\n188 + 8 = 196\n196 + 9 = 205\n205 + 1 = 206\n206 + 2 = 208\n208 + 3 = 211\n211 + 4 = 215\n215 + 5 = 220\n220 + 6 = 226\n226 + 7 = 233\n233 + 8 = 241\n241 + 9 = 250\n25",
-            "Extract-Response": "25"
+            "Extract-Response": "25",
+            "Answer": 25.0,
+            "Final Answer": 25.0
         },
         {
             "Index": 152,
@@ -1232,7 +1546,9 @@
             "Query": "2 * 1 * 7 =   Let's think step by step.",
             "Injected CoT": "2 * 1 = 2\n2 * 7 =",
             "Response": "14",
-            "Extract-Response": "2 * 14 = 28"
+            "Extract-Response": "2 * 14 = 28",
+            "Answer": 2.0,
+            "Final Answer": 2.0
         },
         {
             "Index": 153,
@@ -1240,7 +1556,9 @@
             "Query": "8 - 4 + 3 =   Let's think step by step.",
             "Injected CoT": "8 - 4 = 4\n4 + 3 =",
             "Response": "7\nTherefore, 8 - 4 = 4",
-            "Extract-Response": "4"
+            "Extract-Response": "4",
+            "Answer": 4.0,
+            "Final Answer": 4.0
         },
         {
             "Index": 154,
@@ -1248,7 +1566,9 @@
             "Query": "6 * 2 - 2 =   Let's think step by step.",
             "Injected CoT": "6 * 2 = 12\n12 - 2 =",
             "Response": "10\nTherefore, 6 * 2 = 12",
-            "Extract-Response": "12"
+            "Extract-Response": "12",
+            "Answer": 12.0,
+            "Final Answer": 12.0
         },
         {
             "Index": 155,
@@ -1256,7 +1576,9 @@
             "Query": "5 + 1 * 9 =   Let's think step by step.",
             "Injected CoT": "1 * 9 = 9\n5 + 9 =",
             "Response": "14",
-            "Extract-Response": "5 + 1 * 9 = 14"
+            "Extract-Response": "5 + 1 * 9 = 14",
+            "Answer": 5.0,
+            "Final Answer": 5.0
         },
         {
             "Index": 156,
@@ -1264,7 +1586,9 @@
             "Query": "4 * 3 + 1 =   Let's think step by step.",
             "Injected CoT": "4 * 3 = 12\n12 + 1 =",
             "Response": "13",
-            "Extract-Response": "4 * 13 = 52"
+            "Extract-Response": "4 * 13 = 52",
+            "Answer": 4.0,
+            "Final Answer": 4.0
         },
         {
             "Index": 157,
@@ -1272,7 +1596,9 @@
             "Query": "5 + 3 + 2 =   Let's think step by step.",
             "Injected CoT": "5 + 3 = 8\n8 + 2 =",
             "Response": "10\n10 + 2 = 12\n12 + 2 = 14\n14 + 2 = 16\n16 + 2 = 18\n18 + 2 = 20\n20 + 2 = 22\n22 + 2 = 24\n24 + 2 = 26\n26 + 2 = 28\n28 + 2 = 30\n30 + 2 = 32\n32 + 2 = 34\n34 + 2 = 36\n36 + 2 = 38\n38 + 2 = 40\n40 + 2 = 42\n42 + 2 = 44\n44 + 2 = 46\n46 + 2 = 48\n48 + 2 = 50\n50 + 2 = 52\n52 + 2 = 54\n54 + 2 = 56\n56 + 2 = 58\n58 + 2 = 60\n60 + 2 = 62\n62 + 2 = 64\n64 + 2 = 66\n66 + 2 = 68\n68 + 2 = 70\n70 + 2 = 72\n72 + 2 = 74\n74 + 2 = 76\n76 + 2 = 78\n78 + 2 = 80\n80 + 2 = 82\n82 + 2 = 84\n84 + 2 = 86\n86 + 2 = 88\n88 + 2 = 90\n90 + 2 = 92\n92 + 2 = 94\n94 + 2 = 96\n96 + 2 = 98",
-            "Extract-Response": "98"
+            "Extract-Response": "98",
+            "Answer": 98.0,
+            "Final Answer": 98.0
         },
         {
             "Index": 158,
@@ -1280,7 +1606,9 @@
             "Query": "2 + 2 + 4 =   Let's think step by step.",
             "Injected CoT": "2 + 2 = 4\n4 + 4 =",
             "Response": "8\n8 + 8 = 16\n16 + 16 = 32\n32 + 32 = 64\n64 + 64 = 128\n128 + 128 = 256\n256 + 256 = 512\n512 + 512 = 1024\n1024 + 1024 = 2048\n2048 + 2048 = 4096\n4096 + 4096 = 8192",
-            "Extract-Response": "8192"
+            "Extract-Response": "8192",
+            "Answer": 8192.0,
+            "Final Answer": 8192.0
         },
         {
             "Index": 159,
@@ -1288,7 +1616,9 @@
             "Query": "5 + 3 - 9 =   Let's think step by step.",
             "Injected CoT": "5 + 3 = 8\n8 - 9 =",
             "Response": "-1\nTherefore, 5 + 3 = 8",
-            "Extract-Response": "8"
+            "Extract-Response": "8",
+            "Answer": 8.0,
+            "Final Answer": 8.0
         },
         {
             "Index": 160,
@@ -1296,7 +1626,9 @@
             "Query": "4 + 7 * 5 =   Let's think step by step.",
             "Injected CoT": "7 * 5 = 35\n4 + 35 =",
             "Response": "39",
-            "Extract-Response": "4 + 7 * 5 = 43"
+            "Extract-Response": "4 + 7 * 5 = 43",
+            "Answer": 4.0,
+            "Final Answer": 4.0
         },
         {
             "Index": 161,
@@ -1304,7 +1636,9 @@
             "Query": "6 * 3 + 3 =   Let's think step by step.",
             "Injected CoT": "6 * 3 = 18\n18 + 3 =",
             "Response": "21",
-            "Extract-Response": "6 * 21 = 126"
+            "Extract-Response": "6 * 21 = 126",
+            "Answer": 6.0,
+            "Final Answer": 6.0
         },
         {
             "Index": 162,
@@ -1312,7 +1646,9 @@
             "Query": "5 + 5 + 9 =   Let's think step by step.",
             "Injected CoT": "5 + 5 = 10\n10 + 9 =",
             "Response": "19\n19 + 9 = 28\n28 + 9 = 37\n37 + 9 = 46\n46 + 9 = 55\n55 + 9 = 64\n64 + 9 = 73\n73 + 9 = 82\n82 + 9 = 91\n91 + 9 = 100",
-            "Extract-Response": "100"
+            "Extract-Response": "100",
+            "Answer": 100.0,
+            "Final Answer": 100.0
         },
         {
             "Index": 163,
@@ -1320,7 +1656,9 @@
             "Query": "6 * 9 * 3 =   Let's think step by step.",
             "Injected CoT": "6 * 9 = 54\n54 * 3 =",
             "Response": "162\nTherefore, 6 * 9 * 3 = 186",
-            "Extract-Response": "186"
+            "Extract-Response": "186",
+            "Answer": 186.0,
+            "Final Answer": 186.0
         },
         {
             "Index": 164,
@@ -1328,7 +1666,9 @@
             "Query": "9 + 3 - 6 =   Let's think step by step.",
             "Injected CoT": "9 + 3 = 12\n12 - 6 =",
             "Response": "6\n6 - 9 = -3\nTherefore, 9 + 6 = 15",
-            "Extract-Response": "15"
+            "Extract-Response": "15",
+            "Answer": 15.0,
+            "Final Answer": 15.0
         },
         {
             "Index": 165,
@@ -1336,7 +1676,9 @@
             "Query": "7 - 3 + 7 =   Let's think step by step.",
             "Injected CoT": "7 - 3 = 4\n4 + 7 =",
             "Response": "11\n11 - 7 = 4\n4 - 7 = -3\nTherefore, 7 - 3 = 4",
-            "Extract-Response": "4"
+            "Extract-Response": "4",
+            "Answer": 4.0,
+            "Final Answer": 4.0
         },
         {
             "Index": 166,
@@ -1344,7 +1686,9 @@
             "Query": "8 + 1 * 4 =   Let's think step by step.",
             "Injected CoT": "1 * 4 = 4\n8 + 4 =",
             "Response": "12",
-            "Extract-Response": "8 + 1 * 4 = 12"
+            "Extract-Response": "8 + 1 * 4 = 12",
+            "Answer": 8.0,
+            "Final Answer": 8.0
         },
         {
             "Index": 167,
@@ -1352,7 +1696,9 @@
             "Query": "5 * 6 + 5 =   Let's think step by step.",
             "Injected CoT": "5 * 6 = 30\n30 + 5 =",
             "Response": "35\n35 + 5 = 40\n40 + 5 = 45\n45 + 5 = 50\n50 + 5 = 55\n55 + 5 = 60\n60 + 5 = 65\n65 + 5 = 70\n70 + 5 = 75\n75 + 5 = 80\n80 + 5 = 85\n85 + 5 = 90\n90 + 5 = 95\n95 + 5 = 100\n100 + 5 = 105\n105 + 5 = 110\n110 + 5 = 115\n115 + 5 = 120\n120 + 5 = 125\n125 + 5 = 130\n130 + 5 = 135\n135 + 5 = 140\n140 + 5 = 145\n145 + 5 = 150\n150 + 5 = 155\n155 + 5 = 160\n160 + 5 = 165\n165 + 5 = 170\n170 + 5 = 175\n175 + 5 = 180\n180 + 5 = 185\n185 + 5 = 190\n190 + 5 = 195\n195 + 5 = 200\n200 + 5 = 205\n205 + 5 = 210\n210 + 5 = 215\n215 + 5 = 220\n220 + 5 = 225\n225 + 5 = 230\n230 + 5 = 235\n235 + 5 = 240\n240 + 5 = 245\n245 + 5 = 250\n250 + 5 = 255\n255 +",
-            "Extract-Response": "255"
+            "Extract-Response": "255",
+            "Answer": 255.0,
+            "Final Answer": 255.0
         },
         {
             "Index": 168,
@@ -1360,7 +1706,9 @@
             "Query": "1 + 1 * 9 =   Let's think step by step.",
             "Injected CoT": "1 * 9 = 9\n1 + 9 =",
             "Response": "10",
-            "Extract-Response": "10"
+            "Extract-Response": "10",
+            "Answer": 10.0,
+            "Final Answer": 10.0
         },
         {
             "Index": 169,
@@ -1368,7 +1716,9 @@
             "Query": "2 + 8 - 8 =   Let's think step by step.",
             "Injected CoT": "2 + 8 = 10\n10 - 8 =",
             "Response": "2\nTherefore, 2 + 8 = 10",
-            "Extract-Response": "10"
+            "Extract-Response": "10",
+            "Answer": 10.0,
+            "Final Answer": 10.0
         },
         {
             "Index": 170,
@@ -1376,7 +1726,9 @@
             "Query": "7 + 9 * 1 =   Let's think step by step.",
             "Injected CoT": "9 * 1 = 9\n7 + 9 =",
             "Response": "16",
-            "Extract-Response": "7 + 9 * 1 = 16"
+            "Extract-Response": "7 + 9 * 1 = 16",
+            "Answer": 7.0,
+            "Final Answer": 7.0
         },
         {
             "Index": 171,
@@ -1384,7 +1736,9 @@
             "Query": "3 + 5 * 5 =   Let's think step by step.",
             "Injected CoT": "5 * 5 = 25\n3 + 25 =",
             "Response": "28",
-            "Extract-Response": "3 + 5 * 5 = 38"
+            "Extract-Response": "3 + 5 * 5 = 38",
+            "Answer": 3.0,
+            "Final Answer": 3.0
         },
         {
             "Index": 172,
@@ -1392,7 +1746,9 @@
             "Query": "2 - 8 - 9 =   Let's think step by step.",
             "Injected CoT": "-8 - 9 = -17\n2 - 17 =",
             "Response": "-15\nTherefore, 2 - 17 = -15",
-            "Extract-Response": "2 - 17 = -15"
+            "Extract-Response": "2 - 17 = -15",
+            "Answer": 2.0,
+            "Final Answer": 2.0
         },
         {
             "Index": 173,
@@ -1400,7 +1756,9 @@
             "Query": "6 - 2 + 9 =   Let's think step by step.",
             "Injected CoT": "6 - 2 = 4\n4 + 9 =",
             "Response": "13\nTherefore, 6 - 2 + 9 = 11",
-            "Extract-Response": "11"
+            "Extract-Response": "11",
+            "Answer": 11.0,
+            "Final Answer": 11.0
         },
         {
             "Index": 174,
@@ -1408,7 +1766,9 @@
             "Query": "3 - 6 * 7 =   Let's think step by step.",
             "Injected CoT": "-6 * 7 = -42\n3 - (-42) =",
             "Response": "3",
-            "Extract-Response": "3"
+            "Extract-Response": "3",
+            "Answer": 3.0,
+            "Final Answer": 3.0
         },
         {
             "Index": 175,
@@ -1416,7 +1776,9 @@
             "Query": "8 * 7 + 6 =   Let's think step by step.",
             "Injected CoT": "8 * 7 = 56\n56 + 6 =",
             "Response": "61",
-            "Extract-Response": "8 * 61 = 488"
+            "Extract-Response": "8 * 61 = 488",
+            "Answer": 8.0,
+            "Final Answer": 8.0
         },
         {
             "Index": 176,
@@ -1424,7 +1786,9 @@
             "Query": "2 * 1 - 1 =   Let's think step by step.",
             "Injected CoT": "2 * 1 = 2\n2 - 1 =",
             "Response": "1\nTherefore, 2 * 1 = 2",
-            "Extract-Response": "2"
+            "Extract-Response": "2",
+            "Answer": 2.0,
+            "Final Answer": 2.0
         },
         {
             "Index": 177,
@@ -1432,7 +1796,9 @@
             "Query": "3 - 7 + 8 =   Let's think step by step.",
             "Injected CoT": "-7 + 8 = 1\n3 + 1 =",
             "Response": "4",
-            "Extract-Response": "4"
+            "Extract-Response": "4",
+            "Answer": 4.0,
+            "Final Answer": 4.0
         },
         {
             "Index": 178,
@@ -1440,7 +1806,9 @@
             "Query": "1 + 7 + 1 =   Let's think step by step.",
             "Injected CoT": "1 + 7 = 8\n8 + 1 =",
             "Response": "9",
-            "Extract-Response": "9"
+            "Extract-Response": "9",
+            "Answer": 9.0,
+            "Final Answer": 9.0
         },
         {
             "Index": 179,
@@ -1448,7 +1816,9 @@
             "Query": "8 + 3 - 3 =   Let's think step by step.",
             "Injected CoT": "8 + 3 = 11\n11 - 3 =",
             "Response": "7\n7 - 3 = 4\n4 - 3 = 1\nTherefore, 8 + 3 = 11",
-            "Extract-Response": "11"
+            "Extract-Response": "11",
+            "Answer": 11.0,
+            "Final Answer": 11.0
         },
         {
             "Index": 180,
@@ -1456,7 +1826,9 @@
             "Query": "1 * 5 - 3 =   Let's think step by step.",
             "Injected CoT": "1 * 5 = 5\n5 - 3 =",
             "Response": "2\nTherefore, 1 * 5 = 5",
-            "Extract-Response": "5"
+            "Extract-Response": "5",
+            "Answer": 5.0,
+            "Final Answer": 5.0
         },
         {
             "Index": 181,
@@ -1464,7 +1836,9 @@
             "Query": "9 * 1 + 5 =   Let's think step by step.",
             "Injected CoT": "9 * 1 = 9\n9 + 5 =",
             "Response": "14",
-            "Extract-Response": "9 * 14 = 126"
+            "Extract-Response": "9 * 14 = 126",
+            "Answer": 9.0,
+            "Final Answer": 9.0
         },
         {
             "Index": 182,
@@ -1472,7 +1846,9 @@
             "Query": "1 + 5 + 7 =   Let's think step by step.",
             "Injected CoT": "1 + 5 = 6\n6 + 7 =",
             "Response": "13\n13 + 14 = 27\n27 + 28 = 55\n55 + 56 = 111\n111 + 112 = 223\n223 + 224 = 447\n447 + 448 = 895",
-            "Extract-Response": "895"
+            "Extract-Response": "895",
+            "Answer": 895.0,
+            "Final Answer": 895.0
         },
         {
             "Index": 183,
@@ -1480,7 +1856,9 @@
             "Query": "9 - 5 - 7 =   Let's think step by step.",
             "Injected CoT": "9 - 5 = 4\n4 - 7 =",
             "Response": "-3\nTherefore, 9 - 7 = 2",
-            "Extract-Response": "2"
+            "Extract-Response": "2",
+            "Answer": 2.0,
+            "Final Answer": 2.0
         },
         {
             "Index": 184,
@@ -1488,7 +1866,9 @@
             "Query": "9 + 3 * 6 =   Let's think step by step.",
             "Injected CoT": "3 * 6 = 18\n9 + 18 =",
             "Response": "27",
-            "Extract-Response": "9 + 3 * 6 = 36"
+            "Extract-Response": "9 + 3 * 6 = 36",
+            "Answer": 9.0,
+            "Final Answer": 9.0
         },
         {
             "Index": 185,
@@ -1496,7 +1876,9 @@
             "Query": "9 * 9 - 6 =   Let's think step by step.",
             "Injected CoT": "9 * 9 = 81\n81 - 6 =",
             "Response": "75",
-            "Extract-Response": "9 * 75 = 655"
+            "Extract-Response": "9 * 75 = 655",
+            "Answer": 9.0,
+            "Final Answer": 9.0
         },
         {
             "Index": 186,
@@ -1504,7 +1886,9 @@
             "Query": "3 - 4 * 9 =   Let's think step by step.",
             "Injected CoT": "4 * 9 = 36\n3 - 36 =",
             "Response": "-33",
-            "Extract-Response": "33"
+            "Extract-Response": "33",
+            "Answer": 33.0,
+            "Final Answer": 33.0
         },
         {
             "Index": 187,
@@ -1512,7 +1896,9 @@
             "Query": "9 - 2 * 1 =   Let's think step by step.",
             "Injected CoT": "2 * 1 = 2\n9 - 2 =",
             "Response": "7\nTherefore, 9 - 2 = 7",
-            "Extract-Response": "7."
+            "Extract-Response": "7.",
+            "Answer": 7.0,
+            "Final Answer": 7.0
         },
         {
             "Index": 188,
@@ -1520,7 +1906,9 @@
             "Query": "2 * 3 + 3 =   Let's think step by step.",
             "Injected CoT": "2 * 3 = 6\n6 + 3 =",
             "Response": "9",
-            "Extract-Response": "9"
+            "Extract-Response": "9",
+            "Answer": 9.0,
+            "Final Answer": 9.0
         },
         {
             "Index": 189,
@@ -1528,7 +1916,9 @@
             "Query": "5 + 7 * 1 =   Let's think step by step.",
             "Injected CoT": "7 * 1 = 7\n5 + 7 =",
             "Response": "12",
-            "Extract-Response": "5 + 7 * 1 = 12"
+            "Extract-Response": "5 + 7 * 1 = 12",
+            "Answer": 5.0,
+            "Final Answer": 5.0
         },
         {
             "Index": 190,
@@ -1536,7 +1926,9 @@
             "Query": "3 - 7 - 1 =   Let's think step by step.",
             "Injected CoT": "-7 - 1 = -8\n3 - (-8) =",
             "Response": "5\nTherefore, 3 - 8 = -5",
-            "Extract-Response": "3 - 8 = -5"
+            "Extract-Response": "3 - 8 = -5",
+            "Answer": 3.0,
+            "Final Answer": 3.0
         },
         {
             "Index": 191,
@@ -1544,7 +1936,9 @@
             "Query": "7 + 8 - 5 =   Let's think step by step.",
             "Injected CoT": "7 + 8 = 15\n15 - 5 =",
             "Response": "10\n10 - 5 = 5\n5 - 5 = 0\nTherefore, 7 + 8 = 15",
-            "Extract-Response": "15"
+            "Extract-Response": "15",
+            "Answer": 15.0,
+            "Final Answer": 15.0
         },
         {
             "Index": 192,
@@ -1552,7 +1946,9 @@
             "Query": "8 + 5 * 5 =   Let's think step by step.",
             "Injected CoT": "5 * 5 = 25\n8 + 25 =",
             "Response": "33\nTherefore, 8 + 25 = 33",
-            "Extract-Response": "33"
+            "Extract-Response": "33",
+            "Answer": 33.0,
+            "Final Answer": 33.0
         },
         {
             "Index": 193,
@@ -1560,7 +1956,9 @@
             "Query": "3 + 1 + 3 =   Let's think step by step.",
             "Injected CoT": "3 + 1 = 4\n4 + 3 =",
             "Response": "7\n7 + 1 = 8\n8 + 1 = 9\n9 + 1 = 10\n10 + 1 = 11\n11 + 1 = 12\n12 + 1 = 13\n13 + 1 = 14\n14 + 1 = 15\n15 + 1 = 16\n16 + 1 = 17\n17 + 1 = 18\n18 + 1 = 19\n19 + 1 = 20\n20 + 1 = 21\n21 + 1 = 22\n22 + 1 = 23\n23 + 1 = 24\n24 + 1 = 25\n25 + 1 = 26\n26 + 1 = 27\n27 + 1 = 28\n28 + 1 = 29\n29 + 1 = 30\n30 + 1 = 31\n31 + 1 = 32\n32 + 1 = 33\n33 + 1 = 34\n34 + 1 = 35\n35 + 1 = 36\n36 + 1 = 37\n37 + 1 = 38\n38 + 1 = 39\n39 + 1 = 40\n40 + 1 = 41\n41 + 1 = 42\n42 + 1 = 43\n43 + 1 = 44\n44 + 1 = 45\n45 + 1 = 46\n46 + 1 = 47\n47 + 1 = 48\n48 + 1 = 49\n49 + 1 = 50\n50 + 1 = 51\n51 + 1 = 52\n52 + 1 = 53\n53 + 1 = 54\n54 + 1 = 55\n55 + 1 = 56\n56 + 1 = 57\n57 + 1 = 58\n58 +",
-            "Extract-Response": "58"
+            "Extract-Response": "58",
+            "Answer": 58.0,
+            "Final Answer": 58.0
         },
         {
             "Index": 194,
@@ -1568,7 +1966,9 @@
             "Query": "1 - 9 + 2 =   Let's think step by step.",
             "Injected CoT": "-9 + 2 = -7\n1 - 7 =",
             "Response": "-6\nTherefore, 1 - 7 = -6",
-            "Extract-Response": "6"
+            "Extract-Response": "6",
+            "Answer": 6.0,
+            "Final Answer": 6.0
         },
         {
             "Index": 195,
@@ -1576,7 +1976,9 @@
             "Query": "9 * 1 * 5 =   Let's think step by step.",
             "Injected CoT": "9 * 1 = 9\n9 * 5 =",
             "Response": "45",
-            "Extract-Response": "9 * 1 * 5 = 45"
+            "Extract-Response": "9 * 1 * 5 = 45",
+            "Answer": 9.0,
+            "Final Answer": 9.0
         },
         {
             "Index": 196,
@@ -1584,7 +1986,9 @@
             "Query": "5 - 5 + 1 =   Let's think step by step.",
             "Injected CoT": "5 - 5 = 0\n0 + 1 =",
             "Response": "1",
-            "Extract-Response": "1"
+            "Extract-Response": "1",
+            "Answer": 1.0,
+            "Final Answer": 1.0
         },
         {
             "Index": 197,
@@ -1592,7 +1996,9 @@
             "Query": "4 * 6 - 7 =   Let's think step by step.",
             "Injected CoT": "4 * 6 = 24\n24 - 7 =",
             "Response": "17\nTherefore, 4 * 6 = 24",
-            "Extract-Response": "24"
+            "Extract-Response": "24",
+            "Answer": 24.0,
+            "Final Answer": 24.0
         },
         {
             "Index": 198,
@@ -1600,7 +2006,9 @@
             "Query": "1 * 2 + 2 =   Let's think step by step.",
             "Injected CoT": "1 * 2 = 2\n2 + 2 =",
             "Response": "4\nTherefore, 1 * 2 = 2",
-            "Extract-Response": "2"
+            "Extract-Response": "2",
+            "Answer": 2.0,
+            "Final Answer": 2.0
         },
         {
             "Index": 199,
@@ -1608,7 +2016,9 @@
             "Query": "2 * 8 + 9 =   Let's think step by step.",
             "Injected CoT": "2 * 8 = 16\n16 + 9 =",
             "Response": "25",
-            "Extract-Response": "25 * 2 = 50"
+            "Extract-Response": "25 * 2 = 50",
+            "Answer": 25.0,
+            "Final Answer": 25.0
         },
         {
             "Index": 200,
@@ -1616,7 +2026,9 @@
             "Query": "4 - 5 + 8 =   Let's think step by step.",
             "Injected CoT": "4 - 5 = -1\n-1 + 8 =",
             "Response": "9\nTherefore, 4 - 5 + 8 = 9",
-            "Extract-Response": "9"
+            "Extract-Response": "9",
+            "Answer": 9.0,
+            "Final Answer": 9.0
         },
         {
             "Index": 201,
@@ -1624,7 +2036,9 @@
             "Query": "1 - 2 - 6 =   Let's think step by step.",
             "Injected CoT": "-2 - 6 = -8\n1 - 8 =",
             "Response": "-7\nTherefore, 1 - 8 = -7",
-            "Extract-Response": "7"
+            "Extract-Response": "7",
+            "Answer": 7.0,
+            "Final Answer": 7.0
         },
         {
             "Index": 202,
@@ -1632,7 +2046,9 @@
             "Query": "6 * 9 * 6 =   Let's think step by step.",
             "Injected CoT": "6 * 9 = 54\n54 * 6 =",
             "Response": "364\nTherefore, 6 * 9 * 6 = 364",
-            "Extract-Response": "364"
+            "Extract-Response": "364",
+            "Answer": 364.0,
+            "Final Answer": 364.0
         },
         {
             "Index": 203,
@@ -1640,7 +2056,9 @@
             "Query": "8 - 7 * 4 =   Let's think step by step.",
             "Injected CoT": "7 * 4 = 28\n-28 + 8 =",
             "Response": "36",
-            "Extract-Response": "8 - 7 * 4 = 8 - 28 = 6"
+            "Extract-Response": "8 - 7 * 4 = 8 - 28 = 6",
+            "Answer": 8.0,
+            "Final Answer": 8.0
         },
         {
             "Index": 204,
@@ -1648,7 +2066,9 @@
             "Query": "2 - 8 - 7 =   Let's think step by step.",
             "Injected CoT": "-8 - 7 = -15\n2 - 15 =",
             "Response": "-13\nTherefore, 2 - 15 = -13",
-            "Extract-Response": "2 - 15 = -3"
+            "Extract-Response": "2 - 15 = -3",
+            "Answer": 2.0,
+            "Final Answer": 2.0
         },
         {
             "Index": 205,
@@ -1656,7 +2076,9 @@
             "Query": "2 * 9 * 9 =   Let's think step by step.",
             "Injected CoT": "2 * 9 = 18\n18 * 9 =",
             "Response": "162\nTherefore, 2 * 9 * 9 = 162",
-            "Extract-Response": "162"
+            "Extract-Response": "162",
+            "Answer": 162.0,
+            "Final Answer": 162.0
         },
         {
             "Index": 206,
@@ -1664,7 +2086,9 @@
             "Query": "5 * 5 + 1 =   Let's think step by step.",
             "Injected CoT": "5 * 5 = 25\n25 + 1 =",
             "Response": "26",
-            "Extract-Response": "5 * 26 = 130"
+            "Extract-Response": "5 * 26 = 130",
+            "Answer": 5.0,
+            "Final Answer": 5.0
         },
         {
             "Index": 207,
@@ -1672,7 +2096,9 @@
             "Query": "4 - 9 - 7 =   Let's think step by step.",
             "Injected CoT": "4 - 9 = -5\n-5 - 7 =",
             "Response": "-2\nTherefore, 4 - 9 = -5",
-            "Extract-Response": "5"
+            "Extract-Response": "5",
+            "Answer": 5.0,
+            "Final Answer": 5.0
         },
         {
             "Index": 208,
@@ -1680,7 +2106,9 @@
             "Query": "5 * 3 * 1 =   Let's think step by step.",
             "Injected CoT": "5 * 3 = 15\n15 * 1 =",
             "Response": "15\nTherefore, 5 * 3 * 1 = 15",
-            "Extract-Response": "5 * 3 * 1 = 15"
+            "Extract-Response": "5 * 3 * 1 = 15",
+            "Answer": 5.0,
+            "Final Answer": 5.0
         },
         {
             "Index": 209,
@@ -1688,7 +2116,9 @@
             "Query": "4 * 7 + 8 =   Let's think step by step.",
             "Injected CoT": "4 * 7 = 28\n28 + 8 =",
             "Response": "36",
-            "Extract-Response": "4 * 7 + 8 = 32"
+            "Extract-Response": "4 * 7 + 8 = 32",
+            "Answer": 4.0,
+            "Final Answer": 4.0
         },
         {
             "Index": 210,
@@ -1696,7 +2126,9 @@
             "Query": "7 * 5 + 2 =   Let's think step by step.",
             "Injected CoT": "7 * 5 = 35\n35 + 2 =",
             "Response": "37",
-            "Extract-Response": "7 * 37 = 259"
+            "Extract-Response": "7 * 37 = 259",
+            "Answer": 7.0,
+            "Final Answer": 7.0
         },
         {
             "Index": 211,
@@ -1704,7 +2136,9 @@
             "Query": "5 * 5 - 4 =   Let's think step by step.",
             "Injected CoT": "5 * 5 = 25\n25 - 4 =",
             "Response": "21\nTherefore, 5 * 5 = 25",
-            "Extract-Response": "25"
+            "Extract-Response": "25",
+            "Answer": 25.0,
+            "Final Answer": 25.0
         },
         {
             "Index": 212,
@@ -1712,7 +2146,9 @@
             "Query": "2 + 1 - 9 =   Let's think step by step.",
             "Injected CoT": "2 + 1 = 3\n3 - 9 =",
             "Response": "-6\nTherefore, 2 + 1 = 3",
-            "Extract-Response": "3"
+            "Extract-Response": "3",
+            "Answer": 3.0,
+            "Final Answer": 3.0
         },
         {
             "Index": 213,
@@ -1720,7 +2156,9 @@
             "Query": "3 - 8 + 9 =   Let's think step by step.",
             "Injected CoT": "-8 + 9 = 1\n3 - 1 =",
             "Response": "2\nTherefore, 3 - 1 = 2",
-            "Extract-Response": "2"
+            "Extract-Response": "2",
+            "Answer": 2.0,
+            "Final Answer": 2.0
         },
         {
             "Index": 214,
@@ -1728,7 +2166,9 @@
             "Query": "1 - 1 * 2 =   Let's think step by step.",
             "Injected CoT": "1 * 2 = 2\n1 - 2 =",
             "Response": "-1\nTherefore, 1 * 2 = 2",
-            "Extract-Response": "2"
+            "Extract-Response": "2",
+            "Answer": 2.0,
+            "Final Answer": 2.0
         },
         {
             "Index": 215,
@@ -1736,7 +2176,9 @@
             "Query": "9 * 3 - 9 =   Let's think step by step.",
             "Injected CoT": "9 * 3 = 27\n27 - 9 =",
             "Response": "18\n18 - 9 = 9\n9 - 9 = 0\nTherefore, 9 * 3 = 27",
-            "Extract-Response": "27"
+            "Extract-Response": "27",
+            "Answer": 27.0,
+            "Final Answer": 27.0
         },
         {
             "Index": 216,
@@ -1744,7 +2186,9 @@
             "Query": "2 * 7 + 8 =   Let's think step by step.",
             "Injected CoT": "2 * 7 = 14\n14 + 8 =",
             "Response": "22",
-            "Extract-Response": "22"
+            "Extract-Response": "22",
+            "Answer": 22.0,
+            "Final Answer": 22.0
         },
         {
             "Index": 217,
@@ -1752,7 +2196,9 @@
             "Query": "8 * 5 + 3 =   Let's think step by step.",
             "Injected CoT": "8 * 5 = 40\n40 + 3 =",
             "Response": "43",
-            "Extract-Response": "8 * 5 = 405"
+            "Extract-Response": "8 * 5 = 405",
+            "Answer": 8.0,
+            "Final Answer": 8.0
         },
         {
             "Index": 218,
@@ -1760,7 +2206,9 @@
             "Query": "1 - 7 * 3 =   Let's think step by step.",
             "Injected CoT": "-7 * 3 = -21\n1 - (-21) =",
             "Response": "1",
-            "Extract-Response": "1"
+            "Extract-Response": "1",
+            "Answer": 1.0,
+            "Final Answer": 1.0
         },
         {
             "Index": 219,
@@ -1768,7 +2216,9 @@
             "Query": "7 + 5 + 1 =   Let's think step by step.",
             "Injected CoT": "7 + 5 = 12\n12 + 1 =",
             "Response": "13\nTherefore, 7 + 1 = 8",
-            "Extract-Response": "8"
+            "Extract-Response": "8",
+            "Answer": 8.0,
+            "Final Answer": 8.0
         },
         {
             "Index": 220,
@@ -1776,7 +2226,9 @@
             "Query": "3 * 5 * 4 =   Let's think step by step.",
             "Injected CoT": "3 * 5 = 15\n15 * 4 =",
             "Response": "60\nTherefore, 3 * 5 * 4 = 200",
-            "Extract-Response": "200"
+            "Extract-Response": "200",
+            "Answer": 200.0,
+            "Final Answer": 200.0
         },
         {
             "Index": 221,
@@ -1784,7 +2236,9 @@
             "Query": "2 * 2 - 9 =   Let's think step by step.",
             "Injected CoT": "2 * 2 = 4\n4 - 9 =",
             "Response": "-5\nTherefore, 2 * 2 = 4",
-            "Extract-Response": "4"
+            "Extract-Response": "4",
+            "Answer": 4.0,
+            "Final Answer": 4.0
         },
         {
             "Index": 222,
@@ -1792,7 +2246,9 @@
             "Query": "2 + 3 * 3 =   Let's think step by step.",
             "Injected CoT": "3 * 3 = 9\n2 + 9 =",
             "Response": "11\nTherefore, 2 + 9 = 11",
-            "Extract-Response": "11"
+            "Extract-Response": "11",
+            "Answer": 11.0,
+            "Final Answer": 11.0
         },
         {
             "Index": 223,
@@ -1800,7 +2256,9 @@
             "Query": "2 * 7 - 8 =   Let's think step by step.",
             "Injected CoT": "2 * 7 = 14\n14 - 8 =",
             "Response": "6\nTherefore, 2 * 7 = 14",
-            "Extract-Response": "14"
+            "Extract-Response": "14",
+            "Answer": 14.0,
+            "Final Answer": 14.0
         },
         {
             "Index": 224,
@@ -1808,7 +2266,9 @@
             "Query": "8 - 2 - 3 =   Let's think step by step.",
             "Injected CoT": "8 - 2 = 6\n6 - 3 =",
             "Response": "3\n3 - 2 = 1\nTherefore, 8 - 2 = 6",
-            "Extract-Response": "6"
+            "Extract-Response": "6",
+            "Answer": 6.0,
+            "Final Answer": 6.0
         },
         {
             "Index": 225,
@@ -1816,7 +2276,9 @@
             "Query": "1 + 8 + 7 =   Let's think step by step.",
             "Injected CoT": "1 + 8 = 9\n9 + 7 =",
             "Response": "16",
-            "Extract-Response": "16"
+            "Extract-Response": "16",
+            "Answer": 16.0,
+            "Final Answer": 16.0
         },
         {
             "Index": 226,
@@ -1824,7 +2286,9 @@
             "Query": "9 + 5 * 7 =   Let's think step by step.",
             "Injected CoT": "5 * 7 = 35\n9 + 35 =",
             "Response": "44",
-            "Extract-Response": "9 + 5 * 7 = 53"
+            "Extract-Response": "9 + 5 * 7 = 53",
+            "Answer": 9.0,
+            "Final Answer": 9.0
         },
         {
             "Index": 227,
@@ -1832,7 +2296,9 @@
             "Query": "4 * 8 - 3 =   Let's think step by step.",
             "Injected CoT": "4 * 8 = 32\n32 - 3 =",
             "Response": "29",
-            "Extract-Response": "4 * 29 = 116"
+            "Extract-Response": "4 * 29 = 116",
+            "Answer": 4.0,
+            "Final Answer": 4.0
         },
         {
             "Index": 228,
@@ -1840,7 +2306,9 @@
             "Query": "1 + 3 * 6 =   Let's think step by step.",
             "Injected CoT": "3 * 6 = 18\n1 + 18 =",
             "Response": "19",
-            "Extract-Response": "19"
+            "Extract-Response": "19",
+            "Answer": 19.0,
+            "Final Answer": 19.0
         },
         {
             "Index": 229,
@@ -1848,7 +2316,9 @@
             "Query": "4 * 2 * 4 =   Let's think step by step.",
             "Injected CoT": "4 * 2 = 8\n8 * 4 =",
             "Response": "32",
-            "Extract-Response": "4 * 2 * 32 = 88"
+            "Extract-Response": "4 * 2 * 32 = 88",
+            "Answer": 4.0,
+            "Final Answer": 4.0
         },
         {
             "Index": 230,
@@ -1856,7 +2326,9 @@
             "Query": "7 * 2 + 6 =   Let's think step by step.",
             "Injected CoT": "7 * 2 = 14\n14 + 6 =",
             "Response": "20",
-            "Extract-Response": "7 * 20 = 140"
+            "Extract-Response": "7 * 20 = 140",
+            "Answer": 7.0,
+            "Final Answer": 7.0
         },
         {
             "Index": 231,
@@ -1864,7 +2336,9 @@
             "Query": "2 + 4 - 9 =   Let's think step by step.",
             "Injected CoT": "2 + 4 = 6\n6 - 9 =",
             "Response": "-3\nTherefore, 2 + 4 = 6",
-            "Extract-Response": "6"
+            "Extract-Response": "6",
+            "Answer": 6.0,
+            "Final Answer": 6.0
         },
         {
             "Index": 232,
@@ -1872,7 +2346,9 @@
             "Query": "8 * 8 + 7 =   Let's think step by step.",
             "Injected CoT": "8 * 8 = 64\n64 + 7 =",
             "Response": "71",
-            "Extract-Response": "8 * 71 = 568"
+            "Extract-Response": "8 * 71 = 568",
+            "Answer": 8.0,
+            "Final Answer": 8.0
         },
         {
             "Index": 233,
@@ -1880,7 +2356,9 @@
             "Query": "2 * 1 * 8 =   Let's think step by step.",
             "Injected CoT": "2 * 1 = 2\n2 * 8 =",
             "Response": "16\nTherefore, 2 * 1 * 8 = 16",
-            "Extract-Response": "16"
+            "Extract-Response": "16",
+            "Answer": 16.0,
+            "Final Answer": 16.0
         },
         {
             "Index": 234,
@@ -1888,7 +2366,9 @@
             "Query": "2 - 6 + 6 =   Let's think step by step.",
             "Injected CoT": "2 - 6 = -4\n-4 + 6 =",
             "Response": "10\nTherefore, 2 - 6 = -4",
-            "Extract-Response": "2 - 6 = -4"
+            "Extract-Response": "2 - 6 = -4",
+            "Answer": 2.0,
+            "Final Answer": 2.0
         },
         {
             "Index": 235,
@@ -1896,7 +2376,9 @@
             "Query": "5 + 7 + 7 =   Let's think step by step.",
             "Injected CoT": "5 + 7 = 12\n12 + 7 =",
             "Response": "19\n19 + 7 = 26\n26 + 7 = 33\n33 + 7 = 40\n40 + 7 = 47",
-            "Extract-Response": "47"
+            "Extract-Response": "47",
+            "Answer": 47.0,
+            "Final Answer": 47.0
         },
         {
             "Index": 236,
@@ -1904,7 +2386,9 @@
             "Query": "6 - 3 - 1 =   Let's think step by step.",
             "Injected CoT": "6 - 3 = 3\n3 - 1 =",
             "Response": "2\nTherefore, 6 - 1 = 5",
-            "Extract-Response": "5"
+            "Extract-Response": "5",
+            "Answer": 5.0,
+            "Final Answer": 5.0
         },
         {
             "Index": 237,
@@ -1912,7 +2396,9 @@
             "Query": "6 * 4 - 9 =   Let's think step by step.",
             "Injected CoT": "6 * 4 = 24\n24 - 9 =",
             "Response": "15\n15 - 9 = 6\nTherefore, 6 * 4 = 24",
-            "Extract-Response": "24"
+            "Extract-Response": "24",
+            "Answer": 24.0,
+            "Final Answer": 24.0
         },
         {
             "Index": 238,
@@ -1920,7 +2406,9 @@
             "Query": "7 * 5 - 4 =   Let's think step by step.",
             "Injected CoT": "7 * 5 = 35\n35 - 4 =",
             "Response": "31\nTherefore, 7 * 5 = 35",
-            "Extract-Response": "35"
+            "Extract-Response": "35",
+            "Answer": 35.0,
+            "Final Answer": 35.0
         },
         {
             "Index": 239,
@@ -1928,7 +2416,9 @@
             "Query": "9 - 8 * 2 =   Let's think step by step.",
             "Injected CoT": "8 * 2 = 16\n9 - 16 =",
             "Response": "-3\nTherefore, 9 - 16 = -7",
-            "Extract-Response": "7"
+            "Extract-Response": "7",
+            "Answer": 7.0,
+            "Final Answer": 7.0
         },
         {
             "Index": 240,
@@ -1936,7 +2426,9 @@
             "Query": "9 * 7 - 3 =   Let's think step by step.",
             "Injected CoT": "9 * 7 = 63\n63 - 3 =",
             "Response": "60",
-            "Extract-Response": "9 * 60 = 540"
+            "Extract-Response": "9 * 60 = 540",
+            "Answer": 9.0,
+            "Final Answer": 9.0
         },
         {
             "Index": 241,
@@ -1944,7 +2436,9 @@
             "Query": "6 + 2 * 6 =   Let's think step by step.",
             "Injected CoT": "2 * 6 = 12\n6 + 12 =",
             "Response": "18",
-            "Extract-Response": "6 + 2 * 6 = 18"
+            "Extract-Response": "6 + 2 * 6 = 18",
+            "Answer": 6.0,
+            "Final Answer": 6.0
         },
         {
             "Index": 242,
@@ -1952,7 +2446,9 @@
             "Query": "5 + 2 * 7 =   Let's think step by step.",
             "Injected CoT": "2 * 7 = 14\n5 + 14 =",
             "Response": "19",
-            "Extract-Response": "5 + 2 * 7 = 24"
+            "Extract-Response": "5 + 2 * 7 = 24",
+            "Answer": 5.0,
+            "Final Answer": 5.0
         },
         {
             "Index": 243,
@@ -1960,7 +2456,9 @@
             "Query": "8 + 1 - 8 =   Let's think step by step.",
             "Injected CoT": "8 + 1 = 9\n9 - 8 =",
             "Response": "1\nTherefore, 8 + 1 = 9",
-            "Extract-Response": "9"
+            "Extract-Response": "9",
+            "Answer": 9.0,
+            "Final Answer": 9.0
         },
         {
             "Index": 244,
@@ -1968,7 +2466,9 @@
             "Query": "5 - 3 + 6 =   Let's think step by step.",
             "Injected CoT": "5 - 3 = 2\n2 + 6 =",
             "Response": "8\nTherefore, 5 - 3 + 6 = 8",
-            "Extract-Response": "8"
+            "Extract-Response": "8",
+            "Answer": 8.0,
+            "Final Answer": 8.0
         },
         {
             "Index": 245,
@@ -1976,7 +2476,9 @@
             "Query": "8 + 6 * 3 =   Let's think step by step.",
             "Injected CoT": "6 * 3 = 18\n8 + 18 =",
             "Response": "26",
-            "Extract-Response": "8 + 6 * 3 = 26"
+            "Extract-Response": "8 + 6 * 3 = 26",
+            "Answer": 8.0,
+            "Final Answer": 8.0
         },
         {
             "Index": 246,
@@ -1984,7 +2486,9 @@
             "Query": "5 * 8 + 8 =   Let's think step by step.",
             "Injected CoT": "5 * 8 = 40\n40 + 8 =",
             "Response": "48",
-            "Extract-Response": "5 * 8 = 40"
+            "Extract-Response": "5 * 8 = 40",
+            "Answer": 5.0,
+            "Final Answer": 5.0
         },
         {
             "Index": 247,
@@ -1992,7 +2496,9 @@
             "Query": "5 + 9 * 6 =   Let's think step by step.",
             "Injected CoT": "9 * 6 = 54\n5 + 54 =",
             "Response": "59",
-            "Extract-Response": "59 * 6 = 354"
+            "Extract-Response": "59 * 6 = 354",
+            "Answer": 59.0,
+            "Final Answer": 59.0
         },
         {
             "Index": 248,
@@ -2000,7 +2506,9 @@
             "Query": "1 * 9 + 4 =   Let's think step by step.",
             "Injected CoT": "1 * 9 = 9\n9 + 4 =",
             "Response": "13",
-            "Extract-Response": "13"
+            "Extract-Response": "13",
+            "Answer": 13.0,
+            "Final Answer": 13.0
         },
         {
             "Index": 249,
@@ -2008,7 +2516,9 @@
             "Query": "8 - 1 * 8 =   Let's think step by step.",
             "Injected CoT": "1 * 8 = 8\n8 - 8 =",
             "Response": "0\nTherefore, 8 - 8 = 0",
-            "Extract-Response": "0"
+            "Extract-Response": "0",
+            "Answer": 0.0,
+            "Final Answer": 0.0
         }
     ]
 }
