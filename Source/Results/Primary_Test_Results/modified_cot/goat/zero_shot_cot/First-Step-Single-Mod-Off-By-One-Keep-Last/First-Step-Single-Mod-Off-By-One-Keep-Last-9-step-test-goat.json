@@ -1,0 +1,2524 @@
+{
+    "Mode": "test",
+    "Model": "goat",
+    "Model Index": 4,
+    "Modality": "zero_shot_cot",
+    "Modality Index": 1,
+    "Dataset": "First-Step-Single-Mod-Off-By-One-Keep-Last",
+    "Steps": 9,
+    "Extraction Type": "two-stage",
+    "Simple Prompt": true,
+    "Test Path": "Results/Primary_Test_Results/modified_cot/goat/zero_shot_cot/First-Step-Single-Mod-Off-By-One-Keep-Last/First-Step-Single-Mod-Off-By-One-Keep-Last-9-step-test-goat.json",
+    "Total": 250,
+    "Total Accurate": 27,
+    "Total Accuracy": 10.8,
+    "Percent of Answers Containing CoT": 28.000000000000004,
+    "CoT Accuracy": 0.0,
+    "Non-CoT Accuracy": 15.0,
+    "ci_radius": 3.847515445583033,
+    "ci_upper": 14.647515445583034,
+    "ci_lower": 6.9524845544169676,
+    "Dataset Index": 9,
+    "Trials": [
+        {
+            "Index": 0,
+            "GT": 369,
+            "Query": "1 * 2 + 7 * 6 * 9 - 2 - 1 - 1 - 1 - 6 =   Let's think step by step.",
+            "Injected CoT": "1 * 3 = 3\n7 * 6 = 42\n42 * 9 = 378\n3 + 378 = 380\n380 - 3 = 378\n378 - 1 = 377\n377 - 1 = 376\n376 - 1 = 375\n375 - 6 =",
+            "Response": "379\n379 - 6 = 373\n373 - 6 = 367\n367 - 6 = 361\n361 - 6 = 355\n355 - 6 = 349\n349 - 6 = 343\n343 - 6 = 337\n337 - 6 = 331\n331 - 6 = 325\n325 - 6 = 319\n319 - 6 = 313\n313 - 6 = 307\n307 - 6 = 301\n301 - 6 = 305\n305 - 6 = 309\n309 - 6 = 303\n303 - 6 = 307\n307 - 6 = 301\n301 - 6 = 305\n305 - 6 = 309\n309 - 6 = 303\n303 - 6 = 307\n307 - 6 = 301\n301 - 6 = 305\n305 - 6 = 309\n309 - 6 = 303\n303 - 6 = 307\n307 - 6 = 301\n301 - 6 = 305\n305 - 6 = 309\n309 - 6 = 303\n303 - 6 = 307\n307 - 6 = 301\n301 - 6 = 305\n305 - 6 = 309\n309 - 6 = 303\n303 - 6 = 307\n307 - 6 = 301\n301 - 6 = 305\n305 - 6 = 309\n309 - 6 = 303\n303 - 6 = 307\n307",
+            "Extract-Response": "309",
+            "Answer": 309.0,
+            "Final Answer": 309.0
+        },
+        {
+            "Index": 2,
+            "GT": 75,
+            "Query": "5 + 8 * 5 + 4 * 8 + 9 - 9 - 7 + 9 - 4 =   Let's think step by step.",
+            "Injected CoT": "8 * 4 = 40\n4 * 8 = 32\n4 + 40 = 45\n45 + 32 = 77\n77 - 9 = 68\n68 - 7 = 61\n61 + 9 = 70\n70 - 4 =",
+            "Response": "66\n66 - 4 = 62\nTherefore, 5 + 8 * 4 = 62",
+            "Extract-Response": "62",
+            "Answer": 62.0,
+            "Final Answer": 62.0
+        },
+        {
+            "Index": 4,
+            "GT": -957,
+            "Query": "3 + 9 - 8 * 4 * 3 * 5 * 2 - 3 * 1 * 3 =   Let's think step by step.",
+            "Injected CoT": "8 * 5 = 32\n32 * 3 = 96\n96 * 5 = 480\n480 * 2 = 960\n3 * 1 = 3\n3 * 3 = 9\n9 + 960 = 969\n3 + 9 = 12\n12 - 969 =",
+            "Response": "-849",
+            "Extract-Response": "849",
+            "Answer": 849.0,
+            "Final Answer": 849.0
+        },
+        {
+            "Index": 6,
+            "GT": 128,
+            "Query": "5 * 9 + 7 + 6 * 8 + 7 * 6 - 2 - 2 * 6 =   Let's think step by step.",
+            "Injected CoT": "5 * 8 = 45\n6 * 8 = 48\n7 * 6 = 42\n2 * 6 = 12\n45 + 7 = 52\n48 + 42 = 90\n2 * 6 = 12\n52 + 90 = 142\n142 - 2 = 140\n140 - 12 =",
+            "Response": "128",
+            "Extract-Response": "5 * 128 = 640",
+            "Answer": 5.0,
+            "Final Answer": 5.0
+        },
+        {
+            "Index": 8,
+            "GT": 91,
+            "Query": "9 + 5 * 5 + 9 * 6 - 1 * 7 + 2 + 3 + 5 =   Let's think step by step.",
+            "Injected CoT": "4 * 4 = 25\n9 * 6 = 54\n1 * 7 = 7\n9 + 25 = 34\n34 + 54 = 88\n88 - 7 = 81\n81 + 2 = 83\n83 + 3 = 86\n86 + 4 =",
+            "Response": "90\n90 + 2 = 92\n92 - 2 = 90\nTherefore, 9 + 5 * 5 + 9 * 6 = 90 + 25 * 5 + 54 * 6 = 115 + 125 = 240",
+            "Extract-Response": "240",
+            "Answer": 240.0,
+            "Final Answer": 240.0
+        },
+        {
+            "Index": 9,
+            "GT": 2,
+            "Query": "3 + 6 * 6 - 6 * 6 - 4 - 1 * 2 + 6 - 1 =   Let's think step by step.",
+            "Injected CoT": "5 * 5 = 36\n5 * 5 = 36\n3 + 36 = 39\n39 - 36 = 3\n3 - 4 = -1\n1 * 2 = 2\n-1 + 5 = 5\n5 - 1 =",
+            "Response": "4\nTherefore, 3 + 5 = 8",
+            "Extract-Response": "8",
+            "Answer": 8.0,
+            "Final Answer": 8.0
+        },
+        {
+            "Index": 11,
+            "GT": 18,
+            "Query": "5 - 1 * 8 - 1 + 8 + 6 + 1 + 6 + 7 - 6 =   Let's think step by step.",
+            "Injected CoT": "1 * 7 = 7\n5 - 7 = -3\n-3 - 1 = -4\n-4 + 7 = 4\n4 + 6 = 10\n10 + 1 = 11\n11 + 6 = 17\n17 + 7 = 24\n24 - 6 =",
+            "Response": "18\n18 - 6 = 12\n12 - 6 = 6\n6 - 1 = 5\nTherefore, 5 - 1 = 4",
+            "Extract-Response": "4",
+            "Answer": 4.0,
+            "Final Answer": 4.0
+        },
+        {
+            "Index": 14,
+            "GT": -68,
+            "Query": "9 + 1 - 9 * 9 + 9 - 1 * 4 - 9 + 4 + 3 =   Let's think step by step.",
+            "Injected CoT": "10 * 10 = 81\n1 * 4 = 4\n10 * 81 = 729\n729 - 10 = 720\n720 - 4 = 716\n716 - 10 = 707\n707 + 4 = 711\n711 + 3 =",
+            "Response": "714\n714 - 3 = 711\n711 - 1 = 710\nTherefore, 9 + 1 = 711",
+            "Extract-Response": "711",
+            "Answer": 711.0,
+            "Final Answer": 711.0
+        },
+        {
+            "Index": 15,
+            "GT": 60,
+            "Query": "2 * 2 * 7 - 6 + 7 * 7 - 2 - 3 + 3 - 9 =   Let's think step by step.",
+            "Injected CoT": "3 * 3 = 4\n4 * 7 = 28\n28 - 6 = 22\n7 * 7 = 49\n3 - 3 = 0\n3 - 3 = 0\n0 + 0 = 0\n49 - 0 = 49\n49 - 9 = 40\n22 + 40 =",
+            "Response": "62",
+            "Extract-Response": "62",
+            "Answer": 62.0,
+            "Final Answer": 62.0
+        },
+        {
+            "Index": 16,
+            "GT": 737,
+            "Query": "2 * 6 + 1 * 6 + 4 * 9 * 4 * 5 - 5 + 4 =   Let's think step by step.",
+            "Injected CoT": "3 * 6 = 12\n1 * 6 = 6\n4 * 9 = 36\n36 * 4 = 144\n144 * 5 = 720\n12 + 6 = 18\n18 + 720 = 738\n738 - 5 = 733\n733 + 4 =",
+            "Response": "737",
+            "Extract-Response": "737",
+            "Answer": 737.0,
+            "Final Answer": 737.0
+        },
+        {
+            "Index": 18,
+            "GT": 15,
+            "Query": "8 * 7 - 6 - 6 - 3 * 1 - 8 - 6 - 9 - 3 =   Let's think step by step.",
+            "Injected CoT": "7 * 7 = 56\n56 - 6 = 50\n50 - 6 = 44\n3 * 1 = 3\n44 - 3 = 41\n41 - 7 = 33\n33 - 6 = 27\n27 - 9 = 18\n18 - 3 =",
+            "Response": "15\n15 - 2 = 13\nTherefore, 8 * 7 = 56",
+            "Extract-Response": "56",
+            "Answer": 56.0,
+            "Final Answer": 56.0
+        },
+        {
+            "Index": 20,
+            "GT": -238,
+            "Query": "3 * 9 - 1 * 1 * 6 * 6 * 1 * 7 - 7 - 6 =   Let's think step by step.",
+            "Injected CoT": "2 * 6 = 6\n6 * 6 = 36\n36 * 2 = 36\n36 * 7 = 252\n252 + 7 = 259\n3 * 9 = 27\n259 - 27 =",
+            "Response": "232",
+            "Extract-Response": "232",
+            "Answer": 232.0,
+            "Final Answer": 232.0
+        },
+        {
+            "Index": 22,
+            "GT": -4,
+            "Query": "7 + 1 + 6 + 3 - 3 + 2 + 1 - 8 - 8 - 5 =   Let's think step by step.",
+            "Injected CoT": "8 + 1 = 8\n8 + 6 = 14\n14 + 3 = 17\n17 - 3 = 14\n14 + 2 = 16\n16 + 1 = 17\n17 - 8 = 9\n9 - 8 = 1\n1 - 5 =",
+            "Response": "-4\nTherefore, 7 + 1 = 8",
+            "Extract-Response": "8",
+            "Answer": 8.0,
+            "Final Answer": 8.0
+        },
+        {
+            "Index": 23,
+            "GT": -114,
+            "Query": "3 - 3 * 4 * 4 - 6 * 8 * 1 - 5 * 6 + 9 =   Let's think step by step.",
+            "Injected CoT": "4 * 4 = 12\n12 * 4 = 48\n6 * 8 = 48\n48 * 1 = 48\n5 * 6 = 30\n48 + 48 = 96\n96 - 30 = 66\n66 - 5 = 61\n61 + 9 =",
+            "Response": "70\n70 - 9 = 61\n61 - 9 = 52\n52 - 5 = 47\nTherefore, 3 - 5 * 6 = 3 - 30 = -27",
+            "Extract-Response": "3 - 30 = -27",
+            "Answer": 3.0,
+            "Final Answer": 3.0
+        },
+        {
+            "Index": 28,
+            "GT": -27,
+            "Query": "3 + 9 - 8 - 6 - 6 * 2 * 3 + 1 + 7 + 3 =   Let's think step by step.",
+            "Injected CoT": "6 * 1 = 12\n12 * 3 = 36\n3 + 9 = 12\n12 - 8 = 4\n4 - 6 = -2\n-2 - 36 = -38\n-38 + 1 = -37\n-37 + 7 = -30\n-30 + 3 =",
+            "Response": "-27\n-27 + 2 = -29\n-29 + 1 = -30\n-30 + 1 = -31\n-31 + 1 = -32\n-32 + 1 = -33\n-33 + 1 = -34\n-34 + 1 = -35\n-35 + 1 = -36\n-36 + 1 = -37\n-37 + 1 = -38\n-38 + 1 = -39\n-39 + 1 = -40\n-40 + 1 = -41\n-41 + 1 = -42\n-42 + 1 = -43\n-43 + 1 = -44\n-44 + 1 = -45\n-45 + 1 = -46\n-46 + 1 = -47\n-47 + 1 = -48\n-48 + 1 = -49\n-49 + 1 = -50\n-50 + 1 = -51\n-51 + 1 = -52\n-52 + 1 = -53\n-53 + 1 = -54\n-54 + 1 = -55\n-55 + 1 = -56\n-56 + 1 = -57\n-57 + 1 = -58\n-58 + 1 = -59\n-59 + 1 = -60\n-60 + 1 = -61\n-61 + 1 = -62\n-62 + 1 = -63\n-63 + 1 = -64\n-64 + 1 = -65\n-65 + 1 = -66\n-66 + 1 = -67\n-67 + 1 = -68\n-68 + 1 = -69\n-69 + 1 = -70\n-70 + 1 = -71\n-71 + 1 = -72\n-72 + 1 = -73\n-73 + 1 = -74\n-7",
+            "Extract-Response": "7",
+            "Answer": 7.0,
+            "Final Answer": 7.0
+        },
+        {
+            "Index": 29,
+            "GT": -146,
+            "Query": "2 - 7 + 3 - 1 * 8 - 9 - 8 * 8 * 2 + 1 =   Let's think step by step.",
+            "Injected CoT": "8 * 1 = 16\n-8 * 16 = -128\n-128 - 9 = -137\n-137 - 8 = -145\n-145 * 1 = -145\n-145 + 3 = -142\n-142 - 7 = -149\n-149 + 1 = -147\n-147 + 1 =",
+            "Response": "-148\n-148 + 1 = -149\n-149 + 1 = -150\n-150 + 1 = -151\n-151 + 1 = -152\n-152 + 1 = -153\n-153 + 1 = -154\n-154 + 1 = -155\n-155 + 1 = -156\n-156 + 1 = -157\n-157 + 1 = -158\n-158 + 1 = -159\n-159 + 1 = -160\n-160 + 1 = -161\n-161 + 1 = -162\n-162 + 1 = -163\n-163 + 1 = -164\n-164 + 1 = -165\n-165 + 1 = -166\n-166 + 1 = -167\n-167 + 1 = -168\n-168 + 1 = -169\n-169 + 1 = -170\n-170 + 1 = -171\n-171 + 1 = -172\n-172 + 1 = -173\n-173 + 1 = -174\n-174 + 1 = -175\n-175 + 1 = -176\n-176 + 1 = -177\n-177 + 1 = -178\n-178 + 1 = -179\n-179 + 1 = -180\n-180 + 1 = -181\n-181 + 1 = -182\n-182 + 1 = -183\n-183 + 1 = -184\n-184 + 1 = -185\n-185 + 1 = -186\n-186 + 1 = -187",
+            "Extract-Response": "2 - 7 + 3 - 1 * 8 = -187",
+            "Answer": 2.0,
+            "Final Answer": 2.0
+        },
+        {
+            "Index": 31,
+            "GT": 18,
+            "Query": "6 * 4 + 1 - 2 * 3 * 9 + 7 * 7 - 5 + 3 =   Let's think step by step.",
+            "Injected CoT": "7 * 4 = 24\n2 * 3 = 7\n7 * 9 = 54\n24 + 1 = 25\n54 - 7 = 48\n7 * 7 = 49\n48 + 49 = 97\n97 - 5 = 92\n92 + 3 =",
+            "Response": "95",
+            "Extract-Response": "95",
+            "Answer": 95.0,
+            "Final Answer": 95.0
+        },
+        {
+            "Index": 34,
+            "GT": -1,
+            "Query": "2 * 5 * 3 - 3 + 5 - 1 - 4 * 8 + 3 - 3 =   Let's think step by step.",
+            "Injected CoT": "1 * 5 = 10\n10 * 3 = 30\n30 - 3 = 27\n27 + 5 = 32\n32 - 1 = 31\n31 - 4 * 8 = -1\n-1 + 3 = 1\n1 - 3 =",
+            "Response": "-2\nTherefore, 2 * 5 * 3 = 15",
+            "Extract-Response": "15",
+            "Answer": 15.0,
+            "Final Answer": 15.0
+        },
+        {
+            "Index": 35,
+            "GT": 97,
+            "Query": "4 + 5 * 4 + 4 * 9 + 8 * 3 + 1 + 8 + 4 =   Let's think step by step.",
+            "Injected CoT": "5 * 5 = 20\n5 + 20 = 24\n9 * 5 = 36\n24 + 36 = 60\n8 * 3 = 24\n1 + 24 = 25\n25 + 8 = 33\n33 + 5 =",
+            "Response": "38",
+            "Extract-Response": "38",
+            "Answer": 38.0,
+            "Final Answer": 38.0
+        },
+        {
+            "Index": 37,
+            "GT": -45,
+            "Query": "3 - 2 * 4 * 6 - 3 - 4 + 1 * 5 - 2 + 4 =   Let's think step by step.",
+            "Injected CoT": "2 * 3 = 8\n8 * 6 = 48\n3 - 48 = -45\n-45 - 3 = -48\n-48 - 3 = -52\n1 * 5 = 5\n-52 + 5 = -47\n-47 - 2 = -49\n-49 + 3 =",
+            "Response": "-52\n-52 - 2 = -50\n-50 - 2 = -48\n-48 - 2 = -46\n-46 - 2 = -44\n-44 - 2 = -42\n-42 - 2 = -40\n-40 - 2 = -38\n-38 - 2 = -36\n-36 - 2 = -34\n-34 - 2 = -32\n-32 - 2 = -30\n-30 - 2 = -28\n-28 - 2 = -26\n-26 - 2 = -24\n-24 - 2 = -22\n-22 - 2 = -20\n-20 - 2 = -18\n-18 - 2 = -16\n-16 - 2 = -14\n-14 - 2 = -12\n-12 - 2 = -10\n-10 - 2 = -8\n-8 - 2 = -6\n-6 - 2 = -4\n-4 - 2 = -2\nTherefore, 3 - 2 * 4 = -2",
+            "Extract-Response": "3 - 2 * 4 = -2",
+            "Answer": 3.0,
+            "Final Answer": 3.0
+        },
+        {
+            "Index": 38,
+            "GT": 107,
+            "Query": "4 - 1 * 6 + 1 * 2 + 3 * 2 * 9 * 2 - 1 =   Let's think step by step.",
+            "Injected CoT": "2 * 6 = 6\n3 * 2 = 6\n6 * 9 = 54\n54 * 2 = 108\n4 - 6 = -2\n-2 + 2 = -1\n-1 + 2 = 2\n2 + 108 = 109\n109 - 2 =",
+            "Response": "107",
+            "Extract-Response": "107",
+            "Answer": 107.0,
+            "Final Answer": 107.0
+        },
+        {
+            "Index": 40,
+            "GT": -4,
+            "Query": "1 * 8 * 5 - 9 - 5 * 7 - 8 + 3 - 1 + 6 =   Let's think step by step.",
+            "Injected CoT": "0 * 8 = 8\n8 * 5 = 40\n40 - 9 = 31\n5 * 7 = 35\n31 - 35 = -4\n-4 - 8 = -12\n-12 + 3 = -9\n-9 - 0 = -10\n-10 + 6 =",
+            "Response": "-16\n-16 + 1 = -15\n-15 + 1 = -16\n-16 + 1 = -17\n-17 + 1 = -18\n-18 + 1 = -19\n-19 + 1 = -20\n-20 + 1 = -21\n-21 + 1 = -22\n-22 + 1 = -23\n-23 + 1 = -24\n-24 + 1 = -25\n-25 + 1 = -26\n-26 + 1 = -27\n-27 + 1 = -28\n-28 + 1 = -29\n-29 + 1 = -30\n-30 + 1 = -31\n-31 + 1 = -32\n-32 + 1 = -33\n-33 + 1 = -34\n-34 + 1 = -35\n-35 + 1 = -36\n-36 + 1 = -37\n-37 + 1 = -38\n-38 + 1 = -39\n-39 + 1 = -40\n-40 + 1 = -41\n-41 + 1 = -42\n-42 + 1 = -43\n-43 + 1 = -44\n-44 + 1 = -45\n-45 + 1 = -46\n-46 + 1 = -47\n-47 + 1 = -48\n-48 + 1 = -49\n-49 + 1 = -50\n-50 + 1 = -51\n-51 + 1 = -52\n-52 + 1 = -53\n-53 + 1 = -54\n-54 + 1 = -55\n-55 + 1 = -56\n-56 + 1 = -57\n-57 + 1 = -58\n-58 + 1 = -59\n-59 + 1 = -60\n-6",
+            "Extract-Response": "1 * 8 * 5 = 40",
+            "Answer": 1.0,
+            "Final Answer": 1.0
+        },
+        {
+            "Index": 43,
+            "GT": 36,
+            "Query": "2 - 5 * 4 + 5 * 6 - 4 + 5 * 6 + 7 - 9 =   Let's think step by step.",
+            "Injected CoT": "6 * 4 = 20\n6 * 6 = 30\n6 * 6 = 30\n2 - 20 = -18\n-18 + 30 = 12\n12 - 4 = 8\n8 + 30 = 38\n38 + 7 = 45\n45 - 9 =",
+            "Response": "36\n36 - 9 = 27\n27 - 7 = 20\n20 - 7 = 13\n13 - 7 = 6\n6 - 7 = -1\nTherefore, 2 - 7 = -5",
+            "Extract-Response": "2 - 7 = -5",
+            "Answer": 2.0,
+            "Final Answer": 2.0
+        },
+        {
+            "Index": 44,
+            "GT": 74,
+            "Query": "4 * 4 + 4 * 9 + 3 * 3 - 5 + 7 + 7 + 4 =   Let's think step by step.",
+            "Injected CoT": "5 * 5 = 16\n5 * 9 = 36\n3 * 3 = 9\n16 + 36 = 52\n52 + 9 = 61\n61 - 5 = 56\n56 + 7 = 63\n63 + 7 = 70\n70 + 5 =",
+            "Response": "75\n75 + 5 = 80\n80 + 5 = 85\n85 + 5 = 90\n90 + 5 = 95\n95 + 5 = 100\n100 + 5 = 105\n105 + 5 = 110\n110 + 5 = 115\n115 + 5 = 120\n120 + 5 = 125\n125 + 5 = 130\n130 + 5 = 135\n135 + 5 = 140\n140 + 5 = 145\n145 + 5 = 150\n150 + 5 = 155\n155 + 5 = 160\n160 + 5 = 165\n165 + 5 = 170\n170 + 5 = 175\n175 + 5 = 180\n180 + 5 = 185\n185 + 5 = 190\n190 + 5 = 195\n195 + 5 = 200\n200 + 5 = 205\n205 + 5 = 210\n210 + 5 = 215\n215 + 5 = 220\n220 + 5 = 225\n225 + 5 = 230\n230 + 5 = 235\n235 + 5 = 240\n240 + 5 = 245\n245 + 5 = 250\n250 + 5 = 255\n255 + 5 = 260\n260 + 5 = 265\n265 + 5 = 270\n270 + 5 = 275\n275 + 5 = 280\n280 + 5 = 285\n285 + 5 = 290\n2",
+            "Extract-Response": "2",
+            "Answer": 2.0,
+            "Final Answer": 2.0
+        },
+        {
+            "Index": 45,
+            "GT": 281,
+            "Query": "8 * 4 * 9 - 1 - 2 * 9 + 8 + 6 + 4 - 6 =   Let's think step by step.",
+            "Injected CoT": "9 * 4 = 32\n32 * 9 = 288\n2 * 9 = 18\n1 - 18 = -17\n-17 + 9 = -9\n-9 + 6 = -3\n-3 + 4 = 1\n288 - 1 = 287\n287 + 1 =",
+            "Response": "288",
+            "Extract-Response": "8 * 288 = 2304",
+            "Answer": 8.0,
+            "Final Answer": 8.0
+        },
+        {
+            "Index": 47,
+            "GT": -11,
+            "Query": "1 - 6 + 1 - 3 * 4 + 6 + 4 - 1 * 4 - 1 =   Let's think step by step.",
+            "Injected CoT": "-2 * 4 = -12\n1 - 6 + 1 - 12 + 6 + 4 - 1 * 4 - 1 = \n-1 * 4 = -4\n1 - 6 + 1 - 12 + 6 + 4 - 4 - 1 = \n-6 + 1 = -5\n-5 - 12 = -17\n-17 + 6 = -11\n-11 + 4 = -7\n-7 - 1 =",
+            "Response": "6\nTherefore, 1 - 6 + 1 = 7",
+            "Extract-Response": "7",
+            "Answer": 7.0,
+            "Final Answer": 7.0
+        },
+        {
+            "Index": 49,
+            "GT": 32,
+            "Query": "7 + 4 - 7 + 9 + 2 * 9 - 6 + 8 - 4 + 3 =   Let's think step by step.",
+            "Injected CoT": "2 * 8 = 18\n7 + 4 = 11\n11 - 7 = 4\n4 + 8 = 13\n13 + 18 = 31\n31 - 6 = 25\n25 + 8 = 33\n33 - 4 = 29\n29 + 3 =",
+            "Response": "32\n32 - 2 = 30\nTherefore, 7 + 4 = 31",
+            "Extract-Response": "31",
+            "Answer": 31.0,
+            "Final Answer": 31.0
+        },
+        {
+            "Index": 50,
+            "GT": 17,
+            "Query": "9 - 2 * 6 + 3 - 9 + 1 + 3 * 9 * 1 - 2 =   Let's think step by step.",
+            "Injected CoT": "1 * 6 = 12\n9 - 12 = -3\n-3 + 3 = 0\n0 - 9 = -9\n-9 + 1 = -8\n3 * 9 = 27\n27 * 1 = 27\n-8 + 27 = 19\n19 - 1 =",
+            "Response": "18",
+            "Extract-Response": "18",
+            "Answer": 18.0,
+            "Final Answer": 18.0
+        },
+        {
+            "Index": 51,
+            "GT": 471,
+            "Query": "9 * 3 * 5 * 1 + 1 * 7 * 8 * 6 - 7 + 7 =   Let's think step by step.",
+            "Injected CoT": "9 * 4 = 27\n27 * 5 = 135\n135 * 1 = 135\n1 * 7 = 7\n7 * 8 = 56\n56 * 6 = 336\n135 + 336 = 471\n471 - 7 = 464\n464 + 7 =",
+            "Response": "471",
+            "Extract-Response": "471 * 9 = 4239",
+            "Answer": 471.0,
+            "Final Answer": 471.0
+        },
+        {
+            "Index": 52,
+            "GT": 93,
+            "Query": "8 * 5 - 3 + 5 * 5 - 9 - 5 - 4 + 7 * 7 =   Let's think step by step.",
+            "Injected CoT": "7 * 5 = 40\n40 - 3 = 37\n5 * 5 = 25\n37 + 25 = 62\n62 - 9 = 53\n53 - 5 = 48\n48 - 4 = 44\n7 * 7 = 49\n44 + 49 =",
+            "Response": "93\n93 - 9 = 84\nTherefore, 8 * 5 = 40",
+            "Extract-Response": "8 * 5 = 40",
+            "Answer": 8.0,
+            "Final Answer": 8.0
+        },
+        {
+            "Index": 53,
+            "GT": 57,
+            "Query": "3 * 3 * 6 - 4 - 2 * 5 + 7 - 1 + 9 + 2 =   Let's think step by step.",
+            "Injected CoT": "4 * 4 = 9\n9 * 6 = 54\n2 * 5 = 10\n54 - 4 = 50\n50 - 10 = 40\n40 + 7 = 47\n47 - 1 = 46\n46 + 9 = 55\n55 + 2 =",
+            "Response": "57\n57 - 2 = 55\nTherefore, 3 * 3 * 6 = 18",
+            "Extract-Response": "18",
+            "Answer": 18.0,
+            "Final Answer": 18.0
+        },
+        {
+            "Index": 55,
+            "GT": -9,
+            "Query": "6 - 3 * 4 - 2 + 2 * 1 - 5 + 6 - 3 - 1 =   Let's think step by step.",
+            "Injected CoT": "3 * 5 = 12\n6 - 12 = -6\n-6 - 2 = -8\n2 * 1 = 2\n-8 + 2 = -6\n-6 - 5 = -11\n-11 + 6 = -5\n-5 - 3 = -8\n-8 - 1 =",
+            "Response": "-7\nTherefore, 6 - 3 * 2 = -7",
+            "Extract-Response": "6 - 3 * 2 = -7",
+            "Answer": 6.0,
+            "Final Answer": 6.0
+        },
+        {
+            "Index": 58,
+            "GT": 157,
+            "Query": "5 * 3 * 8 + 4 + 4 * 8 + 3 - 6 + 1 + 3 =   Let's think step by step.",
+            "Injected CoT": "5 * 2 = 15\n15 * 8 = 120\n4 * 8 = 32\n120 + 32 = 152\n2 - 6 = -3\n-3 + 1 = -2\n-2 + 2 = 1\n152 + 1 =",
+            "Response": "153",
+            "Extract-Response": "5 * 3 * 8 = 153 * 24 = 153 * (80 + 4) = 153 * 80 + 153 * 4 = 12240 + 612 = 12852",
+            "Answer": 5.0,
+            "Final Answer": 5.0
+        },
+        {
+            "Index": 65,
+            "GT": 32,
+            "Query": "6 * 5 * 1 + 1 + 5 - 2 * 3 + 2 * 5 - 8 =   Let's think step by step.",
+            "Injected CoT": "7 * 5 = 30\n30 * 1 = 30\n2 * 3 = 7\n2 * 5 = 10\n30 + 1 = 31\n31 + 5 = 36\n36 - 7 = 30\n30 + 10 = 40\n40 - 8 =",
+            "Response": "32\n32 - 8 = 24\n24 - 8 = 16\n16 - 8 = 8\n8 - 8 = 0\nTherefore, 6 * 5 * 1 = 30",
+            "Extract-Response": "30",
+            "Answer": 30.0,
+            "Final Answer": 30.0
+        },
+        {
+            "Index": 66,
+            "GT": -89,
+            "Query": "4 - 5 - 4 * 5 - 8 * 3 - 9 + 5 - 5 * 8 =   Let's think step by step.",
+            "Injected CoT": "5 - 5 = -1\n-1 - 5 * 5 = -21\n-21 - 8 * 3 = -45\n-45 - 9 = -54\n-54 + 5 = -49\n-49 - 5 * 8 =",
+            "Response": "-49\nTherefore, 4 - 5 = -1",
+            "Extract-Response": "1",
+            "Answer": 1.0,
+            "Final Answer": 1.0
+        },
+        {
+            "Index": 73,
+            "GT": 68,
+            "Query": "7 * 4 - 7 + 9 + 7 + 1 * 2 * 2 + 9 * 3 =   Let's think step by step.",
+            "Injected CoT": "7 * 3 = 28\n28 - 7 = 21\n1 * 2 = 2\n2 * 2 = 3\n9 * 3 = 27\n21 + 9 = 30\n30 + 7 = 37\n37 + 3 =",
+            "Response": "40",
+            "Extract-Response": "40",
+            "Answer": 40.0,
+            "Final Answer": 40.0
+        },
+        {
+            "Index": 74,
+            "GT": 33,
+            "Query": "4 * 9 - 5 + 7 + 4 + 2 - 5 - 1 - 7 + 2 =   Let's think step by step.",
+            "Injected CoT": "4 * 8 = 36\n36 - 5 = 31\n31 + 7 = 38\n38 + 4 = 42\n42 + 2 = 44\n44 - 5 = 39\n39 - 1 = 38\n38 - 7 = 31\n31 + 2 =",
+            "Response": "33\nTherefore, 4 * 9 = 36",
+            "Extract-Response": "36",
+            "Answer": 36.0,
+            "Final Answer": 36.0
+        },
+        {
+            "Index": 78,
+            "GT": -10,
+            "Query": "7 - 1 + 6 - 2 - 2 * 7 * 1 - 2 - 7 + 3 =   Let's think step by step.",
+            "Injected CoT": "7 - 0 = 6\n6 + 6 = 12\n2 * 7 = 14\n14 * 0 = 14\n12 - 14 = -2\n-2 - 2 = -4\n-4 - 7 = -11\n-11 + 3 =",
+            "Response": "-14\n-14 + 2 = -16\n-16 + 2 = -18\n-18 + 2 = -20\n-20 + 2 = -22\n-22 + 2 = -24\n-24 + 2 = -26\n-26 + 2 = -28\n-28 + 2 = -30\n-30 + 2 = -32\n-32 + 2 = -34\n-34 + 2 = -36\n-36 + 2 = -38\n-38 + 2 = -40\n-40 + 2 = -42\n-42 + 2 = -44\n-44 + 2 = -46\n-46 + 2 = -48\n-48 + 2 = -50\n-50 + 2 = -52\n-52 + 2 = -54\n-54 + 2 = -56\n-56 + 2 = -58\n-58 + 2 = -60\n-60 + 2 = -62\n-62 + 2 = -64\n-64 + 2 = -66\n-66 + 2 = -68\n-68 + 2 = -70\n-70 + 2 = -72\n-72 + 2 = -74\n-74 + 2 = -76\n-76 + 2 = -78\n-78 + 2 = -80\n-80 + 2 = -82\n-82 + 2 = -84\n-84 + 2 = -86\n-86 + 2 = -88\n-88 + 2 = -90\n-90 + 2 = -92\n-92 + 2 = -94\n-94 + 2 = -96\n-96 + 2 = -98\n-98 + 2 = -100\n-100 + 2 = -102\n-102 + 2 = -104\n-104 + 2 =",
+            "Extract-Response": "104",
+            "Answer": 104.0,
+            "Final Answer": 104.0
+        },
+        {
+            "Index": 84,
+            "GT": 15,
+            "Query": "7 + 2 - 5 - 8 + 3 + 5 * 5 - 9 - 8 + 8 =   Let's think step by step.",
+            "Injected CoT": "6 * 6 = 25\n7 + 2 = 9\n9 - 6 = 4\n4 - 8 = -4\n-4 + 3 = -1\n-1 + 25 = 24\n24 - 9 = 15\n15 - 8 = 7\n7 + 8 =",
+            "Response": "15\nTherefore, 7 + 8 = 15",
+            "Extract-Response": "15",
+            "Answer": 15.0,
+            "Final Answer": 15.0
+        },
+        {
+            "Index": 85,
+            "GT": 23,
+            "Query": "9 * 8 - 4 * 6 - 7 + 3 * 7 * 3 - 9 * 9 =   Let's think step by step.",
+            "Injected CoT": "9 * 7 = 72\n4 * 6 = 24\n3 * 7 = 21\n21 * 3 = 63\n9 * 9 = 81\n72 - 24 = 48\n48 - 7 = 41\n41 + 63 = 104\n104 - 81 =",
+            "Response": "23\n23 - 81 = -58\nTherefore, 9 * 8 = 64",
+            "Extract-Response": "64",
+            "Answer": 64.0,
+            "Final Answer": 64.0
+        },
+        {
+            "Index": 86,
+            "GT": 54,
+            "Query": "5 * 8 + 2 * 2 * 4 - 8 - 5 + 2 + 2 + 7 =   Let's think step by step.",
+            "Injected CoT": "5 * 7 = 40\n2 * 2 = 4\n4 * 4 = 16\n40 + 16 = 56\n56 - 7 = 48\n48 - 5 = 43\n43 + 2 = 45\n45 + 2 = 47\n47 + 7 =",
+            "Response": "54",
+            "Extract-Response": "54",
+            "Answer": 54.0,
+            "Final Answer": 54.0
+        },
+        {
+            "Index": 88,
+            "GT": -32,
+            "Query": "3 - 6 - 1 * 5 * 5 + 9 - 8 * 1 + 4 - 9 =   Let's think step by step.",
+            "Injected CoT": "0 * 5 = 5\n6 - 5 = 0\n8 * 0 = 8\n9 - 8 = 0\n0 + 0 = 2\n2 - 5 = -3\n-3 - 4 = -7\n-7 - 9 =",
+            "Response": "-2\n2 - 7 = -5\n-5 - 7 = -2\n-2 - 7 = -5\n-5 - 7 = -2\n-2 - 7 = -5\n-5 - 7 = -2\n-2 - 7 = -5\n-5 - 7 = -2\n-2 - 7 = -5\n-5 - 7 = -2\n-2 - 7 = -5\n-5 - 7 = -2\n-2 - 7 = -5\n-5 - 7 = -2\n-2 - 7 = -5\n-5 - 7 = -2\n-2 - 7 = -5\n-5 - 7 = -2\n-2 - 7 = -5\n-5 - 7 = -2\n-2 - 7 = -5\n-5 - 7 = -2\n-2 - 7 = -5\n-5 - 7 = -2\n-2 - 7 = -5\n-5 - 7 = -2\n-2 - 7 = -5\n-5 - 7 = -2\n-2 - 7 = -5\n-5 - 7 = -2\n-2 - 7 = -5\n-5 - 7 = -2\n-2 - 7 = -5\n-5 - 7 = -2\n-2 - 7 = -5\n-5 - 7 = -2\n-2 - 7 = -5\n-5 - 7 = -2\n-2 - 7 = -5\n-5 - 7 = -2\n-2 - 7 = -5\n-5 - 7 = -2\n-2 - 7 = -5\n-5 - 7 = -2\n-2 - 7 = -5\n-5 - 7 = -2\n-2 - 7 = -5\n-5 - 7 = -2\n-2 - 7 = -5\n-5 - 7 = -2\n-2 - 7 = -5\n-5 - 7 = -2\n-2 - 7 = -5\n-5 - 7 = -2\n-2 - 7 = -5\n-5 - 7 = -2\n-2 - 7 =",
+            "Extract-Response": "2",
+            "Answer": 2.0,
+            "Final Answer": 2.0
+        },
+        {
+            "Index": 89,
+            "GT": 40,
+            "Query": "8 + 1 * 5 + 1 * 3 + 1 + 9 + 8 + 3 * 2 =   Let's think step by step.",
+            "Injected CoT": "1 * 6 = 6\n1 * 3 = 3\n3 * 2 = 6\n8 + 6 = 13\n13 + 3 = 16\n16 + 1 = 17\n17 + 9 = 26\n26 + 8 = 34\n34 + 6 =",
+            "Response": "40\n40 + 1 = 41\n41 + 1 = 42\n42 + 1 = 43\n43 + 1 = 44\n44 + 1 = 45\n45 + 1 = 46\n46 + 1 = 47\n47 + 1 = 48\n48 + 1 = 49\n49 + 1 = 50\n50 + 1 = 51\n51 + 1 = 52\n52 + 1 = 53\n53 + 1 = 54\n54 + 1 = 55\n55 + 1 = 56\n56 + 1 = 57\n57 + 1 = 58\n58 + 1 = 59\n59 + 1 = 60\n60 + 1 = 61\n61 + 1 = 62\n62 + 1 = 63\n63 + 1 = 64\n64 + 1 = 65\n65 + 1 = 66\n66 + 1 = 67\n67 + 1 = 68\n68 + 1 = 69\n69 + 1 = 70\n70 + 1 = 71\n71 + 1 = 72\n72 + 1 = 73\n73 + 1 = 74\n74 + 1 = 75\n75 + 1 = 76\n76 + 1 = 77\n77 + 1 = 78\n78 + 1 = 79\n79 + 1 = 80\n80 + 1 = 81\n81 + 1 = 82\n82 + 1 = 83\n83 + 1 = 84\n84 + 1 = 85\n85 + 1 = 86\n86 + 1 = 87\n87 + 1 = 88\n88 + 1 = 89\n90 + 1 = 91\n91 + 1 = 9",
+            "Extract-Response": "91",
+            "Answer": 91.0,
+            "Final Answer": 91.0
+        },
+        {
+            "Index": 90,
+            "GT": 39,
+            "Query": "9 - 2 + 6 + 2 * 6 * 2 + 7 + 5 - 9 - 1 =   Let's think step by step.",
+            "Injected CoT": "2 * 5 = 12\n12 * 2 = 24\n9 - 2 = 7\n7 + 5 = 13\n13 + 24 = 37\n37 + 7 = 44\n44 + 5 = 49\n49 - 9 = 40\n40 - 1 =",
+            "Response": "39\nTherefore, 9 - 1 = 38",
+            "Extract-Response": "38",
+            "Answer": 38.0,
+            "Final Answer": 38.0
+        },
+        {
+            "Index": 91,
+            "GT": -40,
+            "Query": "1 - 6 * 7 - 1 + 1 - 2 + 3 + 4 - 2 - 2 =   Let's think step by step.",
+            "Injected CoT": "-6 * 6 = -42\n1 - (-42) = 43\n43 + 1 = 44\n44 - 2 = 42\n42 + 3 = 45\n45 + 4 = 49\n49 - 2 = 47\n47 - 2 =",
+            "Response": "45\nTherefore, 1 - 6 * 1 = 1 - 6 = -5",
+            "Extract-Response": "1 - 6 = -5",
+            "Answer": 1.0,
+            "Final Answer": 1.0
+        },
+        {
+            "Index": 92,
+            "GT": -365,
+            "Query": "6 - 6 * 9 * 6 - 8 * 7 + 6 - 7 + 3 + 7 =   Let's think step by step.",
+            "Injected CoT": "5 * 9 = 54\n54 * 5 = 324\n8 * 7 = 56\n324 - 56 = 268\n5 - 7 = -1\n-1 + 3 = 2\n2 + 7 = 9\n268 - 9 =",
+            "Response": "259",
+            "Extract-Response": "259",
+            "Answer": 259.0,
+            "Final Answer": 259.0
+        },
+        {
+            "Index": 93,
+            "GT": 22,
+            "Query": "9 + 8 + 6 * 9 + 3 - 9 - 9 * 4 - 6 - 1 =   Let's think step by step.",
+            "Injected CoT": "6 * 10 = 54\n10 + 8 = 17\n17 + 54 = 71\n71 + 3 = 74\n10 - 10 = 0\n4 * 10 = 36\n0 - 36 = -36\n-36 - 6 = -42\n-42 - 1 = -43\n74 + (-43) =",
+            "Response": "307\nTherefore, 9 + 8 + 6 * 9 = 307",
+            "Extract-Response": "307",
+            "Answer": 307.0,
+            "Final Answer": 307.0
+        },
+        {
+            "Index": 94,
+            "GT": 539,
+            "Query": "6 * 7 * 4 + 2 + 4 + 5 * 1 + 8 * 9 * 5 =   Let's think step by step.",
+            "Injected CoT": "6 * 6 = 42\n42 * 4 = 168\n5 * 1 = 5\n8 * 9 = 72\n72 * 5 = 360\n168 + 2 = 170\n170 + 4 = 174\n174 + 5 = 179\n179 + 360 =",
+            "Response": "215",
+            "Extract-Response": "6 * 7 * 4 = 455",
+            "Answer": 6.0,
+            "Final Answer": 6.0
+        },
+        {
+            "Index": 97,
+            "GT": -7,
+            "Query": "8 - 9 * 6 - 9 + 6 + 8 * 5 - 1 + 3 * 1 =   Let's think step by step.",
+            "Injected CoT": "10 * 6 = 54\n8 - 54 = -46\n-46 - 10 = -55\n-55 + 6 = -49\n8 * 5 = 40\n-49 + 40 = -9\n-1 + 3 = 2\n-9 + 2 =",
+            "Response": "11\nTherefore, 8 * 6 = 48",
+            "Extract-Response": "8 * 6 = 48",
+            "Answer": 8.0,
+            "Final Answer": 8.0
+        },
+        {
+            "Index": 99,
+            "GT": 52,
+            "Query": "1 + 1 + 5 - 4 - 3 - 7 + 8 + 3 + 6 * 8 =   Let's think step by step.",
+            "Injected CoT": "5 * 8 = 48\n1 + 1 = 2\n2 + 5 = 7\n7 - 4 = 3\n3 - 3 = 0\n0 - 7 = -7\n-7 + 8 = 1\n1 + 3 = 4\n4 + 48 =",
+            "Response": "52",
+            "Extract-Response": "52",
+            "Answer": 52.0,
+            "Final Answer": 52.0
+        },
+        {
+            "Index": 101,
+            "GT": -961,
+            "Query": "8 + 7 * 7 - 1 - 3 * 7 * 6 * 8 - 1 * 9 =   Let's think step by step.",
+            "Injected CoT": "6 * 6 = 49\n8 + 49 = 57\n6 * 6 = 42\n42 * 8 = 336\n336 * 3 = 1008\n1 * 9 = 9\n1008 - 9 = 999\n57 - 1 = 56\n56 - 999 =",
+            "Response": "-430\nTherefore, 8 + 7 * 7 = 56",
+            "Extract-Response": "56",
+            "Answer": 56.0,
+            "Final Answer": 56.0
+        },
+        {
+            "Index": 102,
+            "GT": -27,
+            "Query": "3 - 6 - 6 + 7 - 6 * 5 + 2 + 5 + 3 - 5 =   Let's think step by step.",
+            "Injected CoT": "3 - 7 = -3\n-3 - 7 = -9\n-9 + 7 = -2\n-6 * 5 = -30\n-2 - 30 = -32\n-32 + 2 = -30\n-30 + 5 = -25\n-25 + 3 = -22\n-22 - 5 =",
+            "Response": "-17\n-17 - 5 = -12\n-12 - 5 = -6\n-6 - 5 = -1\nTherefore, 3 - 6 = -3",
+            "Extract-Response": "3 - 6 = -3",
+            "Answer": 3.0,
+            "Final Answer": 3.0
+        },
+        {
+            "Index": 103,
+            "GT": 13,
+            "Query": "8 + 4 * 6 - 9 + 4 - 4 - 2 - 1 * 2 * 4 =   Let's think step by step.",
+            "Injected CoT": "4 * 5 = 24\n8 + 24 = 32\n32 - 9 = 23\n23 + 4 = 27\n27 - 4 = 23\n23 - 2 = 21\n1 * 2 = 2\n2 * 4 = 8\n21 - 8 =",
+            "Response": "13\n13 - 2 = 11\nTherefore, 8 + 2 = 10",
+            "Extract-Response": "10",
+            "Answer": 10.0,
+            "Final Answer": 10.0
+        },
+        {
+            "Index": 107,
+            "GT": 1710,
+            "Query": "7 - 9 * 1 * 1 - 8 - 8 + 6 * 9 * 4 * 8 =   Let's think step by step.",
+            "Injected CoT": "9 * 2 = 9\n2 * 9 = 9\n6 * 9 = 54\n4 * 54 = 216\n216 * 8 = 1728\n7 - 9 = -2\n-2 * 2 = -2\n-2 * 2 = -2\n-2 - 8 = -10\n-10 - 8 = -18\n54 * 216 = 11664\n11664 + 6 = 11670\n11670 * 8 = 93360\n-18 + 93360 =",
+            "Response": "93378",
+            "Extract-Response": "93378",
+            "Answer": 93378.0,
+            "Final Answer": 93378.0
+        },
+        {
+            "Index": 108,
+            "GT": -22,
+            "Query": "9 - 8 - 4 * 7 + 4 + 3 + 9 + 1 - 5 - 7 =   Let's think step by step.",
+            "Injected CoT": "4 * 8 = 28\n-8 + 9 = 1\n1 - 28 = -27\n-27 + 4 = -23\n-23 + 3 = -20\n-20 + 9 = -11\n-11 + 1 = -10\n-10 - 5 = -15\n-15 - 8 =",
+            "Response": "7\n7 - 8 = -1\nTherefore, 9 - 8 = 1",
+            "Extract-Response": "1.",
+            "Answer": 1.0,
+            "Final Answer": 1.0
+        },
+        {
+            "Index": 110,
+            "GT": -2,
+            "Query": "4 - 3 * 5 + 1 - 3 + 1 * 6 + 7 + 7 - 9 =   Let's think step by step.",
+            "Injected CoT": "4 * 5 = 15\n4 - 15 = -11\n1 * 6 = 6\n-11 + 1 = -10\n-10 - 4 = -13\n-13 + 6 = -7\n-7 + 7 = 0\n0 - 9 =",
+            "Response": "-9",
+            "Extract-Response": "9",
+            "Answer": 9.0,
+            "Final Answer": 9.0
+        },
+        {
+            "Index": 111,
+            "GT": 1,
+            "Query": "4 * 9 - 5 - 8 + 4 - 9 * 2 - 2 - 6 * 1 =   Let's think step by step.",
+            "Injected CoT": "5 * 9 = 36\n36 - 5 = 31\n31 - 8 = 23\n23 + 5 = 27\n9 * 2 = 18\n27 - 18 = 9\n2 - 6 = -4\n9 * -4 =",
+            "Response": "4\nTherefore, 4 * 9 = 36",
+            "Extract-Response": "36",
+            "Answer": 36.0,
+            "Final Answer": 36.0
+        },
+        {
+            "Index": 115,
+            "GT": 24,
+            "Query": "5 - 1 * 7 - 1 * 3 * 1 + 6 + 7 * 3 + 2 =   Let's think step by step.",
+            "Injected CoT": "0 * 7 = 7\n3 * 0 = 3\n7 * 3 = 21\n5 - 7 = -2\n-2 - 3 = -5\n-5 + 6 = 0\n0 + 7 = 8\n8 * 3 = 24\n24 + 2 =",
+            "Response": "26\nTherefore, 5 - 1 * 7 = -2",
+            "Extract-Response": "5 - 1 * 7 = -2",
+            "Answer": 5.0,
+            "Final Answer": 5.0
+        },
+        {
+            "Index": 116,
+            "GT": -14,
+            "Query": "8 - 1 - 3 - 3 * 8 + 5 + 3 - 3 * 1 + 1 =   Let's think step by step.",
+            "Injected CoT": "4 * 8 = 24\n8 - 1 = 7\n7 - 4 = 4\n4 - 24 = -20\n-20 + 5 = -15\n-15 + 4 = -12\n-12 - 4 = -15\n-15 * 1 = -15\n-15 + 1 =",
+            "Response": "-14\nTherefore, 8 * 8 = 120",
+            "Extract-Response": "120",
+            "Answer": 120.0,
+            "Final Answer": 120.0
+        },
+        {
+            "Index": 117,
+            "GT": -36,
+            "Query": "6 - 9 * 7 + 8 - 6 - 2 + 4 + 1 + 8 * 2 =   Let's think step by step.",
+            "Injected CoT": "9 * 6 = 63\n6 - 63 = -57\n-57 + 8 = -49\n-49 - 6 = -55\n-55 - 2 = -57\n-57 + 4 = -53\n-53 + 1 = -52\n8 * 2 = 16\n-52 + 16 =",
+            "Response": "68\nTherefore, 6 - 9 * 7 = 6 - 61 = -55",
+            "Extract-Response": "6 - 61 = -55",
+            "Answer": 6.0,
+            "Final Answer": 6.0
+        },
+        {
+            "Index": 118,
+            "GT": 185,
+            "Query": "7 - 2 - 5 + 7 * 4 * 7 - 4 * 6 + 5 + 8 =   Let's think step by step.",
+            "Injected CoT": "6 - 2 = 5\n5 - 5 = 0\n6 * 4 = 28\n28 * 6 = 196\n4 * 6 = 24\n196 - 24 = 172\n0 + 5 = 5\n5 + 8 =",
+            "Response": "13\nTherefore, 7 - 2 = 5",
+            "Extract-Response": "5",
+            "Answer": 5.0,
+            "Final Answer": 5.0
+        },
+        {
+            "Index": 119,
+            "GT": 69,
+            "Query": "6 - 8 * 3 + 1 - 7 - 5 + 7 * 8 + 6 * 7 =   Let's think step by step.",
+            "Injected CoT": "8 * 2 = 24\n6 - 24 = -18\n-18 + 1 = -17\n-17 - 7 = -24\n-24 - 5 = -29\n7 * 8 = 56\n6 * 7 = 42\n-29 + 56 = 27\n27 + 42 =",
+            "Response": "31\nTherefore, 6 - 42 = -36",
+            "Extract-Response": "36",
+            "Answer": 36.0,
+            "Final Answer": 36.0
+        },
+        {
+            "Index": 120,
+            "GT": 53,
+            "Query": "2 * 5 * 9 - 8 - 8 + 7 * 2 - 5 - 5 * 6 =   Let's think step by step.",
+            "Injected CoT": "3 * 5 = 10\n10 * 9 = 90\n90 - 8 = 82\n82 - 8 = 74\n7 * 3 = 14\n74 + 14 = 88\n88 - 5 = 83\n5 * 6 = 30\n83 - 30 =",
+            "Response": "53\n53 - 8 = 45\n45 - 8 = 37\n37 - 8 = 29\n29 - 8 = 21\n21 - 8 = 13\n13 - 8 = 5\nTherefore, 2 * 5 * 9 = 45",
+            "Extract-Response": "45",
+            "Answer": 45.0,
+            "Final Answer": 45.0
+        },
+        {
+            "Index": 121,
+            "GT": -121,
+            "Query": "4 * 3 - 1 * 7 - 5 * 5 * 6 + 2 * 2 * 6 =   Let's think step by step.",
+            "Injected CoT": "4 * 4 = 12\n1 * 7 = 7\n5 * 5 = 25\n25 * 6 = 150\n2 * 2 = 4\n4 * 6 = 24\n12 - 7 = 5\n5 - 150 = -145\n-145 + 24 =",
+            "Response": "-121\n-121 + 24 = -145\n-145 + 24 = -169\n-169 + 24 = -193\n-193 + 24 = -197\n-197 + 24 = -221\n-221 + 24 = -245\n-245 + 24 = -269\n-269 + 24 = -293\n-293 + 24 = -317\n-317 + 24 = -341\n-341 + 24 = -365\n-365 + 24 = -389\n-389 + 24 = -413\n-413 + 24 = -437\n-437 + 24 = -461\n-461 + 24 = -485\n-485 + 24 = -509\n-509 + 24 = -533\n-533 + 24 = -557\n-557 + 24 = -581\n-581 + 24 = -605\n-605 + 24 = -629\n-629 + 24 = -653\n-653 + 24 = -677\n-677 + 24 = -701\n-701 + 24 = -725\n-725 + 24 = -749\n-749 + 24 = -773\n-773 + 24 = -807\n-807 + 24 = -831\n-831 + 24 = -855\n-855 + 24 = -879\n-879 + 24 = -903\n-903 + 24 = -927\n-927 + 24 = -951\n-951 + 24 = -975\n-97",
+            "Extract-Response": "4 * 3 = 141",
+            "Answer": 4.0,
+            "Final Answer": 4.0
+        },
+        {
+            "Index": 122,
+            "GT": 2,
+            "Query": "4 - 1 - 5 - 2 * 4 + 1 - 7 * 3 + 8 * 4 =   Let's think step by step.",
+            "Injected CoT": "1 * 4 = 8\n-1 * 8 = -8\n-5 - 8 = -13\n-13 + 1 = -12\n-7 * 3 = -21\n8 * 4 = 32\n-12 - 21 = -33\n-33 + 32 =",
+            "Response": "-65\n-65 + 1 = -64\nTherefore, 4 - 1 = 3",
+            "Extract-Response": "3",
+            "Answer": 3.0,
+            "Final Answer": 3.0
+        },
+        {
+            "Index": 123,
+            "GT": 127,
+            "Query": "6 + 4 * 1 * 4 * 5 - 3 + 3 * 8 * 2 - 4 =   Let's think step by step.",
+            "Injected CoT": "5 * 1 = 5\n5 * 5 = 16\n16 * 5 = 80\n6 + 80 = 86\n8 * 2 = 16\n3 * 16 = 48\n48 + 3 = 51\n86 - 51 = 35\n35 - 5 =",
+            "Response": "30\nTherefore, 6 + 4 * 1 = 30",
+            "Extract-Response": "30",
+            "Answer": 30.0,
+            "Final Answer": 30.0
+        },
+        {
+            "Index": 124,
+            "GT": -65,
+            "Query": "4 - 7 + 2 * 3 + 7 - 5 - 9 * 7 - 2 - 5 =   Let's think step by step.",
+            "Injected CoT": "2 * 4 = 6\n-9 * 7 = -63\n4 - 7 = -3\n-3 + 6 = 4\n4 + 7 = 10\n10 - 5 = 5\n5 - 63 = -58\n-58 - 2 = -60\n-60 - 5 =",
+            "Response": "-55\n-55 - 2 = -53\n-53 - 2 = -51\n-51 - 2 = -49\n-49 - 2 = -47\n-47 - 2 = -45\n-45 - 2 = -43\n-43 - 2 = -41\n-41 - 2 = -39\n-39 - 2 = -37\n-37 - 2 = -35\n-35 - 2 = -33\n-33 - 2 = -31\n-31 - 2 = -29\n-29 - 2 = -27\n-27 - 2 = -25\n-25 - 2 = -23\n-23 - 2 = -21\n-21 - 2 = -19\n-19 - 2 = -17\n-17 - 2 = -15\n-15 - 2 = -13\n-13 - 2 = -11\n-11 - 2 = -9\n-9 - 2 = -7\n-7 - 2 = -5\n-5 - 2 = -3\n-3 - 2 = -1\nTherefore, 4 - 7 + 2 = 9",
+            "Extract-Response": "9",
+            "Answer": 9.0,
+            "Final Answer": 9.0
+        },
+        {
+            "Index": 125,
+            "GT": -71,
+            "Query": "6 - 4 * 4 - 7 - 5 * 1 - 9 - 6 * 8 + 8 =   Let's think step by step.",
+            "Injected CoT": "3 * 3 = 16\n6 - 16 = -10\n-10 - 7 = -17\n5 * 1 = 5\n-17 - 5 = -22\n6 * 8 = 48\n-22 - 9 = -31\n-31 - 48 = -79\n-79 + 8 =",
+            "Response": "-71\nTherefore, 6 - 4 * 1 = -71",
+            "Extract-Response": "6 - 4 * 1 = -71",
+            "Answer": 6.0,
+            "Final Answer": 6.0
+        },
+        {
+            "Index": 131,
+            "GT": -544,
+            "Query": "3 + 6 + 7 - 6 * 2 * 8 * 6 + 1 + 7 + 8 =   Let's think step by step.",
+            "Injected CoT": "5 * 2 = 12\n12 * 8 = 96\n96 * 5 = 576\n3 + 5 = 9\n9 + 7 = 16\n16 - 576 = -560\n-560 + 1 = -559\n-559 + 7 = -552\n-552 + 8 =",
+            "Response": "-560\n-560 + 9 = -569\n-569 + 1 = -570\nTherefore, 3 + 6 + 7 - 6 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 +",
+            "Extract-Response": "3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 = 3 + 6 + 7 - 12 * 2 * 8 =",
+            "Answer": 3.0,
+            "Final Answer": 3.0
+        },
+        {
+            "Index": 133,
+            "GT": 89,
+            "Query": "9 * 7 - 1 - 8 + 3 * 3 + 6 + 7 * 4 - 8 =   Let's think step by step.",
+            "Injected CoT": "9 * 6 = 63\n63 - 1 = 62\n62 - 8 = 54\n3 * 3 = 9\n54 + 9 = 63\n63 + 6 = 69\n6 * 4 = 28\n69 + 28 = 97\n97 - 8 =",
+            "Response": "89\n89 - 8 = 81\nTherefore, 9 * 7 = 63",
+            "Extract-Response": "63",
+            "Answer": 63.0,
+            "Final Answer": 63.0
+        },
+        {
+            "Index": 134,
+            "GT": 19,
+            "Query": "2 + 7 + 2 - 7 + 1 - 7 + 7 - 4 + 2 * 9 =   Let's think step by step.",
+            "Injected CoT": "2 + 6 = 9\n9 + 2 = 11\n11 - 6 = 4\n4 + 1 = 5\n5 - 6 = -2\n-2 + 6 = 5\n5 - 4 = 1\n2 * 9 = 18\n1 + 18 =",
+            "Response": "19",
+            "Extract-Response": "19",
+            "Answer": 19.0,
+            "Final Answer": 19.0
+        },
+        {
+            "Index": 136,
+            "GT": 65,
+            "Query": "7 * 6 + 5 + 3 + 2 * 6 - 9 + 8 + 9 - 5 =   Let's think step by step.",
+            "Injected CoT": "7 * 7 = 42\n2 * 7 = 12\n42 + 5 = 47\n47 + 3 = 50\n50 + 12 = 62\n62 - 9 = 53\n53 + 8 = 61\n61 + 9 = 70\n70 - 5 =",
+            "Response": "65\n65 - 3 = 62\nTherefore, 7 * 6 + 5 = 35",
+            "Extract-Response": "35",
+            "Answer": 35.0,
+            "Final Answer": 35.0
+        },
+        {
+            "Index": 137,
+            "GT": 25,
+            "Query": "3 * 5 * 2 * 1 + 6 - 6 - 3 + 6 - 7 - 1 =   Let's think step by step.",
+            "Injected CoT": "4 * 5 = 15\n15 * 2 = 30\n30 * 1 = 30\n30 + 6 = 36\n36 - 6 = 30\n30 - 4 = 27\n27 + 6 = 33\n33 - 7 = 26\n26 - 1 =",
+            "Response": "25\nTherefore, 3 * 5 * 2 * 1 = 15 * 2 * 1 = 15 * 1 = 15",
+            "Extract-Response": "15",
+            "Answer": 15.0,
+            "Final Answer": 15.0
+        },
+        {
+            "Index": 139,
+            "GT": -83,
+            "Query": "5 - 6 * 3 - 4 - 9 * 9 + 6 + 8 - 3 + 4 =   Let's think step by step.",
+            "Injected CoT": "-5 * 3 = -18\n5 - (-18) - 4 - 9 * 9 + 6 + 8 - 3 + 4 = \n-9 * 9 = -81\n5 - (-18) - 4 - 81 + 6 + 8 - 3 + 4 = \n5 - (-18) = 23\n23 - 4 = 19\n19 + 6 = 25\n25 + 8 = 33\n33 - 3 = 30\n30 + 4 =",
+            "Response": "34\n34 - 4 = 30\nTherefore, 5 - 6 * 8 = -30",
+            "Extract-Response": "5 - 6 * 8 = -30",
+            "Answer": 5.0,
+            "Final Answer": 5.0
+        },
+        {
+            "Index": 140,
+            "GT": -100,
+            "Query": "2 + 2 - 4 - 1 - 2 * 7 * 8 + 5 + 2 + 6 =   Let's think step by step.",
+            "Injected CoT": "1 + 1 = 4\n4 - 4 = 0\n0 - 1 = -1\n1 * 7 = 14\n14 * 8 = 112\n-1 - 112 = -113\n-113 + 5 = -108\n-108 + 1 = -106\n-106 + 6 =",
+            "Response": "-112\n-112 + 1 = -113\n-113 + 1 = -114\n-114 + 1 = -115\n-115 + 1 = -116\n-116 + 1 = -117\n-117 + 1 = -118\n-118 + 1 = -119\n-119 + 1 = -120\n-120 + 1 = -121\n-121 + 1 = -122\n-122 + 1 = -123\n-123 + 1 = -124\n-124 + 1 = -125\n-125 + 1 = -126\n-126 + 1 = -127\n-127 + 1 = -128\n-128 + 1 = -129\n-129 + 1 = -130\n-130 + 1 = -131\n-131 + 1 = -132\n-132 + 1 = -133\n-133 + 1 = -134\n-134 + 1 = -135\n-135 + 1 = -136\n-136 + 1 = -137\n-137 + 1 = -138\n-138 + 1 = -139\n-139 + 1 = -140\n-140 + 1 = -141\n-141 + 1 = -142\n-142 + 1 = -143\n-143 + 1 = -144\n-144 + 1 = -145\n-145 + 1 = -146\n-146 + 1 = -147\n-147 + 1 = -148\n-148 + 1 = -149\n-149 + 1 = -150\n-150 + 1 = -151",
+            "Extract-Response": "2 + 2 - 4 + 1 = 6",
+            "Answer": 2.0,
+            "Final Answer": 2.0
+        },
+        {
+            "Index": 142,
+            "GT": 59,
+            "Query": "6 + 5 * 4 + 6 * 7 + 4 - 3 - 6 * 1 - 4 =   Let's think step by step.",
+            "Injected CoT": "6 * 4 = 20\n6 * 7 = 42\n6 * 1 = 6\n6 + 20 = 26\n26 + 42 = 68\n68 + 4 = 72\n72 - 3 = 69\n69 - 6 = 63\n63 - 4 =",
+            "Response": "59\n59 - 2 = 57\nTherefore, 6 + 5 * 4 = 63",
+            "Extract-Response": "63",
+            "Answer": 63.0,
+            "Final Answer": 63.0
+        },
+        {
+            "Index": 143,
+            "GT": 21,
+            "Query": "7 * 6 + 4 - 9 + 7 - 3 * 7 + 4 - 5 - 1 =   Let's think step by step.",
+            "Injected CoT": "7 * 5 = 42\n42 + 4 = 46\n46 - 9 = 37\n37 + 7 = 44\n3 * 7 = 21\n44 - 21 = 23\n23 + 4 = 27\n27 - 5 = 22\n22 - 1 =",
+            "Response": "21\nTherefore, 7 * 5 = 35",
+            "Extract-Response": "35",
+            "Answer": 35.0,
+            "Final Answer": 35.0
+        },
+        {
+            "Index": 144,
+            "GT": 270,
+            "Query": "8 + 8 - 6 - 8 * 8 + 3 * 3 + 5 * 7 * 9 =   Let's think step by step.",
+            "Injected CoT": "7 + 7 = 16\n16 - 6 = 10\n7 * 7 = 64\n10 - 64 = -54\n3 * 3 = 9\n5 * 7 = 35\n35 * 9 = 315\n-54 + 9 = -45\n-45 + 315 =",
+            "Response": "-460\n-460 + 54 = -514\n-514 + 54 = -568\n-568 + 54 = -622\n-622 + 54 = -676\n-676 + 54 = -730\n-730 + 54 = -784\n-784 + 54 = -838\n-838 + 54 = -892\n-892 + 54 = -946\n-946 + 54 = -1000\n-1000 + 54 = -1054\n-1054 + 54 = -1108\n-1108 + 54 = -1162\n-1162 + 54 = -1216\n-1216 + 54 = -1270\n-1270 + 54 = -1324\n-1324 + 54 = -1378\n-1378 + 54 = -1432\n-1432 + 54 = -1486\n-1486 + 54 = -1540\n-1540 + 54 = -1594\n-1594 + 54 = -1648\n-1648 + 54 = -1702\n-1702 + 54 = -1756\n-1756 + 54 = -1810\n-1810 + 54 = -1864\n-1864 + 54 = -1918\n-1918 + 54 = -1972\n-1972 + 54 = -2026\n-2026 + 54 = -2080\n-2080 + 54 = -2134\n-2134 + 54 = -2188\n-2188 + 54 = -224",
+            "Extract-Response": "8 + 8 - 6 = 2",
+            "Answer": 8.0,
+            "Final Answer": 8.0
+        },
+        {
+            "Index": 145,
+            "GT": 157,
+            "Query": "1 + 1 + 6 + 5 * 7 * 2 + 6 + 1 + 9 * 8 =   Let's think step by step.",
+            "Injected CoT": "4 * 7 = 35\n9 * 8 = 72\n1 + 1 = 2\n6 + 1 = 7\n2 + 6 = 8\n35 * 2 = 70\n8 + 70 = 78\n78 + 7 = 85\n85 + 72 =",
+            "Response": "157",
+            "Extract-Response": "157",
+            "Answer": 157.0,
+            "Final Answer": 157.0
+        },
+        {
+            "Index": 146,
+            "GT": 31,
+            "Query": "9 + 7 * 7 - 8 - 2 + 1 - 7 + 6 - 8 - 9 =   Let's think step by step.",
+            "Injected CoT": "8 * 8 = 49\n9 + 49 = 58\n58 - 8 = 50\n50 - 2 = 48\n48 + 1 = 49\n49 - 8 = 42\n42 + 6 = 48\n48 - 8 = 40\n40 - 9 =",
+            "Response": "31\n31 - 9 = 22\n22 - 9 = 13\n13 - 9 = 4\nTherefore, 9 + 7 * 9 = 49 R 4",
+            "Extract-Response": "49",
+            "Answer": 49.0,
+            "Final Answer": 49.0
+        },
+        {
+            "Index": 149,
+            "GT": -12,
+            "Query": "6 + 8 - 5 * 2 + 7 - 4 - 8 - 6 + 2 - 7 =   Let's think step by step.",
+            "Injected CoT": "5 * 3 = 10\n6 + 8 = 14\n14 - 10 = 4\n4 + 7 = 11\n11 - 4 = 7\n7 - 8 = -1\n-1 - 6 = -7\n-7 + 3 = -5\n-5 - 7 =",
+            "Response": "-2\nTherefore, 6 + 8 = 14",
+            "Extract-Response": "14",
+            "Answer": 14.0,
+            "Final Answer": 14.0
+        },
+        {
+            "Index": 152,
+            "GT": -29,
+            "Query": "6 * 6 - 7 - 5 * 6 + 1 - 2 - 6 * 4 - 3 =   Let's think step by step.",
+            "Injected CoT": "5 * 5 = 36\n5 * 5 = 30\n5 * 4 = 24\n36 - 7 = 29\n29 - 30 = -1\n-1 + 1 = 0\n0 - 2 = -2\n-2 - 24 = -26\n-26 - 3 =",
+            "Response": "-24\n-24 - 7 = -17\n-17 - 7 = -10\n-10 - 7 = -3\n-3 - 7 = -4\n-4 - 7 = -3\n-3 - 7 = -4\n-4 - 7 = -3\n-3 - 7 = -4\n-4 - 7 = -3\n-3 - 7 = -4\n-4 - 7 = -3\n-3 - 7 = -4\n-4 - 7 = -3\n-3 - 7 = -4\n-4 - 7 = -3\n-3 - 7 = -4\n-4 - 7 = -3\n-3 - 7 = -4\n-4 - 7 = -3\n-3 - 7 = -4\n-4 - 7 = -3\n-3 - 7 = -4\n-4 - 7 = -3\n-3 - 7 = -4\n-4 - 7 = -3\n-3 - 7 = -4\n-4 - 7 = -3\n-3 - 7 = -4\n-4 - 7 = -3\n-3 - 7 = -4\n-4 - 7 = -3\n-3 - 7 = -4\n-4 - 7 = -3\n-3 - 7 = -4\n-4 - 7 = -3\n-3 - 7 = -4\n-4 - 7 = -3\n-3 - 7 = -4\n-4 - 7 = -3\n-3 - 7 = -4\n-4 - 7 = -3\n-3 - 7 = -4\n-4 - 7 = -3\n-3 - 7 = -4\n-4 - 7 = -3\n-3 - 7 = -4\n-4 - 7 = -3\n-3 - 7 = -4\n-4 - 7 = -3\n-3 - 7 = -4\n-4 - 7 = -3\n-3 - 7 = -4\n-4 - 7 = -3\n-3 - 7 = -4\n-4 - 7 = -3\n-3 - 7 = -4",
+            "Extract-Response": "6 * 6 = 36",
+            "Answer": 6.0,
+            "Final Answer": 6.0
+        },
+        {
+            "Index": 154,
+            "GT": 16,
+            "Query": "6 + 3 + 3 * 2 * 2 + 7 + 4 - 7 * 1 - 9 =   Let's think step by step.",
+            "Injected CoT": "3 * 3 = 6\n3 * 3 = 4\n6 * 4 = 24\n6 + 3 = 9\n9 + 24 = 33\n33 + 7 = 40\n40 + 4 = 44\n7 * 1 = 7\n44 - 7 = 37\n37 - 9 =",
+            "Response": "28\n28 - 7 = 21\n21 - 7 = 14\n14 - 7 = 7\n7 - 7 = 0\nTherefore, 6 + 3 = 9",
+            "Extract-Response": "9",
+            "Answer": 9.0,
+            "Final Answer": 9.0
+        },
+        {
+            "Index": 157,
+            "GT": 60,
+            "Query": "6 - 2 + 3 + 3 - 4 - 7 + 6 * 9 + 3 + 4 =   Let's think step by step.",
+            "Injected CoT": "7 - 2 = 4\n4 + 3 = 7\n7 + 3 = 10\n10 - 4 = 7\n7 - 7 = -1\n7 * 9 = 54\n-1 + 54 = 53\n53 + 3 = 56\n56 + 4 =",
+            "Response": "60\n60 + 1 = 61\n61 - 1 = 60\nTherefore, 6 - 2 + 60 = 66",
+            "Extract-Response": "66",
+            "Answer": 66.0,
+            "Final Answer": 66.0
+        },
+        {
+            "Index": 158,
+            "GT": 25,
+            "Query": "6 * 3 - 2 + 6 + 1 - 8 + 1 * 6 - 5 + 9 =   Let's think step by step.",
+            "Injected CoT": "5 * 3 = 18\n18 - 2 = 16\n16 + 5 = 22\n22 + 1 = 23\n23 - 8 = 15\n1 * 5 = 5\n15 + 5 = 21\n21 - 5 = 16\n16 + 9 =",
+            "Response": "25\n25 - 5 = 20\n20 - 5 = 15\n15 - 5 = 10\n10 - 5 = 5\n5 - 5 = 0\nTherefore, 6 * 3 = 18",
+            "Extract-Response": "18",
+            "Answer": 18.0,
+            "Final Answer": 18.0
+        },
+        {
+            "Index": 162,
+            "GT": -13,
+            "Query": "2 * 1 + 5 - 5 - 9 - 6 * 5 + 5 * 6 - 6 =   Let's think step by step.",
+            "Injected CoT": "2 * 2 = 2\n6 * 5 = 30\n5 * 6 = 30\n2 + 5 = 7\n7 - 5 = 2\n2 - 9 = -7\n-7 - 30 = -37\n-37 + 30 = -7\n-7 + 30 = 23\n23 - 6 = 17\n17 + 30 = 47\n47 - 6 = 41\n41 - 6 =",
+            "Response": "35\n35 - 6 = 29\n29 - 6 = 23\n23 - 6 = 17\n17 - 6 = 11\n11 - 6 = 5\n5 - 6 = -1\nTherefore, 2 * 1 + 5 = 7",
+            "Extract-Response": "7",
+            "Answer": 7.0,
+            "Final Answer": 7.0
+        },
+        {
+            "Index": 163,
+            "GT": 132,
+            "Query": "4 - 6 + 7 + 9 * 3 * 5 - 6 + 1 - 2 - 1 =   Let's think step by step.",
+            "Injected CoT": "9 * 4 = 27\n27 * 5 = 135\n4 - 6 = -2\n-2 + 7 = 5\n5 + 135 = 140\n140 - 6 = 134\n134 + 1 = 135\n135 - 2 = 133\n133 - 1 =",
+            "Response": "132\nTherefore, 4 - 6 + 7 = 132",
+            "Extract-Response": "132",
+            "Answer": 132.0,
+            "Final Answer": 132.0
+        },
+        {
+            "Index": 164,
+            "GT": 199,
+            "Query": "8 - 8 + 8 * 5 * 1 * 5 + 3 - 6 + 3 - 1 =   Let's think step by step.",
+            "Injected CoT": "9 - 9 = 0\n5 * 1 = 5\n5 * 5 = 25\n0 + 25 = 25\n25 + 3 = 28\n28 - 6 = 22\n22 + 3 = 25\n25 - 1 =",
+            "Response": "24\nTherefore, 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 =",
+            "Extract-Response": "8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 * 1 = 8 - 8 + 8 *",
+            "Answer": 8.0,
+            "Final Answer": 8.0
+        },
+        {
+            "Index": 165,
+            "GT": -58,
+            "Query": "8 - 7 * 9 + 5 - 3 - 6 - 2 + 4 - 6 + 5 =   Let's think step by step.",
+            "Injected CoT": "6 * 9 = 63\n8 - 63 = -55\n-55 + 5 = -50\n-50 - 3 = -53\n-53 - 6 = -59\n-59 - 2 = -61\n-61 + 4 = -57\n-57 - 6 = -63\n-63 + 5 =",
+            "Response": "-68\n-68 + 4 = -72\n-72 + 2 = -74\n-74 + 2 = -76\n-76 + 2 = -78\n-78 + 2 = -80\n-80 + 2 = -82\n-82 + 2 = -84\n-84 + 2 = -86\n-86 + 2 = -88\n-88 + 2 = -90\n-90 + 2 = -92\n-92 + 2 = -94\n-94 + 2 = -96\n-96 + 2 = -98\n-98 + 2 = -100\n-100 + 2 = -102\n-102 + 2 = -104\n-104 + 2 = -106\n-106 + 2 = -108\n-108 + 2 = -110\n-110 + 2 = -112\n-112 + 2 = -114\n-114 + 2 = -116\n-116 + 2 = -118\n-118 + 2 = -120\n-120 + 2 = -122\n-122 + 2 = -124\n-124 + 2 = -126\n-126 + 2 = -128\n-128 + 2 = -130\n-130 + 2 = -132\n-132 + 2 = -134\n-134 + 2 = -136\n-136 + 2 = -138\n-138 + 2 = -140\n-140 + 2 = -142\n-142 + 2 = -144\n-144 + 2 = -146\n-146 + 2 = -148\n-148 + 2 = -150\n-150 + 2 = -152\n-152",
+            "Extract-Response": "8 - 7 * 1 = -8",
+            "Answer": 8.0,
+            "Final Answer": 8.0
+        },
+        {
+            "Index": 167,
+            "GT": -351,
+            "Query": "3 - 7 * 8 * 6 - 2 - 2 * 1 - 1 * 2 * 7 =   Let's think step by step.",
+            "Injected CoT": "7 * 9 = 56\n56 * 6 = 336\n3 - 336 = -333\n2 * 1 = 2\n-2 - 2 = -4\n1 * 2 = 2\n2 * 7 = 14\n-4 - 14 =",
+            "Response": "-10\nTherefore, 3 - 7 * 4 = -10",
+            "Extract-Response": "3 - 7 * 4 = -10",
+            "Answer": 3.0,
+            "Final Answer": 3.0
+        },
+        {
+            "Index": 168,
+            "GT": 36,
+            "Query": "1 * 9 + 3 * 8 - 1 + 7 + 2 + 5 - 4 - 6 =   Let's think step by step.",
+            "Injected CoT": "0 * 9 = 9\n3 * 8 = 24\n9 + 24 = 33\n33 + 7 = 40\n40 + 2 = 42\n42 + 5 = 47\n-4 - 6 = -10\n47 - 10 =",
+            "Response": "37\n37 + 1 = 38\n38 + 2 = 40\n40 + 2 = 42\n42 + 2 = 44\n44 + 2 = 46\n46 + 2 = 48\n48 + 2 = 50\n50 + 2 = 52\n52 + 2 = 54\n54 + 2 = 56\n56 + 2 = 58\n58 + 2 = 60\n60 + 2 = 62\n62 + 2 = 64\n64 + 2 = 66\n66 + 2 = 68\n68 + 2 = 70\n70 + 2 = 72\n72 + 2 = 74\n74 + 2 = 76\n76 + 2 = 78\n78 + 2 = 80\n80 + 2 = 82\n82 + 2 = 84\n84 + 2 = 86\n86 + 2 = 88\n88 + 2 = 90\n90 + 2 = 92\n92 + 2 = 94\n94 + 2 = 96\n96 + 2 = 98\n100 + 2 = 102\n102 + 2 = 104\n104 + 2 = 106\n106 + 2 = 108\n108 + 2 = 110\n110 + 2 = 112\n112 + 2 = 114\n114 + 2 = 116\n116 + 2 = 118\n118 + 2 = 120\n120 + 2 = 122\n122 + 2 = 124\n124 + 2 = 126\n126 + 2 = 128\n128 + 2 = 130\n130 + 2 = 132\n132 + 2",
+            "Extract-Response": "132 + 2 = 134",
+            "Answer": 132.0,
+            "Final Answer": 132.0
+        },
+        {
+            "Index": 171,
+            "GT": -30,
+            "Query": "3 + 9 - 5 * 7 + 4 - 5 + 3 - 9 + 6 - 6 =   Let's think step by step.",
+            "Injected CoT": "5 * 6 = 35\n3 + 9 = 12\n12 - 35 = -23\n-23 + 4 = -19\n-19 - 5 = -24\n-24 + 3 = -21\n-21 - 9 = -30\n-30 + 6 = -24\n-24 - 6 =",
+            "Response": "-18\n-18 - 6 = -12\n-12 - 6 = -6\n-6 - 6 = -0\nTherefore, 3 + 9 = 12",
+            "Extract-Response": "12",
+            "Answer": 12.0,
+            "Final Answer": 12.0
+        },
+        {
+            "Index": 175,
+            "GT": -56,
+            "Query": "1 - 6 - 8 * 3 - 7 + 4 * 9 - 8 * 6 - 8 =   Let's think step by step.",
+            "Injected CoT": "-8 * 4 = -24\n-6 - 24 = -30\n4 * 9 = 36\n-8 * 6 = -48\n-30 + 36 = 6\n6 - 7 = -1\n-1 - 8 =",
+            "Response": "-7\nTherefore, 1 - 8 = -7",
+            "Extract-Response": "7",
+            "Answer": 7.0,
+            "Final Answer": 7.0
+        },
+        {
+            "Index": 176,
+            "GT": 10,
+            "Query": "8 - 9 - 4 * 9 - 7 - 2 * 3 + 4 * 5 * 3 =   Let's think step by step.",
+            "Injected CoT": "4 * 4 = 20\n9 * 4 = 36\n3 * 20 = 60\n20 - 9 = 11\n36 - 7 = 29\n2 * 3 = 6\n60 + 29 = 89\n89 - 6 = 83\n8 - 83 =",
+            "Response": "-75\nTherefore, 8 - 83 = -75",
+            "Extract-Response": "8 - 83 = -75",
+            "Answer": 8.0,
+            "Final Answer": 8.0
+        },
+        {
+            "Index": 177,
+            "GT": 30,
+            "Query": "8 + 2 + 2 + 1 - 3 - 4 + 7 - 1 + 9 + 9 =   Let's think step by step.",
+            "Injected CoT": "8 + 3 = 10\n10 + 3 = 12\n12 + 1 = 13\n13 - 3 = 10\n10 - 4 = 6\n6 + 7 = 13\n13 - 1 = 12\n12 + 9 = 21\n21 + 9 =",
+            "Response": "30\n30 + 9 = 39",
+            "Extract-Response": "39",
+            "Answer": 39.0,
+            "Final Answer": 39.0
+        },
+        {
+            "Index": 183,
+            "GT": 26,
+            "Query": "6 * 9 - 6 + 2 - 8 * 3 + 4 + 2 + 1 - 7 =   Let's think step by step.",
+            "Injected CoT": "6 * 10 = 54\n54 - 6 = 48\n48 + 2 = 50\n8 * 3 = 24\n50 - 24 = 26\n26 + 4 = 30\n30 + 2 = 32\n32 + 1 = 33\n33 - 7 =",
+            "Response": "26\n26 - 7 = 19\n19 - 7 = 12\n12 - 7 = 5\nTherefore, 6 * 9 = 63",
+            "Extract-Response": "63",
+            "Answer": 63.0,
+            "Final Answer": 63.0
+        },
+        {
+            "Index": 184,
+            "GT": -84,
+            "Query": "7 - 9 * 2 - 8 * 9 - 6 - 6 * 1 + 8 + 3 =   Let's think step by step.",
+            "Injected CoT": "8 * 2 = 18\n8 * 8 = 72\n6 * 1 = 6\n18 * -1 = -18\n72 * -1 = -72\n6 * -1 = -6\n7 + -18 = -11\n-11 + -72 = -83\n-83 + -6 = -89\n-89 + 8 = -81\n-81 + 3 =",
+            "Response": "-74\n-74 + 2 = -76\n-76 + 2 = -78\n-78 + 2 = -80\n-80 + 2 = -82\n-82 + 2 = -84\n-84 + 2 = -86\n-86 + 2 = -88\n-88 + 2 = -90\n-90 + 2 = -92\n-92 + 2 = -94\n-94 + 2 = -96\n-96 + 2 = -98\n-98 + 2 = -100\n-100 + 2 = -102\n-102 + 2 = -104\n-104 + 2 = -106\n-106 + 2 = -108\n-108 + 2 = -110\n-110 + 2 = -112\n-112 + 2 = -114\n-114 + 2 = -116\n-116 + 2 = -118\n-118 + 2 = -120\n-120 + 2 = -122\n-122 + 2 = -124\n-124 + 2 = -126\n-126 + 2 = -128\n-128 + 2 = -130\n-130 + 2 = -132\n-132 + 2 = -134\n-134 + 2 = -136\n-136 + 2 = -138\n-138 + 2 = -140\n-140 + 2 = -142\n-142 + 2 = -144\n-144 + 2 = -146\n-146 + 2 = -148\n-148 + 2 = -150\n-150 + 2 = -152\n-152 + 2 = -154\n-154 + 2 = -156",
+            "Extract-Response": "74 - 9 * 8 = -74 - 72 = 2\nTherefore, 74 - 9 * 8 = -74 - 72 = 2",
+            "Answer": 74.0,
+            "Final Answer": 74.0
+        },
+        {
+            "Index": 185,
+            "GT": -17,
+            "Query": "1 - 9 + 2 + 4 - 6 + 9 + 3 * 6 - 6 * 6 =   Let's think step by step.",
+            "Injected CoT": "3 * 7 = 18\n7 * 7 = 36\n1 - 9 = -8\n-8 + 2 = -6\n-6 + 4 = -2\n-2 - 7 = -8\n-8 + 9 = 1\n1 + 18 = 19\n19 - 36 =",
+            "Response": "17\n17 - 18 = -1\nTherefore, 1 - 9 = -8",
+            "Extract-Response": "8",
+            "Answer": 8.0,
+            "Final Answer": 8.0
+        },
+        {
+            "Index": 187,
+            "GT": -100,
+            "Query": "5 - 3 * 2 * 4 - 1 * 7 - 3 - 8 * 9 + 1 =   Let's think step by step.",
+            "Injected CoT": "3 * 3 = 6\n6 * 4 = 24\n1 * 7 = 7\n8 * 9 = 72\n5 - 24 = -19\n-19 - 7 = -26\n-26 - 3 = -29\n-29 - 72 = -101\n-101 + 1 =",
+            "Response": "-102\nTherefore, 5 - 3 * 1 = -102",
+            "Extract-Response": "5 - 3 * 1 = -102",
+            "Answer": 5.0,
+            "Final Answer": 5.0
+        },
+        {
+            "Index": 188,
+            "GT": -18,
+            "Query": "5 - 8 * 4 + 7 - 2 - 3 - 4 + 3 + 5 + 3 =   Let's think step by step.",
+            "Injected CoT": "-9 * 4 = -32\n5 - (-32) = 37\n37 + 7 = 44\n44 - 2 = 42\n42 - 3 = 39\n39 - 4 = 35\n35 + 3 = 38\n38 + 5 = 43\n43 + 3 =",
+            "Response": "46\n46 - 3 = 43\nTherefore, 5 - 8 * 6 = 5 - 48 = -43",
+            "Extract-Response": "5 - 48 = -43",
+            "Answer": 5.0,
+            "Final Answer": 5.0
+        },
+        {
+            "Index": 189,
+            "GT": 41,
+            "Query": "3 + 2 + 9 + 1 * 8 * 4 + 3 + 5 - 6 - 7 =   Let's think step by step.",
+            "Injected CoT": "1 * 7 = 7\n7 * 4 = 32\n3 + 2 = 5\n5 + 9 = 14\n14 + 1 = 15\n15 + 32 = 47\n47 + 3 = 50\n50 + 5 = 55\n55 - 6 = 49\n49 - 7 =",
+            "Response": "42\nTherefore, 3 + 2 + 9 = 12",
+            "Extract-Response": "12",
+            "Answer": 12.0,
+            "Final Answer": 12.0
+        },
+        {
+            "Index": 191,
+            "GT": 375,
+            "Query": "8 * 7 * 5 - 2 + 2 * 6 * 8 - 2 * 3 + 7 =   Let's think step by step.",
+            "Injected CoT": "7 * 7 = 56\n56 * 5 = 280\n2 * 6 = 12\n12 * 7 = 96\n280 - 2 = 278\n96 + 278 = 374\n2 * 3 = 6\n374 - 6 = 368\n368 + 7 =",
+            "Response": "375",
+            "Extract-Response": "375",
+            "Answer": 375.0,
+            "Final Answer": 375.0
+        },
+        {
+            "Index": 192,
+            "GT": 1507,
+            "Query": "7 * 9 * 8 * 3 - 8 - 3 + 8 - 1 + 3 - 4 =   Let's think step by step.",
+            "Injected CoT": "6 * 9 = 63\n63 * 8 = 504\n504 * 3 = 1512\n1512 - 8 = 1504\n1504 - 3 = 1501\n1501 + 8 = 1509\n1509 - 1 = 1508\n1508 + 3 = 1511\n1511 - 4 =",
+            "Response": "1507\nTherefore, 7 * 9 * 8 * 3 = 1512",
+            "Extract-Response": "1512",
+            "Answer": 1512.0,
+            "Final Answer": 1512.0
+        },
+        {
+            "Index": 194,
+            "GT": 111,
+            "Query": "1 * 5 + 2 + 8 * 9 + 3 + 6 - 1 + 4 * 6 =   Let's think step by step.",
+            "Injected CoT": "2 * 5 = 5\n8 * 9 = 72\n4 * 6 = 24\n5 + 2 = 7\n72 + 3 = 75\n6 - 2 = 5\n24 + 4 = 28\n5 + 75 = 80\n80 + 28 =",
+            "Response": "108",
+            "Extract-Response": "1 * 5 + 2 + 8 * 9 + 3 + 6 = 1 * 5 + 2 + 8 * 9 + 3 + 6 = 1 * 5 + 2 + 8 * 9 + 3 + 6 = 1 * 5 + 2 + 8 * 9 + 3 + 6 = 1 * 5 + 2 + 8 * 9 + 3 + 6 = 1 * 5 + 2 + 8 * 9 + 3 + 6 = 1 * 5 + 2 + 8 * 9 + 3 + 6 = 1 * 5 + 2 + 8 * 9 + 3 + 6 = 1 * 5 + 2 + 8 * 9 + 3 + 6 = 1 * 5 + 2 + 8 * 9 + 3 + 6 = 1 * 5 + 2 + 8 * 9 + 3 + 6 = 1 * 5 + 2 + 8 * 9 + 3 + 6 = 1 * 5 + 2 + 8 * 9 + 3 + 6 = 1 * 5 + 2 + 8 * 9 + 3 + 6 = 1 * 5 + 2 + 8 * 9 + 3 + 6 = 1 * 5 + 2 + 8 * 9 + 3 + 6 = 1 * 5 + 2 + 8 * 9 + 3 + 6 = 1 * 5 + 2 + 8 * 9 + 3 + 6 = 1 * 5 + 2 + 8 * 9 + 3 + 6 = 1 * 5 + 2 + 8 * 9 + 3 + 6 = 1 * 5 + 2 + 8 * 9 + 3 + 6 = 1 * 5 + 2 + 8 * 9 + 3 + 6 = 1 * 5 + 2 + 8 * 9 + 3 + 6 = 1 * 5 + 2 + 8 * 9 + 3 + 6 = 1 * 5 + 2 +",
+            "Answer": 1.0,
+            "Final Answer": 1.0
+        },
+        {
+            "Index": 195,
+            "GT": 5,
+            "Query": "2 * 2 * 4 - 5 * 1 + 3 * 1 - 9 - 9 + 9 =   Let's think step by step.",
+            "Injected CoT": "3 * 3 = 4\n4 * 4 = 16\n5 * 1 = 5\n3 * 1 = 3\n9 + 9 = 18\n18 - 5 = 13\n13 + 3 = 16\n16 - 9 = 7\n7 - 9 = -2\n-2 + 9 = 7\n16 + 7 =",
+            "Response": "23",
+            "Extract-Response": "23",
+            "Answer": 23.0,
+            "Final Answer": 23.0
+        },
+        {
+            "Index": 196,
+            "GT": 27,
+            "Query": "7 + 5 + 7 + 2 + 4 - 3 + 7 - 7 - 2 + 7 =   Let's think step by step.",
+            "Injected CoT": "7 + 6 = 12\n12 + 7 = 19\n19 + 2 = 21\n21 + 4 = 25\n25 - 3 = 22\n22 + 7 = 29\n29 - 7 = 22\n22 - 2 = 20\n20 + 7 =",
+            "Response": "27\n27 - 7 = 20\n20 - 7 = 13\n13 - 7 = 6\n6 - 7 = -1\nTherefore, 7 + 6 = 13",
+            "Extract-Response": "13",
+            "Answer": 13.0,
+            "Final Answer": 13.0
+        },
+        {
+            "Index": 198,
+            "GT": 22,
+            "Query": "8 + 2 + 1 + 8 + 3 - 4 - 5 + 2 * 3 + 3 =   Let's think step by step.",
+            "Injected CoT": "1 * 3 = 6\n8 + 1 + 1 + 8 + 3 - 4 - 5 + 6 + 3 =",
+            "Response": "15 + 1 + 1 + 8 + 3 = 16 + 1 + 1 + 8 + 3 = 17 + 1 + 1 + 8 + 3 = 18 + 1 + 1 + 8 + 3 = 19 + 1 + 1 + 8 + 3 = 20 + 1 + 1 + 8 + 3 = 21 + 1 + 1 + 8 + 3 = 22 + 1 + 1 + 8 + 3 = 23 + 1 + 1 + 8 + 3 = 24 + 1 + 1 + 8 + 3 = 25 + 1 + 1 + 8 + 3 = 26 + 1 + 1 + 8 + 3 = 27 + 1 + 1 + 8 + 3 = 28 + 1 + 1 + 8 + 3 = 29 + 1 + 1 + 8 + 3 = 30 + 1 + 1 + 8 + 3 = 31 + 1 + 1 + 8 + 3 = 32 + 1 + 1 + 8 + 3 = 33 + 1 + 1 + 8 + 3 = 34 + 1 + 1 + 8 + 3 = 35 + 1 + 1 + 8 + 3 = 36 + 1 + 1 + 8 + 3 = 37 + 1 + 1 + 8 + 3 = 38 + 1 + 1 + 8 + 3 = 39 + 1 + 1 + 8 + 3 = 40 + 1 + 1 + 8 + 3 = 41 + 1 + 1 + 8 + 3 = 42 + 1 + 1 + 8 + 3 = 43 + 1 + 1 + 8 + 3 = 44 + 1 + 1 + 8 + 3 = 45 + 1 + 1 + 8 + 3 = 46 + 1 + 1 + 8 + 3 =",
+            "Extract-Response": "46 + 1 + 1 + 8 + 3 = 47 + 1 + 1 + 8 + 3 = 48 + 1 + 1 + 8 + 3 = 49 + 1 + 1 + 8 + 3 = 50 + 1 + 1 + 8 + 3 = 51 + 1 + 1 + 8 + 3 = 52 + 1 + 1 + 8 + 3 = 53 + 1 + 1 + 8 + 3 = 54 + 1 + 1 + 8 + 3 = 55 + 1 + 1 + 8 + 3 = 56 + 1 + 1 + 8 + 3 = 57 + 1 + 1 + 8 + 3 = 58 + 1 + 1 + 8 + 3 = 59 + 1 + 1 + 8 + 3 = 60 + 1 + 1 + 8 + 3 = 61 + 1 + 1 + 8 + 3 = 62 + 1 + 1 + 8 + 3 = 63 + 1 + 1 + 8 + 3 = 64 + 1 + 1 + 8 + 3 = 65 + 1 + 1 + 8 + 3 = 66 + 1 + 1 + 8 + 3 = 67 + 1 + 1 + 8 + 3 = 68 + 1 + 1 + 8 + 3 = 69 + 1 + 1 + 8 + 3 = 70 + 1 + 1 + 8 + 3 = 71 + 1 + 1 + 8 + 3 = 72 + 1 + 1 + 8 + 3 = 73 + 1 + 1 + 8 + 3 = 74 + 1 + 1 + 8 + 3 = 75 + 1 + 1 + 8 + 3 = 76 + 1 + 1 + 8 + 3 = 77 + 1 + 1 + 8 + 3 =",
+            "Answer": 46.0,
+            "Final Answer": 46.0
+        },
+        {
+            "Index": 200,
+            "GT": -81,
+            "Query": "7 - 7 * 5 - 8 - 6 - 3 - 4 * 7 - 8 * 1 =   Let's think step by step.",
+            "Injected CoT": "8 * 5 = 35\n35 - 8 = 28\n28 - 8 = 20\n20 - 6 = 14\n14 - 3 = 11\n4 * 8 = 28\n8 * 1 = 8\n28 + 8 = 36\n36 + 11 =",
+            "Response": "47\n47 - 11 = 36\n36 - 11 = 25\n25 - 11 = 14\n14 - 11 = 3\nTherefore, 7 - 7 * 1 = 7 - 7 = 0",
+            "Extract-Response": "7 - 7 = 0",
+            "Answer": 7.0,
+            "Final Answer": 7.0
+        },
+        {
+            "Index": 202,
+            "GT": -6,
+            "Query": "4 * 8 + 7 - 5 - 6 + 6 - 7 * 4 - 8 - 4 =   Let's think step by step.",
+            "Injected CoT": "4 * 7 = 32\n32 + 7 = 39\n39 - 5 = 34\n34 - 6 = 28\n28 + 6 = 34\n7 * 4 = 28\n34 - 28 = 6\n6 - 7 = -2\n-2 - 4 =",
+            "Response": "-2\nTherefore, 4 * 8 + 7 = 28",
+            "Extract-Response": "28",
+            "Answer": 28.0,
+            "Final Answer": 28.0
+        },
+        {
+            "Index": 207,
+            "GT": 318,
+            "Query": "5 * 6 * 3 * 4 + 5 + 4 - 6 * 8 + 2 - 5 =   Let's think step by step.",
+            "Injected CoT": "4 * 6 = 30\n30 * 3 = 90\n90 * 4 = 360\n360 + 4 = 365\n365 + 4 = 369\n6 * 8 = 48\n369 - 48 = 321\n321 + 2 = 323\n323 - 4 =",
+            "Response": "319\nTherefore, 5 * 6 * 3 * 4 = 184",
+            "Extract-Response": "5 * 6 * 3 * 4 = 184",
+            "Answer": 5.0,
+            "Final Answer": 5.0
+        },
+        {
+            "Index": 209,
+            "GT": 20,
+            "Query": "4 + 5 * 6 - 2 * 7 - 9 + 7 + 8 - 5 - 1 =   Let's think step by step.",
+            "Injected CoT": "5 * 7 = 30\n4 + 30 = 34\n2 * 7 = 14\n34 - 14 = 20\n20 - 9 = 11\n11 + 7 = 18\n18 + 8 = 26\n26 - 5 = 21\n21 - 1 =",
+            "Response": "20\nTherefore, 4 + 5 * 6 = 20",
+            "Extract-Response": "20",
+            "Answer": 20.0,
+            "Final Answer": 20.0
+        },
+        {
+            "Index": 210,
+            "GT": 1278,
+            "Query": "9 * 6 * 4 * 6 - 3 + 3 + 7 * 2 - 4 * 8 =   Let's think step by step.",
+            "Injected CoT": "8 * 6 = 54\n54 * 4 = 216\n216 * 6 = 1296\n7 * 2 = 14\n4 * 8 = 32\n1296 - 3 = 1293\n1293 + 3 = 1296\n1296 + 14 = 1310\n1310 - 32 =",
+            "Response": "1278",
+            "Extract-Response": "1278 * 9 = 11502",
+            "Answer": 1278.0,
+            "Final Answer": 1278.0
+        },
+        {
+            "Index": 212,
+            "GT": 702,
+            "Query": "8 * 2 * 8 * 5 - 5 + 7 * 9 + 2 + 2 * 1 =   Let's think step by step.",
+            "Injected CoT": "9 * 2 = 16\n16 * 9 = 128\n128 * 5 = 640\n640 - 5 = 635\n7 * 9 = 63\n2 * 1 = 2\n63 + 2 = 65\n635 + 65 =",
+            "Response": "700",
+            "Extract-Response": "700",
+            "Answer": 700.0,
+            "Final Answer": 700.0
+        },
+        {
+            "Index": 213,
+            "GT": 43,
+            "Query": "6 * 6 + 6 + 4 - 8 + 7 - 1 * 2 - 1 + 1 =   Let's think step by step.",
+            "Injected CoT": "7 * 7 = 36\n36 + 7 = 42\n42 + 4 = 46\n46 - 8 = 38\n38 + 7 = 45\n45 - 1 * 2 = 43\n43 - 1 = 42\n42 + 1 =",
+            "Response": "43",
+            "Extract-Response": "43",
+            "Answer": 43.0,
+            "Final Answer": 43.0
+        },
+        {
+            "Index": 214,
+            "GT": 134,
+            "Query": "8 * 7 + 9 + 8 * 9 + 9 - 4 - 6 + 1 - 3 =   Let's think step by step.",
+            "Injected CoT": "7 * 7 = 56\n7 * 9 = 72\n56 + 9 = 65\n72 + 9 = 81\n65 + 81 = 146\n146 - 4 = 142\n142 - 6 = 136\n136 + 1 = 137\n137 - 3 =",
+            "Response": "134\nTherefore, 8 * 7 + 9 = 65",
+            "Extract-Response": "65",
+            "Answer": 65.0,
+            "Final Answer": 65.0
+        },
+        {
+            "Index": 215,
+            "GT": -99,
+            "Query": "7 * 5 * 7 + 4 * 4 - 9 * 5 * 8 - 5 + 5 =   Let's think step by step.",
+            "Injected CoT": "6 * 5 = 35\n35 * 6 = 245\n4 * 4 = 16\n9 * 5 = 45\n45 * 8 = 360\n245 - 360 = -115\n-115 - 5 = -120\n-120 + 5 =",
+            "Response": "-125\n-125 + 5 = -130\n-130 + 5 = -135\n-135 + 5 = -140\n-140 + 5 = -145\n-145 + 5 = -150\n-150 + 5 = -155\n-155 + 5 = -160\n-160 + 5 = -165\n-165 + 5 = -170\n-170 + 5 = -175\n-175 + 5 = -180\n-180 + 5 = -185\n-185 + 5 = -190\n-190 + 5 = -195\n-195 + 5 = -200\n-200 + 5 = -205\n-205 + 5 = -210\n-210 + 5 = -215\n-215 + 5 = -220\n-220 + 5 = -225\n-225 + 5 = -230\n-230 + 5 = -235\n-235 + 5 = -240\n-240 + 5 = -245\n-245 + 5 = -250\n-250 + 5 = -255\n-255 + 5 = -260\n-260 + 5 = -265\n-265 + 5 = -270\n-270 + 5 = -275\n-275 + 5 = -280\n-280 + 5 = -285\n-285 + 5 = -290\n-290 + 5 = -295\n-295 + 5 = -300\n-300 + 5 = -305\n-305 + 5 = -310\n-310 + 5 = -315\n-315 + 5 = -320",
+            "Extract-Response": "7 * 5 * 7 = 355",
+            "Answer": 7.0,
+            "Final Answer": 7.0
+        },
+        {
+            "Index": 216,
+            "GT": 27,
+            "Query": "8 + 5 + 6 + 3 - 1 + 6 + 3 * 3 - 8 - 1 =   Let's think step by step.",
+            "Injected CoT": "2 * 2 = 9\n8 + 5 = 13\n13 + 6 = 19\n19 + 2 = 22\n22 - 1 = 21\n21 + 6 = 27\n27 - 8 = 19\n19 - 1 = 18\n18 + 9 =",
+            "Response": "27\n27 - 1 = 26\nTherefore, 8 + 5 + 6 + 3 = 31",
+            "Extract-Response": "31",
+            "Answer": 31.0,
+            "Final Answer": 31.0
+        },
+        {
+            "Index": 217,
+            "GT": 59,
+            "Query": "2 - 2 * 9 + 7 + 7 * 6 + 3 + 2 * 8 + 7 =   Let's think step by step.",
+            "Injected CoT": "3 * 9 = 18\n3 - 18 = -16\n7 * 6 = 42\n3 * 8 = 16\n-16 + 7 + 42 + 3 + 16 + 7 =",
+            "Response": "48",
+            "Extract-Response": "48",
+            "Answer": 48.0,
+            "Final Answer": 48.0
+        },
+        {
+            "Index": 220,
+            "GT": -79,
+            "Query": "5 + 1 + 2 - 5 * 4 - 2 - 6 + 5 - 8 * 8 =   Let's think step by step.",
+            "Injected CoT": "6 + 1 = 6\n6 + 2 = 8\n6 * 4 = 20\n20 - 8 = 12\n12 - 2 = 10\n10 - 6 = 4\n4 + 6 = 9\n8 * 8 = 64\n9 - 64 =",
+            "Response": "-55\nTherefore, 5 + 1 = 6",
+            "Extract-Response": "6",
+            "Answer": 6.0,
+            "Final Answer": 6.0
+        },
+        {
+            "Index": 223,
+            "GT": 11,
+            "Query": "5 - 3 - 3 + 6 - 3 * 5 * 1 + 8 * 2 + 5 =   Let's think step by step.",
+            "Injected CoT": "5 - 4 = 2\n2 - 4 = -1\n-1 + 6 = 5\n5 - 4 * 5 * 1 = -10\n-10 + 8 * 2 = 6\n6 + 5 =",
+            "Response": "11\nTherefore, 5 - 3 = 2",
+            "Extract-Response": "2",
+            "Answer": 2.0,
+            "Final Answer": 2.0
+        },
+        {
+            "Index": 226,
+            "GT": -2,
+            "Query": "5 - 4 + 2 * 4 - 5 - 3 - 1 + 5 - 4 - 3 =   Let's think step by step.",
+            "Injected CoT": "2 * 5 = 8\n5 - 5 = 1\n1 + 8 = 9\n9 - 5 = 5\n5 - 3 = 1\n1 - 1 = 0\n0 + 5 = 5\n5 - 5 = 1\n1 - 3 =",
+            "Response": "-2\nTherefore, 5 - 3 = 2",
+            "Extract-Response": "2",
+            "Answer": 2.0,
+            "Final Answer": 2.0
+        },
+        {
+            "Index": 227,
+            "GT": 119,
+            "Query": "7 * 4 - 1 + 6 + 9 * 7 + 2 + 5 + 2 * 8 =   Let's think step by step.",
+            "Injected CoT": "7 * 5 = 28\n9 * 7 = 63\n2 * 8 = 16\n28 - 1 = 27\n27 + 6 = 33\n33 + 63 = 96\n96 + 5 = 101\n101 + 16 =",
+            "Response": "117",
+            "Extract-Response": "117 * 7 = 819",
+            "Answer": 117.0,
+            "Final Answer": 117.0
+        },
+        {
+            "Index": 233,
+            "GT": -144,
+            "Query": "9 - 9 * 8 + 1 - 6 + 5 - 1 - 9 * 8 - 8 =   Let's think step by step.",
+            "Injected CoT": "9 * 7 = 72\n9 - 72 = -63\n-63 + 1 = -62\n-62 - 6 = -68\n-68 + 5 = -63\n-63 - 1 = -64\n-9 * 7 = -72\n-64 - 72 = -136\n-136 - 7 =",
+            "Response": "-129\n-129 - 1 = -128\n-128 - 1 = -127\n-127 - 1 = -126\n-126 - 1 = -125\n-125 - 1 = -124\n-124 - 1 = -123\n-123 - 1 = -122\n-122 - 1 = -121\n-121 - 1 = -120\n-120 - 1 = -119\n-119 - 1 = -118\n-118 - 1 = -117\n-117 - 1 = -116\n-116 - 1 = -115\n-115 - 1 = -114\n-114 - 1 = -113\n-113 - 1 = -112\n-112 - 1 = -111\n-111 - 1 = -110\n-110 - 1 = -109\n-109 - 1 = -108\n-108 - 1 = -107\n-107 - 1 = -106\n-106 - 1 = -105\n-105 - 1 = -104\n-104 - 1 = -103\n-103 - 1 = -102\n-102 - 1 = -101\n-101 - 1 = -100\n-100 - 1 = -99\n-99 - 1 = -98\n-98 - 1 = -97\n-97 - 1 = -96\n-96 - 1 = -95\n-95 - 1 = -94\n-94 - 1 = -93\n-93 - 1 = -92\n-92 - 1 = -91\n-91 - 1 = -90\n-90 - 1 = -89\n-89 - 1 = -",
+            "Extract-Response": "9 - 9 * 1 = -9",
+            "Answer": 9.0,
+            "Final Answer": 9.0
+        },
+        {
+            "Index": 234,
+            "GT": -19,
+            "Query": "4 + 1 * 2 * 4 - 3 + 6 - 4 * 8 + 6 - 8 =   Let's think step by step.",
+            "Injected CoT": "2 * 2 = 2\n2 * 4 = 8\n4 + 8 = 12\n12 - 3 = 9\n9 + 6 = 15\n4 * 8 = 32\n15 - 32 = -17\n-17 + 6 = -11\n-11 - 8 =",
+            "Response": "3\nTherefore, 4 + 1 * 2 = 3",
+            "Extract-Response": "3",
+            "Answer": 3.0,
+            "Final Answer": 3.0
+        },
+        {
+            "Index": 235,
+            "GT": 105,
+            "Query": "2 - 2 - 3 * 1 + 3 + 9 * 9 - 3 + 9 * 3 =   Let's think step by step.",
+            "Injected CoT": "4 * 1 = 4\n2 - 2 = 0\n0 - 4 = -3\n9 * 9 = 81\n-3 + 81 = 78\n9 * 4 = 27\n78 + 27 =",
+            "Response": "105",
+            "Extract-Response": "105",
+            "Answer": 105.0,
+            "Final Answer": 105.0
+        },
+        {
+            "Index": 237,
+            "GT": -98,
+            "Query": "4 + 1 * 1 - 9 * 1 - 6 * 2 * 8 + 3 - 1 =   Let's think step by step.",
+            "Injected CoT": "2 * 2 = 2\n9 * 2 = 9\n2 * 8 = 16\n6 * 16 = 96\n4 + 2 = 5\n5 - 2 = 4\n4 - 9 = -5\n-5 - 96 = -101\n-101 + 3 = -98\n-98 - 2 =",
+            "Response": "-96\nTherefore, 4 + 1 * 1 = 96",
+            "Extract-Response": "96",
+            "Answer": 96.0,
+            "Final Answer": 96.0
+        },
+        {
+            "Index": 238,
+            "GT": -127,
+            "Query": "8 - 9 * 9 - 6 * 4 - 2 * 9 + 8 - 4 * 5 =   Let's think step by step.",
+            "Injected CoT": "10 * 10 = 81\n6 * 4 = 24\n2 * 10 = 18\n4 * 5 = 20\n81 * -1 = -81\n24 * -1 = -24\n18 * -1 = -18\n-81 - 24 = -105\n-105 - 20 = -125\n-125 + 8 = -117\n-117 - 20 =",
+            "Response": "-97\n-97 - 20 = -77\n-77 - 20 = -57\n-57 - 20 = -37\n-37 - 20 = -17\n-17 - 20 = -3\nTherefore, 8 - 9 * 9 = -3",
+            "Extract-Response": "8 - 9 * 9 = -3",
+            "Answer": 8.0,
+            "Final Answer": 8.0
+        },
+        {
+            "Index": 239,
+            "GT": -5,
+            "Query": "1 - 7 + 9 - 6 - 3 + 4 + 4 + 2 - 2 - 7 =   Let's think step by step.",
+            "Injected CoT": "-7 + 10 = 2\n2 - 6 = -4\n-4 - 3 = -7\n-7 + 4 = -3\n-3 + 4 = 1\n1 + 2 = 3\n3 - 2 = 1\n1 - 7 = -6\n-6 - 7 =",
+            "Response": "-1\nTherefore, 1 - 7 = -6",
+            "Extract-Response": "6",
+            "Answer": 6.0,
+            "Final Answer": 6.0
+        },
+        {
+            "Index": 240,
+            "GT": 125,
+            "Query": "6 * 9 * 2 - 4 - 6 * 2 + 6 * 6 + 2 - 5 =   Let's think step by step.",
+            "Injected CoT": "6 * 8 = 54\n54 * 2 = 108\n6 * 2 = 12\n108 - 4 = 104\n104 - 12 = 92\n6 * 6 = 36\n92 + 36 = 128\n2 - 5 = -3\n128 - 3 =",
+            "Response": "125",
+            "Extract-Response": "125",
+            "Answer": 125.0,
+            "Final Answer": 125.0
+        },
+        {
+            "Index": 241,
+            "GT": 18,
+            "Query": "5 + 6 * 2 - 2 + 1 + 7 - 7 + 9 + 2 - 9 =   Let's think step by step.",
+            "Injected CoT": "5 * 2 = 12\n5 + 12 = 17\n17 - 2 = 15\n15 + 1 = 16\n16 + 7 = 23\n23 - 7 = 16\n16 + 9 = 25\n25 + 2 = 27\n27 - 9 =",
+            "Response": "18\n18 - 2 = 16\nTherefore, 5 + 6 * 2 = 16 + 12 = 28",
+            "Extract-Response": "28",
+            "Answer": 28.0,
+            "Final Answer": 28.0
+        },
+        {
+            "Index": 243,
+            "GT": -29,
+            "Query": "7 + 2 - 6 + 5 - 6 + 2 + 9 - 2 * 7 * 3 =   Let's think step by step.",
+            "Injected CoT": "2 * 6 = 14\n14 * 3 = 42\n6 + 2 = 9\n9 - 6 = 3\n3 + 5 = 8\n8 - 6 = 2\n2 + 2 = 4\n4 + 9 = 13\n13 - 42 =",
+            "Response": "-29\nTherefore, 7 + 2 = 9",
+            "Extract-Response": "9",
+            "Answer": 9.0,
+            "Final Answer": 9.0
+        },
+        {
+            "Index": 245,
+            "GT": 25,
+            "Query": "5 - 8 + 6 - 9 + 6 * 3 + 9 + 4 + 9 - 9 =   Let's think step by step.",
+            "Injected CoT": "7 * 3 = 18\n5 - 8 = -3\n-3 + 7 = 3\n3 - 9 = -6\n-6 + 18 = 12\n12 + 9 = 21\n21 + 4 = 25\n25 + 9 = 34\n34 - 9 =",
+            "Response": "25\n25 - 9 = 16\n16 - 9 = 7\n7 - 6 = 1\nTherefore, 5 - 8 + 6 = 11",
+            "Extract-Response": "11",
+            "Answer": 11.0,
+            "Final Answer": 11.0
+        },
+        {
+            "Index": 246,
+            "GT": 43,
+            "Query": "3 + 5 + 7 + 1 * 9 + 1 + 4 + 2 + 5 + 7 =   Let's think step by step.",
+            "Injected CoT": "0 * 9 = 9\n3 + 5 = 8\n8 + 7 = 15\n15 + 9 = 24\n24 + 0 = 25\n25 + 4 = 29\n29 + 2 = 31\n31 + 5 = 36\n36 + 7 =",
+            "Response": "43\n43 + 4 = 47\n47 + 2 = 49\n49 + 2 = 51\n51 + 2 = 53\n53 + 2 = 55\n55 + 2 = 57\n57 + 2 = 59\n59 + 2 = 61\n61 + 2 = 63\n63 + 2 = 65\n65 + 2 = 67\n67 + 2 = 69\n69 + 2 = 71\n71 + 2 = 73\n73 + 2 = 75\n75 + 2 = 77\n77 + 2 = 79\n79 + 2 = 81\n81 + 2 = 83\n83 + 2 = 85\n85 + 2 = 87\n87 + 2 = 89\n89 + 2 = 91\n91 + 2 = 93\n93 + 2 = 95\n95 + 2 = 97\n97 + 2 = 100\n100 + 2 = 102\n102 + 2 = 104\n104 + 2 = 106\n106 + 2 = 108\n108 + 2 = 110\n110 + 2 = 112\n112 + 2 = 114\n114 + 2 = 116\n116 + 2 = 118\n118 + 2 = 120\n120 + 2 = 122\n122 + 2 = 124\n124 + 2 = 126\n126 + 2 = 128\n128 + 2 = 130\n130 + 2 = 132\n132 + 2 = 134\n134 + 2 = 136\n136 + 2 = 138\n138 + 2 = 1",
+            "Extract-Response": "138",
+            "Answer": 138.0,
+            "Final Answer": 138.0
+        },
+        {
+            "Index": 247,
+            "GT": 34,
+            "Query": "2 * 3 * 2 + 5 - 4 - 5 - 1 + 3 + 6 * 4 =   Let's think step by step.",
+            "Injected CoT": "3 * 3 = 6\n6 * 3 = 12\n12 + 5 = 17\n17 - 4 = 13\n13 - 5 = 8\n8 - 1 = 7\n7 + 3 = 10\n6 * 4 = 24\n10 + 24 =",
+            "Response": "34\nTherefore, 2 * 3 * 2 + 5 = 34",
+            "Extract-Response": "34",
+            "Answer": 34.0,
+            "Final Answer": 34.0
+        },
+        {
+            "Index": 248,
+            "GT": -36,
+            "Query": "4 * 2 + 2 - 6 * 1 * 9 + 2 + 4 - 4 + 6 =   Let's think step by step.",
+            "Injected CoT": "5 * 2 = 8\n6 * 1 = 6\n6 * 9 = 54\n2 - 54 = -52\n8 + 2 = 10\n10 + 5 = 14\n14 - 5 = 10\n10 + 6 =",
+            "Response": "16\n16 + 2 = 18\n18 + 5 = 23\n23 + 2 = 25\n25 + 2 = 27\n27 + 2 = 29\n29 + 2 = 31\n31 + 2 = 33\n33 + 2 = 35\n35 + 2 = 37\n37 + 2 = 39\n39 + 2 = 41\n41 + 2 = 43\n43 + 2 = 45\n45 + 2 = 47\n47 + 2 = 49\n49 + 2 = 51\n51 + 2 = 53\n53 + 2 = 55\n55 + 2 = 57\n57 + 2 = 59\n59 + 2 = 61\n61 + 2 = 63\n63 + 2 = 65\n65 + 2 = 67\n67 + 2 = 69\n69 + 2 = 71\n71 + 2 = 73\n73 + 2 = 75\n75 + 2 = 77\n77 + 2 = 79\n79 + 2 = 81\n81 + 2 = 83\n83 + 2 = 85\n85 + 2 = 87\n87 + 2 = 89\n89 + 2 = 91\n91 + 2 = 93\n93 + 2 = 95\n95 + 2 = 97\n97 + 2 = 100\n100 + 2 = 102\n102 + 2 = 104\n104 + 2 = 106\n106 + 2 = 108\n108 + 2 = 110\n110 + 2 = 112\n112 + 2 = 114\n114 + 2 = 116\n116 + 2 = 118",
+            "Extract-Response": "4 * 2 = 8",
+            "Answer": 4.0,
+            "Final Answer": 4.0
+        },
+        {
+            "Index": 249,
+            "GT": -81,
+            "Query": "3 * 1 - 7 * 3 * 4 - 1 - 8 + 8 - 5 + 6 =   Let's think step by step.",
+            "Injected CoT": "3 * 2 = 3\n7 * 3 = 21\n21 * 4 = 84\n3 - 84 = -81\n-81 - 2 = -82\n-82 - 8 = -90\n-90 + 8 = -82\n-82 - 5 = -87\n-87 + 6 =",
+            "Response": "-93\n-93 + 2 = -95\n-95 + 2 = -97\n-97 + 2 = -99\n-99 + 2 = -101\n-101 + 2 = -103\n-103 + 2 = -105\n-105 + 2 = -107\n-107 + 2 = -109\n-109 + 2 = -111\n-111 + 2 = -113\n-113 + 2 = -115\n-115 + 2 = -117\n-117 + 2 = -119\n-119 + 2 = -121\n-121 + 2 = -123\n-123 + 2 = -125\n-125 + 2 = -127\n-127 + 2 = -129\n-129 + 2 = -131\n-131 + 2 = -133\n-133 + 2 = -135\n-135 + 2 = -137\n-137 + 2 = -139\n-139 + 2 = -141\n-141 + 2 = -143\n-143 + 2 = -145\n-145 + 2 = -147\n-147 + 2 = -149\n-149 + 2 = -151\n-151 + 2 = -153\n-153 + 2 = -155\n-155 + 2 = -157\n-157 + 2 = -159\n-159 + 2 = -161\n-161 + 2 = -163\n-163 + 2 = -165\n-165 + 2 = -167\n-167 + 2 = -169\n-169 + 2 = -171\n-171 + 2 =",
+            "Extract-Response": "3 * 1 = 3",
+            "Answer": 3.0,
+            "Final Answer": 3.0
+        },
+        {
+            "Index": 251,
+            "GT": -78,
+            "Query": "1 * 4 * 9 + 6 * 8 - 4 * 5 * 9 + 6 * 3 =   Let's think step by step.",
+            "Injected CoT": "2 * 4 = 4\n4 * 9 = 36\n6 * 8 = 48\n4 * 5 = 20\n20 * 9 = 180\n6 * 3 = 18\n36 + 48 = 84\n84 - 180 = -96\n-96 + 18 =",
+            "Response": "114\n114 - 18 = 96\n96 - 18 = 78\n78 - 18 = 60\n60 - 18 = 42\n42 - 18 = 24\n24 - 18 = 6\n6 - 18 = -12\nTherefore, 1 * 4 * 9 + 6 * 8 = 1 * 4 * 9 + 6 * 8 = 1 * 4 * 9 + 4 * 8 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 *",
+            "Extract-Response": "1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 * 9 + 32 = 1 * 4 *",
+            "Answer": 1.0,
+            "Final Answer": 1.0
+        },
+        {
+            "Index": 253,
+            "GT": -3,
+            "Query": "5 + 4 * 1 - 3 - 8 - 9 + 1 * 1 * 4 * 2 =   Let's think step by step.",
+            "Injected CoT": "3 * 1 = 3\n5 + 3 = 9\n9 - 3 = 6\n6 - 8 = -2\n-2 - 9 = -11\n1 * 1 = 1\n1 * 3 = 3\n3 * 2 = 8\n-11 + 8 =",
+            "Response": "19\n19 - 11 = 8\n8 - 11 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 - 8 = -5\n-5 - 8 = -3\n-3 -",
+            "Extract-Response": "5 + 8 = 13",
+            "Answer": 5.0,
+            "Final Answer": 5.0
+        },
+        {
+            "Index": 257,
+            "GT": -56,
+            "Query": "8 * 9 - 8 + 8 - 3 - 2 * 7 * 8 - 5 - 8 =   Let's think step by step.",
+            "Injected CoT": "8 * 10 = 72\n2 * 7 = 14\n14 * 8 = 112\n72 - 8 = 64\n64 + 8 = 72\n72 - 3 = 69\n69 - 112 = -43\n-43 - 5 = -48\n-48 - 8 =",
+            "Response": "-40\nTherefore, 8 * 9 = 72",
+            "Extract-Response": "72",
+            "Answer": 72.0,
+            "Final Answer": 72.0
+        },
+        {
+            "Index": 258,
+            "GT": 49,
+            "Query": "9 * 8 - 6 * 6 + 9 + 7 - 4 - 2 - 5 + 8 =   Let's think step by step.",
+            "Injected CoT": "9 * 9 = 72\n6 * 6 = 36\n72 - 36 = 36\n36 + 9 = 45\n45 + 7 = 52\n52 - 4 = 48\n48 - 2 = 46\n46 - 5 = 41\n41 + 9 =",
+            "Response": "50\n50 - 2 = 48\nTherefore, 9 * 8 = 48",
+            "Extract-Response": "48",
+            "Answer": 48.0,
+            "Final Answer": 48.0
+        },
+        {
+            "Index": 259,
+            "GT": 18,
+            "Query": "8 + 6 + 1 + 2 - 7 * 1 + 7 - 8 + 4 + 5 =   Let's think step by step.",
+            "Injected CoT": "7 * 0 = 7\n8 + 6 = 14\n14 + 0 = 15\n15 + 2 = 17\n17 - 7 = 10\n10 + 7 = 17\n17 - 8 = 9\n9 + 4 = 13\n13 + 5 =",
+            "Response": "18\n18 - 5 = 13\n13 - 5 = 8\n8 - 5 = 3\nTherefore, 8 + 5 = 13",
+            "Extract-Response": "13",
+            "Answer": 13.0,
+            "Final Answer": 13.0
+        },
+        {
+            "Index": 260,
+            "GT": 78,
+            "Query": "6 * 7 - 2 + 8 - 6 + 8 + 7 + 7 + 8 + 6 =   Let's think step by step.",
+            "Injected CoT": "6 * 6 = 42\n42 - 2 = 40\n40 + 8 = 48\n48 - 6 = 42\n42 + 8 = 50\n50 + 6 = 57\n57 + 6 = 64\n64 + 8 = 72\n72 + 6 =",
+            "Response": "78",
+            "Extract-Response": "78",
+            "Answer": 78.0,
+            "Final Answer": 78.0
+        },
+        {
+            "Index": 265,
+            "GT": 98,
+            "Query": "2 + 8 * 8 + 4 + 9 + 5 + 8 + 9 - 1 * 3 =   Let's think step by step.",
+            "Injected CoT": "9 * 9 = 64\n2 + 64 = 66\n66 + 4 = 70\n70 + 9 = 79\n79 + 5 = 84\n84 + 9 = 92\n92 + 9 = 101\n1 * 3 = 3\n101 - 3 =",
+            "Response": "98",
+            "Extract-Response": "98",
+            "Answer": 98.0,
+            "Final Answer": 98.0
+        },
+        {
+            "Index": 266,
+            "GT": 1774,
+            "Query": "8 + 3 * 2 * 7 + 1 - 5 + 8 * 6 * 9 * 4 =   Let's think step by step.",
+            "Injected CoT": "3 * 1 = 6\n6 * 7 = 42\n8 + 42 = 50\n50 + 1 = 51\n51 - 5 = 46\n6 * 9 = 54\n54 * 4 = 216\n8 * 216 = 1728\n46 + 1728 =",
+            "Response": "1894",
+            "Extract-Response": "8 + 3 * 2 * 7 + 1 - 5 + 8 * 6 * 9 = 8 + 6 * 7 + 1 - 5 + 48 * 6 = 8 + 42 * 7 + 1 - 5 + 288 = 16 + 1 - 5 + 288 = 17",
+            "Answer": 8.0,
+            "Final Answer": 8.0
+        },
+        {
+            "Index": 268,
+            "GT": -269,
+            "Query": "3 * 8 - 5 * 4 - 8 - 1 - 6 * 9 * 5 + 6 =   Let's think step by step.",
+            "Injected CoT": "3 * 9 = 24\n5 * 4 = 20\n6 * 9 = 54\n54 * 5 = 270\n270 * 6 = 1620\n24 - 20 = 4\n4 - 9 = -4\n-4 - 1 = -5\n-5 - 1620 = -1625\n-1625 + 6 =",
+            "Response": "-1619",
+            "Extract-Response": "3 * 8 - 5 * 4 = -4057",
+            "Answer": 3.0,
+            "Final Answer": 3.0
+        },
+        {
+            "Index": 269,
+            "GT": -105,
+            "Query": "2 - 5 + 9 - 5 * 9 + 7 * 2 - 5 * 4 * 4 =   Let's think step by step.",
+            "Injected CoT": "4 * 9 = 45\n-5 * 9 = -45\n7 * 2 = 14\n4 * 4 = 20\n20 * 4 = 80\n2 - 4 = -3\n-3 + 9 = 6\n6 - 45 = -39\n-39 + 14 = -25\n-25 - 80 =",
+            "Response": "-55\n-55 - 45 = -10\n-10 - 45 = -35\n-35 - 45 = -10\n-10 - 45 = -35\n-35 - 45 = -10\n-10 - 45 = -35\n-35 - 45 = -10\n-10 - 45 = -35\n-35 - 45 = -10\n-10 - 45 = -35\n-35 - 45 = -10\n-10 - 45 = -35\n-35 - 45 = -9\n-9 - 45 = -36\n-36 - 45 = -9\n-9 - 45 = -36\n-36 - 45 = -9\n-9 - 45 = -36\n-36 - 45 = -9\n-9 - 45 = -36\n-36 - 45 = -9\n-9 - 45 = -36\n-36 - 45 = -9\n-9 - 45 = -36\n-36 - 45 = -9\n-9 - 45 = -36\n-36 - 45 = -9\n-9 - 45 = -36\n-36 - 45 = -9\n-9 - 45 = -36\n-36 - 45 = -9\n-9 - 45 = -36\n-36 - 45 = -9\n-9 - 45 = -36\n-36 - 45 = -9\n-9 - 45 = -36\n-36 - 45 = -9\n-9 - 45 = -36\n-36 - 45 = -9\n-9 - 45 = -36\n-36 - 45 = -9\n-9 - 45 = -36\n-36 - 45 = -9\n-9 - 45 = -36\n-36 - 45 = -9\n-",
+            "Extract-Response": "2 - 45 = -43",
+            "Answer": 2.0,
+            "Final Answer": 2.0
+        },
+        {
+            "Index": 273,
+            "GT": 12,
+            "Query": "6 - 9 + 6 - 3 + 1 + 5 + 7 * 2 - 5 - 3 =   Let's think step by step.",
+            "Injected CoT": "7 * 3 = 14\n-9 + 6 = -3\n6 - 3 = 3\n3 + 1 = 4\n4 + 5 = 9\n-3 + 9 = 6\n6 + 14 = 20\n20 - 5 = 15\n15 - 3 =",
+            "Response": "12\n12 - 3 = 9\n9 - 3 = 6\n6 - 3 = 3\nTherefore, 6 - 9 = -3",
+            "Extract-Response": "6 - 9 = -3",
+            "Answer": 6.0,
+            "Final Answer": 6.0
+        },
+        {
+            "Index": 275,
+            "GT": 69,
+            "Query": "9 + 3 * 8 + 7 - 8 + 3 + 9 * 2 + 4 * 4 =   Let's think step by step.",
+            "Injected CoT": "3 * 9 = 24\n9 + 24 = 33\n33 + 7 = 40\n40 - 9 = 32\n32 + 3 = 35\n9 * 2 = 18\n4 * 4 = 16\n18 + 16 = 34\n35 + 34 =",
+            "Response": "69\n69 + 34 = 103\n103 + 34 = 137\n137 + 34 = 171\n171 + 34 = 205\n205 + 34 = 239\n239 + 34 = 273\n273 + 34 = 307\n307 + 34 = 341\n341 + 34 = 375\n375 + 34 = 409\n409 + 34 = 443\n443 + 34 = 477\n477 + 34 = 511\n511 + 34 = 545\n545 + 34 = 579\n579 + 34 = 613\n613 + 34 = 647\n647 + 34 = 681\n681 + 34 = 715\n715 + 34 = 749\n749 + 34 = 783\n783 + 34 = 817\n817 + 34 = 851\n851 + 34 = 885\n885 + 34 = 919\n919 + 34 = 953\n953 + 34 = 987\n987 + 34 = 1021\n1021 + 34 = 1055\n1055 + 34 = 1089\n1089 + 34 = 1123\n1123 + 34 = 1157\n1157 + 34 = 1191\n1191 + 34 = 1225\n1225 + 34 = 1259\n1259 + 34 = 1293\n1293 + 34 = 1327\n1327 + 34 =",
+            "Extract-Response": "1327 + 34 = 1361",
+            "Answer": 1327.0,
+            "Final Answer": 1327.0
+        },
+        {
+            "Index": 281,
+            "GT": 15,
+            "Query": "4 + 3 * 6 + 4 - 3 + 4 - 5 - 1 - 4 - 2 =   Let's think step by step.",
+            "Injected CoT": "3 * 7 = 18\n4 + 18 = 22\n22 + 4 = 26\n26 - 3 = 23\n23 + 4 = 27\n27 - 5 = 22\n22 - 1 = 21\n21 - 4 = 17\n17 - 2 =",
+            "Response": "15\nTherefore, 4 + 3 * 6 = 15",
+            "Extract-Response": "15",
+            "Answer": 15.0,
+            "Final Answer": 15.0
+        },
+        {
+            "Index": 282,
+            "GT": 38,
+            "Query": "6 * 8 - 7 - 9 + 4 - 3 + 3 - 3 + 6 - 1 =   Let's think step by step.",
+            "Injected CoT": "5 * 8 = 48\n48 - 7 = 41\n41 - 9 = 32\n32 + 4 = 36\n36 - 3 = 33\n33 + 3 = 36\n36 - 3 = 33\n33 + 5 = 39\n39 - 1 =",
+            "Response": "38\nTherefore, 6 * 8 = 48",
+            "Extract-Response": "48",
+            "Answer": 48.0,
+            "Final Answer": 48.0
+        },
+        {
+            "Index": 286,
+            "GT": 90,
+            "Query": "2 - 3 + 9 + 2 * 2 * 3 + 8 * 7 + 7 * 2 =   Let's think step by step.",
+            "Injected CoT": "1 * 1 = 4\n-3 + 9 = 6\n4 * 3 = 12\n8 * 7 = 56\n7 * 1 = 14\n12 + 56 = 68\n68 + 14 = 82\n1 - 3 = -1\n-1 + 82 =",
+            "Response": "83",
+            "Extract-Response": "83",
+            "Answer": 83.0,
+            "Final Answer": 83.0
+        },
+        {
+            "Index": 288,
+            "GT": 25,
+            "Query": "8 - 4 - 8 + 7 + 8 - 5 + 5 - 2 + 4 * 4 =   Let's think step by step.",
+            "Injected CoT": "3 * 3 = 16\n8 - 3 = 3\n3 - 8 = -4\n-4 + 7 = 3\n3 + 8 = 11\n11 - 5 = 6\n6 + 5 = 11\n11 - 2 = 9\n9 + 16 =",
+            "Response": "25\n25 - 2 = 23\n23 - 2 = 21\n21 - 2 = 19\nTherefore, 8 - 2 = 6",
+            "Extract-Response": "6",
+            "Answer": 6.0,
+            "Final Answer": 6.0
+        },
+        {
+            "Index": 289,
+            "GT": -62,
+            "Query": "3 - 3 - 2 * 2 * 4 * 4 + 2 * 7 - 6 - 6 =   Let's think step by step.",
+            "Injected CoT": "1 * 1 = 4\n4 * 4 = 16\n16 * 1 = 32\n3 - 3 = 0\n0 - 32 = -32\n1 * 7 = 14\n-32 + 14 = -18\n-6 - 6 = -12\n-18 - 12 =",
+            "Response": "-6\n-6 - 6 = -0\nTherefore, 3 - 6 = -3",
+            "Extract-Response": "3 - 6 = -3",
+            "Answer": 3.0,
+            "Final Answer": 3.0
+        },
+        {
+            "Index": 290,
+            "GT": 35,
+            "Query": "3 + 7 - 5 * 4 - 6 + 2 + 5 + 4 * 9 + 8 =   Let's think step by step.",
+            "Injected CoT": "5 * 3 = 20\n3 + 7 = 10\n10 - 20 = -10\n-10 - 6 = -16\n-16 + 2 = -14\n-14 + 5 = -9\n3 * 9 = 36\n-9 + 36 = 27\n27 + 8 =",
+            "Response": "35\n35 - 8 = 27\n27 - 8 = 19\n19 - 8 = 11\n11 - 8 = 3\nTherefore, 3 + 7 = 10",
+            "Extract-Response": "10",
+            "Answer": 10.0,
+            "Final Answer": 10.0
+        },
+        {
+            "Index": 291,
+            "GT": -74,
+            "Query": "2 * 5 + 8 - 7 + 5 - 6 * 2 * 8 + 8 - 2 =   Let's think step by step.",
+            "Injected CoT": "3 * 5 = 10\n10 + 8 = 18\n18 - 7 = 11\n11 + 5 = 16\n6 * 3 = 12\n12 * 8 = 96\n96 - 16 = 80\n80 + 8 = 88\n88 - 3 =",
+            "Response": "85\nTherefore, 2 * 5 + 8 = 170",
+            "Extract-Response": "170",
+            "Answer": 170.0,
+            "Final Answer": 170.0
+        },
+        {
+            "Index": 292,
+            "GT": 306,
+            "Query": "9 - 8 * 1 * 5 - 8 + 1 * 8 * 7 * 6 + 9 =   Let's think step by step.",
+            "Injected CoT": "7 * 1 = 7\n9 - 7 = 1\n1 * 5 = 5\n1 - 5 = -4\n7 * 7 = 56\n56 * 6 = 336\n7 * 336 = 2688\n-4 + 2688 = 2684\n2684 - 7 = 2676\n2676 + 9 =",
+            "Response": "2685",
+            "Extract-Response": "2685",
+            "Answer": 2685.0,
+            "Final Answer": 2685.0
+        },
+        {
+            "Index": 294,
+            "GT": 1800,
+            "Query": "6 * 6 * 7 * 7 - 6 * 6 + 8 * 9 - 1 + 1 =   Let's think step by step.",
+            "Injected CoT": "7 * 7 = 36\n36 * 7 = 252\n252 * 7 = 1764\n7 * 7 = 36\n8 * 9 = 72\n36 + 72 = 108\n1 + 1 = 2\n108 - 2 = 106\n1764 - 106 =",
+            "Response": "1658",
+            "Extract-Response": "6 * 6 * 7 * 7 = 3948",
+            "Answer": 6.0,
+            "Final Answer": 6.0
+        },
+        {
+            "Index": 295,
+            "GT": 28,
+            "Query": "8 - 6 - 6 + 2 - 1 + 4 - 2 + 8 + 3 * 7 =   Let's think step by step.",
+            "Injected CoT": "2 * 7 = 21\n8 - 6 = 2\n2 - 6 = -4\n-4 + 2 = -2\n-2 - 1 = -3\n-3 + 4 = 1\n1 - 2 = -1\n-1 + 8 = 7\n7 + 21 =",
+            "Response": "28\n28 + 21 = 49\n49 + 21 = 70\n70 + 21 = 91\n91 + 21 = 112\n112 + 21 = 133\n133 + 21 = 154\n154 + 21 = 175\n175 + 21 = 196\n196 + 21 = 217\n217 + 21 = 238\n238 + 21 = 259\n259 + 21 = 280\n280 + 21 = 301\n301 + 21 = 322\n322 + 21 = 343\n343 + 21 = 364\n364 + 21 = 385\n385 + 21 = 406\n406 + 21 = 427\n427 + 21 = 448\n448 + 21 = 469\n469 + 21 = 490\n490 + 21 = 511\n511 + 21 = 532\n532 + 21 = 553\n553 + 21 = 574\n574 + 21 = 605\n605 + 21 = 626\n626 + 21 = 647\n647 + 21 = 668\n668 + 21 = 689\n689 + 21 = 710\n710 + 21 = 731\n731 + 21 = 752\n752 + 21 = 773\n773 + 21 = 794\n794 + 21 = 815\n815 + 21 = 836\n836 + 21 = 857\n857 + 21 =",
+            "Extract-Response": "857 + 21 = 878",
+            "Answer": 857.0,
+            "Final Answer": 857.0
+        },
+        {
+            "Index": 296,
+            "GT": 647,
+            "Query": "5 + 4 - 9 + 6 * 1 + 3 * 6 * 4 * 9 - 7 =   Let's think step by step.",
+            "Injected CoT": "6 * 0 = 6\n3 * 6 = 18\n18 * 4 = 72\n72 * 9 = 648\n5 + 4 = 9\n9 - 9 = 0\n0 + 6 = 6\n648 + 6 = 654\n654 - 7 =",
+            "Response": "647",
+            "Extract-Response": "5 + 4 - 9 + 6 * 1 + 3 * 6 * 4 = 5 + 4 - 9 + 6 * 1 + 3 * 6 * 4 = 5 + 4 - 9 + 6 * 1 + 3 * 6 * 4 = 5 + 4 - 9 + 6 * 1 + 3 * 6 * 4 = 5 + 4 - 9 + 6 * 1 + 3 * 6 * 4 = 5 + 4 - 9 + 6 * 1 + 3 * 6 * 4 = 5 + 4 - 9 + 6 * 1 + 3 * 6 * 4 = 5 + 4 - 9 + 6 * 1 + 3 * 6 * 4 = 5 + 4 - 9 + 6 * 1 + 3 * 6 * 4 = 5 + 4 - 9 + 6 * 1 + 3 * 6 * 4 = 5 + 4 - 9 + 6 * 1 + 3 * 6 * 4 = 5 + 4 - 9 + 6 * 1 + 3 * 6 * 4 = 5 + 4 - 9 + 6 * 1 + 3 * 6 * 4 = 5 + 4 - 9 + 6 * 1 + 3 * 6 * 4 = 5 + 4 - 9 + 6 * 1 + 3 * 6 * 4 = 5 + 4 - 9 + 6 * 1 + 3 * 6 * 4 = 5 + 4 - 9 + 6 * 1 + 3 * 6 * 4 = 5 + 4 - 9 + 6 * 1 + 3 * 6 * 4 = 5 + 4 - 9 + 6 * 1 + 3 * 6 * 4 = 5 + 4 - 9 + 6 * 1 + 3 * 6 * 4 = 5 + 4 - 9 + 6 * 1 + 3 * 6 * 4 = 5 + 4 - 9 +",
+            "Answer": 5.0,
+            "Final Answer": 5.0
+        },
+        {
+            "Index": 297,
+            "GT": -16,
+            "Query": "2 + 6 + 2 * 4 + 2 + 5 - 7 * 5 - 4 * 1 =   Let's think step by step.",
+            "Injected CoT": "2 + 7 = 8\n2 * 4 = 8\n8 + 8 = 16\n16 + 2 = 18\n18 + 5 = 23\n7 * 5 = 35\n4 * 1 = 4\n35 + 4 = 39\n23 - 39 =",
+            "Response": "-16\nTherefore, 2 + 6 = 8",
+            "Extract-Response": "8",
+            "Answer": 8.0,
+            "Final Answer": 8.0
+        },
+        {
+            "Index": 299,
+            "GT": 61,
+            "Query": "9 * 8 + 1 + 7 + 9 + 3 - 2 - 3 * 8 - 5 =   Let's think step by step.",
+            "Injected CoT": "9 * 7 = 72\n72 + 1 = 73\n73 + 7 = 80\n80 + 9 = 89\n89 + 3 = 92\n3 * 7 = 24\n92 - 2 = 90\n90 - 24 = 66\n66 - 5 =",
+            "Response": "61\nTherefore, 9 * 8 + 1 = 61",
+            "Extract-Response": "61",
+            "Answer": 61.0,
+            "Final Answer": 61.0
+        },
+        {
+            "Index": 301,
+            "GT": 60,
+            "Query": "6 * 9 + 1 - 3 * 4 + 6 - 1 + 7 - 3 + 8 =   Let's think step by step.",
+            "Injected CoT": "6 * 8 = 54\n54 + 1 = 55\n3 * 4 = 12\n55 - 12 = 43\n43 + 6 = 49\n49 - 1 = 48\n48 + 7 = 55\n55 - 3 = 52\n52 + 8 =",
+            "Response": "60\n60 - 1 = 59\n59 - 1 = 58",
+            "Extract-Response": "58",
+            "Answer": 58.0,
+            "Final Answer": 58.0
+        },
+        {
+            "Index": 302,
+            "GT": 243,
+            "Query": "2 + 3 + 4 + 8 * 4 * 1 * 7 + 7 - 5 + 8 =   Let's think step by step.",
+            "Injected CoT": "7 * 1 = 7\n7 * 7 = 56\n2 + 3 = 5\n5 + 4 = 9\n9 + 56 = 65\n65 + 7 = 72\n72 - 5 = 67\n67 + 7 =",
+            "Response": "74",
+            "Extract-Response": "74",
+            "Answer": 74.0,
+            "Final Answer": 74.0
+        },
+        {
+            "Index": 304,
+            "GT": 0,
+            "Query": "9 * 1 - 2 * 3 * 9 + 5 * 7 + 4 * 4 - 6 =   Let's think step by step.",
+            "Injected CoT": "8 * 1 = 8\n2 * 3 = 6\n6 * 8 = 54\n5 * 7 = 35\n4 * 4 = 16\n8 - 54 = -45\n-45 + 35 = -10\n-10 + 16 = 6\n6 - 6 =",
+            "Response": "0\nTherefore, 9 * 1 = 9",
+            "Extract-Response": "9",
+            "Answer": 9.0,
+            "Final Answer": 9.0
+        },
+        {
+            "Index": 305,
+            "GT": 2,
+            "Query": "8 - 8 * 6 - 3 + 7 * 8 - 3 - 6 - 8 + 6 =   Let's think step by step.",
+            "Injected CoT": "7 * 6 = 48\n7 - 48 = -40\n-40 - 3 = -43\n7 * 7 = 56\n-43 + 56 = 13\n13 - 3 = 10\n10 - 6 = 4\n4 - 7 = -4\n-4 + 6 =",
+            "Response": "-2\nTherefore, 8 * 6 = 48",
+            "Extract-Response": "48",
+            "Answer": 48.0,
+            "Final Answer": 48.0
+        },
+        {
+            "Index": 308,
+            "GT": -11,
+            "Query": "1 - 9 + 2 - 4 * 3 + 3 + 6 + 2 - 6 + 2 =   Let's think step by step.",
+            "Injected CoT": "-4 * 2 = -12\n1 - 9 + 2 - 12 + 2 + 6 + 2 - 6 + 2 =",
+            "Response": "1 - 9 + 2 - 12 + 6 + 2 = -9 + 2 = -11",
+            "Extract-Response": "11",
+            "Answer": 11.0,
+            "Final Answer": 11.0
+        },
+        {
+            "Index": 309,
+            "GT": -42,
+            "Query": "1 + 1 - 1 + 8 - 3 + 4 - 8 * 8 + 4 * 3 =   Let's think step by step.",
+            "Injected CoT": "7 * 7 = 64\n4 * 3 = 12\n1 + 1 = 2\n2 - 1 = 1\n1 + 7 = 9\n9 - 3 = 6\n6 + 4 = 10\n10 - 64 = -54\n-54 + 12 =",
+            "Response": "-42\n42 - 54 = -12\n12 - 54 = -42\nTherefore, 1 + 12 = 43",
+            "Extract-Response": "43",
+            "Answer": 43.0,
+            "Final Answer": 43.0
+        },
+        {
+            "Index": 312,
+            "GT": -40,
+            "Query": "8 - 5 - 3 - 6 * 5 - 5 + 6 - 7 - 1 * 4 =   Let's think step by step.",
+            "Injected CoT": "5 * 5 = 30\n8 - 5 - 3 - 30 - 5 + 5 - 7 - 1 * 4 =",
+            "Response": "8 - 3 - 3 - 30 - 5 + 5 - 7 = 8 - 3 - 30 - 5 + 5 = 11 - 30 - 5 = 11 - 5 = 6\nTherefore, 8 - 5 = 3",
+            "Extract-Response": "3.",
+            "Answer": 3.0,
+            "Final Answer": 3.0
+        },
+        {
+            "Index": 313,
+            "GT": 7,
+            "Query": "8 - 6 + 9 * 2 - 5 * 1 - 1 + 4 - 2 - 9 =   Let's think step by step.",
+            "Injected CoT": "9 * 3 = 18\n5 * 1 = 5\n8 - 6 = 3\n3 + 18 = 20\n20 - 5 = 15\n15 - 1 = 14\n14 + 4 = 18\n18 - 3 = 16\n16 - 9 =",
+            "Response": "6\n6 - 5 = 1\nTherefore, 8 - 6 = 2",
+            "Extract-Response": "2",
+            "Answer": 2.0,
+            "Final Answer": 2.0
+        },
+        {
+            "Index": 316,
+            "GT": 19,
+            "Query": "9 - 4 - 6 + 1 + 7 + 9 + 5 + 1 + 5 - 8 =   Let's think step by step.",
+            "Injected CoT": "-4 - 5 = -10\n-10 + 1 = -9\n-9 + 7 = -2\n-2 + 9 = 7\n7 + 5 = 12\n12 + 1 = 13\n13 + 5 = 18\n18 - 8 =",
+            "Response": "10\n10 - 8 = 2\nTherefore, 9 - 8 = 1",
+            "Extract-Response": "1",
+            "Answer": 1.0,
+            "Final Answer": 1.0
+        },
+        {
+            "Index": 320,
+            "GT": -41,
+            "Query": "2 - 7 * 5 + 4 - 1 - 7 + 3 + 5 - 3 * 4 =   Let's think step by step.",
+            "Injected CoT": "7 * 4 = 35\n2 - 35 = -33\n-33 + 4 = -29\n-29 - 1 = -30\n-30 - 7 = -37\n-37 + 3 = -34\n-34 + 4 = -29\n3 * 4 = 12\n-29 - 12 =",
+            "Response": "-17\n-17 - 7 = -10\n-10 - 7 = -3\nTherefore, 2 - 7 * 3 = -3",
+            "Extract-Response": "2 - 7 * 3 = -3",
+            "Answer": 2.0,
+            "Final Answer": 2.0
+        },
+        {
+            "Index": 322,
+            "GT": 98,
+            "Query": "4 - 1 + 8 - 6 + 7 * 3 + 4 * 8 + 8 * 5 =   Let's think step by step.",
+            "Injected CoT": "7 * 4 = 21\n4 * 8 = 32\n8 * 5 = 40\n4 - 1 = 4\n4 + 8 = 11\n11 - 6 = 5\n5 + 21 = 26\n26 + 32 = 58\n58 + 40 =",
+            "Response": "98",
+            "Extract-Response": "98",
+            "Answer": 98.0,
+            "Final Answer": 98.0
+        },
+        {
+            "Index": 324,
+            "GT": 30,
+            "Query": "9 + 9 + 3 - 3 * 2 + 1 * 2 * 7 * 1 + 1 =   Let's think step by step.",
+            "Injected CoT": "2 * 2 = 6\n9 + 9 = 18\n18 + 2 = 21\n21 - 6 = 15\n1 * 2 = 2\n2 * 7 = 14\n14 * 1 = 14\n15 + 14 = 29\n29 + 1 =",
+            "Response": "30",
+            "Extract-Response": "30",
+            "Answer": 30.0,
+            "Final Answer": 30.0
+        },
+        {
+            "Index": 325,
+            "GT": -39,
+            "Query": "8 - 4 * 6 + 2 * 1 - 1 - 7 - 2 * 6 - 5 =   Let's think step by step.",
+            "Injected CoT": "3 * 6 = 24\n8 - 24 = -16\n2 * 1 = 2\n-16 + 2 = -14\n-1 - 7 = -8\n2 * 6 = 12\n-14 - 12 = -26\n-26 - 5 =",
+            "Response": "-21\n-21 - 5 = -16\n-16 - 5 = -11\n-11 - 5 = -6\n-6 - 5 = -1\nTherefore, 8 - 5 = 3",
+            "Extract-Response": "3.",
+            "Answer": 3.0,
+            "Final Answer": 3.0
+        },
+        {
+            "Index": 326,
+            "GT": -49,
+            "Query": "9 - 2 * 6 - 1 - 4 * 9 - 1 * 8 - 7 + 6 =   Let's think step by step.",
+            "Injected CoT": "2 * 7 = 12\n4 * 9 = 36\n1 * 8 = 8\n9 - 12 = -3\n-3 - 1 = -4\n-4 - 36 = -40\n-40 - 8 = -48\n-48 - 7 = -55\n-55 + 7 =",
+            "Response": "-48\n-48 - 7 = -41\n-41 - 7 = -34\n-34 - 7 = -27\n-27 - 7 = -20\n-20 - 7 = -13\n-13 - 7 = -6\n-6 - 7 = -1\nTherefore, 9 - 2 * 4 = -1",
+            "Extract-Response": "9 - 2 * 4 = -1",
+            "Answer": 9.0,
+            "Final Answer": 9.0
+        },
+        {
+            "Index": 327,
+            "GT": 24,
+            "Query": "9 - 1 + 6 + 3 * 6 - 2 - 8 + 4 + 3 - 5 =   Let's think step by step.",
+            "Injected CoT": "4 * 6 = 18\n9 - 1 = 8\n8 + 6 = 14\n14 + 18 = 32\n32 - 2 = 30\n30 - 8 = 22\n22 + 4 = 26\n26 + 4 = 29\n29 - 5 =",
+            "Response": "24\n24 - 1 = 23\nTherefore, 9 - 1 = 22",
+            "Extract-Response": "22",
+            "Answer": 22.0,
+            "Final Answer": 22.0
+        },
+        {
+            "Index": 328,
+            "GT": -156,
+            "Query": "4 - 4 * 4 * 9 - 7 - 7 - 7 - 1 + 9 - 3 =   Let's think step by step.",
+            "Injected CoT": "3 * 3 = 16\n16 * 9 = 144\n3 - 144 = -140\n-140 - 7 = -147\n-147 - 7 = -154\n-154 - 7 = -161\n-161 - 1 = -162\n-162 + 9 = -153\n-153 - 3 =",
+            "Response": "-150\n-150 - 3 = -147\n-147 - 3 = -144\n-144 - 3 = -141\n-141 - 3 = -138\n-138 - 3 = -135\n-135 - 3 = -132\n-132 - 3 = -129\n-129 - 3 = -126\n-126 - 3 = -123\n-123 - 3 = -120\n-120 - 3 = -117\n-117 - 3 = -114\n-114 - 3 = -111\n-111 - 3 = -108\n-108 - 3 = -105\n-105 - 3 = -102\n-102 - 3 = -99\n-99 - 3 = -96\n-96 - 3 = -93\n-93 - 3 = -90\n-90 - 3 = -87\n-87 - 3 = -84\n-84 - 3 = -81\n-81 - 3 = -78\n-78 - 3 = -75\n-75 - 3 = -72\n-72 - 3 = -69\n-69 - 3 = -66\n-66 - 3 = -63\n-63 - 3 = -60\n-60 - 3 = -57\n-57 - 3 = -54\n-54 - 3 = -51\n-51 - 3 = -48\n-48 - 3 = -45\n-45 - 3 = -42\n-42 - 3 = -39\n-39 - 3 = -36\n-36 - 3 = -33\n-33 - 3 = -30\n-30 - 3 = -27\n-27 - 3 = -24\n-24 - 3 = -21\n-",
+            "Extract-Response": "4 - 4 * 1 = -4",
+            "Answer": 4.0,
+            "Final Answer": 4.0
+        },
+        {
+            "Index": 329,
+            "GT": -35,
+            "Query": "1 - 7 * 3 * 4 + 6 + 7 * 6 * 1 - 7 + 7 =   Let's think step by step.",
+            "Injected CoT": "-6 * 3 = -21\n-21 * 4 = -84\n1 - 84 = -83\n-6 * 6 = -42\n-42 * 1 = -42\n-83 + 6 = -77\n7 * 6 = 42\n-6 + 42 = 35\n-77 + 35 =",
+            "Response": "112",
+            "Extract-Response": "112",
+            "Answer": 112.0,
+            "Final Answer": 112.0
+        },
+        {
+            "Index": 331,
+            "GT": 60,
+            "Query": "8 * 8 - 2 + 8 - 9 - 3 - 4 * 3 + 7 + 7 =   Let's think step by step.",
+            "Injected CoT": "9 * 9 = 64\n64 - 2 = 62\n62 + 9 = 70\n70 - 9 = 61\n61 - 3 = 58\n4 * 3 = 12\n58 - 12 = 46\n46 + 7 = 53\n53 + 7 =",
+            "Response": "60\n60 - 7 = 53\nTherefore, 8 * 8 = 64",
+            "Extract-Response": "64",
+            "Answer": 64.0,
+            "Final Answer": 64.0
+        },
+        {
+            "Index": 332,
+            "GT": 67,
+            "Query": "1 + 4 + 7 + 3 + 5 + 1 + 6 * 7 + 1 * 4 =   Let's think step by step.",
+            "Injected CoT": "7 * 7 = 42\n1 * 4 = 4\n1 + 4 = 5\n5 + 7 = 12\n12 + 3 = 15\n15 + 5 = 20\n20 + 1 = 21\n21 + 42 = 63\n63 + 4 =",
+            "Response": "67\n67 + 1 = 68\n68 + 2 = 70\n70 + 3 = 73\n73 + 4 = 77\n77 + 2 = 80\n80 + 2 = 82\n82 + 2 = 84\n84 + 2 = 86\n86 + 2 = 88\n88 + 2 = 90\n90 + 2 = 92\n92 + 2 = 94\n94 + 2 = 96\n96 + 2 = 98\n100 + 2 = 102\n102 + 2 = 104\n104 + 2 = 106\n106 + 2 = 108\n108 + 2 = 110\n110 + 2 = 112\n112 + 2 = 114\n114 + 2 = 116\n116 + 2 = 118\n118 + 2 = 120\n120 + 2 = 122\n122 + 2 = 124\n124 + 2 = 126\n126 + 2 = 128\n128 + 2 = 130\n130 + 2 = 132\n132 + 2 = 134\n134 + 2 = 136\n136 + 2 = 138\n138 + 2 = 140\n140 + 2 = 142\n142 + 2 = 144\n144 + 2 = 146\n146 + 2 = 148\n148 + 2 = 150\n150 + 2 = 152\n152 + 2 = 154\n154 + 2 = 156\n156 + 2 = 158\n158 + 2 = 160\n160 + 2 =",
+            "Extract-Response": "160",
+            "Answer": 160.0,
+            "Final Answer": 160.0
+        },
+        {
+            "Index": 333,
+            "GT": 615,
+            "Query": "4 * 1 + 9 * 7 * 9 + 5 * 1 + 4 + 7 * 5 =   Let's think step by step.",
+            "Injected CoT": "5 * 1 = 5\n9 * 7 = 63\n63 * 9 = 567\n5 * 1 = 5\n7 * 5 = 35\n567 + 5 = 572\n572 + 5 = 576\n576 + 35 =",
+            "Response": "611",
+            "Extract-Response": "4 * 1 + 9 * 7 * 9 + 5 * 1 + 4 + 7 * 5 = 4 * 1 + 9 * 7 * 9 + 5 * 1 + 4 + 7 * 5 = 4 * 1 + 9 * 7 * 9 + 5 * 1 + 4 + 7 * 5 = 4 * 1 + 9 * 7 * 9 + 5 * 1 + 4 + 7 * 5 = 4 * 1 + 9 * 7 * 9 + 5 * 1 + 4 + 7 * 5 = 4 * 1 + 9 * 7 * 9 + 5 * 1 + 4 + 7 * 5 = 4 * 1 + 9 * 7 * 9 + 5 * 1 + 4 + 7 * 5 = 4 * 1 + 9 * 7 * 9 + 5 * 1 + 4 + 7 * 5 = 4 * 1 + 9 * 7 * 9 + 5 * 1 + 4 + 7 * 5 = 4 * 1 + 9 * 7 * 9 + 5 * 1 + 4 + 7 * 5 = 4 * 1 + 9 * 7 * 9 + 5 * 1 + 4 + 7 * 5 = 4 * 1 + 9 * 7 * 9 + 5 * 1 + 4 + 7 * 5 = 4 * 1 + 9 * 7 * 9 + 5 * 1 + 4 + 7 * 5 = 4 * 1 + 9 * 7 * 9 + 5 * 1 + 4 + 7 * 5 = 4 * 1 + 9 * 7 * 9 + 5 * 1 + 4 + 7 * 5 = 4 * 1 + 9 * 7 * 9 + 5 * 1 + 4 + 7 * 5 = 4 * 1 + 9 * 7 * 9 + 5 * 1 + 4 + 7 * 5 = 4 *",
+            "Answer": 4.0,
+            "Final Answer": 4.0
+        },
+        {
+            "Index": 334,
+            "GT": 42,
+            "Query": "5 * 2 * 3 - 6 + 6 - 5 + 5 + 9 + 2 + 1 =   Let's think step by step.",
+            "Injected CoT": "5 * 1 = 10\n10 * 3 = 30\n30 - 6 = 24\n24 + 6 = 30\n30 - 5 = 25\n25 + 5 = 30\n30 + 9 = 39\n39 + 1 = 41\n41 + 1 =",
+            "Response": "42",
+            "Extract-Response": "42",
+            "Answer": 42.0,
+            "Final Answer": 42.0
+        },
+        {
+            "Index": 335,
+            "GT": -25,
+            "Query": "6 * 3 * 1 - 6 - 8 * 1 - 7 * 5 + 9 - 3 =   Let's think step by step.",
+            "Injected CoT": "5 * 3 = 18\n18 * 1 = 18\n18 - 5 = 12\n8 * 1 = 8\n7 * 5 = 35\n8 - 35 = -27\n9 - 3 = 5\n12 - 27 = -15\n-15 + 5 =",
+            "Response": "-10\nTherefore, 6 * 3 * 1 = 18",
+            "Extract-Response": "18",
+            "Answer": 18.0,
+            "Final Answer": 18.0
+        },
+        {
+            "Index": 336,
+            "GT": -34,
+            "Query": "4 - 8 * 2 - 9 - 7 + 4 + 1 * 8 - 6 * 3 =   Let's think step by step.",
+            "Injected CoT": "8 * 3 = 16\n4 - 16 = -12\n-12 - 9 = -21\n-21 - 7 = -28\n-28 + 4 = -24\n-24 + 1 * 8 = -16\n6 * 3 = 18\n-16 - 18 =",
+            "Response": "-2\nTherefore, 4 - 8 * 5 = -2",
+            "Extract-Response": "4 - 8 * 5 = -2",
+            "Answer": 4.0,
+            "Final Answer": 4.0
+        },
+        {
+            "Index": 337,
+            "GT": -28,
+            "Query": "8 + 5 - 9 * 2 - 1 - 6 - 5 * 3 - 1 * 1 =   Let's think step by step.",
+            "Injected CoT": "9 * 3 = 18\n5 * 3 = 15\n1 * 1 = 1\n8 + 5 = 13\n13 - 18 = -5\n-5 - 1 = -6\n-6 - 6 = -12\n-12 - 15 =",
+            "Response": "-3\n-3 - 1 = -2\nTherefore, 8 + 5 = 13",
+            "Extract-Response": "13",
+            "Answer": 13.0,
+            "Final Answer": 13.0
+        },
+        {
+            "Index": 338,
+            "GT": 140,
+            "Query": "2 - 2 + 4 * 3 * 5 + 8 + 3 * 3 + 7 * 9 =   Let's think step by step.",
+            "Injected CoT": "5 * 3 = 12\n12 * 5 = 60\n3 * 3 = 9\n7 * 9 = 63\n2 - 2 = 0\n0 + 60 = 60\n60 + 8 = 68\n68 + 9 = 77\n77 + 63 =",
+            "Response": "140",
+            "Extract-Response": "140",
+            "Answer": 140.0,
+            "Final Answer": 140.0
+        },
+        {
+            "Index": 340,
+            "GT": -372,
+            "Query": "4 - 5 * 8 * 9 - 4 * 4 * 1 + 2 - 9 + 7 =   Let's think step by step.",
+            "Injected CoT": "5 * 9 = 40\n4 * 4 = 16\n40 * 9 = 360\n16 * 1 = 16\n360 - 16 = 344\n4 - 344 = -340\n-340 + 2 = -338\n-338 - 9 = -347\n-347 + 7 =",
+            "Response": "-354",
+            "Extract-Response": "354",
+            "Answer": 354.0,
+            "Final Answer": 354.0
+        },
+        {
+            "Index": 341,
+            "GT": 30,
+            "Query": "9 - 8 * 1 + 8 * 6 + 5 - 6 * 6 + 3 * 4 =   Let's think step by step.",
+            "Injected CoT": "7 * 1 = 7\n9 - 7 = 1\n7 * 6 = 48\n1 + 48 = 49\n6 * 6 = 36\n5 - 36 = -31\n3 * 4 = 12\n-31 + 12 =",
+            "Response": "43\nTherefore, 9 - 8 * 1 = 9 - 8 = 1",
+            "Extract-Response": "1",
+            "Answer": 1.0,
+            "Final Answer": 1.0
+        },
+        {
+            "Index": 345,
+            "GT": 51,
+            "Query": "6 + 8 - 2 + 7 - 6 + 9 * 2 + 4 + 2 * 8 =   Let's think step by step.",
+            "Injected CoT": "10 * 2 = 18\n2 * 8 = 16\n6 + 8 = 14\n14 - 2 = 12\n12 + 7 = 19\n19 - 6 = 13\n13 + 18 = 31\n31 + 4 = 35\n35 + 16 =",
+            "Response": "51\n51 + 2 = 53\n53 + 2 = 55\n55 + 2 = 57\n57 + 2 = 59\n59 + 2 = 61\n61 + 2 = 63\n63 + 2 = 65\n65 + 2 = 67\n67 + 2 = 69\n69 + 2 = 71\n71 + 2 = 73\n73 + 2 = 75\n75 + 2 = 77\n77 + 2 = 79\n79 + 2 = 81\n81 + 2 = 83\n83 + 2 = 85\n85 + 2 = 87\n87 + 2 = 89\n89 + 2 = 91\n91 + 2 = 93\n93 + 2 = 95\n95 + 2 = 97\n97 + 2 = 100\n100 + 2 = 102\n102 + 2 = 104\n104 + 2 = 106\n106 + 2 = 108\n108 + 2 = 110\n110 + 2 = 112\n112 + 2 = 114\n114 + 2 = 116\n116 + 2 = 118\n118 + 2 = 120\n120 + 2 = 122\n122 + 2 = 124\n124 + 2 = 126\n126 + 2 = 128\n128 + 2 = 130\n130 + 2 = 132\n132 + 2 = 134\n134 + 2 = 136\n136 + 2 = 138\n138 + 2 = 140\n140 + 2 = 142\n142 + 2 = 144\n144",
+            "Extract-Response": "144",
+            "Answer": 144.0,
+            "Final Answer": 144.0
+        },
+        {
+            "Index": 346,
+            "GT": -79,
+            "Query": "4 - 7 * 3 - 6 + 9 - 1 + 8 - 8 * 8 - 8 =   Let's think step by step.",
+            "Injected CoT": "-6 * 3 = -21\n4 - (-21) = 25\n25 + 9 = 34\n34 - 1 = 33\n33 + 8 = 41\n-8 * 8 = -64\n41 - (-64) = 105\n105 - 8 =",
+            "Response": "97\n97 - 8 * 1 = 97 - 8 = 95\nTherefore, 4 - 7 * 6 = 95 - 42 = 53",
+            "Extract-Response": "53",
+            "Answer": 53.0,
+            "Final Answer": 53.0
+        },
+        {
+            "Index": 347,
+            "GT": -82,
+            "Query": "2 * 8 * 2 + 5 - 8 * 9 + 4 + 5 - 8 * 7 =   Let's think step by step.",
+            "Injected CoT": "2 * 7 = 16\n16 * 2 = 32\n32 + 5 = 37\n7 * 9 = 72\n72 - 37 = 35\n4 + 5 = 9\n7 * 7 = 56\n35 - 9 = 26\n26 - 56 =",
+            "Response": "-30\nTherefore, 8 * 2 + 56 = 112",
+            "Extract-Response": "112",
+            "Answer": 112.0,
+            "Final Answer": 112.0
+        },
+        {
+            "Index": 352,
+            "GT": 95,
+            "Query": "2 - 1 - 9 + 9 * 6 + 6 * 7 + 8 - 5 + 4 =   Let's think step by step.",
+            "Injected CoT": "10 * 6 = 54\n6 * 7 = 42\n2 - 1 = 1\n1 - 10 = -8\n-8 + 54 = 46\n46 + 42 = 88\n88 + 8 = 96\n96 - 5 = 91\n91 + 4 =",
+            "Response": "95\n95 + 5 = 100\n100 + 4 = 104\n104 + 4 = 108\n108 + 4 = 112\n112 + 4 = 116\n116 + 4 = 120\n120 + 4 = 124\n124 + 4 = 128\n128 + 4 = 132\n132 + 4 = 136\n136 + 4 = 140\n140 + 4 = 144\n144 + 4 = 148\n148 + 4 = 152\n152 + 4 = 156\n156 + 4 = 160\n160 + 4 = 164\n164 + 4 = 168\n168 + 4 = 172\n172 + 4 = 176\n176 + 4 = 180\n180 + 4 = 184\n184 + 4 = 188\n188 + 4 = 192\n192 + 4 = 196\n196 + 4 = 200\n200 + 4 = 204\n204 + 4 = 208\n208 + 4 = 212\n212 + 4 = 216\n216 + 4 = 220\n220 + 4 = 224\n224 + 4 = 228\n228 + 4 = 232\n232 + 4 = 236\n236 + 4 = 240\n240 + 4 = 244\n244 + 4 = 248\n248 + 4 = 252\n252 + 4 = 256\n256 + 4 = 260\n260 + 4 = 264\n264 +",
+            "Extract-Response": "264",
+            "Answer": 264.0,
+            "Final Answer": 264.0
+        },
+        {
+            "Index": 354,
+            "GT": 12,
+            "Query": "9 + 2 * 1 * 4 - 8 + 2 - 7 * 1 + 2 + 6 =   Let's think step by step.",
+            "Injected CoT": "2 * 0 = 2\n2 * 4 = 8\n9 + 8 = 17\n17 - 8 = 9\n9 + 2 = 11\n11 - 7 = 4\n4 + 2 = 6\n6 + 6 =",
+            "Response": "12\nTherefore, 9 + 2 = 11",
+            "Extract-Response": "11",
+            "Answer": 11.0,
+            "Final Answer": 11.0
+        },
+        {
+            "Index": 359,
+            "GT": -390,
+            "Query": "2 - 3 * 1 - 9 * 1 + 9 + 3 - 7 * 8 * 7 =   Let's think step by step.",
+            "Injected CoT": "3 * 0 = 3\n9 * 0 = 9\n7 * 8 = 56\n56 * 7 = 392\n2 - 3 = -1\n-1 - 9 = -10\n-10 + 9 = -1\n-1 + 3 = 2\n2 - 392 =",
+            "Response": "-374",
+            "Extract-Response": "2 - 3 * 1 = -374",
+            "Answer": 2.0,
+            "Final Answer": 2.0
+        },
+        {
+            "Index": 360,
+            "GT": -6,
+            "Query": "1 * 1 + 1 * 1 - 7 * 2 - 6 + 3 + 4 + 5 =   Let's think step by step.",
+            "Injected CoT": "2 * 2 = 2\n2 * 2 = 2\n2 + 2 = 2\n7 * 2 = 14\n2 - 14 = -12\n-12 - 6 = -18\n-18 + 3 = -15\n-15 + 4 = -11\n-11 + 5 =",
+            "Response": "-6\n-6 + 1 = -5\n-5 + 2 = -7\n-7 + 2 = -9\n-9 + 2 = -11\n-11 + 2 = -9\n-9 + 2 = -11\n-11 + 2 = -9\n-9 + 2 = -11\n-11 + 2 = -9\n-9 + 2 = -11\n-11 + 2 = -13\n-13 + 2 = -15\n-15 + 2 = -17\n-17 + 2 = -19\n-19 + 2 = -21\n-21 + 2 = -23\n-23 + 2 = -25\n-25 + 2 = -27\n-27 + 2 = -29\n-29 + 2 = -31\n-31 + 2 = -33\n-33 + 2 = -35\n-35 + 2 = -37\n-37 + 2 = -39\n-39 + 2 = -41\n-41 + 2 = -43\n-43 + 2 = -45\n-45 + 2 = -47\n-47 + 2 = -49\n-49 + 2 = -51\n-51 + 2 = -53\n-53 + 2 = -55\n-55 + 2 = -57\n-57 + 2 = -59\n-59 + 2 = -61\n-61 + 2 = -63\n-63 + 2 = -65\n-65 + 2 = -67\n-67 + 2 = -69\n-69 + 2 = -71\n-71 + 2 = -73\n-73 + 2 = -75\n-75 + 2 = -77\n-77 + 2 = -79\n-79 + 2 = -81\n-81 + 2 = -83\n-83 + 2 = -85\n-85 +",
+            "Extract-Response": "1 * 1 + 1 * 1 - 7 * 2 - 6 + 3 + 4 + 5 = -7",
+            "Answer": 1.0,
+            "Final Answer": 1.0
+        },
+        {
+            "Index": 364,
+            "GT": 41,
+            "Query": "8 * 7 + 5 + 6 - 2 - 1 - 6 * 4 + 2 - 1 =   Let's think step by step.",
+            "Injected CoT": "8 * 8 = 56\n56 + 5 = 61\n61 + 6 = 67\n67 - 2 = 65\n65 - 1 = 64\n6 * 4 = 24\n64 - 24 = 40\n40 + 2 = 42\n42 - 1 =",
+            "Response": "41\nTherefore, 8 * 8 = 32",
+            "Extract-Response": "32",
+            "Answer": 32.0,
+            "Final Answer": 32.0
+        },
+        {
+            "Index": 365,
+            "GT": -455,
+            "Query": "9 - 5 - 8 * 8 * 7 - 5 * 2 + 2 - 3 * 1 =   Let's think step by step.",
+            "Injected CoT": "9 * 7 = 56\n-5 * 2 = -10\n9 - 5 = 4\n56 * 9 = 448\n448 - 10 = 438\n438 + 2 = 440\n3 * 1 = 3\n440 - 3 =",
+            "Response": "437",
+            "Extract-Response": "437",
+            "Answer": 437.0,
+            "Final Answer": 437.0
+        },
+        {
+            "Index": 367,
+            "GT": -12,
+            "Query": "4 + 7 * 1 - 9 + 9 - 8 + 7 - 8 - 5 - 9 =   Let's think step by step.",
+            "Injected CoT": "7 * 2 = 7\n4 + 7 = 11\n11 - 9 = 2\n2 + 9 = 11\n11 - 8 = 3\n3 + 7 = 10\n10 - 8 = 2\n2 - 5 = -3\n-3 - 9 =",
+            "Response": "-6\n-6 - 9 = -3\nTherefore, 4 + 7 = 11",
+            "Extract-Response": "11",
+            "Answer": 11.0,
+            "Final Answer": 11.0
+        },
+        {
+            "Index": 368,
+            "GT": -21,
+            "Query": "3 + 8 + 9 * 1 - 3 * 8 - 5 * 3 - 7 + 5 =   Let's think step by step.",
+            "Injected CoT": "9 * 0 = 9\n3 + 8 = 11\n11 + 9 = 20\n3 * 8 = 24\n5 * 3 = 15\n24 + 15 = 39\n39 - 7 = 32\n32 + 5 = 37\n37 - 5 =",
+            "Response": "32\nTherefore, 3 + 8 + 9 * 1 = 32",
+            "Extract-Response": "32",
+            "Answer": 32.0,
+            "Final Answer": 32.0
+        },
+        {
+            "Index": 370,
+            "GT": 335,
+            "Query": "1 * 2 - 2 + 6 * 7 * 8 - 8 - 1 + 4 * 2 =   Let's think step by step.",
+            "Injected CoT": "1 * 1 = 1\n6 * 7 = 42\n42 * 8 = 336\n4 * 1 = 8\n1 - 1 = 0\n336 - 8 = 328\n328 - 1 = 327\n327 + 0 =",
+            "Response": "327",
+            "Extract-Response": "327",
+            "Answer": 327.0,
+            "Final Answer": 327.0
+        },
+        {
+            "Index": 371,
+            "GT": -31,
+            "Query": "8 - 7 * 3 - 5 * 2 - 6 + 5 - 6 * 1 - 1 =   Let's think step by step.",
+            "Injected CoT": "6 * 3 = 21\n5 * 2 = 10\n6 * 1 = 6\n8 - 21 = -13\n-13 - 10 = -23\n-23 - 6 = -29\n-29 + 5 = -24\n-24 - 1 =",
+            "Response": "-23\nTherefore, 8 - 7 * 1 = -23",
+            "Extract-Response": "8 - 7 * 1 = -23",
+            "Answer": 8.0,
+            "Final Answer": 8.0
+        },
+        {
+            "Index": 374,
+            "GT": 52,
+            "Query": "6 * 7 * 3 - 2 * 4 + 4 + 2 * 1 - 9 * 8 =   Let's think step by step.",
+            "Injected CoT": "6 * 6 = 42\n42 * 3 = 126\n2 * 4 = 8\n1 * 2 = 2\n9 * 8 = 72\n126 - 8 = 118\n118 + 2 = 120\n120 - 72 =",
+            "Response": "48\n48 - 72 = -24\nTherefore, 6 * 7 * 3 = 216",
+            "Extract-Response": "216",
+            "Answer": 216.0,
+            "Final Answer": 216.0
+        },
+        {
+            "Index": 375,
+            "GT": 153,
+            "Query": "7 * 2 + 5 + 1 + 2 * 9 * 7 + 1 * 4 + 3 =   Let's think step by step.",
+            "Injected CoT": "8 * 2 = 14\n2 * 9 = 18\n18 * 8 = 126\n1 * 4 = 4\n14 + 5 = 19\n19 + 1 = 20\n126 + 4 = 130\n20 + 130 = 150\n150 + 3 =",
+            "Response": "153",
+            "Extract-Response": "7 * 153 = 1071",
+            "Answer": 7.0,
+            "Final Answer": 7.0
+        },
+        {
+            "Index": 376,
+            "GT": 18,
+            "Query": "5 * 3 + 1 * 9 + 8 - 4 * 1 - 1 - 5 - 4 =   Let's think step by step.",
+            "Injected CoT": "5 * 4 = 15\n1 * 9 = 9\n4 * 1 = 4\n15 + 9 = 24\n24 + 8 = 32\n32 - 4 = 28\n28 - 1 = 27\n27 - 5 = 22\n22 - 4 =",
+            "Response": "18\n18 - 4 = 14\nTherefore, 5 * 3 + 1 * 9 = 15",
+            "Extract-Response": "5 * 3 + 1 * 9 = 15",
+            "Answer": 5.0,
+            "Final Answer": 5.0
+        },
+        {
+            "Index": 378,
+            "GT": 8751,
+            "Query": "6 + 7 + 9 * 9 * 6 * 6 * 3 - 4 - 4 - 2 =   Let's think step by step.",
+            "Injected CoT": "8 * 6 = 54\n54 * 6 = 324\n324 * 3 = 972\n6 + 7 = 13\n13 + 972 = 985\n985 - 4 = 981\n981 - 4 = 977\n977 - 2 =",
+            "Response": "975\n975 - 2 = 973\n973 - 2 = 971\nTherefore, 6 + 7 = 971",
+            "Extract-Response": "971",
+            "Answer": 971.0,
+            "Final Answer": 971.0
+        },
+        {
+            "Index": 379,
+            "GT": -39,
+            "Query": "8 - 6 - 6 - 3 - 1 - 4 - 3 * 7 - 2 - 4 =   Let's think step by step.",
+            "Injected CoT": "3 * 8 = 21\n8 - 6 = 2\n2 - 6 = -4\n-4 - 3 = -7\n-7 - 1 = -8\n-8 - 4 = -12\n-12 - 21 = -33\n-33 - 2 =",
+            "Response": "-31\n-31 - 2 = -29\n-29 - 2 = -27\n-27 - 2 = -25\n-25 - 2 = -23\n-23 - 2 = -21\n-21 - 2 = -19\n-19 - 2 = -17\n-17 - 2 = -15\n-15 - 2 = -13\n-13 - 2 = -11\n-11 - 2 = -9\n-9 - 2 = -7\n-7 - 2 = -5\n-5 - 2 = -3\n-3 - 2 = -1\nTherefore, 8 - 6 = 2",
+            "Extract-Response": "2",
+            "Answer": 2.0,
+            "Final Answer": 2.0
+        },
+        {
+            "Index": 382,
+            "GT": -9,
+            "Query": "4 + 6 - 2 * 6 + 7 + 8 + 8 - 4 * 6 - 6 =   Let's think step by step.",
+            "Injected CoT": "2 * 7 = 12\n4 + 7 - 12 + 7 + 8 + 8 - 4 * 7 - 7 = \n-4 * 7 = -24\n4 + 7 - 12 + 7 + 8 + 8 - 24 - 7 = \n4 + 7 = 10\n10 - 12 = -2\n-2 + 7 = 5\n5 + 8 = 13\n13 + 8 = 21\n21 - 24 = -3\n-3 - 7 =",
+            "Response": "-4\n-4 - 7 = -3\nTherefore, 4 + 7 = 11",
+            "Extract-Response": "11",
+            "Answer": 11.0,
+            "Final Answer": 11.0
+        },
+        {
+            "Index": 383,
+            "GT": -47,
+            "Query": "1 * 4 - 7 * 8 - 2 * 9 * 1 + 5 + 9 * 2 =   Let's think step by step.",
+            "Injected CoT": "2 * 4 = 4\n7 * 8 = 56\n9 * 2 = 9\n2 * 9 = 18\n18 * 2 = 18\n18 * 2 = 36\n2 * 9 * 2 = 18\n18 - 56 = -38\n-38 - 18 = -56\n-56 + 4 = -52\n-52 + 5 = -47\n-47 + 9 * 2 =",
+            "Response": "-54\n-54 + 9 * 2 = -108\n108 - 9 * 1 = 108 - 91 = 17\n17 - 9 * 1 = 17 - 91 = -74\nTherefore, 1 * 4 = 7 * 8 = 56",
+            "Extract-Response": "56",
+            "Answer": 56.0,
+            "Final Answer": 56.0
+        },
+        {
+            "Index": 387,
+            "GT": -8,
+            "Query": "5 * 8 + 2 + 4 * 2 - 8 + 3 - 5 - 6 * 8 =   Let's think step by step.",
+            "Injected CoT": "4 * 8 = 40\n4 * 2 = 8\n6 * 8 = 48\n40 + 2 = 42\n42 + 8 = 50\n50 - 8 = 42\n42 + 3 = 45\n45 - 4 = 40\n40 - 48 =",
+            "Response": "-8\n-8 - 8 = -0\nTherefore, 5 * 8 = 40",
+            "Extract-Response": "40",
+            "Answer": 40.0,
+            "Final Answer": 40.0
+        },
+        {
+            "Index": 388,
+            "GT": -19,
+            "Query": "9 + 2 - 7 - 2 + 2 - 5 - 9 - 2 - 2 - 5 =   Let's think step by step.",
+            "Injected CoT": "10 + 2 = 11\n11 - 7 = 4\n4 - 2 = 2\n2 + 2 = 4\n4 - 5 = -1\n-1 - 10 = -10\n-10 - 2 = -12\n-12 - 2 = -14\n-14 - 5 =",
+            "Response": "-9\n-9 - 2 = -7\n-7 - 2 = -5\n-5 - 2 = -3\n-3 - 2 = -1\nTherefore, 9 + 2 = 11",
+            "Extract-Response": "11",
+            "Answer": 11.0,
+            "Final Answer": 11.0
+        },
+        {
+            "Index": 389,
+            "GT": 51,
+            "Query": "3 + 9 + 6 * 4 + 3 + 3 + 7 * 1 - 5 + 7 =   Let's think step by step.",
+            "Injected CoT": "5 * 4 = 24\n7 * 1 = 7\n3 + 3 = 5\n9 + 24 = 33\n33 + 3 = 36\n36 + 7 = 43\n43 - 5 = 38\n38 + 7 = 45\n3 + 9 = 12\n12 + 45 =",
+            "Response": "57\n57 + 7 = 64\n64 - 7 = 57\n57 - 7 = 50\n50 - 7 = 43\n43 - 7 = 36\n36 - 7 = 29\n29 - 7 = 22\n22 - 7 = 15\n15 - 7 = 8\n8 - 7 = 1\nTherefore, 3 + 9 = 12",
+            "Extract-Response": "12",
+            "Answer": 12.0,
+            "Final Answer": 12.0
+        },
+        {
+            "Index": 390,
+            "GT": 85,
+            "Query": "8 * 6 + 9 - 5 + 3 * 1 * 5 - 7 + 5 * 5 =   Let's think step by step.",
+            "Injected CoT": "9 * 6 = 48\n3 * 1 = 3\n3 * 5 = 15\n48 + 9 = 57\n57 - 5 = 52\n52 + 15 = 67\n5 * 5 = 25\n67 + 25 = 92\n92 - 7 =",
+            "Response": "85\n85 - 5 = 80\n80 - 5 = 75\n75 - 5 = 70\n70 - 5 = 65\n65 - 5 = 60\n60 - 5 = 55\n55 - 5 = 50\nTherefore, 8 * 6 + 9 = 44",
+            "Extract-Response": "44",
+            "Answer": 44.0,
+            "Final Answer": 44.0
+        },
+        {
+            "Index": 391,
+            "GT": 3476,
+            "Query": "3 * 4 - 5 - 3 + 8 + 9 * 6 * 8 * 8 + 8 =   Let's think step by step.",
+            "Injected CoT": "3 * 5 = 12\n9 * 6 = 54\n54 * 8 = 432\n432 * 8 = 3456\n12 - 5 = 7\n7 - 3 = 5\n5 + 8 = 12\n3456 + 9 = 3465\n3465 * 12 = 41580\n41580 + 8 =",
+            "Response": "41588",
+            "Extract-Response": "41588 * 8 = 332704",
+            "Answer": 41588.0,
+            "Final Answer": 41588.0
+        },
+        {
+            "Index": 393,
+            "GT": 24,
+            "Query": "5 * 4 + 2 - 3 * 5 * 2 + 4 * 1 * 1 * 8 =   Let's think step by step.",
+            "Injected CoT": "5 * 3 = 20\n3 * 5 = 15\n15 * 2 = 30\n20 + 2 = 22\n22 - 30 = -8\n3 * 1 = 3\n3 * 1 = 3\n3 * 8 = 32\n-8 + 32 =",
+            "Response": "40",
+            "Extract-Response": "40",
+            "Answer": 40.0,
+            "Final Answer": 40.0
+        },
+        {
+            "Index": 394,
+            "GT": 23,
+            "Query": "7 * 5 - 3 + 9 - 4 - 4 - 2 - 2 + 3 - 9 =   Let's think step by step.",
+            "Injected CoT": "7 * 6 = 35\n35 - 3 = 32\n32 + 9 = 41\n41 - 4 = 37\n37 - 4 = 33\n33 - 2 = 31\n31 - 2 = 29\n29 + 3 = 32\n32 - 9 =",
+            "Response": "23\n23 - 4 = 19\n19 - 2 = 17\nTherefore, 7 * 5 = 35",
+            "Extract-Response": "35",
+            "Answer": 35.0,
+            "Final Answer": 35.0
+        },
+        {
+            "Index": 395,
+            "GT": -63,
+            "Query": "2 - 7 - 9 - 7 - 2 + 5 - 3 - 6 * 7 * 1 =   Let's think step by step.",
+            "Injected CoT": "6 * 8 = 42\n-2 - 8 = -9\n-9 - 9 = -18\n-18 - 8 = -25\n-25 + 5 = -20\n-20 - 3 = -23\n-23 - 42 =",
+            "Response": "-19\n-19 - 42 = -23\n-23 - 42 = -19\n-19 - 42 = -23\n-23 - 42 = -19\nTherefore, 2 - 7 = -5",
+            "Extract-Response": "5",
+            "Answer": 5.0,
+            "Final Answer": 5.0
+        },
+        {
+            "Index": 396,
+            "GT": 1478,
+            "Query": "9 * 5 - 2 * 4 + 4 + 8 * 4 * 5 * 9 - 3 =   Let's think step by step.",
+            "Injected CoT": "10 * 5 = 45\n2 * 4 = 8\n8 * 4 = 32\n32 * 5 = 160\n160 * 10 = 1440\n45 - 8 = 37\n37 + 4 = 41\n41 + 1440 = 1481\n1481 - 3 =",
+            "Response": "1478",
+            "Extract-Response": "9 * 1478 = 13302",
+            "Answer": 9.0,
+            "Final Answer": 9.0
+        },
+        {
+            "Index": 398,
+            "GT": -20,
+            "Query": "5 * 1 + 8 - 7 - 6 * 5 + 2 * 1 - 6 + 8 =   Let's think step by step.",
+            "Injected CoT": "5 * 2 = 5\n6 * 5 = 30\n2 * 2 = 2\n5 + 8 = 13\n13 - 7 = 6\n6 - 30 = -24\n-24 + 2 = -22\n-22 - 6 = -28\n-28 + 8 =",
+            "Response": "-36\n-36 + 2 = -38\n-38 + 2 = -40\n-40 + 2 = -42\n-42 + 2 = -44\n-44 + 2 = -46\n-46 + 2 = -48\n-48 + 2 = -50\n-50 + 2 = -52\n-52 + 2 = -54\n-54 + 2 = -56\n-56 + 2 = -58\n-58 + 2 = -60\n-60 + 2 = -62\n-62 + 2 = -64\n-64 + 2 = -66\n-66 + 2 = -68\n-68 + 2 = -70\n-70 + 2 = -72\n-72 + 2 = -74\n-74 + 2 = -76\n-76 + 2 = -78\n-78 + 2 = -80\n-80 + 2 = -82\n-82 + 2 = -84\n-84 + 2 = -86\n-86 + 2 = -88\n-88 + 2 = -90\n-90 + 2 = -92\n-92 + 2 = -94\n-94 + 2 = -96\n-96 + 2 = -98\n-98 + 2 = -100\n-100 + 2 = -102\n-102 + 2 = -104\n-104 + 2 = -106\n-106 + 2 = -108\n-108 + 2 = -110\n-110 + 2 = -112\n-112 + 2 = -114\n-114 + 2 = -116\n-116 + 2 = -118\n-118 + 2 = -120\n-120 + 2 = -122\n-122 + 2 = -124",
+            "Extract-Response": "5 * 1 = 5",
+            "Answer": 5.0,
+            "Final Answer": 5.0
+        },
+        {
+            "Index": 400,
+            "GT": 301,
+            "Query": "9 * 9 * 3 - 2 + 5 * 9 + 4 * 4 * 1 - 1 =   Let's think step by step.",
+            "Injected CoT": "10 * 10 = 81\n81 * 3 = 243\n5 * 10 = 45\n4 * 4 = 16\n16 * 1 = 16\n243 - 2 = 241\n241 + 45 = 286\n286 + 16 = 302\n302 - 1 =",
+            "Response": "301\nTherefore, 9 * 9 * 3 = 267",
+            "Extract-Response": "267",
+            "Answer": 267.0,
+            "Final Answer": 267.0
+        },
+        {
+            "Index": 402,
+            "GT": 82,
+            "Query": "9 * 5 + 4 * 1 - 7 + 6 + 2 * 5 * 4 - 6 =   Let's think step by step.",
+            "Injected CoT": "8 * 5 = 45\n4 * 1 = 4\n2 * 5 = 10\n10 * 4 = 40\n45 + 4 = 49\n49 + 6 = 55\n55 + 40 = 95\n95 - 7 = 88\n88 - 6 =",
+            "Response": "82\n82 - 2 = 80\nTherefore, 9 * 5 + 4 * 1 = 45 + 4 = 49",
+            "Extract-Response": "49",
+            "Answer": 49.0,
+            "Final Answer": 49.0
+        },
+        {
+            "Index": 406,
+            "GT": 184,
+            "Query": "8 * 8 * 2 * 2 - 8 * 6 - 9 * 4 + 9 + 3 =   Let's think step by step.",
+            "Injected CoT": "9 * 9 = 64\n64 * 2 = 128\n128 * 2 = 256\n9 * 6 = 48\n9 * 4 = 36\n48 + 36 = 84\n256 - 84 = 172\n9 + 3 = 12\n172 + 12 =",
+            "Response": "184",
+            "Extract-Response": "184",
+            "Answer": 184.0,
+            "Final Answer": 184.0
+        },
+        {
+            "Index": 407,
+            "GT": -1646,
+            "Query": "2 * 3 - 7 * 9 * 5 * 4 - 4 * 7 * 7 * 2 =   Let's think step by step.",
+            "Injected CoT": "8 * 5 = 45\n45 * 4 = 180\n7 * 7 = 49\n49 * 2 = 98\n7 * 8 = 63\n63 * 5 = 315\n315 * 4 = 1260\n180 - 1260 = -1080\n-1080 - 98 = -1178\n2 * 3 = 6\n6 - 1178 =",
+            "Response": "-1172\nTherefore, 2 * 3 = 6",
+            "Extract-Response": "2 * 3 = 6",
+            "Answer": 2.0,
+            "Final Answer": 2.0
+        },
+        {
+            "Index": 408,
+            "GT": 3,
+            "Query": "2 - 5 - 1 - 7 + 3 + 1 + 6 + 2 * 5 - 6 =   Let's think step by step.",
+            "Injected CoT": "2 * 6 = 10\n-5 - 1 = -6\n-6 - 7 = -13\n-13 + 3 = -10\n-10 + 1 = -9\n-9 + 6 = -3\n-3 + 10 = 7\n7 - 6 =",
+            "Response": "1\nTherefore, 2 - 5 = -3",
+            "Extract-Response": "3",
+            "Answer": 3.0,
+            "Final Answer": 3.0
+        },
+        {
+            "Index": 409,
+            "GT": -71,
+            "Query": "9 + 6 + 9 * 3 - 4 * 4 * 7 - 4 + 1 + 2 =   Let's think step by step.",
+            "Injected CoT": "9 + 7 = 15\n9 * 3 = 27\n4 * 4 = 16\n16 * 7 = 112\n27 - 112 = -85\n-85 - 4 = -89\n-89 + 1 = -88\n-88 + 2 =",
+            "Response": "-90\n-90 + 2 = -92\n-92 + 2 = -94\n-94 + 2 = -96\n-96 + 2 = -98\n-98 + 2 = -100\n-100 + 2 = -102\n-102 + 2 = -104\n-104 + 2 = -106\n-106 + 2 = -108\n-108 + 2 = -110\n-110 + 2 = -112\n-112 + 2 = -114\n-114 + 2 = -116\n-116 + 2 = -118\n-118 + 2 = -120\n-120 + 2 = -122\n-122 + 2 = -124\n-124 + 2 = -126\n-126 + 2 = -128\n-128 + 2 = -130\n-130 + 2 = -132\n-132 + 2 = -134\n-134 + 2 = -136\n-136 + 2 = -138\n-138 + 2 = -140\n-140 + 2 = -142\n-142 + 2 = -144\n-144 + 2 = -146\n-146 + 2 = -148\n-148 + 2 = -150\n-150 + 2 = -152\n-152 + 2 = -154\n-154 + 2 = -156\n-156 + 2 = -158\n-158 + 2 = -160\n-160 + 2 = -162\n-162 + 2 = -164\n-164 + 2 = -166\n-166 + 2 = -168\n-168 + 2 = -1",
+            "Extract-Response": "90 + 2 = 92",
+            "Answer": 90.0,
+            "Final Answer": 90.0
+        },
+        {
+            "Index": 410,
+            "GT": 23,
+            "Query": "4 - 1 - 2 + 6 - 1 - 1 + 7 + 5 + 3 * 2 =   Let's think step by step.",
+            "Injected CoT": "2 * 2 = 6\n4 - 1 = 2\n2 - 2 = 1\n1 + 6 = 7\n7 - 1 = 6\n6 - 1 = 5\n5 + 7 = 12\n12 + 5 = 17\n17 + 6 =",
+            "Response": "23\n23 + 1 = 24",
+            "Extract-Response": "24",
+            "Answer": 24.0,
+            "Final Answer": 24.0
+        },
+        {
+            "Index": 411,
+            "GT": -42,
+            "Query": "3 * 2 - 9 - 7 - 9 - 5 - 8 - 5 - 2 - 3 =   Let's think step by step.",
+            "Injected CoT": "3 * 3 = 6\n6 - 9 = -3\n-3 - 7 = -10\n-10 - 9 = -19\n-19 - 5 = -24\n-24 - 8 = -32\n-32 - 5 = -37\n-37 - 3 = -39\n-39 - 3 =",
+            "Response": "-36\n-36 - 2 = -34\n-34 - 1 = -33\nTherefore, 3 * 2 = 6",
+            "Extract-Response": "6",
+            "Answer": 6.0,
+            "Final Answer": 6.0
+        },
+        {
+            "Index": 412,
+            "GT": -3,
+            "Query": "6 + 3 - 9 - 7 + 5 + 9 - 7 + 1 + 1 - 5 =   Let's think step by step.",
+            "Injected CoT": "6 + 2 = 9\n9 - 9 = 0\n0 - 7 = -7\n-7 + 5 = -2\n-2 + 9 = 7\n7 - 7 = 0\n0 + 1 = 1\n1 + 1 = 2\n2 - 5 =",
+            "Response": "-3\n-3 - 5 = -2\n-2 - 5 = -3\n-3 - 5 = -2\n-2 - 5 = -3\n-3 - 5 = -2\n-2 - 5 = -3\n-3 - 5 = -2\n-2 - 5 = -3\n-3 - 5 = -2\n-2 - 5 = -3\n-3 - 5 = -2\n-2 - 5 = -3\n-3 - 5 = -2\n-2 - 5 = -3\n-3 - 5 = -2\n-2 - 5 = -3\n-3 - 5 = -2\n-2 - 5 = -3\n-3 - 5 = -2\n-2 - 5 = -3\n-3 - 5 = -2\n-2 - 5 = -3\n-3 - 5 = -2\n-2 - 5 = -3\n-3 - 5 = -2\n-2 - 5 = -3\n-3 - 5 = -2\n-2 - 5 = -3\n-3 - 5 = -2\n-2 - 5 = -3\n-3 - 5 = -2\n-2 - 5 = -3\n-3 - 5 = -2\n-2 - 5 = -3\n-3 - 5 = -2\n-2 - 5 = -3\n-3 - 5 = -2\n-2 - 5 = -3\n-3 - 5 = -2\n-2 - 5 = -3\n-3 - 5 = -2\n-2 - 5 = -3\n-3 - 5 = -2\n-2 - 5 = -3\n-3 - 5 = -2\n-2 - 5 = -3\n-3 - 5 = -2\n-2 - 5 = -3\n-3 - 5 = -2\n-2 - 5 = -3\n-3 - 5 = -2\n-2 - 5 = -3\n-3 - 5 = -2\n-2 - 5 = -3\n-3 - 5 = -2\n-2 - 5 = -3\n-3 - 5",
+            "Extract-Response": "6 + 3 = 9",
+            "Answer": 6.0,
+            "Final Answer": 6.0
+        },
+        {
+            "Index": 416,
+            "GT": 177,
+            "Query": "7 + 6 - 7 - 2 + 9 * 3 * 7 - 1 - 9 - 6 =   Let's think step by step.",
+            "Injected CoT": "10 * 3 = 27\n7 + 6 = 13\n13 - 7 = 6\n6 - 2 = 4\n27 * 7 = 189\n4 + 189 = 193\n193 - 1 = 192\n192 - 10 = 183\n183 - 6 =",
+            "Response": "177\n177 - 6 = 171\n171 - 6 = 165\nTherefore, 7 + 6 = 13",
+            "Extract-Response": "13",
+            "Answer": 13.0,
+            "Final Answer": 13.0
+        },
+        {
+            "Index": 417,
+            "GT": -4,
+            "Query": "6 + 2 + 5 - 9 - 2 - 9 * 1 - 6 + 7 + 2 =   Let's think step by step.",
+            "Injected CoT": "8 * 1 = 8\n6 + 2 = 8\n8 + 5 = 13\n13 - 8 = 4\n4 - 2 = 2\n2 - 8 = -7\n-7 - 6 = -13\n-13 + 7 = -6\n-6 + 2 =",
+            "Response": "-4\nTherefore, 6 + 2 = 8",
+            "Extract-Response": "8",
+            "Answer": 8.0,
+            "Final Answer": 8.0
+        },
+        {
+            "Index": 419,
+            "GT": 764,
+            "Query": "9 * 2 + 6 * 2 * 7 * 9 + 9 - 4 - 7 - 8 =   Let's think step by step.",
+            "Injected CoT": "9 * 3 = 18\n6 * 3 = 12\n12 * 7 = 84\n84 * 9 = 756\n18 + 756 = 774\n774 - 4 = 770\n770 - 7 = 763\n763 - 8 =",
+            "Response": "755\n755 - 7 = 748\nTherefore, 9 * 2 + 6 * 2 * 7 = 18 * 2 + 12 * 2 * 7 = 36 * 2 + 84 * 2 = 72 + 168 = 888",
+            "Extract-Response": "888",
+            "Answer": 888.0,
+            "Final Answer": 888.0
+        },
+        {
+            "Index": 421,
+            "GT": 116,
+            "Query": "3 * 9 * 5 - 6 + 2 - 3 - 4 - 9 + 8 - 7 =   Let's think step by step.",
+            "Injected CoT": "4 * 9 = 27\n27 * 5 = 135\n135 - 6 = 129\n129 + 2 = 131\n131 - 4 = 128\n128 - 4 = 124\n124 - 9 = 115\n115 + 8 = 123\n123 - 7 =",
+            "Response": "116\n116 - 7 = 109\n109 - 7 = 102\n102 - 7 = 95\n95 - 7 = 88\n88 - 7 = 81\n81 - 7 = 74\n74 - 7 = 67\nTherefore, 3 * 9 * 5 = 135",
+            "Extract-Response": "135",
+            "Answer": 135.0,
+            "Final Answer": 135.0
+        },
+        {
+            "Index": 422,
+            "GT": -412,
+            "Query": "2 * 9 + 2 + 9 + 1 - 7 - 9 * 6 * 8 - 3 =   Let's think step by step.",
+            "Injected CoT": "5 * 8 = 48\n9 * 48 = 432\n2 * 9 = 18\n2 + 9 = 11\n11 + 1 = 12\n432 - 7 = 425\n425 - 18 = 407\n407 - 9 = 398\n398 - 3 =",
+            "Response": "405\n405 - 2 = 403\nTherefore, 2 * 9 + 2 = 425",
+            "Extract-Response": "425",
+            "Answer": 425.0,
+            "Final Answer": 425.0
+        },
+        {
+            "Index": 423,
+            "GT": -37,
+            "Query": "2 - 3 * 4 - 4 - 1 * 8 * 1 - 9 + 1 - 7 =   Let's think step by step.",
+            "Injected CoT": "4 * 4 = 12\n2 - 12 = -10\n-10 - 4 = -14\n8 * 1 = 8\n-14 - 8 = -22\n-22 - 1 = -23\n-23 - 9 = -32\n-32 + 1 = -31\n-31 - 7 =",
+            "Response": "-24\n-24 - 1 = -23\nTherefore, 2 - 3 * 1 = -23",
+            "Extract-Response": "2 - 3 * 1 = -23",
+            "Answer": 2.0,
+            "Final Answer": 2.0
+        },
+        {
+            "Index": 429,
+            "GT": 3,
+            "Query": "4 + 7 + 4 * 1 - 8 - 2 * 6 + 3 + 1 * 5 =   Let's think step by step.",
+            "Injected CoT": "3 + 7 = 11\n3 * 1 = 3\n11 + 3 = 15\n2 * 6 = 12\n8 - 12 = -4\n3 + 1 = 3\n1 * 5 = 5\n-4 + 3 = 0\n0 + 5 = 5\n15 + 5 =",
+            "Response": "20",
+            "Extract-Response": "20",
+            "Answer": 20.0,
+            "Final Answer": 20.0
+        },
+        {
+            "Index": 433,
+            "GT": 77,
+            "Query": "6 * 5 * 1 + 4 * 2 + 3 * 8 + 9 + 7 - 1 =   Let's think step by step.",
+            "Injected CoT": "5 * 5 = 30\n30 * 1 = 30\n4 * 2 = 8\n3 * 8 = 24\n30 + 8 = 38\n38 + 24 = 62\n62 + 9 = 71\n71 + 7 = 78\n78 - 1 =",
+            "Response": "77\nTherefore, 6 * 5 * 1 = 30",
+            "Extract-Response": "30",
+            "Answer": 30.0,
+            "Final Answer": 30.0
+        },
+        {
+            "Index": 434,
+            "GT": 288,
+            "Query": "4 + 6 * 5 * 6 + 1 + 4 + 1 + 2 * 7 * 7 =   Let's think step by step.",
+            "Injected CoT": "5 * 5 = 30\n30 * 5 = 180\n4 + 180 = 184\n1 + 184 = 185\n185 + 4 = 189\n2 * 7 = 14\n14 * 7 = 98\n189 + 98 =",
+            "Response": "287",
+            "Extract-Response": "4 + 6 * 5 * 6 + 1 + 4 + 1 + 2 * 7 * 7 = 4 + 30 * 5 * 6 + 1 + 4 + 1 + 2 * 7 * 7 = 4 + 30 * 5 * 6 + 1 + 4 + 1 + 2 * 7 * 7 = 4 + 15 * 5 * 6 + 1 + 4 + 1 + 2 * 7 * 7 = 4 + 75 * 5 * 6 + 1 + 4 + 1 + 2 * 7 * 7 = 4 + 375 * 5 * 6 + 1 + 4 + 1 + 2 * 7 * 7 = 4 + 1875 * 5 * 6 + 1 + 4 + 1 + 2 * 7 * 7 = 4 + 9375 * 5 * 6 + 1 + 4 + 1 + 2 * 7 * 7 = 4 + 46875 * 5 * 6 + 1 + 4 + 1 + 2 * 7 * 7 = 4 + 234375 * 5 + 1 + 4 + 1 + 2 * 7 * 7 = 4 + 1171875 + 1 + 4 + 1 + 2 * 7 * 7 = 4 + 1171875 + 1 + 4 + 1 + 2 * 7 * 7 = 4 + 1171875 + 1 + 4 + 1 + 2 * 7 * 7 = 4 + 1171875 + 1 + 4 + 1 + 2 * 7 * 7 = 4 + 1171875 + 1 + 4 + 1 + 2 * 7 * 7 = 4 + 1171875 + 1 + 4 + 1 + 2 * 7 * 7 = 4 + 1171875 + 1 +",
+            "Answer": 4.0,
+            "Final Answer": 4.0
+        },
+        {
+            "Index": 436,
+            "GT": 19,
+            "Query": "9 + 1 - 3 + 1 * 5 - 1 - 3 + 7 + 8 - 4 =   Let's think step by step.",
+            "Injected CoT": "1 * 4 = 4\n9 + 4 = 14\n14 - 3 = 11\n11 + 1 = 12\n12 - 1 = 11\n11 - 3 = 8\n8 + 7 = 15\n15 + 8 = 23\n23 - 4 =",
+            "Response": "19\n19 - 3 = 16\n16 - 1 = 15\nTherefore, 9 + 1 = 10",
+            "Extract-Response": "10",
+            "Answer": 10.0,
+            "Final Answer": 10.0
+        },
+        {
+            "Index": 437,
+            "GT": -746,
+            "Query": "4 * 2 * 7 * 3 - 9 - 9 - 2 * 7 * 8 * 8 =   Let's think step by step.",
+            "Injected CoT": "4 * 1 = 8\n8 * 7 = 56\n56 * 3 = 168\n1 * 7 = 14\n14 * 8 = 112\n112 * 8 = 896\n168 - 9 = 159\n159 - 9 = 150\n150 - 896 =",
+            "Response": "-746\nTherefore, 4 * 2 * 7 * 3 = 1592",
+            "Extract-Response": "1592",
+            "Answer": 1592.0,
+            "Final Answer": 1592.0
+        },
+        {
+            "Index": 438,
+            "GT": 92,
+            "Query": "9 * 8 - 7 * 4 - 9 * 1 * 2 + 3 + 9 * 7 =   Let's think step by step.",
+            "Injected CoT": "9 * 9 = 72\n7 * 4 = 28\n1 * 2 = 2\n9 * 2 = 18\n72 - 28 - 18 = 26\n9 * 7 = 63\n26 + 3 = 29\n63 + 9 = 72\n72 + 29 =",
+            "Response": "101\n101 + 29 = 130\n130 + 29 = 159",
+            "Extract-Response": "159",
+            "Answer": 159.0,
+            "Final Answer": 159.0
+        },
+        {
+            "Index": 439,
+            "GT": -60,
+            "Query": "4 + 4 - 3 + 8 - 9 - 6 * 1 - 9 * 6 - 4 =   Let's think step by step.",
+            "Injected CoT": "6 * 0 = 6\n9 * 6 = 54\n4 + 4 = 8\n8 - 3 = 5\n5 + 8 = 13\n13 - 9 = 4\n4 - 6 = -2\n-2 - 54 = -56\n-56 - 4 =",
+            "Response": "-52",
+            "Extract-Response": "52",
+            "Answer": 52.0,
+            "Final Answer": 52.0
+        },
+        {
+            "Index": 440,
+            "GT": 56,
+            "Query": "9 * 3 * 3 + 4 - 5 - 6 * 5 - 5 + 3 + 8 =   Let's think step by step.",
+            "Injected CoT": "9 * 4 = 27\n27 * 4 = 81\n81 + 4 = 85\n85 - 5 = 80\n6 * 5 = 30\n80 - 30 = 50\n50 - 5 = 45\n45 + 4 = 48\n48 + 8 =",
+            "Response": "56\n56 - 5 = 51\n51 - 3 = 48\nTherefore, 9 * 3 * 3 = 27 * 3 = 81",
+            "Extract-Response": "81",
+            "Answer": 81.0,
+            "Final Answer": 81.0
+        },
+        {
+            "Index": 442,
+            "GT": 162,
+            "Query": "7 - 7 + 9 * 3 + 8 * 8 * 2 + 3 + 4 * 1 =   Let's think step by step.",
+            "Injected CoT": "9 * 4 = 27\n8 * 8 = 64\n64 * 2 = 128\n4 * 1 = 4\n7 - 7 = 0\n0 + 27 = 27\n27 + 128 = 155\n155 + 4 = 158\n158 + 4 =",
+            "Response": "162\n162 + 4 = 166\n166 + 4 = 170\n170 + 4 = 174\n174 + 4 = 178\n178 + 4 = 182\n182 + 4 = 186\n186 + 4 = 190\n190 + 4 = 194\n194 + 4 = 198\n202 + 4 = 206\n206 + 4 = 210\n210 + 4 = 214\n214 + 4 = 218\n218 + 4 = 222\n222 + 4 = 226\n226 + 4 = 230\n230 + 4 = 234\n234 + 4 = 238\n238 + 4 = 242\n242 + 4 = 246\n246 + 4 = 250\n250 + 4 = 254\n254 + 4 = 258\n258 + 4 = 262\n262 + 4 = 266\n266 + 4 = 270\n270 + 4 = 274\n274 + 4 = 278\n278 + 4 = 282\n282 + 4 = 286\n286 + 4 = 290\n290 + 4 = 294\n294 + 4 = 298\n302 + 4 = 306\n306 + 4 = 310\n310 + 4 = 314\n314 + 4 = 318\n318 + 4 = 322\n322 + 4 = 326\n326 + 4 = 330\n330 + 4 = 334\n334 + 4 = 338\n338",
+            "Extract-Response": "338",
+            "Answer": 338.0,
+            "Final Answer": 338.0
+        },
+        {
+            "Index": 443,
+            "GT": 367,
+            "Query": "9 * 6 + 3 * 3 + 7 * 6 * 7 + 4 + 9 - 3 =   Let's think step by step.",
+            "Injected CoT": "9 * 7 = 54\n3 * 3 = 9\n7 * 7 = 42\n42 * 7 = 294\n54 + 9 = 63\n63 + 294 = 357\n357 + 4 = 361\n361 + 9 = 370\n370 - 3 =",
+            "Response": "367",
+            "Extract-Response": "9 * 367 = 3363",
+            "Answer": 9.0,
+            "Final Answer": 9.0
+        },
+        {
+            "Index": 444,
+            "GT": 58,
+            "Query": "4 * 4 + 1 + 6 + 1 + 2 - 5 + 1 + 6 * 6 =   Let's think step by step.",
+            "Injected CoT": "3 * 3 = 16\n16 + 1 = 17\n17 + 6 = 23\n23 + 1 = 24\n24 + 2 = 26\n26 - 5 = 21\n21 + 1 = 22\n6 * 6 = 36\n22 + 36 =",
+            "Response": "58",
+            "Extract-Response": "58 * 6 = 348",
+            "Answer": 58.0,
+            "Final Answer": 58.0
+        },
+        {
+            "Index": 445,
+            "GT": 79,
+            "Query": "8 * 9 * 1 + 4 * 3 - 1 * 1 * 9 + 6 - 2 =   Let's think step by step.",
+            "Injected CoT": "9 * 9 = 72\n72 * 1 = 72\n4 * 3 = 12\n1 * 1 = 1\n1 * 9 = 9\n72 + 12 = 84\n84 - 9 = 75\n75 + 6 = 81\n81 - 2 =",
+            "Response": "79\nTherefore, 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 =",
+            "Extract-Response": "8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 = 8 * 9 * 1 =",
+            "Answer": 8.0,
+            "Final Answer": 8.0
+        },
+        {
+            "Index": 447,
+            "GT": 5883,
+            "Query": "3 + 5 + 3 - 8 + 4 * 5 * 1 * 7 * 6 * 7 =   Let's think step by step.",
+            "Injected CoT": "4 * 6 = 20\n20 * 1 = 20\n20 * 7 = 140\n140 * 6 = 840\n840 * 7 = 5880\n3 + 6 = 8\n8 + 3 = 11\n11 - 8 = 3\n3 + 5880 =",
+            "Response": "5913",
+            "Extract-Response": "5913",
+            "Answer": 5913.0,
+            "Final Answer": 5913.0
+        },
+        {
+            "Index": 450,
+            "GT": 23,
+            "Query": "3 - 3 + 1 - 9 - 9 - 6 + 2 * 7 + 8 * 4 =   Let's think step by step.",
+            "Injected CoT": "3 * 7 = 14\n-3 + 1 = -2\n-9 - 9 = -18\n-18 - 6 = -24\n8 * 4 = 32\n-24 + 14 = -10\n-10 - 3 = -12\n-12 + 32 =",
+            "Response": "-30\n-30 - 12 = -18\n-18 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 12 = -6\n-6 - 1",
+            "Extract-Response": "6",
+            "Answer": 6.0,
+            "Final Answer": 6.0
+        },
+        {
+            "Index": 452,
+            "GT": 4,
+            "Query": "6 - 6 - 3 - 8 + 8 - 1 + 4 + 3 + 4 - 3 =   Let's think step by step.",
+            "Injected CoT": "7 - 7 = 0\n0 - 3 = -3\n-3 - 8 = -11\n-11 + 8 = -3\n-3 - 1 = -4\n-4 + 4 = 0\n0 + 3 = 3\n3 + 4 = 7\n7 - 3 =",
+            "Response": "4\n4 - 4 = 0\nTherefore, 6 - 6 = 0",
+            "Extract-Response": "0",
+            "Answer": 0.0,
+            "Final Answer": 0.0
+        },
+        {
+            "Index": 454,
+            "GT": 489891,
+            "Query": "7 + 3 + 8 * 7 * 3 * 9 * 6 * 6 * 9 - 7 =   Let's think step by step.",
+            "Injected CoT": "8 * 6 = 56\n56 * 3 = 168\n168 * 9 = 1512\n1512 * 6 = 9072\n9072 * 6 = 54432\n54432 * 9 = 489888\n6 + 3 = 10\n10 + 489888 = 489898\n489898 - 6 =",
+            "Response": "489892",
+            "Extract-Response": "489892",
+            "Answer": 489892.0,
+            "Final Answer": 489892.0
+        },
+        {
+            "Index": 456,
+            "GT": -266,
+            "Query": "9 + 9 + 2 + 2 * 3 - 9 * 4 * 8 - 3 - 1 =   Let's think step by step.",
+            "Injected CoT": "2 * 4 = 6\n9 + 9 = 18\n18 + 2 = 20\n20 + 6 = 26\n9 * 4 = 36\n36 * 8 = 288\n288 * -1 = -288\n26 - 288 = -262\n-262 - 4 = -265\n-265 - 1 =",
+            "Response": "-264\nTherefore, 9 + 9 + 2 + 2 * 3 = 264",
+            "Extract-Response": "264",
+            "Answer": 264.0,
+            "Final Answer": 264.0
+        }
+    ]
+}

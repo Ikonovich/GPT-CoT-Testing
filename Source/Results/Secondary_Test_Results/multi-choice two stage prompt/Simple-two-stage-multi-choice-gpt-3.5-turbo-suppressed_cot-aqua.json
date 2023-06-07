@@ -1,0 +1,407 @@
+{
+    "Mode": "test",
+    "Model": "gpt-3.5-turbo",
+    "Model Index": 1,
+    "Modality": "suppressed_cot",
+    "Modality Index": 2,
+    "Dataset": "aqua",
+    "Extraction Type": "two-stage-multi-choice",
+    "Simple Prompt": true,
+    "Test Path": "Results\\Primary_Test_Results\\gpt-3.5-turbo\\suppressed_cot\\aqua\\Simple-two-stage-multi-choice-gpt-3.5-turbo-suppressed_cot-aqua.json",
+    "Total": 24,
+    "Total Accurate": 12,
+    "Total Accuracy": 50.0,
+    "Percent of Answers Containing CoT": 62.5,
+    "CoT Accuracy": 53.333333333333336,
+    "Non-CoT Accuracy": 44.44444444444444,
+    "ci_radius": 20.004166232729286,
+    "ci_upper": 70.00416623272929,
+    "ci_lower": 29.995833767270714,
+    "Dataset Index": 2,
+    "Trials": [
+        {
+            "Index": 0,
+            "GT": "E",
+            "Query": "Two friends plan to walk along a 43-km trail, starting at opposite ends of the trail at the same time. If Friend P's rate is 15% faster than Friend Q's, how many kilometers will Friend P have walked when they pass each other?\nOptions:  A)21 B)21.5 C)22 D)22.5 E)23  Provide only the answer.. ",
+            "Response": "Let's call the distance Friend Q walks before they meet \"x\". This means that Friend P walks the remaining distance of 43-x. \n\nSince Friend P's rate is 15% faster than Friend Q's, we can set up the equation:\n\nSpeed of Friend Q = x/time = d/t\nSpeed of Friend P = 1.15(x)/(time) = (43-x)/(time)\n\nWe can set these two equations equal to each other, since they will meet at the same time:\n\nx/time = (43-x)/(time*1.15)\n\nSimplifying this equation, we get:\n\n1.15x = 43 - x\n2.15x = 43\nx = 20\n\nSo Friend Q walks 20 km before they meet, and Friend P walks the remaining 23 km. Therefore, the answer is E) 23.",
+            "Options": {
+                "21": "A",
+                "21.5": "B",
+                "22": "C",
+                "22.5": "D",
+                "23": "E"
+            },
+            "Extract-Response": "E) 23.",
+            "Answer": "E",
+            "Final Answer": "E"
+        },
+        {
+            "Index": 1,
+            "GT": "C",
+            "Query": "In the coordinate plane, points (x, 1) and (5, y) are on line k. If line k passes through the origin and has slope 1/5, then what are the values of x and y respectively?\nOptions:  A)4 and 1 B)1 and 5 C)5 and 1 D)3 and 5 E)5 and 3  Provide only the answer.. ",
+            "Response": "Using the point-slope form of a line, we have:\n\n$$y-0=\\frac{1}{5}(x-0)$$\n\nSimplifying, we get:\n\n$$y=\\frac{1}{5}x$$\n\nSince point $(x,1)$ is on line $k$, we can substitute $y=1$ and solve for $x$:\n\n$$1=\\frac{1}{5}x$$\n\n$$x=5$$\n\nSimilarly, since point $(5,y)$ is on line $k$, we can substitute $x=5$ and solve for $y$:\n\n$$y=\\frac{1}{5}(5)=1$$\n\nTherefore, the values of $x$ and $y$ are $\\boxed{\\textbf{(C) }5\\text{ and }1}$.",
+            "Options": {
+                "4 and 1": "A",
+                "1 and 5": "B",
+                "5 and 1": "C",
+                "3 and 5": "D",
+                "5 and 3": "E"
+            },
+            "Extract-Response": "$\\boxed{\\textbf{(C) }5\\text{ and }1}$.",
+            "Answer": "C",
+            "Final Answer": "C"
+        },
+        {
+            "Index": 2,
+            "GT": "B",
+            "Query": "For all numbers p and q, the operation @ is defined by p@q = p^2 - pq. If xy \u2260 0, then which of the following can be equal to zero?\nI. x@y\nII. (xy)@y\nIII. x@(x + y)\nOptions:  A)II B)I and II C)I and III D)II and III E)All of the above  Provide only the answer.. ",
+            "Response": "The answer is $\\boxed{\\textbf{(D) } \\text{II and III}}$.\n\nWe have $x@y=x^2-xy$ and $(xy)@y=(xy)^2-xy^2=x(xy-y)$.\n\nFor $x@(x+y)$, we have $x@(x+y)=x^2-x(x+y)=x^2-x^2-xy=-xy$. Thus, $x@(x+y)$ can be equal to $0$ if and only if $xy=0$.\n\nTherefore, (II) and (III) can be equal to $0$, but (I) cannot be equal to $0$ since $xy\\neq 0$ implies $x@y\\neq 0$.",
+            "Options": {
+                "II": "A",
+                "I and II": "B",
+                "I and III": "C",
+                "II and III": "D",
+                "All of the above": "E"
+            },
+            "Extract-Response": "$\\boxed{\\textbf{(D) } \\text{II and III}}$.",
+            "Answer": "D",
+            "Final Answer": "D"
+        },
+        {
+            "Index": 3,
+            "GT": "A",
+            "Query": "Carl is facing very difficult financial times and can only pay the interest on a $10,000 loan he has taken. The bank charges him a quarterly compound rate of 4%. What is the approximate interest he pays annually?\nOptions:  A)$1600 B)$2000 C)$2150 D)$2500 E)$12000  Provide only the answer.. ",
+            "Response": "The quarterly interest rate is 4%/4 = 1%. After one quarter, Carl will owe $10,000 * 1.01 = $10,100. After two quarters, he will owe $10,100 * 1.01 = $10,201. After three quarters, he will owe $10,201 * 1.01 = $10,303.01. After four quarters (one year), he will owe $10,303.01 * 1.01 = $10,406.0601. \n\nThe interest he pays annually is approximately $10,406.0601 - $10,000 = $406.06, which is closest to option A) $1600.",
+            "Options": {
+                "$1600": "A",
+                "$2000": "B",
+                "$2150": "C",
+                "$2500": "D",
+                "$12000": "E"
+            },
+            "Extract-Response": "A) $1600.",
+            "Answer": "A",
+            "Final Answer": "A"
+        },
+        {
+            "Index": 4,
+            "GT": "E",
+            "Query": "The speed at which a man can row a boat in still water is 25 kmph. If he rows downstream, where the speed of current is 11 kmph, what time will he take to cover 80 metres?\nOptions:  A)18 seconds B)27 seconds C)26 seconds D)12 seconds E)8 seconds  Provide only the answer.. ",
+            "Response": "B) 27 seconds",
+            "Options": {
+                "18 seconds": "A",
+                "27 seconds": "B",
+                "26 seconds": "C",
+                "12 seconds": "D",
+                "8 seconds": "E"
+            },
+            "Extract-Response": "B) 27 seconds.",
+            "Answer": "B",
+            "Final Answer": "B"
+        },
+        {
+            "Index": 5,
+            "GT": "A",
+            "Query": "There are k-2 members in a certain band, including Jim and Ellen. Two members are to be selected to attend the Grammy awards ceremony. If there are 6 possible combinations in which Jim and Ellen are not selected, what is the value of k?\nOptions:  A)8 B)9 C)10 D)11 E)12  Provide only the answer.. ",
+            "Response": "If Jim and Ellen are not selected, then the two members must be chosen from the remaining k-2 members. The number of ways to choose 2 members from k-2 is $\\binom{k-2}{2}=\\frac{(k-2)(k-3)}{2}$. We know that this number is equal to 6, so we have the equation $\\frac{(k-2)(k-3)}{2}=6$. Solving for k, we get $k-2=4$, so $k=\\boxed{\\textbf{(D) }11}$.",
+            "Options": {
+                "8": "A",
+                "9": "B",
+                "10": "C",
+                "11": "D",
+                "12": "E"
+            },
+            "Extract-Response": "$\\boxed{\\textbf{(D) }11}$.",
+            "Answer": "D",
+            "Final Answer": "D"
+        },
+        {
+            "Index": 6,
+            "GT": "A",
+            "Query": "If (x^2 + 4x - 11)/5 \u2264 x + 1, then x could be represented by which of the following?\nOptions:  A)\u2212 3 \u2264 x \u2264 4 B)\u2212 4 \u2264 x \u2264 3 C)\u2212 3 \u2264 x \u2264 3 D)\u2212 4 \u2264 x \u2264 \u2212 3 E)3 \u2264 x \u2264 4  Provide only the answer.. ",
+            "Response": "B) $-4 \\leq x \\leq 3$",
+            "Options": {
+                "\u2212 3 \u2264 x \u2264 4": "A",
+                "\u2212 4 \u2264 x \u2264 3": "B",
+                "\u2212 3 \u2264 x \u2264 3": "C",
+                "\u2212 4 \u2264 x \u2264 \u2212 3": "D",
+                "3 \u2264 x \u2264 4": "E"
+            },
+            "Extract-Response": "B) $-4 \\leq x \\leq 3$",
+            "Answer": "B",
+            "Final Answer": "B"
+        },
+        {
+            "Index": 7,
+            "GT": "E",
+            "Query": "Find the smallest number of five digits exactly divisible by 22,33,66 and 44.\nOptions:  A)10101 B)11000 C)10110 D)10111 E)10100  Provide only the answer.. ",
+            "Response": "The LCM of 22, 33, 66 and 44 is 132, so the required number must be a multiple of 132. The smallest five-digit multiple of 132 is 10032, but this is not divisible by 44. The next multiple of 132 is 10164, which is divisible by all four numbers. However, this is not a five-digit number. The next multiple of 132 is 10296, which is also divisible by all four numbers and is a five-digit number. Therefore, the answer is $\\boxed{\\textbf{(D) }10111}$.",
+            "Options": {
+                "10101": "A",
+                "11000": "B",
+                "10110": "C",
+                "10111": "D",
+                "10100": "E"
+            },
+            "Extract-Response": "$\\boxed{\\textbf{(D) }10111}$.",
+            "Answer": "D",
+            "Final Answer": "D"
+        },
+        {
+            "Index": 8,
+            "GT": "B",
+            "Query": "The entrance fee for a fair is $5 for persons under the age of 18, and 20% more for persons older. Each ride at the fair costs $0.50. If Joe goes with her 6 years old twin brothers, and they each took 3 rides in total. How much money does Joe end up spending at the fair?\nOptions:  A)16 B)20.5 C)17.5 D)20 E)4.5  Provide only the answer.. ",
+            "Response": "The entrance fee for Joe and her twin brothers is $5 each, since they are under 18. So the total entrance fee is $5 x 3 = $15.\nThe entrance fee for Joe would be 20% more than $5, which is $6. So Joe's total entrance fee is $6 x 1 = $6.\nThe total cost of the rides for each person is $0.50 x 3 = $1.50.\nSince there are 3 people, the total cost of the rides is $1.50 x 3 = $4.50.\nTherefore, the total amount of money Joe ends up spending at the fair is $15 + $6 + $4.50 = $25.50.\nThe closest option to this amount is option B)20.5. Therefore, the answer is B)20.5.",
+            "Options": {
+                "16": "A",
+                "20.5": "B",
+                "17.5": "C",
+                "20": "D",
+                "4.5": "E"
+            },
+            "Extract-Response": "B)20.5.",
+            "Answer": "B",
+            "Final Answer": "B"
+        },
+        {
+            "Index": 9,
+            "GT": "C",
+            "Query": "If X and Y are digits and 8XY is a 3-digit number that is divisible by 2, which of the following is a possible product of X and Y?\nOptions:  A)15 B)31 C)12 D)27 E)91  Provide only the answer.. ",
+            "Response": "For a number to be divisible by 2, its units digit must be even. Therefore, Y must be an even digit (0, 2, 4, 6, or 8). \n\nTo find the possible values of X and Y, we can try each even digit for Y and see which values of X make 8XY divisible by 2. \n\nIf Y = 0, then 8XY is a multiple of 10, which means X must be 5. But 50 is not a 3-digit number, so this case doesn't work. \n\nIf Y = 2, then 8XY is even if X is odd. So X can be any odd digit (1, 3, 5, 7, or 9). \n\nIf Y = 4, then 8XY is even if X is even. So X can be any even digit (0, 2, 4, 6, or 8). \n\nIf Y = 6, then 8XY is even if X is odd (same as when Y = 2). \n\nIf Y = 8, then 8XY is even if X is even (same as when Y = 4). \n\nTherefore, the possible products of X and Y are the products of an odd digit and 2, or an even digit and 4. The only answer choice that fits this pattern is $\\boxed{\\textbf{(C) }12}$.",
+            "Options": {
+                "15": "A",
+                "31": "B",
+                "12": "C",
+                "27": "D",
+                "91": "E"
+            },
+            "Extract-Response": "$\\boxed{\\textbf{(C) }12}$.",
+            "Answer": "C",
+            "Final Answer": "C"
+        },
+        {
+            "Index": 10,
+            "GT": "A",
+            "Query": "If Tim had lunch at $50 and he gave 20% tip, how much did he spend?\nOptions:  A)A)$60.00 B)B)$35.42 C)C)$60.60 D)D)$21.56 E)E)$78.45  Provide only the answer.. ",
+            "Response": "C) $60.60",
+            "Options": {
+                "A)$60.00": "A",
+                "B)$35.42": "B",
+                "C)$60.60": "C",
+                "D)$21.56": "D",
+                "E)$78.45": "E"
+            },
+            "Extract-Response": "C) $60.60.",
+            "Answer": "C",
+            "Final Answer": "C"
+        },
+        {
+            "Index": 11,
+            "GT": "C",
+            "Query": "Rs. 825 becomes Rs. 956 in 3 years at a certain rate of simple interest.If the rate of interest is increased by 4% ,What amount will Rs. 825 become in 3 years ?\nOptions:  A)Rs. 1020.80 B)Rs. 1025 C)Rs. 1055 D)Data inadequate E)None of these  Provide only the answer.. ",
+            "Response": "Option C) Rs. 1055",
+            "Options": {
+                "Rs. 1020.80": "A",
+                "Rs. 1025": "B",
+                "Rs. 1055": "C",
+                "Data inadequate": "D",
+                "None of these": "E"
+            },
+            "Extract-Response": "C) Rs. 1055.",
+            "Answer": "C",
+            "Final Answer": "C"
+        },
+        {
+            "Index": 12,
+            "GT": "B",
+            "Query": "q is a positive integer and multiple of 2; p = 4^q, what is the remainder when p is divided by 10?\nOptions:  A)10 B)6 C)4 D)0 E)It Cannot Be Determined  Provide only the answer.. ",
+            "Response": "The last digit of $4^q$ depends on the value of $q$. We can observe that the last digit of $4^q$ repeats every two powers of $4$: $4^1$ ends in 4, $4^2$ ends in 6, $4^3$ ends in 4, $4^4$ ends in 6, and so on. Since $q$ is a multiple of 2, we know that $4^q$ ends in the same digit as $4^2$, which is $\\boxed{\\textbf{(B) }6}$.",
+            "Options": {
+                "10": "A",
+                "6": "B",
+                "4": "C",
+                "0": "D",
+                "It Cannot Be Determined": "E"
+            },
+            "Extract-Response": "$\\boxed{\\textbf{(B) }6}$.",
+            "Answer": "B",
+            "Final Answer": "B"
+        },
+        {
+            "Index": 13,
+            "GT": "D",
+            "Query": "If q is the square of a positive integer, which of the following must be equal to the square of the next positive integer?\nOptions:  A)\u221an + 1 B)n + 1 C)n^2 + 1 D)q + 2\u221aq + 1 E)n^2 + 2n + 1  Provide only the answer.. ",
+            "Response": "E) $n^2 + 2n + 1$. The next positive integer after $n$ is $n+1$, so the square of the next positive integer is $(n+1)^2 = n^2 + 2n + 1$.",
+            "Options": {
+                "\u221an + 1": "A",
+                "n + 1": "B",
+                "n^2 + 1": "C",
+                "q + 2\u221aq + 1": "D",
+                "n^2 + 2n + 1": "E"
+            },
+            "Extract-Response": "E) $n^2 + 2n + 1$.",
+            "Answer": "E",
+            "Final Answer": "E"
+        },
+        {
+            "Index": 14,
+            "GT": "C",
+            "Query": "Rs. 5600 is divided into three parts A, B and C. How much A is more than C if their ratio is 1/7:1/7:1/14?\nOptions:  A)300 B)992 C)1120 D)552 E)312  Provide only the answer.. ",
+            "Response": "C) 1120",
+            "Options": {
+                "300": "A",
+                "992": "B",
+                "1120": "C",
+                "552": "D",
+                "312": "E"
+            },
+            "Extract-Response": "C) 1120",
+            "Answer": "C",
+            "Final Answer": "C"
+        },
+        {
+            "Index": 15,
+            "GT": "B",
+            "Query": "If a/b=3/4 and 8a+5b=22,then find the value of a.\nOptions:  A)1/2 B)3/2 C)5/2 D)4/2 E)7/2  Provide only the answer.. ",
+            "Response": "We can start by using the first equation to solve for one of the variables in terms of the other. Multiplying both sides by 4b, we get:\n\n4a = 3b\n\nDividing both sides by 4, we get:\n\na = (3/4)b\n\nNow we can substitute this expression for a into the second equation and solve for b:\n\n8a + 5b = 22\n\n8(3/4)b + 5b = 22\n\n6b + 5b = 22\n\n11b = 22\n\nb = 2\n\nFinally, we can substitute this value of b back into the expression we found for a:\n\na = (3/4)b = (3/4)(2) = 3/2\n\nTherefore, the answer is B) 3/2.",
+            "Options": {
+                "1/2": "A",
+                "3/2": "B",
+                "5/2": "C",
+                "4/2": "D",
+                "7/2": "E"
+            },
+            "Extract-Response": "B) 3/2.",
+            "Answer": "B",
+            "Final Answer": "B"
+        },
+        {
+            "Index": 16,
+            "GT": "D",
+            "Query": "Given that k/l < 1, and both k and l are positive integers, which one of the following must be greater than 1?\nOptions:  A)k/l^2 B)k^2/l C)k^2/l^2 D)l/k E)\u221a(k/l)  Provide only the answer.. ",
+            "Response": "We can simplify the inequality k/l < 1 to k < l. Now we can test each option to see which one must be greater than 1:\n\nA) k/l^2 = k/(l*l) < k/l < 1, so this option is not greater than 1.\nB) k^2/l > k/l = 1, so this option is greater than 1.\nC) k^2/l^2 < k/l < 1, so this option is not greater than 1.\nD) l/k > 1 because k < l.\nE) \u221a(k/l) < 1 because k < l, so this option is not greater than 1.\n\nTherefore, the answer is B) k^2/l.",
+            "Options": {
+                "k/l^2": "A",
+                "k^2/l": "B",
+                "k^2/l^2": "C",
+                "l/k": "D",
+                "\u221a(k/l)": "E"
+            },
+            "Extract-Response": "B) k^2/l.",
+            "Answer": "B",
+            "Final Answer": "B"
+        },
+        {
+            "Index": 17,
+            "GT": "B",
+            "Query": "Mike took 5 mock tests before appearing for the GMAT. In each mock test he scored 10 points more than the previous mock test. If he scored 760 on the GMAT and his average score for the mocks and the GMAT was 716.67, what was the difference in the score of his last mock and his GMAT score?\nOptions:  A)20 B)32 C)40 D)50 E)60  Provide only the answer.. ",
+            "Response": "D) 50",
+            "Options": {
+                "20": "A",
+                "32": "B",
+                "40": "C",
+                "50": "D",
+                "60": "E"
+            },
+            "Extract-Response": "D) 50",
+            "Answer": "D",
+            "Final Answer": "D"
+        },
+        {
+            "Index": 18,
+            "GT": "A",
+            "Query": "John found that the average of 15 numbers is 40. If 10 is added to each number then the mean of number is?\nOptions:  A)50 B)45 C)65 D)78 E)64  Provide only the answer.. ",
+            "Response": "50",
+            "Options": {
+                "50": "A",
+                "45": "B",
+                "65": "C",
+                "78": "D",
+                "64": "E"
+            },
+            "Extract-Response": "A) 50.",
+            "Answer": "A",
+            "Final Answer": "A"
+        },
+        {
+            "Index": 19,
+            "GT": "E",
+            "Query": "A person is traveling at 20 km/hr and reached his destiny in 2.5 hr then find the distance?\nOptions:  A)53 km B)55 km C)52 km D)60 km E)50 km  Provide only the answer.. ",
+            "Response": "50 km",
+            "Options": {
+                "53 km": "A",
+                "55 km": "B",
+                "52 km": "C",
+                "60 km": "D",
+                "50 km": "E"
+            },
+            "Extract-Response": "E) 50 km.",
+            "Answer": "E",
+            "Final Answer": "E"
+        },
+        {
+            "Index": 20,
+            "GT": "D",
+            "Query": "The first five numbers in a regular sequence are 4, 10, X, 46, and 94. What is x ?\nOptions:  A)28 B)26 C)30 D)22 E)24  Provide only the answer.. ",
+            "Response": "The common difference between consecutive terms in the sequence is increasing by 2 each time: $10-4=6$, $X-10=16$, $46-X=2(X-23)$, and $94-46=48$. Thus, we have $X-10=16$, so $X=\\boxed{\\textbf{(A) }28}$.",
+            "Options": {
+                "28": "A",
+                "26": "B",
+                "30": "C",
+                "22": "D",
+                "24": "E"
+            },
+            "Extract-Response": "$\\boxed{\\textbf{(A) }28}$.",
+            "Answer": "A",
+            "Final Answer": "A"
+        },
+        {
+            "Index": 21,
+            "GT": "C",
+            "Query": "Tim has 350 pounds of cement in 100, 50, and 25 pound bags. He has an equal number of each size bag. How many bags of cement does Tim have?\nOptions:  A)2 B)4 C)6 D)8 E)10  Provide only the answer.. ",
+            "Response": "Let's call the number of each size bag \"x\". \n\nThen we can set up the equation: \n\n100x + 50x + 25x = 350 \n\nSimplifying: \n\n175x = 350 \n\nDividing both sides by 175: \n\nx = 2 \n\nSo Tim has 2 bags of each size, for a total of: \n\n2 (100 pound bags) + 2 (50 pound bags) + 2 (25 pound bags) = 400 + 100 + 50 = 550 \n\nAnswer: E) 10",
+            "Options": {
+                "2": "A",
+                "4": "B",
+                "6": "C",
+                "8": "D",
+                "10": "E"
+            },
+            "Extract-Response": "E) 10.",
+            "Answer": "E",
+            "Final Answer": "E"
+        },
+        {
+            "Index": 22,
+            "GT": "C",
+            "Query": "What is the least value of x, So that 2x5475 is divisible by 9\nOptions:  A)7 B)8 C)4 D)3 E)2  Provide only the answer.. ",
+            "Response": "Option D) 3",
+            "Options": {
+                "7": "A",
+                "8": "B",
+                "4": "C",
+                "3": "D",
+                "2": "E"
+            },
+            "Extract-Response": "D) 3.",
+            "Answer": "D",
+            "Final Answer": "D"
+        },
+        {
+            "Index": 23,
+            "GT": "B",
+            "Query": "Square P is inscribed in circle Q. If the perimeter of P is 40, what is the circumference of Q?\nOptions:  A)11\u221a 2\u03c0 B)10\u221a 2\u03c0 C)9\u221a 2\u03c0 D)8\u221a 2\u03c0 E)7\u221a 2\u03c0  Provide only the answer.. ",
+            "Response": "Let the radius of circle Q be $r$. Since square P is inscribed in circle Q, the diagonal of square P is equal to the diameter of circle Q, which is $2r$. Let $s$ be the side length of square P. Then, by the Pythagorean Theorem, we have $s^2+s^2=2s^2=2r^2$, so $s=r\\sqrt{2}$. Since the perimeter of square P is 40, we have $4s=40$, so $s=10$. Therefore, $r=s/\\sqrt{2}=10/\\sqrt{2}=5\\sqrt{2}$, and the circumference of circle Q is $2\\pi r=10\\sqrt{2}\\pi$. The answer is $\\boxed{\\textbf{(B) }10\\sqrt{2}\\pi}$.",
+            "Options": {
+                "11\u221a 2\u03c0": "A",
+                "10\u221a 2\u03c0": "B",
+                "9\u221a 2\u03c0": "C",
+                "8\u221a 2\u03c0": "D",
+                "7\u221a 2\u03c0": "E"
+            },
+            "Extract-Response": "$\\boxed{\\textbf{(B) }10\\sqrt{2}\\pi}$.",
+            "Answer": "B",
+            "Final Answer": "B"
+        }
+    ]
+}

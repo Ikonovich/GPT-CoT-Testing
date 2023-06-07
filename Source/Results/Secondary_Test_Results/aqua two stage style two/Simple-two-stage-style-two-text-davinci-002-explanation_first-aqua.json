@@ -1,0 +1,519 @@
+{
+    "Mode": "test",
+    "Model": "text-davinci-002",
+    "Model Index": 0,
+    "Modality": "explanation_first",
+    "Modality Index": 3,
+    "Dataset": "aqua",
+    "Extraction Type": "two-stage-style-two",
+    "Simple Prompt": true,
+    "Test Path": "Results\\Primary_Test_Results\\text-davinci-002\\explanation_first\\aqua\\Simple-two-stage-style-two-text-davinci-002-explanation_first-aqua.json",
+    "Total": 31,
+    "Total Accurate": 7,
+    "Total Accuracy": 22.58064516129032,
+    "Percent of Answers Containing CoT": 90.32258064516128,
+    "CoT Accuracy": 25.0,
+    "Non-CoT Accuracy": 0.0,
+    "ci_radius": 14.718656550772394,
+    "ci_upper": 37.299301712062714,
+    "ci_lower": 7.861988610517926,
+    "Dataset Index": 2,
+    "Trials": [
+        {
+            "Index": 0,
+            "GT": "E",
+            "Query": "Two friends plan to walk along a 43-km trail, starting at opposite ends of the trail at the same time. If Friend P's rate is 15% faster than Friend Q's, how many kilometers will Friend P have walked when they pass each other?\nOptions:  A)21 B)21.5 C)22 D)22.5 E)23  Provide the explanation followed by the answer.. ",
+            "Response": "\n\nThe answer is D) 22.5 km. \n\nWe can set up the equation as follows: \n\n43/x + 43/(1.15x) = 43 \n\nAfter solving for x, we find that x = 22.5 km. This means that Friend P will have walked 22.5 km when they pass Friend Q.",
+            "Options": {
+                "A": "21",
+                "B": "21.5",
+                "C": "22",
+                "D": "22.5",
+                "E": "23"
+            },
+            "Extract-Response": "\n\n{D}",
+            "Answer": "D",
+            "Final Answer": "D"
+        },
+        {
+            "Index": 1,
+            "GT": "C",
+            "Query": "In the coordinate plane, points (x, 1) and (5, y) are on line k. If line k passes through the origin and has slope 1/5, then what are the values of x and y respectively?\nOptions:  A)4 and 1 B)1 and 5 C)5 and 1 D)3 and 5 E)5 and 3  Provide the explanation followed by the answer.. ",
+            "Response": "\n\nA)4 and 1 \n\nThe slope of line k is 1/5. This means that for every unit increase in the x-coordinate, the y-coordinate increases by 1/5. Since the line passes through the origin, (0,0), we know that the y-coordinate when x=0 is 0. Therefore, when x=4, the y-coordinate is 4/5. Since the line also passes through (5,y), we know that y=5(4/5)=4. Therefore, the answer is (4,1).",
+            "Options": {
+                "A": "4 and 1",
+                "B": "1 and 5",
+                "C": "5 and 1",
+                "D": "3 and 5",
+                "E": "5 and 3"
+            },
+            "Extract-Response": "\n\n{A}",
+            "Answer": "A",
+            "Final Answer": "A"
+        },
+        {
+            "Index": 2,
+            "GT": "B",
+            "Query": "For all numbers p and q, the operation @ is defined by p@q = p^2 - pq. If xy \u2260 0, then which of the following can be equal to zero?\nI. x@y\nII. (xy)@y\nIII. x@(x + y)\nOptions:  A)II B)I and II C)I and III D)II and III E)All of the above  Provide the explanation followed by the answer.. ",
+            "Response": "\n\nI and III",
+            "Options": {
+                "A": "II",
+                "B": "I and II",
+                "C": "I and III",
+                "D": "II and III",
+                "E": "All of the above"
+            },
+            "Extract-Response": "\n\n{E}",
+            "Answer": "E",
+            "Final Answer": "E"
+        },
+        {
+            "Index": 3,
+            "GT": "A",
+            "Query": "Carl is facing very difficult financial times and can only pay the interest on a $10,000 loan he has taken. The bank charges him a quarterly compound rate of 4%. What is the approximate interest he pays annually?\nOptions:  A)$1600 B)$2000 C)$2150 D)$2500 E)$12000  Provide the explanation followed by the answer.. ",
+            "Response": "\n\nThe interest rate is 4% per quarter, which is equivalent to 16% per year. The interest paid on a loan is equal to the principal times the interest rate. Therefore, the interest paid on a loan of $10,000 at a 16% annual interest rate is $1,600.",
+            "Options": {
+                "A": "$1600",
+                "B": "$2000",
+                "C": "$2150",
+                "D": "$2500",
+                "E": "$12000"
+            },
+            "Extract-Response": "\n\n{A}",
+            "Answer": "A",
+            "Final Answer": "A"
+        },
+        {
+            "Index": 4,
+            "GT": "E",
+            "Query": "The speed at which a man can row a boat in still water is 25 kmph. If he rows downstream, where the speed of current is 11 kmph, what time will he take to cover 80 metres?\nOptions:  A)18 seconds B)27 seconds C)26 seconds D)12 seconds E)8 seconds  Provide the explanation followed by the answer.. ",
+            "Response": "\n\nThe speed at which the man rows the boat in still water is 25 kmph. The speed of the current is 11 kmph. The time taken by the man to cover 80 metres is 18 seconds.",
+            "Options": {
+                "A": "18 seconds",
+                "B": "27 seconds",
+                "C": "26 seconds",
+                "D": "12 seconds",
+                "E": "8 seconds"
+            },
+            "Extract-Response": "\n\n{D}",
+            "Answer": "D",
+            "Final Answer": "D"
+        },
+        {
+            "Index": 5,
+            "GT": "A",
+            "Query": "There are k-2 members in a certain band, including Jim and Ellen. Two members are to be selected to attend the Grammy awards ceremony. If there are 6 possible combinations in which Jim and Ellen are not selected, what is the value of k?\nOptions:  A)8 B)9 C)10 D)11 E)12  Provide the explanation followed by the answer.. ",
+            "Response": "\n\nThe answer is D)11. \n\nThere are k-2 members in a certain band, including Jim and Ellen. Two members are to be selected to attend the Grammy awards ceremony. If there are 6 possible combinations in which Jim and Ellen are not selected, that means that there are (k-2)(k-3) possible combinations in which Jim and Ellen are both selected. \n\nTherefore, (k-2)(k-3)=6, and k=11.",
+            "Options": {
+                "A": "8",
+                "B": "9",
+                "C": "10",
+                "D": "11",
+                "E": "12"
+            },
+            "Extract-Response": "\n\n{D}",
+            "Answer": "D",
+            "Final Answer": "D"
+        },
+        {
+            "Index": 6,
+            "GT": "A",
+            "Query": "If (x^2 + 4x - 11)/5 \u2264 x + 1, then x could be represented by which of the following?\nOptions:  A)\u2212 3 \u2264 x \u2264 4 B)\u2212 4 \u2264 x \u2264 3 C)\u2212 3 \u2264 x \u2264 3 D)\u2212 4 \u2264 x \u2264 \u2212 3 E)3 \u2264 x \u2264 4  Provide the explanation followed by the answer.. ",
+            "Response": "\n\nA)\u2212 3 \u2264 x \u2264 4 \n\nThe given inequality can be rewritten as:\n\n(x^2 + 4x - 11)/5 - x - 1 \u2264 0\n\nWhich can be further rewritten as:\n\n(x^2 + 3x - 10)/5 \u2264 0\n\nWhich can be factored as:\n\n(x + 5)(x - 2)/5 \u2264 0\n\nSince we are looking for values of x where the inequality is true, we want values of x that make the left side negative. This can only happen when both factors are negative or when both factors are positive. Therefore, the solution set is:\n\n-5 \u2264 x \u2264 -2 and 2 \u2264 x \u2264 5\n\nTherefore, option A is correct.",
+            "Options": {
+                "A": "\u2212 3 \u2264 x \u2264 4",
+                "B": "\u2212 4 \u2264 x \u2264 3",
+                "C": "\u2212 3 \u2264 x \u2264 3",
+                "D": "\u2212 4 \u2264 x \u2264 \u2212 3",
+                "E": "3 \u2264 x \u2264 4"
+            },
+            "Extract-Response": "\n\n{A}",
+            "Answer": "A",
+            "Final Answer": "A"
+        },
+        {
+            "Index": 7,
+            "GT": "E",
+            "Query": "Find the smallest number of five digits exactly divisible by 22,33,66 and 44.\nOptions:  A)10101 B)11000 C)10110 D)10111 E)10100  Provide the explanation followed by the answer.. ",
+            "Response": "\n\nThe smallest number of five digits exactly divisible by 22,33,66 and 44 is 10100.",
+            "Options": {
+                "A": "10101",
+                "B": "11000",
+                "C": "10110",
+                "D": "10111",
+                "E": "10100"
+            },
+            "Extract-Response": "\n\n{E}",
+            "Answer": "E",
+            "Final Answer": "E"
+        },
+        {
+            "Index": 8,
+            "GT": "B",
+            "Query": "The entrance fee for a fair is $5 for persons under the age of 18, and 20% more for persons older. Each ride at the fair costs $0.50. If Joe goes with her 6 years old twin brothers, and they each took 3 rides in total. How much money does Joe end up spending at the fair?\nOptions:  A)16 B)20.5 C)17.5 D)20 E)4.5  Provide the explanation followed by the answer.. ",
+            "Response": "\n\nThe entrance fee for a fair is $5 for persons under the age of 18, and 20% more for persons older. Each ride at the fair costs $0.50. If Joe goes with her 6 years old twin brothers, and they each took 3 rides in total. How much money does Joe end up spending at the fair?\n\nThe answer is D) $20. Joe spends $5 on her entrance fee, and her brothers each spend $5 on their entrance fees. They also spend $3 on rides, for a total of $9.",
+            "Options": {
+                "A": "16",
+                "B": "20.5",
+                "C": "17.5",
+                "D": "20",
+                "E": "4.5"
+            },
+            "Extract-Response": "\n\n{D}",
+            "Answer": "D",
+            "Final Answer": "D"
+        },
+        {
+            "Index": 9,
+            "GT": "C",
+            "Query": "If X and Y are digits and 8XY is a 3-digit number that is divisible by 2, which of the following is a possible product of X and Y?\nOptions:  A)15 B)31 C)12 D)27 E)91  Provide the explanation followed by the answer.. ",
+            "Response": "\n\nThe possible product of X and Y is 12. \n\n8XY is a 3-digit number that is divisible by 2. \n\nX and Y are digits. \n\nThe product of X and Y is 12.",
+            "Options": {
+                "A": "15",
+                "B": "31",
+                "C": "12",
+                "D": "27",
+                "E": "91"
+            },
+            "Extract-Response": "\n\n{C}",
+            "Answer": "C",
+            "Final Answer": "C"
+        },
+        {
+            "Index": 10,
+            "GT": "A",
+            "Query": "If Tim had lunch at $50 and he gave 20% tip, how much did he spend?\nOptions:  A)A)$60.00 B)B)$35.42 C)C)$60.60 D)D)$21.56 E)E)$78.45  Provide the explanation followed by the answer.. ",
+            "Response": "\n\nThe answer is D)$21.56. Tim spent $50 on lunch, and 20% of $50 is $10. So Tim's total bill was $60 ($50 + $10).",
+            "Options": {
+                "A": "A)$60.00",
+                "B": "B)$35.42",
+                "C": "C)$60.60",
+                "D": "D)$21.56",
+                "E": "E)$78.45"
+            },
+            "Extract-Response": "\n\n{D}",
+            "Answer": "D",
+            "Final Answer": "D"
+        },
+        {
+            "Index": 11,
+            "GT": "C",
+            "Query": "Rs. 825 becomes Rs. 956 in 3 years at a certain rate of simple interest.If the rate of interest is increased by 4% ,What amount will Rs. 825 become in 3 years ?\nOptions:  A)Rs. 1020.80 B)Rs. 1025 C)Rs. 1055 D)Data inadequate E)None of these  Provide the explanation followed by the answer.. ",
+            "Response": "\n\nThe amount Rs. 825 will become Rs. 1055 in 3 years at the increased rate of interest.",
+            "Options": {
+                "A": "Rs. 1020.80",
+                "B": "Rs. 1025",
+                "C": "Rs. 1055",
+                "D": "Data inadequate",
+                "E": "None of these"
+            },
+            "Extract-Response": "\n\n{D}",
+            "Answer": "D",
+            "Final Answer": "D"
+        },
+        {
+            "Index": 12,
+            "GT": "B",
+            "Query": "q is a positive integer and multiple of 2; p = 4^q, what is the remainder when p is divided by 10?\nOptions:  A)10 B)6 C)4 D)0 E)It Cannot Be Determined  Provide the explanation followed by the answer.. ",
+            "Response": "\n\nThe remainder when p is divided by 10 will be 0. This is because p is a multiple of 2 and 4, and the remainder when a multiple of 2 and 4 is divided by 10 will be 0.",
+            "Options": {
+                "A": "10",
+                "B": "6",
+                "C": "4",
+                "D": "0",
+                "E": "It Cannot Be Determined"
+            },
+            "Extract-Response": "\n\n{D}",
+            "Answer": "D",
+            "Final Answer": "D"
+        },
+        {
+            "Index": 13,
+            "GT": "D",
+            "Query": "If q is the square of a positive integer, which of the following must be equal to the square of the next positive integer?\nOptions:  A)\u221an + 1 B)n + 1 C)n^2 + 1 D)q + 2\u221aq + 1 E)n^2 + 2n + 1  Provide the explanation followed by the answer.. ",
+            "Response": "\n\nThe answer is E. \n\nIf q is the square of a positive integer, then n^2 + 2n + 1 must be equal to the square of the next positive integer.",
+            "Options": {
+                "A": "\u221an + 1",
+                "B": "n + 1",
+                "C": "n^2 + 1",
+                "D": "q + 2\u221aq + 1",
+                "E": "n^2 + 2n + 1"
+            },
+            "Extract-Response": "\n\n{E}",
+            "Answer": "E",
+            "Final Answer": "E"
+        },
+        {
+            "Index": 14,
+            "GT": "C",
+            "Query": "Rs. 5600 is divided into three parts A, B and C. How much A is more than C if their ratio is 1/7:1/7:1/14?\nOptions:  A)300 B)992 C)1120 D)552 E)312  Provide the explanation followed by the answer.. ",
+            "Response": "\n\nExplanation: \n\nWe are given that Rs. 5600 is divided into three parts A, B and C, and that the ratio of A to C is 1/7:1/7:1/14. \n\nWe can set up a proportion to solve for A: \n\nA/C = 1/7:1/14 \n\nA/C = 1/7 * 14/1:1/7 * 1/1 \n\nA/C = 2/7:1/7 \n\nA/C = 2:1 \n\nA = 2C \n\nWe can solve for C by plugging in the known values for A and B: \n\nA + B + C = 5600 \n\n2C + C + C = 5600 \n\n6C = 5600 \n\nC = 933.33 \n\nA = 2(933.33) \n\nA = 1866.67 \n\nTherefore, A is Rs. 1866.67 more than C.",
+            "Options": {
+                "A": "300",
+                "B": "992",
+                "C": "1120",
+                "D": "552",
+                "E": "312"
+            },
+            "Extract-Response": "\n\n{A}",
+            "Answer": "A",
+            "Final Answer": "A"
+        },
+        {
+            "Index": 15,
+            "GT": "B",
+            "Query": "If a/b=3/4 and 8a+5b=22,then find the value of a.\nOptions:  A)1/2 B)3/2 C)5/2 D)4/2 E)7/2  Provide the explanation followed by the answer.. ",
+            "Response": "\n\nA)1/2\n\nSince a/b=3/4, we can say that a=3/4b. Plugging this into the equation 8a+5b=22, we get:\n\n8(3/4b)+5b=22\n\n6b+5b=22\n\n11b=22\n\nb=2\n\nTherefore, a=3/4(2)=1/2.",
+            "Options": {
+                "A": "1/2",
+                "B": "3/2",
+                "C": "5/2",
+                "D": "4/2",
+                "E": "7/2"
+            },
+            "Extract-Response": "\n\n{A}",
+            "Answer": "A",
+            "Final Answer": "A"
+        },
+        {
+            "Index": 16,
+            "GT": "D",
+            "Query": "Given that k/l < 1, and both k and l are positive integers, which one of the following must be greater than 1?\nOptions:  A)k/l^2 B)k^2/l C)k^2/l^2 D)l/k E)\u221a(k/l)  Provide the explanation followed by the answer.. ",
+            "Response": "\n\nA)k/l^2 B)k^2/l C)k^2/l^2 D)l/k E)\u221a(k/l)\n\nThe answer is E)\u221a(k/l).",
+            "Options": {
+                "A": "k/l^2",
+                "B": "k^2/l",
+                "C": "k^2/l^2",
+                "D": "l/k",
+                "E": "\u221a(k/l)"
+            },
+            "Extract-Response": "\n\n{E}",
+            "Answer": "E",
+            "Final Answer": "E"
+        },
+        {
+            "Index": 17,
+            "GT": "B",
+            "Query": "Mike took 5 mock tests before appearing for the GMAT. In each mock test he scored 10 points more than the previous mock test. If he scored 760 on the GMAT and his average score for the mocks and the GMAT was 716.67, what was the difference in the score of his last mock and his GMAT score?\nOptions:  A)20 B)32 C)40 D)50 E)60  Provide the explanation followed by the answer.. ",
+            "Response": "\n\nThe average score for the mocks and the GMAT was 716.67.\n\n760 - 716.67 = 43.33\n\n43.33 / 5 = 8.67\n\n8.67 * 4 = 34.67\n\n760 - 34.67 = 725.33\n\n725.33 - 716.67 = 8.66\n\n8.66 / 2 = 4.33\n\n4.33 * 2 = 8.66\n\nThe difference in the score of his last mock and his GMAT score is 8.66.\n\nAnswer: B)32",
+            "Options": {
+                "A": "20",
+                "B": "32",
+                "C": "40",
+                "D": "50",
+                "E": "60"
+            },
+            "Extract-Response": "\n\n{B}",
+            "Answer": "B",
+            "Final Answer": "B"
+        },
+        {
+            "Index": 18,
+            "GT": "A",
+            "Query": "John found that the average of 15 numbers is 40. If 10 is added to each number then the mean of number is?\nOptions:  A)50 B)45 C)65 D)78 E)64  Provide the explanation followed by the answer.. ",
+            "Response": "\n\nThe average of 15 numbers is 40. If 10 is added to each number then the mean of number is 50.",
+            "Options": {
+                "A": "50",
+                "B": "45",
+                "C": "65",
+                "D": "78",
+                "E": "64"
+            },
+            "Extract-Response": "\n\n{E}",
+            "Answer": "E",
+            "Final Answer": "E"
+        },
+        {
+            "Index": 19,
+            "GT": "E",
+            "Query": "A person is traveling at 20 km/hr and reached his destiny in 2.5 hr then find the distance?\nOptions:  A)53 km B)55 km C)52 km D)60 km E)50 km  Provide the explanation followed by the answer.. ",
+            "Response": "\n\nThe correct answer is C) 52 km. \n\nTo solve this problem, you need to use the equation for distance, which is distance = rate * time. In this equation, the rate is 20 km/hr and the time is 2.5 hr. When you plug these values into the equation, you get 52 km.",
+            "Options": {
+                "A": "53 km",
+                "B": "55 km",
+                "C": "52 km",
+                "D": "60 km",
+                "E": "50 km"
+            },
+            "Extract-Response": "\n\n{C}",
+            "Answer": "C",
+            "Final Answer": "C"
+        },
+        {
+            "Index": 20,
+            "GT": "D",
+            "Query": "The first five numbers in a regular sequence are 4, 10, X, 46, and 94. What is x ?\nOptions:  A)28 B)26 C)30 D)22 E)24  Provide the explanation followed by the answer.. ",
+            "Response": "\n\nThe answer is B) 26. \n\nIn a regular sequence, each number is the sum of the previous two numbers. Therefore, X must be the sum of 10 and 46, which is 26.",
+            "Options": {
+                "A": "28",
+                "B": "26",
+                "C": "30",
+                "D": "22",
+                "E": "24"
+            },
+            "Extract-Response": "\n\n{B}",
+            "Answer": "B",
+            "Final Answer": "B"
+        },
+        {
+            "Index": 21,
+            "GT": "C",
+            "Query": "Tim has 350 pounds of cement in 100, 50, and 25 pound bags. He has an equal number of each size bag. How many bags of cement does Tim have?\nOptions:  A)2 B)4 C)6 D)8 E)10  Provide the explanation followed by the answer.. ",
+            "Response": "\n\nThere are a total of 8 bags of cement.",
+            "Options": {
+                "A": "2",
+                "B": "4",
+                "C": "6",
+                "D": "8",
+                "E": "10"
+            },
+            "Extract-Response": "\n\n{D}",
+            "Answer": "D",
+            "Final Answer": "D"
+        },
+        {
+            "Index": 22,
+            "GT": "C",
+            "Query": "What is the least value of x, So that 2x5475 is divisible by 9\nOptions:  A)7 B)8 C)4 D)3 E)2  Provide the explanation followed by the answer.. ",
+            "Response": "\n\nThe least value of x, so that 2x5475 is divisible by 9 is 3. \n\n2x5475 = 10950 \n\n10950/9 = 1216 with a remainder of 3",
+            "Options": {
+                "A": "7",
+                "B": "8",
+                "C": "4",
+                "D": "3",
+                "E": "2"
+            },
+            "Extract-Response": "\n\n{D}",
+            "Answer": "D",
+            "Final Answer": "D"
+        },
+        {
+            "Index": 23,
+            "GT": "B",
+            "Query": "Square P is inscribed in circle Q. If the perimeter of P is 40, what is the circumference of Q?\nOptions:  A)11\u221a 2\u03c0 B)10\u221a 2\u03c0 C)9\u221a 2\u03c0 D)8\u221a 2\u03c0 E)7\u221a 2\u03c0  Provide the explanation followed by the answer.. ",
+            "Response": "\n\nA)11\u221a 2\u03c0 \n\nThe circumference of a circle is equal to 2\u03c0 times the radius of the circle. The radius of circle Q is equal to the perimeter of square P divided by 4. Therefore, the circumference of circle Q is equal to 2\u03c0 times the perimeter of square P divided by 4. Since the perimeter of square P is 40, the circumference of circle Q is equal to 2\u03c0 times 40 divided by 4, which is equal to 11\u221a 2\u03c0.",
+            "Options": {
+                "A": "11\u221a 2\u03c0",
+                "B": "10\u221a 2\u03c0",
+                "C": "9\u221a 2\u03c0",
+                "D": "8\u221a 2\u03c0",
+                "E": "7\u221a 2\u03c0"
+            },
+            "Extract-Response": "\n\n{A}",
+            "Answer": "A",
+            "Final Answer": "A"
+        },
+        {
+            "Index": 24,
+            "GT": "A",
+            "Query": "A debtor reached an agreement with his creditor to repay a loan by making a monthly payment which is double of the amount she paid the previous month. If the debtors first payment was $200, and he is expected to pay back 51200, how many months will it take to fully repay the loan?\nOptions:  A)9 B)10 C)9 D)12 E)10  Provide the explanation followed by the answer.. ",
+            "Response": "\n\n\n\nThe answer is B)10. \n\nThe debtor's monthly payment is increasing by 100% each month, so it will take 10 months for the debtor to fully repay the loan.",
+            "Options": {
+                "C": "9",
+                "E": "10",
+                "D": "12",
+                "A": "9",
+                "B": "10"
+            },
+            "Extract-Response": "\n\n{B}",
+            "Answer": "B",
+            "Final Answer": "B"
+        },
+        {
+            "Index": 25,
+            "GT": "C",
+            "Query": "As a bicycle salesperson, James earns a fixed salary of $30 per week plus $6 per bicycle for the first 6 bicycles he sells, $12 per bicycle for the next 6 bicycles he sells, and $18 per bicycle for every bicycle sold after first 12. This week, he earned more than twice as much as he did last week. If he sold x bicycles last week and y bicycles this week, which of the following statements must be true?\nI. y<2x\nII. y>x\nIII. y>3\nOptions:  A)I,II only B)I only C)II,III only D)II only E)III only  Provide the explanation followed by the answer.. ",
+            "Response": "\n\nThe answer is D) II only. \n\nTo earn more than twice as much as he did last week, James must have earned at least 2(30+6x) = 60 + 12x this week. This means that he must have sold at least 12x+1 bicycles this week, which implies that y>x.",
+            "Options": {
+                "A": "I,II only",
+                "B": "I only",
+                "C": "II,III only",
+                "D": "II only",
+                "E": "III only"
+            },
+            "Extract-Response": "\n\n{D}",
+            "Answer": "D",
+            "Final Answer": "D"
+        },
+        {
+            "Index": 26,
+            "GT": "A",
+            "Query": "A school currently maintains a fixed number of students per class. If the ratio of students per class were to be increased by 1, 10 fewer classes would be run for a total of 120 students. What is the current ratio Q of students per class?\nOptions:  A)Q=3 B)Q=4 C)6 D)8 E)12  Provide the explanation followed by the answer.. ",
+            "Response": "\n\nThe current ratio of students per class is Q=4. If the ratio of students per class were to be increased by 1, 10 fewer classes would be run for a total of 120 students.",
+            "Options": {
+                "A": "Q=3",
+                "B": "Q=4",
+                "C": "6",
+                "D": "8",
+                "E": "12"
+            },
+            "Extract-Response": "\n\n{C}",
+            "Answer": "C",
+            "Final Answer": "C"
+        },
+        {
+            "Index": 27,
+            "GT": "A",
+            "Query": "A survey reveals that the average income of a company\u2019s customers is $45,000 per year. If 50 customers respond to the survey and the average income of the wealthiest 10 of those customers is $95,000, what is the average income of the other 40 customers?\nIs there a way to solve this using weighted average concept instead of doing tedious calculations?\nOptions:  A) $32,500 B) $35,000 C) $37,500 D) $42,500 E) $50,000  Provide the explanation followed by the answer.. ",
+            "Response": "\n\n\n\nThe average income of the other 40 customers is $35,000.",
+            "Options": {
+                "A": " $32,500",
+                "B": " $35,000",
+                "C": " $37,500",
+                "D": " $42,500",
+                "E": " $50,000"
+            },
+            "Extract-Response": "\n\n{B}",
+            "Answer": "B",
+            "Final Answer": "B"
+        },
+        {
+            "Index": 28,
+            "GT": "C",
+            "Query": "The slant height of a cone is 35 cm and radius of the base is 14cm, find the curved surface of the cone.\nOptions:  A)4150 B)1780 C)1540 D)1500 E)6100  Provide the explanation followed by the answer.. ",
+            "Response": "\n\nThe slant height of a cone is 35 cm and radius of the base is 14cm, find the curved surface of the cone.\n\nThe curved surface area of a cone can be found using the formula:\n\nA = \u03c0r * s\n\nwhere r is the radius of the base and s is the slant height.\n\nIn this case, r = 14 cm and s = 35 cm, so the curved surface area is:\n\nA = \u03c0 * 14 * 35\n\nA = 1540 cm\u00b2",
+            "Options": {
+                "A": "4150",
+                "B": "1780",
+                "C": "1540",
+                "D": "1500",
+                "E": "6100"
+            },
+            "Extract-Response": "\n\n{C}",
+            "Answer": "C",
+            "Final Answer": "C"
+        },
+        {
+            "Index": 29,
+            "GT": "A",
+            "Query": "A cheese factory sells its cheese in rectangular blocks. A normal block has a volume of 8 cubic feet. If a small block has half the width, half the depth, and half the length of a normal block, what is the volume of cheese in a small block in cubic feet?\nOptions:  A)1 B)5 C)4 D)6 E)2  Provide the explanation followed by the answer.. ",
+            "Response": "\n\nThe volume of a rectangular block is length x width x depth. So, a small block has a volume of 1/2 x 1/2 x 1/2 = 1/8 of a normal block. Therefore, the volume of cheese in a small block is 1/8 of 8 cubic feet, or 1 cubic foot. The answer is A.",
+            "Options": {
+                "A": "1",
+                "B": "5",
+                "C": "4",
+                "D": "6",
+                "E": "2"
+            },
+            "Extract-Response": "\n\n{A}",
+            "Answer": "A",
+            "Final Answer": "A"
+        },
+        {
+            "Index": 30,
+            "GT": "A",
+            "Query": "In a new housing development, trees are to be planted along the sidewalk of a certain street. Each tree takes up one square foot of sidewalk space, and there are to be 20 feet between each tree. How many trees can be planted if the road is 148 feet long?\nOptions:  A)8 B)9 C)10 D)11 E)16  Provide the explanation followed by the answer.. ",
+            "Response": "\n\nThere are 148 feet in the road, and each tree takes up one square foot of sidewalk space. There are to be 20 feet between each tree, so each tree must be 20 feet away from the next tree. This means that there can only be seven trees planted along the road, with one tree at each end of the road.",
+            "Options": {
+                "A": "8",
+                "B": "9",
+                "C": "10",
+                "D": "11",
+                "E": "16"
+            },
+            "Extract-Response": "\n\n{B}",
+            "Answer": "B",
+            "Final Answer": "B"
+        }
+    ]
+}
